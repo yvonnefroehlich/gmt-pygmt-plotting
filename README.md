@@ -6,7 +6,7 @@ shown in same of my publications.
 
 ## Citation
 
-If you make use of this material, please acknowledge the relating publications in which framework these notebooks were written:
+If you make use of this material, please acknowledge the relating publications in which framework these scripts or notebooks were written:
 
 - **_Fröhlich, Yvonne, Grund, Michael & Ritter, Joachim R. R. (2022)_**. Laterally and vertically varying seismic anisotropy in the lithosphere-asthenosphere system revealed from SK(K)S splitting at neighboring sites in the Upper Rhine Graben area, Central Europe. in preparation for *Geophysical Journal International*.
 
