@@ -27,9 +27,10 @@ If you make use of this material, please acknowledge the relating publications i
 -
 -
 
+
 ## Contributing
  
-For bug reports, suggestions or recommondations feel free to open an issue or submitt a pull request directly on GitHub.
+For bug reports, suggestions or recommendations feel free to open an issue or submit a pull request directly here on GitHub.
 
 
 ## References
