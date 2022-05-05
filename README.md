@@ -17,10 +17,9 @@ If you make use of this material, please acknowledge the relating publications i
 
 
 ## Requirements
-- **Software**
-	- PyGTM [v6.0.1](https://www.pygmt.org/v0.6.1/) + [GMT](https://www.generic-mapping-tools.org/) [v6.3.0](https://docs.generic-mapping-tools.org/6.3/)
-	- [Python](https://www.python.org/) v3.9 with [NumPy](https://numpy.org/) v1.19
-	- [Jupyter Nootebook or Juypter Lab](https://jupyter.org/)
+- [PyGTM](https://www.pygmt.org/latest/) version [v6.0.1](https://www.pygmt.org/v0.6.1/) + [GMT](https://www.generic-mapping-tools.org/) version [v6.3.0](https://docs.generic-mapping-tools.org/6.3/)
+- [Python](https://www.python.org/) version v3.9 with [NumPy](https://numpy.org/) version v1.19
+- [Jupyter Nootebook](https://jupyter.org/) or [Juypter Lab](https://jupyter.org/)
 
 	
 ## How to do
