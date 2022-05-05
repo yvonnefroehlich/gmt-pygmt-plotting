@@ -1,7 +1,7 @@
 # Collection of Python scripts or Jupyter Notebooks for PyGMT
 
 Collection of _Python_ scripts or _Jupyter Notebooks_ (also supported by _Jupyter Lab_) to reproduce the geographic maps
-published in same of my publications.
+shown in same of my publications.
 
 
 ## Citation
