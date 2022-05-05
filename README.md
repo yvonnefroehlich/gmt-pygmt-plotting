@@ -13,7 +13,7 @@ If you make use of this material, please acknowledge the relating publications i
 
 ## Content
 
-- folder `001_FröhlichGrundRitter_GJI_2022`
+- folder `001_FröhlichGrundRitter_GJI_2022`: Figure 1
 
 
 ## Requirements
