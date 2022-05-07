@@ -47,7 +47,7 @@ Scientific colour maps (7.0.1).
 [**_Grimmer, J., Ritter, J. R. R., Eisbacher, H. & Fielitz, W. (2017)_**](https://doi.org/10.1007/s00531-016-1336-x).
 The Late Variscan control on the location and asymmetry of the Upper Rhine Graben.
 *International Journal of Earth Sciences*, volume 106, pages 827–853.
-(https://doi.org/10.1007/s00531-016-1336-x).
+https://doi.org/10.1007/s00531-016-1336-x.
 
 **_Uieda, L., Tian, D., Leong, W. J., Jones, M., Schlitzer, W., Grund, M., Toney, L., Yao, J., Magen, Y., Materna, K., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2022)_**.
 PyGMT: A Python interface for the Generic Mapping Tools (v0.6.1).
