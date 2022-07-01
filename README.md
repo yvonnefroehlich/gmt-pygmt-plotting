@@ -1,7 +1,6 @@
 # Collection of Python scripts or Jupyter Notebooks for PyGMT
 
-Collection of _Python_ scripts or _Jupyter Notebooks_ (also supported by _Jupyter Lab_) to reproduce the geographic maps
-shown in some of my publications.
+Collection of _Python_ scripts or _Jupyter Notebooks_ (also supported by _Jupyter Lab_) to reproduce the geographic maps shown in some of my publications.
 
 
 ## Citation
@@ -19,16 +18,16 @@ If you make use of this material, please acknowledge the relating publications i
 _Related to_: Ritter, Joachim R. R., Fröhlich, Yvonne, Sanz Alonso, Yasmin & Grund, Michael (2022)\
 _Required versions_: PyGMT v0.y.z, GMT 6.y
 
-- Figure S4: Piercing points in the lowermost mantle and SKS-SKKS pairs at the Black Forest Observatory
-- Figure 1: Piercing points in the upper mantel at the Black Forest Observatory, see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
+- [Figure S4](): Piercing points in the lowermost mantle and SKS-SKKS pairs at the Black Forest Observatory
+- [Figure 1](): Piercing points in the upper mantle at the Black Forest Observatory, see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
 
 ### **[002_paper_FGR_GJI_2022]()**
 
 _Related to_: Fröhlich, Yvonne, Grund, Michael & Ritter, Joachim R. R. (2022)\
 _Required versions_: PyGMT v0.7.0, GMT 6.4
 
-- Figure 1: Upper Rhine Graben area with seismological recording stations, and epicenter distribution of used earthquakes
-- Figure X: Piercing points in the upper mantle in the Upper Rhine Graben area
+- [Figure 1](): Upper Rhine Graben area with seismological recording stations, and epicenter distribution of used earthquakes
+- [Figure X](): Piercing points in the upper mantle in the Upper Rhine Graben area
 
 <!---
 ### **[003_XXX]()**
@@ -44,9 +43,9 @@ _Required versions_: PyGMT vx.y.z + GMT 6.y
 
 For the required versions please have a look at the note for the single folders in the content section.
 
-- [PyGTM](https://www.pygmt.org/latest/), [GMT](https://www.generic-mapping-tools.org/)
+- [PyGMT](https://www.pygmt.org/latest/), [GMT](https://www.generic-mapping-tools.org/)
 - [Python](https://www.python.org/), [NumPy](https://numpy.org/) <!---, [Pandas]()-->
-- [Jupyter Nootebook](https://jupyter.org/) or [Juypter Lab](https://jupyter.org/)
+- [Jupyter Notebook](https://jupyter.org/) or [Jupyter Lab](https://jupyter.org/)
 
 
 ## Contributing
