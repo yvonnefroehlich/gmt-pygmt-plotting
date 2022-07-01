@@ -14,31 +14,29 @@ If you make use of this material, please acknowledge the relating publications i
 
 ## Content
 
-### [001_paper_RFSG_2022]()
+### **[001_paper_RFSG_JoS_2022]()**
 
-_Related to_: Ritter et al. (2022)
-
+_Related to_: Ritter, Joachim R. R., Fröhlich, Yvonne, Sanz Alonso, Yasmin & Grund, Michael (2022)\
 _Required versions_: PyGMT v0.y.z, GMT 6.y
 
-  - Figure S4: Piercing points in the lowermost mantle and SKS-SKKS pairs at the Black Forest Observatory
-  - Figure 1: Piercing points in the upper mantel at the Black Forest Observatory, see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
+- Figure S4: Piercing points in the lowermost mantle and SKS-SKKS pairs at the Black Forest Observatory
+- Figure 1: Piercing points in the upper mantel at the Black Forest Observatory, see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
 
-### [002_paper_FGR_2022]()
+### **[002_paper_FGR_GJI_2022]()**
 
-_Related to_: Fröhlich et al. (2022)
-
+_Related to_: Fröhlich, Yvonne, Grund, Michael & Ritter, Joachim R. R. (2022)\
 _Required versions_: PyGMT v0.7.0, GMT 6.4
 
-  - Figure 1: Upper Rhine Graben area with seismological recording stations, and epicenter distribution of used earthquakes
-  - Figure X: Piercing points in the upper mantle in the Upper Rhine Graben area
+- Figure 1: Upper Rhine Graben area with seismological recording stations, and epicenter distribution of used earthquakes
+- Figure X: Piercing points in the upper mantle in the Upper Rhine Graben area
 
 <!---
-### [003_XXX]()
+### **[003_XXX]()**
 
-_Related to_: XXX
+_Related to_: XXX\
 _Required versions_: PyGMT vx.y.z + GMT 6.y
 
-  - XXX: XXX
+- XXX: XXX
 -->
 
 
@@ -83,7 +81,7 @@ PyGMT: A Python interface for the Generic Mapping Tools, version v0.6.1.
 <!---
 [**_Uieda, L., Tian, D., Leong, W. J., Jones, M., Schlitzer, W., Grund, M., Toney, L., Yao, J., Magen, Y., Materna, K., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2022)_**](https://doi.org/10.5281/zenodo.6702566).
 -->
-PyGMT: A Python interface for the Generic Mapping Tools, version v0.7.0).
+PyGMT: A Python interface for the Generic Mapping Tools, version v0.7.0.
 *Zenodo*. https://doi.org/10.5281/zenodo.6702566.
 
 [**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., & Esteban, F. (2021)_**](https://doi.org/10.5281/zenodo.5708769).
