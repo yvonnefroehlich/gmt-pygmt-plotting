@@ -14,27 +14,27 @@ If you make use of this material, please acknowledge the relating publications i
 
 ## Content
 
-# [001_paper_RFSG_2022]()
+### [001_paper_RFSG_2022]()
 
 _Related to_: Ritter et al. (2022)
-_Required versions_: PyGMT v0.y.z + GMT v6.y
+_Required versions_: PyGMT v0.y.z + GMT 6.y
 
   - Figure S4: Piercing points in the lowermost mantle and SKS-SKKS pairs at the Black Forest Observatory
   - Figure 1: Piercing points in the upper mantel at the Black Forest Observatory, see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
 
-# [002_paper_FGR_2022]()
+### [002_paper_FGR_2022]()
 
 _Related to_: Fröhlich et al. (2022)
-_Required versions_: PyGMT v0.7.0 + GMT v6.y
+_Required versions_: PyGMT v0.7.0 + GMT 6.4
 
   - Figure 1: Upper Rhine Graben area with seismological recording stations, and epicenter distribution of used earthquakes
   - Figure X: Piercing points in the upper mantle in the Upper Rhine Graben area
 
 <!---
-# [003_XXX]()
+### [003_XXX]()
 
 _Related to_: XXX
-_Required versions_: PyGMT vx.y.z + GMT v6.y
+_Required versions_: PyGMT vx.y.z + GMT 6.y
 
   - XXX: XXX
 -->
@@ -45,7 +45,7 @@ _Required versions_: PyGMT vx.y.z + GMT v6.y
 For the required versions please have a look at the note for the single folders in the content section.
 
 - [PyGTM](https://www.pygmt.org/latest/), [GMT](https://www.generic-mapping-tools.org/)
-- [Python](https://www.python.org/, [NumPy](https://numpy.org/), [Pandas]()
+- [Python](https://www.python.org/), [NumPy](https://numpy.org/) <!---, [Pandas]()-->
 - [Jupyter Nootebook](https://jupyter.org/) or [Juypter Lab](https://jupyter.org/)
 
 
@@ -74,23 +74,23 @@ True colors of oceanography: Guidelines for effective and accurate colormap sele
 *Oceanography*, volume 29, issue 3, pages 9–13.
 http://dx.doi.org/10.5670/oceanog.2016.66.
 
-**_Uieda, L., Tian, D., Leong, W. J., Jones, M., Schlitzer, W., Grund, M., Toney, L., Yao, J., Magen, Y., Materna, K., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2022)_**.
-PyGMT: A Python interface for the Generic Mapping Tools (v0.6.1).
-[*Zenodo*](https://doi.org/10.5281/zenodo.6426493).
+[**_Uieda, L., Tian, D., Leong, W. J., Jones, M., Schlitzer, W., Grund, M., Toney, L., Yao, J., Magen, Y., Materna, K., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2022)_**](https://doi.org/10.5281/zenodo.6426493).
+PyGMT: A Python interface for the Generic Mapping Tools, version v0.6.1.
+*Zenodo*. https://doi.org/10.5281/zenodo.6426493.
 
 <!---
-**_Uieda, L., Tian, D., Leong, W. J., Jones, M., Schlitzer, W., Grund, M., Toney, L., Yao, J., Magen, Y., Materna, K., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2022)_**.
+[**_Uieda, L., Tian, D., Leong, W. J., Jones, M., Schlitzer, W., Grund, M., Toney, L., Yao, J., Magen, Y., Materna, K., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2022)_**](https://doi.org/10.5281/zenodo.6702566).
 -->
-PyGMT: A Python interface for the Generic Mapping Tools (v0.7.0).
-[*Zenodo*](https://doi.org/10.5281/zenodo.6702566).
+PyGMT: A Python interface for the Generic Mapping Tools, version v0.7.0).
+*Zenodo*. https://doi.org/10.5281/zenodo.6702566.
 
-**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., & Esteban, F. (2021)_**
-The Generic Mapping Tools version 6.3.0.
-[*Zenodo*](https://doi.org/10.5281/zenodo.5708769).
+[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., & Esteban, F. (2021)_**](https://doi.org/10.5281/zenodo.5708769)
+The Generic Mapping Tools, version 6.3.0.
+*Zenodo*. https://doi.org/10.5281/zenodo.5708769.
 
-**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., & Esteban, F. (2022)_**
-The Generic Mapping Tools version 6.4.0.
-[*Zenodo*](https://doi.org/10.5281/zenodo.6623271).
+[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., & Esteban, F. (2022)_**](https://doi.org/10.5281/zenodo.6623271)
+The Generic Mapping Tools, version 6.4.0.
+*Zenodo*. https://doi.org/10.5281/zenodo.6623271.
 
 [**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., & Tian, D. (2019)_**](https://doi.org/10.1029/2019GC008515).
 The Generic Mapping Tools version 6.
