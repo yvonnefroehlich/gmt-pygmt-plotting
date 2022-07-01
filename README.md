@@ -17,7 +17,8 @@ If you make use of this material, please acknowledge the relating publications i
 ### [001_paper_RFSG_2022]()
 
 _Related to_: Ritter et al. (2022)
-_Required versions_: PyGMT v0.y.z + GMT 6.y
+
+_Required versions_: PyGMT v0.y.z, GMT 6.y
 
   - Figure S4: Piercing points in the lowermost mantle and SKS-SKKS pairs at the Black Forest Observatory
   - Figure 1: Piercing points in the upper mantel at the Black Forest Observatory, see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
@@ -25,7 +26,8 @@ _Required versions_: PyGMT v0.y.z + GMT 6.y
 ### [002_paper_FGR_2022]()
 
 _Related to_: Fröhlich et al. (2022)
-_Required versions_: PyGMT v0.7.0 + GMT 6.4
+
+_Required versions_: PyGMT v0.7.0, GMT 6.4
 
   - Figure 1: Upper Rhine Graben area with seismological recording stations, and epicenter distribution of used earthquakes
   - Figure X: Piercing points in the upper mantle in the Upper Rhine Graben area
@@ -84,11 +86,11 @@ PyGMT: A Python interface for the Generic Mapping Tools, version v0.6.1.
 PyGMT: A Python interface for the Generic Mapping Tools, version v0.7.0).
 *Zenodo*. https://doi.org/10.5281/zenodo.6702566.
 
-[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., & Esteban, F. (2021)_**](https://doi.org/10.5281/zenodo.5708769)
+[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., & Esteban, F. (2021)_**](https://doi.org/10.5281/zenodo.5708769).
 The Generic Mapping Tools, version 6.3.0.
 *Zenodo*. https://doi.org/10.5281/zenodo.5708769.
 
-[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., & Esteban, F. (2022)_**](https://doi.org/10.5281/zenodo.6623271)
+[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., & Esteban, F. (2022)_**](https://doi.org/10.5281/zenodo.6623271).
 The Generic Mapping Tools, version 6.4.0.
 *Zenodo*. https://doi.org/10.5281/zenodo.6623271.
 
