@@ -1,4 +1,4 @@
-# Collection of Python scripts or Jupyter Notebooks for PyGMT
+# Collection of Python Scripts or Jupyter Notebooks for PyGMT
 
 Collection of _Python_ scripts or _Jupyter Notebooks_ (also supported by _Jupyter Lab_) to reproduce the geographic maps shown in some of my publications.
 
@@ -15,25 +15,25 @@ If you make use of this material, please acknowledge the relating publications i
 
 ### **[001_paper_RFSG_JoS_2022]()**
 
-_Related to_: Ritter, Joachim R. R., Fröhlich, Yvonne, Sanz Alonso, Yasmin & Grund, Michael (2022)\
+_Related to_: Ritter, J. R. R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)\
 _Required versions_: PyGMT v0.7.0, GMT 6.4.0 (Fig. S4); PyGMT v0.3.0, GMT 6.1.1 (Fig. 1)
 
-- [Figure S4](): Piercing points in the lowermost mantle and SKS-SKKS pairs at the Black Forest Observatory
-- [Figure 1](): Piercing points in the upper mantle at the Black Forest Observatory, see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
+- [Figure S4](): Piercing points in the lowermost mantle and SKS-SKKS pairs related to shear wave splitting measurements (SWSMs) at the Black Forest Observatory (BFO)
+- [Figure 1](): Piercing points in the upper mantle related to SWSMs at the BFO, see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
 
 ### **[002_paper_FGR_GJI_2022]()**
 
-_Related to_: Fröhlich, Yvonne, Grund, Michael & Ritter, Joachim R. R. (2022)\
+_Related to_: Fröhlich, Y., Grund, M. & Ritter, J. R. R. (2022)\
 _Required versions_: PyGMT v0.y.z, GMT 6.4.z
 
-- [Figure 1](): Upper Rhine Graben area with seismological recording stations, and epicenter distribution of used earthquakes
-- [Figure X](): Piercing points in the upper mantle in the Upper Rhine Graben area
+- [Figure 1](): Seismological recording stations in the Upper Rhine Graben (URG) area and epicenter distribution of the used teleseismic earthquakes
+- [Figure X](): Piercing points in the upper mantle related to shear wave splitting measurements at seismological recording stations in the URG area
 
 <!---
 ### **[003_XXX]()**
 
 _Related to_: XXX\
-_Required versions_: PyGMT vx.y.z + GMT 6.y.z
+_Required versions_: PyGMT vx.y.z, GMT 6.y.z
 
 - XXX: XXX
 -->
@@ -41,7 +41,7 @@ _Required versions_: PyGMT vx.y.z + GMT 6.y.z
 
 ## Requirements
 
-For the required versions please have a look at the note for the single folders in the content section.
+For the required versions, please have a look at the note for the single folders in the content section.
 
 - [PyGMT](https://www.pygmt.org/latest/), [GMT](https://www.generic-mapping-tools.org/)
 - [Python](https://www.python.org/), [NumPy](https://numpy.org/) <!---, [Pandas]()-->
@@ -57,7 +57,7 @@ For bug reports, suggestions or recommendations feel free to open an issue or su
 
 [**_Bird, P. (2003)_**](https://doi.org/10.1029/2001GC000252).
 An updated digital model of plate boundaries.
-*Geochemistry, Geophysics, Geosystems*, 4(3), page 1027.
+*Geochemistry, Geophysics, Geosystems*, volume 4, issue 3, page 1027.
 https://doi.org/10.1029/2001GC000252.
 
 [**_Crameri, F. (2021)_**](http://doi.org/10.5281/zenodo.1243862).
