@@ -20,8 +20,8 @@ If you make use of this material, please acknowledge the relating publications i
 _Related to_: Ritter, J. R. R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)\
 _Required versions_: PyGMT v0.3.0, GMT 6.1.1 (Fig. 1); PyGMT v0.7.0, GMT 6.4.0 (Fig. S4)
 
-- [Figure_1](): Piercing points in the upper mantle related to SWSMs at the BFO, see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
-- [Figure_S4](): Piercing points in the lowermost mantle and SKS-SKKS pairs related to shear wave splitting measurements (SWSMs) at the Black Forest Observatory (BFO)
+- [Figure_1](): Piercing points in the upper mantle related to shear wave splitting measurements (SWSM) at the Black Forest Observatory (BFO), see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
+- [Figure_S4](): Piercing points in the lowermost mantle and SKS-SKKS pairs related to SWSMs at the BFO
 
 ### **[002_paper_FGR_GJI_2022]()**
 
