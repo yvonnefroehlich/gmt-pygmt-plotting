@@ -2,7 +2,7 @@
 
 Collection of _Python_ scripts or _Jupyter Notebooks_ (also supported by _Jupyter Lab_) to reproduce some of the geographic maps shown in the publications I am involved. To prepare these maps I am using [PyGMT](https://www.pygmt.org/latest/) the _Python_ wrapper for the [Generic Mapping Tools (GMT)](https://www.generic-mapping-tools.org/).
 
-_Please note_: Scripts or notebooks are available upon acceptance of the related publication.
+_Please note_: The scripts or notebooks are available upon acceptance of the related publication.
 
 
 ## Citation
@@ -18,18 +18,18 @@ If you make use of this material, please acknowledge the relating publications i
 ### **[001_paper_RFSG_JoS_2022]()**
 
 _Related to_: Ritter, J. R. R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)\
-_Required versions_: PyGMT v0.7.0, GMT 6.4.0 (Fig. S4); PyGMT v0.3.0, GMT 6.1.1 (Fig. 1)
+_Required versions_: PyGMT v0.3.0, GMT 6.1.1 (Fig. 1); PyGMT v0.7.0, GMT 6.4.0 (Fig. S4)
 
-- [Figure S4](): Piercing points in the lowermost mantle and SKS-SKKS pairs related to shear wave splitting measurements (SWSMs) at the Black Forest Observatory (BFO)
-- [Figure 1](): Piercing points in the upper mantle related to SWSMs at the BFO, see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
+- [Figure_1](): Piercing points in the upper mantle related to SWSMs at the BFO, see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
+- [Figure_S4](): Piercing points in the lowermost mantle and SKS-SKKS pairs related to shear wave splitting measurements (SWSMs) at the Black Forest Observatory (BFO)
 
 ### **[002_paper_FGR_GJI_2022]()**
 
 _Related to_: Fröhlich, Y., Grund, M. & Ritter, J. R. R. (2022)\
 _Required versions_: PyGMT v0.y.z, GMT 6.4.z
 
-- [Figure 1](): Seismological recording stations in the Upper Rhine Graben (URG) area and epicenter distribution of the used teleseismic earthquakes
-- [Figure X](): Piercing points in the upper mantle related to shear wave splitting measurements at seismological recording stations in the URG area
+- [Figure_1](): Seismological recording stations in the Upper Rhine Graben (URG) area and epicenter distribution of the used teleseismic earthquakes
+- [Figure_X](): Piercing points in the upper mantle related to shear wave splitting measurements at seismological recording stations in the URG area
 
 <!---
 ### **[003_XXX]()**
@@ -37,15 +37,17 @@ _Required versions_: PyGMT v0.y.z, GMT 6.4.z
 _Related to_: XXX\
 _Required versions_: PyGMT vx.y.z, GMT 6.y.z
 
-- [XXX}(): XXX
+- [Figure_X}(): XXX
 -->
 
-FIGRUE
+<!---
+FIGURE
+-->
 
 
 ## Requirements
 
-For the required versions, please have a look at the note for the single folders in the content section.
+_Please note_: The required versions are given in the Content section.
 
 - [PyGMT](https://www.pygmt.org/latest/), [GMT](https://www.generic-mapping-tools.org/)
 - [Python](https://www.python.org/), [NumPy](https://numpy.org/) <!---, [Pandas]()-->
