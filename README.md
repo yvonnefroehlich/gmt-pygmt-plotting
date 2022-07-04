@@ -15,21 +15,21 @@ If you make use of this material, please acknowledge the relating publications i
 
 ## Content
 
-### **[001_paper_RFSG_JoS_2022]()**
+### **[001_paper_RFSG_JoS_2022](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/001_paper_RFSG_JoS_2022)**
 
 _Related to_: Ritter, J. R. R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)\
 _Required versions_: PyGMT v0.3.0, GMT 6.1.1 (Fig. 1); PyGMT v0.7.0, GMT 6.4.0 (Fig. S4)
 
-- [Figure_1](): Piercing points in the upper mantle related to shear wave splitting measurements (SWSM) at the Black Forest Observatory (BFO), see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
-- [Figure_S4](): Piercing points in the lowermost mantle and SKS-SKKS pairs related to SWSMs at the BFO
+- Figure_1: Piercing points in the upper mantle related to shear wave splitting measurements (SWSM) at the Black Forest Observatory (BFO), see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
+- [Figure_S4](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/001_paper_RFSG_JoS_2022/Figure_S4): Piercing points in the lowermost mantle and SKS-SKKS pairs related to SWSMs at the BFO
 
-### **[002_paper_FGR_GJI_2022]()**
+### **[002_paper_FGR_GJI_2022](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/002_paper_FGR_GJI_2022)**
 
 _Related to_: Fröhlich, Y., Grund, M. & Ritter, J. R. R. (2022)\
 _Required versions_: PyGMT v0.y.z, GMT 6.4.z
 
-- [Figure_1](): Seismological recording stations in the Upper Rhine Graben (URG) area and epicenter distribution of the used teleseismic earthquakes
-- [Figure_X](): Piercing points in the upper mantle related to shear wave splitting measurements at seismological recording stations in the URG area
+- [Figure_1](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/002_paper_FGR_GJI_2022/Figure_1): Seismological recording stations in the Upper Rhine Graben (URG) area and epicenter distribution of the used teleseismic earthquakes
+- [Figure_X](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/002_paper_FGR_GJI_2022/Figure_X): Piercing points in the upper mantle related to shear wave splitting measurements (SWSM) at seismological recording stations in the URG area
 
 <!---
 ### **[003_XXX]()**
@@ -37,7 +37,7 @@ _Required versions_: PyGMT v0.y.z, GMT 6.4.z
 _Related to_: XXX\
 _Required versions_: PyGMT vx.y.z, GMT 6.y.z
 
-- [Figure_X}(): XXX
+- [Figure_X](): XXX
 -->
 
 <!---
