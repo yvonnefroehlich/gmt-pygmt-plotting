@@ -85,21 +85,21 @@ PyGMT: A Python interface for the Generic Mapping Tools, version v0.6.1.
 *Zenodo*. https://doi.org/10.5281/zenodo.6426493.
 -->
 
-[**_Uieda, L., Tian, D., Leong, W. J., Jones, M., Schlitzer, W., Grund, M., Toney, L., Yao, J., Magen, Y., Materna, K., Fröhlich, Y., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J., & Wessel, P. (2022)_**](https://doi.org/10.5281/zenodo.6702566).
+[**_Uieda, L., Tian, D., Leong, W. J., Jones, M., Schlitzer, W., Grund, M., Toney, L., Yao, J., Magen, Y., Materna, K., Fröhlich, Y., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2022)_**](https://doi.org/10.5281/zenodo.6702566).
 PyGMT: A Python interface for the Generic Mapping Tools, version v0.7.0.
 *Zenodo*. https://doi.org/10.5281/zenodo.6702566.
 
-[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., & Tian, D. (2019)_**](https://doi.org/10.1029/2019GC008515).
+[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F. & Tian, D. (2019)_**](https://doi.org/10.1029/2019GC008515).
 The Generic Mapping Tools version 6.
 *Geochemistry, Geophysics, Geosystems*, 20, pages 5556-5564.
 https://doi.org/10.1029/2019GC008515.
 
 <!---
-[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., & Esteban, F. (2021)_**](https://doi.org/10.5281/zenodo.5708769).
+[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M. & Esteban, F. (2021)_**](https://doi.org/10.5281/zenodo.5708769).
 The Generic Mapping Tools, version 6.3.0.
 *Zenodo*. https://doi.org/10.5281/zenodo.5708769.
 -->
 
-[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., & Esteban, F. (2022)_**](https://doi.org/10.5281/zenodo.6623271).
+[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M. & Esteban, F. (2022)_**](https://doi.org/10.5281/zenodo.6623271).
 The Generic Mapping Tools, version 6.4.0.
 *Zenodo*. https://doi.org/10.5281/zenodo.6623271.
