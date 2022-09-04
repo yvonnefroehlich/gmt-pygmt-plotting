@@ -10,7 +10,7 @@ _Please note_: The scripts or notebooks are available upon acceptance of the rel
 If you make use of this material, please acknowledge the relating publications in which framework these scripts or notebooks were written:
 
 - **_Fröhlich, Yvonne, Grund, Michael & Ritter, Joachim R. R. (2022)_**. Laterally and vertically varying seismic anisotropy in the lithosphere-asthenosphere system revealed from SK(K)S splitting at neighboring sites in the Upper Rhine Graben area, Central Europe. in preparation for *Geophysical Journal International*.
-- **_Ritter, Joachim R. R., Fröhlich, Yvonne, Sanz Alonso, Yasmin & Grund, Michael (2022)_**. Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures. under review by *Journal of Seismology*.
+- **_Ritter, Joachim R. R., Fröhlich, Yvonne, Sanz Alonso, Yasmin & Grund, Michael (2022)_**. Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures. accepted by *Journal of Seismology*.
 
 
 ## Content
