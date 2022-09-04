@@ -1,0 +1,12 @@
+# GMT legend
+# lowermost mantle - piercing points
+
+N 1
+
+S 0.30c i 0.25c gold 1.0p,black 0.70c station
+G 0.05c
+S 0.30c c 0.20c gray85 1.0p,black 0.70c SKS
+G 0.05c
+S 0.30c s 0.25c gray85 1.0p,black 0.70c SKKS
+G 0.05c
+S 0.30c - 0.50c black 0.2p,black 0.70c ray path

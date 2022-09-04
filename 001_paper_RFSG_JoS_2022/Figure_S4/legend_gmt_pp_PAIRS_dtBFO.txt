@@ -1,0 +1,10 @@
+# GMT legend 
+# lowermost mantle - delay time
+
+N 1
+
+G -0.1c
+#S 0.50c i 0.20c white 1.0p,black 0.85c station
+#G 0.05c
+S 0.50c - 0.5c black 1.0p,black 1.00c @~d@~t@-a@- = 1 s
+G -0.1c

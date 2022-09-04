@@ -1,0 +1,42 @@
+# GMT legend
+# lowermost mantle - SKS-SKKS pairs
+
+N 1
+
+G -0.1c
+
+# null SKS - null SKKS
+S 0.10c C 0.15c white 1.0p,gray50 0.50c null SKS
+G -0.14
+S 0.10c r 0.02c,0.23c gray50 0.1p,gray50 0.75c
+G -0.14
+S 0.10c S 0.15c white 1.0p,gray50 0.50c null SKKS
+
+G 0.17c
+
+# split SKS - split SKKS
+S 0.10c C 0.15c gray50 1.0p,black 0.50c split SKS
+G -0.14
+S 0.10c r 0.02c,0.23c gray50 0.1p,gray50 0.75c
+G -0.14
+S 0.10c S 0.15c gray50 1.0p,black 0.50c split SKKS
+
+G 0.17c
+
+# null SKS - split SKKS
+S 0.10c C 0.15c white 1.0p,205/0/0 0.50c null SKS
+G -0.14
+S 0.10c r 0.02c,0.23c gray50 0.4p,gray50 0.75c
+G -0.14
+S 0.10c S 0.15c 238/118/0 1.0p,black 0.50c split SKKS
+
+G 0.17c
+
+# split SKS - null SKKS
+S 0.10c C 0.15c 205/0/0 1.0p,black 0.50c split SKS
+G -0.14
+S 0.10c r 0.02c,0.23c gray50 0.4p,gray50 0.75c
+G -0.14
+S 0.10c S 0.15c white 1.0p,238/118/0 0.50c null SKKS
+
+G -0.1c
