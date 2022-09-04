@@ -9,7 +9,7 @@ _Please note_: The scripts or notebooks are available upon acceptance of the rel
 
 If you make use of this material, please acknowledge the relating publications in which framework these scripts or notebooks were written:
 
-- **_Fröhlich, Yvonne, Grund, Michael & Ritter, Joachim R. R. (2022)_**. Laterally and vertically varying seismic anisotropy in the lithosphere-asthenosphere system revealed from SK(K)S splitting at neighboring sites in the Upper Rhine Graben area, Central Europe. in preparation for *Geophysical Journal International*.
+- **_Fröhlich, Yvonne, Grund, Michael & Ritter, Joachim R. R. (202X)_**. Laterally and vertically varying seismic anisotropy in the lithosphere-asthenosphere system revealed from SK(K)S splitting at neighboring sites in the Upper Rhine Graben area, Central Europe. in preparation for *Geophysical Journal International*.
 - **_Ritter, Joachim R. R., Fröhlich, Yvonne, Sanz Alonso, Yasmin & Grund, Michael (2022)_**. Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures. accepted by *Journal of Seismology*.
 
 
@@ -25,7 +25,7 @@ _Required versions_: PyGMT v0.3.0, GMT 6.1.1 (Fig. 1); PyGMT v0.7.0, GMT 6.4.0 (
 
 ### **[002_paper_FGR_GJI_2022](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/002_paper_FGR_GJI_2022)**
 
-_Related publication_: Fröhlich, Y., Grund, M. & Ritter, J. R. R. (2022)\
+_Related publication_: Fröhlich, Y., Grund, M. & Ritter, J. R. R. (202X)\
 _Required versions_: PyGMT v0.y.z, GMT 6.4.z
 
 - [Figure_1](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/002_paper_FGR_GJI_2022/Figure_1): Seismological recording stations in the Upper Rhine Graben (URG) area and epicenter distribution of the used teleseismic earthquakes
