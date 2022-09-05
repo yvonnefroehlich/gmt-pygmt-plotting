@@ -1,6 +1,6 @@
 # Python Scripts or Jupyter Notebooks using PyGMT
 
-Collection of _Python_ scripts or _Jupyter Notebooks_ (also supported by _Jupyter Lab_) to reproduce some of the geographic maps shown in the publications I am involved. To prepare these maps I am using [PyGMT](https://www.pygmt.org/latest/) the _Python_ wrapper for the [Generic Mapping Tools (GMT)](https://www.generic-mapping-tools.org/).
+Collection of Python scripts or Jupyter Notebooks (also supported by Jupyter Lab) to reproduce some of the geographic maps shown in the publications I am involved. To prepare these maps I am using [_PyGMT_](https://www.pygmt.org/latest/) the _Python_ wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org/).
 
 _Please note_: The scripts or notebooks are available upon acceptance of the related publication.
 
@@ -9,8 +9,8 @@ _Please note_: The scripts or notebooks are available upon acceptance of the rel
 
 If you make use of this material, please acknowledge the relating publications in which framework these scripts or notebooks were written:
 
-- **_Fröhlich, Yvonne, Grund, Michael & Ritter, Joachim R. R. (2022)_**. Laterally and vertically varying seismic anisotropy in the lithosphere-asthenosphere system revealed from SK(K)S splitting at neighboring sites in the Upper Rhine Graben area, Central Europe. in preparation for *Geophysical Journal International*.
-- **_Ritter, Joachim R. R., Fröhlich, Yvonne, Sanz Alonso, Yasmin & Grund, Michael (2022)_**. Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures. under review by *Journal of Seismology*.
+- **_Fröhlich, Yvonne, Grund, Michael & Ritter, Joachim R. R. (202X)_**. Laterally and vertically varying seismic anisotropy in the lithosphere-asthenosphere system revealed from SK(K)S splitting at neighboring sites in the Upper Rhine Graben area, Central Europe. in preparation for *Geophysical Journal International*.
+- **_Ritter, Joachim R. R., Fröhlich, Yvonne, Sanz Alonso, Yasmin & Grund, Michael (2022)_**. Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures. accepted by *Journal of Seismology*.
 
 
 ## Content
@@ -18,14 +18,16 @@ If you make use of this material, please acknowledge the relating publications i
 ### **[001_paper_RFSG_JoS_2022](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/001_paper_RFSG_JoS_2022)**
 
 _Related publication_: Ritter, J. R. R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)\
-_Required versions_: PyGMT v0.3.0, GMT 6.1.1 (Fig. 1); PyGMT v0.7.0, GMT 6.4.0 (Fig. S4)
+_Required versions_: PyGMT v0.3.0, GMT 6.1.1 (Figure_1); PyGMT v0.7.0, GMT 6.4.0 (Figure_S4)
 
-- Figure_1: Piercing points in the upper mantle related to shear wave splitting measurements (SWSM) at the Black Forest Observatory (BFO), see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
-- [Figure_S4](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/001_paper_RFSG_JoS_2022/Figure_S4): Piercing points in the lowermost mantle and SKS-SKKS pairs related to SWSMs at the BFO
+- Figure_1: Piercing points in the upper mantle related to shear wave splitting measurements (SWSMs) at the Black Forest Observatory (BFO), see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
+- [Figure_S4](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/001_paper_RFSG_JoS_2022/Figure_S4): Piercing points and SKS-SKKS pairs in the lowermost mantle related to SWSMs at BFO
+
+![github_map_figures4readme_BFO](https://user-images.githubusercontent.com/94163266/188328824-d53c1620-fb27-4d9f-9c3f-9e73921c2832.png)
 
 ### **[002_paper_FGR_GJI_2022](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/002_paper_FGR_GJI_2022)**
 
-_Related publication_: Fröhlich, Y., Grund, M. & Ritter, J. R. R. (2022)\
+_Related publication_: Fröhlich, Y., Grund, M. & Ritter, J. R. R. (202X)\
 _Required versions_: PyGMT v0.y.z, GMT 6.4.z
 
 - [Figure_1](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/002_paper_FGR_GJI_2022/Figure_1): Seismological recording stations in the Upper Rhine Graben (URG) area and epicenter distribution of the used teleseismic earthquakes
