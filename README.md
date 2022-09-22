@@ -31,7 +31,7 @@ _Related publication_: Fröhlich, Y., Grund, M. & Ritter, J. R. R. (202X)\
 _Required versions_: PyGMT v0.y.z, GMT 6.4.z
 
 - [Figure_1](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/002_paper_FGR_GJI_2022/Figure_1): Seismological recording stations in the Upper Rhine Graben (URG) area and epicenter distribution of the used teleseismic earthquakes
-- [Figure_X](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/002_paper_FGR_GJI_2022/Figure_X): Piercing points in the upper mantle related to shear wave splitting measurements (SWSM) at seismological recording stations in the URG area
+- [Figure_X](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/002_paper_FGR_GJI_2022/Figure_X): Piercing points in the upper mantle related to shear wave splitting measurements (SWSMs) at seismological recording stations in the URG area
 
 <!---
 ### **[003_XXX]()**
