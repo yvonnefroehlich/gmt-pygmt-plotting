@@ -1,6 +1,6 @@
 # Python Scripts or Jupyter Notebooks using PyGMT
 
-Collection of Python scripts or Jupyter Notebooks (also supported by Jupyter Lab) to reproduce some of the geographic maps shown in the publications I am involved. To prepare these maps I am using [_PyGMT_](https://www.pygmt.org/latest/) the _Python_ wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org/).
+Collection of Python scripts or Jupyter Notebooks (also supported by Jupyter Lab) to reproduce some of the geographic maps shown in the publications I am involved. To prepare these maps I am using [_PyGMT_](https://www.pygmt.org/latest/) the Python wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org/).
 
 _Please note_: The scripts or notebooks are available upon acceptance of the related publication.
 
