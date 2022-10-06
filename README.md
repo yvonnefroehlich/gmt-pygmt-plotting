@@ -10,14 +10,14 @@ _Please note_: The scripts or notebooks are available upon acceptance of the rel
 If you make use of this material, please acknowledge the relating publications in which framework these scripts or notebooks were written:
 
 - **_Fröhlich, Yvonne, Grund, Michael & Ritter, Joachim R. R. (202X)_**. Laterally and vertically varying seismic anisotropy in the lithosphere-asthenosphere system revealed from SK(K)S splitting at neighboring sites in the Upper Rhine Graben area, Central Europe. in preparation for *Geophysical Journal International*.
-- **_Ritter, Joachim R. R., Fröhlich, Yvonne, Sanz Alonso, Yasmin & Grund, Michael (2022)_**. Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures. accepted by *Journal of Seismology*. DOI: 10.1007/s10950-022-10112-w.
+- [**_Ritter, Joachim R. R., Fröhlich, Yvonne, Sanz Alonso, Yasmin & Grund, Michael (2022)_**](https://doi.org/10.1007/s10950-022-10112-w). Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures. accepted by *Journal of Seismology*. https://doi.org/10.1007/s10950-022-10112-w.
 
 
 ## Content
 
 ### **[001_paper_RFSG_JoS_2022](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/001_paper_RFSG_JoS_2022)**
 
-_Related publication_: Ritter, J. R. R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)\
+_Related publication_: [Ritter, J. R. R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)](https://doi.org/10.1007/s10950-022-10112-w)\
 _Required versions_: PyGMT v0.7.0, GMT 6.4.0 (Figure_S4)
 
 - [Figure_1](https://github.com/michaelgrund/GMT-plotting/tree/main/010_paper_RFSG2022): Piercing points in the upper mantle related to shear wave splitting measurements (SWSMs) at the Black Forest Observatory (BFO), see [GMT-plotting](https://github.com/michaelgrund/GMT-plotting) by [Michael Grund](https://github.com/michaelgrund)
