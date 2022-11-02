@@ -2,7 +2,7 @@
 
 Collection of Python scripts or Jupyter Notebooks (also supported by Jupyter Lab) to reproduce some of the geographic maps shown in the publications I am involved. To prepare these maps I am using [_PyGMT_](https://www.pygmt.org/latest/) the Python wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org/).
 
-_Please note_: The scripts or notebooks are available upon acceptance of the related publication.
+_Please note_: Scripts or notebooks are available upon acceptance of the related publication.
 
 
 ## Citation
@@ -49,7 +49,7 @@ FIGURE
 
 ## Requirements
 
-_Please note_: The required versions are given in the Content section.
+_Please note_: The required versions are given above in the Content section.
 
 - [PyGMT](https://www.pygmt.org/latest/), [GMT](https://www.generic-mapping-tools.org/)
 - [Python](https://www.python.org/), [NumPy](https://numpy.org/) <!---, [Pandas]()-->
@@ -58,7 +58,7 @@ _Please note_: The required versions are given in the Content section.
 
 ## Contributing
 
-For bug reports, suggestions or recommendations feel free to open an issue or submit a pull request directly here on GitHub.
+For bug reports, suggestions, or recommendations feel free to open an issue or submit a pull request directly here on GitHub.
 
 
 ## References
@@ -73,12 +73,12 @@ Scientific colour maps. *Zenodo*. http://www.fabiocrameri.ch/colourmaps.php. htt
 
 [**_Grimmer, J., Ritter, J. R. R., Eisbacher, H. & Fielitz, W. (2017)_**](https://doi.org/10.1007/s00531-016-1336-x).
 The Late Variscan control on the location and asymmetry of the Upper Rhine Graben.
-*International Journal of Earth Sciences*, volume 106, pages 827–853.
+*International Journal of Earth Sciences*, volume 106, pages 827-853.
 https://doi.org/10.1007/s00531-016-1336-x.
 
 [**_Thyng, K. M., Greene, C. A., Hetland, R. D., Zimmerle, H. M. & DiMarco, S. F. (2016)_**](http://dx.doi.org/10.5670/oceanog.2016.66).
 True colors of oceanography: Guidelines for effective and accurate colormap selection.
-*Oceanography*, volume 29, issue 3, pages 9–13.
+*Oceanography*, volume 29, issue 3, pages 9-13.
 http://dx.doi.org/10.5670/oceanog.2016.66.
 
 <!---
@@ -93,12 +93,12 @@ PyGMT: A Python interface for the Generic Mapping Tools, version v0.7.0.
 
 [**_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J. F. & Wobbe. F. (2013)_**](https://doi.org/10.1002/2013EO450001).
 Generic mapping tools: improved version released.
-*Eos*, volume 94, issue 45, pages 409-410.
+*Eos, Transactions American Geophysical Union*, volume 94, issue 45, pages 409-410.
 https://doi.org/10.1002/2013EO450001.
 
 [**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F. & Tian, D. (2019)_**](https://doi.org/10.1029/2019GC008515).
 The Generic Mapping Tools version 6.
-*Geochemistry, Geophysics, Geosystems*, 20, pages 5556-5564.
+*Geochemistry, Geophysics, Geosystems*, volume 20, issue 11, pages 5556-5564.
 https://doi.org/10.1029/2019GC008515.
 
 <!---
