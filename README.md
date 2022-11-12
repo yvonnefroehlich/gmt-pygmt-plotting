@@ -58,7 +58,7 @@ _Please note_: The required versions are given above in the Content section.
 
 ## Contributing
 
-For bug reports, suggestions, or recommendations feel free to open an issue or submit a pull request directly here on GitHub.
+For bug reports, suggestions, or recommendations feel free to [open an issue](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/issues) or [submit a pull request](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/pulls) directly here on [GitHub](https://github.com/yvonnefroehlich/gmt-pygmt-plotting).
 
 
 ## References
