@@ -16,7 +16,7 @@ If you make use of this material, please acknowledge the relating publications i
 
 - **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/001_paper_RFSG_2022)**
   - Related publication: [Ritter, J. R. R., Fröhlich, Y., Sanz Alonso, Y. & Grund, M. (2022)](https://doi.org/10.1007/s10950-022-10112-w)
-  - Required versions: PyGMT v0.7.0, GMT 6.4.0 (Figure_S4)
+  - Required versions: PyGMT v0.7.0, GMT 6.4.0
 
 ![github_map_figures4readme_BFO](https://user-images.githubusercontent.com/94163266/188328824-d53c1620-fb27-4d9f-9c3f-9e73921c2832.png)
 
