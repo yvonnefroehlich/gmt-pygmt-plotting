@@ -24,7 +24,7 @@ If you make use of this material, please acknowledge the relating publications i
 
 ## Requirements
 
-_Please note_: The required versions are given above in the Content section.
+_Please note_: The required versions are given above in the Content section as well as in the single folders.
 
 - [PyGMT](https://www.pygmt.org/latest/), [GMT](https://www.generic-mapping-tools.org/)
 - [Python](https://www.python.org/), [NumPy](https://numpy.org/)
