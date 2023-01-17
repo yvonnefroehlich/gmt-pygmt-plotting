@@ -46,14 +46,6 @@ An updated digital model of plate boundaries.
 *Geochemistry, Geophysics, Geosystems*, volume 4, issue 3, page 1027.
 https://doi.org/10.1029/2001GC000252.
 
-[**_Crameri, F. (2021)_**](http://doi.org/10.5281/zenodo.1243862).
-Scientific colour maps. *Zenodo*. http://www.fabiocrameri.ch/colourmaps.php. http://doi.org/10.5281/zenodo.1243862.
-
-[**_Grimmer, J., Ritter, J. R. R., Eisbacher, H. & Fielitz, W. (2017)_**](https://doi.org/10.1007/s00531-016-1336-x).
-The Late Variscan control on the location and asymmetry of the Upper Rhine Graben.
-*International Journal of Earth Sciences*, volume 106, pages 827-853.
-https://doi.org/10.1007/s00531-016-1336-x.
-
 [**_Thyng, K. M., Greene, C. A., Hetland, R. D., Zimmerle, H. M. & DiMarco, S. F. (2016)_**](http://dx.doi.org/10.5670/oceanog.2016.66).
 True colors of oceanography: Guidelines for effective and accurate colormap selection.
 *Oceanography*, volume 29, issue 3, pages 9-13.
