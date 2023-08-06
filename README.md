@@ -50,7 +50,7 @@ http://dx.doi.org/10.5670/oceanog.2016.66.
 
 [**_Uieda, L., Tian, D., Leong, W. J., Jones, M., Schlitzer, W., Grund, M., Toney, L., Yao, J., Magen, Y., Materna, K., Fröhlich, Y., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2022)_**](https://doi.org/10.5281/zenodo.6702566).
 PyGMT: A Python interface for the Generic Mapping Tools, version v0.7.0.
-*Zenodo*. https://doi.org/10.5281/zenodo.6702566.
+*Zenodo*. https://doi.org/10.5281/zenodo.6702566 (v0.7.0). https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
 
 [**_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J. F. & Wobbe. F. (2013)_**](https://doi.org/10.1002/2013EO450001).
 Generic mapping tools: improved version released.
