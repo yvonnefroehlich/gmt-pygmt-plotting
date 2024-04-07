@@ -18,7 +18,7 @@ If you make use of this material, please acknowledge the relating publications i
 - **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)**: Maps of [**_Ritter J. R. R., Fröhlich Y., Sanz Alonso Y. & Grund M. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w)
 - **[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions)**: Maps of selected earthquakes and eruptions between 2021 and present
 
-![github_map_figures4readme_main](https://github.com/yvonnefroehlich/maps-afterphd/assets/94163266/1e0c5f5c-d488-45bd-8964-1d42cef29759)
+![github_map_figures4readme_main_taup](https://github.com/yvonnefroehlich/maps-afterphd/assets/94163266/644b921a-4239-4818-845e-3b3cb670eca5)
 
 
 ## Requirements
