@@ -1,0 +1,5 @@
+# Beachball of Esmeraldas earthquake
+# 
+# For usage in GMT / PyGMT
+# lon lat hdepth strike dip rake magnitude
+-79.611 0.904 19.0 166 80 74 5.8

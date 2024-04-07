@@ -1,0 +1,6 @@
+# Beachballs of Turkey Syria earthquake
+# 
+# For usage in GMT / PyGMT
+# lon_eq lat_eq hdepth strike dip rake magnitude lon_plot lat_plot 
+37.042 37.166 17.5 318 89 -179 7.75 36.0 37.5
+37.203 38.024 10.0 277 78    4 7.55 36.0 38.5

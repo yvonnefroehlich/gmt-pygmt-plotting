@@ -1,0 +1,10 @@
+# Infos on Tonga eruption
+#
+# For usage in GMT / PyGMT 
+# paragraph mode
+# x y [font angle justify] linespace parwidth parjust
+# new line by blank line
+> -173.7 -21 13p 5c l
+Coordinates: -20.545@.N, -175.393@.E
+
+Date: 2022/Jan/14-15
