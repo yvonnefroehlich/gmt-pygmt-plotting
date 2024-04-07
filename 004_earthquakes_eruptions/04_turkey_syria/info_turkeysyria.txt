@@ -1,0 +1,56 @@
+# Infos on Turkey Syria earthquake
+#
+# For usage in GMT / PyGMT
+# paragraph mode
+# x y [font angle justify] linespace parwidth parjust
+# new line by blank line
+> 39.1 38.0 13p 4.3c l
+(1)  2023/02/06 at 01:17:35 (UTC)
+
+- Mw 7.8
+
+- Central Turkey
+
+- 37.042@.E, 37.166@.N
+
+- 17.9 km depth
+
+----------------------------------------------
+
+(2)  2023/02/06 at 01:28:15 (UTC)
+
+- Mw 6.7
+
+- Central Turkey
+
+- 36.943@.E, 37.127@.N
+
+- 14.5 km depth
+
+----------------------------------------------
+
+(3)  2023/02/06 at 10:24:49 (UTC)
+
+- Mw 7.5
+
+- 4 km SSE of Ekinözü, Turkey
+
+- 37.203@.E, 38.024@.N
+
+- 10.0 km depth
+
+----------------------------------------------
+
+(4)  2023/02/06 at 12:02:11 (UTC)
+
+- Mw 6.0
+
+- 5 km NE of Göksun, Turkey
+
+- 36.537@.E, 38.061@.N
+
+- 10.0 km depth
+
+----------------------------------------------
+
+source: USGS 2023/02/11

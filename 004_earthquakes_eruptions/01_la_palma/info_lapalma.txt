@@ -1,0 +1,10 @@
+# Infos on LaPalma eruption
+#
+# For usage in GMT / PyGMT 
+# paragraph mode
+# x y [font angle justify] linespace parwidth parjust
+# new line by blank line
+> -16 29.50 13p 5c l
+Coordinates: -17.84@.E, 28.57@.N
+
+Date: 2021/Sep/19 - 2021/Dec/13

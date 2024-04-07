@@ -1,0 +1,14 @@
+# Infos on Esmeraldas earthquake
+#
+# For usage in GMT / PyGMT
+# paragraph mode
+# x y [font angle justify] linespace parwidth parjust
+# new line by blank line
+> -80 3 13p 4.7c l
+Date: 2022/03/27 at 04:28:12 (UTC)
+
+Epicenter: -79.611@.E, -0.904@.N
+
+Hypocentral depth: 19.0 km
+
+Moment magnitude: 5.8
