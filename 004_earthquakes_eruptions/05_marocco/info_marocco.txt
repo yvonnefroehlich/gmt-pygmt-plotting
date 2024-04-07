@@ -1,4 +1,4 @@
-# Infos on Marokko earthquake
+# Infos on Marocco earthquake
 #
 # For usage in GMT / PyGMT
 # paragraph mode

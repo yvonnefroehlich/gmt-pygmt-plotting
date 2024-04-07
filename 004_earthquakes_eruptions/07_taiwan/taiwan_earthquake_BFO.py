@@ -31,9 +31,9 @@ from taup_path import taup_path
 col_sta = "255/215/0"
 col_eq = "255/90/0"
 col_pd = "216.750/82.875/24.990"
-col_land = "gray90"
 col_water = "steelblue"
-col_shorelines = "darkgray"
+col_land = "gray70"
+col_shorelines = "gray30"
 col_phase = "magenta"
 dict_col_phase = {
     "P": "navyblue",
@@ -363,7 +363,7 @@ fig.plot(
 fig.plot(
     x=lon_epi,
     y=lat_epi,
-    style="kearthquake.def/1.7c",
+    style="kearthquake.def/1.8c",
     fill=col_eq,
     pen=col_eq,
     transparency=30,
@@ -644,7 +644,7 @@ print("status: Travel paths")
 fig.show() # method="external")
 
 fig_name = "taiwan_earthquake_BFO"
-for ext in ["png"]: # , "pdf", "eps"]:
-    fig.savefig(fname=f"{fig_name}.{ext}")
+# for ext in ["png"]: # , "pdf", "eps"]:
+#     fig.savefig(fname=f"{fig_name}.{ext}")
 
 print(fig_name)

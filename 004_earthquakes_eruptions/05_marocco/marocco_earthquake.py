@@ -1,5 +1,5 @@
 # #############################################################################
-# Marokko earthquake on 2023/09/08 at 22:11:02 (UTC)
+# Marocco earthquake on 2023/09/08 at 22:11:02 (UTC)
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
 # ORCID: https://orcid.org/0000-0002-8566-0619
@@ -18,7 +18,7 @@ import pygmt as gmt
 # General stuff
 # -----------------------------------------------------------------------------
 # >>> Set for your needs <<<
-fig_name = "marokko_earthquake"  # Name of output figure
+fig_name = "marocco_earthquake"  # Name of output figure
 png_dpi = 360  # Resolution of output png
 grid_res = "05m"  # Resolution of elevation grid
 grid_reg = "g"  # Registration of elevation grid
@@ -108,7 +108,7 @@ fig.plot(
 # Beachball
 pen_epi = "0.5p,black"
 fig.meca(
-    spec="meca_marokko.txt",
+    spec="meca_marocco.txt",
     convention="aki",
     scale="1c",
     compressionfill=color_highlight,  # fill color of compressive quadrants
@@ -119,7 +119,7 @@ fig.meca(
 fig.text(
     x=lon_eq,
     y=lat_eq,
-    text="Marokko",
+    text="Marocco",
     font="8p,Helvetica-Bold,black",
     offset="-0.5c/-0.8c",
     fill="white@30",
@@ -129,7 +129,7 @@ fig.text(
 # Info text
 # Adjust position in txt file
 fig.text(
-    textfiles="info_marokko.txt",
+    textfiles="info_marocco.txt",
     M=True,  # paragraph mode # read from file
     font="8p,black",
     fill="white@30",

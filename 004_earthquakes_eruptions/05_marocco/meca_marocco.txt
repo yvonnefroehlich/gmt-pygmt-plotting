@@ -1,4 +1,4 @@
-# Beachball of Marokko earthquake
+# Beachball of Marocco earthquake
 #
 # For usage in GMT / PyGMT
 # lon_eq lat_eq hdepth strike dip rake magnitude lon_plot lat_plot
