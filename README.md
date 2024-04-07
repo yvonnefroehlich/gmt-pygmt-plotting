@@ -9,23 +9,12 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 
 If you make use of this material, please acknowledge the relating publications in which framework these scripts and notebooks were written:
 
-- [**_Fröhlich Y., Thiyagarajan H., Tölle L., Ritter J. R. R., Thomas C. (2024)_**](https://doi.org/10.5281/zenodo.10927349). Understanding the influence of seismic mantle structures at the core-mantle boundary on intense magnetic flux regions. *84th Annual Meeting of the German Geophysical Society in Jena*, proceedings, 181-182. https://doi.org/10.5281/zenodo.10927349.
 - [**_Ritter J. R. R., Fröhlich Y., Sanz Alonso Y. & Grund M. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w). Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures. *Journal of Seismology*, 26, 1137-1156. https://doi.org/10.1007/s10950-022-10112-w.
 
 
 ## Content
 
 - **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)**
-- **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024)**
-- **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup)**
-- **[004_earthquake_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_eartquake_eruptions)**
-- **[005_global_seismicity](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/005_global_seismicity)**
-- **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases)**
-- **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)**
-- **[008_axisem3d](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/008_axisem3d)**
-- **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn)**
-- **[010_swsm_lmm](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_swsm_lmm)**
-- **[011_swsm_meca](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_swsm_meca)**
 
 ![github_map_figures4readme_DGG](https://github.com/yvonnefroehlich/maps-afterphd/assets/94163266/cb6642f7-657e-42ab-a623-501ba69911c5)
 
@@ -39,9 +28,6 @@ _Please note_: The required versions are given above in the single folders as we
 - [Python](https://www.python.org/)
 - [Jupyter notebook](https://jupyter.org/) or [JupyterLab](https://jupyter.org/)
 - [NumPy](https://numpy.org/)
-- [Pandas](https://pandas.pydata.org/)
-- [ObsPy](https://docs.obspy.org/)
-- [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal/)
 
 
 ## Contributing
