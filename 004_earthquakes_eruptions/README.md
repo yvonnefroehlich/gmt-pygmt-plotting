@@ -13,4 +13,4 @@ _Recommended versions_: PyGMT v0.11.0, GMT 6.4.0
 - **[06_japan](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/004_earthquakes_eruptions/06_japan)**: Earthquake, 2024/01/01 at 07:10 (UTC)
 - **[07_taiwan](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/004_earthquakes_eruptions/07_taiwan)**: Earthquake, 2024/04/02 at 23:58 (UTC)
 
-![github_map_figures4readme_events](https://github.com/yvonnefroehlich/maps-afterphd/assets/94163266/3319f87e-aa08-4fc3-9acf-87974b384499)
+![github_map_figures4readme_events](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/assets/94163266/99961842-007c-4be8-96d4-b56a4afad551)
