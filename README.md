@@ -16,7 +16,7 @@ If you make use of this material, please acknowledge the relating publications i
 
 - **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)**
 
-![github_map_figures4readme_DGG](https://github.com/yvonnefroehlich/maps-afterphd/assets/94163266/cb6642f7-657e-42ab-a623-501ba69911c5)
+![github_map_figures4readme_BFO](https://user-images.githubusercontent.com/94163266/188328127-37e049b8-bdfa-40ef-a1e1-5af4a6955ef8.png)
 
 
 ## Requirements
