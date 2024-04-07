@@ -50,8 +50,10 @@ file_plate_in = "plate_boundaries_Bird_2003.txt"
 # -----------------------------------------------------------------------------
 # Colors
 color_water = "steelblue"
-color_land = "gray70"
-color_shorelines = "gray50"
+color_land_ortho = "gray70"
+color_shorelines_ortho = "gray30"
+color_land = "gray90"
+color_shorelines = "darkgray"
 color_sta = "gold"
 color_plate = "216.750/82.875/24.990"  # -> darkorange
 color_highlight = "255/90/0"  # -> orange
@@ -169,10 +171,7 @@ gmt.config(MAP_SCALE_HEIGHT="7p")
 basemap_scale = f"JLB+jLB+w200+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}" + \
                 "+f+lkm+at+o0.45c/0.55c"
 
-fig.basemap(
-    map_scale=basemap_scale,
-    box=box_standard,  # Box around map scale
-)
+fig.basemap(map_scale=basemap_scale, box=box_standard)
 
 # -----------------------------------------------------------------------------
 # Inset map of study region
@@ -191,8 +190,8 @@ with fig.inset(position=pos_study_inset):
         projection=project_study,
         resolution="c",
         area_thresh=50000,
-        shorelines=f"1/0.01p,{color_shorelines}",
-        land=color_land,
+        shorelines=f"1/0.01p,{color_shorelines_ortho}",
+        land=color_land_ortho,
         water=color_water,
         frame="g",
     )

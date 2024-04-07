@@ -32,9 +32,12 @@ col_sta = "255/215/0"
 col_eq = "255/90/0"
 col_pd = "216.750/82.875/24.990"
 col_water = "steelblue"
-col_land = "gray70"
-col_shorelines = "gray30"
-col_phase = "magenta"
+col_land_ortho = "gray70"
+col_shorelines_ortho = "gray30"
+col_land = "gray90"
+col_shorelines = "darkgray"
+
+# Must be the same as in the taup_path function!
 dict_col_phase = {
     "P": "navyblue",
     "S": "blue",
@@ -287,8 +290,8 @@ with fig.inset(position="jTL+o0.1c+w3c"):
         projection=f"G{(lon_min + lon_max) / 2}/{(lat_min + lat_max) / 2}/?",
         area_thresh="50000",
         resolution="c",
-        shorelines=f"1/0.01p,{col_shorelines}",
-        land=col_land,
+        shorelines=f"1/0.01p,{col_shorelines_ortho}",
+        land=col_land_ortho,
         water=col_water,
         frame="g",
     )
