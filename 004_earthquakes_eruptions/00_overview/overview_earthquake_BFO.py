@@ -129,7 +129,7 @@ fig.text(
 fig.show() # method="external")
 
 fig_name = "overview_earthquake_BFO"
-for ext in ["png"]: # , "pdf", "eps"]:
-    fig.savefig(fname=f"{fig_name}.{ext}")
+# for ext in ["png"]: # , "pdf", "eps"]:
+#     fig.savefig(fname=f"{fig_name}.{ext}")
 
 print(fig_name)

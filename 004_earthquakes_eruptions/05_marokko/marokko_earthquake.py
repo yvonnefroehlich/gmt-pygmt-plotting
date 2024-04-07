@@ -188,7 +188,7 @@ with fig.inset(position=pos_study_inset):
 # Show and save figure
 fig.show()
 
-for ext in ["png"]: # , "pdf", "eps"]:
-    fig.savefig(fname=f"{fig_name}.{ext}")
+# for ext in ["png"]: # , "pdf", "eps"]:
+#     fig.savefig(fname=f"{fig_name}.{ext}")
 
 print(fig_name)

@@ -202,7 +202,7 @@ fig.show()
 # passed to the "dpi" parameter
 fig.show()
 
-for ext in ["png"]: # , "pdf", "eps"]:
-    fig.savefig(fname=f"{fig_name}.{ext}")
+# for ext in ["png"]: # , "pdf", "eps"]:
+#     fig.savefig(fname=f"{fig_name}.{ext}")
 
 print(fig_name)

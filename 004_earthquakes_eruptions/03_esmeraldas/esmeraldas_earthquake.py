@@ -291,7 +291,7 @@ with fig.inset(position=pos_epi_inset):
 # Show and save figure
 fig.show()
 
-for ext in ["png"]: # , "pdf", "eps"]:
-    fig.savefig(fname=f"{fig_name}.{ext}")
+# for ext in ["png"]: # , "pdf", "eps"]:
+#     fig.savefig(fname=f"{fig_name}.{ext}")
 
 print(png_dpi)
