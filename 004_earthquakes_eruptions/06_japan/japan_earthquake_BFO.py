@@ -20,7 +20,7 @@ from obspy import UTCDateTime as utc
 from obspy.clients.fdsn import Client as Client_fdsn
 from obspy.taup import TauPyModel
 
-from taup_path_time import taup_path
+from taup_path import taup_path
 
 
 # %%
@@ -638,7 +638,7 @@ fig.show()
 fig.show() # method="external")
 
 fig_name = "japan_earthquake_BFO"
-# for ext in ["png"]: # , "pdf", "eps"]:
-#     fig.savefig(fname=f"{fig_name}.{ext}")
+for ext in ["png"]: # , "pdf", "eps"]:
+    fig.savefig(fname=f"{fig_name}.{ext}")
 
 print(fig_name)
