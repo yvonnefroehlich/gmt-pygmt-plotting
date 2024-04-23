@@ -8,6 +8,8 @@
 # - Created: 2024/04/07
 #   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
+# - Updated: 2024/04/23
+#   Improve coding style
 # #############################################################################
 
 import contextily as ctx
