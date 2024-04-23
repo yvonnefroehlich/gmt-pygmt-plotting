@@ -8,11 +8,11 @@
 # - Created: 2024/04/07
 #   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
+# - Updated: 2024/04/23
+#   Improve coding style
 # #############################################################################
 
-
 import pygmt as gmt
-
 
 # -----------------------------------------------------------------------------
 # General stuff
@@ -55,7 +55,7 @@ lat_max = 30
 project_use = "M12c"  # Mercator
 
 
-#%%
+# %%
 # -----------------------------------------------------------------------------
 # Make geographic map
 # -----------------------------------------------------------------------------
@@ -152,8 +152,10 @@ fig.show()
 # Add length scale
 gmt.config(MAP_SCALE_HEIGHT="7p")
 
-basemap_scale = f"JLB+jLB+w50+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}" + \
-                "+f+lkm+at+o0.45c/0.55c"
+basemap_scale = (
+    f"JLB+jLB+w50+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}"
+    + "+f+lkm+at+o0.45c/0.55c"
+)
 
 fig.basemap(map_scale=basemap_scale, box=box_standard)
 
@@ -164,7 +166,6 @@ fig.show()
 # -----------------------------------------------------------------------------
 # Inset map of study region
 with fig.inset(position=pos_study_inset):
-
     # >>> use ? <<<
 
     # Orthographic projection

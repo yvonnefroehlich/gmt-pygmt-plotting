@@ -8,20 +8,19 @@
 # - Created: 2024/04/07
 #   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
+# - Updated: 2024/04/23
+#   Improve coding style
 # #############################################################################
-
 
 import contextily as ctx
 import numpy as np
 import pandas as pd
 import pygmt as gmt
-from obspy.geodetics.base import gps2dist_azimuth
 from obspy import UTCDateTime as utc
 from obspy.clients.fdsn import Client as Client_fdsn
+from obspy.geodetics.base import gps2dist_azimuth
 from obspy.taup import TauPyModel
-
 from taup_path import taup_path
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -82,15 +81,27 @@ lat_epi = 37.23
 
 # Focal mechanisem
 aki_eq_jp = {
-    "strike": 213, "dip": 50, "rake": 79, "magnitude": 7.5, "depth": 10,
+    "strike": 213,
+    "dip": 50,
+    "rake": 79,
+    "magnitude": 7.5,
+    "depth": 10,
 }
-eq_info = "Date " + "2024-01-01 07:10:09 (UTC)" + " | " \
-          f"Location {lon_epi}° E, {lat_epi}° N | " \
-          "Mw " + str(aki_eq_jp["magnitude"]) + " | " \
-          "Hypocentral depth " + str(aki_eq_jp["depth"]) + " km | " \
-          "Strike " + str(aki_eq_jp["strike"]) + "°, " + \
-          "Dip " + str(aki_eq_jp["dip"]) + "°, " + \
-          "Rake " + str(aki_eq_jp["rake"]) + "°"
+eq_info = (
+    "Date " + "2024-01-01 07:10:09 (UTC)" + " | "
+    f"Location {lon_epi}° E, {lat_epi}° N | "
+    "Mw " + str(aki_eq_jp["magnitude"]) + " | "
+    "Hypocentral depth " + str(aki_eq_jp["depth"]) + " km | "
+    "Strike "
+    + str(aki_eq_jp["strike"])
+    + "°, "
+    + "Dip "
+    + str(aki_eq_jp["dip"])
+    + "°, "
+    + "Rake "
+    + str(aki_eq_jp["rake"])
+    + "°"
+)
 
 inc = 8  # SKS phase in degrees
 
@@ -119,7 +130,7 @@ lon_min = 130.79
 lon_max = 151.39
 lat_min = 33.52
 lat_max = 51.27
-region_jp = [lon_min, lon_max, lat_min, lat_max]  #"JP+r1"
+region_jp = [lon_min, lon_max, lat_min, lat_max]  # "JP+r1"
 
 
 # %%
@@ -129,25 +140,38 @@ region_jp = [lon_min, lon_max, lat_min, lat_max]  #"JP+r1"
 # Set up request
 # see https://earthquake.usgs.gov/fdsnws/event/1/
 # last access: 2024/01/04
-url_usgs = 'https://earthquake.usgs.gov/fdsnws/event/1/query.csv'
+url_usgs = "https://earthquake.usgs.gov/fdsnws/event/1/query.csv"
 
-start_date_request = '2000-01-01'
-end_date_request = '2023-12-31'
-min_magnitude_request = '6'
-max_magnitude_request = '10'
-order_records = 'time-asc'  # 'magnitude'
+start_date_request = "2000-01-01"
+end_date_request = "2023-12-31"
+min_magnitude_request = "6"
+max_magnitude_request = "10"
+order_records = "time-asc"  # 'magnitude'
 
-url_usgs_request = url_usgs + '?' + \
-    '&'.join([
-        'starttime=' + start_date_request + '%2000:00:00',
-        'endtime=' + end_date_request + '%2000:00:00',
-        'minmagnitude=' + min_magnitude_request,
-        'maxmagnitude=' + max_magnitude_request,
-        'orderby=' + order_records,
-    ])
+url_usgs_request = (
+    url_usgs
+    + "?"
+    + "&".join(
+        [
+            "starttime=" + start_date_request + "%2000:00:00",
+            "endtime=" + end_date_request + "%2000:00:00",
+            "minmagnitude=" + min_magnitude_request,
+            "maxmagnitude=" + max_magnitude_request,
+            "orderby=" + order_records,
+        ]
+    )
+)
 
-eq_catalog_name = "global_seismicity_" + start_date_request + "to" + end_date_request + \
-           "_mw" + min_magnitude_request + "to" + max_magnitude_request
+eq_catalog_name = (
+    "global_seismicity_"
+    + start_date_request
+    + "to"
+    + end_date_request
+    + "_mw"
+    + min_magnitude_request
+    + "to"
+    + max_magnitude_request
+)
 
 # Download data into a pandas DataFrame
 data_eq_raw = pd.read_csv(url_usgs_request)
@@ -157,7 +181,7 @@ data_eq_raw = pd.read_csv(url_usgs_request)
 data_eq_used = data_eq_raw[data_eq_raw["magType"].str.contains("mw")]
 
 # Sort descending by magnitude to avoid overplotting
-data_eq_used = data_eq_used.sort_values(by=['mag'], ascending=False)
+data_eq_used = data_eq_used.sort_values(by=["mag"], ascending=False)
 
 # Scale hypocentral depth for size-coding
 mag_dev = 1.2
@@ -199,10 +223,15 @@ location = ",00"  # location code: test for non or 00
 starttime_req = utc(2024, 1, 1, 0, 0, 0, 0)
 endtime_req = utc(2024, 1, 2, 0, 0, 0, 0)
 
-#-----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Request data
 st = fdsn_client.get_waveforms(
-    network, station, location, channel, starttime_req, endtime_req,
+    network,
+    station,
+    location,
+    channel,
+    starttime_req,
+    endtime_req,
 )
 
 # Apply bandpass filter
@@ -276,7 +305,6 @@ fig.colorbar(frame=["x+lelevation", "y+lm"])
 # Inset map of study region
 # Use with statement and context manager
 with fig.inset(position="jTL+o0.1c+w3c"):
-
     # >>> use ? <<<
 
     # Azimuthal orthographic projection
@@ -359,7 +387,7 @@ fig.colorbar(frame=["xaf+lhypocentral depth (2000-2023, Mw 6-10)", "y+lkm"])
 fig.plot(
     x=lon_epi,
     y=lat_epi,
-    style="c" + str(np.exp(aki_eq_jp["magnitude"]/mag_dev)*mag_exp) + "c",
+    style="c" + str(np.exp(aki_eq_jp["magnitude"] / mag_dev) * mag_exp) + "c",
     pen=pen_epi,
 )
 fig.plot(
@@ -421,9 +449,10 @@ fig.plot(data=data_pb, pen=f"0.3p,{col_pd}")
 
 # Epicentral distance range used in this study
 for epi_limit in [epi_min, epi_max]:
-
-    if epi_limit==epi_min: offset_station_label = "0c/-1.7c"
-    elif epi_limit==epi_max: offset_station_label = "0c/-3.2c"
+    if epi_limit == epi_min:
+        offset_station_label = "0c/-1.7c"
+    elif epi_limit == epi_max:
+        offset_station_label = "0c/-3.2c"
 
     # Circles
     fig.plot(
@@ -509,16 +538,17 @@ y_lim = 1  # normalized
 Dtime_cut_origin = starttime_eq - time_origin
 
 for time_window in ["eq", "phase"]:
-
-    if time_window=="eq":
+    if time_window == "eq":
         st_used = st_eq
         sample_show_start = 0
         sample_show_end = tr_len
-    elif time_window=="phase":
+    elif time_window == "phase":
         # Rotate in LQT coordinate system
         st_lqt = st_eq.copy()
         st_lqt = st_lqt.rotate(
-            method="ZNE->LQT", back_azimuth=bazi_temp, inclination=inc,
+            method="ZNE->LQT",
+            back_azimuth=bazi_temp,
+            inclination=inc,
         )
         st_used = st_lqt
         # Show only time window around SKS phase
@@ -527,41 +557,40 @@ for time_window in ["eq", "phase"]:
 
     st_maxs = []
     for i_tr in range(3):
-        st_maxs.append(
-            abs(st_used[i_tr].data[sample_show_start:sample_show_end]).max()
-        )
+        st_maxs.append(abs(st_used[i_tr].data[sample_show_start:sample_show_end]).max())
     st_max = np.array(st_maxs).max()
 
     for i_tr in range(3):
-
         tr_temp = st_used[i_tr]
         tr_temp_chan = tr_temp.stats.channel
-        tr_temp_abs_max = abs(
-            tr_temp.data[sample_show_start:sample_show_end]
-        ).max()
+        tr_temp_abs_max = abs(tr_temp.data[sample_show_start:sample_show_end]).max()
 
         x_f = 6000
-        if time_window=="phase": x_f = 1200
+        if time_window == "phase":
+            x_f = 1200
 
-        if i_tr==0:
-            frame_used=["Wsne", f"xf{x_f}", "ya"]
-        if i_tr==1:
-            frame_used=["Wsne", f"xf{x_f}", "ya+lnorm. amplitude per component"]
-        if i_tr==2 and time_window=="eq":
-            frame_used=["WSne", f"xa12000f{x_f}", "ya"]
-        if i_tr==2 and time_window=="phase":
-            frame_used=[
+        if i_tr == 0:
+            frame_used = ["Wsne", f"xf{x_f}", "ya"]
+        if i_tr == 1:
+            frame_used = ["Wsne", f"xf{x_f}", "ya+lnorm. amplitude per component"]
+        if i_tr == 2 and time_window == "eq":
+            frame_used = ["WSne", f"xa12000f{x_f}", "ya"]
+        if i_tr == 2 and time_window == "phase":
+            frame_used = [
                 "WSne",
                 f"xa2400f{x_f}",
-                f"x+lsamples after {tr_temp.stats.starttime} (UTC)" + \
-                  f" with @~D@~t = {tr_delta} s",
+                f"x+lsamples after {tr_temp.stats.starttime} (UTC)"
+                + f" with @~D@~t = {tr_delta} s",
                 "ya",
             ]
 
         # Use colors as in SplitLab
-        if tr_temp_chan=="BHE" or tr_temp_chan=="BHQ": col_tr = "blue"
-        elif tr_temp_chan=="BHN" or tr_temp_chan=="BHT": col_tr = "red"
-        elif tr_temp_chan=="BHZ" or tr_temp_chan=="BHL": col_tr = "darkgreen"
+        if tr_temp_chan == "BHE" or tr_temp_chan == "BHQ":
+            col_tr = "blue"
+        elif tr_temp_chan == "BHN" or tr_temp_chan == "BHT":
+            col_tr = "red"
+        elif tr_temp_chan == "BHZ" or tr_temp_chan == "BHL":
+            col_tr = "darkgreen"
 
         fig.basemap(
             region=[sample_show_start, sample_show_end, -y_lim, y_lim],
@@ -590,13 +619,15 @@ for time_window in ["eq", "phase"]:
             )
 
         # Add labels for backazimuth, epicentral distance, and used filter
-        if time_window=="eq":
-            for i_label, label in enumerate([
-                f"BAZ = {round(bazi_temp,3)}°",
-                f"@~D@~ = {round(dist_temp_m2deg,3)}°",
-                f"band pass [{freq_low},{freq_upp}] Hz",
-            ]):
-                if i_tr==i_label:
+        if time_window == "eq":
+            for i_label, label in enumerate(
+                [
+                    f"BAZ = {round(bazi_temp,3)}°",
+                    f"@~D@~ = {round(dist_temp_m2deg,3)}°",
+                    f"band pass [{freq_low},{freq_upp}] Hz",
+                ]
+            ):
+                if i_tr == i_label:
                     fig.text(
                         text=label,
                         position="TL",
@@ -638,7 +669,7 @@ fig.show()
 # %%
 # -----------------------------------------------------------------------------
 # Show and save
-fig.show() # method="external")
+fig.show()  # method="external")
 
 fig_name = "japan_earthquake_BFO"
 # for ext in ["png"]: # , "pdf", "eps"]:
