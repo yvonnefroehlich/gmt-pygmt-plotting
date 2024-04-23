@@ -1,3 +1,7 @@
+r"""
+xxx
+"""
+
 # #############################################################################
 # Esmeraldas earthquake on 2022/03/27 at 04:28:12 (UTC)
 # -----------------------------------------------------------------------------
@@ -10,9 +14,7 @@
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
 
-
 import pygmt as gmt
-
 
 # -----------------------------------------------------------------------------
 # General stuff
@@ -168,15 +170,16 @@ fig.colorbar(
 # Add length scale
 gmt.config(MAP_SCALE_HEIGHT="7p")
 
-basemap_scale = f"JLB+jLB+w200+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}" + \
-                "+f+lkm+at+o0.45c/0.55c"
+basemap_scale = (
+    f"JLB+jLB+w200+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}"
+    + "+f+lkm+at+o0.45c/0.55c"
+)
 
 fig.basemap(map_scale=basemap_scale, box=box_standard)
 
 # -----------------------------------------------------------------------------
 # Inset map of study region
 with fig.inset(position=pos_study_inset):
-
     # >>> use ? <<<
 
     # Orthographic projection
@@ -205,7 +208,6 @@ with fig.inset(position=pos_study_inset):
 # -----------------------------------------------------------------------------
 # Inset equal distance to show epicenter
 with fig.inset(position=pos_epi_inset):
-
     # >>> use ? <<<
 
     # Azimuthal equidistant projection
@@ -229,15 +231,16 @@ with fig.inset(position=pos_epi_inset):
     # Plate boundaries
     fig.plot(data=file_plate_in, pen=f"0.5p,{color_plate}")
 
-# -----------------------------------------------------------------------------
+    # -----------------------------------------------------------------------------
     # Epicentral distance range for XKS phases
     epi_min = 90
     epi_max = 150
 
     for epi_limit in [epi_min, epi_max]:
-
-        if epi_limit==epi_min: offset_station_label = "0c/-1.7c"
-        elif epi_limit==epi_max: offset_station_label = "0c/-2.7c"
+        if epi_limit == epi_min:
+            offset_station_label = "0c/-1.7c"
+        elif epi_limit == epi_max:
+            offset_station_label = "0c/-2.7c"
 
         # Circles
         fig.plot(
@@ -258,7 +261,7 @@ with fig.inset(position=pos_epi_inset):
             clearance=clearance_standard,
         )
 
-# -----------------------------------------------------------------------------
+    # -----------------------------------------------------------------------------
     # Epicenter
     fig.plot(
         x=lon_eq,
@@ -268,7 +271,7 @@ with fig.inset(position=pos_epi_inset):
         pen=color_highlight,
     )
 
-# -----------------------------------------------------------------------------
+    # -----------------------------------------------------------------------------
     # Recording station BFO
 
     # Marker

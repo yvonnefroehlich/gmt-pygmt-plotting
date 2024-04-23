@@ -1,3 +1,7 @@
+r"""
+xxx
+"""
+
 # #############################################################################
 # Turkey Syria earthquakes on 2023/02/06 up on 01:17:35 (UTC)
 # -----------------------------------------------------------------------------
@@ -10,9 +14,7 @@
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
 
-
 import pygmt as gmt
-
 
 # -----------------------------------------------------------------------------
 # General stuff
@@ -64,7 +66,7 @@ frame_cb_grid = "+lelevation / m"
 box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
 
 
-#%%
+# %%
 # -----------------------------------------------------------------------------
 # Make geographic map
 # -----------------------------------------------------------------------------
@@ -154,15 +156,16 @@ fig.colorbar(position=pos_cb_grid, frame=frame_cb_grid, box=box_standard)
 # Add length scale
 gmt.config(MAP_SCALE_HEIGHT="7p")
 
-basemap_scale = f"JLB+jLB+w100+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}" + \
-                "+f+lkm+at+o0.6c/0.6c"
+basemap_scale = (
+    f"JLB+jLB+w100+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}"
+    + "+f+lkm+at+o0.6c/0.6c"
+)
 
 fig.basemap(map_scale=basemap_scale, box=box_standard)
 
 # -----------------------------------------------------------------------------
 # Inset - study region
 with fig.inset(position=pos_study_inset):
-
     # >>> use ? <<<
 
     # Orthographic projection

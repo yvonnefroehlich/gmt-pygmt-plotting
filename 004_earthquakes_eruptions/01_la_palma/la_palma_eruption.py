@@ -1,3 +1,7 @@
+r"""
+xxx
+"""
+
 # #############################################################################
 # La Palma eruptions between 2021/09/19 and 2021/12/13
 # -----------------------------------------------------------------------------
@@ -10,9 +14,7 @@
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
 
-
 import pygmt as gmt
-
 
 # -----------------------------------------------------------------------------
 # General stuff
@@ -55,7 +57,7 @@ lat_max = 30
 project_use = "M12c"  # Mercator
 
 
-#%%
+# %%
 # -----------------------------------------------------------------------------
 # Make geographic map
 # -----------------------------------------------------------------------------
@@ -152,8 +154,10 @@ fig.show()
 # Add length scale
 gmt.config(MAP_SCALE_HEIGHT="7p")
 
-basemap_scale = f"JLB+jLB+w50+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}" + \
-                "+f+lkm+at+o0.45c/0.55c"
+basemap_scale = (
+    f"JLB+jLB+w50+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}"
+    + "+f+lkm+at+o0.45c/0.55c"
+)
 
 fig.basemap(map_scale=basemap_scale, box=box_standard)
 
@@ -164,7 +168,6 @@ fig.show()
 # -----------------------------------------------------------------------------
 # Inset map of study region
 with fig.inset(position=pos_study_inset):
-
     # >>> use ? <<<
 
     # Orthographic projection

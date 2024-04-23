@@ -1,3 +1,7 @@
+r"""
+xxx
+"""
+
 # #############################################################################
 # Marocco earthquake on 2023/09/08 at 22:11:02 (UTC)
 # -----------------------------------------------------------------------------
@@ -10,9 +14,7 @@
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
 
-
 import pygmt as gmt
-
 
 # -----------------------------------------------------------------------------
 # General stuff
@@ -55,7 +57,7 @@ frame_cb_grid = "+lelevation / m"
 box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
 
 
-#%%
+# %%
 # -----------------------------------------------------------------------------
 # Make geographic map
 # -----------------------------------------------------------------------------
@@ -147,8 +149,10 @@ fig.colorbar(position=pos_cb_grid, frame=frame_cb_grid, box=box_standard)
 # Add length scale
 gmt.config(MAP_SCALE_HEIGHT="7p")
 
-basemap_scale = f"JLB+jLB+w500+c{(lon_max+lon_min)/2}/{(lat_max+lat_min)/2}" + \
-                "+f+lkm+at+o0.45c/0.55c"
+basemap_scale = (
+    f"JLB+jLB+w500+c{(lon_max+lon_min)/2}/{(lat_max+lat_min)/2}"
+    + "+f+lkm+at+o0.45c/0.55c"
+)
 
 fig.basemap(map_scale=basemap_scale, box=box_standard)
 
@@ -157,7 +161,6 @@ fig.basemap(map_scale=basemap_scale, box=box_standard)
 
 # Use with statement and context manager
 with fig.inset(position=pos_study_inset):
-
     # >>> use ? <<<
 
     # Azimuthal orthographic projection

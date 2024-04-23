@@ -1,3 +1,7 @@
+r"""
+xxx
+"""
+
 # #############################################################################
 # Overview earthquakes and eruptions
 # -----------------------------------------------------------------------------
@@ -10,9 +14,7 @@
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
 
-
 import pygmt as gmt
-
 
 # -----------------------------------------------------------------------------
 # General stuff
@@ -40,8 +42,8 @@ lon_sta = 8.33
 lat_sta = 48.33
 
 # Epicenters
-lon_epi = [121.562, 136.91, -79.611, 37.042, -8.391]  #, 46.443]
-lat_epi = [23.819, 37.23, -0.904, 37.166, 31.064]  #, 35.277]
+lon_epi = [121.562, 136.91, -79.611, 37.042, -8.391]  # , 46.443]
+lat_epi = [23.819, 37.23, -0.904, 37.166, 31.064]  # , 35.277]
 
 # Volcanos
 lon_vol = [-17.84, -175.393]
@@ -83,9 +85,10 @@ fig.plot(data=data_pb, pen="0.3p," + col_pd)
 
 # Epicentral distance range used in this study
 for epi_limit in [epi_min, epi_max]:
-
-    if epi_limit==epi_min: offset_station_label = "0c/-2.5c"
-    elif epi_limit==epi_max: offset_station_label = "0c/-4.7c"
+    if epi_limit == epi_min:
+        offset_station_label = "0c/-2.5c"
+    elif epi_limit == epi_max:
+        offset_station_label = "0c/-4.7c"
 
     # Circles
     fig.plot(
@@ -126,7 +129,7 @@ fig.text(
 )
 
 # Show and save
-fig.show() # method="external")
+fig.show()  # method="external")
 
 fig_name = "overview_earthquake_BFO"
 # for ext in ["png"]: # , "pdf", "eps"]:
