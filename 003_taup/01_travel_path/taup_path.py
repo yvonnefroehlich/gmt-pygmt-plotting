@@ -94,14 +94,16 @@ def taup_path(
     box_standard = "+gwhite@30+p0.1p,gray30+r2p"
     label_font = font_size
 
+    # Adjust and extend for your needs
     phase_colors = {
         "P": "navyblue",
         "S": "blue",
         "PcP": "deepskyblue",
         "ScS": "cyan",
-        "SKS": "205/0/0",  # -> red  # "blue"
-        "SKKS": "238/118/0",  # -> orange  # "green3",
+        "SKS": "205/0/0",
+        "SKKS": "238/118/0",
         "PKS": "yellow2",
+        "PKKS": "purple",
         "PKKP": "darkgreen",
         "PKIKP": "darkorange",
         "PKJKP": "purple2",

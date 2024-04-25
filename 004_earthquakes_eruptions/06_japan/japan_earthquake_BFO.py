@@ -40,16 +40,9 @@ col_shorelines = "darkgray"
 dict_col_phase = {
     "P": "navyblue",
     "S": "blue",
-    "PcP": "deepskyblue",
     "ScS": "cyan",
-    "SKS": "205/0/0",  # -> red
-    "SKKS": "238/118/0",  # -> orange
-    "PKS": "yellow2",
-    "PKKP": "darkgreen",
-    "PKIKP": "darkorange",
-    "PKJKP": "purple2",
-    "SKJKS": "maroon",
-    "PKPPKP": "yellow",
+    "SKS": "205/0/0",
+    "SKKS": "238/118/0",
 }
 
 # Standards
