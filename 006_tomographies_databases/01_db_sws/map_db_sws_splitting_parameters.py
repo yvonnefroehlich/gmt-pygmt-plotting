@@ -53,7 +53,6 @@ df_null_max_order = df_swsm_null[["Longitude", "Latitude"]]
 # -----------------------------------------------------------------------------
 # Make geographic map
 # -----------------------------------------------------------------------------
-
 fig = gmt.Figure()
 gmt.config(FONT_LABEL="10p", MAP_GRID_PEN_PRIMARY="0.01p,gray50")
 

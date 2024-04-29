@@ -48,9 +48,10 @@ for analysis in analysis_all:
         cb_trancate = False
         cb_label = "high velocities - votemap analysis (Shephard et al. 2017)"
 
+
 # %%
 # -----------------------------------------------------------------------------
-# Make geographic map
+#   Make geographic map
 # -----------------------------------------------------------------------------
     fig = gmt.Figure()
     gmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray", FONT_LABEL="10p")

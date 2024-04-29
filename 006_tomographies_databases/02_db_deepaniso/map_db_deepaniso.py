@@ -39,7 +39,6 @@ pattern_llpv = "p8+b+f"
 # -----------------------------------------------------------------------------
 # Create global maps
 # -----------------------------------------------------------------------------
-
 folders_analysis = os.listdir(f"{path_in}/01_aniso/")
 
 for analysis in folders_analysis:
