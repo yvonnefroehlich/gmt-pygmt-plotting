@@ -1,4 +1,4 @@
-# 006_tomographies_database
+# 006_tomographies_databases
 
 ## Content
 
