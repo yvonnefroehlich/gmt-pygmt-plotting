@@ -21,7 +21,7 @@ If you make use of this material, please acknowledge the relating publications i
 - **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases)**: `shear wave splitting`, `deep anisotropy`, `votemap analysis`, `cluster analysis`
 - **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)**: `gufm1`
 
-![github_map_figures4readme_main_DGG](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/assets/94163266/2b059696-f3eb-41d2-9d68-03f41c011274)
+![github_map_figures4readme_main_DGG](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/assets/94163266/9d19c3e5-830b-492b-82a2-de001a8a4f06)
 
 
 ## Requirements
