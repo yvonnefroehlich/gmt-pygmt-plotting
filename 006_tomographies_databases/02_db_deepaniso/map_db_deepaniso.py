@@ -9,8 +9,8 @@
 # GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # -----------------------------------------------------------------------------
 # - Created: 2024/04/29
-#   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
-#   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
+#   PyGMT v0.11.0 / v0.12.0 -> https://www.pygmt.org/
+#   GMT 6.4.0 / 6.5.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
 
 
@@ -51,7 +51,7 @@ for analysis in folders_analysis:
     elif analysis == "S-ScS":
         color_aniso = "purple"
 
-        # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     fig = gmt.Figure()
     gmt.config(FONT_TITLE="12p", FONT_LABEL="10p")
 
@@ -63,14 +63,14 @@ for analysis in folders_analysis:
         frame=f"+tLMM seismic anisotropy - {analysis}",
     )
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # Plate boundaries
     fig.plot(
         data=f"{path_in}/plate_boundaries_Bird_2003.txt",
         pen=f"0.1p,{color_platebound}",
     )
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # LLPV
     for i_model in range(2, 9, 1):
         fig.plot(
@@ -80,7 +80,7 @@ for analysis in folders_analysis:
             close=True,
         )
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # LMM Anisotropy
     for area in files_areas:
         fig.plot(
@@ -90,11 +90,11 @@ for analysis in folders_analysis:
             close=True,
         )
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # Map frame
     fig.basemap(frame=["WSnE", "xa90f30", "ya30f15"])
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     fig.show()
 
     fig_name = f"{path_out}/deepaniso_{analysis}"

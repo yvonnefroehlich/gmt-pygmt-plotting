@@ -7,8 +7,8 @@
 # GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # -----------------------------------------------------------------------------
 # - Created: 2024/04/29
-#   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
-#   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
+#   PyGMT v0.11.0 / v0.12.0 -> https://www.pygmt.org/
+#   GMT 6.4.0 / 6.5.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
 
 
@@ -48,16 +48,16 @@ for analysis in analysis_all:
         cb_trancate = False
         cb_label = "high velocities - votemap analysis (Shephard et al. 2017)"
 
-    # %%
-    # -----------------------------------------------------------------------------
-    # Make geographic map
-    # -----------------------------------------------------------------------------
+# %%
+# -----------------------------------------------------------------------------
+# Make geographic map
+# -----------------------------------------------------------------------------
     fig = gmt.Figure()
     gmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray", FONT_LABEL="10p")
 
     fig.coast(region="d", projection="N11c", land=color_land)
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # Plot grid with color-coding
     fig.grdimage(grid=grid_in, cmap=cmap_grid, nan_transparent=True)
 
@@ -75,7 +75,7 @@ for analysis in analysis_all:
         truncate=cb_trancate,
     )
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # Plot shorelines
     fig.coast(shorelines=f"1/0.1p,{color_shorelines}")
 
@@ -88,7 +88,7 @@ for analysis in analysis_all:
     # Add map frame
     fig.basemap(frame=["WSnE", "xa90f30", "ya30f15"])
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # Show and save figure
     fig.show()
 

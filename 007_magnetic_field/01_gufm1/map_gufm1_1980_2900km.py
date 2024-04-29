@@ -10,8 +10,8 @@
 # GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # -----------------------------------------------------------------------------
 # - Created: 2024/04/29
-#   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
-#   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
+#   PyGMT v0.11.0 / v0.12.0 -> https://www.pygmt.org/
+#   GMT 6.4.0 / 6.5.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
 
 
