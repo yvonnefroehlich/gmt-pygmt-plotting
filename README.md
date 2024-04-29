@@ -18,8 +18,10 @@ If you make use of this material, please acknowledge the relating publications i
 - **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)**: Maps of [**_Ritter J. R. R., Fröhlich Y., Sanz Alonso Y. & Grund M. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w)
 - **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup)**: Travel paths of seismological phases through the Earth interior
 - **[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions)**: Maps of selected earthquakes and eruptions between 2021 and present
+- **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases)**: `shear wave splitting`, `deep anisotropy`, `votemap analysis`, `cluster analysis`
+- **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)**: `gufm1`
 
-![github_map_figures4readme_main_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/assets/94163266/278cccd5-d41d-449d-9408-0964e0eb6933)
+![github_map_figures4readme_main_DGG](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/assets/94163266/9d19c3e5-830b-492b-82a2-de001a8a4f06)
 
 
 ## Requirements
@@ -33,6 +35,7 @@ _Please note_: The required versions are given above in the single folders as we
 - [NumPy](https://numpy.org/)
 - [Pandas](https://pandas.pydata.org/)
 - [ObsPy](https://docs.obspy.org/)
+- [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal/)
 
 
 ## Contributing
