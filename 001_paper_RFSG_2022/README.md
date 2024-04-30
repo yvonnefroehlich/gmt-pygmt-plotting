@@ -10,4 +10,4 @@ _Recommended versions_: PyGMT v0.11.0, GMT 6.4.0
 - [RFSG_FigS4_right_pairs.ipynb](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_right_pairs.ipynb): SKS-SKKS pairs in the lowermost mantle related to SWSMs at BFO
 - _See also_: [RFSG_Fig1](https://github.com/michaelgrund/GMT-plotting/tree/main/010_paper_RFSG2022) by [Michael Grund](https://github.com/michaelgrund)
 
-![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_01bfo.png)
+![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_001bfo.png)
