@@ -99,7 +99,7 @@ def taup_path(
         "PcP": "0/191/255",  # GMT deepskyblue
         "ScS": "0/255/255",  # GMT cyan
         "SKS": "205/0/0",  # GMT red3
-        "SKKS": "238/118/0",  # GMT darkorange
+        "SKKS": "238/118/0",  # GMT darkorange2
         "PKS": "238/238/0",  # GMT yellow2
         "PKKS": "160/32/240",  # GMT purple
         "PKKP": "0/100/0",  # GMT darkgreen

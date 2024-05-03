@@ -45,7 +45,7 @@ dict_col_phase = {
     "S": "0/0/255",  # GMT blue
     "ScS": "0/255/255",  # GMT cyan
     "SKS": "205/0/0",  # GMT red3
-    "SKKS": "238/118/0",  # GMT darkorange
+    "SKKS": "238/118/0",  # GMT darkorange2
 }
 
 # Standards
