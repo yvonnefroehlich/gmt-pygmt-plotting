@@ -94,19 +94,19 @@ def taup_path(
 
     # Adjust and extend for your needs
     phase_colors = {
-        "P": "navyblue",
-        "S": "blue",
-        "PcP": "deepskyblue",
-        "ScS": "cyan",
-        "SKS": "205/0/0",
-        "SKKS": "238/118/0",
-        "PKS": "yellow2",
-        "PKKS": "purple",
-        "PKKP": "darkgreen",
-        "PKIKP": "darkorange",
-        "PKJKP": "purple2",
-        "SKJKS": "maroon",
-        "PKPPKP": "yellow",
+        "P": "0/0/128",  # GMT navyblue
+        "S": "0/0/255",  # GMT blue
+        "PcP": "0/191/255",  # GMT deepskyblue
+        "ScS": "0/255/255",  # GMT cyan
+        "SKS": "205/0/0",  # GMT red3
+        "SKKS": "238/118/0",  # GMT darkorange
+        "PKS": "238/238/0",  # GMT yellow2
+        "PKKS": "160/32/240",  # GMT purple
+        "PKKP": "0/100/0",  # GMT darkgreen
+        "PKIKP": "255/140/0",  # GMT darkorange
+        "PKJKP": "145/44/238",  # GMT purple2
+        "SKJKS": "176/48/96",  # GMT maroon
+        "PKPPKP": "255/255/0",  # GMT yellow
     }
 
     # %%
