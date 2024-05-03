@@ -22,8 +22,8 @@ import pygmt as gmt
 # Set up for making the plots
 # -----------------------------------------------------------------------------
 # Paths
-path_in = "01_in_data"
-path_out = "02_out_figs"
+path_in_data = "01_in_data"
+path_out_figs = "02_out_figs"
 
 # Colors
 color_land = "gray90"
@@ -49,7 +49,7 @@ fig.basemap(region="d", projection="N10c", frame=["WsNE", "xa90f30", "ya30"])
 
 # -----------------------------------------------------------------------------
 # Plot gufm1 grid
-fig.grdimage(grid=f"{path_in}/gufm1_1980_2900km_Z.grd", cmap=True)
+fig.grdimage(grid=f"{path_in_data}/gufm1_1980_2900km_Z.grd", cmap=True)
 
 with gmt.config(FONT="10p"):
     fig.colorbar(
@@ -66,7 +66,7 @@ fig.coast(shorelines=f"1/0.1p,{color_shorelines}")
 
 # Plot plate boundaries, Bird 2003
 fig.plot(
-    data=f"{path_in}/plate_boundaries_Bird_2003.txt",
+    data=f"{path_in_data}/plate_boundaries_Bird_2003.txt",
     pen=f"0.4p,{color_platebound}",
 )
 
@@ -74,7 +74,7 @@ fig.plot(
 # Add LLPV, Wolf et al. 2023
 for i_model in range(2, 9, 1):
     fig.plot(
-        data=f"{path_in}/01_llvp/3model_2016_{i_model}.txt",
+        data=f"{path_in_data}/01_llvp/3model_2016_{i_model}.txt",
         pen=f"0.2p,{color_llpv}",
         fill=f"{pattern_llpv}{color_llpv}",
         close=True,
@@ -83,7 +83,7 @@ for i_model in range(2, 9, 1):
 # -----------------------------------------------------------------------------
 fig.show()
 
-fig_name = f"{path_out}/gufm1_1980_2900km_Z"
+fig_name = f"{path_out_figs}/gufm1_1980_2900km_Z"
 # for ext in ["png"]:  # , "pdf", "eps"]:
 #     fig.savefig(fname=f"{fig_name}.{ext}")
 
