@@ -37,7 +37,7 @@ def taup_path(
     min_dist=0,
     max_dist=None,
     font_size="4p",
-    fig_instance=True,
+    fig_instance=None,
     fig_width="6c",
     fig_save=False,
     save_path="",
@@ -59,12 +59,12 @@ def taup_path(
     # - min_dist: minimum for plotting | degrees | Default 0
     # - max_dist: maximum for plotting | degrees | Default epicentral distance + 10
     # - font_size: Font size for text | Default 4p
-    # - fig_instance: PyGMT figure instance | Default set up new Figure instance
+    # - fig_instance: Provide a PyGMT figure instance | Default a new one is set up
     # - fig_width: Width of figure | Default 6c
     # - fig_save: Save figure to image file | Default False
     # - save_path: path to folder to save figure | Default current working directory
 
-    if fig_instance == True:
+    if fig_instance == None:
         fig = pygmt.Figure()
 
     if max_depth == None:
@@ -295,7 +295,7 @@ def taup_path(
         no_clip=True,
     )
 
-    if fig_instance == True:
+    if fig_instance == None:
         fig.show()
 
     # -------------------------------------------------------------------------
