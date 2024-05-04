@@ -649,7 +649,7 @@ fig.shift_origin(xshift="-10c", yshift="4c")
 
 # Generate plot for travel paths with self-defined function
 taup_path(
-    fig=fig,
+    fig_instance=fig,
     fig_width="7c",
     max_dist=360,
     font_size="7p",
