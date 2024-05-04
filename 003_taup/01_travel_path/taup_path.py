@@ -16,8 +16,9 @@
 # - Created: 2024/04/07
 #   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
-# - Updated: 2024/04/23
-#   Improve coding style
+# - Updated: 2024/04/23 - Improve coding style
+# - Updated: 2024/05/04 - Improve arguments and comments for colors
+# - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
 # #############################################################################
 
 
@@ -37,7 +38,7 @@ def taup_path(
     min_dist=0,
     max_dist=None,
     font_size="4p",
-    fig=None,
+    fig_instance=None,
     fig_width="6c",
     fig_save=False,
     save_path="",
@@ -47,25 +48,26 @@ def taup_path(
     # Input
     # -------------------------------------------------------------------------
     # Required
-    # - source_depth: hypocentral depth | km
-    # - receiver_dist: epicentral distance | degrees
-    # - phases: seismological phases | list of strings
+    # - source_depth: Hypocentral depth | km
+    # - receiver_dist: Epicentral distance | degrees
+    # - phases: Seismological phases | list of strings
 
     # Optional
     # - earth_model: Earth model | Default iasp91
     # - r_earth: Earth's radius | km | Default 6371
-    # - min_depth: minimum for plotting | km | Default 0
-    # - max_depth: maximum for plotting | km | Default Earth's radius
-    # - min_dist: minimum for plotting | degrees | Default 0
-    # - max_dist: maximum for plotting | degrees | Default epicentral distance + 10
+    # - min_depth: Minimum for plotting | km | Default 0
+    # - max_depth: Maximum for plotting | km | Default Earth's radius
+    # - min_dist: Minimum for plotting | degrees | Default 0
+    # - max_dist: Maximum for plotting | degrees | Default epicentral distance + 10
     # - font_size: Font size for text | Default 4p
-    # - fig: PyGMT figure instance | Default set up new Figure instance
+    # - fig_instance: Provide a PyGMT figure instance | Default a new one is set up
     # - fig_width: Width of figure | Default 6c
-    # - fig_save: Save figure to image file | Default False
-    # - save_path: path to folder to save figure | Default current working directory
+    # - fig_save: Save figure to file | Default False
+    # - save_path: Path of folder to save figure | Default current working directory
 
-    if fig == None:
-        fig = pygmt.Figure()
+    fig = pygmt.Figure()
+    if fig_instance != None:
+        fig = fig_instance
 
     if max_depth == None:
         max_depth = r_earth
@@ -295,7 +297,8 @@ def taup_path(
         no_clip=True,
     )
 
-    fig.show()
+    if fig_instance == None:
+        fig.show()
 
     # -------------------------------------------------------------------------
     # Show and save figure
@@ -308,13 +311,13 @@ def taup_path(
         for ext in ["png"]:  # , "pdf", "eps"]:
             fig.savefig(fname=f"{fig_name}.{ext}")
 
-        fig.show()
-
         print(fig_name)
 
 
 # %%
+# -----------------------------------------------------------------------------
 # Example
+# -----------------------------------------------------------------------------
 for dist in [60, 95, 120, 142]:
     taup_path(
         fig_width="8c",

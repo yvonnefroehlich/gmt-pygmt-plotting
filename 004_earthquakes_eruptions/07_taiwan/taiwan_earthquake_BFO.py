@@ -11,8 +11,8 @@
 # - Created: 2024/04/07
 #   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
-# - Updated: 2024/04/23
-#   Improve coding style
+# - Updated: 2024/04/23 - Improve coding style
+# - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
 # #############################################################################
 
 import contextily as ctx
@@ -649,7 +649,7 @@ fig.shift_origin(xshift="-10c", yshift="4c")
 
 # Generate plot for travel paths with self-defined function
 taup_path(
-    fig=fig,
+    fig_instance=fig,
     fig_width="7c",
     max_dist=360,
     font_size="7p",
