@@ -164,40 +164,26 @@ def taup_path(
                 no_clip=no_clip_used,
             )
         else:
-            if bound == 6371:
-                y_offset = 0
-            elif bound == 5120:
-                y_offset = 200
-            elif bound == 2900:
-                y_offset = -200
-            elif bound == 2700:
-                y_offset = 200
-            elif bound == 660:
-                y_offset = -200
-            elif bound == 440:
-                y_offset = -50
-            elif bound == 120:
-                y_offset = -70
+            if bound == 6371: y_offset = 0
+            elif bound == 5120: y_offset = 200
+            elif bound == 2900: y_offset = -200
+            elif bound == 2700: y_offset = 200
+            elif bound == 660: y_offset = -200
+            elif bound == 440: y_offset = -50
+            elif bound == 120: y_offset = -70
             fig.plot(
                 x=np.linspace(min_dist, max_dist, max_dist),
                 y=np.ones(max_dist) * (r_earth - bound + y_offset),
                 style=f"qn1:+l{bound} km+f{label_font}+v+i+gwhite@30+o+c0.03c/0.03c",
             )
             y_offset = 0.05
-            if bound == 6371:
-                y_offset = 0
-            elif bound == 5120:
-                y_offset = -0.1
-            elif bound == 2900:
-                y_offset = 0.15
-            elif bound == 2700:
-                y_offset = -0.1
-            elif bound == 660:
-                y_offset = 0.15
-            elif bound == 440:
-                y_offset = 0.05
-            elif bound == 120:
-                y_offset = 0.06
+            if bound == 6371: y_offset = 0
+            elif bound == 5120: y_offset = -0.1
+            elif bound == 2900: y_offset = 0.15
+            elif bound == 2700: y_offset = -0.1
+            elif bound == 660: y_offset = 0.15
+            elif bound == 440: y_offset = 0.05
+            elif bound == 120: y_offset = 0.06
             if bound == 6371:
                 fig.text(
                     # x=receiver_dist/2 + 180,
@@ -215,11 +201,10 @@ def taup_path(
     # Plot travel paths
     fig_name_phase = []
     for i_phase in range(len(pp_temp)):
-        # Spread legend over two columns
+        # Spread legend over several columns
         leg_col_str = ""
-        if i_phase == 0:
-            leg_col_str = "+N3"
-        # if i_phase==0: leg_col_str = "+N2"
+        if i_phase == 0: leg_col_str = "+N3"
+        # if i_phase == 0: leg_col_str = "+N2"
 
         pp_depth = []
         pp_dist = []
@@ -315,11 +300,11 @@ def taup_path(
     # -------------------------------------------------------------------------
     # Show and save figure
     if fig_save == True:
+
         fig_name = (
             f"{save_path}map_travelpath_{int(np.round(receiver_dist))}deg_"
             + "_".join(fig_name_phase)
         )
-
         for ext in ["png"]:  # , "pdf", "eps"]:
             fig.savefig(fname=f"{fig_name}.{ext}")
 
@@ -337,18 +322,6 @@ for dist in [60, 95, 120, 142]:
         source_depth=500,
         receiver_dist=dist,
         max_dist=360,
-        phases=[
-            "P",
-            "S",
-            "PcP",
-            "ScS",
-            "SKS",
-            "SKKS",
-            "PKS",
-            "PKKP",
-            "PKIKP",
-            "PKJKP",
-            "SKJKS",
-        ],
+        phases=["SKS", "PKS", "SKKS", "PKKS"],
         # fig_save=True,
     )
