@@ -38,11 +38,11 @@ col_shorelines = "darkgray"
 
 # Must be the same as in the taup_path function!
 dict_col_phase = {
-    "P": "navyblue",
-    "S": "blue",
-    "ScS": "cyan",
-    "SKS": "205/0/0",
-    "SKKS": "238/118/0",
+    "P": "0/0/128",  # GMT navyblue
+    "S": "0/0/255",  # GMT blue
+    "ScS": "0/255/255",  # GMT cyan
+    "SKS": "205/0/0",  # GMT red3
+    "SKKS": "238/118/0",  # GMT darkorange2
 }
 
 # Standards
