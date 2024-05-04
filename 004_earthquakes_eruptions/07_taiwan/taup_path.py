@@ -45,22 +45,22 @@ def taup_path(
     # Input
     # -------------------------------------------------------------------------
     # Required
-    # - source_depth: hypocentral depth | km
-    # - receiver_dist: epicentral distance | degrees
-    # - phases: seismological phases | list of strings
+    # - source_depth: Hypocentral depth | km
+    # - receiver_dist: Epicentral distance | degrees
+    # - phases: Seismological phases | list of strings
 
     # Optional
     # - earth_model: Earth model | Default iasp91
     # - r_earth: Earth's radius | km | Default 6371
-    # - min_depth: minimum for plotting | km | Default 0
-    # - max_depth: maximum for plotting | km | Default Earth's radius
-    # - min_dist: minimum for plotting | degrees | Default 0
-    # - max_dist: maximum for plotting | degrees | Default epicentral distance + 10
+    # - min_depth: Minimum for plotting | km | Default 0
+    # - max_depth: Maximum for plotting | km | Default Earth's radius
+    # - min_dist: Minimum for plotting | degrees | Default 0
+    # - max_dist: Maximum for plotting | degrees | Default epicentral distance + 10
     # - font_size: Font size for text | Default 4p
     # - fig_instance: Provide a PyGMT figure instance | Default a new one is set up
     # - fig_width: Width of figure | Default 6c
-    # - fig_save: Save figure to image file | Default False
-    # - save_path: path to folder to save figure | Default current working directory
+    # - fig_save: Save figure to file | Default False
+    # - save_path: Path of folder to save figure | Default current working directory
 
     if fig_instance == None:
         fig = pygmt.Figure()
