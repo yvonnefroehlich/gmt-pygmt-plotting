@@ -60,7 +60,7 @@ def taup_path(
     # - fig: PyGMT figure instance | Default set up new Figure instance
     # - fig_width: Width of figure | Default 6c
     # - fig_save: Save figure to image file | Default False
-    # - save_path: path to folder to save figure
+    # - save_path: path to folder to save figure | Default current working directory
 
     if fig == None:
         fig = pygmt.Figure()
