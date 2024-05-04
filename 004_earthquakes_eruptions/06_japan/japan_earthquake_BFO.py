@@ -8,8 +8,8 @@
 # - Created: 2024/04/07
 #   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
-# - Updated: 2024/04/23
-#   Improve coding style
+# - Updated: 2024/04/23 - Improve coding style
+# - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
 # #############################################################################
 
 import contextily as ctx
@@ -38,11 +38,11 @@ col_shorelines = "darkgray"
 
 # Must be the same as in the taup_path function!
 dict_col_phase = {
-    "P": "navyblue",
-    "S": "blue",
-    "ScS": "cyan",
-    "SKS": "205/0/0",
-    "SKKS": "238/118/0",
+    "P": "0/0/128",  # GMT navyblue
+    "S": "0/0/255",  # GMT blue
+    "ScS": "0/255/255",  # GMT cyan
+    "SKS": "205/0/0",  # GMT red3
+    "SKKS": "238/118/0",  # GMT darkorange2
 }
 
 # Standards
@@ -647,7 +647,7 @@ fig.shift_origin(xshift="-10c", yshift="4c")
 
 # Generate plot for travel paths with self-defined function
 taup_path(
-    fig=fig,
+    fig_instance=fig,
     fig_width="7c",
     max_dist=360,
     font_size="7p",

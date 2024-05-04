@@ -16,6 +16,9 @@
 # - Created: 2024/04/07
 #   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
+# - Updated: 2024/04/23 - Improve coding style
+# - Updated: 2024/05/04 - Improve arguments and comments for colors
+# - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
 # #############################################################################
 
 
@@ -35,35 +38,36 @@ def taup_path(
     min_dist=0,
     max_dist=None,
     font_size="4p",
-    fig=None,
+    fig_instance=None,
     fig_width="6c",
     fig_save=False,
     save_path="",
 ):
     # %%
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Input
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Required
-    # - source_depth: hypocentral depth | km
-    # - receiver_dist: epicentral distance | degrees
-    # - phases: seismological phases | list of strings
+    # - source_depth: Hypocentral depth | km
+    # - receiver_dist: Epicentral distance | degrees
+    # - phases: Seismological phases | list of strings
 
     # Optional
     # - earth_model: Earth model | Default iasp91
     # - r_earth: Earth's radius | km | Default 6371
-    # - min_depth: minimum for plotting | km | Default 0
-    # - max_depth: maximum for plotting | km | Default Earth's radius
-    # - min_dist: minimum for plotting | degrees | Default 0
-    # - max_dist: maximum for plotting | degrees | Default epicentral distance + 10
+    # - min_depth: Minimum for plotting | km | Default 0
+    # - max_depth: Maximum for plotting | km | Default Earth's radius
+    # - min_dist: Minimum for plotting | degrees | Default 0
+    # - max_dist: Maximum for plotting | degrees | Default epicentral distance + 10
     # - font_size: Font size for text | Default 4p
-    # - fig: PyGMT figure instance | Default set up new Figure instance
+    # - fig_instance: Provide a PyGMT figure instance | Default a new one is set up
     # - fig_width: Width of figure | Default 6c
-    # - fig_save: Save figure to image file | Default False
-    # - save_path: path to folder to save figure
+    # - fig_save: Save figure to file | Default False
+    # - save_path: Path of folder to save figure | Default current working directory
 
-    if fig == None:
-        fig = pygmt.Figure()
+    fig = pygmt.Figure()
+    if fig_instance != None:
+        fig = fig_instance
 
     if max_depth == None:
         max_depth = r_earth
@@ -72,12 +76,12 @@ def taup_path(
         max_dist = int(np.round(receiver_dist)) + 10
 
     # %%
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # General stuff
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     rad2deg = 360 / (2 * np.pi)
 
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Region
     max_radius = r_earth - min_depth
     min_radius = r_earth - max_depth
@@ -86,7 +90,7 @@ def taup_path(
     if min_depth == 0 and max_depth == r_earth:
         no_clip_used = True
 
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Plotting
     color_highlight = "255/90/0"
     box_standard = "+gwhite@30+p0.1p,gray30+r2p"
@@ -94,25 +98,25 @@ def taup_path(
 
     # Adjust and extend for your needs
     phase_colors = {
-        "P": "navyblue",
-        "S": "blue",
-        "PcP": "deepskyblue",
-        "ScS": "cyan",
-        "SKS": "205/0/0",
-        "SKKS": "238/118/0",
-        "PKS": "yellow2",
-        "PKKS": "purple",
-        "PKKP": "darkgreen",
-        "PKIKP": "darkorange",
-        "PKJKP": "purple2",
-        "SKJKS": "maroon",
-        "PKPPKP": "yellow",
+        "P": "0/0/128",  # GMT navyblue
+        "S": "0/0/255",  # GMT blue
+        "PcP": "0/191/255",  # GMT deepskyblue
+        "ScS": "0/255/255",  # GMT cyan
+        "SKS": "205/0/0",  # GMT red3
+        "SKKS": "238/118/0",  # GMT darkorange2
+        "PKS": "238/238/0",  # GMT yellow2
+        "PKKS": "160/32/240",  # GMT purple
+        "PKKP": "0/100/0",  # GMT darkgreen
+        "PKIKP": "255/140/0",  # GMT darkorange
+        "PKJKP": "145/44/238",  # GMT purple2
+        "SKJKS": "176/48/96",  # GMT maroon
+        "PKPPKP": "255/255/0",  # GMT yellow
     }
 
     # %%
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Calculate travel times and travel paths via ObsPy and taup
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # https://docs.obspy.org/packages/autogen/obspy.taup.tau.TauPyModel.html
     # last access: 2023/12/11
 
@@ -125,9 +129,9 @@ def taup_path(
     )
 
     # %%
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Create plot for travel paths via PyGMT
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
 
     # Set up polar plot
     pygmt.config(FONT=label_font, FORMAT_GEO_MAP="+D")
@@ -138,7 +142,7 @@ def taup_path(
         frame="+gwhite",  # annotations are set later
     )
 
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Plot dicontinuities
     bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # km
     pygmt.makecpt(cmap="batlow", series=[0, len(bounds)])
@@ -162,40 +166,26 @@ def taup_path(
                 no_clip=no_clip_used,
             )
         else:
-            if bound == 6371:
-                y_offset = 0
-            elif bound == 5120:
-                y_offset = 200
-            elif bound == 2900:
-                y_offset = -200
-            elif bound == 2700:
-                y_offset = 200
-            elif bound == 660:
-                y_offset = -200
-            elif bound == 440:
-                y_offset = -50
-            elif bound == 120:
-                y_offset = -70
+            if bound == 6371: y_offset = 0
+            elif bound == 5120: y_offset = 200
+            elif bound == 2900: y_offset = -200
+            elif bound == 2700: y_offset = 200
+            elif bound == 660: y_offset = -200
+            elif bound == 440: y_offset = -50
+            elif bound == 120: y_offset = -70
             fig.plot(
                 x=np.linspace(min_dist, max_dist, max_dist),
                 y=np.ones(max_dist) * (r_earth - bound + y_offset),
                 style=f"qn1:+l{bound} km+f{label_font}+v+i+gwhite@30+o+c0.03c/0.03c",
             )
             y_offset = 0.05
-            if bound == 6371:
-                y_offset = 0
-            elif bound == 5120:
-                y_offset = -0.1
-            elif bound == 2900:
-                y_offset = 0.15
-            elif bound == 2700:
-                y_offset = -0.1
-            elif bound == 660:
-                y_offset = 0.15
-            elif bound == 440:
-                y_offset = 0.05
-            elif bound == 120:
-                y_offset = 0.06
+            if bound == 6371: y_offset = 0
+            elif bound == 5120: y_offset = -0.1
+            elif bound == 2900: y_offset = 0.15
+            elif bound == 2700: y_offset = -0.1
+            elif bound == 660: y_offset = 0.15
+            elif bound == 440: y_offset = 0.05
+            elif bound == 120: y_offset = 0.06
             if bound == 6371:
                 fig.text(
                     # x=receiver_dist/2 + 180,
@@ -209,15 +199,14 @@ def taup_path(
                     offset=f"0c/{y_offset}c",
                 )
 
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Plot travel paths
     fig_name_phase = []
     for i_phase in range(len(pp_temp)):
-        # Spread legend over two columns
+        # Spread legend over several columns
         leg_col_str = ""
-        if i_phase == 0:
-            leg_col_str = "+N3"
-        # if i_phase==0: leg_col_str = "+N2"
+        if i_phase == 0: leg_col_str = "+N3"
+        # if i_phase == 0: leg_col_str = "+N2"
 
         pp_depth = []
         pp_dist = []
@@ -255,7 +244,7 @@ def taup_path(
     fig.legend(position="jBC+jTC+o0c/0.5c+w8c/1c", box=box_standard)
     # fig.legend(position="jBC+jTC+o0c/0.5c+w5c/0.75c", box=box_standard)
 
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Add frame with annotations for distance
     fig.basemap(frame=["xa10f5", "wbNe"])
 
@@ -288,7 +277,7 @@ def taup_path(
         no_clip=no_clip_used,
     )
 
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Add labels for Earth model, epicentral distance, hypocentral depth
     fig.text(
         text=earth_model,
@@ -312,17 +301,18 @@ def taup_path(
         no_clip=True,
     )
 
-    # -----------------------------------------------------------------------------
+    if fig_instance == None:
+        fig.show()
+
+    # -------------------------------------------------------------------------
     # Show and save figure
     if fig_save == True:
+
         fig_name = (
             f"{save_path}map_travelpath_{int(np.round(receiver_dist))}deg_"
             + "_".join(fig_name_phase)
         )
-
         for ext in ["pdf", "png", "eps"]:
             fig.savefig(fname=f"{fig_name}.{ext}")
-
-        fig.show()
 
         print(fig_name)
