@@ -16,10 +16,9 @@
 # - Created: 2024/04/07
 #   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
-# - Updated: 2024/04/23
-#   Improve coding style
-# - Updated: 2024/05/04
-#   Improvements regarding PyGMT Figure instance
+# - Updated: 2024/04/23 - Improve coding style
+# - Updated: 2024/05/04 - Improve arguments and comments for colors
+# - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
 # #############################################################################
 
 
