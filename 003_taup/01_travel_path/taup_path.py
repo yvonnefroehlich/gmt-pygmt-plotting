@@ -325,6 +325,6 @@ for dist in [60, 95, 120, 142]:
         source_depth=500,
         receiver_dist=dist,
         max_dist=360,
-        phases=["SKS", "PKS", "SKKS", "PKKS"],
+        phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS"],
         # fig_save=True,
     )
