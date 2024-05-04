@@ -13,6 +13,8 @@
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # - Updated: 2024/04/23
 #   Improve coding style
+# - Updated: 2024/05/04
+#   Improvements regarding PyGMT Figure instance
 # #############################################################################
 
 import contextily as ctx

@@ -18,6 +18,8 @@
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # - Updated: 2024/04/23
 #   Improve coding style
+# - Updated: 2024/05/04
+#   Improvements regarding PyGMT Figure instance
 # #############################################################################
 
 
@@ -64,8 +66,9 @@ def taup_path(
     # - fig_save: Save figure to file | Default False
     # - save_path: Path of folder to save figure | Default current working directory
 
-    if fig_instance == None:
-        fig = pygmt.Figure()
+    fig = pygmt.Figure()
+    if fig_instance != None:
+        fig = fig_instance
 
     if max_depth == None:
         max_depth = r_earth
@@ -313,7 +316,9 @@ def taup_path(
 
 
 # %%
+# -----------------------------------------------------------------------------
 # Example
+# -----------------------------------------------------------------------------
 for dist in [60, 95, 120, 142]:
     taup_path(
         fig_width="8c",
