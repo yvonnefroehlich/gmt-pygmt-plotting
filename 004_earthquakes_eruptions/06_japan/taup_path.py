@@ -148,13 +148,14 @@ def taup_path(
         )
         if max_dist != 360:
             fig.text(
-                x=0,
+                x=min_dist,
                 y=r_earth - bound,
                 text=bound,
                 font=label_font,
-                angle=50,  # degrees counter-clockwise from horizontal
+                angle=center_point,  # degrees counter-clockwise from horizontal
                 justify="RM",
                 offset="-0.05c/-0.05c",
+                fill="white@30",
                 no_clip=no_clip_used,
             )
         else:
