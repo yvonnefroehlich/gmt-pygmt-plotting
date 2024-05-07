@@ -95,7 +95,7 @@ def taup_path(
     box_standard = "+gwhite@30+p0.1p,gray30+r2p"
     label_font = font_size
 
-    # Colors for seismolgocial phases
+    # Colors for seismological phases
     # Adjust and extend the dictionary for your needs in taup_path.py
     phase_colors = taup_color()
 
@@ -168,17 +168,15 @@ def taup_path(
                 y=np.ones(max_dist) * (r_earth - bound + y_offset),
                 style=f"qn1:+l{bound} km+f{label_font}+v+i+gwhite@30+o+c0.03c/0.03c",
             )
-            y_offset = 0.05
-            if bound == 6371: y_offset = 0
-            elif bound == 5120: y_offset = -0.1
-            elif bound == 2900: y_offset = 0.15
-            elif bound == 2700: y_offset = -0.1
-            elif bound == 660: y_offset = 0.15
-            elif bound == 440: y_offset = 0.05
-            elif bound == 120: y_offset = 0.06
+            # if bound==6371: y_offset = 0
+            # elif bound==5120: y_offset = -0.1
+            # elif bound==2900: y_offset = 0.15
+            # elif bound==2700: y_offset = -0.1
+            # elif bound==660: y_offset = 0.15
+            # elif bound==440: y_offset = 0.05
+            # elif bound==120: y_offset = 0.06
             if bound == 6371:
                 fig.text(
-                    # x=receiver_dist/2 + 180,
                     x=180,
                     y=r_earth - bound,
                     text=f"{bound} km",
