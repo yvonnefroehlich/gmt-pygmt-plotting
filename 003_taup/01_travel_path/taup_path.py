@@ -294,10 +294,10 @@ def taup_path(
     if fig_save == True:
 
         fig_name = (
-            f"{save_path}map_travelpath_{int(np.round(receiver_dist))}deg_"
+            f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_{int(np.round(receiver_dist))}deg_"
             + "_".join(fig_name_phase)
         )
-        for ext in ["png"]:  # , "pdf", "eps"]:
+        for ext in ["png"]: #, "pdf", "eps"]:
             fig.savefig(fname=f"{fig_name}.{ext}")
 
         print(fig_name)
@@ -314,6 +314,6 @@ for dist in [60, 95, 120, 142]:
         source_depth=500,
         receiver_dist=dist,
         max_dist=360,
-        phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS"],
-        # fig_save=True,
+        phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
+        fig_save=True,
     )
