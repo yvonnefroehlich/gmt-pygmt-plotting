@@ -123,11 +123,13 @@ def taup_path(
     # -------------------------------------------------------------------------
 
     # Set up polar plot
+    center_point = (np.abs(max_dist) - np.abs(min_dist)) / 2
+    if min_dist==0 and max_dist==360: center_point = 0
+
     pygmt.config(FONT=label_font, FORMAT_GEO_MAP="+D")
     fig.basemap(
         region=[min_dist, max_dist, min_radius, max_radius],
-        # projection=f"P{fig_width}+a+t{receiver_dist/2}+z",
-        projection=f"P{fig_width}+a+t0+z",
+        projection=f"P{fig_width}+a+t{center_point}+z",
         frame="+gwhite",  # annotations are set later
     )
 
@@ -246,21 +248,22 @@ def taup_path(
         pen="0.4p,black",
     )
 
-    # Plot receiver
-    # Rotate receiver to be always perpendicular to tangent to the surface point
-    x_receiver = receiver_dist
-    y_receiver = r_earth + 200
-    angle_reciever = 180 - receiver_dist
-    perspective_receiver = f"{angle_reciever}+w{x_receiver}/{y_receiver}"
-    fig.plot(
-        x=x_receiver,
-        y=y_receiver,
-        style="t0.3c",
-        fill="gold",
-        pen="0.4p,black",
-        perspective=perspective_receiver,
-        no_clip=no_clip_used,
-    )
+    if receiver_dist <= dist_max:
+        # Plot receiver
+        # Rotate receiver to be always perpendicular to tangent to the surface point
+        x_receiver = receiver_dist
+        y_receiver = r_earth + 200
+        angle_reciever = 180 - receiver_dist
+        perspective_receiver = f"{angle_reciever}+w{x_receiver}/{y_receiver}"
+        fig.plot(
+            x=x_receiver,
+            y=y_receiver,
+            style="t0.3c",
+            fill="gold",
+            pen="0.4p,black",
+            perspective=perspective_receiver,
+            no_clip=no_clip_used,
+        )
 
     # -------------------------------------------------------------------------
     # Add labels for Earth model, epicentral distance, hypocentral depth
