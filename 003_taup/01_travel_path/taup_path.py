@@ -89,10 +89,6 @@ def taup_path(
     max_radius = r_earth - min_depth
     min_radius = r_earth - max_depth
 
-    no_clip_used = False
-    if min_depth == 0 and max_depth == r_earth:
-        no_clip_used = True
-
     # -------------------------------------------------------------------------
     # Plotting
     color_highlight = "255/90/0"
@@ -146,17 +142,18 @@ def taup_path(
             close="+y",
         )
         if max_dist != 360:
-            fig.text(
-                x=min_dist,
-                y=r_earth - bound,
-                text=bound,
-                font=label_font,
-                angle=center_point,  # degrees counter-clockwise from horizontal
-                justify="RM",
-                offset="-0.05c/-0.05c",
-                fill="white@30",
-                no_clip=no_clip_used,
-            )
+            if bound > min_depth and bound < max_depth:
+                fig.text(
+                    x=min_dist,
+                    y=r_earth - bound,
+                    text=bound,
+                    font=label_font,
+                    angle=center_point,  # degrees counter-clockwise from horizontal
+                    justify="RM",
+                    offset="-0.05c/-0.05c",
+                    fill="white@30",
+                    no_clip=True,
+                )
         else:
             if bound == 6371: y_offset = 0
             elif bound == 5120: y_offset = 200
@@ -241,17 +238,18 @@ def taup_path(
     fig.basemap(frame=["xa10f5", "wbNe"])
 
     # Plot source
-    fig.plot(
-        x=0,
-        y=r_earth - source_depth,
-        style="a0.35c",
-        fill=color_highlight,
-        pen="0.4p,black",
-        no_clip=no_clip_used,
-    )
+    if source_depth <= max_depth:
+        fig.plot(
+            x=0,
+            y=r_earth - source_depth,
+            style="a0.35c",
+            fill=color_highlight,
+            pen="0.4p,black",
+            no_clip=True,
+        )
 
+    # Plot receiver
     if receiver_dist <= dist_max:
-        # Plot receiver
         # Rotate receiver to be always perpendicular to tangent to the surface point
         x_receiver = receiver_dist
         y_receiver = r_earth + 200
@@ -264,7 +262,7 @@ def taup_path(
             fill="gold",
             pen="0.4p,black",
             perspective=perspective_receiver,
-            no_clip=no_clip_used,
+            no_clip=True,
         )
 
     # -------------------------------------------------------------------------
