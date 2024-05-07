@@ -255,7 +255,7 @@ def taup_path(
         # Rotate receiver to be always perpendicular to tangent to the surface point
         x_receiver = receiver_dist
         y_receiver = r_earth + 200
-        angle_reciever = 180 - receiver_dist
+        angle_reciever = 180 - receiver_dist + center_point
         perspective_receiver = f"{angle_reciever}+w{x_receiver}/{y_receiver}"
         fig.plot(
             x=x_receiver,
