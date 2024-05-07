@@ -247,6 +247,7 @@ def taup_path(
         style="a0.35c",
         fill=color_highlight,
         pen="0.4p,black",
+        no_clip=no_clip_used,
     )
 
     if receiver_dist <= dist_max:
