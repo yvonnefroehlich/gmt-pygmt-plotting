@@ -13,6 +13,7 @@
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # - Updated: 2024/04/23 - Improve coding style
 # - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
+# - Updated: 2024/05/07 - Refractor: Introduce function taup_color
 # #############################################################################
 
 import contextily as ctx
@@ -23,7 +24,10 @@ from obspy import UTCDateTime as utc
 from obspy.clients.fdsn import Client as Client_fdsn
 from obspy.geodetics.base import gps2dist_azimuth
 from obspy.taup import TauPyModel
+
 from taup_path import taup_path
+from taup_color import taup_color
+
 
 # %%
 # -----------------------------------------------------------------------------
@@ -39,14 +43,8 @@ col_shorelines_ortho = "gray30"
 col_land = "gray90"
 col_shorelines = "darkgray"
 
-# Must be the same as in the taup_path function!
-dict_col_phase = {
-    "P": "0/0/128",  # GMT navyblue
-    "S": "0/0/255",  # GMT blue
-    "ScS": "0/255/255",  # GMT cyan
-    "SKS": "205/0/0",  # GMT red3
-    "SKKS": "238/118/0",  # GMT darkorange2
-}
+# Adjust and extend for your needs in taup_path.py
+dict_col_phase = taup_color()
 
 # Standards
 font = "9p"

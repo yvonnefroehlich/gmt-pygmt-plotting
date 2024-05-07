@@ -19,12 +19,15 @@
 # - Updated: 2024/04/23 - Improve coding style
 # - Updated: 2024/05/04 - Improve arguments and comments for colors
 # - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
+# - Updated: 2024/05/07 - Refractor: Introduce function taup_color
 # #############################################################################
 
 
 import numpy as np
 import pygmt
 from obspy.taup import TauPyModel
+
+from taup_color import taup_color
 
 
 def taup_path(
@@ -96,22 +99,8 @@ def taup_path(
     box_standard = "+gwhite@30+p0.1p,gray30+r2p"
     label_font = font_size
 
-    # Adjust and extend for your needs
-    phase_colors = {
-        "P": "0/0/128",  # GMT navyblue
-        "PcP": "0/191/255",  # GMT deepskyblue
-        "S": "0/0/255",  # GMT blue
-        "ScS": "0/255/255",  # GMT cyan
-        "PKS": "238/238/0",  # GMT yellow2
-        "PKKS": "160/32/240",  # GMT purple
-        "SKS": "205/0/0",  # GMT red3
-        "SKKS": "238/118/0",  # GMT darkorange2
-        "PKKP": "139/125/107",  # GMT bisque4
-        "PKPPKP": "188/143/143",  # GMT rosybrown
-        "PKIKP": "127/255/0",  # GMT chartreuse1
-        "PKJKP": "50/205/50",  # GMT limegreen
-        "SKJKS": "34/139/34",  # GMT forestgreen
-    }
+    # Adjust and extend for your needs in taup_path.py
+    phase_colors = taup_color()
 
     # %%
     # -------------------------------------------------------------------------
@@ -305,10 +294,10 @@ def taup_path(
     if fig_save == True:
 
         fig_name = (
-            f"{save_path}map_travelpath_{int(np.round(receiver_dist))}deg_"
+            f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_{int(np.round(receiver_dist))}deg_"
             + "_".join(fig_name_phase)
         )
-        for ext in ["png"]:  # , "pdf", "eps"]:
+        for ext in ["png"]: #, "pdf", "eps"]:
             fig.savefig(fname=f"{fig_name}.{ext}")
 
         print(fig_name)
@@ -325,6 +314,6 @@ for dist in [60, 95, 120, 142]:
         source_depth=500,
         receiver_dist=dist,
         max_dist=360,
-        phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS"],
-        # fig_save=True,
+        phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
+        fig_save=True,
     )
