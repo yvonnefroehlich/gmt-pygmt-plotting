@@ -95,7 +95,8 @@ def taup_path(
     box_standard = "+gwhite@30+p0.1p,gray30+r2p"
     label_font = font_size
 
-    # Adjust and extend for your needs in taup_path.py
+    # Colors for seismolgocial phases
+    # Adjust and extend the dictionary for your needs in taup_path.py
     phase_colors = taup_color()
 
     # %%
@@ -194,8 +195,8 @@ def taup_path(
     for i_phase in range(len(pp_temp)):
         # Spread legend over several columns
         leg_col_str = ""
+        # Adjust number of columns for your needs
         if i_phase == 0: leg_col_str = "+N3"
-        # if i_phase == 0: leg_col_str = "+N2"
 
         pp_depth = []
         pp_dist = []
@@ -230,8 +231,8 @@ def taup_path(
         fig_name_phase.append(phase_label_split[0])
 
     # Add legend for phases with travel times
+    # Adjust width and hight for your needs (+w)
     fig.legend(position="jBC+jTC+o0c/0.5c+w8c/1c", box=box_standard)
-    # fig.legend(position="jBC+jTC+o0c/0.5c+w5c/0.75c", box=box_standard)
 
     # -------------------------------------------------------------------------
     # Add frame with annotations for distance
