@@ -20,7 +20,7 @@
 # - Updated: 2024/05/04 - Improve arguments and comments for colors
 # - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
-# - Updated: 2024/xx/05 - Allow plotting sepcific distance and depth ranges
+# - Updated: 2024/xx/05 - Allow plotting specific distance and depth ranges
 # #############################################################################
 
 
@@ -230,7 +230,7 @@ def taup_path(
         fig_name_phase.append(phase_label_split[0])
 
     # Add legend for phases with travel times
-    # Adjust width and hight for your needs (+w)
+    # Adjust width and height for your needs (+w)
     fig.legend(position="jBC+jTC+o0c/0.5c+w8c/1c", box=box_standard)
 
     # -------------------------------------------------------------------------
