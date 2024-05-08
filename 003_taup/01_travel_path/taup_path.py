@@ -308,8 +308,11 @@ def taup_path(
     # Show and save figure
     if fig_save == True:
 
+        plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg"
+
         fig_name = (
-            f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_{int(np.round(receiver_dist))}deg_"
+            f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_" +
+            f"{int(np.round(receiver_dist))}deg_{plot_range_str}_"
             + "_".join(fig_name_phase)
         )
         for ext in ["png"]: #, "pdf", "eps"]:
@@ -320,15 +323,52 @@ def taup_path(
 
 # %%
 # -----------------------------------------------------------------------------
-# Example
+# Examples
 # -----------------------------------------------------------------------------
-for dist in [60, 95, 120, 142]:
-    taup_path(
-        fig_width="8c",
-        font_size="6.5p",
-        source_depth=500,
-        receiver_dist=dist,
-        max_dist=360,
-        phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
-        fig_save=True,
-    )
+taup_path(
+    fig_width="8c",
+    font_size="6.5p",
+    source_depth=500,
+    receiver_dist=142,
+    max_dist=360,
+    phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
+    fig_save=True,
+)
+
+taup_path(
+    fig_width="8c",
+    font_size="6.5p",
+    source_depth=500,
+    receiver_dist=95,
+    min_dist=0,
+    max_dist=100,
+    min_depth=0,
+    phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
+    fig_save=True,
+)
+
+taup_path(
+    fig_width="8c",
+    font_size="6.5p",
+    source_depth=500,
+    receiver_dist=95,
+    min_dist=0,
+    max_dist=100,
+    min_depth=0,
+    max_depth=4000,
+    phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
+    fig_save=True,
+)
+
+taup_path(
+    fig_width="8c",
+    font_size="6.5p",
+    source_depth=500,
+    receiver_dist=95,
+    min_dist=0,
+    max_dist=10,
+    min_depth=0,
+    max_depth=600,
+    phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
+    fig_save=True,
+)
