@@ -295,7 +295,7 @@ def taup_path(
         fig.text(
             text=f"iasp91 | @~D@~ = {round(receiver_dist,3)}° | hd = {round(source_depth,3)} km",
             position="BC",
-            offset="0c/0c",
+            offset="0c/-0.1c",
             justify="TC",
             font=f"8p,{color_highlight}",
             no_clip=True,
