@@ -248,7 +248,7 @@ def taup_path(
         )
 
     # Plot receiver
-    if receiver_dist <= dist_max:
+    if receiver_dist <= max_dist:
         # Rotate receiver to be always perpendicular to tangent to the surface point
         x_receiver = receiver_dist
         y_receiver = r_earth + 200
