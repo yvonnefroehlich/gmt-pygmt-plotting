@@ -20,6 +20,7 @@
 # - Updated: 2024/05/04 - Improve arguments and comments for colors
 # - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
+# - Updated: 2024/xx/05 - Allow plotting sepcific distance and depth ranges
 # #############################################################################
 
 
