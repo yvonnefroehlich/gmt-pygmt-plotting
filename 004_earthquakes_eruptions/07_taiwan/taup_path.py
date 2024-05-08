@@ -266,27 +266,37 @@ def taup_path(
 
     # -------------------------------------------------------------------------
     # Add labels for Earth model, epicentral distance, hypocentral depth
-    fig.text(
-        text=earth_model,
-        position="BL",
-        offset="0.3c/0c",
-        justify="BL",
-        no_clip=True,
-    )
-    fig.text(
-        text=f"@~D@~ = {round(receiver_dist,3)}°",
-        position="BR",
-        offset="-1.5c/0c",
-        justify="BL",
-        no_clip=True,
-    )
-    fig.text(
-        text=f"hd = {round(source_depth,3)} km",
-        position="BR",
-        offset="-1.5c/-0.3c",
-        justify="BL",
-        no_clip=True,
-    )
+    if min_dist==0 and max_dist==360:
+        fig.text(
+            text=earth_model,
+            position="BL",
+            offset="0.3c/0c",
+            justify="BL",
+            no_clip=True,
+        )
+        fig.text(
+            text=f"@~D@~ = {round(receiver_dist,3)}°",
+            position="BR",
+            offset="-1.5c/0c",
+            justify="BL",
+            no_clip=True,
+        )
+        fig.text(
+            text=f"hd = {round(source_depth,3)} km",
+            position="BR",
+            offset="-1.5c/-0.3c",
+            justify="BL",
+            no_clip=True,
+        )
+    else:
+        fig.text(
+            text=f"iasp91 | @~D@~ = {round(receiver_dist,3)}° | hd = {round(source_depth,3)} km",
+            position="BC",
+            offset="0c/-0.1c",
+            justify="TC",
+            font=f"8p,{color_highlight}",
+            no_clip=True,
+        )
 
     if fig_instance == None:
         fig.show()
@@ -295,8 +305,11 @@ def taup_path(
     # Show and save figure
     if fig_save == True:
 
+        plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg"
+
         fig_name = (
-            f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_{int(np.round(receiver_dist))}deg_"
+            f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_" +
+            f"{int(np.round(receiver_dist))}deg_{plot_range_str}_"
             + "_".join(fig_name_phase)
         )
         for ext in ["png"]: #, "pdf", "eps"]:
