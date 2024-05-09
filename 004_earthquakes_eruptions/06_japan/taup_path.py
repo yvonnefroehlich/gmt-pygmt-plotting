@@ -246,19 +246,19 @@ def taup_path(
     fig.basemap(frame=["xa10f5", "wbNe"])
 
     # Plot source
-    if source_depth <= max_depth:
+    if source_depth <= max_depth and source_depth >= min_depth and min_dist <= 0:
         fig.plot(
             x=0,
             y=r_earth - source_depth,
-            style="kearthquake.def/0.7c",
+            style="a0.35c",
             fill=color_highlight,
-            pen=color_highlight,
+            pen="0.4p,black",
             no_clip=True,
         )
 
-    # Plot receiver
-    if receiver_dist <= max_dist:
-        # Rotate receiver to be always perpendicular to tangent to the surface point
+    # Plot receiver always at surface, i.e., 0 km
+    if min_depth == 0 and receiver_dist <= max_dist:
+        # Rotate to be always perpendicular to tangent to the surface point
         x_receiver = receiver_dist
         y_receiver = r_earth + 200
         angle_reciever = 180 - receiver_dist + center_point
