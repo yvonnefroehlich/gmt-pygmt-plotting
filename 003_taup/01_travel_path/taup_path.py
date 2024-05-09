@@ -136,15 +136,20 @@ def taup_path(
     # -------------------------------------------------------------------------
     # Plot dicontinuities
     bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # km
+    # Adjust for your needs
+    colors = [
+        "244/236/236", "235/222/204", "229/211/188", "224/203/176",
+        "220/197/167", "217/193/160", "white",
+    ]
     circle_step = 1
     circle_x = np.arange(min_dist, max_dist + circle_step, circle_step)
     circle_y = np.ones(len(circle_x))
-    for bound in bounds:
+    for bound, color in zip(bounds, colors):
         fig.plot(
             x=circle_x,
             y=circle_y * (r_earth - bound),
             pen="0.4p,gray10",
-            fill="tan@75",
+            fill=color,
             close="+y",
         )
         if max_dist != 360:
