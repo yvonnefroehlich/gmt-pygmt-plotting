@@ -267,50 +267,53 @@ def taup_path(
 
     # -------------------------------------------------------------------------
     # Add labels for Earth model, epicentral distance, hypocentral depth
+    info_texts = [
+        earth_model,
+        f"@~D@~ = {round(receiver_dist,3)}°",
+        f"hd = {round(source_depth,3)} km",
+    ]
+
     if min_dist==0 and max_dist==360:
-        fig.text(
-            text=earth_model,
-            position="BL",
-            offset="0.3c/0c",
-            justify="BL",
-            font=f"{color_highlight}",
-            no_clip=True,
-        )
-        fig.text(
-            text=f"@~D@~ = {round(receiver_dist,3)}°",
-            position="BR",
-            offset="-1.5c/0c",
-            justify="BL",
-            font=f"{color_highlight}",
-            no_clip=True,
-        )
-        fig.text(
-            text=f"hd = {round(source_depth,3)} km",
-            position="BR",
-            offset="-1.5c/-0.3c",
-            justify="BL",
-            font=f"{color_highlight}",
-            no_clip=True,
-        )
+        info_offsets = ["0.3c/0c", "-1.5c/0c", "-1.5c/-0.3c"]
+        for info_text, info_offset in zip(info_texts, info_offsets):
+            info_pos = "BR"
+            if info_text==earth_model: info_pos = "BL"
+            fig.text(
+                text=info_text,
+                position=info_pos,
+                offset=info_offset,
+                justify="BL",
+                font=f"{font_size},{color_highlight}",
+                no_clip=True,
+            )
+    elif np.abs(min_dist) + np.abs(max_dist) > 200:  # degrees
+        info_offsets = ["0c/0.8c", "0c/0.4c", "0c/0c"]
+        for info_text, info_offset in zip(info_texts, info_offsets):
+            fig.text(
+                text=info_text,
+                position="BC",
+                offset=info_offset,
+                justify="TC",
+                font=f"{font_size},{color_highlight}",
+                no_clip=True,
+            )
     else:
         fig.text(
-            text=f"{earth_model} | @~D@~ = {round(receiver_dist,3)}° | hd = {round(source_depth,3)} km",
+            text=" | ".join(info_texts),
             position="BC",
             offset="0c/-0.1c",
             justify="TC",
-            font=f"8p,{color_highlight}",
+            font=f"{font_size},{color_highlight}",
             no_clip=True,
         )
 
+    # -------------------------------------------------------------------------
+    # Show and save figure
     if fig_instance == None:
         fig.show()
 
-    # -------------------------------------------------------------------------
-    # Show and save figure
     if fig_save == True:
-
         plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg"
-
         fig_name = (
             f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_" +
             f"{int(np.round(receiver_dist))}deg_{plot_range_str}_"
