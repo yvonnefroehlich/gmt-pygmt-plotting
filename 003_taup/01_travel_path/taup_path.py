@@ -42,6 +42,7 @@ def taup_path(
     min_dist=0,
     max_dist=None,
     font_size="4p",
+    earth_color="tan",
     fig_instance=None,
     fig_width="6c",
     fig_save=False,
@@ -64,6 +65,7 @@ def taup_path(
     # - min_dist: Minimum for plotting | degrees | Default 0
     # - max_dist: Maximum for plotting | degrees | Default epicentral distance + 10
     # - font_size: Font size for text | Default 4p
+    # - earth_color: Colors for Earth concentric shells or circles | Default gray | gray, tan, bilbao_gray, bilbao_brown
     # - fig_instance: Provide a PyGMT figure instance | Default a new one is set up
     # - fig_width: Width of figure | Default 6c
     # - fig_save: Save figure to file | Default False
@@ -136,26 +138,28 @@ def taup_path(
     # -------------------------------------------------------------------------
     # Plot dicontinuities
     bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # km
-    # Adjust for your needs
-    # color_ani_areas = "255/172/127"  # color_highlight@50
-    # earth_cmap = "bilbao"
-    # pygmt.makecpt(
-    #     cmap=earth_cmap,
-    #     series=[0, len(bounds)+1, 1],
-    #     output=f"{earth_cmap}_bounds.cpt",
-    # )
-    # GMT tan
-    colors = [
-        "244/236/236", "235/222/204", "229/211/188",
-        "224/203/176", "220/197/167", "217/193/160", "white",
-    ]
-    # grayC
-    # colors = ["gray93", "202.19", "167.31", "134.44", "103.56", "gray29", "white"]
-    # bilbao
-    # colors = [
-    #     "234.12/234.12/234.06", "202/199.19/188.19", "187.31/178.31/145.31",
-    #     "174.44/149.44/109.44", "166/120.56/95.562", "156.69/91.688/82", "white",
-    # ]
+    # Adjust or extend for your needs
+    match earth_color:
+        case "tan":
+            colors = [
+                "244/236/236", "235/222/204", "229/211/188",
+                "224/203/176", "220/197/167", "217/193/160", "white",
+            ]
+        case "gray":
+            colors = [
+                "246.03", "228.09", "210.16",
+                "193.22", "gray69", "159.34", "white",
+            ]
+        case "bilbao_gray":
+            colors = [
+                "245.03/245.03/244.06", "225.09/224.09/223.09", "208.16/206.16/199.31",
+                "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34", "white",
+            ]
+        case "bilbao_brown":
+            colors = [
+                "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34",
+                "177.41/157.41/116.41", "172/142.47/105", "168/127.53/98.531", "white",
+            ]
     circle_step = 1
     circle_x = np.arange(min_dist, max_dist + circle_step, circle_step)
     circle_y = np.ones(len(circle_x))
