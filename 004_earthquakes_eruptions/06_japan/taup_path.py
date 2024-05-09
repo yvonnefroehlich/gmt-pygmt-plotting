@@ -286,7 +286,7 @@ def taup_path(
         f"hd = {round(source_depth,3)} km",
     ]
 
-    if min_dist==0 and max_dist==360:
+    if abs(max_dist - min_dist) > 330:
         info_offsets = ["0.3c/0c", "-1.5c/0c", "-1.5c/-0.3c"]
         for info_text, info_offset in zip(info_texts, info_offsets):
             info_pos = "BR"
@@ -299,7 +299,7 @@ def taup_path(
                 font=f"{font_size},{color_highlight}",
                 no_clip=True,
             )
-    elif max_dist - min_dist > 200:  # degrees
+    elif abs(max_dist - min_dist) > 200 and abs(max_dist - min_dist) < 330:  # degrees
         info_offsets = ["0c/0.8c", "0c/0.4c", "0c/0c"]
         for info_text, info_offset in zip(info_texts, info_offsets):
             fig.text(
