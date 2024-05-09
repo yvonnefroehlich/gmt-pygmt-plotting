@@ -248,7 +248,8 @@ def taup_path(
     fig.basemap(frame=["xa10f5", "wbNe"])
 
     # Plot source
-    if source_depth <= max_depth and source_depth >= min_depth and min_dist <= 0:
+    if source_depth <= max_depth and source_depth >= min_depth \
+       and min_dist <= 0 and max_dist > 0:
         fig.plot(
             x=0,
             y=r_earth - source_depth,
