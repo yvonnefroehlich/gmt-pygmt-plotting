@@ -169,26 +169,20 @@ def taup_path(
                     no_clip=True,
                 )
         else:
-            if bound == 6371: y_offset = 0
-            elif bound == 5120: y_offset = 200
-            elif bound == 2900: y_offset = -200
-            elif bound == 2700: y_offset = 200
-            elif bound == 660: y_offset = -200
-            elif bound == 440: y_offset = -50
-            elif bound == 120: y_offset = -70
+            match bound:
+                case 6371: y_offset = 0
+                case 5120: y_offset = 200
+                case 2900: y_offset = -200
+                case 2700: y_offset = 200
+                case 660: y_offset = -200
+                case 440: y_offset = -50
+                case 120: y_offset = -70
             fig.plot(
                 x=np.linspace(min_dist, max_dist, max_dist),
                 y=np.ones(max_dist) * (r_earth - bound + y_offset),
                 style=f"qn1:+l{bound} km+f{font_size}+v+i+gwhite@30+o+c0.03c/0.03c",
             )
-            # if bound==6371: y_offset = 0
-            # elif bound==5120: y_offset = -0.1
-            # elif bound==2900: y_offset = 0.15
-            # elif bound==2700: y_offset = -0.1
-            # elif bound==660: y_offset = 0.15
-            # elif bound==440: y_offset = 0.05
-            # elif bound==120: y_offset = 0.06
-            if bound == 6371:
+            if bound==6371:
                 fig.text(
                     x=180,
                     y=r_earth - bound,
