@@ -147,7 +147,7 @@ def taup_path(
             close="+y",
         )
         if max_dist != 360:
-            angle_depth = (np.abs(min_dist) + np.abs(max_dist)) / 2
+            angle_depth = (np.abs(min_dist) + np.abs(max_dist)) / 2 - add_mindist
             angle_flip = 0
             justify_depth = "RM"
             if np.abs(min_dist) + np.abs(max_dist) > 200:  # degrees
@@ -159,7 +159,7 @@ def taup_path(
                     y=r_earth - bound,
                     text=bound,
                     font=label_font,
-                    angle=angle_depth + angle_flip - add_mindist,
+                    angle=angle_depth + angle_flip,
                     justify=justify_depth,
                     offset="-0.05c/-0.05c",
                     fill="white@30",
