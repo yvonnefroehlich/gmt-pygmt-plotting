@@ -119,9 +119,12 @@ def taup_path(
     # -------------------------------------------------------------------------
     # Create plot for travel paths via PyGMT
     # -------------------------------------------------------------------------
-
     # Set up polar plot
-    center_point = (np.abs(max_dist) - np.abs(min_dist)) / 2
+    # Center in the middle of the epicentral distance range
+    add_mindist = 0
+    if min_dist > 0: add_mindist = min_dist
+
+    center_point = (np.abs(max_dist) - np.abs(min_dist)) / 2 + add_mindist
     if min_dist==0 and max_dist==360: center_point = 0
 
     pygmt.config(FONT=label_font, FORMAT_GEO_MAP="+D")
@@ -156,7 +159,7 @@ def taup_path(
                     y=r_earth - bound,
                     text=bound,
                     font=label_font,
-                    angle=angle_depth + angle_flip,
+                    angle=angle_depth + angle_flip - add_mindist,
                     justify=justify_depth,
                     offset="-0.05c/-0.05c",
                     fill="white@30",
