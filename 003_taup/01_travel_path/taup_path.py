@@ -137,6 +137,7 @@ def taup_path(
     # Plot dicontinuities
     bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # km
     # Adjust for your needs
+    color_ani_areas = "255/172/127"
     colors = [
         "244/236/236", "235/222/204", "229/211/188", "224/203/176",
         "220/197/167", "217/193/160", "white",
@@ -350,27 +351,16 @@ taup_path(
     phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
     fig_save=True,
 )
-
 taup_path(
     fig_width="8c",
     font_size="6.5p",
     source_depth=500,
     receiver_dist=142,
-    min_dist=80,
-    max_dist=160,
-    phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
-    # fig_save=True,
-)
-
-taup_path(
-    fig_width="8c",
-    font_size="6.5p",
-    source_depth=500,
-    receiver_dist=95,
-    min_dist=0,
-    max_dist=100,
-    min_depth=0,
-    phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
+    min_dist=100,
+    max_dist=180,
+    min_depth=660,
+    max_depth=4000,
+    phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS"],
     fig_save=True,
 )
 
@@ -379,23 +369,32 @@ taup_path(
     font_size="6.5p",
     source_depth=500,
     receiver_dist=95,
-    min_dist=0,
+    min_dist=-5,
+    max_dist=100,
+    phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
+    fig_save=True,
+)
+taup_path(
+    fig_width="8c",
+    font_size="6.5p",
+    source_depth=500,
+    receiver_dist=95,
+    min_dist=-5,
     max_dist=100,
     min_depth=0,
     max_depth=4000,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
     fig_save=True,
 )
-
 taup_path(
     fig_width="8c",
     font_size="6.5p",
     source_depth=500,
     receiver_dist=95,
-    min_dist=0,
+    min_dist=-5,
     max_dist=10,
     min_depth=0,
-    max_depth=600,
+    max_depth=700,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
     fig_save=True,
 )
