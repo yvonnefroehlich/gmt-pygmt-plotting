@@ -356,6 +356,17 @@ taup_path(
     fig_width="8c",
     font_size="6.5p",
     source_depth=500,
+    receiver_dist=142,
+    min_dist=80,
+    max_dist=160,
+    phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
+    # fig_save=True,
+)
+
+taup_path(
+    fig_width="8c",
+    font_size="6.5p",
+    source_depth=500,
     receiver_dist=95,
     min_dist=0,
     max_dist=100,
