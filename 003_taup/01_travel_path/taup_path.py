@@ -363,6 +363,7 @@ def taup_path(
 taup_path(
     fig_width="8c",
     font_size="6.5p",
+    earth_color="gray",
     source_depth=500,
     receiver_dist=142,
     max_dist=360,
@@ -372,6 +373,7 @@ taup_path(
 taup_path(
     fig_width="8c",
     font_size="6.5p",
+    earth_color="gray",
     source_depth=500,
     receiver_dist=142,
     min_dist=100,
