@@ -94,7 +94,6 @@ def taup_path(
     # Plotting
     color_highlight = "255/90/0"
     box_standard = "+gwhite@30+p0.1p,gray30+r2p"
-    label_font = font_size
 
     # Colors for seismological phases
     # Adjust and extend the dictionary for your needs in taup_path.py
@@ -127,7 +126,7 @@ def taup_path(
     center_point = (np.abs(max_dist) - np.abs(min_dist)) / 2 + add_mindist
     if min_dist==0 and max_dist==360: center_point = 0
 
-    pygmt.config(FONT=label_font, FORMAT_GEO_MAP="+D")
+    pygmt.config(FONT=font_size, FORMAT_GEO_MAP="+D")
     fig.basemap(
         region=[min_dist, max_dist, min_radius, max_radius],
         projection=f"P{fig_width}+a+t{center_point}+z",
@@ -158,7 +157,7 @@ def taup_path(
                     x=min_dist,
                     y=r_earth - bound,
                     text=bound,
-                    font=label_font,
+                    font=font_size,
                     angle=angle_depth + angle_flip,
                     justify=justify_depth,
                     offset="-0.05c/-0.05c",
@@ -176,7 +175,7 @@ def taup_path(
             fig.plot(
                 x=np.linspace(min_dist, max_dist, max_dist),
                 y=np.ones(max_dist) * (r_earth - bound + y_offset),
-                style=f"qn1:+l{bound} km+f{label_font}+v+i+gwhite@30+o+c0.03c/0.03c",
+                style=f"qn1:+l{bound} km+f{font_size}+v+i+gwhite@30+o+c0.03c/0.03c",
             )
             # if bound==6371: y_offset = 0
             # elif bound==5120: y_offset = -0.1
@@ -190,7 +189,7 @@ def taup_path(
                     x=180,
                     y=r_earth - bound,
                     text=f"{bound} km",
-                    font=label_font,
+                    font=font_size,
                     justify="MC",
                     fill="white@30",
                     clearance="0.03c/0.03c+tO",
