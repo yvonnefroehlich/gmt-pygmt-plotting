@@ -348,7 +348,7 @@ def taup_path(
         fig_name = (
             f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_" +
             f"{int(np.round(receiver_dist))}deg_{plot_range_str}_"
-            + "_".join(fig_name_phase)
+            + "_".join(fig_name_phase) + f"_{earth_color}"
         )
         for ext in ["png"]: #, "pdf", "eps"]:
             fig.savefig(fname=f"{fig_name}.{ext}")
