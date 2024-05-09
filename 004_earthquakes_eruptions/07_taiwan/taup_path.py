@@ -136,11 +136,13 @@ def taup_path(
     # -------------------------------------------------------------------------
     # Plot dicontinuities
     bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # km
-    pygmt.makecpt(cmap="batlow", series=[0, len(bounds)])
+    circle_step = 1
+    circle_x = np.arange(min_dist, max_dist + circle_step, circle_step)
+    circle_y = np.ones(len(circle_x))
     for bound in bounds:
         fig.plot(
-            x=np.linspace(min_dist, max_dist, max_dist),
-            y=np.ones(max_dist) * (r_earth - bound),
+            x=circle_x,
+            y=circle_y * (r_earth - bound),
             pen="0.4p,gray10",
             fill="tan@75",
             close="+y",
