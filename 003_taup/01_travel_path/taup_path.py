@@ -149,7 +149,7 @@ def taup_path(
             angle_depth = (np.abs(min_dist) + np.abs(max_dist)) / 2 - add_mindist
             angle_flip = 0
             justify_depth = "RM"
-            if np.abs(min_dist) + np.abs(max_dist) > 200:  # degrees
+            if max_dist - min_dist > 200:  # degrees
                 angle_flip = 180
                 justify_depth = "LM"
             if bound > min_depth and bound < max_depth:
@@ -294,7 +294,7 @@ def taup_path(
                 font=f"{font_size},{color_highlight}",
                 no_clip=True,
             )
-    elif np.abs(min_dist) + np.abs(max_dist) > 200:  # degrees
+    elif max_dist - min_dist > 200:  # degrees
         info_offsets = ["0c/0.8c", "0c/0.4c", "0c/0c"]
         for info_text, info_offset in zip(info_texts, info_offsets):
             fig.text(
