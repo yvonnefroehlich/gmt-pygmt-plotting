@@ -267,7 +267,8 @@ def taup_path(
 
     # Add legend for phases with travel times
     # Adjust width and height for your needs (+w)
-    fig.legend(position="jBC+jTC+o0c/0.5c+w8c/1c", box=box_standard)
+    # fig.legend(position="jBC+jTC+o0c/0.5c+w8c/1c", box=box_standard)
+    fig.legend(position="jBC+jTC+o0c/0.5c+w8.5c/1c", box=box_standard)
 
     # -------------------------------------------------------------------------
     # Add frame with annotations for distance
