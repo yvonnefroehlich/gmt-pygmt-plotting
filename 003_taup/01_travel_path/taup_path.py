@@ -143,7 +143,7 @@ def taup_path(
     match earth_color:
         case "white":
             colors = [
-			     "white", "white", "white",
+                 "white", "white", "white",
                  "white", "white", "white", "white",
             ]
         case "tan":
@@ -350,17 +350,18 @@ def taup_path(
     if fig_instance == None:
         fig.show()
 
+    plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg"
+    fig_name = (
+        f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_" +
+        f"{int(np.round(receiver_dist))}deg_{plot_range_str}_"
+        + "_".join(fig_name_phase) + f"_{earth_color}"
+    )
+
     if fig_save == True:
-        plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg"
-        fig_name = (
-            f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_" +
-            f"{int(np.round(receiver_dist))}deg_{plot_range_str}_"
-            + "_".join(fig_name_phase) + f"_{earth_color}"
-        )
         for ext in ["png"]: #, "pdf", "eps"]:
             fig.savefig(fname=f"{fig_name}.{ext}")
 
-        print(fig_name)
+    print(fig_name)
 
 
 # %%
@@ -375,7 +376,7 @@ taup_path(
     receiver_dist=142,
     max_dist=360,
     phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
-    fig_save=True,
+    # fig_save=True,
 )
 taup_path(
     fig_width="8c",
@@ -388,7 +389,7 @@ taup_path(
     min_depth=660,
     max_depth=4000,
     phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS"],
-    fig_save=True,
+    # fig_save=True,
 )
 
 taup_path(
@@ -399,7 +400,7 @@ taup_path(
     min_dist=-5,
     max_dist=100,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-    fig_save=True,
+    # fig_save=True,
 )
 taup_path(
     fig_width="8c",
@@ -411,7 +412,7 @@ taup_path(
     min_depth=0,
     max_depth=4000,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-    fig_save=True,
+    # fig_save=True,
 )
 taup_path(
     fig_width="8c",
@@ -423,5 +424,5 @@ taup_path(
     min_depth=0,
     max_depth=700,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-    fig_save=True,
+    # fig_save=True,
 )

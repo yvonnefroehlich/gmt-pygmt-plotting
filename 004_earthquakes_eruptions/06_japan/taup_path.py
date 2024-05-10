@@ -143,7 +143,7 @@ def taup_path(
     match earth_color:
         case "white":
             colors = [
-			     "white", "white", "white",
+                 "white", "white", "white",
                  "white", "white", "white", "white",
             ]
         case "tan":
@@ -321,7 +321,8 @@ def taup_path(
                 position=info_pos,
                 offset=info_offset,
                 justify="BL",
-                font=f"{font_size},{color_highlight}",
+                # font=f"{font_size},{color_highlight}",
+                font=f"{font_size},black",
                 no_clip=True,
             )
     elif abs(max_dist - min_dist) > 200 and abs(max_dist - min_dist) < 330:  # degrees
@@ -332,7 +333,8 @@ def taup_path(
                 position="BC",
                 offset=info_offset,
                 justify="TC",
-                font=f"{font_size},{color_highlight}",
+                # font=f"{font_size},{color_highlight}",
+                font=f"{font_size},black",
                 no_clip=True,
             )
     else:
@@ -341,7 +343,8 @@ def taup_path(
             position="BC",
             offset="0c/-0.1c",
             justify="TC",
-            font=f"{font_size},{color_highlight}",
+            # font=f"{font_size},{color_highlight}",
+            font=f"{font_size},black",
             no_clip=True,
         )
 
@@ -350,14 +353,15 @@ def taup_path(
     if fig_instance == None:
         fig.show()
 
+    plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg"
+    fig_name = (
+        f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_" +
+        f"{int(np.round(receiver_dist))}deg_{plot_range_str}_"
+        + "_".join(fig_name_phase) + f"_{earth_color}"
+    )
+
     if fig_save == True:
-        plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg"
-        fig_name = (
-            f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_" +
-            f"{int(np.round(receiver_dist))}deg_{plot_range_str}_"
-            + "_".join(fig_name_phase) + f"_{earth_color}"
-        )
         for ext in ["png"]: #, "pdf", "eps"]:
             fig.savefig(fname=f"{fig_name}.{ext}")
 
-        print(fig_name)
+    print(fig_name)
