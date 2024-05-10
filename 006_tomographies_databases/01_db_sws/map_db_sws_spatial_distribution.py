@@ -10,8 +10,8 @@
 # ORCID: https://orcid.org/0000-0002-8566-0619
 # GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # -----------------------------------------------------------------------------
-# - Created: 2024/05/03
-#   PyGMT v0.11.0 / v0.12.0 -> https://www.pygmt.org/
+# - Created: 2024/05/10
+#   PyGMT v0.12.0 -> https://www.pygmt.org/
 #   GMT 6.4.0 / 6.5.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
 
@@ -34,7 +34,7 @@ color_shorelines = "darkred"
 color_split = "white"
 
 # Region and projection
-region_used = "d"  # global
+region_used = "d"  # global with central longitude at 0° E, use "g" for 180° E
 projection_used = "N11c"  # Robinson projection
 
 
@@ -68,6 +68,7 @@ for spacing_used in range(5, 21, 5):  # size of blocks degrees
         region=region_used,
         spacing=spacing_used,
     )
+
 
 # %%
 # -----------------------------------------------------------------------------
