@@ -36,6 +36,23 @@ def taup_color():
         "PKJKP": "50/205/50",  # GMT limegreen
         "SKIKS": "34/139/34",  # GMT forestgreen
         "SKJKS": "0/100/0",  # GMT darkgreen
+        # Deth phases for SKS and SKKS phases
+        "pSKS": "139/0/0",  # GMT darkred
+        "sSKS": "255/128/128",  # GMT lightred
+        "pSKKS": "255/69/0",  # GMT orangered
+        "sSKKS": "255/192/128",  # GMT lightorange
     }
+
+    # Depth phases for PcP and ScS phases
+    # phase_colors = {
+    #     "P": "0/255/255",  # GMT cyan
+    #     "PcP": "0/191/255",  # GMT deepskyblue
+    #     "pPcP": "0/0/255",  # GMT blue
+    #     "sPcP": "0/0/139",  # GMT darkblue
+    #     "S": "255/0/255",  # GMT magenta
+    #     "ScS": "255/128/128",  # GMT lightred
+    #     "pScS": "255/0/0",  # GMT red
+    #     "sScS": "139/0/0",  # GMT darkred
+    # }
 
     return phase_colors
