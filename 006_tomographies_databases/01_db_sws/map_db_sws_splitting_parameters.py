@@ -3,6 +3,9 @@
 # Barruol, G., Wuestefeld, A., & Bokelmann, G. (2009). SKS-Splitting-database.
 # Université de Montpellier, Laboratoire Géosciences.
 # https://doi.org/10.18715/sks_splitting_database
+#
+# Splitting parameters of splits as orientated and color-coded (fast
+# polarization direction phi) length-scaled (delay time dt) bars
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
 # ORCID: https://orcid.org/0000-0002-8566-0619
@@ -78,8 +81,8 @@ fig.plot(
 )
 
 # -----------------------------------------------------------------------------
-# Plot splitting parameter as color-coded and orientated length-scaled bars
-# according to phi and dt and nulls as white-filled black-outlined circles
+# Plot splitting parameter of splits as orientated and color-coded length-scaled
+# bars according to phi and dt; nulls as white-filled black-outlined circles
 
 # splits
 fig.plot(
@@ -106,7 +109,7 @@ fig.colorbar(cmap=True, frame=[f"xa30f10+l{cb_label}", "y+lN@.E"])
 # Show and save figure
 fig.show()
 
-fig_name = f"{path_out}/db_sws_splittingparameter"
+fig_name = f"{path_out}/db_sws_splitting_parameters"
 # for ext in ["png"]:  # , "pdf", "eps"]:
 #     fig.savefig(fname=f"{fig_name}.{ext}")
 
