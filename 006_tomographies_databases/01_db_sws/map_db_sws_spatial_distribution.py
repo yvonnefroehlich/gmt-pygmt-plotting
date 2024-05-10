@@ -53,8 +53,8 @@ df_swsm_null = df_swsm_raw[df_swsm_raw.obs == "Null"]
 # Bin data
 # -----------------------------------------------------------------------------
 # Feel free to adjust the blocks size for your needs
-for spacing_used in range(5, 21, 5):  # size of blocks degrees
-    # Calculate counts of splits within blocks
+for spacing_used in range(5, 21, 5):  # size of blocks in degrees
+    # Calculate counts of splits within each block
     df_swsm_split_bin = gmt.blockmean(
         data=df_swsm_split[["Longitude", "Latitude", "phi_SL"]],
         region=region_used,
@@ -85,7 +85,7 @@ for spacing_used in range(5, 21, 5):  # size of blocks degrees
     )
 
 # -----------------------------------------------------------------------------
-    # Counts of splits with in blocks
+    # Counts of splits within in each block
     # Creat colormap
     gmt.makecpt(series=[0, 300, 10], cmap="nuuk", reverse=True)
 
@@ -104,7 +104,7 @@ for spacing_used in range(5, 21, 5):  # size of blocks degrees
     )
 
 # -----------------------------------------------------------------------------
-    # Data points for splits
+    # Plot data points for splits
     fig.plot(
         data=df_swsm_split[["Longitude", "Latitude"]],
         style="p0.1p",
