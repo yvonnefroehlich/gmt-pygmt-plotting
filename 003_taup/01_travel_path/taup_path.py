@@ -1,6 +1,7 @@
 # #############################################################################
 # Seismological phase through the Earth
-# - Calculate travel times and travel paths via ObsPy and taup
+# - Calculate travel times and travel paths via ObsPy and the Java TauP Toolkit
+#   by [Crotwell 1999]
 # - Plot travel paths via PyGMT
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
@@ -20,7 +21,7 @@
 # - Updated: 2024/05/04 - Improve arguments and comments for colors
 # - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
-# - Updated: 2024/xx/05 - Allow plotting specific distance and depth ranges
+# - Updated: 2024/05/10 - Allow plotting specific distance and depth ranges
 # #############################################################################
 
 
@@ -56,7 +57,6 @@ def taup_path(
     # - source_depth: Hypocentral depth | km
     # - receiver_dist: Epicentral distance | degrees
     # - phases: Seismological phases | list of strings
-
     # Optional
     # - earth_model: Earth model | Default iasp91
     # - r_earth: Earth's radius | km | Default 6371
@@ -65,7 +65,8 @@ def taup_path(
     # - min_dist: Minimum for plotting | degrees | Default 0
     # - max_dist: Maximum for plotting | degrees | Default epicentral distance + 10
     # - font_size: Font size for text | Default 4p
-    # - earth_color: Colors for Earth concentric shells or circles | Default tan | white, tan, gray, bilbao_gray, bilbao_brown
+    # - earth_color: Colors for Earth concentric shells or circles | Default tan
+    #   Select from white, tan, gray, bilbao_gray, bilbao_brown
     # - fig_instance: Provide a PyGMT figure instance | Default a new one is set up
     # - fig_width: Width of figure | Default 6c
     # - fig_save: Save figure to file | Default False
@@ -288,7 +289,8 @@ def taup_path(
     if min_depth == 0 and receiver_dist <= max_dist:
         # Rotate to be always perpendicular to tangent to the surface point
         x_receiver = receiver_dist
-        y_receiver = r_earth + 200
+        # Have to lower edge of the inverse triangle at the top of the surface
+        y_receiver = r_earth + 200  # Seems to work in many cases quite well
         angle_reciever = 180 - receiver_dist + center_point
         perspective_receiver = f"{angle_reciever}+w{x_receiver}/{y_receiver}"
         fig.plot(
