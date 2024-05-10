@@ -65,7 +65,7 @@ def taup_path(
     # - min_dist: Minimum for plotting | degrees | Default 0
     # - max_dist: Maximum for plotting | degrees | Default epicentral distance + 10
     # - font_size: Font size for text | Default 4p
-    # - earth_color: Colors for Earth concentric shells or circles | Default gray | gray, tan, bilbao_gray, bilbao_brown
+    # - earth_color: Colors for Earth concentric shells or circles | Default tan | white, tan, gray, bilbao_gray, bilbao_brown
     # - fig_instance: Provide a PyGMT figure instance | Default a new one is set up
     # - fig_width: Width of figure | Default 6c
     # - fig_save: Save figure to file | Default False
@@ -140,6 +140,11 @@ def taup_path(
     bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # km
     # Adjust or extend for your needs
     match earth_color:
+        case "white":
+            colors = [
+			     "white", "white", "white",
+                 "white", "white", "white", "white",
+            ]
         case "tan":
             colors = [
                 "244/236/236", "235/222/204", "229/211/188",
