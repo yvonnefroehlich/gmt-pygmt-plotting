@@ -58,17 +58,18 @@ def taup_path(
     # - receiver_dist: Epicentral distance | degrees
     # - phases: Seismological phases | list of strings
     # Optional
-    # - earth_model: Earth model | Default iasp91
+    # - earth_model: Earth model | Default "iasp91"
     # - r_earth: Earth's radius | km | Default 6371
     # - min_depth: Minimum for plotting | km | Default 0
     # - max_depth: Maximum for plotting | km | Default Earth's radius
     # - min_dist: Minimum for plotting | degrees | Default 0
     # - max_dist: Maximum for plotting | degrees | Default epicentral distance + 10
-    # - font_size: Font size for text | Default 4p
-    # - earth_color: Colors for Earth concentric shells or circles | Default tan
-    #   Select from white, tan, gray, bilbao_gray, bilbao_brown
+    # - font_size: Font size for text | Default "4p"
+    # - earth_color: Colors for Earth concentric shells or circles | Default "tan"
+    #   Select from "white", "tan", "gray", "bilbao_gray", "bilbao_brown" OR
+    #   Pass any GMT built-in colormap
     # - fig_instance: Provide a PyGMT figure instance | Default a new one is set up
-    # - fig_width: Width of figure | Default 6c
+    # - fig_width: Width of figure | Default "6c"
     # - fig_save: Save figure to file | Default False
     # - save_path: Path of folder to save figure | Default current working directory
 
@@ -139,7 +140,13 @@ def taup_path(
     # -------------------------------------------------------------------------
     # Plot dicontinuities
     bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # km
-    # Adjust or extend for your needs
+
+    # Set up colors for Earth concentric shells or circles
+    # Adjust for your needs
+    if earth_color not in ["white", "tan", "gray", "bilbao_gray", "bilbao_brown"]:
+        pygmt.makecpt(
+            cmap=earth_color, series=[0, len(bounds), 1], transparency=50,
+        )
     match earth_color:
         case "white":
             colors = [
@@ -166,17 +173,30 @@ def taup_path(
                 "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34",
                 "177.41/157.41/116.41", "172/142.47/105", "168/127.53/98.531", "white",
             ]
+
     circle_step = 1
     circle_x = np.arange(min_dist, max_dist + circle_step, circle_step)
     circle_y = np.ones(len(circle_x))
-    for bound, color in zip(bounds, colors):
+
+    for i_bound, bound in enumerate(bounds):
+        # Plot Earth concentric circles
+        fill_used = "+z"
+        zvalue_used = i_bound
+        camp_used = True
+        if earth_color in ["white", "tan", "gray", "bilbao_gray", "bilbao_brown"]:
+            fill_used = colors[i_bound]
+            zvalue_used = None
+            camp_used = None
         fig.plot(
             x=circle_x,
             y=circle_y * (r_earth - bound),
-            pen="0.4p,gray10",
-            fill=color,
             close="+y",
+            pen="0.4p,gray10",
+            fill=fill_used,
+            zvalue=zvalue_used,
+            cmap=camp_used,
         )
+        # Add depth labels
         if max_dist != 360:
             angle_sign = -1
             if min_dist < 0 and max_dist < 0: angle_sign = 1
