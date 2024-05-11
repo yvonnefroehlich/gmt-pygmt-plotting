@@ -352,7 +352,6 @@ fig.meca(
 
 fig.show()
 
-
 # %%
 # -----------------------------------------------------------------------------
 # === Upper Center: USGS earthquake data ===
@@ -392,10 +391,9 @@ fig.plot(
 
 fig.show()
 
-
 # %%
 # -----------------------------------------------------------------------------
-# === Upper Right: Region around Epicenter via tile maps
+# === Upper Right: Region around epicenter via tile maps
 fig.shift_origin(xshift="w+1c")
 
 # fig.basemap(
@@ -423,7 +421,6 @@ fig.plot(
 )
 
 fig.show()
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -506,7 +503,6 @@ fig.text(
 )
 
 fig.show()
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -637,11 +633,12 @@ for time_window in ["eq", "phase"]:
 
 fig.show()
 
-
 # %%
 # -----------------------------------------------------------------------------
 # # === Bottom Left: Travel paths ===
 fig.shift_origin(xshift="-10c", yshift="4c")
+
+gmt.config(FORMAT_GEO_MAP="+D")
 
 # Generate plot for travel paths with self-defined function
 taup_path(
@@ -655,7 +652,6 @@ taup_path(
 )
 
 fig.show()
-
 
 # %%
 # -----------------------------------------------------------------------------
