@@ -350,7 +350,6 @@ fig.meca(
 fig.show()
 print("status: Elevation with beachball")
 
-
 # %%
 # -----------------------------------------------------------------------------
 # === Upper Center: USGS earthquake data ===
@@ -391,10 +390,9 @@ fig.plot(
 fig.show()
 print("status: USGS earthquake data")
 
-
 # %%
 # -----------------------------------------------------------------------------
-# === Upper Right: Region around Epicenter via tile maps
+# === Upper Right: Region around epicenter via tile maps
 fig.shift_origin(xshift="w+1c")
 
 # fig.basemap(
@@ -424,7 +422,6 @@ fig.plot(
 
 fig.show()
 print("status: Region around Epicenter via tile maps")
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -508,7 +505,6 @@ fig.text(
 
 fig.show()
 print("status: Epidistance plot")
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -640,10 +636,12 @@ for time_window in ["eq", "phase"]:
 fig.show()
 print("status: Seismograms at BFO")
 
-
 # %%
+# -----------------------------------------------------------------------------
 # # === Bottom Left: Travel paths ===
 fig.shift_origin(xshift="-10c", yshift="4c")
+
+gmt.config(FORMAT_GEO_MAP="+D")
 
 # Generate plot for travel paths with self-defined function
 taup_path(
@@ -658,7 +656,6 @@ taup_path(
 
 fig.show()
 print("status: Travel paths")
-
 
 # %%
 # -----------------------------------------------------------------------------
