@@ -92,4 +92,4 @@ The Generic Mapping Tools, version 6.4.0.
 YF is supported by
 
 - Scholarship of the [Graduate Funding from the German States](https://www.khys.kit.edu/english/graduate_funding.php)
-- DGG grant RI1133/14-1 within the [DFG Priority Program 2404 DeepDyn](https://www.geo.lmu.de/deepdyn/en/)
+- [DGG grant RI1133/14-1](https://www.geo.lmu.de/deepdyn/en/projects/ritter-joachim-und-thomas-christine-understanding-the-influence-of-deep/) within the [DFG Priority Program 2404 DeepDyn](https://www.geo.lmu.de/deepdyn/en/)
