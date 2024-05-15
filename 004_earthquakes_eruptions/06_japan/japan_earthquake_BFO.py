@@ -638,8 +638,6 @@ fig.show()
 # # === Bottom Left: Travel paths ===
 fig.shift_origin(xshift="-10c", yshift="4c")
 
-gmt.config(FORMAT_GEO_MAP="+D")
-
 # Generate plot for travel paths with self-defined function
 taup_path(
     fig_instance=fig,

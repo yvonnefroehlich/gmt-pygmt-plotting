@@ -130,7 +130,7 @@ def taup_path(
     center_point = (np.abs(max_dist) - np.abs(min_dist)) / 2 + add_dist
     if min_dist==0 and max_dist==360: center_point = 0
 
-    pygmt.config(FONT=font_size, FORMAT_GEO_MAP="+D")
+    pygmt.config(FONT=font_size)
     fig.basemap(
         region=[min_dist, max_dist, min_radius, max_radius],
         projection=f"P{fig_width}+a+t{center_point}+z",
@@ -291,6 +291,7 @@ def taup_path(
 
     # -------------------------------------------------------------------------
     # Add frame with annotations for distance
+    pygmt.config(FORMAT_GEO_MAP="+D")  # 0°-360°
     fig.basemap(frame=["xa10f5", "wbNe"])
 
     # Plot source
