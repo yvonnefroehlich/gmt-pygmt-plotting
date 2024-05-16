@@ -1,0 +1,18 @@
+# #############################################################################
+# Wind turbine symbol for usage in GMT or PyGMT
+# - Example script showing the usage: windturbine.py (included in this folder)
+# - Macro language to set up own custom symbols: GMT documentation at
+#   https://docs.generic-mapping-tools.org/6.5/reference/custom-symbols.html#the-macro-language
+# - Please note: Custom symbols cannot be used in a auto-legend yet
+# -----------------------------------------------------------------------------
+# Author: Yvonne Fröhlich
+# ORCID: https://orcid.org/0000-0002-8566-0619
+# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
+# #############################################################################
+
+# Bottom of tower at 0 0
+ 0.00   0.80    0.16  1.60           r
+ 0.43   1.50     -15  1.00   0.15    j
+-0.12   2.10     105  1.00   0.15    j
+-0.32   1.30     225  1.00   0.15    j
+ 0.00   1.60    0.10                 c
