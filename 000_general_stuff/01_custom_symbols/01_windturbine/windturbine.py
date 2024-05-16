@@ -1,7 +1,7 @@
 # #############################################################################
 # Plot wind turbine symbol with PyGMT
 # - Wind turbine symbol file: windturbine_YF.def (included in this folder)
-# - General syntax of the argument passed to the "style" parameter (-S flag)
+# - General syntax of the argument passed to the "style" parameter (-S flag):
 #   k name_of_symbol_file / size_of_symbol
 # - Please note: Custom symbols cannot be used in auto-legends yet
 # -----------------------------------------------------------------------------
