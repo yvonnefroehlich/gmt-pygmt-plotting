@@ -20,21 +20,13 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
-
 size = 5
-
 
 # -----------------------------------------------------------------------------
 # Make plot
 # -----------------------------------------------------------------------------
-
 fig = gmt.Figure()
-
-fig.basemap(
-    region=[-size, size, -size, size],
-    projection=f"X{size * 2}c",
-    frame=True,
-)
+fig.basemap(region=[-size, size, -size, size], projection=f"X{size * 2}c", frame=0)
 
 fig.plot(
     x=-4,
@@ -69,4 +61,4 @@ fig.plot(
 )
 
 fig.show()
-# fig.savefig(fname="windturbine.png")
+fig.savefig(fname="windturbine.png")
