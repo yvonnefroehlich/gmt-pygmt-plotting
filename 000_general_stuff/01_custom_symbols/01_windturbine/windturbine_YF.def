@@ -1,6 +1,6 @@
 # #############################################################################
 # Wind turbine symbol for usage in GMT or PyGMT
-# - Examples showing the usage: windturbine.py (include in this folder)
+# - Example script showing the usage: windturbine.py (included in this folder)
 # - Macro language to set up own custom symbols: GMT documentation at
 #   https://docs.generic-mapping-tools.org/6.5/reference/custom-symbols.html#the-macro-language
 # - Please note: Custom symbols cannot be used in auto-legends yet
