@@ -246,7 +246,7 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
                 fill=col_epi2tag,
                 pen="0.01p,black",
             )
-            # Mark area of approbiate stations
+            # Mark area of appropriate stations
             fig.plot(
                 x=lon_epi_exp,
                 y=lat_epi_exp,
