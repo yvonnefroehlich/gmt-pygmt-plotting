@@ -17,25 +17,16 @@
 
 import pygmt as gmt
 
-
-# -----------------------------------------------------------------------------
-# General stuff
-# -----------------------------------------------------------------------------
-size = 5
-
-# -----------------------------------------------------------------------------
-# Make plot
-# -----------------------------------------------------------------------------
 fig = gmt.Figure()
-fig.basemap(region=[-size, size, -size, size], projection=f"X{size * 2}c", frame=0)
+fig.basemap(region=[-1, 1, -0.1, 1.5], projection="X8c/3c", frame=0)
 
-fig.plot(x=-4, y=0, style="kwindturbine_YF.def/1c", fill="darkgray", pen="black")
+fig.plot(x=-0.75, y=0, style="kwindturbine_YF.def/1c", fill="darkgray", pen="black")
 
-fig.plot(x=-2, y=0, style="kwindturbine_YF.def/0.5c", fill="darkgray", pen="black")
+fig.plot(x=-0.25, y=0, style="kwindturbine_YF.def/0.5c", fill="darkgray", pen="black")
 
-fig.plot(x=0, y=0, style="kwindturbine_YF.def/0.5c", fill="black", pen="black")
+fig.plot(x=0.25, y=0, style="kwindturbine_YF.def/0.5c", fill="black", pen="black")
 
-fig.plot(x=2, y=0, style="kwindturbine_YF.def/1c", fill="lightgray", pen="gray30")
+fig.plot(x=0.75, y=0, style="kwindturbine_YF.def/1c", fill="lightgray", pen="gray30")
 
 fig.show()
 # fig.savefig(fname="windturbine.png")
