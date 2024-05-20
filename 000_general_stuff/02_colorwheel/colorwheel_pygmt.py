@@ -26,7 +26,7 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
     Required
     - cmap : str | name of a cyclic colormap
     - perspective : list of two floats | azimuth, elevation
-    Optinal
+    Optional
     - rho_min : float | inner radius of colorwheel | Default 1
     - rho_max : float | outer radius of colorwheel | Default 2.5
     - fig_instance : Provide a PyGMT figure instance | Default a new one is set up
