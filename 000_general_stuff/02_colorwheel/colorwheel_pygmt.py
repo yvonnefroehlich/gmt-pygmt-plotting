@@ -50,22 +50,22 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
     # -------------------------------------------------------------------------
     # Create colorwheel plot
     # -------------------------------------------------------------------------
-    fig = pygmt.Figure()
     if fig_instance != None:
         fig = fig_instance
+    else:
+        fig = pygmt.Figure()
 
-    pygmt.config(
+    with pygmt.config(
         PS_PAGE_COLOR="white@1", # Make area outside of plot transparent
         MAP_FRAME_PEN="white", # Make frame outline white
-    )
-
-    fig.basemap(
-        region=[0, 360, 0, rho_max],
-        # Use geographic azimuth instead of standard angle -> backazimuth
-        # Go clockwise from North instead of counter-clockwise from East
-        projection=f"P{rho_max * 2}c+a",
-        frame="rltb",
-    )
+    ):
+        fig.basemap(
+            region=[0, 360, 0, rho_max],
+            # Use geographic azimuth instead of standard angle -> backazimuth
+            # Go clockwise from North instead of counter-clockwise from East
+            projection=f"P{rho_max * 2}c+a",
+            frame="rltb",
+        )
 
     # Create colormap for direction (backazimuth)
     pygmt.makecpt(cmap=cmap, cyclic=True, series=[0, 360, 1])
@@ -110,7 +110,7 @@ for cmap in ["romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
     )
     fig.text(x=1, y=2.4, text=cmap, no_clip=True)
     pygmt.makecpt(cmap=cmap, series=[0, 360], cyclic=True)
-    fig.colorbar(cmap=True, position="jBC+o0c/-0.5c+w1.3c/0.25c+h", frame=0)
+    fig.colorbar(cmap=True, position="jBC+o0c/-0.5c+w1.1c/0.25c+h", frame=0)
     fig.shift_origin(xshift="1.5c", yshift="1.4c")
 
 fig.show()
