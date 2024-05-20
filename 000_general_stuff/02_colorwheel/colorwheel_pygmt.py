@@ -50,9 +50,8 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
     # -------------------------------------------------------------------------
     # Create colorwheel plot
     # -------------------------------------------------------------------------
-    if fig_instance==None:
-        fig = pygmt.Figure()
-    else:
+    fig = pygmt.Figure()
+    if fig_instance != None:
         fig = fig_instance
 
     pygmt.config(
@@ -62,8 +61,8 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
 
     fig.basemap(
         region=[0, 360, 0, rho_max],
-        # geographic azimuth instead of standard angle -> backazimuth
-        # clockwise from North instead of counter-clockwise from East
+        # Use geographic azimuth instead of standard angle -> backazimuth
+        # Go clockwise from North instead of counter-clockwise from East
         projection=f"P{rho_max * 2}c+a",
         frame="rltb",
     )
@@ -72,12 +71,12 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
     pygmt.makecpt(cmap=cmap, cyclic=True, series=[0, 360, 1])
 
     # Plot rotated rectangles with color-coding
-    # azimuth, elevation
+    # Set perspective as [azimuth, elevation]
     fig.plot(data=data_bars, style="j", cmap=True, perspective=perspective)
 
     # Show and save
     fig_name = f"colorwheel_N_cw_pygmt_bar_{cmap}"
-    if fig_instance==None:
+    if fig_instance == None:
         fig.show()
         for ext in ["png"]: #, "pdf", "eps"]:
             fig.savefig(fname=f"{fig_name}.{ext}", dpi=720)
