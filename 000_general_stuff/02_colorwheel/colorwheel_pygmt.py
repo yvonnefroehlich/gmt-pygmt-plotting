@@ -10,7 +10,7 @@
 # -----------------------------------------------------------------------------
 # - Created: 2024/05/15
 #   PyGMT v0.12.0 -> https://www.pygmt.org/v0.12.0/ | https://www.pygmt.org/
-#   GMT 6.4.0, 6.5.0 -> https://www.generic-mapping-tools.org/
+#   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
 
 
