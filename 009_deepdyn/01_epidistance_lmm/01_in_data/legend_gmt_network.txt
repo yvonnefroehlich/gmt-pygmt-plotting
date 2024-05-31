@@ -1,0 +1,15 @@
+# GMT legend
+# stations / networks
+
+N 1
+G -0.05c
+S 0.00c i 0.12c goldenrod1 0.2p,black 0.15c AlpArray
+G 0.03c
+S 0.00c i 0.12c tomato 0.2p,black 0.15c ScanArray
+G 0.03c
+S 0.00c i 0.12c FIREBRICK3 0.2p,black 0.15c USArray
+G 0.03
+S 0.00c i 0.12c SALMON 0.2p,black 0.15c Greenland
+G 0.03c
+S 0.00c i 0.12c PALEVIOLETRED 0.2p,black 0.15c Russia
+G -0.05c
