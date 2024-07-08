@@ -16,7 +16,7 @@ Lateral and vertical variations of seismic anisotropy in the lithosphere-astheno
 Investigation of seismic anisotropy in the D'' layer and at the CMB regarding intense magnetic flux regions.
 *18th Symposium of Study of the Earth's Deep Interior*, [proceedings, session 2-04](https://sedi-conference-2024-2675c.ingress-baronn.ewp.live/abstracts/).
 https://doi.org/10.5281/zenodo.12658821.
-- [**_Fröhlich Y., Thiyagarajan H., Tölle L., Ritter J. R. R., Thomas C. (2024)_**](https://doi.org/10.5281/zenodo.10927349).
+- [**_Fröhlich Y., Thiyagarajan H., Tölle L. S., Ritter J. R. R., Thomas C. (2024)_**](https://doi.org/10.5281/zenodo.10927349).
 Understanding the influence of seismic mantle structures at the core-mantle boundary on intense magnetic flux regions.
 *84th Annual Meeting of the German Geophysical Society*, [proceedings, session SO-P-07, 181-182](https://dgg2024.dgg-tagung.de/english-home-1/).
 https://doi.org/10.5281/zenodo.10927349.
