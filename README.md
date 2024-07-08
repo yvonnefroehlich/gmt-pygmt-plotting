@@ -12,15 +12,18 @@ If you make use of this material, please acknowledge the relating publications i
 - **_Fröhlich Y., Grund M., Ritter J. R. R. (2024)_**.
 Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere system underneath Central Europe from long-term splitting measurements.
 *Geophysical Journal International*, accepted June 26 2024.
-- **_Fröhlich Y., Dillah M. I. F., Dorn F., Ritter J. R. R. (2024)_**.
+- [**_Fröhlich Y., Dillah M. I. F., Dorn F., Ritter J. R. R. (2024)_**](https://doi.org/10.5281/zenodo.12658821).
 Investigation of seismic anisotropy in the D'' layer and at the CMB regarding intense magnetic flux regions.
 *18th Symposium of Study of the Earth's Deep Interior*, [proceedings, session 2 – 04](https://sedi-conference-2024-2675c.ingress-baronn.ewp.live/abstracts/).
+https://doi.org/10.5281/zenodo.12658821.
 - [**_Fröhlich Y., Thiyagarajan H., Tölle L., Ritter J. R. R., Thomas C. (2024)_**](https://doi.org/10.5281/zenodo.10927349).
 Understanding the influence of seismic mantle structures at the core-mantle boundary on intense magnetic flux regions.
-*84th Annual Meeting of the German Geophysical Society*, [proceedings, 181-182](https://dgg2024.dgg-tagung.de/english-home-1/). https://doi.org/10.5281/zenodo.10927349.
+*84th Annual Meeting of the German Geophysical Society*, [proceedings, 181-182](https://dgg2024.dgg-tagung.de/english-home-1/).
+https://doi.org/10.5281/zenodo.10927349.
 - [**_Ritter J. R. R., Fröhlich Y., Sanz Alonso Y. & Grund M. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w).
 Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures.
-*Journal of Seismology*, 26, 1137-1156. https://doi.org/10.1007/s10950-022-10112-w.
+*Journal of Seismology*, 26, 1137-1156.
+https://doi.org/10.1007/s10950-022-10112-w.
 
 
 ## Content
