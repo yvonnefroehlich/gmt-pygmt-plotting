@@ -96,7 +96,7 @@ The Generic Mapping Tools, version 6.4.0.
 
 ## Funding
 
-YF is supported by
+The presented research and YF received support from various sources:
 
 - Scholarship of the [Graduate Funding from the German States](https://www.khys.kit.edu/english/graduate_funding.php)
 - [DFG grant RI1133/14-1](https://gepris.dfg.de/gepris/projekt/521545943?language=en) within the [DFG Priority Program 2404 DeepDyn](https://www.geo.lmu.de/deepdyn/en/)
