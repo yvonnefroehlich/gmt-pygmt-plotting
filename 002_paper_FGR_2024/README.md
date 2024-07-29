@@ -16,5 +16,5 @@ _Recommended versions_: PyGMT v0.12.0, GMT 6.4.0/6.5.0
 - [FGR_Fig1_urg.ipynb](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_1/FGR_Fig1_urg.ipynb): Upper Rhine Graben area with seismological recording stations
 - [FGR_Fig9_pp.ipynb](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_9/FGR_Fig9_pp.ipynb): Piercing points in the upper mantle
 - [FGR_FigS1_epidist.ipynb](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_S1/FGR_FigS1_epidist.ipynb): Epicenter distribution
-- [FGR_FigS11_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_S11/FGR_FigS11_lmm.ipynb): travel path of XKS phases
+- [FGR_FigS9_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_S9/FGR_FigS9_lmm.ipynb): Travel path of XKS phases, please see [003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/setup-FGR2024-structure/003_taup)
 - [FGR_FigS22_lmm.ipynb](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_S22/FGR_FigS22_lmm.ipynb): Piercing points in the lowermost mantle
