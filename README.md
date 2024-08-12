@@ -63,36 +63,30 @@ For bug reports, suggestions, or recommendations feel free to [open an issue](ht
 
 _Please note_: Specific references are given in the single notebooks and scripts
 
-[**_Bird, P. (2003)_**](https://doi.org/10.1029/2001GC000252).
-An updated digital model of plate boundaries.
-*Geochemistry, Geophysics, Geosystems*, volume 4, issue 3, page 1027.
-https://doi.org/10.1029/2001GC000252.
-
-[**_Crameri, F. (2021)_**](http://doi.org/10.5281/zenodo.1243862).
-Scientific colour maps. *Zenodo*. http://www.fabiocrameri.ch/colourmaps.php. http://doi.org/10.5281/zenodo.1243862.
-
-[**_Thyng, K. M., Greene, C. A., Hetland, R. D., Zimmerle, H. M. & DiMarco, S. F. (2016)_**](http://dx.doi.org/10.5670/oceanog.2016.66).
-True colors of oceanography: Guidelines for effective and accurate colormap selection.
-*Oceanography*, volume 29, issue 3, pages 9-13.
-http://dx.doi.org/10.5670/oceanog.2016.66.
-
-[**_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Schlitzer, W., Grund, M., Jones, M., Toney, L., Yao, J., Magen, Y., Tong, J-H., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2024)_**](https://doi.org/10.5281/zenodo.10578540).
-PyGMT: A Python interface for the Generic Mapping Tools, version v0.12.0.
-*Zenodo*. https://doi.org/10.5281/zenodo.11062720 (v0.12.0). https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
-
-[**_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J. F. & Wobbe. F. (2013)_**](https://doi.org/10.1002/2013EO450001).
-Generic mapping tools: improved version released.
-*Eos, Transactions American Geophysical Union*, volume 94, issue 45, pages 409-410.
-https://doi.org/10.1002/2013EO450001.
-
-[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F. & Tian, D. (2019)_**](https://doi.org/10.1029/2019GC008515).
-The Generic Mapping Tools version 6.
-*Geochemistry, Geophysics, Geosystems*, volume 20, issue 11, pages 5556-5564.
-https://doi.org/10.1029/2019GC008515.
-
-[**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M. & Esteban, F. (2022)_**](https://doi.org/10.5281/zenodo.6623271).
-The Generic Mapping Tools, version 6.4.0.
-*Zenodo*. https://doi.org/10.5281/zenodo.6623271.
+- [**_Bird, P. (2003)_**](https://doi.org/10.1029/2001GC000252).
+  An updated digital model of plate boundaries.
+  *Geochemistry, Geophysics, Geosystems*, volume 4, issue 3, page 1027.
+  https://doi.org/10.1029/2001GC000252.
+- [**_Crameri, F. (2021)_**](http://doi.org/10.5281/zenodo.1243862).
+  Scientific colour maps. *Zenodo*. http://www.fabiocrameri.ch/colourmaps.php. http://doi.org/10.5281/zenodo.1243862.
+- [**_Thyng, K. M., Greene, C. A., Hetland, R. D., Zimmerle, H. M. & DiMarco, S. F. (2016)_**](http://dx.doi.org/10.5670/oceanog.2016.66).
+  True colors of oceanography: Guidelines for effective and accurate colormap selection.
+  *Oceanography*, volume 29, issue 3, pages 9-13.
+  http://dx.doi.org/10.5670/oceanog.2016.66.
+- [**_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Schlitzer, W., Grund, M., Jones, M., Toney, L., Yao, J., Magen, Y., Tong, J-H., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2024)_**](https://doi.org/10.5281/zenodo.10578540).
+  PyGMT: A Python interface for the Generic Mapping Tools, version v0.12.0.
+  *Zenodo*. https://doi.org/10.5281/zenodo.11062720 (v0.12.0). https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
+- [**_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J. F. & Wobbe. F. (2013)_**](https://doi.org/10.1002/2013EO450001).
+  Generic mapping tools: improved version released.
+  *Eos, Transactions American Geophysical Union*, volume 94, issue 45, pages 409-410.
+  https://doi.org/10.1002/2013EO450001.
+- [**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F. & Tian, D. (2019)_**](https://doi.org/10.1029/2019GC008515).
+  The Generic Mapping Tools version 6.
+  *Geochemistry, Geophysics, Geosystems*, volume 20, issue 11, pages 5556-5564.
+  https://doi.org/10.1029/2019GC008515.
+- [**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M. & Esteban, F. (2022)_**](https://doi.org/10.5281/zenodo.6623271).
+  The Generic Mapping Tools, version 6.4.0.
+  *Zenodo*. https://doi.org/10.5281/zenodo.6623271.
 
 
 ## Funding
