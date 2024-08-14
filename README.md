@@ -11,7 +11,7 @@ If you make use of this material, please acknowledge the relating publications i
 
 - [**_Fröhlich Y., Grund M., Ritter J. R. R. (2024)_**](https://doi.org/10.1093/gji/ggae245).
   Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere system underneath Central Europe from long-term splitting measurements.
-  *Geophysical Journal International*.
+  *Geophysical Journal International*. 239(1), 112-135.
   https://doi.org/10.1093/gji/ggae245.
 - [**_Fröhlich Y., Dillah M. I. F., Dorn F., Ritter J. R. R. (2024)_**](https://doi.org/10.5281/zenodo.12658821).
   Investigation of seismic anisotropy in the D'' layer and at the CMB regarding intense magnetic flux regions.
