@@ -438,10 +438,11 @@ def taup_path(
 # -----------------------------------------------------------------------------
 # Examples
 # -----------------------------------------------------------------------------
+# Plot travel time curvs cummulative in one Figure
 fig_curve = pygmt.Figure()
 pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
 fig_curve.basemap(
-    region=[75, 155, 0, 2700],  # epidist, traveltime
+    region=[75, 155, 0, 2700],  # epicentral distance, travel time
     projection="X10c",
     frame=[
         "WSne+gtan@50",
@@ -449,7 +450,8 @@ fig_curve.basemap(
         "yafg100+ltravel time / s",
     ],
 )
-for dist in np.arange(80, 150, 2):
+# Plot travel paths in separate Figures
+for dist in np.arange(80, 150, 2):  # epicentral distance
     taup_path(
         fig_width="8c",
         font_size="6.5p",
@@ -477,7 +479,7 @@ for dist in np.arange(80, 150, 2):
         # max_dist=12,
         # max_depth=1000,
 
-        travel_curve=True,
+        travel_curve=True,  # Create additionally plot of travel time curves
         # fig_save=True,
     )
 
