@@ -23,6 +23,7 @@
 # - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
 # - Updated: 2024/05/10 - Allow plotting specific distance and depth ranges
+# - Updated: 2024/09/06 - Add travel time curve plot
 # #############################################################################
 
 
@@ -448,7 +449,7 @@ fig_curve.basemap(
         "yafg100+ltravel time / s",
     ],
 )
-for dist in np.arange(80, 150, 1):
+for dist in np.arange(80, 150, 2):
     taup_path(
         fig_width="8c",
         font_size="6.5p",
