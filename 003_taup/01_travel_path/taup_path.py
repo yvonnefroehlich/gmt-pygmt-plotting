@@ -47,6 +47,7 @@ def taup_path(
     earth_color="tan",
     fig_instance=None,
     fig_width="6c",
+    travel_curve=False,
     fig_save=False,
     save_path="",
 ):
@@ -71,6 +72,7 @@ def taup_path(
     #   Pass any GMT built-in colormap
     # - fig_instance: Provide a PyGMT figure instance | Default a new one is set up
     # - fig_width: Width of figure | Default "6c"
+    # - travel_curve: Plot travel time curve | Default False
     # - fig_save: Save figure to file | Default False
     # - save_path: Path of folder to save figure | Default current working directory
 
@@ -287,29 +289,47 @@ def taup_path(
         fig_name_phase.append(phase_label_split[0])
 
     # -------------------------------------------------------------------------
-        fig_curve.plot(
-            x=receiver_dist,
-            y=phase_time_split[0],
-            style="c0.13c",
-            fill=phase_colors[phase_label_split[0]],
-            pen="0.001p,gray10",
-            no_clip=True,
-        )
+        # Create travel time curve cumulative
+        if travel_curve==True:
+            # if "fig_curv"' in globals():
+            #     print("fig_curve exists!")
+            #     pass
+            # else:
+            #     print("fig_curve does not exist and is created!")
+            #     fig_curve = pygmt.Figure()
+            #     pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
+            #     fig_curve.basemap(
+            #         region=[0, 180, 0, 3000],  # epidist, traveltime
+            #         projection="X10c",
+            #         frame=[
+            #             "WSne+gtan@50",
+            #             "xa30f10g10+lepicentral distance @~D@~ / @.",
+            #             "yafg100+ltravel time / s",
+            #         ],
+            #     )
+            fig_curve.plot(
+                x=receiver_dist,
+                y=phase_time_split[0],
+                style="c0.13c",
+                fill=phase_colors[phase_label_split[0]],
+                pen="0.001p,gray10",
+                no_clip=True,
+            )
 
-    # Add legend for phases in travel curve plot
-    for j_phase, phase in enumerate(phases):
-        col_str = ""
-        info_str = ""
-        fig_curve.plot(
-            x=-1,
-            y=-1,
-            style="c0.2c",
-            fill=phase_colors[phase],
-            pen="0.05p,gray10",
-            label=f"{phase}{info_str}{col_str}",
-        )
-    hight_legend = 0.4 * len(phases)
-    fig_curve.legend(position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c", box=box_standard)
+        # Add legend for phases in travel curve plot
+        for j_phase, phase in enumerate(phases):
+            col_str = ""
+            info_str = ""
+            fig_curve.plot(
+                x=-1,
+                y=-1,
+                style="c0.2c",
+                fill=phase_colors[phase],
+                pen="0.05p,gray10",
+                label=f"{phase}{info_str}{col_str}",
+            )
+        hight_legend = 0.4 * len(phases)
+        fig_curve.legend(position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c", box=box_standard)
 
     fig_curve.show()
 
@@ -420,15 +440,15 @@ def taup_path(
 fig_curve = pygmt.Figure()
 pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
 fig_curve.basemap(
-    region=[75, 155, 0, 2700],
+    region=[75, 155, 0, 2700],  # epidist, traveltime
     projection="X10c",
     frame=[
         "WSne+gtan@50",
-        "xa60f30g10+lepicentral distance @~D@~ / @.",
+        "xa30f10g10+lepicentral distance @~D@~ / @.",
         "yafg100+ltravel time / s",
     ],
 )
-for dist in np.arange(75, 155, 5):
+for dist in np.arange(80, 150, 1):
     taup_path(
         fig_width="8c",
         font_size="6.5p",
@@ -436,8 +456,9 @@ for dist in np.arange(75, 155, 5):
         receiver_dist=dist,
         min_dist=0,
         max_dist=360,
-        phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "sSKS"],
+        phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS"],
         # phases=["SKS", "pSKS", "sSKS"],
+        travel_curve=True,
         # fig_save=True,
     )
 
