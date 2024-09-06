@@ -452,16 +452,35 @@ for dist in np.arange(80, 150, 1):
     taup_path(
         fig_width="8c",
         font_size="6.5p",
-        source_depth=500,
         receiver_dist=dist,
+
+        phases=["S", "ScS", "PKS", "SKS", "SKKS"],  # "PKKS"
+        source_depth=500,
         min_dist=0,
         max_dist=360,
-        phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS"],
+
         # phases=["SKS", "pSKS", "sSKS"],
+        # source_depth=100,
+        # min_dist=0,
+        # max_dist=360,
+
+        # phases=["SKS", "pSKS", "sSKS"],
+        # source_depth=100,
+        # min_dist=-2,
+        # max_dist=12,
+        # max_depth=440,
+
+        # phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
+        # source_depth=660,
+        # min_dist=-2,
+        # max_dist=12,
+        # max_depth=1000,
+
         travel_curve=True,
         # fig_save=True,
     )
 
+"""
 taup_path(
     fig_width="8c",
     font_size="6.5p",
@@ -520,3 +539,4 @@ taup_path(
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
     # fig_save=True,
 )
+"""
