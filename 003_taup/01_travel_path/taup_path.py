@@ -438,7 +438,7 @@ def taup_path(
 # -----------------------------------------------------------------------------
 # Examples
 # -----------------------------------------------------------------------------
-# Plot travel time curvs cummulative in one Figure
+# Plot travel time curves cummulative in one Figure
 fig_curve = pygmt.Figure()
 pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
 fig_curve.basemap(
