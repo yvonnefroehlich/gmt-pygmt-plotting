@@ -74,8 +74,8 @@ _Please note_: Specific references are given in the single notebooks and scripts
   *Oceanography*, volume 29, issue 3, pages 9-13.
   http://dx.doi.org/10.5670/oceanog.2016.66.
 - [**_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Schlitzer, W., Grund, M., Jones, M., Toney, L., Yao, J., Magen, Y., Tong, J-H., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2024)_**](https://doi.org/10.5281/zenodo.10578540).
-  PyGMT: A Python interface for the Generic Mapping Tools, version v0.12.0.
-  *Zenodo*. https://doi.org/10.5281/zenodo.11062720 (v0.12.0). https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
+  PyGMT: A Python interface for the Generic Mapping Tools, version v0.13.0.
+  *Zenodo*. https://doi.org/10.5281/zenodo.13679420 (v0.13.0). https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
 - [**_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J. F. & Wobbe. F. (2013)_**](https://doi.org/10.1002/2013EO450001).
   Generic mapping tools: improved version released.
   *Eos, Transactions American Geophysical Union*, volume 94, issue 45, pages 409-410.
