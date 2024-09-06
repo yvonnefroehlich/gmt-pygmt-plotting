@@ -286,7 +286,35 @@ def taup_path(
         # Use only the existing phases in the file name
         fig_name_phase.append(phase_label_split[0])
 
-    # Add legend for phases with travel times
+    # -------------------------------------------------------------------------
+        fig_curve.plot(
+            x=receiver_dist,
+            y=phase_time_split[0],
+            style="c0.13c",
+            fill=phase_colors[phase_label_split[0]],
+            pen="0.001p,gray10",
+            no_clip=True,
+        )
+
+    # Add legend for phases in travel curve plot
+    for j_phase, phase in enumerate(phases):
+        col_str = ""
+        info_str = ""
+        fig_curve.plot(
+            x=-1,
+            y=-1,
+            style="c0.2c",
+            fill=phase_colors[phase],
+            pen="0.05p,gray10",
+            label=f"{phase}{info_str}{col_str}",
+        )
+    hight_legend = 0.4 * len(phases)
+    fig_curve.legend(position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c", box=box_standard)
+
+    fig_curve.show()
+
+    # -------------------------------------------------------------------------
+    # Add legend for phases with travel times in travel path plot
     # Adjust width and height for your needs (+w)
     fig.legend(position="jBC+jTC+o0c/0.5c+w8c/1c", box=box_standard)
 
@@ -372,24 +400,47 @@ def taup_path(
     if fig_instance == None:
         fig.show()
 
-    plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg"
-    fig_name = (
-        f"{save_path}map_travelPATH_{int(np.round(source_depth))}km_" +
-        f"{int(np.round(receiver_dist))}deg_{plot_range_str}_"
-        + "_".join(fig_name_phase) + f"_{earth_color}"
-    )
+    plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg_"
+    fig_name_start = f"{save_path}map_travel"
+    fig_name_end = f"_{source_depth}km_{int(np.round(receiver_dist))}deg" + \
+                    f"_{plot_range_str}" + "_".join(fig_name_phase) + f"_{earth_color}"
 
     if fig_save == True:
         for ext in ["png"]: #, "pdf", "eps"]:
-            fig.savefig(fname=f"{fig_name}.{ext}")
+            fig.savefig(fname=f"{fig_name_start}PATH{fig_name_end}.{ext}")
+            fig_curve.savefig(fname=f"{fig_name_start}CURVE{fig_name_end}.{ext}")
 
-    print(fig_name)
+    print(f"{fig_name_start}{fig_name_end}")
 
 
 # %%
 # -----------------------------------------------------------------------------
 # Examples
 # -----------------------------------------------------------------------------
+fig_curve = pygmt.Figure()
+pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
+fig_curve.basemap(
+    region=[75, 155, 0, 2700],
+    projection="X10c",
+    frame=[
+        "WSne+gtan@50",
+        "xa60f30g10+lepicentral distance @~D@~ / @.",
+        "yafg100+ltravel time / s",
+    ],
+)
+for dist in np.arange(75, 155, 5):
+    taup_path(
+        fig_width="8c",
+        font_size="6.5p",
+        source_depth=500,
+        receiver_dist=dist,
+        min_dist=0,
+        max_dist=360,
+        phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "sSKS"],
+        # phases=["SKS", "pSKS", "sSKS"],
+        # fig_save=True,
+    )
+
 taup_path(
     fig_width="8c",
     font_size="6.5p",
