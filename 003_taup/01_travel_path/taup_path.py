@@ -145,7 +145,9 @@ def taup_path(
 
     # %%
     # -------------------------------------------------------------------------
-    # Create plot for travel paths via PyGMT
+    # Create plots for travel paths and travel times via PyGMT
+    # -------------------------------------------------------------------------
+
     # -------------------------------------------------------------------------
     # Set up polar plot
     add_dist = 0
@@ -163,10 +165,9 @@ def taup_path(
     )
 
     # -------------------------------------------------------------------------
-    # Plot dicontinuities
+    # Set up colors for Earth concentric shells or circles
     bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # depth in kilometers
 
-    # Set up colors for Earth concentric shells or circles
     # Adjust for your needs
     if earth_color not in ["white", "tan", "gray", "bilbao_gray", "bilbao_brown"]:
         pygmt.makecpt(
@@ -206,6 +207,8 @@ def taup_path(
     elif earth_color == "gray":
         color_fig_curve = "gray"
 
+    # -------------------------------------------------------------------------
+    # Plot dicontinuities
     circle_step = 1
     circle_x = np.arange(min_dist, max_dist + circle_step, circle_step)
     circle_y = np.ones(len(circle_x))
@@ -276,7 +279,8 @@ def taup_path(
                     offset=f"0c/{y_offset}c",
                 )
 
-    # -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    # Create or continue PyGMT Figure instance for travel time plot
     if time_curve == True:
         if fig_curve_instance == None:
             print("fig_curve does not exist and is created!")
@@ -298,10 +302,14 @@ def taup_path(
             print("fig_curve exist and is continued!")
             fig_curve = fig_curve_instance
 
-    # -----------------------------------------------------------------------------
-    fig_name_phase = []
+    # -------------------------------------------------------------------------
     # Iterate over phases
+    fig_name_phase = []
     for i_phase in range(len(pp_temp)):
+
+    # -------------------------------------------------------------------------
+        # Plot travel paths
+
         # Spread legend over several columns
         leg_col_str = ""
         # Adjust number of columns for your needs
@@ -340,8 +348,9 @@ def taup_path(
         fig_name_phase.append(phase_label_split[0])
 
     # -------------------------------------------------------------------------
-        # Create travel time curve cumulative
+        # Plot travel times
         if time_curve == True:
+
             fig_curve.plot(
                 x=receiver_dist,
                 y=phase_time_split[0],
@@ -351,7 +360,7 @@ def taup_path(
                 no_clip=True,
             )
 
-            # Add legend for phases in travel curve plot
+            # Add legend for phases in travel time plot
             for j_phase, phase in enumerate(phases):
                 col_str = ""
                 info_str = ""
@@ -366,11 +375,8 @@ def taup_path(
             hight_legend = 0.4 * len(phases)
             fig_curve.legend(position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c", box=box_standard)
 
-    # Display figure only once, i. e. after all travel times of phases are plotted
-    if time_curve == True: fig_curve.show()
-
     # -------------------------------------------------------------------------
-    # Add legend for phases with travel times in travel path plot
+    # Add legend for phase names and travel times in travel path plot
     # Adjust width and height for your needs (+w)
     fig_path.legend(position="jBC+jTC+o0c/0.5c+w8c/1c", box=box_standard)
 
@@ -452,9 +458,11 @@ def taup_path(
         )
 
     # -------------------------------------------------------------------------
-    # Show and save figure
+    # Show and save figures
     if fig_path_instance == None:
         fig_path.show()
+    if time_curve == True:
+        fig_curve.show()
 
     plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg_"
     fig_name_start = f"{save_path}map_travel"
@@ -468,6 +476,7 @@ def taup_path(
 
     print(f"{fig_name_start}{fig_name_end}")
 
+    # -------------------------------------------------------------------------
     # Return PyGMT Figure instances
     if time_curve == True:
         return fig_path, fig_curve
@@ -479,8 +488,16 @@ def taup_path(
 # -----------------------------------------------------------------------------
 # Examples
 # -----------------------------------------------------------------------------
-for dist in np.arange(80, 150, 5):  # Iterate over epicentral distance
-    if dist == 80: fig_curve_instance = None
+dist_min = 80
+dist_max = 150
+dist_step = 5
+
+# Iterate over epicentral distance range
+for dist in np.arange(dist_min, dist_max, dist_step):
+
+    # Create new Figure instance for first epicentral distance
+    if dist == dist_min: fig_curve_instance = None
+    # Continue travel time plot to get travel time curve
     else: fig_curve_instance = fig_curve
 
     fig_path, fig_curve = taup_path(
