@@ -4,6 +4,7 @@
 #   - travel times and travel paths
 # - Plot via PyGMT
 #   - travel path(s) in separate Figures
+#   - travel path share with epicentral distance cumulative in one Figure
 #   - travel time(s) in separate Figures
 #   - travel time curve with epicentral distance cumulative in one Figure
 # -----------------------------------------------------------------------------
@@ -535,6 +536,7 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         # max_depth=1000,
 
         # fig_save=True,
+        # save_path="test_folder/",
     )
 
 
@@ -567,6 +569,8 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         fig_curve_instance=fig_curve_instance,
         curve_dist_range=[dist_min, dist_max + dist_step],
         curve_time_range=[0, 2700],
+        # fig_save=True,
+        # save_path="test_folder/",
     )
 
 
