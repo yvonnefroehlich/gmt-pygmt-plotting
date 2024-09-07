@@ -78,8 +78,8 @@ def taup_path(
     # - max_dist: Maximum for plotting | degrees | Default epicentral distance + 10
     # - font_size: Font size for text | Default "4p"
     # - earth_color: Colors for Earth concentric shells or circles | Default "tan"
-    #   Select from "white", "tan", "gray", "bilbao_gray", "bilbao_brown" OR
-    #   Pass any GMT built-in colormap
+    #   Select from "non", "white", "tan", "gray", "bilbao_gray", "bilbao_brown"
+    #   or pass any GMT built-in colormap
     # - fig_path_width: Width of figure for travel path plot | Default "6c"
     # - fig_path_instance: Provide a PyGMT Figure instance for the travel path plot |
     #   Default a new one is set up
@@ -95,7 +95,7 @@ def taup_path(
     # - fig_save: Save figure to file | Default False
     # - save_path: Path of folder to save figure | Default current working directory
     # -------------------------------------------------------------------------
-    # Return
+    # Returns
     # -------------------------------------------------------------------------
     # - fig_path: PyGMT figure instance for travel path plot
     # Optional
