@@ -155,13 +155,6 @@ def taup_path(
     # -------------------------------------------------------------------------
 
     # -------------------------------------------------------------------------
-    # Create or continue PyGMT Figure instance for travel curve plot
-    if fig_path_instance == None:
-        fig_path = pygmt.Figure()
-    else:
-        fig_path = fig_path_instance
-
-    # -------------------------------------------------------------------------
     # Set up polar plot
     add_dist = 0
     if min_dist > 0: add_dist = min_dist
@@ -170,12 +163,19 @@ def taup_path(
     center_point = (np.abs(max_dist) - np.abs(min_dist)) / 2 + add_dist
     if min_dist == 0 and max_dist == 360: center_point = 0
 
-    pygmt.config(FONT=font_size)
-    fig_path.basemap(
-        region=[min_dist, max_dist, min_radius, max_radius],
-        projection=f"P{fig_path_width}+a+t{center_point}+z",
-        frame="+gwhite@100",  # Annotations are set later
-    )
+    # -------------------------------------------------------------------------
+    # Create or continue PyGMT Figure instance for travel curve plot
+    if fig_path_instance != None:
+        fig_path = fig_path_instance
+    else:
+        fig_path = pygmt.Figure()
+
+        pygmt.config(FONT=font_size)
+        fig_path.basemap(
+            region=[min_dist, max_dist, min_radius, max_radius],
+            projection=f"P{fig_path_width}+a+t{center_point}+z",
+            frame=0,  # Annotations are set later
+        )
 
     # -------------------------------------------------------------------------
     # Set up colors for Earth concentric shells or circles
@@ -386,7 +386,7 @@ def taup_path(
                     label=f"{phase}{info_str}{col_str}",
                 )
             hight_legend = 0.4 * len(phases)
-            if legend_curve==True:
+            if legend_curve == True:
                 fig_curve.legend(
                     position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c",
                     box=box_standard,
@@ -395,14 +395,10 @@ def taup_path(
     # -------------------------------------------------------------------------
     # Add legend for phase names and travel times in travel path plot
     # Adjust width and height for your needs (+w)
-    if legend_path==True:
+    if legend_path == True:
         fig_path.legend(position="jBC+jTC+o0c/0.5c+w8c/1c", box=box_standard)
 
     # -------------------------------------------------------------------------
-    # Add frame with annotations for distance
-    pygmt.config(FORMAT_GEO_MAP="+D")  # 0°-360°
-    fig_path.basemap(frame=["xa10f5", "wbNe"])
-
     # Plot source
     if source_depth <= max_depth and source_depth >= min_depth \
        and min_dist <= 0 and max_dist > 0:
@@ -414,6 +410,12 @@ def taup_path(
             pen="0.4p,black",
             no_clip=True,
         )
+
+    # Add frame with annotations for distance
+    if fig_path_instance == None:
+        # Affects the last addressed Figure instance
+        with pygmt.config(FORMAT_GEO_MAP="+D"):  # 0°-360°
+            fig_path.basemap(frame=["xa10f5", "wbNe"])
 
     # Plot receiver always at surface, i.e., 0 km
     if min_depth == 0 and receiver_dist <= max_dist:
@@ -507,6 +509,7 @@ def taup_path(
 # -----------------------------------------------------------------------------
 # Examples
 # -----------------------------------------------------------------------------
+"""
 dist_min = 80
 dist_max = 150
 dist_step = 10
@@ -553,7 +556,7 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         # fig_save=True,
         # save_path="test_folder/",
     )
-
+"""
 
 dist_min = 0
 dist_max = 180
@@ -575,11 +578,12 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         earth_color=earth_color,
         thick_line_path="0.5p",
         receiver_dist=dist,
+        # phases=["SKS", "SKKS"],
         phases=["P", "PcP"],
         source_depth=500,
         min_dist=0,
         max_dist=360,
-        fig_path_instance = fig_path_instance,
+        fig_path_instance=fig_path_instance,
         time_curve=True,
         fig_curve_instance=fig_curve_instance,
         curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
