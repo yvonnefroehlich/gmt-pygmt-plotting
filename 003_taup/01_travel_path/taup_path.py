@@ -509,7 +509,6 @@ def taup_path(
 # -----------------------------------------------------------------------------
 # Examples
 # -----------------------------------------------------------------------------
-"""
 dist_min = 80
 dist_max = 150
 dist_step = 10
@@ -556,7 +555,7 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         # fig_save=True,
         # save_path="test_folder/",
     )
-"""
+
 
 dist_min = 0
 dist_max = 180
@@ -578,8 +577,8 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         earth_color=earth_color,
         thick_line_path="0.5p",
         receiver_dist=dist,
-        # phases=["SKS", "SKKS"],
-        phases=["P", "PcP"],
+        phases=["SKS", "SKKS"],
+        # phases=["P", "PcP"],
         source_depth=500,
         min_dist=0,
         max_dist=360,
@@ -589,12 +588,12 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
         curve_time_range=[0, 2700],
         legend_path=False,
-        fig_save=True,
-        save_path="test_folder/",
+        # fig_save=True,
+        # save_path="test_folder/",
     )
 
 
-fig_path = taup_path(
+fig_path, fig_curve = taup_path(
     fig_path_width="8c",
     font_size="6.5p",
     earth_color="gray",
@@ -604,6 +603,7 @@ fig_path = taup_path(
     phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
     time_curve=True,
     # fig_save=True,
+    # save_path="test_folder/",
 )
 fig_path = taup_path(
     fig_path_width="8c",
@@ -615,9 +615,11 @@ fig_path = taup_path(
     max_dist=180,
     min_depth=660,
     max_depth=4000,
-    phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS"],
+    phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
     # fig_save=True,
+    # save_path="test_folder/",
 )
+
 
 fig_path = taup_path(
     fig_path_width="8c",
@@ -628,6 +630,7 @@ fig_path = taup_path(
     max_dist=100,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
     # fig_save=True,
+    # save_path="test_folder/",
 )
 fig_path = taup_path(
     fig_path_width="8c",
@@ -640,6 +643,7 @@ fig_path = taup_path(
     max_depth=4000,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
     # fig_save=True,
+    # save_path="test_folder/",
 )
 fig_path = taup_path(
     fig_path_width="8c",
@@ -652,5 +656,5 @@ fig_path = taup_path(
     max_depth=700,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
     # fig_save=True,
+    # save_path="test_folder/",
 )
-#"""
