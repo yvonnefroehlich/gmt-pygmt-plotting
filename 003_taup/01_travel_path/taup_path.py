@@ -2,9 +2,9 @@
 # Seismological phase through the Earth
 # - Calculate via ObsPy based on the Java TauP Toolkit by [Crotwell 1999]
 #   - travel times and travel paths
-# - Plot travel via PyGMT
+# - Plot via PyGMT
 #   - travel paths in separate Figures
-#   - travel time curves cummulative in one Figure
+#   - travel time curves cumulative with epicentral distance in one Figure
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
 # ORCID: https://orcid.org/0000-0002-8566-0619
@@ -20,12 +20,12 @@
 # - Created: 2024/04/07
 #   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
 #   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
-# - Updated: 2024/04/23 - Improve coding style
-# - Updated: 2024/05/04 - Improve arguments and comments for colors
-# - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
+# - Updated: 2024/04/23 - Maintenance: Coding style
+# - Updated: 2024/05/04 - Maintenance: Arguments and comments for colors
+# - Updated: 2024/05/04 - Enhancement: PyGMT Figure instance
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
-# - Updated: 2024/05/10 - Allow plotting specific distance and depth ranges
-# - Updated: 2024/09/06 - Add travel time curve plot
+# - Updated: 2024/05/10 - Enhancement: Plot specific distance and depth ranges
+# - Updated: 2024/09/06 - Enhancement: Travel time curve cumulative for distance
 # #############################################################################
 
 
