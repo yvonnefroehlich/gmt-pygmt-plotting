@@ -49,6 +49,7 @@ def taup_path(
     font_size="4p",
     earth_color="tan",
     fig_path_width="6c",
+    fig_curve_width="10c",
     fig_path_instance=None,
     time_curve=False,
     curve_dist_range=[0, 180],
@@ -75,7 +76,8 @@ def taup_path(
     # - earth_color: Colors for Earth concentric shells or circles | Default "tan"
     #   Select from "white", "tan", "gray", "bilbao_gray", "bilbao_brown" OR
     #   Pass any GMT built-in colormap
-    # - fig_path_width: Width of figure | Default "6c"
+    # - fig_path_width: Width of figure for travel path plot | Default "6c"
+    # - fig_curve_width: Width of figure for travel time curve plot | Default "6c"
     # - fig_path_instance: Provide a PyGMT figure instance for the travel path plot |
     #   Default a new one is set up
     # - time_curve: Create travel time curve plot | Default False
@@ -148,7 +150,7 @@ def taup_path(
     elif min_dist < 0 and max_dist < 0: add_dist = max_dist
 
     center_point = (np.abs(max_dist) - np.abs(min_dist)) / 2 + add_dist
-    if min_dist==0 and max_dist==360: center_point = 0
+    if min_dist == 0 and max_dist == 360: center_point = 0
 
     pygmt.config(FONT=font_size)
     fig_path.basemap(
@@ -198,7 +200,7 @@ def taup_path(
     color_fig_curve = "white"
     if earth_color in ["tan", "bilao_gray", "bilbao_brown"]:
         color_fig_curve = "tan"
-    elif earth_color=="gray":
+    elif earth_color == "gray":
         color_fig_curve = "gray"
 
     circle_step = 1
@@ -259,7 +261,7 @@ def taup_path(
                 y=np.ones(max_dist) * (r_earth - bound + y_offset),
                 style=f"qn1:+l{bound} km+f{font_size}+v+i+gwhite@30+o+c0.03c/0.03c",
             )
-            if bound==6371:
+            if bound == 6371:
                 fig_path.text(
                     x=180,
                     y=r_earth - bound,
@@ -314,7 +316,7 @@ def taup_path(
 
     # -------------------------------------------------------------------------
         # Create travel time curve cumulative
-        if time_curve==True:
+        if time_curve == True:
             if "fig_curve" in locals():
                 # print("fig_curve exists!")
                 pass
@@ -327,7 +329,7 @@ def taup_path(
                         curve_dist_range[0], curve_dist_range[1],
                         curve_time_range[0], curve_time_range[1],
                     ],
-                    projection="X10c",
+                    projection=f"X{fig_curve_width}",
                     frame=[
                         f"WSne+g{color_fig_curve}@50",
                         "xa30f10g10+lepicentral distance @~D@~ / @.",
@@ -359,7 +361,7 @@ def taup_path(
             fig_curve.legend(position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c", box=box_standard)
 
     # Display figure only once, i. e. after all travel times of phases are plotted
-    if time_curve==True: fig_curve.show()
+    if time_curve == True: fig_curve.show()
 
     # -------------------------------------------------------------------------
     # Add legend for phases with travel times in travel path plot
@@ -413,7 +415,7 @@ def taup_path(
         info_offsets = ["0.3c/0c", "-1.5c/0c", "-1.5c/-0.3c"]
         for info_text, info_offset in zip(info_texts, info_offsets):
             info_pos = "BR"
-            if info_text==earth_model: info_pos = "BL"
+            if info_text == earth_model: info_pos = "BL"
             fig_path.text(
                 text=info_text,
                 position=info_pos,
@@ -461,7 +463,7 @@ def taup_path(
     print(f"{fig_name_start}{fig_name_end}")
 
     # Return PyGMT Figure instances
-    if time_curve==True:
+    if time_curve == True:
         return fig_path, fig_curve
     else:
         return fig_path
@@ -471,13 +473,13 @@ def taup_path(
 # -----------------------------------------------------------------------------
 # Examples
 # -----------------------------------------------------------------------------
-for dist in np.arange(80, 150, 2):  # epicentral distance
+for dist in np.arange(80, 150, 2):  # Iterate over epicentral distance
     fig_path, fig_curve = taup_path(
         fig_path_width="8c",
         font_size="6.5p",
-        earth_color="tan",
+        earth_color="gray",
         receiver_dist=dist,
-        time_curve=True,  # Create additionally plot for travel time curves
+        time_curve=True,
         curve_dist_range=[75, 155],
         curve_time_range=[0, 2700],
 
