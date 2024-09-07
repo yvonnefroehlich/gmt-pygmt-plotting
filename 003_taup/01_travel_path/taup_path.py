@@ -51,6 +51,7 @@ def taup_path(
     earth_color="tan",
     fig_path_width="6c",
     fig_path_instance=None,
+    thick_line_path="1.2p",
     time_curve=False,
     fig_curve_width="10c",
     curve_dist_range=[0, 180],
@@ -81,6 +82,7 @@ def taup_path(
     # - fig_path_width: Width of figure for travel path plot | Default "6c"
     # - fig_path_instance: Provide a PyGMT Figure instance for the travel path plot |
     #   Default a new one is set up
+    # - thick_line_path: Thickness of line for travel path | Default "1.2p" (points)
     # - time_curve: Create travel time curve plot | Default False
     # - fig_curve_width: Width of figure for travel time plot | Default "6c"
     # - curve_dist_range: Epicentral distance range of travel time plot | degrees |
@@ -122,7 +124,7 @@ def taup_path(
     # -------------------------------------------------------------------------
     # Plotting
     color_highlight = "255/90/0"
-    box_standard = "+gwhite@30+p0.1p,gray30+r2p"
+    box_standard = "+gwhite+p0.1p,gray30+r2p"
 
     # Colors for seismological phases
     # Adjust and extend the dictionary for your needs in taup_path.py
@@ -161,25 +163,25 @@ def taup_path(
     fig_path.basemap(
         region=[min_dist, max_dist, min_radius, max_radius],
         projection=f"P{fig_path_width}+a+t{center_point}+z",
-        frame="+gwhite",  # annotations are set later
+        frame="+gwhite@100",  # Annotations are set later
     )
 
     # -------------------------------------------------------------------------
     # Set up colors for Earth concentric shells or circles
     bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # depth in kilometers
+    earth_colors = ["none", "white", "tan", "gray", "bilbao_gray", "bilbao_brown"]
 
     # Adjust for your needs
-    if earth_color not in ["white", "tan", "gray", "bilbao_gray", "bilbao_brown"]:
+    if earth_color not in earth_colors:
         pygmt.makecpt(
             cmap=earth_color, series=[0, len(bounds), 1], transparency=50,
         )
 
     match earth_color:
+        case "none":
+            colors = ["white@100"] * len(bounds)
         case "white":
-            colors = [
-                 "white", "white", "white",
-                 "white", "white", "white", "white",
-            ]
+            colors = ["white"] * len(bounds)
         case "tan":
             colors = [
                 "244/236/236", "235/222/204", "229/211/188",
@@ -218,7 +220,7 @@ def taup_path(
         fill_used = "+z"
         zvalue_used = i_bound
         camp_used = True
-        if earth_color in ["white", "tan", "gray", "bilbao_gray", "bilbao_brown"]:
+        if earth_color in earth_colors:
             fill_used = colors[i_bound]
             zvalue_used = None
             camp_used = None
@@ -340,7 +342,7 @@ def taup_path(
         fig_path.plot(
             x=pp_dist_used,
             y=pp_depth,
-            pen=f"1.2p,{phase_colors[phase_label_split[0]]}",
+            pen=f"{thick_line_path},{phase_colors[phase_label_split[0]]}",
             label=f"{phase_label_split[0]} | {phase_time_split[0]} s+S0.5c/1c{leg_col_str}",
         )
 
@@ -434,6 +436,7 @@ def taup_path(
                 offset=info_offset,
                 justify="BL",
                 font=f"{font_size},{color_highlight}",
+                fill="white",
                 no_clip=True,
             )
     elif abs(max_dist - min_dist) > 200 and abs(max_dist - min_dist) < 330:  # degrees
@@ -445,6 +448,7 @@ def taup_path(
                 offset=info_offset,
                 justify="TC",
                 font=f"{font_size},{color_highlight}",
+                fill="white",
                 no_clip=True,
             )
     else:
@@ -454,15 +458,14 @@ def taup_path(
             offset="0c/-0.1c",
             justify="TC",
             font=f"{font_size},{color_highlight}",
+            fill="white",
             no_clip=True,
         )
 
     # -------------------------------------------------------------------------
     # Show and save figures
-    if fig_path_instance == None:
-        fig_path.show()
-    if time_curve == True:
-        fig_curve.show()
+    fig_path.show()
+    if time_curve == True: fig_curve.show()
 
     plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg_"
     fig_name_start = f"{save_path}map_travel"
@@ -491,7 +494,6 @@ def taup_path(
 dist_min = 80
 dist_max = 150
 dist_step = 5
-
 # Iterate over epicentral distance range
 for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
 
@@ -507,7 +509,7 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         receiver_dist=dist,
         time_curve=True,
         fig_curve_instance=fig_curve_instance,
-        curve_dist_range=[75, 155],
+        curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
         curve_time_range=[0, 2700],
 
         phases=["S", "ScS", "PKS", "SKS", "SKKS"],  # "PKKS"
@@ -533,6 +535,38 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         # max_depth=1000,
 
         # fig_save=True,
+    )
+
+
+dist_min = 0
+dist_max = 180
+dist_step = 5
+for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
+
+    if dist == dist_min:
+        fig_path_instance = None
+        fig_curve_instance = None
+        earth_color = "gray"
+    else:
+        fig_path_instance = fig_path
+        fig_curve_instance = fig_curve
+        earth_color = "none"
+
+    fig_path, fig_curve = taup_path(
+        fig_path_width="8c",
+        font_size="6.5p",
+        earth_color=earth_color,
+        thick_line_path="0.5p",
+        receiver_dist=dist,
+        phases=["P", "PcP"],
+        source_depth=500,
+        min_dist=0,
+        max_dist=360,
+        fig_path_instance = fig_path_instance,
+        time_curve=True,
+        fig_curve_instance=fig_curve_instance,
+        curve_dist_range=[dist_min, dist_max + dist_step],
+        curve_time_range=[0, 2700],
     )
 
 
