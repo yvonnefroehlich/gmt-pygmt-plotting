@@ -1,8 +1,10 @@
 # #############################################################################
 # Seismological phase through the Earth
-# - Calculate travel times and travel paths via ObsPy and the Java TauP Toolkit
-#   by [Crotwell 1999]
-# - Plot travel paths via PyGMT
+# - Calculate via ObsPy based on the Java TauP Toolkit by [Crotwell 1999]
+#   - travel times and travel paths
+# - Plot travel via PyGMT
+#   - travel paths in separate Figures
+#   - travel time curves cummulative in one Figure
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
 # ORCID: https://orcid.org/0000-0002-8566-0619
@@ -46,9 +48,11 @@ def taup_path(
     max_dist=None,
     font_size="4p",
     earth_color="tan",
-    fig_instance=None,
-    fig_width="6c",
-    travel_curve=False,
+    fig_path_width="6c",
+    fig_path_instance=None,
+    time_curve=False,
+    curve_dist_range=[0, 180],
+    curve_time_range=[0, 3000],
     fig_save=False,
     save_path="",
 ):
@@ -71,15 +75,27 @@ def taup_path(
     # - earth_color: Colors for Earth concentric shells or circles | Default "tan"
     #   Select from "white", "tan", "gray", "bilbao_gray", "bilbao_brown" OR
     #   Pass any GMT built-in colormap
-    # - fig_instance: Provide a PyGMT figure instance | Default a new one is set up
-    # - fig_width: Width of figure | Default "6c"
-    # - travel_curve: Plot travel time curve | Default False
+    # - fig_path_width: Width of figure | Default "6c"
+    # - fig_path_instance: Provide a PyGMT figure instance for the travel path plot |
+    #   Default a new one is set up
+    # - time_curve: Create travel time curve plot | Default False
+    # - curve_dist_range: Epiecntral distance range of travel time curve plot | degrees |
+    #   Default [0, 180]
+    # - curve_time_range: Traveltime range of travel time curve plot | seconds |
+    #   Default [0, 3000]
+    # - curve_time_range:
     # - fig_save: Save figure to file | Default False
     # - save_path: Path of folder to save figure | Default current working directory
+    # -------------------------------------------------------------------------
+    # Return
+    # -------------------------------------------------------------------------
+    # - fig_path: PyGMT figure instance for travel path plot
+    # Optional
+    # - fig_curve: PyGMT figure instance for travel time curve plot
 
-    fig = pygmt.Figure()
-    if fig_instance != None:
-        fig = fig_instance
+    fig_path = pygmt.Figure()
+    if fig_path_instance != None:
+        fig_path = fig_path_instance
 
     if max_depth == None:
         max_depth = r_earth
@@ -135,9 +151,9 @@ def taup_path(
     if min_dist==0 and max_dist==360: center_point = 0
 
     pygmt.config(FONT=font_size)
-    fig.basemap(
+    fig_path.basemap(
         region=[min_dist, max_dist, min_radius, max_radius],
-        projection=f"P{fig_width}+a+t{center_point}+z",
+        projection=f"P{fig_path_width}+a+t{center_point}+z",
         frame="+gwhite",  # annotations are set later
     )
 
@@ -151,6 +167,7 @@ def taup_path(
         pygmt.makecpt(
             cmap=earth_color, series=[0, len(bounds), 1], transparency=50,
         )
+
     match earth_color:
         case "white":
             colors = [
@@ -178,6 +195,12 @@ def taup_path(
                 "177.41/157.41/116.41", "172/142.47/105", "168/127.53/98.531", "white",
             ]
 
+    color_fig_curve = "white"
+    if earth_color in ["tan", "bilao_gray", "bilbao_brown"]:
+        color_fig_curve = "tan"
+    elif earth_color=="gray":
+        color_fig_curve = "gray"
+
     circle_step = 1
     circle_x = np.arange(min_dist, max_dist + circle_step, circle_step)
     circle_y = np.ones(len(circle_x))
@@ -191,7 +214,7 @@ def taup_path(
             fill_used = colors[i_bound]
             zvalue_used = None
             camp_used = None
-        fig.plot(
+        fig_path.plot(
             x=circle_x,
             y=circle_y * (r_earth - bound),
             close="+y",
@@ -211,7 +234,7 @@ def taup_path(
                 angle_flip = 180
                 justify_depth = "LM"
             if bound > min_depth and bound < max_depth:
-                fig.text(
+                fig_path.text(
                     x=min_dist,
                     y=r_earth - bound,
                     text=bound,
@@ -231,13 +254,13 @@ def taup_path(
                 case 660: y_offset = -200
                 case 440: y_offset = -50
                 case 120: y_offset = -70
-            fig.plot(
+            fig_path.plot(
                 x=np.linspace(min_dist, max_dist, max_dist),
                 y=np.ones(max_dist) * (r_earth - bound + y_offset),
                 style=f"qn1:+l{bound} km+f{font_size}+v+i+gwhite@30+o+c0.03c/0.03c",
             )
             if bound==6371:
-                fig.text(
+                fig_path.text(
                     x=180,
                     y=r_earth - bound,
                     text=f"{bound} km",
@@ -279,7 +302,7 @@ def taup_path(
         ):
             pp_dist_used = pp_dist_used * -1
 
-        fig.plot(
+        fig_path.plot(
             x=pp_dist_used,
             y=pp_depth,
             pen=f"1.2p,{phase_colors[phase_label_split[0]]}",
@@ -291,23 +314,26 @@ def taup_path(
 
     # -------------------------------------------------------------------------
         # Create travel time curve cumulative
-        if travel_curve==True:
-            # if "fig_curv"' in globals():
-            #     print("fig_curve exists!")
-            #     pass
-            # else:
-            #     print("fig_curve does not exist and is created!")
-            #     fig_curve = pygmt.Figure()
-            #     pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
-            #     fig_curve.basemap(
-            #         region=[0, 180, 0, 3000],  # epidist, traveltime
-            #         projection="X10c",
-            #         frame=[
-            #             "WSne+gtan@50",
-            #             "xa30f10g10+lepicentral distance @~D@~ / @.",
-            #             "yafg100+ltravel time / s",
-            #         ],
-            #     )
+        if time_curve==True:
+            if "fig_curve" in locals():
+                # print("fig_curve exists!")
+                pass
+            else:
+                # print("fig_curve does not exist and is created!")
+                fig_curve = pygmt.Figure()
+                pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
+                fig_curve.basemap(
+                    region=[
+                        curve_dist_range[0], curve_dist_range[1],
+                        curve_time_range[0], curve_time_range[1],
+                    ],
+                    projection="X10c",
+                    frame=[
+                        f"WSne+g{color_fig_curve}@50",
+                        "xa30f10g10+lepicentral distance @~D@~ / @.",
+                        "yafg100+ltravel time / s",
+                    ],
+                )
             fig_curve.plot(
                 x=receiver_dist,
                 y=phase_time_split[0],
@@ -317,37 +343,38 @@ def taup_path(
                 no_clip=True,
             )
 
-        # Add legend for phases in travel curve plot
-        for j_phase, phase in enumerate(phases):
-            col_str = ""
-            info_str = ""
-            fig_curve.plot(
-                x=-1,
-                y=-1,
-                style="c0.2c",
-                fill=phase_colors[phase],
-                pen="0.05p,gray10",
-                label=f"{phase}{info_str}{col_str}",
-            )
-        hight_legend = 0.4 * len(phases)
-        fig_curve.legend(position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c", box=box_standard)
+            # Add legend for phases in travel curve plot
+            for j_phase, phase in enumerate(phases):
+                col_str = ""
+                info_str = ""
+                fig_curve.plot(
+                    x=-1,
+                    y=-1,
+                    style="c0.2c",
+                    fill=phase_colors[phase],
+                    pen="0.05p,gray10",
+                    label=f"{phase}{info_str}{col_str}",
+                )
+            hight_legend = 0.4 * len(phases)
+            fig_curve.legend(position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c", box=box_standard)
 
-    fig_curve.show()
+    # Display figure only once, i. e. after all travel times of phases are plotted
+    if time_curve==True: fig_curve.show()
 
     # -------------------------------------------------------------------------
     # Add legend for phases with travel times in travel path plot
     # Adjust width and height for your needs (+w)
-    fig.legend(position="jBC+jTC+o0c/0.5c+w8c/1c", box=box_standard)
+    fig_path.legend(position="jBC+jTC+o0c/0.5c+w8c/1c", box=box_standard)
 
     # -------------------------------------------------------------------------
     # Add frame with annotations for distance
     pygmt.config(FORMAT_GEO_MAP="+D")  # 0°-360°
-    fig.basemap(frame=["xa10f5", "wbNe"])
+    fig_path.basemap(frame=["xa10f5", "wbNe"])
 
     # Plot source
     if source_depth <= max_depth and source_depth >= min_depth \
        and min_dist <= 0 and max_dist > 0:
-        fig.plot(
+        fig_path.plot(
             x=0,
             y=r_earth - source_depth,
             style="a0.35c",
@@ -364,7 +391,7 @@ def taup_path(
         y_receiver = r_earth + 200  # Seems to work in many cases quite well
         angle_reciever = 180 - receiver_dist + center_point
         perspective_receiver = f"{angle_reciever}+w{x_receiver}/{y_receiver}"
-        fig.plot(
+        fig_path.plot(
             x=x_receiver,
             y=y_receiver,
             style="t0.3c",
@@ -387,7 +414,7 @@ def taup_path(
         for info_text, info_offset in zip(info_texts, info_offsets):
             info_pos = "BR"
             if info_text==earth_model: info_pos = "BL"
-            fig.text(
+            fig_path.text(
                 text=info_text,
                 position=info_pos,
                 offset=info_offset,
@@ -398,7 +425,7 @@ def taup_path(
     elif abs(max_dist - min_dist) > 200 and abs(max_dist - min_dist) < 330:  # degrees
         info_offsets = ["0c/0.8c", "0c/0.4c", "0c/0c"]
         for info_text, info_offset in zip(info_texts, info_offsets):
-            fig.text(
+            fig_path.text(
                 text=info_text,
                 position="BC",
                 offset=info_offset,
@@ -407,7 +434,7 @@ def taup_path(
                 no_clip=True,
             )
     else:
-        fig.text(
+        fig_path.text(
             text=" | ".join(info_texts),
             position="BC",
             offset="0c/-0.1c",
@@ -418,8 +445,8 @@ def taup_path(
 
     # -------------------------------------------------------------------------
     # Show and save figure
-    if fig_instance == None:
-        fig.show()
+    if fig_path_instance == None:
+        fig_path.show()
 
     plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg_"
     fig_name_start = f"{save_path}map_travel"
@@ -428,34 +455,31 @@ def taup_path(
 
     if fig_save == True:
         for ext in ["png"]: #, "pdf", "eps"]:
-            fig.savefig(fname=f"{fig_name_start}PATH{fig_name_end}.{ext}")
+            fig_path.savefig(fname=f"{fig_name_start}PATH{fig_name_end}.{ext}")
             fig_curve.savefig(fname=f"{fig_name_start}CURVE{fig_name_end}.{ext}")
 
     print(f"{fig_name_start}{fig_name_end}")
+
+    # Return PyGMT Figure instances
+    if time_curve==True:
+        return fig_path, fig_curve
+    else:
+        return fig_path
 
 
 # %%
 # -----------------------------------------------------------------------------
 # Examples
 # -----------------------------------------------------------------------------
-# Plot travel time curves cummulative in one Figure
-fig_curve = pygmt.Figure()
-pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
-fig_curve.basemap(
-    region=[75, 155, 0, 2700],  # epicentral distance, travel time
-    projection="X10c",
-    frame=[
-        "WSne+gtan@50",
-        "xa30f10g10+lepicentral distance @~D@~ / @.",
-        "yafg100+ltravel time / s",
-    ],
-)
-# Plot travel paths in separate Figures
 for dist in np.arange(80, 150, 2):  # epicentral distance
-    taup_path(
-        fig_width="8c",
+    fig_path, fig_curve = taup_path(
+        fig_path_width="8c",
         font_size="6.5p",
+        earth_color="tan",
         receiver_dist=dist,
+        time_curve=True,  # Create additionally plot for travel time curves
+        curve_dist_range=[75, 155],
+        curve_time_range=[0, 2700],
 
         phases=["S", "ScS", "PKS", "SKS", "SKKS"],  # "PKKS"
         source_depth=500,
@@ -479,23 +503,23 @@ for dist in np.arange(80, 150, 2):  # epicentral distance
         # max_dist=12,
         # max_depth=1000,
 
-        travel_curve=True,  # Create additionally plot of travel time curves
         # fig_save=True,
     )
 
-"""
-taup_path(
-    fig_width="8c",
+
+fig_path = taup_path(
+    fig_path_width="8c",
     font_size="6.5p",
     earth_color="gray",
     source_depth=500,
     receiver_dist=142,
     max_dist=360,
     phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
+    time_curve=True,
     # fig_save=True,
 )
-taup_path(
-    fig_width="8c",
+fig_path = taup_path(
+    fig_path_width="8c",
     font_size="6.5p",
     earth_color="gray",
     source_depth=500,
@@ -508,8 +532,8 @@ taup_path(
     # fig_save=True,
 )
 
-taup_path(
-    fig_width="8c",
+fig_path = taup_path(
+    fig_path_width="8c",
     font_size="6.5p",
     source_depth=500,
     receiver_dist=95,
@@ -518,8 +542,8 @@ taup_path(
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
     # fig_save=True,
 )
-taup_path(
-    fig_width="8c",
+fig_path = taup_path(
+    fig_path_width="8c",
     font_size="6.5p",
     source_depth=500,
     receiver_dist=95,
@@ -530,8 +554,8 @@ taup_path(
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
     # fig_save=True,
 )
-taup_path(
-    fig_width="8c",
+fig_path = taup_path(
+    fig_path_width="8c",
     font_size="6.5p",
     source_depth=500,
     receiver_dist=95,
@@ -542,4 +566,4 @@ taup_path(
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
     # fig_save=True,
 )
-"""
+#"""
