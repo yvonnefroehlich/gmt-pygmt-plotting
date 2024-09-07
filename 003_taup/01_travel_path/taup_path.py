@@ -51,6 +51,7 @@ def taup_path(
     fig_path_width="6c",
     fig_curve_width="10c",
     fig_path_instance=None,
+    fig_curve_instance=None,
     time_curve=False,
     curve_dist_range=[0, 180],
     curve_time_range=[0, 3000],
@@ -78,7 +79,9 @@ def taup_path(
     #   Pass any GMT built-in colormap
     # - fig_path_width: Width of figure for travel path plot | Default "6c"
     # - fig_curve_width: Width of figure for travel time curve plot | Default "6c"
-    # - fig_path_instance: Provide a PyGMT figure instance for the travel path plot |
+    # - fig_path_instance: Provide a PyGMT Figure instance for the travel path plot |
+    #   Default a new one is set up
+    # - fig_curve_instance: Provide a PyGMT Figure instance for the travel time curve plot |
     #   Default a new one is set up
     # - time_curve: Create travel time curve plot | Default False
     # - curve_dist_range: Epiecntral distance range of travel time curve plot | degrees |
@@ -274,8 +277,30 @@ def taup_path(
                 )
 
     # -----------------------------------------------------------------------------
-    # Plot travel paths
+    if time_curve == True:
+        if fig_curve_instance == None:
+            print("fig_curve does not exist and is created!")
+            fig_curve = pygmt.Figure()
+            pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
+            fig_curve.basemap(
+                region=[
+                    curve_dist_range[0], curve_dist_range[1],
+                    curve_time_range[0], curve_time_range[1],
+                ],
+                projection=f"X{fig_curve_width}",
+                frame=[
+                    f"WSne+g{color_fig_curve}@50",
+                    "xa30f10g10+lepicentral distance @~D@~ / @.",
+                    "yafg100+ltravel time / s",
+                ],
+            )
+        else:
+            print("fig_curve exist and is continued!")
+            fig_curve = fig_curve_instance
+
+    # -----------------------------------------------------------------------------
     fig_name_phase = []
+    # Iterate over phases
     for i_phase in range(len(pp_temp)):
         # Spread legend over several columns
         leg_col_str = ""
@@ -317,25 +342,6 @@ def taup_path(
     # -------------------------------------------------------------------------
         # Create travel time curve cumulative
         if time_curve == True:
-            if "fig_curve" in locals():
-                # print("fig_curve exists!")
-                pass
-            else:
-                # print("fig_curve does not exist and is created!")
-                fig_curve = pygmt.Figure()
-                pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
-                fig_curve.basemap(
-                    region=[
-                        curve_dist_range[0], curve_dist_range[1],
-                        curve_time_range[0], curve_time_range[1],
-                    ],
-                    projection=f"X{fig_curve_width}",
-                    frame=[
-                        f"WSne+g{color_fig_curve}@50",
-                        "xa30f10g10+lepicentral distance @~D@~ / @.",
-                        "yafg100+ltravel time / s",
-                    ],
-                )
             fig_curve.plot(
                 x=receiver_dist,
                 y=phase_time_split[0],
@@ -473,13 +479,17 @@ def taup_path(
 # -----------------------------------------------------------------------------
 # Examples
 # -----------------------------------------------------------------------------
-for dist in np.arange(80, 150, 2):  # Iterate over epicentral distance
+for dist in np.arange(80, 150, 10):  # Iterate over epicentral distance
+    if dist == 80: fig_curve_instance = None
+    else: fig_curve_instance = fig_curve
+
     fig_path, fig_curve = taup_path(
         fig_path_width="8c",
         font_size="6.5p",
         earth_color="gray",
         receiver_dist=dist,
         time_curve=True,
+        fig_curve_instance=fig_curve_instance,
         curve_dist_range=[75, 155],
         curve_time_range=[0, 2700],
 
