@@ -3,8 +3,9 @@
 # - Calculate via ObsPy based on the Java TauP Toolkit by [Crotwell 1999]
 #   - travel times and travel paths
 # - Plot via PyGMT
-#   - travel paths in separate Figures
-#   - travel time curves cumulative with epicentral distance in one Figure
+#   - travel path(s) in separate Figures
+#   - travel time(s) in separate Figures
+#   - travel time curve with epicentral distance cumulative in one Figure
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
 # ORCID: https://orcid.org/0000-0002-8566-0619
@@ -25,7 +26,7 @@
 # - Updated: 2024/05/04 - Enhancement: PyGMT Figure instance
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
 # - Updated: 2024/05/10 - Enhancement: Plot specific distance and depth ranges
-# - Updated: 2024/09/06 - Enhancement: Travel time curve cumulative for distance
+# - Updated: 2024/09/06 - Enhancement: Travel time (curve) with distance (cumulative)
 # #############################################################################
 
 
@@ -49,12 +50,12 @@ def taup_path(
     font_size="4p",
     earth_color="tan",
     fig_path_width="6c",
-    fig_curve_width="10c",
     fig_path_instance=None,
-    fig_curve_instance=None,
     time_curve=False,
+    fig_curve_width="10c",
     curve_dist_range=[0, 180],
     curve_time_range=[0, 3000],
+    fig_curve_instance=None,
     fig_save=False,
     save_path="",
 ):
@@ -78,17 +79,16 @@ def taup_path(
     #   Select from "white", "tan", "gray", "bilbao_gray", "bilbao_brown" OR
     #   Pass any GMT built-in colormap
     # - fig_path_width: Width of figure for travel path plot | Default "6c"
-    # - fig_curve_width: Width of figure for travel time curve plot | Default "6c"
     # - fig_path_instance: Provide a PyGMT Figure instance for the travel path plot |
     #   Default a new one is set up
-    # - fig_curve_instance: Provide a PyGMT Figure instance for the travel time curve plot |
-    #   Default a new one is set up
     # - time_curve: Create travel time curve plot | Default False
-    # - curve_dist_range: Epiecntral distance range of travel time curve plot | degrees |
+    # - fig_curve_width: Width of figure for travel time plot | Default "6c"
+    # - curve_dist_range: Epicentral distance range of travel time plot | degrees |
     #   Default [0, 180]
-    # - curve_time_range: Traveltime range of travel time curve plot | seconds |
+    # - curve_time_range: Travel time range of travel time plot | seconds |
     #   Default [0, 3000]
-    # - curve_time_range:
+    # - fig_curve_instance: Provide a PyGMT Figure instance for the travel time plot |
+    #   Default a new one is set up
     # - fig_save: Save figure to file | Default False
     # - save_path: Path of folder to save figure | Default current working directory
     # -------------------------------------------------------------------------
@@ -479,7 +479,7 @@ def taup_path(
 # -----------------------------------------------------------------------------
 # Examples
 # -----------------------------------------------------------------------------
-for dist in np.arange(80, 150, 10):  # Iterate over epicentral distance
+for dist in np.arange(80, 150, 5):  # Iterate over epicentral distance
     if dist == 80: fig_curve_instance = None
     else: fig_curve_instance = fig_curve
 
