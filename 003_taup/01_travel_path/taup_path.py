@@ -493,7 +493,7 @@ dist_max = 150
 dist_step = 5
 
 # Iterate over epicentral distance range
-for dist in np.arange(dist_min, dist_max, dist_step):
+for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
 
     # Create new Figure instance for first epicentral distance
     if dist == dist_min: fig_curve_instance = None
