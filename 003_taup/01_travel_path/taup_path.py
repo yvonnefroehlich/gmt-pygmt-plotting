@@ -101,20 +101,17 @@ def taup_path(
     # Optional
     # - fig_curve: PyGMT figure instance for travel time curve plot
 
-    fig_path = pygmt.Figure()
-    if fig_path_instance != None:
-        fig_path = fig_path_instance
 
+    # %%
+    # -------------------------------------------------------------------------
+    # General stuff
+    # -------------------------------------------------------------------------
     if max_depth == None:
         max_depth = r_earth
 
     if max_dist == None:
         max_dist = int(np.round(receiver_dist)) + 10
 
-    # %%
-    # -------------------------------------------------------------------------
-    # General stuff
-    # -------------------------------------------------------------------------
     rad2deg = 360 / (2 * np.pi)
 
     # -------------------------------------------------------------------------
@@ -131,6 +128,7 @@ def taup_path(
     # Adjust and extend the dictionary for your needs in taup_path.py
     phase_colors = taup_color()
 
+
     # %%
     # -------------------------------------------------------------------------
     # Calculate travel times and travel paths via ObsPy and taup
@@ -146,10 +144,18 @@ def taup_path(
         phase_list=phases,
     )
 
+
     # %%
     # -------------------------------------------------------------------------
     # Create plots for travel paths and travel times via PyGMT
     # -------------------------------------------------------------------------
+
+    # -------------------------------------------------------------------------
+    # Create or continue PyGMT Figure instance for travel curve plot
+    if fig_path_instance == None:
+        fig_path = pygmt.Figure()
+    else:
+        fig_path = fig_path_instance
 
     # -------------------------------------------------------------------------
     # Set up polar plot
@@ -286,7 +292,7 @@ def taup_path(
     # Create or continue PyGMT Figure instance for travel time plot
     if time_curve == True:
         if fig_curve_instance == None:
-            print("fig_curve does not exist and is created!")
+            # print("fig_curve does not exist and is created!")
             fig_curve = pygmt.Figure()
             pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
             fig_curve.basemap(
@@ -302,7 +308,7 @@ def taup_path(
                 ],
             )
         else:
-            print("fig_curve exist and is continued!")
+            # print("fig_curve exist and is continued!")
             fig_curve = fig_curve_instance
 
     # -------------------------------------------------------------------------
@@ -494,7 +500,7 @@ def taup_path(
 # -----------------------------------------------------------------------------
 dist_min = 80
 dist_max = 150
-dist_step = 5
+dist_step = 10
 # Iterate over epicentral distance range
 for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
 
@@ -535,14 +541,14 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         # max_dist=12,
         # max_depth=1000,
 
-        # fig_save=True,
-        # save_path="test_folder/",
+        fig_save=True,
+        save_path="test_folder/",
     )
 
 
 dist_min = 0
 dist_max = 180
-dist_step = 5
+dist_step = 10
 for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
 
     if dist == dist_min:
@@ -567,10 +573,10 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         fig_path_instance = fig_path_instance,
         time_curve=True,
         fig_curve_instance=fig_curve_instance,
-        curve_dist_range=[dist_min, dist_max + dist_step],
+        curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
         curve_time_range=[0, 2700],
-        # fig_save=True,
-        # save_path="test_folder/",
+        fig_save=True,
+        save_path="test_folder/",
     )
 
 
