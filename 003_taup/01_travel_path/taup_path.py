@@ -541,8 +541,8 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         # max_dist=12,
         # max_depth=1000,
 
-        fig_save=True,
-        save_path="test_folder/",
+        # fig_save=True,
+        # save_path="test_folder/",
     )
 
 
@@ -575,8 +575,8 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         fig_curve_instance=fig_curve_instance,
         curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
         curve_time_range=[0, 2700],
-        fig_save=True,
-        save_path="test_folder/",
+        # fig_save=True,
+        # save_path="test_folder/",
     )
 
 
