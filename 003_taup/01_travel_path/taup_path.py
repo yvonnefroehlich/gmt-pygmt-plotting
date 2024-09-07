@@ -53,11 +53,13 @@ def taup_path(
     fig_path_width="6c",
     fig_path_instance=None,
     thick_line_path="1.2p",
+    legend_path=True,
     time_curve=False,
     fig_curve_width="10c",
     curve_dist_range=[0, 180],
     curve_time_range=[0, 3000],
     fig_curve_instance=None,
+    legend_curve=True,
     fig_save=False,
     save_path="",
 ):
@@ -84,6 +86,7 @@ def taup_path(
     # - fig_path_instance: Provide a PyGMT Figure instance for the travel path plot |
     #   Default a new one is set up
     # - thick_line_path: Thickness of line for travel path | Default "1.2p" (points)
+    # - legend_path: Add legend for travel paths | Default True
     # - time_curve: Create travel time curve plot | Default False
     # - fig_curve_width: Width of figure for travel time plot | Default "6c"
     # - curve_dist_range: Epicentral distance range of travel time plot | degrees |
@@ -92,6 +95,7 @@ def taup_path(
     #   Default [0, 3000]
     # - fig_curve_instance: Provide a PyGMT Figure instance for the travel time plot |
     #   Default a new one is set up
+    # - legend_curve: Add legend for travel time curves | Default True
     # - fig_save: Save figure to file | Default False
     # - save_path: Path of folder to save figure | Default current working directory
     # -------------------------------------------------------------------------
@@ -382,12 +386,17 @@ def taup_path(
                     label=f"{phase}{info_str}{col_str}",
                 )
             hight_legend = 0.4 * len(phases)
-            fig_curve.legend(position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c", box=box_standard)
+            if legend_curve==True:
+                fig_curve.legend(
+                    position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c",
+                    box=box_standard,
+                )
 
     # -------------------------------------------------------------------------
     # Add legend for phase names and travel times in travel path plot
     # Adjust width and height for your needs (+w)
-    fig_path.legend(position="jBC+jTC+o0c/0.5c+w8c/1c", box=box_standard)
+    if legend_path==True:
+        fig_path.legend(position="jBC+jTC+o0c/0.5c+w8c/1c", box=box_standard)
 
     # -------------------------------------------------------------------------
     # Add frame with annotations for distance
@@ -575,8 +584,9 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         fig_curve_instance=fig_curve_instance,
         curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
         curve_time_range=[0, 2700],
-        # fig_save=True,
-        # save_path="test_folder/",
+        legend_path=False,
+        fig_save=True,
+        save_path="test_folder/",
     )
 
 
