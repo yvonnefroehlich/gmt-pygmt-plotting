@@ -50,6 +50,7 @@ def taup_path(
     max_dist=None,
     font_size="4p",
     earth_color="tan",
+    path_overlay=False,
     fig_path_width="6c",
     fig_path_instance=None,
     thick_line_path="1.2p",
@@ -79,6 +80,7 @@ def taup_path(
     # - min_dist: Minimum for plotting | degrees | Default 0
     # - max_dist: Maximum for plotting | degrees | Default epicentral distance + 10
     # - font_size: Font size for text | Default "4p"
+    # - path_overlay: Plot travel path on top of each other | False
     # - earth_color: Colors for Earth concentric shells or circles | Default "tan"
     #   Select from "non", "white", "tan", "gray", "bilbao_gray", "bilbao_brown"
     #   or pass any GMT built-in colormap
@@ -170,6 +172,7 @@ def taup_path(
     else:
         fig_path = pygmt.Figure()
 
+    if path_overlay == False:
         pygmt.config(FONT=font_size)
         fig_path.basemap(
             region=[min_dist, max_dist, min_radius, max_radius],
@@ -226,71 +229,72 @@ def taup_path(
     circle_x = np.arange(min_dist, max_dist + circle_step, circle_step)
     circle_y = np.ones(len(circle_x))
 
-    for i_bound, bound in enumerate(bounds):
-        # Plot Earth concentric circles
-        fill_used = "+z"
-        zvalue_used = i_bound
-        camp_used = True
-        if earth_color in earth_colors:
-            fill_used = colors[i_bound]
-            zvalue_used = None
-            camp_used = None
-        fig_path.plot(
-            x=circle_x,
-            y=circle_y * (r_earth - bound),
-            close="+y",
-            pen="0.4p,gray10",
-            fill=fill_used,
-            zvalue=zvalue_used,
-            cmap=camp_used,
-        )
-        # Add depth labels
-        if max_dist != 360:
-            angle_sign = -1
-            if min_dist < 0 and max_dist < 0: angle_sign = 1
-            angle_depth = (np.abs(min_dist) + np.abs(max_dist)) / 2 + angle_sign * add_dist
-            angle_flip = 0
-            justify_depth = "RM"
-            if max_dist - min_dist > 200:  # degrees
-                angle_flip = 180
-                justify_depth = "LM"
-            if bound > min_depth and bound < max_depth:
-                fig_path.text(
-                    x=min_dist,
-                    y=r_earth - bound,
-                    text=bound,
-                    font=font_size,
-                    angle=angle_depth + angle_flip,
-                    justify=justify_depth,
-                    offset="-0.05c/-0.05c",
-                    fill="white@30",
-                    no_clip=True,
-                )
-        else:
-            match bound:
-                case 6371: y_offset = 0
-                case 5120: y_offset = 200
-                case 2900: y_offset = -200
-                case 2700: y_offset = 200
-                case 660: y_offset = -200
-                case 440: y_offset = -50
-                case 120: y_offset = -70
+    if path_overlay == False:
+        for i_bound, bound in enumerate(bounds):
+            # Plot Earth concentric circles
+            fill_used = "+z"
+            zvalue_used = i_bound
+            camp_used = True
+            if earth_color in earth_colors:
+                fill_used = colors[i_bound]
+                zvalue_used = None
+                camp_used = None
             fig_path.plot(
-                x=np.linspace(min_dist, max_dist, max_dist),
-                y=np.ones(max_dist) * (r_earth - bound + y_offset),
-                style=f"qn1:+l{bound} km+f{font_size}+v+i+gwhite@30+o+c0.03c/0.03c",
+                x=circle_x,
+                y=circle_y * (r_earth - bound),
+                close="+y",
+                pen="0.4p,gray10",
+                fill=fill_used,
+                zvalue=zvalue_used,
+                cmap=camp_used,
             )
-            if bound == 6371:
-                fig_path.text(
-                    x=180,
-                    y=r_earth - bound,
-                    text=f"{bound} km",
-                    font=font_size,
-                    justify="MC",
-                    fill="white@30",
-                    clearance="0.03c/0.03c+tO",
-                    offset=f"0c/{y_offset}c",
+            # Add depth labels
+            if max_dist != 360:
+                angle_sign = -1
+                if min_dist < 0 and max_dist < 0: angle_sign = 1
+                angle_depth = (np.abs(min_dist) + np.abs(max_dist)) / 2 + angle_sign * add_dist
+                angle_flip = 0
+                justify_depth = "RM"
+                if max_dist - min_dist > 200:  # degrees
+                    angle_flip = 180
+                    justify_depth = "LM"
+                if bound > min_depth and bound < max_depth:
+                    fig_path.text(
+                        x=min_dist,
+                        y=r_earth - bound,
+                        text=bound,
+                        font=font_size,
+                        angle=angle_depth + angle_flip,
+                        justify=justify_depth,
+                        offset="-0.05c/-0.05c",
+                        fill="white@30",
+                        no_clip=True,
+                    )
+            else:
+                match bound:
+                    case 6371: y_offset = 0
+                    case 5120: y_offset = 200
+                    case 2900: y_offset = -200
+                    case 2700: y_offset = 200
+                    case 660: y_offset = -200
+                    case 440: y_offset = -50
+                    case 120: y_offset = -70
+                fig_path.plot(
+                    x=np.linspace(min_dist, max_dist, max_dist),
+                    y=np.ones(max_dist) * (r_earth - bound + y_offset),
+                    style=f"qn1:+l{bound} km+f{font_size}+v+i+gwhite@30+o+c0.03c/0.03c",
                 )
+                if bound == 6371:
+                    fig_path.text(
+                        x=180,
+                        y=r_earth - bound,
+                        text=f"{bound} km",
+                        font=font_size,
+                        justify="MC",
+                        fill="white@30",
+                        clearance="0.03c/0.03c+tO",
+                        offset=f"0c/{y_offset}c",
+                    )
 
     # -------------------------------------------------------------------------
     # Create or continue PyGMT Figure instance for travel time plot
@@ -412,7 +416,7 @@ def taup_path(
         )
 
     # Add frame with annotations for distance
-    if fig_path_instance == None:
+    if path_overlay == False:
         # Affects the last addressed Figure instance
         with pygmt.config(FORMAT_GEO_MAP="+D"):  # 0°-360°
             fig_path.basemap(frame=["xa10f5", "wbNe"])
@@ -515,16 +519,21 @@ dist_step = 10
 # Iterate over epicentral distance range
 for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
 
-    # Create new Figure instance for first epicentral distance
-    if dist == dist_min: fig_curve_instance = None
+    # Create new Figure instances for first epicentral distance
+    if dist == dist_min:
+        # fig_path_instance = None
+        fig_curve_instance = None
     # Continue travel time plot to get travel time curve
-    else: fig_curve_instance = fig_curve
+    else:
+        # fig_path_instance = fig_path
+        fig_curve_instance = fig_curve
 
     fig_path, fig_curve = taup_path(
         fig_path_width="8c",
         font_size="6.5p",
         earth_color="gray",
         receiver_dist=dist,
+        # fig_path_instance=fig_path_instance,
         time_curve=True,
         fig_curve_instance=fig_curve_instance,
         curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
@@ -556,6 +565,8 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         # save_path="test_folder/",
     )
 
+    # fig_path.shift_origin(xshift="+w1c")
+
 
 dist_min = 0
 dist_max = 180
@@ -565,16 +576,16 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
     if dist == dist_min:
         fig_path_instance = None
         fig_curve_instance = None
-        earth_color = "gray"
+        path_overlay = False
     else:
         fig_path_instance = fig_path
         fig_curve_instance = fig_curve
-        earth_color = "none"
+        path_overlay = True
 
     fig_path, fig_curve = taup_path(
         fig_path_width="8c",
         font_size="6.5p",
-        earth_color=earth_color,
+        earth_color="gray",
         thick_line_path="0.5p",
         receiver_dist=dist,
         phases=["SKS", "SKKS"],
@@ -583,6 +594,7 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         min_dist=0,
         max_dist=360,
         fig_path_instance=fig_path_instance,
+        path_overlay=path_overlay,
         time_curve=True,
         fig_curve_instance=fig_curve_instance,
         curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
