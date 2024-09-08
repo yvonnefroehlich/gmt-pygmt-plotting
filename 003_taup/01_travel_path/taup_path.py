@@ -1,5 +1,5 @@
 # #############################################################################
-# Seismological phase through the Earth
+# Seismological phases through the Earth
 # - Calculate via ObsPy based on the Java TauP Toolkit by [Crotwell 1999]
 #   - travel times and travel paths
 # - Plot via PyGMT
@@ -421,7 +421,7 @@ def taup_path(
     if min_depth == 0 and receiver_dist <= max_dist:
         # Rotate to be always perpendicular to tangent to the surface point
         x_receiver = receiver_dist
-        # Have to lower edge of the inverse triangle at the top of the surface
+        # Have the lower edge of the inverse triangle at the top of the surface
         y_receiver = r_earth + 200  # Seems to work in many cases quite well
         angle_reciever = 180 - receiver_dist + center_point
         perspective_receiver = f"{angle_reciever}+w{x_receiver}/{y_receiver}"
