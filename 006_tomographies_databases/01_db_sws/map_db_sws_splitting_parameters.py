@@ -1,9 +1,9 @@
 # #############################################################################
 # Shear wave splitting database
 #
-# Wüstefeld A., Bokelmann G., Barruol G., Montagner J.-P., (2009), Identifying
+# Wüstefeld A., Bokelmann G., Barruol G., Montagner J.-P., (2009). Identifying
 # global seismic anisotropy patterns by correlating shear-wave splitting and
-# surface-wave data, Physics of the Earth and Planetary Interiors, 176(3–4),
+# surface-wave data. Physics of the Earth and Planetary Interiors, 176(3–4),
 # 198-212, https://doi.org/10.1016/j.pepi.2009.05.006, last access 2024/09/08.
 #
 # Shear wave splitting data is available at http://ds.iris.edu/ds/products/sws-dbs/
