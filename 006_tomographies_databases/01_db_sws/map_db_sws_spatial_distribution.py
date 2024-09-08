@@ -1,8 +1,18 @@
 # #############################################################################
 # Shear wave splitting database
-# Barruol, G., Wuestefeld, A., & Bokelmann, G. (2009). SKS-Splitting-database.
-# Université de Montpellier, Laboratoire Géosciences.
-# https://doi.org/10.18715/sks_splitting_database
+#
+# Wüstefeld A., Bokelmann G., Barruol G., Montagner J.-P., (2009), Identifying
+# global seismic anisotropy patterns by correlating shear-wave splitting and
+# surface-wave data, Physics of the Earth and Planetary Interiors, 176(3–4),
+# 198-212, https://doi.org/10.1016/j.pepi.2009.05.006, last access 2024/09/08.
+#
+# Shear wave splitting data is available at http://ds.iris.edu/ds/products/sws-dbs/
+# - SWS-DB: The Géosciences Montpellier SplitLab Shear-Wave Splitting Database
+#   http://ds.iris.edu/ds/products/sws-db/, last access 2024/09/08
+#   https://doi.org/10.18715/sks_splitting_database, outdated
+#   http://splitting.gm.univ-montp2.fr/, outdated
+# - SWS-DB-MST: The Missouri S&T western and central United States shear-wave splitting database
+#   http://ds.iris.edu/ds/products/sws-db-mst/, last access 2024/09/08
 #
 # Spatial distribution of splits (i.e. nulls are not considered)
 # -----------------------------------------------------------------------------
