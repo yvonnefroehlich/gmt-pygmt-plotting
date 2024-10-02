@@ -22,10 +22,10 @@
 # - Updated: 2022/08/16
 # - Updated: 2022/09/01
 # - Updated: 2023/07/25
-# - Updated: 2023/11/13 - Add Indonesia
+# - Updated: 2023/11/13
 # - Updated: 2024/05/15 - Convert to function
-# - Updated: 2024/06/14 - Changes for SEDI conference: use colors for HLFL and missing
-# - Updated: 2024/10/02 - Changes for master students
+# - Updated: 2024/06/14 - Improve highlighting
+# - Updated: 2024/10/02 - Improve input parameters
 # -----------------------------------------------------------------------------
 # Versions:
 # - PyGMT v0.7.0  with GMT 6.4.0
@@ -256,7 +256,7 @@ def sws_lmm_deepdyn(
             fill=color_epi2tag,
             pen="0.01p,black",
         )
-        # Mark area of approbiate stations
+        # Mark area of appropriate stations
         fig.plot(
             x=lon_epi,
             y=lat_epi,
