@@ -438,5 +438,5 @@ sws_lmm_deepdyn(
     lat_center=35,
     lon_epi=140,
     lat_epi=15,
-    folder_out="02_out_figs",
+    folder_out="02_out_figs/",
 )
