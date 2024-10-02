@@ -76,10 +76,6 @@ def sws_lmm_deepdyn(
     myfont = "3.5p"
 
 # -----------------------------------------------------------------------------
-    # coordinates of target area -> center, 2700 km piercing points
-    target_center = f"{lon_center}{lat_center}"
-
-# -----------------------------------------------------------------------------
     # map set up
     map_size = 2  # inches, radius of whole figure
     pro_area_XKS = 150
@@ -348,27 +344,6 @@ def sws_lmm_deepdyn(
         "Australia",
         "Europe",
     ]
-    match target_center:
-        case "Siberia":
-            text=[
-                "Africa",
-                "Antarctica",
-                "North America",
-                "",
-                "South America",
-                "Australia",
-                "Europe",
-            ]
-        case "Atlantic":
-            text=[
-                "Africa",
-                "Antarctica",
-                "North America",
-                "Asia",
-                "South America",
-                "Australia",
-                "",
-            ]
 
     fig.text(
         x=[21.00, 74.305, -135.553, 102.255, -54.665, 138.51, -13.708],
@@ -408,7 +383,6 @@ def sws_lmm_deepdyn(
     # Add labels
     position_target = "LT"
     offset_cord = "0.05c/-0.1c"
-    offset_target = "0.05c/-0.4c"
     position_phase = "RT"
     offset_phase = "-0.2c/-0.1c"
 
