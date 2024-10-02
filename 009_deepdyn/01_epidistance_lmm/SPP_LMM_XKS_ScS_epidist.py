@@ -98,8 +98,8 @@ def sws_lmm_deepdyn(
     # cricles related to epicenters
     match sws_type:
         case "XKS":
-            size_epi_min_deg = 90
-            size_epi_max_deg = 140  # 150 ???
+            size_epi_min_deg = 90  # 80
+            size_epi_max_deg = 140  # 150
         case "ScS":
             size_epi_min_deg = 60
             size_epi_max_deg = 90
@@ -258,6 +258,7 @@ def sws_lmm_deepdyn(
             y=lat_epi,
             style=f"c{(size_epi_max + size_epi_min) / 2}i",
             pen=f"{(size_epi_max - size_epi_min) / 2}i,{color_epi2tag}@80",
+            # no_clip=True,
         )
 
 # -----------------------------------------------------------------------------
