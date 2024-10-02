@@ -20,9 +20,19 @@
 # ORCID: https://orcid.org/0000-0002-8566-0619
 # GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # -----------------------------------------------------------------------------
+# Related to:
+# - Fröhlich Y., Dillah M. I. F., Dorn F., Ritter J. R. R. (2024).
+#   Investigation of seismic anisotropy in the D'' layer and at the CMB
+#   regarding intense magnetic flux regions. 18th Symposium of Study of the
+#   Earth's Deep Interior, proceedings, session 2-04.
+#   https://doi.org/10.5281/zenodo.12658821.
+# -----------------------------------------------------------------------------
 # - Created: 2024/05/15
 #   PyGMT v0.12.0 -> https://www.pygmt.org/v0.12.0/ | https://www.pygmt.org/
 #   GMT 6.4.0, 6.5.0 -> https://www.generic-mapping-tools.org/
+# - Updated: 2024/10/02
+#   PyGMT v0.13.0 -> https://www.pygmt.org/v0.13.0/ | https://www.pygmt.org/
+#   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Stations coordinates taken from GMT map "005_map_equidist_siberia" by Michael Grund
 # Source of original script, data, and manual (last access 2022/04/06)
@@ -34,21 +44,27 @@
 import pygmt as gmt
 
 
-def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
-    """
+def sws_lmm_deepdyn(
+    sws_type,
+    lon_center,
+    lat_center,
+    lons_epi,
+    lats_epi,
+    folder_out="",
+):
+    # %%
+    # -------------------------------------------------------------------------
+    # Input
+    # -------------------------------------------------------------------------
+    # Required
+    # - sws_type: string | "XKS" or "ScS"
+    # - lon_center: list of floats | longitude of center | degrees East
+    # - lat_center: list of floats | latitude of center | degrees North
+    # - lons_epi: list of floats | longitude(s) of epicenter(s) | degrees East
+    # - lats_epi: list of floats | latitude(s) of epicenter(s) | degrees North
+    # Optional
+    # - folder_out: string | folder to store images in | Default current working directory
 
-    :param sws_type: DESCRIPTION
-    :type sws_type: TYPE
-    :param target_center: DESCRIPTION
-    :type target_center: TYPE
-    :param fig_name_add: DESCRIPTION, defaults to ""
-    :type fig_name_add: TYPE, optional
-    :param folder_out: DESCRIPTION, defaults to ""
-    :type folder_out: TYPE, optional
-    :return: DESCRIPTION
-    :rtype: TYPE
-
-    """
 
 # -----------------------------------------------------------------------------
     # Set up
@@ -56,12 +72,6 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
     # general stuff
     path_in = "01_in_data"
     myfont = "4p"
-
-# -----------------------------------------------------------------------------
-    # coordinates of target area -> center, 2700 km piercing points
-    target_center_split = target_center.split(",")
-    lon_cent = target_center_split[0]
-    lat_cent = target_center_split[1]
 
 # -----------------------------------------------------------------------------
     # map set up
@@ -118,11 +128,11 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
         case "XKS":
             # lon_epi_exp_all = [-70, -70, 110, 130, 140, 120, 180, 170]  # degrees East
             # lat_epi_exp_all = [-10, -45, -10, 10, 15, 25, -20, -10]  # degrees North
-            lon_epi_exp_all = [140]  # degrees East
-            lat_epi_exp_all = [15]  # degrees North
+            lon_epi = lons_epi  # degrees East
+            lat_epi = lats_epi  # degrees North
         case "ScS":
-            lon_epi_exp_all = [0]
-            lat_epi_exp_all = [0]
+            lon_epi = lons_epi
+            lat_epi = lats_epi
 
 # -----------------------------------------------------------------------------
     # legend
@@ -198,10 +208,10 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
     # Create geographic maps
 # -----------------------------------------------------------------------------
     # Run loop over all example epicenters
-    for i_epi in range(len(lon_epi_exp_all)):
+    for i_epi in range(len(lons_epi)):
 
-        lon_epi_exp = lon_epi_exp_all[i_epi]
-        lat_epi_exp = lat_epi_exp_all[i_epi]
+        lon_epi = lons_epi[i_epi]
+        lat_epi = lats_epi[i_epi]
 
 # -----------------------------------------------------------------------------
         # Create new PyGMT Figure instance
@@ -215,7 +225,7 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
         # Create epidistance plot mit centre = target zone
         fig.coast(
             region="g",
-            projection=f"E{lon_cent}/{lat_cent}/{pro_area}/{map_size}i",
+            projection=f"E{lon_center}/{lat_center}/{pro_area}/{map_size}i",
             resolution="c",
             land=col_land,
             water=col_water,
@@ -240,16 +250,16 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
         if sws_type == "XKS":
             # Plot example epicenters
             fig.plot(
-                x=lon_epi_exp,
-                y=lat_epi_exp,
+                x=lon_epi,
+                y=lat_epi,
                 style="a0.15c",  # star
                 fill=col_epi2tag,
                 pen="0.01p,black",
             )
             # Mark area of appropriate stations
             fig.plot(
-                x=lon_epi_exp,
-                y=lat_epi_exp,
+                x=lon_epi,
+                y=lat_epi,
                 style=f"c{(size_epi_max + size_epi_min) / 2}i",
                 pen=f"{(size_epi_max - size_epi_min) / 2}i,{col_epi2tag}@80",
             )
@@ -258,15 +268,15 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
         # Target area
         # additional
         fig.plot(
-            x=lon_cent,
-            y=lat_cent,
+            x=lon_center,
+            y=lat_center,
             style=f"c{size_tag_main + size_tag_add}i",
             pen=f"0.35p,{col_tag},-",
         )
         # main
         fig.plot(
-            x=lon_cent,
-            y=lat_cent,
+            x=lon_center,
+            y=lat_center,
             style=f"c{size_tag_main}i",
             fill=f"{col_tag}@60",
         )
@@ -275,21 +285,21 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
         # Stations around target area
         # main
         fig.plot(
-            x=lon_cent,
-            y=lat_cent,
+            x=lon_center,
+            y=lat_center,
             style=f"c{size_sta_main_min}i",
             pen=f"0.35p,{col_sta2tag}",
         )
         fig.plot(
-            x=lon_cent,
-            y=lat_cent,
+            x=lon_center,
+            y=lat_center,
             style=f"c{size_sta_main_max}i",
             pen=f"0.35p,{col_sta2tag}",
         )
         # additional
         fig.plot(
-            x=lon_cent,
-            y=lat_cent,
+            x=lon_center,
+            y=lat_center,
             style=f"c{size_sta_add_max + size_tag_add}i",
             pen=f"0.35p,{col_sta2tag},-",
         )
@@ -297,7 +307,7 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
 # -----------------------------------------------------------------------------
         # Recording stations
         for key in key_choose:
-            # set input order of columns depending on file
+            # Set input order of columns depending on file
             if key in ["SA_2", "SA", "USA_sub"]:
                 incols_first = 0
                 incols_second = 1
@@ -317,15 +327,15 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
         # Circle zoom in for ScS
         if sws_type == "XKS":
             fig.plot(
-                x=lon_cent,
-                y=lat_cent,
+                x=lon_center,
+                y=lat_center,
                 style=f"c{pro_area_ScS * deg2inch}i",
                 pen="0.50p,gray30,.",
             )
 
 # -----------------------------------------------------------------------------
         # Add map frame
-        fig.basemap(frame="wsne")
+        fig.basemap(frame=0)
 
 # -----------------------------------------------------------------------------
         # Add labels of continents
@@ -384,7 +394,7 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
         fig.text(
             position="RT",
             offset="-0.05c/-0.1c",
-            text=f"{lon_cent}@.E {lat_cent}@.N",
+            text=f"{lon_center}@.E {lat_center}@.N",
             font=f"{myfont},{col_highlight}",
             pen=f"0.1p,{col_highlight}",
             clearance="0.05c/0.05c+tO",
@@ -402,11 +412,12 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
         # Show and save figure
         fig.show()
         fig_name = f"{folder_out}" + \
-            f"DeepDyn_LMM_{sws_type}_{lon_cent}E{lat_cent}N_epi{i_epi}" + \
-            f"{fig_name_add}"
+            f"DeepDyn_LMM_{sws_type}_target{lon_center}E{lat_center}N_epi" + \
+            f"{lon_epi}E{lat_epi}N"
         for ext in ["png"]: #, "pdf", "eps"]:
             fig.savefig(fname=f"{fig_name}.{ext}", dpi=720)
         print(fig_name)
+
 
 
 # %%
@@ -415,7 +426,9 @@ def sws_lmm_deepdyn(sws_type, target_center, fig_name_add="", folder_out=""):
 # -----------------------------------------------------------------------------
 sws_lmm_deepdyn(
     sws_type="XKS",
-    target_center="-105,60",  # lon_degE,lat_degN
-    fig_name_add="",
+    lon_center=120,  # has to be a list
+    lat_center=-60,
+    lons_epi=[140],  # has to be a list
+    lats_epi=[15],
     folder_out="02_out_figs/",
 )
