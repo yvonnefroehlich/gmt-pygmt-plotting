@@ -317,12 +317,13 @@ def sws_lmm_deepdyn(
     # Recording stations
     for key in key_choose:
         # Set input order of columns depending on file
-        if key in ["SA_2", "SA", "USA_sub"]:
-            incols_first = 0
-            incols_second = 1
-        if key in ["RUS", "AA_perm", "AA_temp", "GL"]:
-            incols_first = 1
-            incols_second = 0
+        match key:
+            case "SA_2" | "SA" | "USA_sub":
+                incols_first = 0
+                incols_second = 1
+            case "RUS" | "AA_perm" | "AA_temp" | "GL":
+                incols_first = 1
+                incols_second = 0
 
         fig.plot(
             data=f"{path_in}/{dic_sta[key]}",
