@@ -103,13 +103,13 @@ def sws_lmm_deepdyn(
             size_epi_max_deg = 140  # 150
             size_epi_min_add_deg = 80  # 80
             size_epi_max_add_deg = 150  # 150
+            size_epi_min_add = deg2inch * size_epi_min_add_deg
+            size_epi_max_add = deg2inch * size_epi_max_add_deg
         case "ScS":
             size_epi_min_deg = 60
             size_epi_max_deg = 90
     size_epi_min = deg2inch * size_epi_min_deg
     size_epi_max = deg2inch * size_epi_max_deg
-    size_epi_min_add = deg2inch * size_epi_min_add_deg
-    size_epi_max_add = deg2inch * size_epi_max_add_deg
 
     # -------------------------------------------------------------------------
     # Circles related to stations
@@ -118,7 +118,7 @@ def sws_lmm_deepdyn(
             sta2tag_min = 22.5  # size_tag_main_deg + 2  # rough eastimation
             sta2tag_max = 35  # size_tag_main_deg + 20
         case "ScS":  # middel
-            sta2tag_min = size_epi_min_deg / 2 - 1  # avoid overlap
+            sta2tag_min = size_epi_min_deg / 2
             sta2tag_max = size_epi_max_deg / 2
 
     size_sta_main_min_deg = sta2tag_min
@@ -148,20 +148,20 @@ def sws_lmm_deepdyn(
     color_GL = "SALMON"  # Greenland
     color_RUS = "PALEVIOLETRED"  # Russia
 
-    color_out_epi = "dodgerblue2"
+    color_pen_epi = "dodgerblue2"
     color_epi2tag = "dodgerblue3"
-    color_epi = "white"  # epicenter
+    color_fill_epi = "white"  # epicenter
 
     color_frame = "black"
     color_tag = "magenta"
     color_sta2tag = "purple"
 
     # color_frame = "green3"
-    # color_tag = "green3"   # target area hlfl
+    # color_tag = "green3"
     # color_sta2tag = "seagreen"
 
     # color_frame = "gray30"
-    # color_tag = "gray30"  # target area missing
+    # color_tag = "gray30"
     # color_sta2tag = "gray25"
 
     clearance_standard = "0.03c/0.03c+tO"
@@ -242,8 +242,8 @@ def sws_lmm_deepdyn(
     fig.plot(
         data=f"{path_in}/{data_epi}",
         style="a0.1c",  # star
-        fill=color_epi,
-        pen=f"0.01p,{color_out_epi}",
+        fill=color_fill_epi,
+        pen=f"0.01p,{color_pen_epi}",
     )
 
     # -------------------------------------------------------------------------
@@ -373,12 +373,12 @@ def sws_lmm_deepdyn(
     match sws_type:
         case "XKS":
             text_circle = ["15@.", "22.5@.", "30@.", "35@.", "65@."]
-            offset_circle_x = [0, 0, 0.18, 0, 0]
+            offset_circle_x = [0.00,  0.00, 0.18,  0.00,  0.00]
             offset_circle_y = [0.09, -0.14, 0.09, -0.23, -0.43]
         case "ScS":
-            text_circle = ["15@.", "29@.-30@.", "45@.", "75@."]
-            offset_circle_x = [0, 0, 0, 0]
-            offset_circle_y = [0.12, -0.26, -0.40, -0.67]
+            text_circle = ["15@.", "29@.", "-30@.", "45@.", "75@."]
+            offset_circle_x = [0.00,  0.00, 0.19,  0.00,  0.00]
+            offset_circle_y = [0.10, -0.28, 0.12, -0.45, -0.75]
 
     for cl in range(len(text_circle)):
         color_pen = color_tag
@@ -446,10 +446,10 @@ def sws_lmm_deepdyn(
 # Example
 # -----------------------------------------------------------------------------
 sws_lmm_deepdyn(
-    sws_type="XKS",
+    sws_type="ScS",
     lon_center=42,
     lat_center=35,
-    lon_epi=140,  # choose something realistic ...
+    lon_epi=140,
     lat_epi=15,
     folder_out="02_out_figs/",
 )
