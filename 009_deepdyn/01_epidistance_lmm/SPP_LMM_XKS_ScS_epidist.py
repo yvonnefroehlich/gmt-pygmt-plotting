@@ -156,14 +156,6 @@ def sws_lmm_deepdyn(
     color_tag = "magenta"
     color_sta2tag = "purple"
 
-    # color_frame = "green3"
-    # color_tag = "green3"
-    # color_sta2tag = "seagreen"
-
-    # color_frame = "gray30"
-    # color_tag = "gray30"
-    # color_sta2tag = "gray25"
-
     clearance_standard = "0.03c/0.03c+tO"
 
     # -------------------------------------------------------------------------
