@@ -432,7 +432,7 @@ def sws_lmm_deepdyn(
     # -------------------------------------------------------------------------
     # Show and save figure
     fig.show()
-    fig_name = f"DeepDyn_LMM_{sws_type}_" + \
+    fig_name = f"LMM_epidist_{sws_type}_" + \
                f"center{lon_center}E{lat_center}N_" + \
                f"epi{lon_epi}E{lat_epi}N{fig_name_add}"
     for ext in ["png"]: #, "pdf", "eps"]:
@@ -446,7 +446,7 @@ def sws_lmm_deepdyn(
 # Example
 # -----------------------------------------------------------------------------
 sws_lmm_deepdyn(
-    sws_type="ScS",
+    sws_type="XKS",
     lon_center=42,
     lat_center=35,
     lon_epi=140,
