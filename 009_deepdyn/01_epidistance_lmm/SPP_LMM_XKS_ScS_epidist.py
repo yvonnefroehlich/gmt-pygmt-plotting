@@ -34,7 +34,8 @@
 # - PyGMT v0.12.0 with GMT 6.5.0 -> https://www.pygmt.org/v0.12.0/
 # - PyGMT v0.13.0 with GMT 6.5.0 -> https://www.pygmt.org/v0.13.0/
 # -----------------------------------------------------------------------------
-# Stations coordinates taken from GMT map "005_map_equidist_siberia" by Michael Grund
+# Stations coordinates input files were modified from GMT map
+# "005_map_equidist_siberia" by Michael Grund
 # Source of original script, data, and manual (last access 2022/04/06)
 # https://github.com/michaelgrund/GMT-plotting/tree/main/005_map_equidist_siberia
 # a modified version is part of his PhD thesis (DOI: 10.5445/IR/1000091425)
@@ -67,16 +68,16 @@ def sws_lmm_deepdyn(
     # - fig_name_add: string | addition to file name     | Default ""
     # - folder_out:   string | folder to store images in | Default current working directory
 
-
-# -----------------------------------------------------------------------------
+    # %%
+    # -------------------------------------------------------------------------
     # Set up
-# -----------------------------------------------------------------------------
-    # general stuff
+    # -------------------------------------------------------------------------
+    # General stuff
     path_in = "01_in_data"
-    myfont = "3.5p"
+    font = "3.5p"
 
-# -----------------------------------------------------------------------------
-    # map set up
+    # -------------------------------------------------------------------------
+    # Map set up
     map_size = 2  # inches, radius of whole figure
     pro_area_XKS = 150
     pro_area_ScS = 100
@@ -87,31 +88,35 @@ def sws_lmm_deepdyn(
 
     deg2inch = map_size / pro_area
 
-# -----------------------------------------------------------------------------
-    # circles related to target zone
+    # -------------------------------------------------------------------------
+    # Circles related to target zone
     size_tag_main_deg = 15  # 15 deg radius main target zone
     size_tag_add_deg = 15  # 15 deg radius around main target zone
     size_tag_main = deg2inch * size_tag_main_deg
     size_tag_add = deg2inch * size_tag_add_deg
 
-# -----------------------------------------------------------------------------
-    # cricles related to epicenters
+    # -------------------------------------------------------------------------
+    # Cricles related to epicenters
     match sws_type:
         case "XKS":
             size_epi_min_deg = 90  # 80
             size_epi_max_deg = 140  # 150
+            size_epi_min_add_deg = 80  # 80
+            size_epi_max_add_deg = 150  # 150
         case "ScS":
             size_epi_min_deg = 60
             size_epi_max_deg = 90
     size_epi_min = deg2inch * size_epi_min_deg
     size_epi_max = deg2inch * size_epi_max_deg
+    size_epi_min_add = deg2inch * size_epi_min_add_deg
+    size_epi_max_add = deg2inch * size_epi_max_add_deg
 
-# -----------------------------------------------------------------------------
-    # circles related to stations
+    # -------------------------------------------------------------------------
+    # Circles related to stations
     match sws_type:
         case "XKS":
-            sta2tag_min = 22.5
-            sta2tag_max = 35
+            sta2tag_min = 22.5  # size_tag_main_deg + 2  # rough eastimation
+            sta2tag_max = 35  # size_tag_main_deg + 20
         case "ScS":  # middel
             sta2tag_min = size_epi_min_deg / 2 - 1  # avoid overlap
             sta2tag_max = size_epi_max_deg / 2
@@ -124,13 +129,13 @@ def sws_lmm_deepdyn(
     size_sta_add_max_deg = sta2tag_max + size_tag_add_deg
     size_sta_add_max = deg2inch * size_sta_add_max_deg
 
-# -----------------------------------------------------------------------------
-    # legend
+    # -------------------------------------------------------------------------
+    # Legend
     box_standard = "+gwhite@20+p0.1p,gray30+r2p"  # box
     leg_net_pos = "JRB+jRB+w1.01c"  # position
 
-# -----------------------------------------------------------------------------
-    # colors - can be changed for personal preferences
+    # -------------------------------------------------------------------------
+    # Colors - can be changed for personal preferences
     color_highlight = "255/90/0"
     color_patb = "216.750/82.875/24.990"
     color_land = "gray95"
@@ -161,12 +166,12 @@ def sws_lmm_deepdyn(
 
     clearance_standard = "0.03c/0.03c+tO"
 
-# -----------------------------------------------------------------------------
-    # data
+    # -------------------------------------------------------------------------
+    # Data
     data_patb = "plate_boundaries_Bird_2003.txt"  # plate boundaries
     data_epi = "eq_CMT_lon_lat_LMM.txt"  # epicenters
 
-    # coordinates of stations
+    # Coordinates of stations
     sta_AA_perm = "coord_AlpArray_perm.dat"
     sta_AA_temp = "coord_AlpArray_temp.dat"
     sta_GL = "coord_Greenland.dat"
@@ -178,10 +183,10 @@ def sws_lmm_deepdyn(
     key_choose = ["SA_2", "RUS", "SA", "AA_perm", "AA_temp", "USA", "GL"]
     # key_choose = ["SA_2", "SA", "AA_perm", "AA_temp", "USA"]
 
-# -----------------------------------------------------------------------------
-    # dictionaries
+    # -------------------------------------------------------------------------
+    # Dictionaries
 
-    # fill color of station markers and line color of ray paths
+    # Fill color of station markers and line color of ray paths
     dic_col = {
         "AA_perm": color_AA,
         "AA_temp": color_AA,
@@ -193,7 +198,7 @@ def sws_lmm_deepdyn(
         "USA_sub": color_USA,
     }
 
-    # coordinates of stations
+    # Coordinates of stations
     dic_sta = {
         "AA_perm": sta_AA_perm,
         "AA_temp": sta_AA_temp,
@@ -206,18 +211,18 @@ def sws_lmm_deepdyn(
     }
 
 
-# %%
-# -----------------------------------------------------------------------------
+    # %%
+    # -------------------------------------------------------------------------
     # Create geographic maps
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Create new PyGMT Figure instance
     fig = gmt.Figure()
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Change default values of GMT globally
-    gmt.config(MAP_FRAME_PEN=f"1p,{color_frame}", FONT_ANNOT_PRIMARY=myfont)
+    gmt.config(MAP_FRAME_PEN=f"1p,{color_frame}", FONT_ANNOT_PRIMARY=font)
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Create epidistance plot mit centre = target zone
     fig.coast(
         region="g",
@@ -228,11 +233,11 @@ def sws_lmm_deepdyn(
         shorelines=f"1/0.1p,{color_shorelines}",
     )
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Plot plate boundaries after Bird 2003
     fig.plot(data=f"{path_in}/{data_patb}", pen=f"0.25p,{color_patb}")
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Plot epicenters
     fig.plot(
         data=f"{path_in}/{data_epi}",
@@ -241,7 +246,7 @@ def sws_lmm_deepdyn(
         pen=f"0.01p,{color_out_epi}",
     )
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Stations around epicenters
     if sws_type == "XKS":
         # Plot example epicenters
@@ -256,12 +261,19 @@ def sws_lmm_deepdyn(
         fig.plot(
             x=lon_epi,
             y=lat_epi,
+            style=f"c{(size_epi_max_add + size_epi_min_add) / 2}i",
+            pen=f"{(size_epi_max_add - size_epi_min_add) / 2}i,{color_epi2tag}@80",
+            # no_clip=True,
+        )
+        fig.plot(
+            x=lon_epi,
+            y=lat_epi,
             style=f"c{(size_epi_max + size_epi_min) / 2}i",
             pen=f"{(size_epi_max - size_epi_min) / 2}i,{color_epi2tag}@80",
             # no_clip=True,
         )
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Target area
     # additional
     fig.plot(
@@ -278,7 +290,7 @@ def sws_lmm_deepdyn(
         fill=f"{color_tag}@40",
     )
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Stations around target area
     # main
     fig.plot(
@@ -301,10 +313,10 @@ def sws_lmm_deepdyn(
         pen=f"0.35p,{color_sta2tag},-",
     )
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Recording stations
     for key in key_choose:
-        # set input order of columns depending on file
+        # Set input order of columns depending on file
         if key in ["SA_2", "SA", "USA_sub"]:
             incols_first = 0
             incols_second = 1
@@ -320,7 +332,7 @@ def sws_lmm_deepdyn(
             incols=[incols_first, incols_second],
         )
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Circle zoom in for ScS
     # if sws_type == "XKS":
     #     fig.plot(
@@ -330,11 +342,11 @@ def sws_lmm_deepdyn(
     #         pen="0.50p,gray30,.",
     #     )
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Add map frame
     fig.basemap(frame=0)
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Add labels of continents
     text=[
         "Africa",
@@ -350,12 +362,12 @@ def sws_lmm_deepdyn(
         x=[21.00, 74.305, -135.553, 102.255, -54.665, 138.51, -13.708],
         y=[18.38, -75, 41.099, 48.099, -2, -29.7, 47.388],
         text=text,
-        font=myfont,
+        font=font,
         fill="white@30",
         clearance=clearance_standard,
     )
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Add annotation circles
     match sws_type:
         case "XKS":
@@ -374,13 +386,13 @@ def sws_lmm_deepdyn(
             position="MC",
             offset=f"{offset_circle_x[cl]}i/{offset_circle_y[cl]}i",
             text=text_circle[cl],
-            font=myfont,
+            font=font,
             fill="white@30",
             pen=f"0.1p,{color_pen}",
             clearance=clearance_standard,
         )
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Add labels
     position_target = "LT"
     offset_cord = "0.05c/-0.1c"
@@ -393,7 +405,7 @@ def sws_lmm_deepdyn(
         position=position_target,
         offset=offset_cord,
         text=target_label,
-        font=f"{myfont},{color_frame}",
+        font=f"{font},{color_frame}",
         pen=f"0.1p,{color_frame}",
         clearance="0.05c/0.05c+tO",
     )
@@ -403,12 +415,12 @@ def sws_lmm_deepdyn(
         position=position_phase,
         offset=offset_phase,
         text=sws_type,
-        font=f"{myfont},{color_highlight}",
+        font=f"{font},{color_highlight}",
         pen=f"0.1p,{color_highlight}",
         clearance="0.05c/0.05c+tO",
     )
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Add legend
     fig.legend(
         spec=f"{path_in}/legend_gmt_network.txt",
@@ -416,7 +428,7 @@ def sws_lmm_deepdyn(
         box=box_standard,
     )
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
     # Show and save figure
     fig.show()
     fig_name = f"DeepDyn_LMM_{sws_type}_" + \
@@ -436,7 +448,7 @@ sws_lmm_deepdyn(
     sws_type="XKS",
     lon_center=42,
     lat_center=35,
-    lon_epi=140,
+    lon_epi=140,  # choose something realistic ...
     lat_epi=15,
     folder_out="02_out_figs/",
 )
