@@ -492,12 +492,16 @@ def taup_path(
     plot_range_str = f"{min_depth}to{max_depth}km_{min_dist}to{max_dist}deg_"
     fig_name_start = f"{save_path}map_travel"
     fig_name_end = f"_{source_depth}km_{int(np.round(receiver_dist))}deg" + \
-                    f"_{plot_range_str}" + "_".join(fig_name_phase) + f"_{earth_color}"
+                    f"_{plot_range_str}" + "_".join(fig_name_phase) + \
+                    f"_{earth_color}"
 
     if fig_save == True:
         for ext in ["png"]: #, "pdf", "eps"]:
             fig_path.savefig(fname=f"{fig_name_start}PATH{fig_name_end}.{ext}")
-            fig_curve.savefig(fname=f"{fig_name_start}CURVE{fig_name_end}.{ext}")
+            if time_curve == True:
+                fig_curve.savefig(
+                    fname=f"{fig_name_start}CURVE{fig_name_end}.{ext}"
+                )
 
     print(f"{fig_name_start}{fig_name_end}")
 
@@ -509,102 +513,11 @@ def taup_path(
         return fig_path
 
 
+
 # %%
 # -----------------------------------------------------------------------------
 # Examples
 # -----------------------------------------------------------------------------
-dist_min = 80
-dist_max = 150
-dist_step = 10
-# Iterate over epicentral distance range
-for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
-
-    # Create new Figure instances for first epicentral distance
-    if dist == dist_min:
-        # fig_path_instance = None
-        fig_curve_instance = None
-    # Continue travel time plot to get travel time curve
-    else:
-        # fig_path_instance = fig_path
-        fig_curve_instance = fig_curve
-
-    fig_path, fig_curve = taup_path(
-        fig_path_width="8c",
-        font_size="6.5p",
-        earth_color="gray",
-        receiver_dist=dist,
-        # fig_path_instance=fig_path_instance,
-        time_curve=True,
-        fig_curve_instance=fig_curve_instance,
-        curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
-        curve_time_range=[0, 2700],
-
-        phases=["S", "ScS", "PKS", "SKS", "SKKS"],  # "PKKS"
-        source_depth=500,
-        min_dist=0,
-        max_dist=360,
-
-        # phases=["SKS", "pSKS", "sSKS"],
-        # source_depth=100,
-        # min_dist=0,
-        # max_dist=360,
-
-        # phases=["SKS", "pSKS", "sSKS"],
-        # source_depth=100,
-        # min_dist=-2,
-        # max_dist=12,
-        # max_depth=440,
-
-        # phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-        # source_depth=660,
-        # min_dist=-2,
-        # max_dist=12,
-        # max_depth=1000,
-
-        # fig_save=True,
-        # save_path="02_your_example_figures/",
-    )
-
-    # fig_path.shift_origin(xshift="+w1c")
-
-
-dist_min = 0
-dist_max = 180
-dist_step = 10
-for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
-
-    if dist == dist_min:
-        fig_path_instance = None
-        fig_curve_instance = None
-        path_overlay = False
-    else:
-        fig_path_instance = fig_path
-        fig_curve_instance = fig_curve
-        path_overlay = True
-
-    fig_path, fig_curve = taup_path(
-        fig_path_width="8c",
-        font_size="6.5p",
-        earth_color="gray",
-        thick_line_path="0.5p",
-        receiver_dist=dist,
-        phases=["SKS", "SKKS"],
-        # phases=["P", "PcP"],
-        source_depth=500,
-        min_dist=0,
-        max_dist=360,
-        fig_path_instance=fig_path_instance,
-        path_overlay=path_overlay,
-        time_curve=True,
-        fig_curve_instance=fig_curve_instance,
-        curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
-        curve_time_range=[0, 2700],
-        legend_path=False,
-        # fig_save=True,
-        # save_path="02_your_example_figures/",
-    )
-
-
 fig_path, fig_curve = taup_path(
     fig_path_width="8c",
     font_size="6.5p",
@@ -617,6 +530,8 @@ fig_path, fig_curve = taup_path(
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
+
+# -----------------------------------------------------------------------------
 fig_path = taup_path(
     fig_path_width="8c",
     font_size="6.5p",
@@ -632,7 +547,6 @@ fig_path = taup_path(
     # save_path="02_your_example_figures/",
 )
 
-
 fig_path = taup_path(
     fig_path_width="8c",
     font_size="6.5p",
@@ -644,6 +558,7 @@ fig_path = taup_path(
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
+
 fig_path = taup_path(
     fig_path_width="8c",
     font_size="6.5p",
@@ -657,6 +572,7 @@ fig_path = taup_path(
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
+
 fig_path = taup_path(
     fig_path_width="8c",
     font_size="6.5p",
@@ -670,3 +586,43 @@ fig_path = taup_path(
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
+
+
+# -----------------------------------------------------------------------------
+dist_min = 0  # degrees
+dist_max = 80
+dist_step = 20
+for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
+
+    if dist == dist_min:
+        fig_path_instance = None
+        fig_curve_instance = None
+        path_overlay = False
+    else:
+        fig_path_instance = fig_path
+        fig_curve_instance = fig_curve
+        path_overlay = True
+
+    fig_save = False
+    if dist == dist_max: fig_save=True  # Save only the last figure
+
+    fig_path, fig_curve = taup_path(
+        fig_path_width="8c",
+        font_size="6.5p",
+        earth_color="gray",
+        thick_line_path="0.5p",
+        receiver_dist=dist,
+        phases=["P", "PcP"],
+        source_depth=500,
+        min_dist=0,
+        max_dist=360,
+        fig_path_instance=fig_path_instance,
+        path_overlay=path_overlay,
+        time_curve=True,
+        fig_curve_instance=fig_curve_instance,
+        curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
+        curve_time_range=[0, 2700],
+        legend_path=False,
+        # fig_save=fig_save,
+        # save_path="02_your_example_figures/",
+    )
