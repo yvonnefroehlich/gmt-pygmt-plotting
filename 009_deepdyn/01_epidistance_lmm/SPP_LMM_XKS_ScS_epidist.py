@@ -68,6 +68,7 @@ def sws_lmm_deepdyn(
     # - fig_name_add: string | addition to file name     | Default ""
     # - folder_out:   string | folder to store images in | Default current working directory
 
+
     # %%
     # -------------------------------------------------------------------------
     # Set up
