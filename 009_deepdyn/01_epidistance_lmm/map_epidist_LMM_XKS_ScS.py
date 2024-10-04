@@ -26,6 +26,7 @@
 # - Updated: 2024/05/15 - Convert to function
 # - Updated: 2024/06/14 - Improve highlighting
 # - Updated: 2024/10/02 - Improve input parameters
+# - Updated: 2024/10/04 - Add option to plot ray paths
 # -----------------------------------------------------------------------------
 # Versions:
 # - PyGMT v0.7.0  with GMT 6.4.0
@@ -34,7 +35,7 @@
 # - PyGMT v0.12.0 with GMT 6.5.0 -> https://www.pygmt.org/v0.12.0/
 # - PyGMT v0.13.0 with GMT 6.5.0 -> https://www.pygmt.org/v0.13.0/
 # -----------------------------------------------------------------------------
-# Stations coordinates input files were modified from GMT map
+# Station coordinates input files were modified from GMT map
 # "005_map_equidist_siberia" by Michael Grund
 # Source of original script, data, and manual (last access 2022/04/06)
 # https://github.com/michaelgrund/GMT-plotting/tree/main/005_map_equidist_siberia
@@ -42,6 +43,7 @@
 # #############################################################################
 
 
+import pandas as pd
 import pygmt as gmt
 
 
@@ -51,6 +53,7 @@ def sws_lmm_deepdyn(
     lat_center,
     lon_epi,
     lat_epi,
+    ray_path=False,
     fig_name_add="",
     folder_out="",
 ):
@@ -65,6 +68,9 @@ def sws_lmm_deepdyn(
     # - lons_epi:   float  | longitude of epicenter | degrees East
     # - lats_epi:   float  | latitude of epicenter  | degrees North
     # Optional
+    # - ray_path:   boolean  | plot the ray paths between the epicenter of the
+    #                          example earthquake and the recording stations
+    #                                                    | Default False
     # - fig_name_add: string | addition to file name     | Default ""
     # - folder_out:   string | folder to store images in | Default current working directory
 
@@ -76,6 +82,8 @@ def sws_lmm_deepdyn(
     # General stuff
     path_in = "01_in_data"
     font = "3.5p"
+    ray_str = ""
+    dpi_png = 720
 
     # -------------------------------------------------------------------------
     # Map set up
@@ -232,24 +240,20 @@ def sws_lmm_deepdyn(
 
     # -------------------------------------------------------------------------
     # Plot epicenters
+
+    # Load epicenter coordinates into pandas DataFrame
+    df_epi = pd.read_csv(f"{path_in}/{data_epi}", sep=" ")
+
     fig.plot(
-        data=f"{path_in}/{data_epi}",
+        data=df_epi,
         style="a0.1c",  # star
         fill=color_fill_epi,
         pen=f"0.01p,{color_pen_epi}",
     )
 
     # -------------------------------------------------------------------------
-    # Stations around epicenters
+    # Recording stations around example epicenter
     if sws_type == "XKS":
-        # Plot example epicenters
-        fig.plot(
-            x=lon_epi,
-            y=lat_epi,
-            style="a0.15c",  # star
-            fill=color_epi2tag,
-            pen="0.01p,black",
-        )
         # Mark area of appropriate stations
         fig.plot(
             x=lon_epi,
@@ -307,8 +311,35 @@ def sws_lmm_deepdyn(
     )
 
     # -------------------------------------------------------------------------
-    # Recording stations
+    # Plot ray paths (very slow at the moment due to the loop)
+    if ray_path == True:
+        ray_str = "_raypaths"
+
+        for key in key_choose:
+            # Load station coordinates into a pandas DataFrame
+            df_sta = pd.read_csv(f"{path_in}/{dic_sta[key]}", sep=" ")
+
+            for i_sta in range(len(df_sta)):
+                fig.plot(
+                    x=[lon_epi, df_sta["lon_degE"][i_sta]],
+                    y=[lat_epi, df_sta["lat_degN"][i_sta]],
+                    pen=f"0.01p,{dic_col[key]}@95",
+                )
+
+    # -------------------------------------------------------------------------
+    # Plot example epicenter
+    fig.plot(
+        x=lon_epi,
+        y=lat_epi,
+        style="a0.15c",  # star
+        fill=color_epi2tag,
+        pen="0.01p,black",
+    )
+
+    # -------------------------------------------------------------------------
+    # Plot recording stations
     for key in key_choose:
+
         # Set input order of columns depending on file
         match key:
             case "SA_2" | "SA" | "USA_sub":
@@ -318,8 +349,11 @@ def sws_lmm_deepdyn(
                 incols_first = 1
                 incols_second = 0
 
+        # Load station coordinates into a pandas DataFrame
+        df_sta = pd.read_csv(f"{path_in}/{dic_sta[key]}", sep=" ")
+
         fig.plot(
-            data=f"{path_in}/{dic_sta[key]}",
+            data=df_sta,
             style="i0.1c",
             fill=dic_col[key],
             pen="0.01p,gray10",
@@ -427,9 +461,9 @@ def sws_lmm_deepdyn(
     fig.show()
     fig_name = f"map_epidist_LMM_{sws_type}_" + \
                f"center{lon_center}E{lat_center}N_" + \
-               f"epi{lon_epi}E{lat_epi}N{fig_name_add}"
+               f"epi{lon_epi}E{lat_epi}N{fig_name_add}{ray_str}"
     for ext in ["png"]: #, "pdf", "eps"]:
-        fig.savefig(fname=f"{folder_out}{fig_name}.{ext}", dpi=720)
+        fig.savefig(fname=f"{folder_out}{fig_name}.{ext}", dpi=dpi_png)
     print(fig_name)
 
 
@@ -439,10 +473,11 @@ def sws_lmm_deepdyn(
 # Example
 # -----------------------------------------------------------------------------
 sws_lmm_deepdyn(
-    sws_type="ScS",
+    sws_type="XKS",
     lon_center=42,
     lat_center=35,
     lon_epi=140,
     lat_epi=15,
+    # ray_path=True,
     folder_out="02_out_figs/",
 )
