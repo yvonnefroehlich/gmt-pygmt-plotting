@@ -478,6 +478,6 @@ sws_lmm_deepdyn(
     lat_center=35,
     lon_epi=140,
     lat_epi=15,
-    ray_path=False,
+    # ray_path=True,
     folder_out="02_out_figs/",
 )
