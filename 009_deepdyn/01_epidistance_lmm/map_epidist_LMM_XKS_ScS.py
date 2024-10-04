@@ -240,15 +240,19 @@ def sws_lmm_deepdyn(
 
     # -------------------------------------------------------------------------
     # Plot epicenters
+
+    # Load epicenter coordinates into pandas DataFrame
+    df_epi = pd.read_csv(f"{path_in}/{data_epi}", sep=" ")
+
     fig.plot(
-        data=f"{path_in}/{data_epi}",
+        data=df_epi,
         style="a0.1c",  # star
         fill=color_fill_epi,
         pen=f"0.01p,{color_pen_epi}",
     )
 
     # -------------------------------------------------------------------------
-    # Stations around example epicenter
+    # Recording stations around example epicenter
     if sws_type == "XKS":
         # Mark area of appropriate stations
         fig.plot(
@@ -307,7 +311,7 @@ def sws_lmm_deepdyn(
     )
 
     # -------------------------------------------------------------------------
-    # Plot ray paths
+    # Plot ray paths (very slow at the moment due to the loop)
     if ray_path == True:
         ray_str = "_raypaths"
 
@@ -469,7 +473,7 @@ def sws_lmm_deepdyn(
 # Example
 # -----------------------------------------------------------------------------
 sws_lmm_deepdyn(
-    sws_type="ScS",
+    sws_type="XKS",
     lon_center=42,
     lat_center=35,
     lon_epi=140,

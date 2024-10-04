@@ -1,4 +1,4 @@
-# lon_degE lat_degN
+lon_degE lat_degN
 138.15 31.42
 -93.09 14.96
 178.61 -24.96
