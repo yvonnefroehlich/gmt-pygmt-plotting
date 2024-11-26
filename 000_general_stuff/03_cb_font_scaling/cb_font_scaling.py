@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # #############################################################################
 # Adjust the font size of a colorbar in GMT 6.5
-# - Revert the auto-scaling relatively to colorbar length
-# - For background on this change see the upstream GMT PR at
+# - Revert the auto-scaling relatively to the colorbar width
+# - For background on this change see the upstream GMT pull request 6802 at
 #   https://github.com/GenericMappingTools/gmt/pull/6802
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
