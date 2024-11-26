@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 # #############################################################################
-# Adjust font size of colorbar in GMT 6.5 to revert auto-scaling relatively to
-# colorbar length
+# Adjust the font size of a colorbar in GMT 6.5
+# Revert the auto-scaling relatively to colorbar length
+# For background on this change see the upstream GMT PR at
+# https://github.com/GenericMappingTools/gmt/pull/6802
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
 # ORCID: https://orcid.org/0000-0002-8566-0619
@@ -52,6 +54,6 @@ with pygmt.config(FONT=f"{font_size / font_scaling}"):
 font_scaling = scale_cb_font(cb2_width)
 with pygmt.config(FONT=f"{font_size / font_scaling}"):
     fig.colorbar(cmap="navia", position=f"jBC+w{cb2_width}c+h", frame=f"x+l{cb2_label}")
-# -----------------------------------------------------------------------------
 
+# -----------------------------------------------------------------------------
 fig.show()
