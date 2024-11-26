@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # #############################################################################
 # Adjust the font size of a colorbar in GMT 6.5
-# Revert the auto-scaling relatively to colorbar length
-# For background on this change see the upstream GMT PR at
-# https://github.com/GenericMappingTools/gmt/pull/6802
+# - Revert the auto-scaling relatively to colorbar length
+# - For background on this change see the upstream GMT PR at
+#   https://github.com/GenericMappingTools/gmt/pull/6802
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
 # ORCID: https://orcid.org/0000-0002-8566-0619
