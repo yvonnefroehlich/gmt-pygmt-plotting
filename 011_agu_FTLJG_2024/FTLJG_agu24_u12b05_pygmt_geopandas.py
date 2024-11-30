@@ -51,10 +51,10 @@ fig.colorbar(frame="xa10000+lpopulation in Chicago", position="jLM+o2c/-1c+w6c+v
 # Plot the polygons with color-coding for the population
 fig.plot(
     data=gdf_airbnb,
-    pen="0.2p,gray10",
     fill="+z",
-    cmap=True,
     aspatial="Z=population",
+    cmap=True,
+    pen="0.2p,gray10",
 )
 
 fig.show()
