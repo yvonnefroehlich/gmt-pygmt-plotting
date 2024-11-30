@@ -20,8 +20,10 @@
 
 
 # See also:
-#  - Pre-workshop:
-#  - PyGMT Tutorial:
+# - GMT / PyGMT pre-workshop
+#   https://www.generic-mapping-tools.org/agu24workshop/tut03_spe_xarray.html
+# - PyGMT gallery example
+#   https://www.pygmt.org/v0.13.0/gallery/images/grdgradient.html
 
 
 fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"

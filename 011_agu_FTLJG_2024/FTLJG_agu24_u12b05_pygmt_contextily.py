@@ -20,7 +20,8 @@
 
 
 # See also:
-#  - PyGMT Gallery:
+# - PyGMT gallery example
+#   https://www.pygmt.org/v0.13.0/gallery/maps/tilemaps.html
 
 
 fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"

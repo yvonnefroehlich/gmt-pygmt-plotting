@@ -20,8 +20,11 @@
 
 
 # See also:
-#  - Pre-workshop:
-#  - PyGMT Gallery:
+# - GMT / PyGMT pre-workshop
+#   https://www.generic-mapping-tools.org/agu24workshop/tut02_spec_pd_gpd.html
+# - PyGMT gallery example
+#   https://www.pygmt.org/v0.13.0/gallery/maps/choropleth_map.html
+#   https://www.pygmt.org/v0.13.0/gallery/lines/roads.html
 
 
 fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"
