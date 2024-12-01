@@ -19,10 +19,6 @@
 # #############################################################################
 
 
-fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"
-dpi_png = 720
-
-
 # %%
 # -----------------------------------------------------------------------------
 # Example for NumPy
@@ -53,4 +49,6 @@ fig.plot(x=x, y=y, style="c0.25c", fill="238/86/52", pen="1.5p,63/124/173", no_c
 fig.show()
 
 
+fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"
+dpi_png = 720
 fig.savefig(fname=f"{fig_name_basic}numpy.png", dpi=dpi_png)

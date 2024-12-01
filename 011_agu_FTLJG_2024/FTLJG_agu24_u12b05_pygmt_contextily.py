@@ -13,7 +13,7 @@
 # ORCID: https://orcid.org/0000-0002-8566-0619
 # GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # -----------------------------------------------------------------------------
-# - Created: 2024/11/25
+# - Created: 2024/11/30
 #   PyGMT v0.13.0 -> https://www.pygmt.org/v0.13.0/ | https://www.pygmt.org/
 #   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
@@ -22,10 +22,6 @@
 # See also:
 # - PyGMT gallery example
 #   https://www.pygmt.org/v0.13.0/gallery/maps/tilemaps.html
-
-
-fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"
-dpi_png = 720
 
 
 # %%
@@ -47,4 +43,6 @@ fig.tilemap(
 fig.show()
 
 
+fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"
+dpi_png = 720
 fig.savefig(fname=f"{fig_name_basic}contextily.png", dpi=dpi_png)

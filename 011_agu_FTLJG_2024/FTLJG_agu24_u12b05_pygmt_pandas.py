@@ -13,7 +13,7 @@
 # ORCID: https://orcid.org/0000-0002-8566-0619
 # GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # -----------------------------------------------------------------------------
-# - Created: 2024/11/25
+# - Created: 2024/11/30
 #   PyGMT v0.13.0 -> https://www.pygmt.org/v0.13.0/ | https://www.pygmt.org/
 #   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
@@ -24,10 +24,6 @@
 #   https://www.generic-mapping-tools.org/agu24workshop/tut02_spec_pd_gpd.html
 # - PyGMT basic tutorial
 #   https://www.pygmt.org/v0.13.0/tutorials/basics/plot.html
-
-
-fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"
-dpi_png = 720
 
 
 # %%
@@ -61,4 +57,6 @@ fig.plot(
 fig.show()
 
 
+fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"
+dpi_png = 720
 fig.savefig(fname=f"{fig_name_basic}pandas.png", dpi=dpi_png)
