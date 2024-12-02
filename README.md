@@ -9,6 +9,9 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 
 If you make use of this material, please acknowledge the relating publications in which framework these scripts and notebooks were written:
 
+- [**_Fröhlich Y., Tian D., Leong W. J., Jones M., Grund M. (2024)_**](TODO_DOI)
+  PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
+  *Annual Meeting of the America Geophysical Union*, Union Session The impact of GMT in the Earth, Ocean and Space sciences: What's next? I Oral, U12B-05. Abstract ID 1578856. TODO_DOI.
 - [**_Fröhlich Y., Grund M., Ritter J. R. R. (2024)_**](https://doi.org/10.1093/gji/ggae245).
   Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere system underneath Central Europe from long-term splitting measurements.
   *Geophysical Journal International*. 239(1), 112-135.
@@ -37,6 +40,7 @@ If you make use of this material, please acknowledge the relating publications i
 - **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases)**: `shear wave splitting`, `deep anisotropy`, `votemap analysis`, `cluster analysis`
 - **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)**: `gufm1`
 - **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn)**: Maps related to the DeepDyn project
+- **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_pygmt)**: Python scripts related to AGU24 PyGMT talk (U12B-05)
 
 ![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.png)
 
