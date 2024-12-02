@@ -29,7 +29,7 @@
 
 # %%
 # -----------------------------------------------------------------------------
-# Example for GeoPandas: aspatial data -> geopandas.GeoDataFrame
+# Example for GeoPandas: spatial data (points, lines, polygons) -> geopandas.GeoDataFrame
 # -----------------------------------------------------------------------------
 
 import pygmt
