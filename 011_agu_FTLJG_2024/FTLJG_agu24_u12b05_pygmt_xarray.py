@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+## -*- coding: utf-8 -*-
 # #############################################################################
 # AGU24 | Washington, D.C. | December 9, 2024
 #
@@ -47,6 +47,7 @@ fig.colorbar(frame=["xa2000+lelevation", "y+lm"])
 fig.show()
 
 
+fig_path = "02_out_figs"
 fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"
 dpi_png = 720
-fig.savefig(fname=f"{fig_name_basic}xarray.png", dpi=dpi_png)
+# fig.savefig(fname=f"{fig_path}/{fig_name_basic}xarray.png", dpi=dpi_png)

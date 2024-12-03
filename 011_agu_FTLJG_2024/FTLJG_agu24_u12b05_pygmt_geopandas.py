@@ -56,6 +56,7 @@ fig.plot(
 fig.show()
 
 
+fig_path = "02_out_figs"
 fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"
 dpi_png = 720
-fig.savefig(fname=f"{fig_name_basic}geopandas.png", dpi=dpi_png)
+# fig.savefig(fname=f"{fig_path}/{fig_name_basic}geopandas.png", dpi=dpi_png)
