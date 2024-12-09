@@ -10,8 +10,6 @@ Python scripts related to:
 >
 > Yvonne Fröhlich | Dongdong Tian | Wei Ji Leong | Max Jones | Michael Grund
 
-See also the [AGU24 GMT/ PyGMT workshop](https://www.generic-mapping-tools.org/agu24workshop/intro.html).
-
 _Recommended versions_: PyGMT v0.13.0, GMT 6.5.0
 
 See also the **[AGU24 GMT/ PyGMT workshop](https://www.generic-mapping-tools.org/agu24workshop)**!
