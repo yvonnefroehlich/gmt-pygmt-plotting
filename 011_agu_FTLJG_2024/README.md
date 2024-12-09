@@ -12,4 +12,6 @@ Python scripts related to:
 
 _Recommended versions_: PyGMT v0.13.0, GMT 6.5.0
 
+See also the AGU24 GMT/ PyGMT preworkshop **[Mastering Geospatial Visualizations with GMT/PyGMT](https://www.generic-mapping-tools.org/agu24workshop)**!
+
 ![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_map_readme_011pygmt.png)

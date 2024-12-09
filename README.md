@@ -9,16 +9,16 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 
 If you make use of this material, please acknowledge the relating publications in which framework these scripts and notebooks were written:
 
-- [**_Fröhlich Y., Ritter J. R. R._**](TODO_DOI)
+- [**_Fröhlich Y., Ritter J. R. R._**](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275)
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
   *Annual Meeting of the America Geophysical Union*,
   Devision Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral,
-  DI21A-02. Abstract ID 1578275. TODO_DOI.
-- [**_Fröhlich Y., Tian D., Leong W. J., Jones M., Grund M. (2024)_**](TODO_DOI)
+  DI21A-02. Abstract ID 1578275. https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275.
+- [**_Fröhlich Y., Tian D., Leong W. J., Jones M., Grund M. (2024)_**](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578856).
   PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
   *Annual Meeting of the America Geophysical Union*,
   Union Session The impact of GMT in the Earth, Ocean and Space sciences: What's next? I Oral,
-  U12B-05. Abstract ID 1578856. TODO_DOI.
+  U12B-05. Abstract ID 1578856. https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578856.
 - [**_Fröhlich Y., Grund M., Ritter J. R. R. (2024)_**](https://doi.org/10.1093/gji/ggae245).
   Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere system underneath Central Europe from long-term splitting measurements.
   *Geophysical Journal International*. 239(1), 112-135.
@@ -48,9 +48,13 @@ If you make use of this material, please acknowledge the relating publications i
 - **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)**: `gufm1`
 - **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn)**: Maps related to the DeepDyn project
 <<<<<<< HEAD
+<<<<<<< HEAD
 - **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem)**: Maps realted to AxiSEM2D/3D
 =======
 - **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_pygmt)**: Python scripts related to AGU24 PyGMT talk (U12B-05)
+>>>>>>> origin/main
+=======
+- **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024)**: Python scripts related to the PyGMT talk at AGU24 (U12B-05)
 >>>>>>> origin/main
 
 ![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.png)
@@ -109,5 +113,6 @@ _Please note_: Specific references are given in the single notebooks and scripts
 
 The presented research and YF received support from various sources:
 
-- Scholarship of the [Graduate Funding from the German States](https://www.khys.kit.edu/english/graduate_funding.php)
-- [DFG grant RI1133/14-1](https://gepris.dfg.de/gepris/projekt/521545943?language=en) within the [DFG Priority Program 2404 DeepDyn](https://www.geo.lmu.de/deepdyn/en/)
+- [Graduate Funding from the German States](https://www.khys.kit.edu/english/graduate_funding.php) (scholarship)
+- [NSF grant EAR-1948602](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1948602) (travel support for AGU24)
+- [DFG grant RI1133/14-1](https://gepris.dfg.de/gepris/projekt/521545943?language=en) within the [DFG Priority Program 2404 DeepDyn](https://www.geo.lmu.de/deepdyn/en/) (research assisstent)
