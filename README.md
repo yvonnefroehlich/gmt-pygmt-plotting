@@ -9,7 +9,7 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 
 If you make use of this material, please acknowledge the relating publications in which framework these scripts and notebooks were written:
 
-- [**_Fröhlich Y., Ritter J. R. R._**](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275)
+- [**_Fröhlich Y., Ritter J. R. R. (2024)_**](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275)
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
   *Annual Meeting of the America Geophysical Union*,
   Devision Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral,
