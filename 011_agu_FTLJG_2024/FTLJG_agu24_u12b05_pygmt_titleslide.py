@@ -62,5 +62,5 @@ for center in [0, 180]:  # Center longitude in degrees East
         fig_path = "02_out_figs"
         fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"
         fig_name_add = f"titleslide_{dataset}_{res}_{reg}_{cmap}_center{center}_alpha{alpha}"
-        dpi_png = 720  # Set resolution of the output image (PNG format)
+        dpi_png = 360  # Set resolution of the output image (PNG format) in dpi
         # fig.savefig(fname=f"{fig_path}/{fig_name_basic}{fig_name_add}.png", dpi=dpi_png)
