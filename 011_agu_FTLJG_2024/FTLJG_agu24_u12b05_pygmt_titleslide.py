@@ -35,7 +35,7 @@ series = [-4000, 8000]  # Set minimum, maximum used for creating the colormap
 cmap = "grayC"  # Set colormap used to plot the grid
 alphas = [60]  # Set transparency
 
-centers = [60]  # Set center longitude in degrees East
+centers = [0]  # Set center longitude in degrees East
 lat_min = -70.5  # Set minimum latitude in degrees North
 lat_max = 71  # Set maximum latitude in degrees North
 
@@ -64,4 +64,4 @@ for center in centers:
         fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"
         fig_name_add = f"titleslide_{dataset}_{res}_{reg}_{cmap}_center{center}_alpha{alpha}"
         dpi_png = 360  # Set resolution of the output image (PNG format) in dpi
-        # fig.savefig(fname=f"{fig_path}/{fig_name_basic}{fig_name_add}.png", dpi=dpi_png)
+        fig.savefig(fname=f"{fig_path}/{fig_name_basic}{fig_name_add}.png", dpi=dpi_png)
