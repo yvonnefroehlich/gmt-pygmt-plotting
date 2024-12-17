@@ -26,21 +26,22 @@
 
 import pygmt
 
-# Adjust for your needs if you like to use another remote dataset
-dataset = "earth_relief"
-cmap = "grayC"
-series = [-4000, 8000]  # Set minimum, maximum used for creating the colormap
-alphas = [60]  # Set transparency
-
+# Feel free to adjust for your needs
+dataset = "earth_relief"  # Name of the remote dataset
 res = "03m"  # Set resolution of grid, here 3 arc-minutes
 reg = "p"  # Set registration of grid, here pixel
 
+series = [-4000, 8000]  # Set minimum, maximum used for creating the colormap
+cmap = "grayC"  # Set colormap used to plot the grid
+alphas = [60]  # Set transparency
 
-for center in [0, 180]:  # Center longitude in degrees East
+centers = [60]  # Set center longitude in degrees East
+lat_min = -70.5  # Set minimum latitude in degrees North
+lat_max = 71  # Set maximum latitude in degrees North
 
-    match center:
-        case 0: region = [-180, 180, -70.5, 71]
-        case 180: region = [0, 360, -70.5, 71]
+
+for center in centers:
+    region = [center - 180, center + 180, lat_min, lat_max]
 
     for alpha in alphas:
 
