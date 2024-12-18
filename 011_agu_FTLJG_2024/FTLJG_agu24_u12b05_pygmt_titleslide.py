@@ -36,12 +36,9 @@ cmap = "grayC"  # Set colormap used to plot the grid
 alphas = [60]  # Set transparency
 
 centers = [0]  # Set center longitude in degrees East
-lat_min = -70.5  # Set minimum latitude in degrees North
-lat_max = 71  # Set maximum latitude in degrees North
-
 
 for center in centers:
-    region = [center - 180, center + 180, lat_min, lat_max]
+    region = [center - 180, center + 180, -70.5, 71]
 
     for alpha in alphas:
 
