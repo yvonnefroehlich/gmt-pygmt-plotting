@@ -9,16 +9,16 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 
 If you make use of this material, please acknowledge the relating publications in which framework these scripts and notebooks were written:
 
-- [**_Fröhlich Y., Ritter J. R. R. (2024)_**](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275)
+- [**_Fröhlich Y., Ritter J. R. R. (2024)_**](http://dx.doi.org/10.5281/zenodo.14510993).
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
   *Annual Meeting of the American Geophysical Union*,
   Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral,
-  DI21A-02. Abstract ID 1578275. https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275.
+  DI21A-02. [Abstract ID 1578275](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275). http://dx.doi.org/10.5281/zenodo.14510993.
 - [**_Fröhlich Y., Tian D., Leong W. J., Jones M., Grund M. (2024)_**](https://doi.org/10.6084/m9.figshare.28049495).
   PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
   *Annual Meeting of the American Geophysical Union*,
   Union Session The impact of GMT in the Earth, Ocean and Space sciences: What's next? I Oral,
-  U12B-05. Abstract ID 1578856. https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578856. https://doi.org/10.6084/m9.figshare.28049495.
+  U12B-05. [Abstract ID 1578856](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578856). https://doi.org/10.6084/m9.figshare.28049495.
 - [**_Fröhlich Y., Grund M., Ritter J. R. R. (2024)_**](https://doi.org/10.1093/gji/ggae245).
   Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere system underneath Central Europe from long-term splitting measurements.
   *Geophysical Journal International*. 239(1), 112-135.
