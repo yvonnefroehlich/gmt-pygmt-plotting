@@ -9,11 +9,11 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 
 If you make use of this material, please acknowledge the relating publications in which framework these scripts and notebooks were written:
 
-- [**_Fröhlich Y., Ritter J. R. R. (2024)_**](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275)
+- [**_Fröhlich Y., Ritter J. R. R. (2024)_**](http://dx.doi.org/10.5281/zenodo.14510993)
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
   *Annual Meeting of the American Geophysical Union*,
   Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral,
-  DI21A-02. Abstract ID 1578275. https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275.
+  DI21A-02. Abstract ID 1578275. https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275. http://dx.doi.org/10.5281/zenodo.14510993.
 - [**_Fröhlich Y., Tian D., Leong W. J., Jones M., Grund M. (2024)_**](https://doi.org/10.6084/m9.figshare.28049495).
   PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
   *Annual Meeting of the American Geophysical Union*,
@@ -47,6 +47,7 @@ If you make use of this material, please acknowledge the relating publications i
 - **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases)**: `shear wave splitting`, `deep anisotropy`, `votemap analysis`, `cluster analysis`
 - **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)**: `gufm1`
 - **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn)**: Maps related to the DeepDyn project
+- **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem)**: Maps realted to AxiSEM2D/3D
 - **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024)**: Python scripts related to the PyGMT talk at AGU24 (U12B-05)
 
 ![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.png)
