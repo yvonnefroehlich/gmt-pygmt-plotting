@@ -12,7 +12,7 @@ If you make use of this material, please acknowledge the relating publications i
 - [**_Fröhlich Y., Ritter J. R. R. (2024)_**](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275)
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
   *Annual Meeting of the America Geophysical Union*,
-  Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral,
+  Devision Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral,
   DI21A-02. Abstract ID 1578275. https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275.
 - [**_Fröhlich Y., Tian D., Leong W. J., Jones M., Grund M. (2024)_**](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578856).
   PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
