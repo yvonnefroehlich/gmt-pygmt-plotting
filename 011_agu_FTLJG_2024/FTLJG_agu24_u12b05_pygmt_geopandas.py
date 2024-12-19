@@ -7,7 +7,9 @@
 #
 # Yvonne Fröhlich | Dongdong Tian | Wei Ji Leong | Max Jones | Michael Grund
 #
-# Python scripts to reproduce the examples shown in the presentation
+# Python scripts to reproduce the examples shown in the talk
+#
+# Slides of the talk are freely available at https://doi.org/10.6084/m9.figshare.28049495
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
 # ORCID: https://orcid.org/0000-0002-8566-0619
