@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # #############################################################################
 # AGU24 | Washington, D.C. | December 9, 2024
 #
@@ -34,8 +33,8 @@
 # Example for GeoPandas: spatial data (points, lines, polygons) -> geopandas.GeoDataFrame
 # -----------------------------------------------------------------------------
 
-import pygmt
 import geopandas as gpd
+import pygmt
 
 # Download a dataset about Chicago into a geopandas.GeoDataFrame
 gdf_airbnb = gpd.read_file("https://geodacenter.github.io/data-and-lab/data/airbnb.zip")
