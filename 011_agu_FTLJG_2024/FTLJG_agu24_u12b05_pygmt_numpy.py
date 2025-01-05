@@ -56,7 +56,7 @@ dates_gmt = np.array(
 stars_gmt = np.array(
     [0, 60, 120, 180, 240, 300, 360, 390, 450, 510, 570, 630, 690, 750, 810, 864]
 )
-color_gmt = "238/86/52"
+color_gmt = "238/86/52"  # GMT red
 
 # Data retrieved from https://star-history.com/#GenericMappingTools/pygmt&Date
 # last access 2024-12-01
@@ -84,7 +84,7 @@ dates_py = np.array(
 stars_py = np.array(
     [0, 30, 90, 150, 210, 240, 300, 360, 420, 450, 510, 570, 630, 660, 720, 769]
 )
-color_py = "63/124/173"
+color_py = "63/124/173"  # Python blue
 
 
 # -----------------------------------------------------------------------------
