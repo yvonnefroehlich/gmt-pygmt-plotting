@@ -33,8 +33,8 @@
 # Example for GeoPandas: spatial data (points, lines, polygons) -> geopandas.GeoDataFrame
 # -----------------------------------------------------------------------------
 
-import geopandas as gpd
 import pygmt
+import geopandas as gpd
 
 # Download a dataset about Chicago into a geopandas.GeoDataFrame
 gdf_airbnb = gpd.read_file("https://geodacenter.github.io/data-and-lab/data/airbnb.zip")

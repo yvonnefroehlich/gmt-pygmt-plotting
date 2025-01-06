@@ -33,6 +33,7 @@
 # -----------------------------------------------------------------------------
 
 import pygmt
+# import xarray as xr
 
 # Download an elevation grid into a xarray.DataArray
 da_ele = pygmt.datasets.load_earth_relief(resolution="01d")

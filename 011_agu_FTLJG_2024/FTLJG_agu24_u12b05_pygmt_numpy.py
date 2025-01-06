@@ -25,10 +25,9 @@
 # Example for NumPy
 # -----------------------------------------------------------------------------
 
-import datetime
-
-import numpy as np
 import pygmt
+import datetime
+import numpy as np
 
 # Data retrieved from https://star-history.com/#GenericMappingTools/gmt&Date
 # last access 2024-12-01
