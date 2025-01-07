@@ -33,7 +33,7 @@
 # -----------------------------------------------------------------------------
 
 import pygmt
-# import pandas as pd
+# import pandas as pd  # Required dependency
 
 # Load a GMT built-in dataset into a pandas.DataFrame
 df_eqs = pygmt.datasets.load_sample_data(name="japan_quakes")

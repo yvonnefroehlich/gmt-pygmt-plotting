@@ -26,8 +26,9 @@
 # -----------------------------------------------------------------------------
 
 import pygmt
+
+import numpy as np  # Required dependency
 import datetime
-import numpy as np
 
 # Data retrieved from https://star-history.com/#GenericMappingTools/gmt&Date
 # last access 2024-12-01

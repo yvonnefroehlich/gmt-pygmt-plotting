@@ -31,7 +31,7 @@
 # -----------------------------------------------------------------------------
 
 import pygmt
-# import contextily
+# import contextily  # Optional dependency
 
 fig = pygmt.Figure()
 fig.tilemap(

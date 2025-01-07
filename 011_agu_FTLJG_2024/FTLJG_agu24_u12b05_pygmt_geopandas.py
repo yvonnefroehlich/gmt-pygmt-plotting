@@ -34,7 +34,7 @@
 # -----------------------------------------------------------------------------
 
 import pygmt
-import geopandas as gpd
+import geopandas as gpd  # Optional dependency
 
 # Download a dataset about Chicago into a geopandas.GeoDataFrame
 gdf_airbnb = gpd.read_file("https://geodacenter.github.io/data-and-lab/data/airbnb.zip")
