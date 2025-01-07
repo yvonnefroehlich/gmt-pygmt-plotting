@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # #############################################################################
 # AGU24 | Washington, D.C. | December 9, 2024
 #
@@ -34,6 +33,7 @@
 # -----------------------------------------------------------------------------
 
 import pygmt
+# import pandas as pd  # Required dependency
 
 # Load a GMT built-in dataset into a pandas.DataFrame
 df_eqs = pygmt.datasets.load_sample_data(name="japan_quakes")

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # #############################################################################
 # AGU24 | Washington, D.C. | December 9, 2024
 #
@@ -43,7 +42,6 @@ for center in centers:
     region = [center - 180, center + 180, -70.5, 71]
 
     for alpha in alphas:
-
         fig = pygmt.Figure()
         pygmt.config(MAP_FRAME_PEN="0.01p,white")
         fig.basemap(region=region, projection="M34.2c", frame=0)
@@ -58,9 +56,10 @@ for center in centers:
 
         fig.show()
 
-
         fig_path = "02_out_figs"
         fig_name_basic = "FTLJG_agu24_u12b05_pygmt_"
-        fig_name_add = f"titleslide_{dataset}_{res}_{reg}_{cmap}_center{center}_alpha{alpha}"
+        fig_name_add = (
+            f"titleslide_{dataset}_{res}_{reg}_{cmap}_center{center}_alpha{alpha}"
+        )
         dpi_png = 360  # Set resolution of the output image (PNG format) in dpi
         # fig.savefig(fname=f"{fig_path}/{fig_name_basic}{fig_name_add}.png", dpi=dpi_png)
