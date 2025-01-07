@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # #############################################################################
 # AGU24 | Washington, D.C. | December 9, 2024
 #
@@ -32,7 +31,7 @@
 # -----------------------------------------------------------------------------
 
 import pygmt
-import contextily
+# import contextily  # Optional dependency
 
 fig = pygmt.Figure()
 fig.tilemap(
