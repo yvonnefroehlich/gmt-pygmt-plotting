@@ -1,4 +1,3 @@
-## -*- coding: utf-8 -*-
 # #############################################################################
 # AGU24 | Washington, D.C. | December 9, 2024
 #
@@ -34,7 +33,7 @@
 # -----------------------------------------------------------------------------
 
 import pygmt
-import xarray as xr
+# import xarray as xr  # Required dependency
 
 # Download an elevation grid into a xarray.DataArray
 da_ele = pygmt.datasets.load_earth_relief(resolution="01d")
