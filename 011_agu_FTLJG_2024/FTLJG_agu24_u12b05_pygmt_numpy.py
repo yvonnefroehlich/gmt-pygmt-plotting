@@ -26,7 +26,6 @@
 # -----------------------------------------------------------------------------
 
 import pygmt
-
 import numpy as np  # Required dependency
 import datetime
 
