@@ -9,6 +9,16 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 
 If you make use of this material, please acknowledge the relating publications in which framework these scripts and notebooks were written:
 
+- [**_Fröhlich Y., Ritter J. R. R. (2024)_**](http://dx.doi.org/10.5281/zenodo.14510993).
+  Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
+  *Annual Meeting of the American Geophysical Union*,
+  Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral,
+  DI21A-02. [Abstract ID 1578275](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275). http://dx.doi.org/10.5281/zenodo.14510993.
+- [**_Fröhlich Y., Tian D., Leong W. J., Jones M., Grund M. (2024)_**](https://doi.org/10.6084/m9.figshare.28049495).
+  PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
+  *Annual Meeting of the American Geophysical Union*,
+  Union Session The impact of GMT in the Earth, Ocean and Space sciences: What's next? I Oral,
+  U12B-05. [Abstract ID 1578856](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578856). https://doi.org/10.6084/m9.figshare.28049495.
 - [**_Fröhlich Y., Grund M., Ritter J. R. R. (2024)_**](https://doi.org/10.1093/gji/ggae245).
   Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere system underneath Central Europe from long-term splitting measurements.
   *Geophysical Journal International*. 239(1), 112-135.
@@ -36,6 +46,8 @@ If you make use of this material, please acknowledge the relating publications i
 - **[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions)**: Maps of selected earthquakes and eruptions between 2021 and present
 - **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases)**: `shear wave splitting`, `deep anisotropy`, `votemap analysis`, `cluster analysis`
 - **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)**: `gufm1`
+- **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn)**: Maps related to the DeepDyn project
+- **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024)**: Python scripts related to the PyGMT talk at AGU24 (U12B-05)
 
 ![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.png)
 
@@ -49,7 +61,7 @@ _Please note_: The required versions are given above in the single folders as we
 - [Python](https://www.python.org/)
 - [Jupyter notebook](https://jupyter.org/) or [JupyterLab](https://jupyter.org/)
 - [NumPy](https://numpy.org/)
-- [Pandas](https://pandas.pydata.org/)
+- [pandas](https://pandas.pydata.org/)
 - [ObsPy](https://docs.obspy.org/)
 - [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal/)
 
@@ -73,9 +85,9 @@ _Please note_: Specific references are given in the single notebooks and scripts
   True colors of oceanography: Guidelines for effective and accurate colormap selection.
   *Oceanography*, volume 29, issue 3, pages 9-13.
   http://dx.doi.org/10.5670/oceanog.2016.66.
-- [**_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Schlitzer, W., Grund, M., Jones, M., Toney, L., Yao, J., Magen, Y., Tong, J-H., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2024)_**](https://doi.org/10.5281/zenodo.10578540).
-  PyGMT: A Python interface for the Generic Mapping Tools, version v0.12.0.
-  *Zenodo*. https://doi.org/10.5281/zenodo.11062720 (v0.12.0). https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
+- [**_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Schlitzer, W., Grund, M., Jones, M., Toney, L., Yao, J., Tong, J-H., Magen, Y., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2024)_**](https://doi.org/10.5281/zenodo.14535921).
+  PyGMT: A Python interface for the Generic Mapping Tools, version v0.14.0.
+  *Zenodo*. https://doi.org/10.5281/zenodo.14535921 (v0.14.0). https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
 - [**_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J. F. & Wobbe. F. (2013)_**](https://doi.org/10.1002/2013EO450001).
   Generic mapping tools: improved version released.
   *Eos, Transactions American Geophysical Union*, volume 94, issue 45, pages 409-410.
@@ -84,14 +96,15 @@ _Please note_: Specific references are given in the single notebooks and scripts
   The Generic Mapping Tools version 6.
   *Geochemistry, Geophysics, Geosystems*, volume 20, issue 11, pages 5556-5564.
   https://doi.org/10.1029/2019GC008515.
-- [**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M. & Esteban, F. (2022)_**](https://doi.org/10.5281/zenodo.6623271).
-  The Generic Mapping Tools, version 6.4.0.
-  *Zenodo*. https://doi.org/10.5281/zenodo.6623271.
+- [**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M. & Esteban, F. (2024)_**](https://doi.org/10.5281/zenodo.10119499).
+  The Generic Mapping Tools, version 6.5.0
+  *Zenodo*. https://doi.org/10.5281/zenodo.10119499 (6.5.0), https://doi.org/10.5281/zenodo.3407865 (all versions / latest version).
 
 
 ## Funding
 
 The presented research and YF received support from various sources:
 
-- Scholarship of the [Graduate Funding from the German States](https://www.khys.kit.edu/english/graduate_funding.php)
-- [DFG grant RI1133/14-1](https://gepris.dfg.de/gepris/projekt/521545943?language=en) within the [DFG Priority Program 2404 DeepDyn](https://www.geo.lmu.de/deepdyn/en/)
+- [Graduate Funding from the German States](https://www.khys.kit.edu/english/graduate_funding.php) (scholarship)
+- [NSF grant EAR-1948602](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1948602) (travel support for AGU24)
+- [DFG grant RI1133/14-1](https://gepris.dfg.de/gepris/projekt/521545943?language=en) within the [DFG Priority Program 2404 DeepDyn](https://www.geo.lmu.de/deepdyn/en/) (research assisstent)
