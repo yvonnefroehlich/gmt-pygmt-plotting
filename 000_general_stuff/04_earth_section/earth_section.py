@@ -24,6 +24,7 @@ def earth_section(
     color_land = "lightbrown",
     color_water = "lightblue",
     color_shorelines = "brown",
+    color_cover = "white",
     pen_grid = "0.1p,gray60",
     pen_map = "0.8p,gray30",
     pen_sec = "0.01p,gray90",
@@ -39,6 +40,8 @@ def earth_section(
     :type color_water: TYPE, optional
     :param color_shorelines: DESCRIPTION, defaults to "brown"
     :type color_shorelines: TYPE, optional
+    :param color_cover: DESCRIPTION, defaults to "white"
+    :type color_cover: TYPE, optional
     :param pen_grid: DESCRIPTION, defaults to "0.1p,gray60"
     :type pen_grid: TYPE, optional
     :param pen_map: DESCRIPTION, defaults to "0.8p,gray30"
@@ -95,7 +98,7 @@ def earth_section(
             fig.basemap(frame=0)
 
         case "half_vertical":
-            fig.plot(x=x_sec, y=y_sec, fill="white")
+            fig.plot(x=x_sec, y=y_sec, fill=color_cover)
 
             fig.plot(x=0, y=0, style="w10c/-90/90", pen="1.5p,white", no_clip=True)
 
@@ -105,9 +108,9 @@ def earth_section(
             fig.plot(x=0, y=0, style="e90/2.5/1.2", pen=pen_sec, fill="gray85")
 
         case "half_horizontal":
-            fig.plot(x=x_qua, y=y_qua, fill="white", pen=None)
+            # fig.plot(x=x_qua, y=y_qua, fill=color_cover, pen=None)
 
-            fig.plot(x=0, y=20, style="w10c/0/180", fill="white", pen="1.5p,white", no_clip=True)
+            fig.plot(x=0, y=20, style="w10c/0/180", fill=color_cover, pen="1.5p,white", no_clip=True)
             fig.plot(x=0, y=20, style="w10c/-180/0", pen=pen_map, no_clip=True)
 
             fig.plot(x=0, y=20, style="e0/10.0/3.6", pen=pen_map, fill="gray55", no_clip=True)
