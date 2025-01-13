@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # #############################################################################
 # Earth section
+# >>> Not to scale <<<
+# -> Adjust the ellipse for your needs
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/01/12
@@ -21,13 +23,14 @@ import pygmt
 
 def earth_section(
     section_type,
-    color_land = "lightbrown",
-    color_water = "lightblue",
-    color_shorelines = "brown",
+    color_land = "76/181/167",
+    color_water = "217/239/236",
+    color_shorelines = "0/150/130",
     color_cover = "white",
-    pen_grid = "0.1p,gray60",
+    pen_grid = "0.1p,gray80",
     pen_map = "0.8p,gray30",
     pen_sec = "0.01p,gray90",
+    pen_qua = "0.5p,gray30,dashed",
     path_out = ""
 ):
     """
@@ -69,8 +72,11 @@ def earth_section(
             y_sec = [lat_lim, lat_lim, -lat_lim, -lat_lim]
         case "half_horizontal":
             projection = "G0/20/10c"
-            x_qua = [-10, -89, 90, 40]
+        case "northeast_quadrant":
+            projection = "G0/5/10c"
+            x_qua = [-10, -10, 100, 40]
             y_qua = [90, 0, 0, 90]
+
 
     fig.coast(
         projection=projection,
@@ -108,15 +114,26 @@ def earth_section(
             fig.plot(x=0, y=0, style="e90/2.5/1.2", pen=pen_sec, fill="gray85")
 
         case "half_horizontal":
-            # fig.plot(x=x_qua, y=y_qua, fill=color_cover, pen=None)
-
-            fig.plot(x=0, y=20, style="w10c/0/180", fill=color_cover, pen="1.5p,white", no_clip=True)
-            fig.plot(x=0, y=20, style="w10c/-180/0", pen=pen_map, no_clip=True)
+            fig.plot(x=0, y=20, style="w10c/0/180", pen="1.5p,white", fill=color_cover, no_clip=True)
 
             fig.plot(x=0, y=20, style="e0/10.0/3.6", pen=pen_map, fill="gray55", no_clip=True)
             fig.plot(x=0, y=20, style="e0/8.0/2.7", pen=pen_sec, fill="gray65")
             fig.plot(x=0, y=20, style="e0/5.0/1.9", pen=pen_sec, fill="gray75")
             fig.plot(x=0, y=20, style="e0/2.5/1.2", pen=pen_sec, fill="gray85")
+
+        case "northeast_quadrant":
+            fig.plot(x=x_qua, y=y_qua, fill="gray95", pen=pen_map)
+
+            fig.plot(x=[0, 0], y=[90, 10], pen=pen_qua)
+            fig.plot(x=[-10, 0], y=[0, 10], pen=pen_qua)
+            fig.plot(x=[0, 90], y=[10, 0], pen=pen_qua)
+
+            fig.coast(
+                land=f"{color_land}@90",
+                water=f"{color_water}@90",
+                shorelines=f"1/0.01p,{color_shorelines}@50",
+            )
+            fig.basemap(frame="g10")
 
 # -----------------------------------------------------------------------------
     fig.show()
@@ -133,5 +150,5 @@ def earth_section(
 # -----------------------------------------------------------------------------
 # Example
 # -----------------------------------------------------------------------------
-for section_type in ["open_vertical", "half_vertical", "half_horizontal"]:
+for section_type in ["open_vertical", "half_vertical", "half_horizontal", "northeast_quadrant"]:
     earth_section(section_type=section_type)
