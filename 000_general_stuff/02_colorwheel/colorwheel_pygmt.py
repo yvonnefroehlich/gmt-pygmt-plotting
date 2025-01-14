@@ -1,16 +1,20 @@
-# #############################################################################
+#############################################################################
 # Colorwheel for cyclic colormaps created with PyGMT
-# Scientific colourmaps by Fabio Crameri: romaO, bamO, brocO, corkO, vikO
-# cmocean colormaps by Kristen M. Thyng: phase
+# - Scientific colourmaps by Fabio Crameri: romaO, bamO, brocO, corkO, vikO
+# - cmocean colormaps by Kristen M. Thyng: phase
 # -----------------------------------------------------------------------------
-# Created: 2024/05/20
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
+# History
 # - Created: 2024/05/15
-#   PyGMT v0.12.0 -> https://www.pygmt.org/v0.12.0/ | https://www.pygmt.org/
+# - Updated: 2025/01/14
+# -----------------------------------------------------------------------------
+# Versions
+#   PyGMT v0.14.0 -> https://www.pygmt.org/v0.14.0/ | https://www.pygmt.org/
 #   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 
@@ -21,8 +25,9 @@ import pygmt
 def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
     """
     -------------------------------------------------------------------------
+
     Parameters
-    -------------------------------------------------------------------------
+    ----------
     Required
     - cmap : str | name of a cyclic colormap
     - perspective : list of two floats | azimuth, elevation
@@ -32,9 +37,9 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
     - fig_instance : Provide a PyGMT figure instance | Default a new one is set up
     """
 
-    # -------------------------------------------------------------------------
-    # Set up rotated rectangle or bar data
-    # -------------------------------------------------------------------------
+# -------------------------------------------------------------------------
+# Set up rotated rectangle or bar data
+# -------------------------------------------------------------------------
     # [[lon, lat, direction, width, height]]
     # In polar coordinates lon refers to the angle and lat to the radius (rho)
     # Location applies to the center of the bar -> shift by length/2
@@ -42,22 +47,29 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
     # Direction of bar (j) is from North but still counter-clockwise -> negative sign
     data_bars = np.zeros([360, 6])
     for i_ang in range(0, 360, 1):  # min, max], step
-        data_bars_temp = np.array([
-            i_ang, rho_min+rho_max/2, i_ang, -i_ang, 0.05, rho_max-rho_min,
-        ])
-        data_bars[i_ang,:] = data_bars_temp
+        data_bars_temp = np.array(
+            [
+                i_ang,
+                rho_min + rho_max / 2,
+                i_ang,
+                -i_ang,
+                0.05,
+                rho_max - rho_min,
+            ]
+        )
+        data_bars[i_ang, :] = data_bars_temp
 
-    # -------------------------------------------------------------------------
-    # Create colorwheel plot
-    # -------------------------------------------------------------------------
+# -------------------------------------------------------------------------
+# Create colorwheel plot
+# -------------------------------------------------------------------------
     if fig_instance != None:
         fig = fig_instance
     else:
         fig = pygmt.Figure()
 
     with pygmt.config(
-        PS_PAGE_COLOR="white@1", # Make area outside of plot transparent
-        MAP_FRAME_PEN="white", # Make frame outline white
+        PS_PAGE_COLOR="white@1",  # Make area outside of plot transparent
+        MAP_FRAME_PEN="white",  # Make frame outline white
     ):
         fig.basemap(
             region=[0, 360, 0, rho_max],
@@ -78,7 +90,7 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
     fig_name = f"colorwheel_N_cw_pygmt_bar_{cmap}"
     if fig_instance == None:
         fig.show()
-        for ext in ["png"]: #, "pdf", "eps"]:
+        for ext in ["png"]:  # , "pdf", "eps"]:
             fig.savefig(fname=f"{fig_name}.{ext}", dpi=720)
     print(fig_name)
 
@@ -92,7 +104,6 @@ fig.basemap(region=[-5, 5, -2, 2], projection="X10c/4c", frame=0)
 
 fig.shift_origin(xshift="0.6c", yshift="2c")
 for cmap in ["romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
-
     colorwheel(
         cmap=cmap,
         perspective=[90, -90],  # anti-clockwise from horizontal
@@ -114,4 +125,4 @@ for cmap in ["romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
     fig.shift_origin(xshift="1.5c", yshift="1.4c")
 
 fig.show()
-fig.savefig(fname="colorwheel_all_cmaps.png")
+fig.savefig(fname="colorwheel_all_cmaps.png", dpi=720)
