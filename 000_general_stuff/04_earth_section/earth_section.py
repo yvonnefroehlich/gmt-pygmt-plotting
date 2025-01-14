@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 # #############################################################################
 # Earth section
 # >>> Not to scale <<<
-# -> Adjust the ellipse for your needs
+# -> Adjust the ellipses for your needs
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/01/12
@@ -23,15 +22,15 @@ import pygmt
 
 def earth_section(
     section_type,
-    color_land = "lightbrown",  # "76/181/167",
-    color_water = "lightblue",  # "217/239/236",
-    color_shorelines = "brown",  # "0/150/130",
-    color_cover = "white",
-    pen_grid = "0.1p,gray60",   # "0.1p,gray80",
-    pen_map = "0.8p,gray30",
-    pen_sec = "0.01p,gray90",
-    pen_qua = "0.5p,gray30,dashed",
-    path_out = ""
+    color_land="lightbrown",  # "76/181/167",
+    color_water="lightblue",  # "217/239/236",
+    color_shorelines="brown",  # "0/150/130",
+    color_cover="white",
+    pen_grid="0.1p,gray60",  # "0.1p,gray80",
+    pen_map="0.8p,gray30",
+    pen_sec="0.01p,gray90",
+    pen_qua="0.5p,gray30,dashed",
+    path_out="",
 ):
     """
 
@@ -87,7 +86,6 @@ def earth_section(
             x_qua = [-10, -10, 100, 40]
             y_qua = [90, 0, 0, 90]
 
-
     fig.coast(
         projection=projection,
         region="g",
@@ -118,7 +116,7 @@ def earth_section(
 
             fig.plot(x=0, y=0, style="w10c/-90/90", pen="1.5p,white", no_clip=True)
 
-            fig.plot(x=0, y=0, style="e90/10.0/3.6", pen=pen_map, fill="gray55", no_clip=True)
+            fig.plot(x=0, y=0, style="e90/10/3.6", pen=pen_map, fill="gray55", no_clip=True)
             fig.plot(x=0, y=0, style="e90/8.0/2.7", pen=pen_sec, fill="gray65")
             fig.plot(x=0, y=0, style="e90/5.0/1.9", pen=pen_sec, fill="gray75")
             fig.plot(x=0, y=0, style="e90/2.5/1.2", pen=pen_sec, fill="gray85")
@@ -150,15 +148,20 @@ def earth_section(
     fig_name = f"earth_section_{section_type}"
     for ext in ["png"]:
         alpha_png = False
-        if ext=="png": alpha_png = True
+        if ext == "png":
+            alpha_png = True
         fig.savefig(fname=f"{path_out}{fig_name}.{ext}", dpi=360, transparent=alpha_png)
     print(fig_name)
-
 
 
 # %%
 # -----------------------------------------------------------------------------
 # Example
 # -----------------------------------------------------------------------------
-for section_type in ["open_vertical", "half_vertical", "half_horizontal", "northeast_quadrant"]:
+for section_type in [
+    "open_vertical",
+    "half_vertical",
+    "half_horizontal",
+    "northeast_quadrant",
+]:
     earth_section(section_type=section_type)
