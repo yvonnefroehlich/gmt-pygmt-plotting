@@ -1,4 +1,4 @@
-#############################################################################
+# #############################################################################
 # Colorwheel for cyclic colormaps created with PyGMT
 # - Scientific colourmaps by Fabio Crameri: romaO, bamO, brocO, corkO, vikO
 # - cmocean colormaps by Kristen M. Thyng: phase
@@ -24,8 +24,6 @@ import pygmt
 
 def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
     """
-    -------------------------------------------------------------------------
-
     Parameters
     ----------
     Required
@@ -37,9 +35,9 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
     - fig_instance : Provide a PyGMT figure instance | Default a new one is set up
     """
 
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Set up rotated rectangle or bar data
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # [[lon, lat, direction, width, height]]
     # In polar coordinates lon refers to the angle and lat to the radius (rho)
     # Location applies to the center of the bar -> shift by length/2
@@ -59,9 +57,9 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
         )
         data_bars[i_ang, :] = data_bars_temp
 
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Create colorwheel plot
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     if fig_instance != None:
         fig = fig_instance
     else:
