@@ -41,7 +41,7 @@ col_max = "blue"
 col_bg = "pink"
 col_fg = "cyan"
 cmap_in = "roma"
-cmap_lim = 2.5   # <- Adjust for your needs: limit after colormap
+cmap_lim = 2  # <- Adjust for your needs: limit after colormap
 
 font_label = 6
 
@@ -76,7 +76,7 @@ fig.text(position="BL", text="GyPSuM", **args_label)
 fig.show()
 
 fig_name = f"gypsum_1deg_global_dvs_2650to2900km_dvlim{cmap_lim}"
-for ext in ["png"]:
-    fig.savefig(fname=f"{path_out}{fig_name}.{ext}")
+# for ext in ["png"]:
+#     fig.savefig(fname=f"{path_out}{fig_name}.{ext}")
 
 print(fig_name)
