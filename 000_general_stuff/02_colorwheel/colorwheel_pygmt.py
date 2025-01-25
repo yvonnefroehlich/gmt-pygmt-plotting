@@ -2,6 +2,9 @@
 # Colorwheel for cyclic colormaps created with PyGMT
 # - Scientific colourmaps by Fabio Crameri: romaO, bamO, brocO, corkO, vikO
 # - cmocean colormaps by Kristen M. Thyng: phase
+# >>> Be careful and check how measuring the angle is defined in your dataset <<<
+# Use the perspective parameter to take this into consideration
+# See also the example at the end of this script
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/05/15
@@ -123,4 +126,4 @@ for cmap in ["romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
     fig.shift_origin(xshift="1.5c", yshift="1.4c")
 
 fig.show()
-fig.savefig(fname="colorwheel_all_cmaps.png", dpi=720)
+# fig.savefig(fname="colorwheel_all_cmaps.png", dpi=720)
