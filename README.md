@@ -39,11 +39,8 @@ If you make use of this material, please acknowledge the relating publications i
 
 ## Content
 
-<<<<<<< HEAD
-- **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)**: Custom symbols, colorwheel
-=======
-- **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)**: Custom symbols, Earth section
->>>>>>> origin/main
+
+- **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)**: Custom symbols, colorwheel, colobar font scaling, Earth section
 - **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)**: Maps of [**_Ritter et al. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w)
 - **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024)**: Maps of [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245)
 - **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup)**: Travel paths of seismological phases through the Earth interior; related to [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245)
