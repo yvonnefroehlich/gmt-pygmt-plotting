@@ -21,51 +21,22 @@ import pygmt
 
 
 def earth_section(
+    # Select section type: Choose from
+    # "open_vertical", "half_vertical", "half_horizontal", northeast_quadrant"
     section_type,
-    color_land="lightbrown",  # "76/181/167",
-    color_water="lightblue",  # "217/239/236",
-    color_shorelines="brown",  # "0/150/130",
+    color_land="lightbrown",
+    color_water="lightblue",
+    color_shorelines="brown",
     color_cover="white",
-    pen_grid="0.1p,gray60",  # "0.1p,gray80",
+    pen_grid="0.1p,gray60",
     pen_map="0.8p,gray30",
     pen_sec="0.01p,gray90",
     pen_qua="0.5p,gray30,dashed",
+    # Uncomment line 124 to save the images
+    # Set path to folder where images should be stored
     path_out="",
 ):
-    """
 
-    :param section_type: DESCRIPTION
-    :type section_type: TYPE
-    :param color_land: DESCRIPTION, defaults to "lightbrown"
-    :type color_land: TYPE, optional
-    :param # "76/181/167": DESCRIPTION
-    :type # "76/181/167": TYPE
-    :param color_water: DESCRIPTION, defaults to "lightblue"
-    :type color_water: TYPE, optional
-    :param # "217/239/236": DESCRIPTION
-    :type # "217/239/236": TYPE
-    :param color_shorelines: DESCRIPTION, defaults to "brown"
-    :type color_shorelines: TYPE, optional
-    :param # "0/150/130": DESCRIPTION
-    :type # "0/150/130": TYPE
-    :param color_cover: DESCRIPTION, defaults to "white"
-    :type color_cover: TYPE, optional
-    :param pen_grid: DESCRIPTION, defaults to "0.1p,gray60"
-    :type pen_grid: TYPE, optional
-    :param # "0.1p,gray80": DESCRIPTION
-    :type # "0.1p,gray80": TYPE
-    :param pen_map: DESCRIPTION, defaults to "0.8p,gray30"
-    :type pen_map: TYPE, optional
-    :param pen_sec: DESCRIPTION, defaults to "0.01p,gray90"
-    :type pen_sec: TYPE, optional
-    :param pen_qua: DESCRIPTION, defaults to "0.5p,gray30,dashed"
-    :type pen_qua: TYPE, optional
-    :param path_out: DESCRIPTION, defaults to ""
-    :type path_out: TYPE, optional
-    :return: DESCRIPTION
-    :rtype: TYPE
-
-    """
 
 # -----------------------------------------------------------------------------
     fig = pygmt.Figure()
@@ -150,7 +121,7 @@ def earth_section(
         alpha_png = False
         if ext == "png":
             alpha_png = True
-        fig.savefig(fname=f"{path_out}{fig_name}.{ext}", dpi=360, transparent=alpha_png)
+        # fig.savefig(fname=f"{path_out}{fig_name}.{ext}", dpi=360, transparent=alpha_png)
     print(fig_name)
 
 
