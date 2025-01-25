@@ -39,12 +39,16 @@ If you make use of this material, please acknowledge the relating publications i
 
 ## Content
 
+<<<<<<< HEAD
 - **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)**: Custom symbols, colorwheel
+=======
+- **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)**: Custom symbols, Earth section
+>>>>>>> origin/main
 - **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)**: Maps of [**_Ritter et al. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w)
 - **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024)**: Maps of [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245)
 - **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup)**: Travel paths of seismological phases through the Earth interior; related to [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245)
 - **[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions)**: Maps of selected earthquakes and eruptions between 2021 and present
-- **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases)**: `shear wave splitting`, `deep anisotropy`, `votemap analysis`, `cluster analysis`
+- **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases)**: `shear wave splitting`, `deep anisotropy`, `votemap analysis`, `cluster analysis`, `GyPSuM`
 - **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)**: `gufm1`
 - **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn)**: Maps related to the DeepDyn project
 - **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024)**: Python scripts related to the PyGMT talk at AGU24 (U12B-05)
