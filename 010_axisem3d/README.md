@@ -4,6 +4,6 @@
 
 _Recommended versions_: PyGMT v0.14.0, GMT 6.5.0
 
-- **[01_xyz](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/009_deepdyn/01_receiver_station_setup)**
+- **[01_setup](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/009_deepdyn/01_setup)**
 
 ![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_010axisem.png)
