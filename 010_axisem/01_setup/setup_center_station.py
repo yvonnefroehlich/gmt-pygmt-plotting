@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # #############################################################################
-# Station-centered configuration for XKS phases
+# Station-centered configuration for XKS phases (epicentral distance 120°)
 # -----------------------------------------------------------------------------
 # Related to
 # Fröhlich Y., Ritter J. R. R. (2024) http://dx.doi.org/10.5281/zenodo.14510993
