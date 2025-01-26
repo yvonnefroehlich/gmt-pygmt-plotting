@@ -129,7 +129,7 @@ fig.basemap(projection=proj_used, region="g", frame=0)
 fig.coast(shorelines=f"1/0.01p,{col_sl}", land=col_land, water=col_water)
 
 # -----------------------------------------------------------------------------
-# Plote plate boundaries
+# Plot plate boundaries
 fig.plot(data=f"{path_in}{file_pb}", pen=f"0.8p,{col_pb}")
 
 # -----------------------------------------------------------------------------
