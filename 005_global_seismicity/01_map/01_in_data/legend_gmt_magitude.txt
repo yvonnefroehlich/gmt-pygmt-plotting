@@ -1,0 +1,38 @@
+# legend for URG map - moment magnitude
+# inset STU epicenter distribution
+# >>> size of circle np.exp(float(mag_epi_temp)/1.7)*0.0035 <<<
+
+
+# vertical
+#N 1
+#S 0.35c c 0.10000 white@100 1.0p,white@100 0.65c M@-w@- 
+#G 0.10c
+#S 0.35c c 0.11936 gray80 1.0p,black 0.75c 6
+#G 0.05c
+#S 0.35c c 0.21495 gray80 1.0p,black 0.75c 7
+#G 0.15c
+#S 0.35c c 0.38708 gray80 1.0p,black 0.75c 8
+#G 0.10c
+
+
+# horizontal
+#N 4
+#S 0.10c c 0.10000 white@100 1.0p,white@100 0.20c M@-w@- 
+#S 0.20c c 0.11936 gray80 1.0p,black 0.55c 6
+#S 0.20c c 0.21495 gray80 1.0p,black 0.55c 7
+#S 0.20c c 0.38708 gray80 1.0p,black 0.65c 8
+
+
+# horizontal
+N 4
+S 0.05c c 0.10000 white@100 1.0p,white@100 0.20c M@-w@- 
+S 0.1c c 0.11936 gray80 1p,gray30 0.3c 6
+S 0.1c c 0.21495 gray80 1p,gray30 0.3c 7
+S 0.1c c 0.38708 gray80 1p,gray30 0.4c 8
+
+# horizontal
+#N 4
+#S 0.05c c 0.10000 white@100 1.0p,white@100 0.20c M@-w@- 
+#S 0.1c c 0.11936 tan 1p,brown 0.3c 6
+#S 0.1c c 0.21495 tan 1p,brown 0.3c 7
+#S 0.1c c 0.38708 tan 1p,brown 0.4c 8
