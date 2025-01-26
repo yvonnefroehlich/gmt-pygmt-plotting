@@ -115,7 +115,7 @@ data_eq_used = data_eq_raw[data_eq_raw["magType"].str.contains("mw")]
 data_eq_used = data_eq_used.sort_values(by=["mag"], ascending=False)
 
 # Scale hypocentral depth for size-coding
-# >>> If you change the scaling you also have to update the legend <<<
+# >>> If you change the scaling you also have to update the legend file <<<
 data_eq_used["mag_scaled"] = np.exp(data_eq_used["mag"] / 1.7) * 0.0035
 
 
