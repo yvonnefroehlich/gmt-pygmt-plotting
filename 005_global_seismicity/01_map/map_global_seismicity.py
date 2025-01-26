@@ -171,7 +171,7 @@ fig.text(
 # Show and save figure
 fig.show()
 fig_name = f"map_{proj}_{eq_catalog_name}"
-for ext in ["png"]:  # "pdf", "eps"
-    fig.savefig(fname=f"{path_out}{fig_name}.{ext}", dpi=dpi_png)
+# for ext in ["png"]:  # "pdf", "eps"
+#     fig.savefig(fname=f"{path_out}{fig_name}.{ext}", dpi=dpi_png)
 
 print(fig_name)
