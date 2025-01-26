@@ -11,7 +11,7 @@ https://doi.org/10.1093/gji/ggae245.
 
 ## Content
 
-_Recommended versions_: PyGMT v0.12.0, GMT 6.4.0/6.5.0
+_Recommended versions_: PyGMT v0.12.0, GMT 6.4.0-6.5.0
 
 - [FGR_Fig1_urg.ipynb](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_1/FGR_Fig1_urg.ipynb): Upper Rhine Graben area with seismological recording stations
 - [FGR_Fig9_pp.ipynb](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_9/FGR_Fig9_pp.ipynb): Piercing points in the upper mantle
