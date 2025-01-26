@@ -4,9 +4,9 @@
 # -----------------------------------------------------------------------------
 # Related to
 # Fröhlich Y., Ritter J. R. R. (2024) http://dx.doi.org/10.5281/zenodo.14510993
-# Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle
-# Underneath the Upper Rhine Graben, Central Europe. Annual Meeting of the American
-# Geophysical Union. http://dx.doi.org/10.5281/zenodo.14510993.
+# Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper
+# Mantle Underneath the Upper Rhine Graben, Central Europe. Annual Meeting of
+# the American Geophysical Union. http://dx.doi.org/10.5281/zenodo.14510993.
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/01/26
@@ -22,10 +22,8 @@
 # #############################################################################
 
 
-
 import numpy as np
 import pygmt as gmt
-
 
 
 # %%
@@ -53,7 +51,6 @@ col_sl = "gray70"
 col_pb = "216.750/82.875/24.990"
 col_highlight = "255/90/0"
 alpha_highlight = 98  # in percentage
-
 
 
 # %%
@@ -185,6 +182,6 @@ fig.text(
 # Show and save figure
 fig.show()
 fig_name = "setup_center_station_XKS"
-for ext in ["png"]:  # "pdf", "eps"
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+# for ext in ["png"]:  # "pdf", "eps"
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
