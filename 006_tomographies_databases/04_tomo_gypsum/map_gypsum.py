@@ -27,7 +27,6 @@ path_out = "02_out_figs/"
 grid_tomo = f"{path_in}tomo_gypsum_1d_grid_dvs_22_2650to2900km.grd"
 
 color_highlight = "255/90/0"
-color_pb = "216.750/82.875/24.990"  # plate boundaries (used data after Bird 2003)
 color_sl = "gray10"  # shorelines (used data built-in in PyGMT / GMT)
 
 cmap_in = "roma"
