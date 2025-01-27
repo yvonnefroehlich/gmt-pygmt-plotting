@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # #############################################################################
 # Global seismicity
 # - Request earthquake data from USGS
@@ -62,10 +61,10 @@ file_legend = "legend_gmt_magitude.txt"
 
 # Plotting
 color_highlight = "255/90/0"
-col_land = "gray90"
-col_water = "lightskyblue"
-col_pb = "216.750/82.875/24.990"
-col_sl = "gray60"
+color_land = "gray90"
+color_water = "lightskyblue"
+color_pb = "216.750/82.875/24.990"
+color_sl = "gray60"
 box_standard = "+gwhite@30+p0.8p,black+r2p"
 clearance_standard = "0.1c/0.1c+tO"
 
@@ -126,11 +125,11 @@ data_eq_used["mag_scaled"] = np.exp(data_eq_used["mag"] / 1.7) * 0.0035
 fig = pygmt.Figure()
 
 fig.basemap(projection=proj_used, region="g", frame=0)
-fig.coast(shorelines=f"1/0.01p,{col_sl}", land=col_land, water=col_water)
+fig.coast(shorelines=f"1/0.01p,{color_sl}", land=color_land, water=color_water)
 
 # -----------------------------------------------------------------------------
 # Plot plate boundaries
-fig.plot(data=f"{path_in}{file_pb}", pen=f"0.8p,{col_pb}")
+fig.plot(data=f"{path_in}{file_pb}", pen=f"0.8p,{color_pb}")
 
 # -----------------------------------------------------------------------------
 # Make colormap for hypocentral depth
