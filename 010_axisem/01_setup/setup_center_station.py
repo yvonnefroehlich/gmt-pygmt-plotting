@@ -1,12 +1,11 @@
-# -*- coding: utf-8 -*-
 # #############################################################################
 # Station-centered configuration for XKS phases (epicentral distance 120°)
 # -----------------------------------------------------------------------------
 # Related to
-# Fröhlich Y., Ritter J. R. R. (2024) http://dx.doi.org/10.5281/zenodo.14510993
-# Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper
-# Mantle Underneath the Upper Rhine Graben, Central Europe. Annual Meeting of
-# the American Geophysical Union. http://dx.doi.org/10.5281/zenodo.14510993.
+# - Fröhlich Y., Ritter J. R. R. (2024) http://dx.doi.org/10.5281/zenodo.14510993
+#   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper
+#   Mantle Underneath the Upper Rhine Graben, Central Europe. Annual Meeting of
+#   the American Geophysical Union. http://dx.doi.org/10.5281/zenodo.14510993.
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/01/26
@@ -43,13 +42,13 @@ dist_ani = 40
 center_args = {"x": center_lon, "y": center_lat}  # North pole
 clearance_text = "0.05c/0.05c+tO"
 
-col_ani = "gray50"
-col_source = "red"
-col_station = "gold"
-col_land = "gray90"
-col_sl = "gray70"
-col_pb = "216.750/82.875/24.990"
-col_highlight = "255/90/0"
+color_ani = "gray50"
+color_source = "red"
+color_station = "gold"
+color_land = "gray90"
+color_sl = "gray70"
+color_pb = "216.750/82.875/24.990"
+color_highlight = "255/90/0"
 alpha_highlight = 98  # in percentage
 
 
@@ -60,25 +59,25 @@ alpha_highlight = 98  # in percentage
 fig = gmt.Figure()
 gmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray70")
 fig.basemap(region="d", projection=proj_used, frame=0)
-fig.coast(shorelines=f"1/0.1p,{col_sl}", land=col_land, frame="fg")
+fig.coast(shorelines=f"1/0.1p,{color_sl}", land=color_land, frame="fg")
 
 # -----------------------------------------------------------------------------
 # Region for anisotropy in the upper mantle
 fig.plot(
     style=f"c{dist_ani * dist2fig}c",
-    fill=f"{col_ani}@80",
-    pen=f"0.5p,{col_ani}",
+    fill=f"{color_ani}@80",
+    pen=f"0.5p,{color_ani}",
     **center_args,
 )
 
 # -----------------------------------------------------------------------------
 # Station at North pole
-fig.plot(style="i0.45c", fill=col_station, pen="0.2p,black", **center_args)
+fig.plot(style="i0.45c", fill=color_station, pen="0.2p,black", **center_args)
 fig.text(
     text="North pole",
     offset="0/0.4c",
     fill="white@30",
-    pen=f"0.2p,{col_station}",
+    pen=f"0.2p,{color_station}",
     font="7p",
     clearance=clearance_text,
     **center_args,
@@ -88,16 +87,16 @@ fig.text(
 # Epicentral distance 120°, i.e. latitude -30° N
 fig.plot(
     style=f"w{90 * dist2fig}c/-90/270+i{150 * dist2fig}c",
-    fill=f"{col_highlight}@{alpha_highlight}",
+    fill=f"{color_highlight}@{alpha_highlight}",
     **center_args,
 )
 for dist in [90, 150]:
     fig.plot(
         style=f"E-{dist * 2}+d",
-        pen=f"0.5p,{col_highlight},dashed",
+        pen=f"0.5p,{color_highlight},dashed",
         **center_args,
     )
-fig.plot(style=f"E-{120 * 2}+d", pen=f"1p,{col_highlight}", **center_args)
+fig.plot(style=f"E-{120 * 2}+d", pen=f"1p,{color_highlight}", **center_args)
 
 # -----------------------------------------------------------------------------
 # Sources in steps of 30° E longitude
@@ -105,7 +104,7 @@ fig.plot(
     x=np.arange(-180, 151, 30),  # [min, max[, step
     y=np.full(12, -30),  # amount, value
     style="a0.4c",
-    fill=col_source,
+    fill=color_source,
     pen="0.2p,black",
 )
 
@@ -126,7 +125,7 @@ for i_st in range(1, len(x_all) + 1):  # [start, end[
         text=f"{station}",
         angle=angle,
         fill="white@30",
-        pen=f"0.2p,{col_source}",
+        pen=f"0.2p,{color_source}",
         font="8p",
         clearance=clearance_text,
     )
@@ -135,8 +134,8 @@ for i_st in range(1, len(x_all) + 1):  # [start, end[
         y=-43,
         text=f"{x_all[i_st - 1]}@.",
         angle=angle,
-        fill=f"{col_highlight}@80",
-        pen=f"0.2p,{col_highlight}",
+        fill=f"{color_highlight}@80",
+        pen=f"0.2p,{color_highlight}",
         font="8p",
         clearance=clearance_text,
     )
@@ -162,16 +161,16 @@ fig.plot(
     # [[ ]] important
     data=[[0, 90, 5.3, -65, -25]],
     style="m0.5c+ea+h0c",
-    pen=f"1p,{col_highlight}",
-    fill=col_highlight,
+    pen=f"1p,{color_highlight}",
+    fill=color_highlight,
     no_clip=True,
 )
 fig.text(
     x=45,
     y=-88,
     text="BAZ",
-    fill=f"{col_highlight}@80",
-    pen=f"0.2p,{col_highlight}",
+    fill=f"{color_highlight}@80",
+    pen=f"0.2p,{color_highlight}",
     font="8p",
     angle=45,
     clearance=clearance_text,
