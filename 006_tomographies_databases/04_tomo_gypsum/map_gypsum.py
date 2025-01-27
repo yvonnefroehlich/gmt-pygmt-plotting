@@ -28,14 +28,14 @@ path_out = "02_out_figs/"
 
 grid_tomo = f"{path_in}tomo_gypsum_1d_grid_dvs_22_2650to2900km.grd"
 
-col_highlight = "255/90/0"
-col_pb = "216.750/82.875/24.990"  # plate boundaries (used data after Bird 2003)
-col_sl = "gray10"  # shorelines (used data built-in in PyGMT / GMT)
+color_highlight = "255/90/0"
+color_pb = "216.750/82.875/24.990"  # plate boundaries (used data after Bird 2003)
+color_sl = "gray10"  # shorelines (used data built-in in PyGMT / GMT)
 
 cmap_in = "roma"
 cmap_lim = 2.5  # Absolute limit used to set up to colormap, in percentage
-col_bg = "pink"  # Color for values smaller the value range
-col_fg = "cyan"  # Color for values larger than the value range
+color_bg = "pink"  # Color for values smaller the value range
+color_fg = "cyan"  # Color for values larger than the value range
 
 font_label = 6
 
@@ -50,17 +50,17 @@ fig.basemap(region="d", projection="N10c", frame=["xa90f45", "ya30f45", "wSnE"])
 # -----------------------------------------------------------------------------
 # Plot grid with color-coding
 # Uncomment if you like to highlight values outside the value range in specific colors
-# gmt.config(COLOR_BACKGROUND=col_bg, COLOR_FOREGROUND=col_fg)
+# gmt.config(COLOR_BACKGROUND=color_bg, COLOR_FOREGROUND=color_fg)
 gmt.makecpt(series=[-cmap_lim, cmap_lim, 0.01], cmap="roma")  #, overrule_bg=True)
 fig.grdimage(grid=grid_tomo, cmap=True)
 fig.colorbar(frame=["xa1f0.1", "y+ldvs / %"], position="+e0.3c")
 
 # -----------------------------------------------------------------------------
 # Plot shorelines
-fig.coast(shorelines=f"1/0.1p,{col_sl}")
+fig.coast(shorelines=f"1/0.1p,{color_sl}")
 
 # -----------------------------------------------------------------------------
-args_label = {"font": f"{font_label}p,{col_highlight}", "no_clip": True}
+args_label = {"font": f"{font_label}p,{color_highlight}", "no_clip": True}
 # Add label for depth
 fig.text(position="TL", text=f"@@{2650} - {2900} km", **args_label)
 # Add label for tomography name
