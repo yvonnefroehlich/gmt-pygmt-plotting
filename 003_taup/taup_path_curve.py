@@ -394,7 +394,7 @@ def taup_path(
                 fig_curve.legend(
                     position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c",
                     box=box_standard,
-            )
+                )
 
     # -------------------------------------------------------------------------
     # Add legend for phase names and travel times in travel path plot
