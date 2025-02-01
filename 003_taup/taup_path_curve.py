@@ -604,7 +604,7 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         path_overlay = True
 
     fig_save = False
-    if dist == dist_max: fig_save=True  # Save only the last figure
+    if dist == dist_max: fig_save = True  # Save only the last figure
 
     fig_path, fig_curve = taup_path(
         fig_path_width="8c",
