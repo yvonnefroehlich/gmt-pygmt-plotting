@@ -69,7 +69,7 @@ lon_max_lamb = 49
 lat_min_lamb = 25
 lat_max_lamb = 70
 
-# Calcualte projection center
+# Calculate projection center
 lon0_lamb = np.mean([lon_min_lamb, lon_max_lamb])
 lat0_lamb = np.mean([lat_min_lamb, lat_max_lamb])
 

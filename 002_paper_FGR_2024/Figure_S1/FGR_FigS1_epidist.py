@@ -105,7 +105,7 @@ gmt.makecpt(
 cmap_hypo = cmap_hypo_out
 
 # -----------------------------------------------------------------------------
-# Dictonaries for recording stations
+# Dictionaries for recording stations
 dict_net = {}
 dict_lat = {}
 dict_lon = {}
@@ -242,7 +242,7 @@ with fig.subplot(
                 fill=color_station_marker,
                 pen="0.6p,black"
             )
-            # lable
+            # label
             fig.text(
                 x=dict_lon[sta_all[sta]],
                 y=dict_lat[sta_all[sta]],

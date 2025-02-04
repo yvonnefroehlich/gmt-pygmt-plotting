@@ -57,7 +57,7 @@ status_var = ""  ## "", "latvar"  # highlight subregions
 depth_step = 10
 pierce_depth_all = np.arange(200, 200 + depth_step, depth_step)  # depth in km; [min,max[,step
 pierce_obs_all = ["NNN"]  ## "N", "NN", "NNN" # observation type
-pierce_qual_all = ["goodfair"]  ## "all", "goodfair" # quality cateogry
+pierce_qual_all = ["goodfair"]  ## "all", "goodfair" # quality category
 
 grid_dpi = 360
 png_dpi = 360
@@ -114,7 +114,7 @@ file_shading_in = "int_srtm_FRBS.grd"
 
 
 # -----------------------------------------------------------------------------
-# Coordinats for
+# Coordinates for
 # -----------------------------------------------------------------------------
 # Kaiserstuhl Volcanic Complex (KVC)
 lon_KVC = 7.690556
@@ -188,7 +188,7 @@ gmt.makecpt(
 # -----------------------------------------------------------------------------
 # Hypocentral depth
 # Scientific Colour maps by F. Crameri
-# >>> Must be consisten with epicentral distance plot for Fig S <<<
+# >>> Must be consistent with epicentral distance plot for Fig S <<<
 cmap_hypo_in = "lajolla"
 cmap_hypo_out_cut = f"{path_in}/{cmap_hypo_in}_resampled_hypo.cpt"
 hypodepth_max = 500
@@ -314,7 +314,7 @@ clearance_standard = "0.1c/0.1c+tO"
 
 
 # -----------------------------------------------------------------------------
-# Dictonaries for recording stations
+# Dictionaries for recording stations
 # -----------------------------------------------------------------------------
 dict_net = {}
 dict_lat = {}
@@ -769,7 +769,7 @@ for pierce_obs in pierce_obs_all:
                     try:
                         # first plot semi-transparent white filled circle
                         # behind fully transparent stereoplot to increase
-                        # visiblity
+                        # visibility
                         fig.plot(
                             x=dict_lon[key],
                             y=dict_lat[key],
@@ -1448,7 +1448,7 @@ for pierce_obs in pierce_obs_all:
                         fill=color_station_marker,
                         pen="0.6p,black",
                     )
-                    # Lable
+                    # Label
                     fig.text(
                         x=dict_lon[status_station_epi],
                         y=dict_lat[status_station_epi],
