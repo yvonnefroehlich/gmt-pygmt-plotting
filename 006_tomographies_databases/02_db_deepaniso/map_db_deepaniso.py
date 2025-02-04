@@ -18,6 +18,7 @@ import os
 
 import pygmt as gmt
 
+
 # %%
 # -----------------------------------------------------------------------------
 # General stuff
@@ -25,11 +26,11 @@ import pygmt as gmt
 # Paths
 path_in = "01_in_data"
 path_out = "02_out_figs"
-data_platebound = "plate_boundaries_Brid_2003.txt"
+file_pb = "plate_boundaries_Bird_2003.txt"
 
 # Colors
-color_platebound = "216.750/82.875/24.990"
-color_shorelines = "gray50"
+color_pb = "216.750/82.875/24.990"  # plate boundaries after Bird 2003
+color_sl = "gray50"  # shorelines (used data built-in in PyGMT / GMT)
 color_land = "gray95"
 color_llpv = "brown"
 pattern_llpv = "p8+b+f"
@@ -58,16 +59,13 @@ for analysis in folders_analysis:
         region="d",
         projection="N11c",
         land=color_land,
-        shorelines=f"1/0.05p,{color_shorelines}",
+        shorelines=f"1/0.05p,{color_sl}",
         frame=f"+tLMM seismic anisotropy - {analysis}",
     )
 
 # -----------------------------------------------------------------------------
     # Plate boundaries
-    fig.plot(
-        data=f"{path_in}/plate_boundaries_Bird_2003.txt",
-        pen=f"0.1p,{color_platebound}",
-    )
+    fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.1p,{color_pb}")
 
 # -----------------------------------------------------------------------------
     # LLPV

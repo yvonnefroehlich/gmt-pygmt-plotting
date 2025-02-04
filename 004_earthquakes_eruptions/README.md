@@ -2,7 +2,7 @@
 
 ## Content
 
-_Recommended versions_: PyGMT v0.11.0 / v0.12.0, GMT 6.4.0 / 6.5.0
+_Recommended versions_: PyGMT v0.11.0-v0.12.0, GMT 6.4.0-6.5.0
 
 - **[00_overview](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/004_earthquakes_eruptions/00_overview)**: Earthquakes and eruptions, 2021 - present
 - **[01_la_palma](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/004_earthquakes_eruptions/01_la_palma)**: Eruptions, 2021/09/19 - 2021/12/13
