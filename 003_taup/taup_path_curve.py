@@ -378,19 +378,19 @@ def taup_path(
             )
 
             # Add legend for phases in travel time plot
-            for j_phase, phase in enumerate(phases):
-                col_str = ""
-                info_str = ""
-                fig_curve.plot(
-                    x=-1,
-                    y=-1,
-                    style="c0.2c",
-                    fill=phase_colors[phase],
-                    pen="0.05p,gray10",
-                    label=f"{phase}{info_str}{col_str}",
-                )
-            hight_legend = 0.4 * len(phases)
             if legend_curve == True:
+                for j_phase, phase in enumerate(phases):
+                    col_str = ""
+                    info_str = ""
+                    fig_curve.plot(
+                        x=-1,
+                        y=-1,
+                        style="c0.2c",
+                        fill=phase_colors[phase],
+                        pen="0.05p,gray10",
+                        label=f"{phase}{info_str}{col_str}+S0.15c",
+                    )
+                hight_legend = 0.4 * len(phases)
                 fig_curve.legend(
                     position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c",
                     box=box_standard,
@@ -604,7 +604,7 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         path_overlay = True
 
     fig_save = False
-    if dist == dist_max: fig_save=True  # Save only the last figure
+    if dist == dist_max: fig_save = True  # Save only the last figure
 
     fig_path, fig_curve = taup_path(
         fig_path_width="8c",
