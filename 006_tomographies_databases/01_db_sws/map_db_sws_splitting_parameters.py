@@ -22,8 +22,9 @@
 # GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # -----------------------------------------------------------------------------
 # - Created: 2024/04/29
-#   PyGMT v0.11.0 / v0.12.0 -> https://www.pygmt.org/
-#   GMT 6.4.0 / 6.5.0 -> https://www.generic-mapping-tools.org/
+# - Updated: 2025/02/15
+#   PyGMT v0.11.0 - v0.14.2 -> https://www.pygmt.org/
+#   GMT 6.4.0 - 6.5.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
 
 
@@ -39,9 +40,9 @@ path_in = "01_in_data"
 path_out = "02_out_figs"
 
 # Colors
-color_platebound = "216.750/82.875/24.990"
+color_pb = "216.750/82.875/24.990"  # plate boundaries
 color_land = "gray90"
-color_shorelines = "gray30"
+color_sl = "gray30"  # shorelines
 color_borders = "gray10"
 fill_null_max = "white"
 pen_null = "0.4p,gray10"
@@ -69,51 +70,35 @@ df_null_max_order = df_swsm_null[["Longitude", "Latitude"]]
 fig = gmt.Figure()
 gmt.config(FONT_LABEL="10p", MAP_GRID_PEN_PRIMARY="0.01p,gray50")
 
-# Make colormap for fast polarization direction
-gmt.makecpt(cmap=f"{path_in}/phase.cpt", series=[-90, 90], cyclic=True)
-
-# -----------------------------------------------------------------------------
 # Set up basic map
+fig.basemap(region="d", projection="N11c", frame=["WSnE", "xa90f30", "ya30f15"])
+
+# Plot land masses, shorelines and political borders
 fig.coast(
-    region="d",
-    projection="N11c",
-    frame=["WSnE", "xa90f30", "ya30f15"],
-    land=color_land,
-    shorelines=f"1/0.05p,{color_shorelines}",
-    borders=f"1/0.001p,{color_borders}",
+    land=color_land, shorelines=f"1/0.05p,{color_sl}", borders=f"1/0.01p,{color_borders}"
 )
 
 # -----------------------------------------------------------------------------
-# Plate boundaries
-fig.plot(
-    data=f"{path_in}/plate_boundaries_Bird_2003.txt",
-    pen=f"0.4p,{color_platebound}",
-)
+# Plot plate boundaries
+fig.plot(data=f"{path_in}/plate_boundaries_Bird_2003.txt", pen=f"0.4p,{color_pb}")
 
 # -----------------------------------------------------------------------------
 # Plot splitting parameter of splits as orientated and color-coded length-scaled
 # bars according to phi and dt; nulls as white-filled black-outlined circles
 
-# splits
-fig.plot(
-    data=df_bar_max_order,
-    incols="0,1,2,3,4+s0.05,5+s0.006",
-    style="j",
-    cmap=True,
-)
+# Make colormap for phi
+gmt.makecpt(cmap=f"{path_in}/phase.cpt", series=[-90, 90], cyclic=True)
 
-# nulls
-fig.plot(
-    data=df_null_max_order,
-    style="c0.05c",
-    fill=fill_null_max,
-    pen=pen_null,
-)
+# Plot splits
+fig.plot(data=df_bar_max_order, incols="0,1,2,3,4+s0.05,5+s0.006", style="j", cmap=True)
 
-# -----------------------------------------------------------------------------
+# Plot nulls
+fig.plot(data=df_null_max_order, style="c0.05c", fill=fill_null_max, pen=pen_null)
+
 # Add colorbar for phi colormap
-cb_label = "Complete Shear Wave Splitting Database - splits - @~f@~@-a@-"
-fig.colorbar(cmap=True, frame=[f"xa30f10+l{cb_label}", "y+lN@.E"])
+cb_xlabel = "Complete Shear Wave Splitting Database - splits"
+cb_ylabel = "@~f@~@-a@- / N@.E"
+fig.colorbar(cmap=True, frame=[f"xa30f10+l{cb_xlabel}", f"y+l{cb_ylabel}"])
 
 # -----------------------------------------------------------------------------
 # Show and save figure
