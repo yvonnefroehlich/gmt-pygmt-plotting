@@ -126,7 +126,7 @@ def sws_lmm_deepdyn(
         case "XKS":
             sta2tag_min = 22.5  # size_tag_main_deg + 2  # rough eastimation
             sta2tag_max = 35  # size_tag_main_deg + 20
-        case "ScS":  # middel
+        case "ScS":  # middle
             sta2tag_min = size_epi_min_deg / 2
             sta2tag_max = size_epi_max_deg / 2
 
