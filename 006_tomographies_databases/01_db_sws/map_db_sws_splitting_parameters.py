@@ -86,7 +86,7 @@ fig.plot(data=f"{path_in}/plate_boundaries_Bird_2003.txt", pen=f"0.4p,{color_pb}
 # Plot splitting parameter of splits as orientated and color-coded length-scaled
 # bars according to phi and dt; nulls as white-filled black-outlined circles
 
-# Make colormap for fast polarization direction
+# Make colormap for phi
 gmt.makecpt(cmap=f"{path_in}/phase.cpt", series=[-90, 90], cyclic=True)
 
 # Plot splits
