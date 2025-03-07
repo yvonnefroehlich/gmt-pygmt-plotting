@@ -17,7 +17,7 @@ If you make use of this material, please acknowledge the relating publications i
 - [**_Ritter J. R. R., Fröhlich Y., Sanz Alonso Y. & Grund M. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w).
   Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures.
   *Journal of Seismology*, 26, 1137-1156.
-  https://doi.org/10.1007/s10950-022-10112-w. https://doi.org/10.1007/s10950-023-10136-w.
+  https://doi.org/10.1007/s10950-022-10112-w, correction https://doi.org/10.1007/s10950-023-10136-w.
 
 **Presentations**
 - [**_Fröhlich Y., Ritter J. R. R. (2024)_**](http://dx.doi.org/10.5281/zenodo.14510993).
