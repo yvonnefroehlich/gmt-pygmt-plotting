@@ -22,14 +22,16 @@ If you make use of this material, please acknowledge the relating publications i
 **Presentations**
 - [**_Fröhlich Y., Ritter J. R. R. (2024)_**](http://dx.doi.org/10.5281/zenodo.14510993).
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
-  *Annual Meeting of the American Geophysical Union*, Washington D.C.,
-  Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral,
-  DI21A-02. [Abstract ID 1578275](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275). http://dx.doi.org/10.5281/zenodo.14510993.
+  *Annual Meeting of the American Geophysical Union*, Washington D.C..
+  Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral, DI21A-02.
+  [Abstract ID 1578275](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275).
+  http://dx.doi.org/10.5281/zenodo.14510993.
 - [**_Fröhlich Y., Tian D., Leong W. J., Jones M., Grund M. (2024)_**](https://doi.org/10.6084/m9.figshare.28049495).
   PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
-  *Annual Meeting of the American Geophysical Union*, Washington D.C.,
-  Union Session The impact of GMT in the Earth, Ocean and Space sciences: What's next? I Oral,
-  U12B-05. [Abstract ID 1578856](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578856). https://doi.org/10.6084/m9.figshare.28049495.
+  *Annual Meeting of the American Geophysical Union*, Washington D.C..
+  Union Session The impact of GMT in the Earth, Ocean and Space sciences: What's next? I Oral, U12B-05 (invited).
+  [Abstract ID 1578856](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578856).
+  https://doi.org/10.6084/m9.figshare.28049495.
 
 **Posters**
 - [**_Fröhlich Y., Dorn F., Dillah M. I. F., Ritter J. R. R. (2024)_**](https://doi.org/10.5281/zenodo.14801004).
