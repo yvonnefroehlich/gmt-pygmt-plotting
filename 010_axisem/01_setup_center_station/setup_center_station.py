@@ -1,8 +1,8 @@
 # #############################################################################
-# Station-centered configuration for XKS phases (epicentral distance 120Â°)
+# Station-centered configuration for XKS phases (epicentral distance 120 deg)
 # -----------------------------------------------------------------------------
 # Related to
-# - FrÃ¶hlich Y., Ritter J. R. R. (2024) http://dx.doi.org/10.5281/zenodo.14510993
+# - Fröhlich Y., Ritter J. R. R. (2024) http://dx.doi.org/10.5281/zenodo.14510993
 #   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper
 #   Mantle Underneath the Upper Rhine Graben, Central Europe. Annual Meeting of
 #   the American Geophysical Union. http://dx.doi.org/10.5281/zenodo.14510993.
@@ -15,7 +15,7 @@
 #   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
-# - Author: Yvonne FrÃ¶hlich
+# - Author: Yvonne Fröhlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
