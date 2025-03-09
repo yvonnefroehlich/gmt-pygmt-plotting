@@ -29,10 +29,13 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
-path_out = "02_out_figs/"
+path_out = "02_out_figs"
+dpi_png = 720  # resolution of saved PNG file
 
+# Location of source at North pole
 center_lon = 0
 center_lat = 89.999
+
 proj_dist = 160
 fig_width = 10
 dist2fig = fig_width / proj_dist
@@ -58,6 +61,7 @@ alpha_highlight = 98  # in percentage
 # -----------------------------------------------------------------------------
 fig = gmt.Figure()
 gmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray70")
+
 fig.basemap(region="d", projection=proj_used, frame=0)
 fig.coast(shorelines=f"1/0.1p,{color_sl}", land=color_land, frame="fg")
 
@@ -182,5 +186,5 @@ fig.text(
 fig.show()
 fig_name = "setup_center_station_XKS"
 # for ext in ["png"]:  # "pdf", "eps"
-#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)

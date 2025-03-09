@@ -39,6 +39,9 @@ cmap_quantity = "baz"  ## "sta", "dist", "baz"
 # Projection: Robison, orthographic, epi-distance projections
 status_proj = "epi"  ## "rob", "ortho", "epi"
 
+# Add colorbar: True, False
+status_cb = True
+
 
 # %%
 # -----------------------------------------------------------------------------
@@ -46,6 +49,7 @@ status_proj = "epi"  ## "rob", "ortho", "epi"
 # -----------------------------------------------------------------------------
 path_in = "01_in_data"
 path_out = "02_out_figs"
+dpi_png = 720  # resolution of saved PNG file
 
 cmap_lat = "batlow"  # -> latitude or epicentral distance (dist)
 cmap_lon = "romaO"  # -> longitude or backazimuth (baz)
@@ -61,6 +65,9 @@ source_lat = 89.999  # degrees North
 
 # Distance between recording stations
 coord_step = 10  # degrees
+
+cb_str = ""
+if status_cb==True: cb_str = "_cb"
 
 match cmap_quantity:
     case "dist": cmap_sta = cmap_lat
@@ -129,7 +136,7 @@ fig.coast(
 # -----------------------------------------------------------------------------
 # Set up colormap and colorbar
 
-# for backazimuth (-> longitude) [the definition can be choosen freely]
+# for backazimuth (-> longitude) [the definition can be set freely]
 if cmap_quantity == "baz":
     sta_color = data_sta_plot.lon
     sta_factor = 1
@@ -148,9 +155,10 @@ if cmap_quantity == "baz":
         color_model=f"+c{cb_annot_baz}",
         cyclic=True,
     )
-    with gmt.config(MAP_FRAME_PEN="0.2p", FONT="8p"):
-        # +r reverse the sense of the positive direction
-        fig.colorbar(cmap=True, position="JRM+jMC+w9c/0.2c+o0.5c/-0.2c+r", equalsize=0.2)
+    if status_cb==True:
+        with gmt.config(MAP_FRAME_PEN="0.2p", FONT="8p"):
+            # +r reverse the sense of the positive direction
+            fig.colorbar(cmap=True, position="JRM+jMC+w9c/0.2c+o0.5c/-0.2c+r", equalsize=0.2)
 
 # for epicentral distance (-> latitude)
 elif cmap_quantity == "dist":
@@ -167,8 +175,9 @@ elif cmap_quantity == "dist":
         color_model=f"+c{cb_annot_dist}",
         reverse=True,
     )
-    with gmt.config(MAP_FRAME_PEN="0.2p", FONT="8p"):
-        fig.colorbar(cmap=True, position="JRM+jMC+w9.3c/0.2c+o0.5c/0c+r", equalsize=0.2)
+    if status_cb==True:
+        with gmt.config(MAP_FRAME_PEN="0.2p", FONT="8p"):
+            fig.colorbar(cmap=True, position="JRM+jMC+w9.3c/0.2c+o0.5c/0c+r", equalsize=0.2)
 
 # -----------------------------------------------------------------------------
 # Plot recording stations with color-coding
@@ -216,6 +225,7 @@ elif status_proj in ["epi"]:
 # Add label for recording stations
 angle_text = None
 if status_proj == "epi": angle_text = data_sta_plot.lon
+
 fig.text(
     x=data_sta_plot.lon,
     y=data_sta_plot.lat - y_text_add,
@@ -231,15 +241,15 @@ fig.text(
 
 # -----------------------------------------------------------------------------
 # Plot source at North pole
-fig.plot(x=source_lon, y=source_lat, style="a0.4c", fill="red", pen="0.2p", no_clip=True)
+fig.plot(
+    x=source_lon, y=source_lat, style="a0.4c", fill=color_source, pen="0.2p", no_clip=True
+)
 
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
 fig_name = f"setup_northpole_source_global_step{coord_step}deg_" + \
-           f"{cmap_quantity}{cmap_sta}_{status_proj}"
+           f"{cmap_quantity}{cmap_sta}_{status_proj}{cb_str}"
 for ext in ["png"]:  # "pdf", "png", "eps"
-    transparent = False
-    # if ext=="png": transparent = True
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=720, transparent=transparent)
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
