@@ -24,7 +24,6 @@
 import pandas as pd
 import pygmt as gmt
 
-
 # %%
 # -----------------------------------------------------------------------------
 # Adjust for your needs
@@ -66,10 +65,10 @@ box_standard = "+gwhite@30+p0.1p,gray30+r2p"
 # Virginia source
 # -----------------------------------------------------------------------------
 mt_virginia = {
-    "mrr":  4.71,
-    "mtt":  0.0381,
+    "mrr": 4.71,
+    "mtt": 0.0381,
     "mff": -4.74,
-    "mrt":  0.399,
+    "mrt": 0.399,
     "mrf": -0.805,
     "mtf": -1.23,
     "exponent": 17,
@@ -97,17 +96,20 @@ fig.basemap(frame=0)
 
 # -----------------------------------------------------------------------------
 # Plot networks
-for i_net, station_file in enumerate([
-    "USTA_stations.txt",
-    "AA_stations.txt",
-    "SNSN_stations.txt",
-]):
-
+for i_net, station_file in enumerate(
+    [
+        "USTA_stations.txt",
+        "AA_stations.txt",
+        "SNSN_stations.txt",
+    ]
+):
     df_sta = pd.read_csv(f"{path_in}/{station_file}", sep="\t", header=0)
     label_sta = station_file.split("_")[0] + "+S0.2c"  # Adjust size in legend
     fill_sta = colors_net[i_net]
 
-    fig.plot(data=df_sta[["lon", "lat"]], style="i0.05c", fill=fill_sta, label=label_sta)
+    fig.plot(
+        data=df_sta[["lon", "lat"]], style="i0.05c", fill=fill_sta, label=label_sta
+    )
 
 with gmt.config(FONT="7p"):
     fig.legend(position="jRB+o0.1c+w1.3c", box=box_standard)
@@ -115,7 +117,6 @@ with gmt.config(FONT="7p"):
 # -----------------------------------------------------------------------------
 # Plot concentric circles for epicentral distance
 for i_epi in range(epi_step, proj_dist_max, epi_step):
-
     fig.plot(x=source_lon, y=source_lat, style=f"E-{i_epi * 2}+d", pen="0.3p,gray50,-")
     fig.text(
         x=source_lon,
@@ -135,5 +136,5 @@ fig.meca(spec=mt_virginia, longitude=source_lon, latitude=source_lat, **args_mec
 fig.show()
 fig_name = f"setup_virginia_arrays_dist{proj_dist_max}deg"
 # for ext in ["png"]:  # "png", "pdf", "eps"
-    # fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+# fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)

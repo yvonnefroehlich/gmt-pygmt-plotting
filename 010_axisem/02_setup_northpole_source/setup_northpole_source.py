@@ -23,11 +23,11 @@
 # #############################################################################
 
 
+import string
+
 import numpy as np
 import pandas as pd
 import pygmt as gmt
-import string
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -67,12 +67,16 @@ source_lat = 89.999  # degrees North
 coord_step = 10  # degrees
 
 cb_str = ""
-if status_cb==True: cb_str = "_cb"
+if status_cb == True:
+    cb_str = "_cb"
 
 match cmap_quantity:
-    case "dist": cmap_sta = cmap_lat
-    case "baz": cmap_sta = cmap_lon
-    case "sta": cmap_sta = "gold"
+    case "dist":
+        cmap_sta = cmap_lat
+    case "baz":
+        cmap_sta = cmap_lon
+    case "sta":
+        cmap_sta = "gold"
 
 match status_proj:
     case "rob":
@@ -144,9 +148,9 @@ if cmap_quantity == "baz":
     bazs_right = np.arange(360, 180, -coord_step)
     bazs = list(bazs_left) + list(bazs_right)
     sta_nums = np.arange(0, len(bazs), 1)
-    cb_annot_baz = ','.join(
-        f"{str(sta_nums[i_baz] + 1).zfill(2)}: {bazs_left[i_baz]}° | " + \
-        f"{str(sta_nums[i_baz] + 1 + 18).zfill(2)}: {bazs_right[i_baz]}°"
+    cb_annot_baz = ",".join(
+        f"{str(sta_nums[i_baz] + 1).zfill(2)}: {bazs_left[i_baz]}° | "
+        + f"{str(sta_nums[i_baz] + 1 + 18).zfill(2)}: {bazs_right[i_baz]}°"
         for i_baz, baz in enumerate(bazs[0:18])
     )
     gmt.makecpt(
@@ -155,10 +159,12 @@ if cmap_quantity == "baz":
         color_model=f"+c{cb_annot_baz}",
         cyclic=True,
     )
-    if status_cb==True:
+    if status_cb == True:
         with gmt.config(MAP_FRAME_PEN="0.2p", FONT="8p"):
             # +r reverse the sense of the positive direction
-            fig.colorbar(cmap=True, position="JRM+jMC+w9c/0.2c+o0.5c/-0.2c+r", equalsize=0.2)
+            fig.colorbar(
+                cmap=True, position="JRM+jMC+w9c/0.2c+o0.5c/-0.2c+r", equalsize=0.2
+            )
 
 # for epicentral distance (-> latitude)
 elif cmap_quantity == "dist":
@@ -166,7 +172,7 @@ elif cmap_quantity == "dist":
     sta_factor = -1  # Needed because lat and dist inverse
     dists = np.arange(coord_step, 180, coord_step)
     sta_chars = list(string.ascii_uppercase)
-    cb_annot_dist = ','.join(
+    cb_annot_dist = ",".join(
         f"{sta_chars[i_dist]}: {dist}°" for i_dist, dist in enumerate(dists)
     )
     gmt.makecpt(
@@ -175,9 +181,11 @@ elif cmap_quantity == "dist":
         color_model=f"+c{cb_annot_dist}",
         reverse=True,
     )
-    if status_cb==True:
+    if status_cb == True:
         with gmt.config(MAP_FRAME_PEN="0.2p", FONT="8p"):
-            fig.colorbar(cmap=True, position="JRM+jMC+w9.3c/0.2c+o0.5c/0c+r", equalsize=0.2)
+            fig.colorbar(
+                cmap=True, position="JRM+jMC+w9.3c/0.2c+o0.5c/0c+r", equalsize=0.2
+            )
 
 # -----------------------------------------------------------------------------
 # Plot recording stations with color-coding
@@ -206,9 +214,10 @@ elif status_proj in ["epi"]:
             fill = "+z"
             zvalue = sta_color[i_sta] * sta_factor
             cmap = True
-        perspective_receiver = \
-            f"{data_sta_plot.lon[i_sta]}" + \
-            f"+w{data_sta_plot.lon[i_sta]}/{data_sta_plot.lat[i_sta]}"
+        perspective_receiver = (
+            f"{data_sta_plot.lon[i_sta]}"
+            + f"+w{data_sta_plot.lon[i_sta]}/{data_sta_plot.lat[i_sta]}"
+        )
         fig.plot(
             x=data_sta_plot.lon[i_sta],
             y=data_sta_plot.lat[i_sta],
@@ -224,7 +233,8 @@ elif status_proj in ["epi"]:
 # -----------------------------------------------------------------------------
 # Add label for recording stations
 angle_text = None
-if status_proj == "epi": angle_text = data_sta_plot.lon
+if status_proj == "epi":
+    angle_text = data_sta_plot.lon
 
 fig.text(
     x=data_sta_plot.lon,
@@ -242,14 +252,21 @@ fig.text(
 # -----------------------------------------------------------------------------
 # Plot source at North pole
 fig.plot(
-    x=source_lon, y=source_lat, style="a0.4c", fill=color_source, pen="0.2p", no_clip=True
+    x=source_lon,
+    y=source_lat,
+    style="a0.4c",
+    fill=color_source,
+    pen="0.2p",
+    no_clip=True,
 )
 
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
-fig_name = f"setup_northpole_source_global_step{coord_step}deg_" + \
-           f"{cmap_quantity}{cmap_sta}_{status_proj}{cb_str}"
+fig_name = (
+    f"setup_northpole_source_global_step{coord_step}deg_"
+    + f"{cmap_quantity}{cmap_sta}_{status_proj}{cb_str}"
+)
 for ext in ["png"]:  # "pdf", "png", "eps"
     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
