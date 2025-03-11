@@ -39,7 +39,7 @@ fig_width = 10  # centimeters
 # -----------------------------------------------------------------------------
 path_in = "01_in_data"
 path_out = "02_out_figs"
-dip_png = 720  # resolution of saved PNG file
+dpi_png = 720  # resolution of saved PNG file
 
 # Coordinates source in Virginia
 source_lon = -77.93
@@ -136,5 +136,5 @@ fig.meca(spec=mt_virginia, longitude=source_lon, latitude=source_lat, **args_mec
 fig.show()
 fig_name = f"setup_virginia_arrays_dist{proj_dist_max}deg"
 # for ext in ["png"]:  # "png", "pdf", "eps"
-# fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
