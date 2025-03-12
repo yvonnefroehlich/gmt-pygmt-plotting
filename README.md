@@ -9,36 +9,46 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 
 If you make use of this material, please acknowledge the relating publications in which framework these scripts and notebooks were written:
 
-- [**_Fröhlich Y., Ritter J. R. R. (2024)_**](http://dx.doi.org/10.5281/zenodo.14510993).
-  Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
-  *Annual Meeting of the American Geophysical Union*,
-  Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral,
-  DI21A-02. [Abstract ID 1578275](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275). http://dx.doi.org/10.5281/zenodo.14510993.
-- [**_Fröhlich Y., Tian D., Leong W. J., Jones M., Grund M. (2024)_**](https://doi.org/10.6084/m9.figshare.28049495).
-  PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
-  *Annual Meeting of the American Geophysical Union*,
-  Union Session The impact of GMT in the Earth, Ocean and Space sciences: What's next? I Oral,
-  U12B-05. [Abstract ID 1578856](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578856). https://doi.org/10.6084/m9.figshare.28049495.
-- [**_Fröhlich Y., Grund M., Ritter J. R. R. (2024)_**](https://doi.org/10.1093/gji/ggae245).
+**Peer-reviewed journal article**
+- [**_Fröhlich Y., Grund M. & Ritter J. R. R. (2024)_**](https://doi.org/10.1093/gji/ggae245).
   Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere system underneath Central Europe from long-term splitting measurements.
-  *Geophysical Journal International*. 239(1), 112-135.
+  *Geophysical Journal International*, 239(1), 112-135.
   https://doi.org/10.1093/gji/ggae245.
-- [**_Fröhlich Y., Dillah M. I. F., Dorn F., Ritter J. R. R. (2024)_**](https://doi.org/10.5281/zenodo.12658821).
-  Investigation of seismic anisotropy in the D'' layer and at the CMB regarding intense magnetic flux regions.
-  *18th Symposium of Study of the Earth's Deep Interior*, [proceedings, session 2-04](https://sedi-conference-2024-2675c.ingress-baronn.ewp.live/abstracts/).
-  https://doi.org/10.5281/zenodo.12658821.
-- [**_Fröhlich Y., Thiyagarajan H., Tölle L. S., Ritter J. R. R., Thomas C. (2024)_**](https://doi.org/10.5281/zenodo.10927349).
-  Understanding the influence of seismic mantle structures at the core-mantle boundary on intense magnetic flux regions.
-  *84th Annual Meeting of the German Geophysical Society*, [proceedings, session SO-P-07, 181-182](https://dgg2024.dgg-tagung.de/english-home-1/).
-  https://doi.org/10.5281/zenodo.10927349.
 - [**_Ritter J. R. R., Fröhlich Y., Sanz Alonso Y. & Grund M. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w).
   Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures.
   *Journal of Seismology*, 26, 1137-1156.
-  https://doi.org/10.1007/s10950-022-10112-w. https://doi.org/10.1007/s10950-023-10136-w.
+  https://doi.org/10.1007/s10950-022-10112-w, correction https://doi.org/10.1007/s10950-023-10136-w.
+
+**Presentations**
+- [**_Fröhlich Y. & Ritter J. R. R. (2024)_**](http://dx.doi.org/10.5281/zenodo.14510993).
+  Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
+  *Annual Meeting of the American Geophysical Union*, Washington D.C..
+  Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral, DI21A-02.
+  [Abstract ID 1578275](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275).
+  http://dx.doi.org/10.5281/zenodo.14510993.
+- [**_Fröhlich Y., Tian D., Leong W. J., Jones M. & Grund M. (2024)_**](https://doi.org/10.6084/m9.figshare.28049495).
+  PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
+  *Annual Meeting of the American Geophysical Union*, Washington D.C..
+  Union Session The impact of GMT in the Earth, Ocean and Space sciences: What's next? I Oral, U12B-05 (invited).
+  [Abstract ID 1578856](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578856).
+  https://doi.org/10.6084/m9.figshare.28049495.
+
+**Posters**
+- [**_Fröhlich Y., Dorn F., Dillah M. I. F. & Ritter J. R. R. (2024)_**](https://doi.org/10.5281/zenodo.14801004).
+  Investigation of seismic anisotropy in the D'' layer using XKS pairs.
+  *2th DeepDyn annual meeting*, Rügen.
+  https://doi.org/10.5281/zenodo.14801004.
+- [**_Fröhlich Y., Dillah M. I. F., Dorn F. & Ritter J. R. R. (2024)_**](https://doi.org/10.5281/zenodo.12658821).
+  Investigation of seismic anisotropy in the D'' layer and at the CMB regarding intense magnetic flux regions.
+  *18th Symposium of Study of the Earth's Deep Interior*, Great Barrington.
+  https://doi.org/10.5281/zenodo.12658821.
+- [**_Fröhlich Y., Thiyagarajan H., Tölle L. S., Ritter J. R. R. & Thomas C. (2024)_**](https://doi.org/10.5281/zenodo.10927349).
+  Understanding the influence of seismic mantle structures at the core-mantle boundary on intense magnetic flux regions.
+  *84th Annual Meeting of the German Geophysical Society*, Jena.
+  https://doi.org/10.5281/zenodo.10927349.
 
 
 ## Content
-
 
 - **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)**: Custom symbols, colorwheel, colobar font scaling, Earth section
 - **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)**: Maps of [**_Ritter et al. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w)
