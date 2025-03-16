@@ -1,6 +1,8 @@
 # Python Scripts and Jupyter Notebooks using PyGMT
 
-Collection of Python scripts or Jupyter notebooks (supported by JupyterLab) to reproduce some of the geographic maps shown in the publications I am involved. To prepare these maps I am using [_PyGMT_](https://www.pygmt.org/latest/) the Python wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org/).
+Collection of Python scripts or Jupyter notebooks (supported by JupyterLab) to reproduce some of the geographic maps shown in the
+publications I am involved. To prepare these maps I am using [_PyGMT_](https://www.pygmt.org/latest/) the Python wrapper for the
+[_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org/).
 
 _Please note_: Scripts or notebooks are available up on acceptance of the related publication.
 
@@ -50,24 +52,35 @@ If you make use of this material, please acknowledge the relating publications i
 
 ## Content
 
-- **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)**: Custom symbols, colorwheel, colobar font scaling, Earth section
-- **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)**: Maps of [**_Ritter et al. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w)
-- **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024)**: Maps of [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245)
-- **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup)**: Travel paths of seismological phases through the Earth interior; related to [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245)
-- **[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions)**: Maps of selected earthquakes and eruptions between 2021 and present
-- **[005_global_seismicity](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/005_global_seismicity)**: Analysis regarding global seismicity (maps, histograms, etc.)
-- **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases)**: `shear wave splitting`, `deep anisotropy`, `votemap analysis`, `cluster analysis`, `GyPSuM`
-- **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)**: `gufm1`
-- **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn)**: Maps related to the DeepDyn project
-- **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem)**: Maps related to AxiSEM2D/3D
-- **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024)**: Python scripts related to the PyGMT talk at AGU24 (U12B-05)
+- **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)**:
+  Custom symbols, colorwheel, colorbar font scaling, Earth section
+- **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)**:
+  Maps of [**_Ritter et al. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w)
+- **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024)**:
+  Maps of [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245)
+- **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup)**:
+  Travel paths of seismological phases through the Earth interior; related to [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245)
+- **[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions)**:
+  Maps of selected earthquakes and eruptions between 2021 and present
+- **[005_global_seismicity](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/005_global_seismicity)**:
+  Analysis regarding global seismicity (maps, histograms, etc.)
+- **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases)**:
+  `shear wave splitting`, `deep anisotropy`, `votemap analysis`, `cluster analysis`, `GyPSuM`
+- **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)**:
+  `gufm1`
+- **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn)**:
+  Maps related to the DeepDyn project
+- **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem)**:
+  Maps related to AxiSEM2D/3D
+- **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024)**:
+  Python scripts related to the PyGMT talk at AGU24 (U12B-05)
 
 ![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.png)
 
 
 ## Requirements
 
-_Please note_: The required versions are given above in the single folders as well as notebooks and scripts
+_Please note_: The required versions are given above in the single folders as well as notebooks and scripts.
 
 - [PyGMT](https://www.pygmt.org/latest/)
 - [GMT](https://www.generic-mapping-tools.org/)
@@ -81,7 +94,9 @@ _Please note_: The required versions are given above in the single folders as we
 
 ## Contributing
 
-For bug reports, suggestions, or recommendations feel free to [open an issue](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/issues) or [submit a pull request](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/pulls) directly here on [GitHub](https://github.com/yvonnefroehlich/gmt-pygmt-plotting).
+For bug reports, suggestions, or recommendations feel free to [open an issue](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/issues)
+or [submit a pull request](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/pulls) directly here on
+[GitHub](https://github.com/yvonnefroehlich/gmt-pygmt-plotting).
 
 
 ## References
@@ -121,4 +136,5 @@ The presented research and YF received support from various sources:
 
 - [Graduate Funding from the German States](https://www.khys.kit.edu/english/graduate_funding.php) (scholarship)
 - [NSF grant EAR-1948602](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1948602) (travel support for AGU24)
-- [DFG grant RI1133/14-1](https://gepris.dfg.de/gepris/projekt/521545943?language=en) within the [DFG Priority Program 2404 DeepDyn](https://www.geo.lmu.de/deepdyn/en/) (research assisstent)
+- [DFG grant RI1133/14-1](https://gepris.dfg.de/gepris/projekt/521545943?language=en) within the
+  [DFG Priority Program 2404 DeepDyn](https://www.geo.lmu.de/deepdyn/en/) (research assisstent)
