@@ -396,6 +396,9 @@ def taup_path(
     # -------------------------------------------------------------------------
         # Use only the existing phases in the file name
         fig_name_phase.append(phase_label_split[0])
+        # Remove doublictes
+        fig_name_phase = list(dict.fromkeys(fig_name_phase))
+    # Use submitted phase list in case the list of the existing phases is emtpy
     if fig_name_phase == []:
         fig_name_phase = phases
 
