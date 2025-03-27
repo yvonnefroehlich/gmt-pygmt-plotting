@@ -531,13 +531,12 @@ fig_path, fig_curve = taup_path(
     source_depth=500,
     receiver_dist=142,
     max_dist=360,
-    phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
+    phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "SKIKS", "SKJKS"],
     time_curve=True,
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
 
-# -----------------------------------------------------------------------------
 fig_path = taup_path(
     fig_path_width="8c",
     font_size="6.5p",
@@ -548,11 +547,12 @@ fig_path = taup_path(
     max_dist=180,
     min_depth=660,
     max_depth=4000,
-    phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
+    phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "SKIKS", "SKJKS"],
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
 
+# -----------------------------------------------------------------------------
 fig_path = taup_path(
     fig_path_width="8c",
     font_size="6.5p",
