@@ -361,9 +361,6 @@ def taup_path(
             label=f"{phase_label_split[0]} | {phase_time_split[0]} s+S0.5c/1c{leg_col_str}",
         )
 
-        # Use only the existing phases in the file name
-        fig_name_phase.append(phase_label_split[0])
-
     # -------------------------------------------------------------------------
         # Plot travel times
         if time_curve == True:
@@ -395,6 +392,12 @@ def taup_path(
                     position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c",
                     box=box_standard,
                 )
+
+    # -------------------------------------------------------------------------
+        # Use only the existing phases in the file name
+        fig_name_phase.append(phase_label_split[0])
+    if fig_name_phase == []:
+        fig_name_phase = phases
 
     # -------------------------------------------------------------------------
     # Add legend for phase names and travel times in travel path plot
