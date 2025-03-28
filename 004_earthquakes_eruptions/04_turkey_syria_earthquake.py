@@ -23,8 +23,8 @@ import pygmt as gmt
 # General stuff
 # -----------------------------------------------------------------------------
 # >>> Adjust your needs <<<
-fig_name = "turkey_syria_earthquake"  # Name of output figure
-png_dpi = 360  # Resolution of output PNG
+fig_name = "04_turkey_syria_earthquake"  # Name of output figure
+dpi_png = 360  # Resolution of output PNG
 grid_res = "01m"  # Resolution of elevation grid
 grid_reg = "g"  # Registration of elevation grid
 
@@ -182,6 +182,6 @@ with fig.inset(position=pos_study_inset):
 fig.show()
 
 for ext in ["png"]: # , "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 
 print(fig_name)

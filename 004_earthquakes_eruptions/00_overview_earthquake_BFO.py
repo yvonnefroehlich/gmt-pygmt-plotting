@@ -22,6 +22,10 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
+# >>> Set for your needs <<<
+fig_name = "00_overview_events_BFO"  # Name of output figure
+dpi_png = 360  # Resolution of output PNG
+
 # Paths
 path_in = "01_in_data"
 path_out = "02_out_figs"
@@ -128,8 +132,7 @@ fig.text(
 # Show and save
 fig.show()  # method="external")
 
-fig_name = "overview_events_BFO"
 for ext in ["png"]: # , "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 
 print(fig_name)

@@ -23,8 +23,8 @@ import pygmt as gmt
 # General stuff
 # -----------------------------------------------------------------------------
 # >>> Set for your needs <<<
-fig_name = "la_palma_eruption"  # Name of output figure
-png_dpi = 360  # Resolution of output PNG
+fig_name = "01_la_palma_eruption"  # Name of output figure
+dpi_png = 360  # Resolution of output PNG
 grid_res = "01m"  # Resolution of elevation grid
 grid_reg = "g"  # Registration of elevation grid
 
@@ -184,6 +184,6 @@ fig.show()
 fig.show()
 
 for ext in ["png"]: # , "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 
 print(fig_name)
