@@ -1,16 +1,21 @@
 # #############################################################################
 # Esmeraldas earthquake on 2022/03/27 at 04:28:12 (UTC)
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
+# History
+# - Created 2024/04/07
+# - Updated 2024/04/23: Improve coding style
+# - Updated 2025/03/28: Reorganize folder, rewrite code
 # -----------------------------------------------------------------------------
-# - Created: 2024/04/07
-#   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
-#   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
-# - Updated: 2024/04/23
-#   Improve coding style
+# Versions
+# - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
+
 
 import pygmt as gmt
 
@@ -19,9 +24,18 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # >>> Set for your needs <<<
 fig_name = "esmeraldas_earthquake"  # Name of output figure
-png_dpi = 360  # Resolution of output png
+png_dpi = 360  # Resolution of output PNG
 grid_res = "01m"  # Resolution of elevation grid
 grid_reg = "g"  # Registration of elevation grid
+
+# -----------------------------------------------------------------------------
+# Paths
+path_in = "01_in_data"
+path_out = "02_out_figs"
+
+# -----------------------------------------------------------------------------
+# File name for plate boundaries after Bird 2003
+file_pb = "plate_boundaries_Bird_2003.txt"
 
 # -----------------------------------------------------------------------------
 # Coordinates for
@@ -33,38 +47,37 @@ lat_BFO = 48.331
 lon_BFO = 8.330
 
 # -----------------------------------------------------------------------------
-# Define region and projection
+# Define region and projections
 lon_min = -85.00  # degrees East
 lon_max = -75.00
 lat_min = -5.00  # degrees North
 lat_max = 5.00
+region = [lon_min, lon_max, lat_min, lat_max]
 
 project_main = "M15c"  # Mercator
-project_study = f"G{(lon_min + lon_max) / 2}/{(lat_min + lat_max) / 2}/?"
+project_ortho = f"G{(lon_min + lon_max) / 2}/{(lat_min + lat_max) / 2}/?"
 project_epi = f"E{lon_BFO}/{lat_BFO}/160/?"
-
-# -----------------------------------------------------------------------------
-# File name for plate boundaries after Bird 2003
-file_plate_in = "plate_boundaries_Bird_2003.txt"
 
 # -----------------------------------------------------------------------------
 # Colors
 color_water = "steelblue"
 color_land_ortho = "gray70"
-color_shorelines_ortho = "gray30"
+color_sl_ortho = "gray30"
 color_land = "gray90"
-color_shorelines = "darkgray"
+color_sl = "darkgray"
 color_sta = "gold"
-color_plate = "216.750/82.875/24.990"  # -> darkorange
+color_pb = "216.750/82.875/24.990"  # -> darkorange
 color_highlight = "255/90/0"  # -> orange
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
+basemap_scale = f"JLB+jLB+w100+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}+f+lkm+at+o0.45c/0.55c"
+
 rad_tot = 6.0
 fac_rad_epi90 = 3.0 / 5.5
 fac_rad_epi140 = 4.7 / 5.5
 
-pos_study_inset = "jTL+w5c+o-0.5c/-0.5c"
+pos_ortho_inset = "jTL+w5c+o-0.5c/-0.5c"
 pos_epi_inset = f"JMR+jMR+w{rad_tot}c"
 
 pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o1c/0.65c+e"
@@ -81,37 +94,15 @@ clearance_standard = "0.1c/0.1c+tO"
 
 # Create new Figure instance
 fig = gmt.Figure()
+fig.basemap(region=region, projection="M15c", frame=["wSnE", "af"])
 
 # -----------------------------------------------------------------------------
-# Change default values of GMT globally
-gmt.config(
-    PS_MEDIA="A4",
-    PS_PAGE_ORIENTATION="portrait",
-    MAP_FRAME_TYPE="fancy+",  # map frame style
-    MAP_FRAME_WIDTH="3p",  # thickness of map frame
-    FONT_LABEL="7p",
-    FONT_ANNOT_PRIMARY="7p",
-    MAP_FRAME_PEN="0.8p",  # thickness of border around scale
-    MAP_ANNOT_OFFSET="0.05i",  # distance of scale ticks labels from scale
-    MAP_LABEL_OFFSET="3.5p",  # distance of label from scale
-    MAP_TICK_LENGTH_PRIMARY="5p",  # length of scale ticks
-    COLOR_NAN="white",  # color for NaN; default 127.5
-)
-
-# -----------------------------------------------------------------------------
-# Elevation grid
-# Use grid provided by GMT and cut region
-grid_topo = gmt.grdcut(
-    grid=f"@earth_relief_{grid_res}_{grid_reg}",
-    region=[lon_min, lon_max, lat_min, lat_max],
-    projection=project_main,
-)
-
-fig.grdimage(grid=grid_topo, cmap="oleron", frame=["wSnE", "af"])
+# Download and plot elevation grid
+fig.grdimage(grid=f"@earth_relief_{grid_res}_{grid_reg}", region=region, cmap="oleron")
 
 # -----------------------------------------------------------------------------
 # Plot plate boundaries
-fig.plot(data=file_plate_in, pen=f"1p,{color_plate}")
+fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pb}")
 
 # -----------------------------------------------------------------------------
 # Plot earthquake
@@ -126,7 +117,7 @@ fig.plot(
 )
 # Beachball
 fig.meca(
-    spec="meca_esmeraldas.txt",
+    spec=f"{path_in}/meca_esmeraldas.txt",
     convention="aki",
     scale="1c",
     outline="0.5p,black",
@@ -146,7 +137,7 @@ fig.text(
 # Info text
 # Adjust position in txt file
 fig.text(
-    textfiles="info_esmeraldas.txt",
+    textfiles=f"{path_in}/info_esmeraldas.txt",
     M=True,  # paragraph mode # read from file
     font="8p,black",
     fill="white@30",
@@ -156,28 +147,15 @@ fig.text(
 
 # -----------------------------------------------------------------------------
 # Add colorbar for elevation
-gmt.config(MAP_TICK_LENGTH_PRIMARY="2p")
-
-fig.colorbar(
-    position=pos_cb_grid,
-    frame=frame_cb_grid,
-    box=box_standard,
-)
+fig.colorbar(position=pos_cb_grid, frame=frame_cb_grid, box=box_standard)
 
 # -----------------------------------------------------------------------------
 # Add length scale
-gmt.config(MAP_SCALE_HEIGHT="7p")
-
-basemap_scale = (
-    f"JLB+jLB+w200+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}"
-    + "+f+lkm+at+o0.45c/0.55c"
-)
-
 fig.basemap(map_scale=basemap_scale, box=box_standard)
 
 # -----------------------------------------------------------------------------
 # Inset map of study region
-with fig.inset(position=pos_study_inset):
+with fig.inset(position=pos_ortho_inset):
     # >>> use ? <<<
 
     # Orthographic projection
@@ -188,10 +166,10 @@ with fig.inset(position=pos_study_inset):
 
     fig.coast(
         region="g",
-        projection=project_study,
+        projection=project_ortho,
         resolution="c",
         area_thresh=50000,
-        shorelines=f"1/0.01p,{color_shorelines_ortho}",
+        shorelines=f"1/0.01p,{color_sl_ortho}",
         land=color_land_ortho,
         water=color_water,
         frame="g",
@@ -220,14 +198,14 @@ with fig.inset(position=pos_epi_inset):
         projection=project_epi,
         resolution="c",
         area_thresh=50000,
-        shorelines=f"1/0.01p,{color_shorelines}",
+        shorelines=f"1/0.01p,{color_sl}",
         land=color_land,
         water="white",
         frame="f",
     )
 
     # Plate boundaries
-    fig.plot(data=file_plate_in, pen=f"0.5p,{color_plate}")
+    fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.5p,{color_pb}")
 
     # -----------------------------------------------------------------------------
     # Epicentral distance range for XKS phases
@@ -264,17 +242,15 @@ with fig.inset(position=pos_epi_inset):
     fig.plot(
         x=lon_eq,
         y=lat_eq,
-        style="kearthquake.def/1.3c",
+        style=f"k{path_in}/earthquake.def/1.3c",
         fill=color_highlight,
         pen=color_highlight,
     )
 
     # -----------------------------------------------------------------------------
     # Recording station BFO
-
     # Marker
     fig.plot(x=lon_BFO, y=lat_BFO, style="i0.50c", fill=color_sta, pen="0.5p,black")
-
     # Label
     fig.text(
         x=lon_BFO,
@@ -291,7 +267,7 @@ with fig.inset(position=pos_epi_inset):
 # Show and save figure
 fig.show()
 
-# for ext in ["png"]: # , "pdf", "eps"]:
-#     fig.savefig(fname=f"{fig_name}.{ext}")
+for ext in ["png"]: # , "pdf", "eps"]:
+    fig.savefig(fname=f"{fig_name}.{ext}")
 
 print(png_dpi)
