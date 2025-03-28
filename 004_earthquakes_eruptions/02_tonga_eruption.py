@@ -22,7 +22,7 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
-# >>> Set for your needs <<<
+# >>> Adjust for your needs <<<
 fig_name = "02_tonga_eruption"  # Name of output figure
 dpi_png = 360  # Resolution of output PNG
 grid_res = "01m"  # Resolution of elevation grid
@@ -49,25 +49,26 @@ lon_max = -173
 lat_min = -21.7  # degrees North
 lat_max = -18.4
 region = [lon_min, lon_max, lat_min, lat_max]
+center_str = f"{(lon_min + lon_max) / 2}/{(lat_min + lat_max) / 2}"
 
 projection_main = "M12c"
-projection_ortho = f"G{(lon_min + lon_max) / 2}/{(lat_min + lat_max) / 2}/?"
+projection_ortho = f"G{center_str}/?"
 
 # -----------------------------------------------------------------------------
 # Colors
 color_water = "steelblue"
 color_land = "gray70"
-color_sl = "gray30"
-color_pb = "216.750/82.875/24.990"  # -> darkorange
+color_sl = "gray30"  # shorelines
+color_pb = "216.750/82.875/24.990"  # plate boundaries # -> darkorange
 color_highlight = "255/90/0"  # -> orange
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
-basemap_scale = f"JLB+jLB+w50+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}+f+lkm+at+o0.45c/0.55c"
+basemap_scale = f"JLB+jLB+w50+c{center_str}+f+lkm+at+o0.7c"
 
-pos_study_inset = "jTL+w5c+o-1.5c/-1.2c"
+pos_study_inset = "jTL+w4.5c+o-1c"
 
-pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o1c/0.65c+e"
+pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c+e"
 frame_cb_grid = "+lelevation / m"
 
 box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
