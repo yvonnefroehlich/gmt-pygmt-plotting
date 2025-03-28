@@ -35,8 +35,8 @@ data_pb = "plate_boundaries_Bird_2003.txt"
 
 # -----------------------------------------------------------------------------
 # Epicenters
-lon_epi = [121.562, 136.91, -79.611, 37.042, -8.391]  # , 46.443]
-lat_epi = [23.819, 37.23, -0.904, 37.166, 31.064]  # , 35.277]
+lon_epi = [121.562, 136.91, -79.611, 37.042, -8.391, 95.92]
+lat_epi = [23.819, 37.23, -0.904, 37.166, 31.064, 22.01]
 
 # Volcanos
 lon_vol = [-17.84, -175.393]
@@ -144,10 +144,10 @@ fig.text(
 # Show and save
 fig.show()  # method="external")
 
-# for ext in ["png"]:  # , "pdf", "eps"]:
-#     transparent = False
-#     if ext == "png":
-#         transparent = True
-#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
+for ext in ["png"]:  # , "pdf", "eps"]:
+    transparent = False
+    if ext == "png":
+        transparent = True
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
 
 print(fig_name)
