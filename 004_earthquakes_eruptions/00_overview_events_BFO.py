@@ -33,6 +33,7 @@ path_out = "02_out_figs"
 # File name for plate boundaries after Bird 2003
 data_pb = "plate_boundaries_Bird_2003.txt"
 
+# -----------------------------------------------------------------------------
 # Epicenters
 lon_epi = [121.562, 136.91, -79.611, 37.042, -8.391]  # , 46.443]
 lat_epi = [23.819, 37.23, -0.904, 37.166, 31.064]  # , 35.277]
@@ -45,6 +46,7 @@ lat_vol = [28.57, -20.545]
 lon_sta = 8.33
 lat_sta = 48.33
 
+# -----------------------------------------------------------------------------
 # Colors
 color_sta = "255/215/0"
 color_eq = "255/90/0"  # -> orange
@@ -59,6 +61,7 @@ pen_epi = "0.1p,black"
 box_standard = "+gwhite@30+p0.5p,gray30+r1.5p"
 clearance_standard = "0.1c/0.1c+tO"
 
+# -----------------------------------------------------------------------------
 # Region and projections
 map_size = 10  # in centimeters
 
