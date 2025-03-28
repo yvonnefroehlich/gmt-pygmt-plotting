@@ -32,7 +32,7 @@ from obspy.clients.fdsn import Client as Client_fdsn
 from obspy.geodetics.base import gps2dist_azimuth
 from obspy.taup import TauPyModel
 from taup_color import taup_color
-from taup_path import taup_path_curve
+from taup_path_curve import taup_path
 
 # %%
 # -----------------------------------------------------------------------------
@@ -655,7 +655,7 @@ print("status: Seismograms at BFO")
 fig.shift_origin(xshift="-10c", yshift="4c")
 
 # Generate plot for travel paths with self-defined function
-taup_path_curve(
+taup_path(
     fig_instance=fig,
     fig_width="7c",
     max_dist=360,
