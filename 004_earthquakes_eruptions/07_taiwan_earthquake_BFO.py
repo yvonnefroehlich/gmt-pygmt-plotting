@@ -39,7 +39,7 @@ from taup_path_curve import taup_path
 # General stuff
 # -----------------------------------------------------------------------------
 # >>> Set for your needs <<<
-fig_name = "taiwan_earthquake_BFO"
+fig_name = "07_taiwan_earthquake_BFO"
 dpi_png = 360
 
 # Paths
