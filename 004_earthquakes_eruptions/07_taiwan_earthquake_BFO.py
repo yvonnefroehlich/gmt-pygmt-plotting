@@ -674,6 +674,6 @@ print("status: Travel paths")
 fig.show()  # method="external")
 
 for ext in ["png"]:  # , "pdf", "eps"]:
-    fig.savefig(fname=f"{fig_name}.{ext}", dpi=dpi_png)
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 
 print(fig_name)
