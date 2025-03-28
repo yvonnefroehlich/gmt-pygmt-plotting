@@ -24,10 +24,8 @@ from obspy import UTCDateTime as utc
 from obspy.clients.fdsn import Client as Client_fdsn
 from obspy.geodetics.base import gps2dist_azimuth
 from obspy.taup import TauPyModel
-
-from taup_path import taup_path
 from taup_color import taup_color
-
+from taup_path import taup_path
 
 # %%
 # -----------------------------------------------------------------------------
@@ -447,7 +445,7 @@ for epi_limit in [epi_min, epi_max]:
     fig.plot(
         x=center_lon,
         y=center_lat,
-        style=f"E-{epi_limit*2}+d",
+        style=f"E-{epi_limit * 2}+d",
         pen=f"1p,{col_sta},-",
     )
     # Annotations
@@ -611,8 +609,8 @@ for time_window in ["eq", "phase"]:
         if time_window == "eq":
             for i_label, label in enumerate(
                 [
-                    f"BAZ = {round(bazi_temp,3)}°",
-                    f"@~D@~ = {round(dist_temp_m2deg,3)}°",
+                    f"BAZ = {round(bazi_temp, 3)}°",
+                    f"@~D@~ = {round(dist_temp_m2deg, 3)}°",
                     f"band pass [{freq_low},{freq_upp}] Hz",
                 ]
             ):
