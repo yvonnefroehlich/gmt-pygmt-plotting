@@ -35,7 +35,7 @@ from taup_path_curve import taup_path
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
-# >>> Set for your needs <<<
+# >>> Adjust for your needs <<<
 fig_name = "06_japan_earthquake_BFO"
 dpi_png = 360
 
@@ -53,7 +53,7 @@ color_sl_ortho = "gray30"
 color_land = "gray90"
 color_sl = "darkgray"
 
-# Adjust and extend for your needs in taup_path.py
+# Adjust and extend for your needs in taup_color.py
 dict_color_phase = taup_color()
 
 # Standards

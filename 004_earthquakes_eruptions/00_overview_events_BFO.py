@@ -22,7 +22,7 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
-# >>> Set for your needs <<<
+# >>> Adjust for your needs <<<
 fig_name = "00_overview_events_BFO"  # Name of output figure
 dpi_png = 360  # Resolution of output PNG
 

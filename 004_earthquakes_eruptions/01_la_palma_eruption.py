@@ -22,7 +22,7 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
-# >>> Set for your needs <<<
+# >>> Adjust for your needs <<<
 fig_name = "01_la_palma_eruption"  # Name of output figure
 dpi_png = 360  # Resolution of output PNG
 grid_res = "01m"  # Resolution of elevation grid
