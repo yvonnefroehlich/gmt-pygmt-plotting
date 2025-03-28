@@ -1,0 +1,7 @@
+# Beachball of Myanmar earthquake
+# source: https://earthquake.usgs.gov/earthquakes/eventpage/us7000pn9s/moment-tensor
+# last access: 2025/03/28
+#
+# For usage in GMT / PyGMT
+# lon_eq lat_eq hdepth strike dip rake magnitude lon_plot lat_plot
+95.922 22.013 10 1 82 174 7.7 102 25
