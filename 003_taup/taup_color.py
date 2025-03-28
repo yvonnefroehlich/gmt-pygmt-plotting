@@ -33,8 +33,8 @@ def taup_color():
         "SKKS": "238/118/0",  # GMT darkorange2
         "PKKP": "139/125/107",  # GMT bisque4
         "PKPPKP": "188/143/143",  # GMT rosybrown
-        "PKIKP": "127/255/0",  # GMT chartreuse1
-        "PKJKP": "50/205/50",  # GMT limegreen
+        "PKIKS": "127/255/0",  # GMT chartreuse1
+        "PKJKS": "50/205/50",  # GMT limegreen
         "SKIKS": "34/139/34",  # GMT forestgreen
         "SKJKS": "0/100/0",  # GMT darkgreen
         # Deth phases for SKS and SKKS phases

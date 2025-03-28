@@ -361,9 +361,6 @@ def taup_path(
             label=f"{phase_label_split[0]} | {phase_time_split[0]} s+S0.5c/1c{leg_col_str}",
         )
 
-        # Use only the existing phases in the file name
-        fig_name_phase.append(phase_label_split[0])
-
     # -------------------------------------------------------------------------
         # Plot travel times
         if time_curve == True:
@@ -395,6 +392,15 @@ def taup_path(
                     position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c",
                     box=box_standard,
                 )
+
+    # -------------------------------------------------------------------------
+        # Use only the existing phases in the file name
+        fig_name_phase.append(phase_label_split[0])
+        # Remove doublictes
+        fig_name_phase = list(dict.fromkeys(fig_name_phase))
+    # Use submitted phase list in case the list of the existing phases is emtpy
+    if fig_name_phase == []:
+        fig_name_phase = phases
 
     # -------------------------------------------------------------------------
     # Add legend for phase names and travel times in travel path plot
@@ -525,13 +531,12 @@ fig_path, fig_curve = taup_path(
     source_depth=500,
     receiver_dist=142,
     max_dist=360,
-    phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
+    phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "SKIKS", "SKJKS"],
     time_curve=True,
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
 
-# -----------------------------------------------------------------------------
 fig_path = taup_path(
     fig_path_width="8c",
     font_size="6.5p",
@@ -542,11 +547,12 @@ fig_path = taup_path(
     max_dist=180,
     min_depth=660,
     max_depth=4000,
-    phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
+    phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "SKIKS", "SKJKS"],
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
 
+# -----------------------------------------------------------------------------
 fig_path = taup_path(
     fig_path_width="8c",
     font_size="6.5p",
