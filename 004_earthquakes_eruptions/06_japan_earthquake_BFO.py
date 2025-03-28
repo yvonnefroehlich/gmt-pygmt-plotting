@@ -1,20 +1,24 @@
 # #############################################################################
-# Taiwan earthquake on 2024/04/02 23:58:11 (UTC)
-# See also https://www.nature.com/articles/d41586-024-00988-8
-#          (https://doi.org/10.1038/d41586-024-00988-8)
-#          last access 2024/04/10
+# Japan earthquake on 2024/01/01 07:10:09 (UTC)
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
+# History
 # - Created: 2024/04/07
-#   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
-#   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # - Updated: 2024/04/23 - Improve coding style
 # - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
+# - Updated: 2024/04/23 - Improve coding style
+# - Updated: 2025/03/28 - Reorganize folder, rewrite code
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
+
 
 import contextily as ctx
 import numpy as np
@@ -24,27 +28,33 @@ from obspy import UTCDateTime as utc
 from obspy.clients.fdsn import Client as Client_fdsn
 from obspy.geodetics.base import gps2dist_azimuth
 from obspy.taup import TauPyModel
-
-from taup_path import taup_path
 from taup_color import taup_color
-
+from taup_path_curve import taup_path
 
 # %%
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
+# >>> Set for your needs <<<
+fig_name = "06_japan_earthquake_BFO"
+dpi_png = 360
+
+# Paths
+path_in = "01_in_data"
+path_out = "02_out_figs"
+
 # Colors
-col_sta = "255/215/0"
-col_eq = "255/90/0"
-col_pd = "216.750/82.875/24.990"
-col_water = "steelblue"
-col_land_ortho = "gray70"
-col_shorelines_ortho = "gray30"
-col_land = "gray90"
-col_shorelines = "darkgray"
+color_sta = "255/215/0"
+color_eq = "255/90/0"
+color_pd = "216.750/82.875/24.990"
+color_water = "steelblue"
+color_land_ortho = "gray70"
+color_sl_ortho = "gray30"
+color_land = "gray90"
+color_sl = "darkgray"
 
 # Adjust and extend for your needs in taup_path.py
-dict_col_phase = taup_color()
+dict_color_phase = taup_color()
 
 # Standards
 font = "9p"
@@ -57,32 +67,32 @@ lon_bfo = 8.33
 lat_bfo = 48.33
 
 # File name for plate boundaries after Bird 2003
-data_pb = "plate_boundaries_Bird_2003.txt"
+file_pb = "plate_boundaries_Bird_2003.txt"
 
 
 # %%
 # -----------------------------------------------------------------------------
-# Earthquake in Tawain
+# Earthquake in Japan
 # -----------------------------------------------------------------------------
 # source: https://earthquake.usgs.gov/earthquakes/eventpage/us6000m0xl/moment-tensor
 # last access: 2024/01/02
 
-time_origin = utc(2024, 4, 2, 23, 58, 11)
+time_origin = utc(2024, 1, 1, 7, 10, 9)
 
 # Epicenter
-lon_epi = 121.562
-lat_epi = 23.819
+lon_epi = 136.91
+lat_epi = 37.23
 
 # Focal mechanisem
 aki_eq_jp = {
-    "strike": 222,
-    "dip": 33,
-    "rake": 103,
-    "magnitude": 7.37,
-    "depth": 34.8,
+    "strike": 213,
+    "dip": 50,
+    "rake": 79,
+    "magnitude": 7.5,
+    "depth": 10,
 }
 eq_info = (
-    "Date " + "2024/04/02 23:58:11 (UTC)" + " | "
+    "Date " + "2024-01-01 07:10:09 (UTC)" + " | "
     f"Location {lon_epi}° E, {lat_epi}° N | "
     "Mw " + str(aki_eq_jp["magnitude"]) + " | "
     "Hypocentral depth " + str(aki_eq_jp["depth"]) + " km | "
@@ -119,12 +129,12 @@ proj_epi = f"E{center_lon}/{center_lat}/{epi_plot}/{map_size_epi}"
 # Mercator projection
 proj_merca = f"M{map_size}"
 
-# Region around Taiwan
-lon_min = 115
-lon_max = 125
-lat_min = 19
-lat_max = 28
-region_eq = [lon_min, lon_max, lat_min, lat_max]
+# Region around Japan
+lon_min = 130.79
+lon_max = 151.39
+lat_min = 33.52
+lat_max = 51.27
+region_jp = [lon_min, lon_max, lat_min, lat_max]  # "JP+r1"
 
 
 # %%
@@ -157,8 +167,14 @@ url_usgs_request = (
 )
 
 eq_catalog_name = (
-    f"global_seismicity_{start_date_request}to{end_date_request}"
-    + f"_mw{min_magnitude_request}to{max_magnitude_request}"
+    "global_seismicity_"
+    + start_date_request
+    + "to"
+    + end_date_request
+    + "_mw"
+    + min_magnitude_request
+    + "to"
+    + max_magnitude_request
 )
 
 # Download data into a pandas DataFrame
@@ -177,7 +193,7 @@ mag_exp = 0.002
 data_eq_used["mag_scaled"] = np.exp(data_eq_used["mag"] / mag_dev) * mag_exp
 
 # Filter data
-# for region around Taiwan
+# for region around Japan
 data_eq_used_jp = data_eq_used[data_eq_used.longitude > lon_min]
 data_eq_used_jp = data_eq_used_jp[data_eq_used_jp.longitude < lon_max]
 data_eq_used_jp = data_eq_used_jp[data_eq_used_jp.latitude > lat_min]
@@ -208,8 +224,8 @@ network = "GR"
 channel = "BH*"
 location = "*"
 location = ",00"  # location code: test for non or 00
-starttime_req = utc(2024, 4, 3, 0, 0, 0, 0)
-endtime_req = utc(2024, 4, 4, 0, 0, 0, 0)
+starttime_req = utc(2024, 1, 1, 0, 0, 0, 0)
+endtime_req = utc(2024, 1, 2, 0, 0, 0, 0)
 
 # -----------------------------------------------------------------------------
 # Request data
@@ -253,7 +269,7 @@ taup_lat = []
 receiver_lat = center_lat
 receiver_lon = center_lon
 
-# Great circle distance in meters, azimuth A->B in degrees, azimuth B->A in degrees
+# Great circle distance in m, azimuth A->B in degrees, azimuth B->A in degrees
 dist_temp, azi_temp, bazi_temp = gps2dist_azimuth(
     lat_epi,
     lon_epi,
@@ -279,11 +295,11 @@ fig = gmt.Figure()
 
 # -----------------------------------------------------------------------------
 # === Upper Left: Elevation with beachball ===
-fig.basemap(region=region_eq, projection=proj_merca, frame=["WsNe", "af"])
+fig.basemap(region=region_jp, projection=proj_merca, frame=["WsNe", "af"])
 
 # Add elevation grid
 grid_topo = gmt.datasets.load_earth_relief(
-    region=region_eq,
+    region=region_jp,
     resolution="01m",
     registration="gridline",
 )
@@ -306,9 +322,9 @@ with fig.inset(position="jTL+o0.1c+w3c"):
         projection=f"G{(lon_min + lon_max) / 2}/{(lat_min + lat_max) / 2}/?",
         area_thresh="50000",
         resolution="c",
-        shorelines=f"1/0.01p,{col_shorelines_ortho}",
-        land=col_land_ortho,
-        water=col_water,
+        shorelines=f"1/0.01p,{color_sl_ortho}",
+        land=color_land_ortho,
+        water=color_water,
         frame="g",
     )
 
@@ -316,22 +332,22 @@ with fig.inset(position="jTL+o0.1c+w3c"):
     fig.plot(
         data=[[lon_min, lat_min, lon_max, lat_max]],
         style="r+s",
-        pen=f"2p,{col_eq}",
+        pen=f"2p,{color_eq}",
     )
 
 # Plot shorelines
-fig.coast(shorelines=f"1/0.01p,{col_shorelines}")
+fig.coast(shorelines=f"1/0.01p,{color_sl}")
 
 # Plot plate boundaries
-fig.plot(data=data_pb, pen=f"1p,{col_pd}")
+fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pd}")
 
 # Plot epicenter
 fig.plot(
     x=lon_epi,
     y=lat_epi,
-    style="kearthquake.def/1.3c",
-    fill=col_eq,
-    pen=col_eq,
+    style=f"k{path_in}/earthquake.def/1.3c",
+    fill=color_eq,
+    pen=color_eq,
 )
 
 # Plot beachball
@@ -340,24 +356,23 @@ fig.meca(
     scale="1c",
     longitude=lon_epi,
     latitude=lat_epi,
-    plot_longitude=lon_epi + 2,
-    plot_latitude=lat_epi + 3,
-    compressionfill=col_eq,
+    plot_longitude=135,
+    plot_latitude=41,
+    compressionfill=color_eq,
     offset=pen_epi,
     outline=pen_epi,
 )
 
 fig.show()
-print("status: Elevation with beachball")
 
 # %%
 # -----------------------------------------------------------------------------
 # === Upper Center: USGS earthquake data ===
 fig.shift_origin(xshift="w+1c")
 
-fig.basemap(region=region_eq, projection=proj_merca, frame=["wsNe", "af"])
+fig.basemap(region=region_jp, projection=proj_merca, frame=["wsNe", "af"])
 
-fig.coast(land=col_land, shorelines=f"1/0.01p,{col_shorelines}")
+fig.coast(land=color_land, shorelines=f"1/0.01p,{color_sl}")
 
 gmt.makecpt(
     cmap="acton",
@@ -381,14 +396,13 @@ fig.plot(
 fig.plot(
     x=lon_epi,
     y=lat_epi,
-    style="kearthquake.def/1.8c",
-    fill=col_eq,
-    pen=col_eq,
+    style=f"k{path_in}/earthquake.def/2c",
+    fill=color_eq,
+    pen=color_eq,
     transparency=30,
 )
 
 fig.show()
-print("status: USGS earthquake data")
 
 # %%
 # -----------------------------------------------------------------------------
@@ -401,10 +415,9 @@ fig.shift_origin(xshift="w+1c")
 #     frame=["wsNE", "af"],
 # )
 fig.tilemap(
-    # region=[136.9, 136.9428, 37.21, 37.25],
-    region=[121.07, 122, 23.35, 24.19],
+    region=[136.9, 136.9428, 37.21, 37.25],
     projection=proj_merca,
-    zoom=10,
+    zoom=14,
     source=ctx.providers.OpenStreetMap.HOT,
     # source=ctx.providers.CartoDB.Positron,
     # source="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -415,26 +428,25 @@ fig.tilemap(
 fig.plot(
     x=lon_epi,
     y=lat_epi,
-    style="kearthquake.def/1.3c",
-    fill=col_eq,
-    pen=col_eq,
+    style=f"k{path_in}/earthquake.def/1.3c",
+    fill=color_eq,
+    pen=color_eq,
 )
 
 fig.show()
-print("status: Region around Epicenter via tile maps")
 
 # %%
 # -----------------------------------------------------------------------------
 # === Middle Left: Epidistance plot ===
-fig.shift_origin(xshift="-w-9.2c", yshift="-h-3c")
+fig.shift_origin(xshift="-w-9.2c", yshift="-h-1.5c")
 
 fig.basemap(region="g", projection=proj_epi, frame=True)
 
 # Plot shorelines
-fig.coast(land=col_land, shorelines=f"1/0.01p,{col_shorelines}")
+fig.coast(land=color_land, shorelines=f"1/0.01p,{color_sl}")
 
 # Plot plate boundaries
-fig.plot(data=data_pb, pen="0.3p," + col_pd)
+fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.3p,{color_pd}")
 
 # Epicentral distance range used in this study
 for epi_limit in [epi_min, epi_max]:
@@ -447,8 +459,8 @@ for epi_limit in [epi_min, epi_max]:
     fig.plot(
         x=center_lon,
         y=center_lat,
-        style=f"E-{epi_limit*2}+d",
-        pen=f"1p,{col_sta},-",
+        style=f"E-{epi_limit * 2}+d",
+        pen=f"1p,{color_sta},-",
     )
     # Annotations
     fig.text(
@@ -458,7 +470,7 @@ for epi_limit in [epi_min, epi_max]:
         text=f"{epi_limit}@.",
         font=font,
         fill="white@30",
-        pen=f"0.5p,{col_sta}",
+        pen=f"0.5p,{color_sta}",
         clearance=clearance_standard,
     )
 
@@ -466,17 +478,17 @@ for epi_limit in [epi_min, epi_max]:
 fig.plot(
     x=lon_epi,
     y=lat_epi,
-    style="kearthquake.def/1.1c",
-    fill=col_eq,
-    pen=col_eq,
+    style=f"k{path_in}/earthquake.def/1.1c",
+    fill=color_eq,
+    pen=color_eq,
 )
 
 # Plot recording station
 fig.plot(
     x=center_lon,
     y=center_lat,
-    style="i0.4c",
-    fill=col_sta,
+    style="i0.5c",
+    fill=color_sta,
     pen="0.5p,black",
 )
 fig.text(
@@ -486,7 +498,7 @@ fig.text(
     text="BFO",
     font=font,
     fill="white@30",
-    pen="1p," + col_sta,
+    pen=f"1p,{color_sta}",
     clearance=clearance_standard,
 )
 
@@ -498,13 +510,12 @@ fig.text(
     font="13p",
     offset="9c/1.3c",
     pen=pen_epi,
-    fill=f"{col_eq}@70",
+    fill=f"{color_eq}@70",
     clearance="0.3c/0.4c+tO",
     no_clip=True,
 )
 
 fig.show()
-print("status: Epidistance plot")
 
 # %%
 # -----------------------------------------------------------------------------
@@ -513,8 +524,8 @@ print("status: Epidistance plot")
 fig.shift_origin(xshift="w+3c", yshift="4.8c")
 
 # Cut to shared time window around earthquake
-starttime_eq = utc(2024, 4, 3, 0, 0, 0)
-endtime_eq = utc(2024, 4, 3, 1, 40, 0)
+starttime_eq = utc(2024, 1, 1, 7, 0, 0)
+endtime_eq = utc(2024, 1, 1, 9, 0, 0)
 st_eq = st_filtered.copy()
 st_eq = st_eq.trim(starttime_eq, endtime_eq)
 
@@ -541,8 +552,8 @@ for time_window in ["eq", "phase"]:
         )
         st_used = st_lqt
         # Show only time window around SKS phase
-        sample_show_start = 24000  # 34000
-        sample_show_end = 30000  # 60000  # 45000
+        sample_show_start = 38000  # 24000  # 34000
+        sample_show_end = 44000  # 60000  # 45000
 
     st_maxs = []
     for i_tr in range(3):
@@ -575,11 +586,11 @@ for time_window in ["eq", "phase"]:
 
         # Use colors as in SplitLab
         if tr_temp_chan == "BHE" or tr_temp_chan == "BHQ":
-            col_tr = "blue"
+            color_tr = "blue"
         elif tr_temp_chan == "BHN" or tr_temp_chan == "BHT":
-            col_tr = "red"
+            color_tr = "red"
         elif tr_temp_chan == "BHZ" or tr_temp_chan == "BHL":
-            col_tr = "darkgreen"
+            color_tr = "darkgreen"
 
         fig.basemap(
             region=[sample_show_start, sample_show_end, -y_lim, y_lim],
@@ -591,7 +602,7 @@ for time_window in ["eq", "phase"]:
         fig.plot(
             x=sample_vec,
             y=tr_temp.data / tr_temp_abs_max,
-            pen=f"0.2p,{col_tr}",
+            pen=f"0.2p,{color_tr}",
             label=tr_temp_chan,
         )
 
@@ -604,15 +615,15 @@ for time_window in ["eq", "phase"]:
             fig.plot(
                 x=[arrival_time_samples, arrival_time_samples],
                 y=[-y_lim, y_lim],
-                pen=f"1p,{dict_col_phase[phase_text]}",
+                pen="1p," + dict_color_phase[phase_text],
             )
 
         # Add labels for backazimuth, epicentral distance, and used filter
         if time_window == "eq":
             for i_label, label in enumerate(
                 [
-                    f"BAZ = {round(bazi_temp,3)}°",
-                    f"@~D@~ = {round(dist_temp_m2deg,3)}°",
+                    f"BAZ = {round(bazi_temp, 3)}°",
+                    f"@~D@~ = {round(dist_temp_m2deg, 3)}°",
                     f"band pass [{freq_low},{freq_upp}] Hz",
                 ]
             ):
@@ -634,7 +645,6 @@ for time_window in ["eq", "phase"]:
     fig.shift_origin(yshift="-h+1.2c")
 
 fig.show()
-print("status: Seismograms at BFO")
 
 # %%
 # -----------------------------------------------------------------------------
@@ -643,8 +653,8 @@ fig.shift_origin(xshift="-10c", yshift="4c")
 
 # Generate plot for travel paths with self-defined function
 taup_path(
-    fig_instance=fig,
-    fig_width="7c",
+    fig_path_instance=fig,
+    fig_path_width="7c",
     max_dist=360,
     font_size="7p",
     source_depth=aki_eq_jp["depth"],
@@ -653,15 +663,13 @@ taup_path(
 )
 
 fig.show()
-print("status: Travel paths")
 
 # %%
 # -----------------------------------------------------------------------------
 # Show and save
 fig.show()  # method="external")
 
-fig_name = "taiwan_earthquake_BFO"
 # for ext in ["png"]:  # , "pdf", "eps"]:
-#     fig.savefig(fname=f"{fig_name}.{ext}")
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 
 print(fig_name)
