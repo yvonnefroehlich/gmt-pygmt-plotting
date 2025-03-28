@@ -2,9 +2,9 @@
 # Turkey Syria earthquakes on 2023/02/06 up on 01:17:35 (UTC)
 # -----------------------------------------------------------------------------
 # History
-# - Created 2024/04/07
-# - Updated 2024/04/23: Improve coding style
-# - Updated 2025/03/28: Reorganize folder, rewrite code
+# - Created: 2024/04/07
+# - Updated: 2024/04/23 - Improve coding style
+# - Updated: 2025/03/28 - Reorganize folder, rewrite code
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/

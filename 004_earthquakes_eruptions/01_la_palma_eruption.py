@@ -2,9 +2,9 @@
 # La Palma eruptions between 2021/09/19 and 2021/12/13
 # -----------------------------------------------------------------------------
 # History
-# - Created 2024/04/07
-# - Updated 2024/04/23: Improve coding style
-# - Updated 2025/03/28: Reorganize folder, rewrite code
+# - Created: 2024/04/07
+# - Updated: 2024/04/23 - Improve coding style
+# - Updated: 2025/03/28 - Reorganize folder, rewrite code
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/

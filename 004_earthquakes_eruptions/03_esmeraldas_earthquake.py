@@ -2,9 +2,9 @@
 # Esmeraldas earthquake on 2022/03/27 at 04:28:12 (UTC)
 # -----------------------------------------------------------------------------
 # History
-# - Created 2024/04/07
-# - Updated 2024/04/23: Improve coding style
-# - Updated 2025/03/28: Reorganize folder, rewrite code
+# - Created: 2024/04/07
+# - Updated: 2024/04/23 - Improve coding style
+# - Updated: 2025/03/28 - Reorganize folder, rewrite code
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
