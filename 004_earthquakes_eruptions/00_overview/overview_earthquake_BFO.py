@@ -51,7 +51,7 @@ lat_vol = [28.57, -20.545]
 # -----------------------------------------------------------------------------
 # Region and projections
 # -----------------------------------------------------------------------------
-map_size = "10c"
+map_size = 10
 
 # Epicentral distance plot
 epi_min = 80  # degrees
@@ -60,7 +60,7 @@ center_lon = lon_sta
 center_lat = lat_sta
 epi_plot = 160
 
-proj_epi = f"E{center_lon}/{center_lat}/{epi_plot}/{map_size}"
+proj_epi = f"E{center_lon}/{center_lat}/{epi_plot}/{map_size}c"
 
 proj_rob = f"N{map_size}c"
 
