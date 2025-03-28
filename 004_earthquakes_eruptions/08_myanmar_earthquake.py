@@ -53,8 +53,8 @@ projection_ortho = f"G{center_str}/?"
 
 # -----------------------------------------------------------------------------
 # Coordinates of epicenter
-lon_eq = 95.92  # degrees East
-lat_eq = 22.01  # degrees North
+lon_eq = 95.922  # degrees East
+lat_eq = 22.013  # degrees North
 
 # -----------------------------------------------------------------------------
 # Colors
@@ -67,11 +67,11 @@ color_highlight = "255/90/0"  # -> orange
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
-basemap_scale = f"JLB+jLB+w500+c{center_str}+f+lkm+at+o0.5c"
+basemap_scale = f"JLB+jLB+w500+c{center_str}+f+lkm+at+o0.7c"
 
-pos_study_inset = "jTL+w4.5c+o-1c/-1c"
+pos_study_inset = "jTL+w4.5c+o-1c"
 
-pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.6c+e"
+pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c+e"
 frame_cb_grid = "xa2500f500+lelevation / m"
 
 box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
@@ -109,12 +109,11 @@ fig.plot(
     fill=color_highlight,
     pen=color_highlight,
 )
-"""
-# TODO
+
 # Beachball
 pen_epi = "0.5p,black"
 fig.meca(
-    spec=f"{path_in}/meca_thailand.txt",
+    spec=f"{path_in}/meca_myanmar.txt",
     convention="aki",
     scale="1c",
     compressionfill=color_highlight,  # fill color of compressive quadrants
@@ -125,9 +124,9 @@ fig.meca(
 fig.text(
     x=lon_eq,
     y=lat_eq,
-    text="xxx",
+    text="Mandalay",
     font="8p,Helvetica-Bold,black",
-    offset="-0.5c/-0.8c",
+    offset="0c/-0.7c",
     fill="white@30",
     pen=f"0.8p,{color_highlight}",
     clearance="0.1c/0.1c+tO",
@@ -135,14 +134,14 @@ fig.text(
 # Info text
 # Adjust position in txt file
 fig.text(
-    textfiles=f"{path_in}/info_thailand.txt",
+    textfiles=f"{path_in}/info_myanmar.txt",
     M=True,  # paragraph mode # read from file
     font="8p,black",
     fill="white@30",
     clearance="0.1c/0.1c+tO",
     pen="0.5p,gray30",
 )
-"""
+
 
 # -----------------------------------------------------------------------------
 # Add colorbar for elevation
@@ -187,7 +186,7 @@ with fig.inset(position=pos_study_inset):
 # Show and save figure
 fig.show()
 
-# for ext in ["png"]:  # , "pdf", "eps"]:
-#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+for ext in ["png"]:  # , "pdf", "eps"]:
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 
 print(fig_name)
