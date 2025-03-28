@@ -299,7 +299,9 @@ fig.basemap(region=region_jp, projection=proj_merca, frame=["WsNe", "af"])
 
 # Add elevation grid
 grid_topo = gmt.datasets.load_earth_relief(
-    region=region_jp, resolution="01m", registration="gridline",
+    region=region_jp,
+    resolution="01m",
+    registration="gridline",
 )
 fig.grdimage(grid_topo, cmap="oleron")
 fig.colorbar(frame=["x+lelevation", "y+lm"])
