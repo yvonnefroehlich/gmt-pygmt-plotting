@@ -222,7 +222,7 @@ with fig.inset(position=pos_epi_inset):
         fig.plot(
             x=lon_BFO,
             y=lat_BFO,
-            style=f"E-{epi_limit*2}+d",
+            style=f"E-{epi_limit * 2}+d",
             pen=f"1p,{color_sta},-",
         )
         # Annotations
@@ -267,7 +267,7 @@ with fig.inset(position=pos_epi_inset):
 # Show and save figure
 fig.show()
 
-for ext in ["png"]: # , "pdf", "eps"]:
+for ext in ["png"]:  # , "pdf", "eps"]:
     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 
 print(fig_name)

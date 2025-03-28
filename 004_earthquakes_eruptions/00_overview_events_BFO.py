@@ -96,7 +96,10 @@ for epi_limit in [epi_min, epi_max]:
 
     # Circles
     fig.plot(
-        x=center_lon, y=center_lat, style=f"E-{epi_limit*2}+d", pen=f"1p,{color_sta},-"
+        x=center_lon,
+        y=center_lat,
+        style=f"E-{epi_limit * 2}+d",
+        pen=f"1p,{color_sta},-",
     )
     # Annotations
     fig.text(
@@ -111,7 +114,13 @@ for epi_limit in [epi_min, epi_max]:
     )
 
 # Plot epicenters
-fig.plot(x=lon_epi, y=lat_epi, style=f"k{path_in}/earthquake.def/0.7c", fill=color_eq, pen=color_eq)
+fig.plot(
+    x=lon_epi,
+    y=lat_epi,
+    style=f"k{path_in}/earthquake.def/0.7c",
+    fill=color_eq,
+    pen=color_eq,
+)
 
 # Plot volcanos
 fig.plot(x=lon_vol, y=lat_vol, style="kvolcano/0.45c", fill=color_vol, pen="0.1p,black")
@@ -132,7 +141,7 @@ fig.text(
 # Show and save
 fig.show()  # method="external")
 
-for ext in ["png"]: # , "pdf", "eps"]:
+for ext in ["png"]:  # , "pdf", "eps"]:
     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 
 print(fig_name)
