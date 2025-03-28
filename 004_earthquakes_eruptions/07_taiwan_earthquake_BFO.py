@@ -4,17 +4,24 @@
 #          (https://doi.org/10.1038/d41586-024-00988-8)
 #          last access 2024/04/10
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
+# History
 # - Created: 2024/04/07
-#   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
-#   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # - Updated: 2024/04/23 - Improve coding style
 # - Updated: 2024/05/04 - Improvements regarding PyGMT Figure instance
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
+# - Updated: 2024/04/23 - Improve coding style
+# - Updated: 2025/03/28 - Reorganize folder, rewrite code
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
+
 
 import contextily as ctx
 import numpy as np
@@ -25,24 +32,32 @@ from obspy.clients.fdsn import Client as Client_fdsn
 from obspy.geodetics.base import gps2dist_azimuth
 from obspy.taup import TauPyModel
 from taup_color import taup_color
-from taup_path import taup_path
+from taup_path import taup_path_curve
 
 # %%
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
+# >>> Set for your needs <<<
+fig_name = "taiwan_earthquake_BFO"
+dpi_png = 360
+
+# Paths
+path_in = "01_in_data"
+path_out = "02_out_figs"
+
 # Colors
-col_sta = "255/215/0"
-col_eq = "255/90/0"
-col_pd = "216.750/82.875/24.990"
-col_water = "steelblue"
-col_land_ortho = "gray70"
-col_shorelines_ortho = "gray30"
-col_land = "gray90"
-col_shorelines = "darkgray"
+color_sta = "255/215/0"
+color_eq = "255/90/0"
+color_pd = "216.750/82.875/24.990"
+color_water = "steelblue"
+color_land_ortho = "gray70"
+color_sl_ortho = "gray30"
+color_land = "gray90"
+color_sl = "darkgray"
 
 # Adjust and extend for your needs in taup_path.py
-dict_col_phase = taup_color()
+dict_color_phase = taup_color()
 
 # Standards
 font = "9p"
@@ -55,7 +70,7 @@ lon_bfo = 8.33
 lat_bfo = 48.33
 
 # File name for plate boundaries after Bird 2003
-data_pb = "plate_boundaries_Bird_2003.txt"
+file_pb = "plate_boundaries_Bird_2003.txt"
 
 
 # %%
@@ -304,9 +319,9 @@ with fig.inset(position="jTL+o0.1c+w3c"):
         projection=f"G{(lon_min + lon_max) / 2}/{(lat_min + lat_max) / 2}/?",
         area_thresh="50000",
         resolution="c",
-        shorelines=f"1/0.01p,{col_shorelines_ortho}",
-        land=col_land_ortho,
-        water=col_water,
+        shorelines=f"1/0.01p,{color_sl_ortho}",
+        land=color_land_ortho,
+        water=color_water,
         frame="g",
     )
 
@@ -314,22 +329,22 @@ with fig.inset(position="jTL+o0.1c+w3c"):
     fig.plot(
         data=[[lon_min, lat_min, lon_max, lat_max]],
         style="r+s",
-        pen=f"2p,{col_eq}",
+        pen=f"2p,{color_eq}",
     )
 
 # Plot shorelines
-fig.coast(shorelines=f"1/0.01p,{col_shorelines}")
+fig.coast(shorelines=f"1/0.01p,{color_sl}")
 
 # Plot plate boundaries
-fig.plot(data=data_pb, pen=f"1p,{col_pd}")
+fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pd}")
 
 # Plot epicenter
 fig.plot(
     x=lon_epi,
     y=lat_epi,
-    style="kearthquake.def/1.3c",
-    fill=col_eq,
-    pen=col_eq,
+    style=f"k{path_in}/earthquake.def/1.3c",
+    fill=color_eq,
+    pen=color_eq,
 )
 
 # Plot beachball
@@ -340,7 +355,7 @@ fig.meca(
     latitude=lat_epi,
     plot_longitude=lon_epi + 2,
     plot_latitude=lat_epi + 3,
-    compressionfill=col_eq,
+    compressionfill=color_eq,
     offset=pen_epi,
     outline=pen_epi,
 )
@@ -355,7 +370,7 @@ fig.shift_origin(xshift="w+1c")
 
 fig.basemap(region=region_eq, projection=proj_merca, frame=["wsNe", "af"])
 
-fig.coast(land=col_land, shorelines=f"1/0.01p,{col_shorelines}")
+fig.coast(land=color_land, shorelines=f"1/0.01p,{color_sl}")
 
 gmt.makecpt(
     cmap="acton",
@@ -379,9 +394,9 @@ fig.plot(
 fig.plot(
     x=lon_epi,
     y=lat_epi,
-    style="kearthquake.def/1.8c",
-    fill=col_eq,
-    pen=col_eq,
+    style=f"k{path_in}/earthquake.def/1.8c",
+    fill=color_eq,
+    pen=color_eq,
     transparency=30,
 )
 
@@ -413,9 +428,9 @@ fig.tilemap(
 fig.plot(
     x=lon_epi,
     y=lat_epi,
-    style="kearthquake.def/1.3c",
-    fill=col_eq,
-    pen=col_eq,
+    style=f"k{path_in}/earthquake.def/1.3c",
+    fill=color_eq,
+    pen=color_eq,
 )
 
 fig.show()
@@ -429,10 +444,10 @@ fig.shift_origin(xshift="-w-9.2c", yshift="-h-3c")
 fig.basemap(region="g", projection=proj_epi, frame=True)
 
 # Plot shorelines
-fig.coast(land=col_land, shorelines=f"1/0.01p,{col_shorelines}")
+fig.coast(land=color_land, shorelines=f"1/0.01p,{color_sl}")
 
 # Plot plate boundaries
-fig.plot(data=data_pb, pen="0.3p," + col_pd)
+fig.plot(data=f"{path_in}/{file_pb}", pen="0.3p," + color_pd)
 
 # Epicentral distance range used in this study
 for epi_limit in [epi_min, epi_max]:
@@ -446,7 +461,7 @@ for epi_limit in [epi_min, epi_max]:
         x=center_lon,
         y=center_lat,
         style=f"E-{epi_limit * 2}+d",
-        pen=f"1p,{col_sta},-",
+        pen=f"1p,{color_sta},-",
     )
     # Annotations
     fig.text(
@@ -456,7 +471,7 @@ for epi_limit in [epi_min, epi_max]:
         text=f"{epi_limit}@.",
         font=font,
         fill="white@30",
-        pen=f"0.5p,{col_sta}",
+        pen=f"0.5p,{color_sta}",
         clearance=clearance_standard,
     )
 
@@ -464,9 +479,9 @@ for epi_limit in [epi_min, epi_max]:
 fig.plot(
     x=lon_epi,
     y=lat_epi,
-    style="kearthquake.def/1.1c",
-    fill=col_eq,
-    pen=col_eq,
+    style=f"k{path_in}/earthquake.def/1.1c",
+    fill=color_eq,
+    pen=color_eq,
 )
 
 # Plot recording station
@@ -474,7 +489,7 @@ fig.plot(
     x=center_lon,
     y=center_lat,
     style="i0.4c",
-    fill=col_sta,
+    fill=color_sta,
     pen="0.5p,black",
 )
 fig.text(
@@ -484,7 +499,7 @@ fig.text(
     text="BFO",
     font=font,
     fill="white@30",
-    pen="1p," + col_sta,
+    pen="1p," + color_sta,
     clearance=clearance_standard,
 )
 
@@ -496,7 +511,7 @@ fig.text(
     font="13p",
     offset="9c/1.3c",
     pen=pen_epi,
-    fill=f"{col_eq}@70",
+    fill=f"{color_eq}@70",
     clearance="0.3c/0.4c+tO",
     no_clip=True,
 )
@@ -573,11 +588,11 @@ for time_window in ["eq", "phase"]:
 
         # Use colors as in SplitLab
         if tr_temp_chan == "BHE" or tr_temp_chan == "BHQ":
-            col_tr = "blue"
+            color_tr = "blue"
         elif tr_temp_chan == "BHN" or tr_temp_chan == "BHT":
-            col_tr = "red"
+            color_tr = "red"
         elif tr_temp_chan == "BHZ" or tr_temp_chan == "BHL":
-            col_tr = "darkgreen"
+            color_tr = "darkgreen"
 
         fig.basemap(
             region=[sample_show_start, sample_show_end, -y_lim, y_lim],
@@ -589,7 +604,7 @@ for time_window in ["eq", "phase"]:
         fig.plot(
             x=sample_vec,
             y=tr_temp.data / tr_temp_abs_max,
-            pen=f"0.2p,{col_tr}",
+            pen=f"0.2p,{color_tr}",
             label=tr_temp_chan,
         )
 
@@ -602,7 +617,7 @@ for time_window in ["eq", "phase"]:
             fig.plot(
                 x=[arrival_time_samples, arrival_time_samples],
                 y=[-y_lim, y_lim],
-                pen=f"1p,{dict_col_phase[phase_text]}",
+                pen=f"1p,{dict_color_phase[phase_text]}",
             )
 
         # Add labels for backazimuth, epicentral distance, and used filter
@@ -640,7 +655,7 @@ print("status: Seismograms at BFO")
 fig.shift_origin(xshift="-10c", yshift="4c")
 
 # Generate plot for travel paths with self-defined function
-taup_path(
+taup_path_curve(
     fig_instance=fig,
     fig_width="7c",
     max_dist=360,
@@ -658,8 +673,7 @@ print("status: Travel paths")
 # Show and save
 fig.show()  # method="external")
 
-fig_name = "taiwan_earthquake_BFO"
-# for ext in ["png"]:  # , "pdf", "eps"]:
-#     fig.savefig(fname=f"{fig_name}.{ext}")
+for ext in ["png"]:  # , "pdf", "eps"]:
+    fig.savefig(fname=f"{fig_name}.{ext}", dpi=dpi_png)
 
 print(fig_name)
