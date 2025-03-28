@@ -142,6 +142,9 @@ fig.text(
 fig.show()  # method="external")
 
 for ext in ["png"]:  # , "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+    transparent = False
+    if ext == "png":
+        transparent = True
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
 
 print(fig_name)
