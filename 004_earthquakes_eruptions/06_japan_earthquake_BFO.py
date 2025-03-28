@@ -67,7 +67,7 @@ lon_bfo = 8.33
 lat_bfo = 48.33
 
 # File name for plate boundaries after Bird 2003
-data_pb = "plate_boundaries_Bird_2003.txt"
+file_pb = "plate_boundaries_Bird_2003.txt"
 
 
 # %%
@@ -337,7 +337,7 @@ with fig.inset(position="jTL+o0.1c+w3c"):
 fig.coast(shorelines=f"1/0.01p,{color_sl}")
 
 # Plot plate boundaries
-fig.plot(data=f"{path_in}/{data_pb}", pen=f"1p,{color_pd}")
+fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pd}")
 
 # Plot epicenter
 fig.plot(
@@ -444,7 +444,7 @@ fig.basemap(region="g", projection=proj_epi, frame=True)
 fig.coast(land=color_land, shorelines=f"1/0.01p,{color_sl}")
 
 # Plot plate boundaries
-fig.plot(data=data_pb, pen=f"0.3p,{color_pd}")
+fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.3p,{color_pd}")
 
 # Epicentral distance range used in this study
 for epi_limit in [epi_min, epi_max]:
