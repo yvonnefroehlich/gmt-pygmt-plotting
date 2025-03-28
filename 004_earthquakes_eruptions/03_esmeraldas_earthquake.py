@@ -22,7 +22,7 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
-# >>> Set for your needs <<<
+# >>> Adjust for your needs <<<
 fig_name = "03_esmeraldas_earthquake"  # Name of output figure
 dpi_png = 360  # Resolution of output PNG
 grid_res = "01m"  # Resolution of elevation grid
@@ -53,34 +53,35 @@ lon_max = -75.00
 lat_min = -5.00  # degrees North
 lat_max = 5.00
 region = [lon_min, lon_max, lat_min, lat_max]
+center_str = f"{(lon_min + lon_max) / 2}/{(lat_min + lat_max) / 2}"
 
 project_main = "M15c"  # Mercator
-project_ortho = f"G{(lon_min + lon_max) / 2}/{(lat_min + lat_max) / 2}/?"
+project_ortho = f"G{center_str}/?"
 project_epi = f"E{lon_BFO}/{lat_BFO}/160/?"
 
 # -----------------------------------------------------------------------------
 # Colors
 color_water = "steelblue"
+color_land = "gray90"
+color_sl = "darkgray"  # shorelines
 color_land_ortho = "gray70"
 color_sl_ortho = "gray30"
-color_land = "gray90"
-color_sl = "darkgray"
-color_sta = "gold"
-color_pb = "216.750/82.875/24.990"  # -> darkorange
+color_sta = "gold"  # station
+color_pb = "216.750/82.875/24.990"  # plate boundaries # -> darkorange
 color_highlight = "255/90/0"  # -> orange
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
-basemap_scale = f"JLB+jLB+w100+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}+f+lkm+at+o0.45c/0.55c"
+basemap_scale = f"JLB+jLB+w100+c{center_str}+f+lkm+at+o0.7c"
 
 rad_tot = 6.0
 fac_rad_epi90 = 3.0 / 5.5
 fac_rad_epi140 = 4.7 / 5.5
 
-pos_ortho_inset = "jTL+w5c+o-0.5c/-0.5c"
+pos_ortho_inset = "jTL+w4.5c+o-1c"
 pos_epi_inset = f"JMR+jMR+w{rad_tot}c"
 
-pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o1c/0.65c+e"
+pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c+e"
 frame_cb_grid = "+lelevation / m"
 
 box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"

@@ -22,7 +22,7 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
-# >>> Adjust your needs <<<
+# >>> Adjust for your needs <<<
 fig_name = "04_turkey_syria_earthquake"  # Name of output figure
 dpi_png = 360  # Resolution of output PNG
 grid_res = "01m"  # Resolution of elevation grid
@@ -54,28 +54,29 @@ lon_max = 40
 lat_min = 36  # degrees North
 lat_max = 40
 region = [lon_min, lon_max, lat_min, lat_max]
+center_str = f"{(lon_min + lon_max) / 2}/{(lat_min + lat_max) / 2}"
 
 # Main map
 project_main = "M15c"  # Mercator projection, 15 cm width
 # Inset map - study region - Orthographic projection
-project_ortho = f"G{(lon_min + lon_max) / 2}/{(lat_min + lat_max) / 2}/?"
+project_ortho = f"G{center_str}/?"
 
 # -----------------------------------------------------------------------------
 # Colors
 color_water = "steelblue"
 color_land = "gray70"
-color_sl = "gray30"
-color_pb = "216.750/82.875/24.990"  # -> darkorange
+color_sl = "gray30"  # shorelines
+color_pb = "216.750/82.875/24.990"  # plate boundaries # -> darkorange
 color_highlight = "255/90/0"  # -> orange
 pen_epi = "0.5p,black"
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
-basemap_scale = f"JLB+jLB+w100+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}+f+lkm+at+o0.6c/0.6c"
+basemap_scale = f"JLB+jLB+w100+c{center_str}+f+lkm+at+o0.7c"
 
-pos_study_inset = "jTL+w5.5c+o-1c"
+pos_study_inset = "jTL+w5c+o-1c"
 
-pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o1c/0.65c+e"
+pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c+e"
 frame_cb_grid = "+lelevation / m"
 
 box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
