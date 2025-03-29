@@ -42,12 +42,39 @@ lat_sta = 48.33
 # Dictionary of events
 df_events = pd.DataFrame(
     {
-    "event_type": ["eruption", "eruption", "earthquake", "earthquake", "earthquake", "earthquake", "earthquake", "earthquake"],
-    "lon": [-17.84, -175.393, -79.611, 37.042, -8.391, 136.91, 121.562, 95.92],
-    "lat": [28.57, -20.545, -0.904, 37.166, 31.064, 37.23, 23.819, 22.01],
-    "date": ["2021/09/19-2021/12/13", "2022/01/14-15", "2022/03/27", "2023/02/06", "2023/09/08", "2024/01/01", "2024/04/02", "2025/03/28"],
-    "location": ["La Palma", "Tonga", "Esmeraldas", "Turkey, Syria", "Marocco", "Japan", "Taiwan", "Myanmar"],
-    "event_id": ["01", "02", "03", "04", "05", "06", "07", "08"],
+        "event_type": [
+            "eruption",
+            "eruption",
+            "earthquake",
+            "earthquake",
+            "earthquake",
+            "earthquake",
+            "earthquake",
+            "earthquake",
+        ],
+        "lon": [-17.84, -175.393, -79.611, 37.042, -8.391, 136.91, 121.562, 95.92],
+        "lat": [28.57, -20.545, -0.904, 37.166, 31.064, 37.23, 23.819, 22.01],
+        "date": [
+            "2021/09/19-2021/12/13",
+            "2022/01/14-15",
+            "2022/03/27",
+            "2023/02/06",
+            "2023/09/08",
+            "2024/01/01",
+            "2024/04/02",
+            "2025/03/28",
+        ],
+        "location": [
+            "La Palma",
+            "Tonga",
+            "Esmeraldas",
+            "Turkey, Syria",
+            "Marocco",
+            "Japan",
+            "Taiwan",
+            "Myanmar",
+        ],
+        "event_id": ["01", "02", "03", "04", "05", "06", "07", "08"],
     }
 )
 
