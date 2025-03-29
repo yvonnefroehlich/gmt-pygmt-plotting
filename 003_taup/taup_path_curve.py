@@ -29,7 +29,7 @@
 # - Updated: 2024/05/10 - Enhancement: Plot specific distance and depth ranges
 # - Updated: 2024/09/06 - Enhancement: Travel time (curve) with distance (cumulative)
 # - Udpated: 2025/03/27 - Maintenance: Adjust building file name
-# - Updated: 2025/03/29 - Enhancement: Introduce function taup_line
+# - Updated: 2025/03/29 - Enhancement: Introduce function taup_style
 # #############################################################################
 
 
@@ -38,7 +38,7 @@ import pygmt
 from obspy.taup import TauPyModel
 
 from taup_color import taup_color
-from taup_line import taup_line
+from taup_style import taup_style
 
 
 def taup_path(
@@ -133,10 +133,11 @@ def taup_path(
     color_highlight = "255/90/0"
     box_standard = "+gwhite+p0.1p,gray30+r2p"
 
-    # Colors for seismological phases
-    # Adjust and extend the dictionary for your needs in taup_path.py
+    # Line colors and styles for the seismological phases
+    # Adjust and extend the dictionary for your needs in taup_color.py
     phase_colors = taup_color()
-
+    # Adjust and extend the dictionary for your needs in taup_line.py
+    phase_colors = taup_style()
 
     # %%
     # -------------------------------------------------------------------------

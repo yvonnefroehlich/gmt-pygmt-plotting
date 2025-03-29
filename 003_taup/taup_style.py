@@ -20,9 +20,9 @@
 # #############################################################################
 
 
-def taup_line():
+def taup_style():
 
-    phase_lines = {
+    phase_styles = {
         "P": "solid",
         "PcP": "solid",
         "S": "solid",
@@ -45,7 +45,7 @@ def taup_line():
     }
 
     # Depth phases for PcP and ScS phases
-    # phase_lines = {
+    # phase_styles = {
     #     "P": "solid",
     #     "PcP": "solid",
     #     "pPcP": "solid",
@@ -56,4 +56,4 @@ def taup_line():
     #     "sScS": "solid",
     # }
 
-    return phase_lines
+    return phase_styles
