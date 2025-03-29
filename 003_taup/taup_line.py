@@ -1,6 +1,6 @@
 # #############################################################################
 # This functions
-# - Assigns lines to the seismological phases
+# - Assigns line styles to the seismological phases
 # - Outputs a dictionary
 # - Is related to the function taup_path_curve.py
 # Feel free to adjust and extend the dictionary for your needs (:
@@ -23,37 +23,37 @@
 def taup_lines():
 
     phase_lines = {
-        "P": "solid",  # GMT navyblue
-        "PcP": "solid",  # GMT deepskyblue
-        "S": "solid",  # GMT blue
-        "ScS": "solid",  # GMT cyan
-        "PKS": "solid",  # GMT yellow2
-        "PKKS": "solid",  # GMT purple
-        "SKS": "solid",  # GMT red3
-        "SKKS": "solid",  # GMT darkorange2
-        "PKKP": "solid",  # GMT bisque4
-        "PKPPKP": "solid",  # GMT rosybrown
-        "PKIKS": "solid",  # GMT chartreuse1
-        "PKJKS": "solid",  # GMT limegreen
-        "SKIKS": "solid",  # GMT forestgreen
-        "SKJKS": "solid",  # GMT darkgreen
+        "P": "solid",
+        "PcP": "solid",
+        "S": "solid",
+        "ScS": "solid",
+        "PKS": "solid",
+        "PKKS": "solid",
+        "SKS": "solid",
+        "SKKS": "solid",
+        "PKKP": "solid",
+        "PKPPKP": "solid",
+        "PKIKS": "solid",
+        "PKJKS": "solid",
+        "SKIKS": "solid",
+        "SKJKS": "solid",
         # Deth phases for SKS and SKKS phases
-        "pSKS": "solid",  # GMT darkred
-        "sSKS": "solid",  # GMT lightred
-        "pSKKS": "solid",  # GMT orangered
-        "sSKKS": "solid",  # GMT lightorange
+        "pSKS": "solid",
+        "sSKS": "solid",
+        "pSKKS": "solid",
+        "sSKKS": "solid",
     }
 
     # Depth phases for PcP and ScS phases
     # phase_lines = {
-    #     "P": "solid",  # GMT cyan
-    #     "PcP": "solid",  # GMT deepskyblue
-    #     "pPcP": "solid",  # GMT blue
-    #     "sPcP": "solid",  # GMT darkblue
-    #     "S": "solid",  # GMT magenta
-    #     "ScS": "solid",  # GMT lightred
-    #     "pScS": "solid",  # GMT red
-    #     "sScS": "solid",  # GMT darkred
+    #     "P": "solid",
+    #     "PcP": "solid",
+    #     "pPcP": "solid",
+    #     "sPcP": "solid",
+    #     "S": "solid",
+    #     "ScS": "solid",
+    #     "pScS": "solid",
+    #     "sScS": "solid",
     # }
 
     return phase_lines
