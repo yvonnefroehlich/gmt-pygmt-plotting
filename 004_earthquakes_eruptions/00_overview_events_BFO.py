@@ -170,10 +170,10 @@ fig.text(
 # Show and save
 fig.show()  # method="external")
 
-for ext in ["png"]:  # , "pdf", "eps"]:
-    transparent = False
-    if ext == "png":
-        transparent = True
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
+# for ext in ["png"]:  # , "pdf", "eps"]:
+#     transparent = False
+#     if ext == "png":
+#         transparent = True
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
 
 print(fig_name)
