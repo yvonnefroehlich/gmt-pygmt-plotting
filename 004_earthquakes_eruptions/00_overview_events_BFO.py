@@ -17,6 +17,7 @@
 # #############################################################################
 
 
+import pandas as pd
 import pygmt as gmt
 
 # -----------------------------------------------------------------------------
@@ -33,32 +34,34 @@ path_out = "02_out_figs"
 # File name for plate boundaries after Bird 2003
 data_pb = "plate_boundaries_Bird_2003.txt"
 
-# -----------------------------------------------------------------------------
-# Epicenters
-lon_epi = [121.562, 136.91, -79.611, 37.042, -8.391, 95.92]
-lat_epi = [23.819, 37.23, -0.904, 37.166, 31.064, 22.01]
-
-# Volcanos
-lon_vol = [-17.84, -175.393]
-lat_vol = [28.57, -20.545]
-
-# Recording station BFO
+# Recording station, here Black Forest Observatory BFO
 lon_sta = 8.33
 lat_sta = 48.33
 
 # -----------------------------------------------------------------------------
+# Dictionary of events
+df_events = pd.DataFrame(
+    {
+    "event_type": ["eruption", "eruption", "earthquake", "earthquake", "earthquake", "earthquake", "earthquake", "earthquake"],
+    "lon": [-17.84, -175.393, -79.611, 37.042, -8.391, 136.91, 121.562, 95.92],
+    "lat": [28.57, -20.545, -0.904, 37.166, 31.064, 37.23, 23.819, 22.01],
+    "date": ["2021/09/19-2021/12/13", "2022/01/14-15", "2022/03/27", "2023/02/06", "2023/09/08", "2024/01/01", "2024/04/02", "2025/03/28"],
+    "location": ["La Palma", "Tonga", "Esmeraldas", "Turkey, Syria", "Marocco", "Japan", "Taiwan", "Myanmar"],
+    "event_id": ["01", "02", "03", "04", "05", "06", "07", "08"],
+    }
+)
+
+# -----------------------------------------------------------------------------
 # Colors
 color_sta = "255/215/0"
-color_eq = "255/90/0"  # -> orange
-color_vol = "255/90/0"  # -> orange
-color_pd = "216.750/82.875/24.990"
+color_event = "255/90/0"  # -> orange
+color_pd = "216.750/82.875/24.990"  # plate boundaries  # -> dark orange
+color_sl = "darkgray"  # shorelines
 color_land = "gray90"
 color_water = "steelblue"
 
 # Standards
 font = "7p"
-pen_epi = "0.1p,black"
-box_standard = "+gwhite@30+p0.5p,gray30+r1.5p"
 clearance_standard = "0.1c/0.1c+tO"
 
 # -----------------------------------------------------------------------------
@@ -85,7 +88,7 @@ fig = gmt.Figure()
 fig.basemap(region="d", projection=proj_used, frame=True)
 
 # Plot shorelines
-fig.coast(land=color_land, shorelines="1/0.01p,darkgray", borders="1/0.01p,gray50")
+fig.coast(land=color_land, shorelines=f"1/0.01p,{color_sl}", borders="1/0.01p,gray50")
 
 # Plot plate boundaries
 fig.plot(data=f"{path_in}/{data_pb}", pen=f"0.3p,{color_pd}")
@@ -109,7 +112,7 @@ for epi_limit in [epi_min, epi_max]:
         x=center_lon,
         y=center_lat,
         offset=offset_station_label,
-        text=f"{epi_limit}@.",
+        text=f"{epi_limit}@.",  # degree sign in GMT
         font=font,
         fill="white@30",
         pen=f"0.5p,{color_sta}",
@@ -117,37 +120,60 @@ for epi_limit in [epi_min, epi_max]:
     )
 
 # Plot epicenters
+df_eqs = df_events[df_events["event_type"] == "earthquake"]
 fig.plot(
-    x=lon_epi,
-    y=lat_epi,
+    x=df_eqs.lon,
+    y=df_eqs.lat,
     style=f"k{path_in}/earthquake.def/0.7c",
-    fill=color_eq,
-    pen=color_eq,
+    fill=color_event,
+    pen=color_event,
 )
 
 # Plot volcanos
-fig.plot(x=lon_vol, y=lat_vol, style="kvolcano/0.45c", fill=color_vol, pen="0.1p,black")
+df_erp = df_events[df_events["event_type"] == "eruption"]
+fig.plot(
+    x=df_erp.lon,
+    y=df_erp.lat,
+    style="kvolcano/0.4c",
+    fill=color_event,
+    pen="0.1p,black",
+)
 
-# Plot recording station BFO
+# Plot recording station
 fig.plot(x=center_lon, y=center_lat, style="i0.4c", fill=color_sta, pen="0.3p,black")
+# Add label for recording station
 fig.text(
+    text="BFO",
     x=center_lon,
     y=center_lat,
+    justify="MC",
     offset="0c/0.4c",
-    text="BFO",
     font=font,
     fill="white@30",
     pen=f"0.7p,{color_sta}",
     clearance=clearance_standard,
 )
 
+# Add labels for event ID
+fig.text(
+    text=df_events["event_id"],
+    x=df_events["lon"],
+    y=df_events["lat"],
+    justify="MC",
+    offset="0c/-0.35c",
+    font="5p",
+    fill="white@30",
+    pen=f"0.1p,{color_event}",
+    clearance="0.05c/0.05c+tO",
+)
+
 # Show and save
 fig.show()  # method="external")
 
-# for ext in ["png"]:  # , "pdf", "eps"]:
-#     transparent = False
-#     if ext == "png":
-#         transparent = True
-#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
+for ext in ["png"]:  # , "pdf", "eps"]:
+    transparent = False
+    if ext == "png":
+        transparent = True
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
 
 print(fig_name)
