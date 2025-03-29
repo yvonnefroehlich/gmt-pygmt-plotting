@@ -7,6 +7,24 @@ publications I am involved. To prepare these maps I am using [_PyGMT_](https://w
 _Please note_: Scripts or notebooks are available up on acceptance of the related publication.
 
 
+## Content
+
+| Folder | Content | Related publication | Overview |
+| --- | --- | --- | --- |
+| **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)** | Custom symbols, colorwheel, colorbar font scaling, Earth section | - | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_000general.png" width="60"> |
+| **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)** | Maps related to anisotropy and SWS underneath the BFO| article [**_Ritter et al. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_001bfo.png" width="60"> |
+| **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024)** | Maps related to anisotropy and SWS underneath the URG area | article [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245) | _Up coming_ |
+| **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup)** | Travel paths of seismological phases through the Earth interior | article [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_003taup.png" width="60"> |
+| **[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions)** | Maps of selected earthquakes and eruptions between 2021 and present | - | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_004events.png" width="60"> |
+| **[005_global_seismicity](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/005_global_seismicity)** | Analysis regarding global seismicity (maps, histograms, etc.) | - | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_005seismicity.png" width="60"> |
+| **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases)** | `shear wave splitting`, `deep anisotropy`, `votemap analysis`, `cluster analysis`, `GyPSuM` | [DGG DeepDyn poster](https://doi.org/10.5281/zenodo.10927349), [SEDI DeepDyn poster](https://doi.org/10.5281/zenodo.12658821) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_006tomos.png" width="60"> |
+| **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)** | `gufm1` | [DGG DeepDyn poster](https://doi.org/10.5281/zenodo.10927349) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_007magnetic.png" width="60"> |
+| **[008_XXX_XXX]()** | _Up coming_ |  | _Up coming_ |
+| **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn)** | Maps related to the DeepDyn project | [SEDI DeepDyn poster](https://doi.org/10.5281/zenodo.12658821) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_009deepdyn.png" width="60"> |
+| **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem)** | Maps related to AxiSEM2D/3D | [AGU URG talk](http://dx.doi.org/10.5281/zenodo.14510993) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_010axisem.png" width="60"> |
+| **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024)** | Python scripts related toPyGMT and SPE | [AGU PyGMT talk](https://doi.org/10.6084/m9.figshare.28049495) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_011pygmt.png" width="60"> |
+
+
 ## Citation
 
 If you make use of this material, please acknowledge the relating publications in which framework these scripts and notebooks were written:
@@ -48,26 +66,6 @@ If you make use of this material, please acknowledge the relating publications i
   Understanding the influence of seismic mantle structures at the core-mantle boundary on intense magnetic flux regions.
   *84th Annual Meeting of the German Geophysical Society*, Jena.
   https://doi.org/10.5281/zenodo.10927349.
-
-
-## Content
-
-| Folder | Content | Related publication | Overview |
-| --- | --- | --- | --- |
-| **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)** | Custom symbols, colorwheel, colorbar font scaling, Earth section | - | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_000general.png" width="60"> |
-| **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)** | Maps related to anisotropy and SWS underneath the BFO| article [**_Ritter et al. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_001bfo.png" width="60"> |
-| **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024)** | Maps related to anisotropy and SWS underneath the URG area | article [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245), [AGU URG talk](http://dx.doi.org/10.5281/zenodo.14510993) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_002urg.png" width="60"> |
-| **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup)** | Travel paths of seismological phases through the Earth interior | article [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_003taup.png" width="60"> |
-| **[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions)** | Maps of selected earthquakes and eruptions between 2021 and present | - | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_004events.png" width="60"> |
-| **[005_global_seismicity](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/005_global_seismicity)** | Analysis regarding global seismicity (maps, histograms, etc.) | - | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_005seismicity.png" width="60"> |
-| **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases)** | `shear wave splitting`, `deep anisotropy`, `votemap analysis`, `cluster analysis`, `GyPSuM` | [DGG DeepDyn poster](https://doi.org/10.5281/zenodo.10927349), [SEDI DeepDyn poster](https://doi.org/10.5281/zenodo.12658821) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_006tomos.png" width="60"> |
-| **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)** | `gufm1` | [DGG DeepDyn poster](https://doi.org/10.5281/zenodo.10927349) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_007magnetic.png" width="60"> |
-| **[008_XXX_XXX]()** | _Up coming_ |  |
-| **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn)** | Maps related to the DeepDyn project | [SEDI DeepDyn poster](https://doi.org/10.5281/zenodo.12658821) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_009deepdyn.png" width="60"> |
-| **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem)** | Maps related to AxiSEM2D/3D | [AGU URG talk](http://dx.doi.org/10.5281/zenodo.14510993) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_010axisem.png" width="60"> |
-| **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024)** | Python scripts related toPyGMT and SPE | [AGU PyGMT talk](https://doi.org/10.6084/m9.figshare.28049495) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_011pygmt.png" width="60"> |
-
-![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.png)
 
 
 ## Requirements
