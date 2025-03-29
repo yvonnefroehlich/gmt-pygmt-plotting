@@ -38,10 +38,10 @@ def taup_style():
         "SKIKS": "dashed",
         "SKJKS": "dashed",
         # Deth phases for SKS and SKKS phases
-        "pSKS": "dotted",
-        "sSKS": "dotted",
-        "pSKKS": "dotted",
-        "sSKKS": "dotted",
+        "pSKS": "4_2:2p",
+        "sSKS": "4_2:2p",
+        "pSKKS": "4_2:2p",
+        "sSKKS": "4_2:2p",
     }
 
     # Depth phases for PcP and ScS phases
