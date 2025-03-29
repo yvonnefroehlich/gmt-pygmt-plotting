@@ -27,8 +27,8 @@
 # - Updated: 2024/05/04 - Enhancement: PyGMT Figure instance
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
 # - Updated: 2024/05/10 - Enhancement: Plot specific distance and depth ranges
-# - Updated: 2024/09/06 - Enhancement: Travel time (curve) with distance (cumulative
-# - Udpated: 2025/03/   - Maintenance: Adjust building file name
+# - Updated: 2024/09/06 - Enhancement: Travel time (curve) with distance (cumulative)
+# - Udpated: 2025/03/27 - Maintenance: Adjust building file name
 # - Updated: 2025/03/29 - Enhancement: Introduce function taup_line
 # #############################################################################
 
