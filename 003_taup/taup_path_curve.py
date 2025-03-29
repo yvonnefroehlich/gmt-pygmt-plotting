@@ -136,8 +136,8 @@ def taup_path(
     # Line colors and styles for the seismological phases
     # Adjust and extend the dictionary for your needs in taup_color.py
     phase_colors = taup_color()
-    # Adjust and extend the dictionary for your needs in taup_line.py
-    phase_colors = taup_style()
+    # Adjust and extend the dictionary for your needs in taup_style.py
+    phase_styles = taup_style()
 
     # %%
     # -------------------------------------------------------------------------
