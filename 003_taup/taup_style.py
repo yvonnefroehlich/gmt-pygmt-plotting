@@ -23,9 +23,9 @@
 def taup_style():
 
     phase_styles = {
-        "P": "solid",
+        "P": "dashed",
         "PcP": "solid",
-        "S": "solid",
+        "S": "dashed",
         "ScS": "solid",
         "PKS": "solid",
         "PKKS": "solid",
