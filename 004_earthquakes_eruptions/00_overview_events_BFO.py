@@ -5,6 +5,7 @@
 # - Created: 2024/04/07
 # - Updated: 2024/04/23 - Improve coding style
 # - Updated: 2025/03/28 - Reorganize folder, rewrite code
+# - Updated: 2025/03/29 - Introduce dictionary for events
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
@@ -39,7 +40,7 @@ lon_sta = 8.33
 lat_sta = 48.33
 
 # -----------------------------------------------------------------------------
-# Dictionary of events
+# Set up dictionary of events
 df_events = pd.DataFrame(
     {
         "event_type": [
