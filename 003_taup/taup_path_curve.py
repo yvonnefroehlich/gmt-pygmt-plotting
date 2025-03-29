@@ -361,7 +361,7 @@ def taup_path(
         fig_path.plot(
             x=pp_dist_used,
             y=pp_depth,
-            pen=f"{thick_line_path},{phase_colors[phase_label_split[0]]}",
+            pen=f"{thick_line_path},{phase_colors[phase_label_split[0]]},{phase_styles[phase_label_split[0]]}",
             label=f"{phase_label_split[0]} | {phase_time_split[0]} s+S0.5c/1c{leg_col_str}",
         )
 
