@@ -51,6 +51,7 @@ def taup_path(
     max_depth=None,
     min_dist=0,
     max_dist=None,
+    step_dist=10,
     font_size="4p",
     earth_color="tan",
     path_overlay=False,
@@ -82,6 +83,7 @@ def taup_path(
     # - max_depth: Maximum for plotting | km | Default Earth's radius
     # - min_dist: Minimum for plotting | degrees | Default 0
     # - max_dist: Maximum for plotting | degrees | Default epicentral distance + 10
+    # - step_dist: Step of epicentral distance annotations | degrees | Default 10
     # - font_size: Font size for text | Default "4p"
     # - path_overlay: Plot travel path on top of each other | False
     # - earth_color: Colors for Earth concentric shells or circles | Default "tan"
@@ -429,7 +431,7 @@ def taup_path(
     if path_overlay == False:
         # Affects the last addressed Figure instance
         with pygmt.config(FORMAT_GEO_MAP="+D"):  # 0°-360°
-            fig_path.basemap(frame=["xa10f5", "wbNe"])
+            fig_path.basemap(frame=[f"xa{step_dist}f5", "wbNe"])
 
     # Plot receiver always at surface, i.e., 0 km
     if min_depth == 0 and receiver_dist <= max_dist:
@@ -537,8 +539,8 @@ fig_path, fig_curve = taup_path(
     max_dist=360,
     phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "SKIKS", "SKJKS"],
     time_curve=True,
-    # fig_save=True,
-    # save_path="02_your_example_figures/",
+    fig_save=True,
+    save_path="02_your_example_figures/",
 )
 
 fig_path = taup_path(
@@ -552,8 +554,8 @@ fig_path = taup_path(
     min_depth=660,
     max_depth=4000,
     phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "SKIKS", "SKJKS"],
-    # fig_save=True,
-    # save_path="02_your_example_figures/",
+    fig_save=True,
+    save_path="02_your_example_figures/",
 )
 
 # -----------------------------------------------------------------------------
@@ -565,8 +567,8 @@ fig_path = taup_path(
     min_dist=-5,
     max_dist=100,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-    # fig_save=True,
-    # save_path="02_your_example_figures/",
+    fig_save=True,
+    save_path="02_your_example_figures/",
 )
 
 fig_path = taup_path(
@@ -579,8 +581,8 @@ fig_path = taup_path(
     min_depth=0,
     max_depth=4000,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-    # fig_save=True,
-    # save_path="02_your_example_figures/",
+    fig_save=True,
+    save_path="02_your_example_figures/",
 )
 
 fig_path = taup_path(
@@ -590,11 +592,12 @@ fig_path = taup_path(
     receiver_dist=95,
     min_dist=-5,
     max_dist=10,
+    step_dist=5,
     min_depth=0,
     max_depth=800,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-    # fig_save=True,
-    # save_path="02_your_example_figures/",
+    fig_save=True,
+    save_path="02_your_example_figures/",
 )
 
 
@@ -633,6 +636,6 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
         curve_time_range=[0, 2700],
         legend_path=False,
-        # fig_save=fig_save,
-        # save_path="02_your_example_figures/",
+        fig_save=fig_save,
+        save_path="02_your_example_figures/",
     )
