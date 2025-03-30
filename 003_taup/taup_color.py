@@ -1,8 +1,8 @@
 # #############################################################################
 # This functions
-# - Assigns the colors to the seismological phases
+# - Assigns line colors to the seismological phases
 # - Outputs a dictionary
-# - Is related to the function taup_path.py
+# - Is related to the function taup_path_curve.py
 # Feel free to adjust and extend the dictionary for your needs (:
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
