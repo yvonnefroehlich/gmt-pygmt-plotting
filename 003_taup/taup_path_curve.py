@@ -30,6 +30,7 @@
 # - Updated: 2024/09/06 - Enhancement: Travel time (curve) with distance (cumulative)
 # - Udpated: 2025/03/27 - Maintenance: Adjust building file name
 # - Updated: 2025/03/29 - Enhancement: Introduce function taup_style
+# - Updated: 2025/03/30 - Enhancement: Allow setting step of epicentral distance annotations
 # #############################################################################
 
 
