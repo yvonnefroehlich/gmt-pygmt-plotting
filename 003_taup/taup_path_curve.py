@@ -429,7 +429,7 @@ def taup_path(
     if path_overlay == False:
         # Affects the last addressed Figure instance
         with pygmt.config(FORMAT_GEO_MAP="+D"):  # 0°-360°
-            fig_path.basemap(frame=["xa10f5", "wbNe"])
+            fig_path.basemap(frame=["xa5f5", "wbNe"])
 
     # Plot receiver always at surface, i.e., 0 km
     if min_depth == 0 and receiver_dist <= max_dist:
@@ -588,10 +588,10 @@ fig_path = taup_path(
     font_size="6.5p",
     source_depth=500,
     receiver_dist=95,
-    min_dist=-5,
-    max_dist=10,
+    min_dist=-3,
+    max_dist=7,
     min_depth=0,
-    max_depth=700,
+    max_depth=800,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
     # fig_save=True,
     # save_path="02_your_example_figures/",
