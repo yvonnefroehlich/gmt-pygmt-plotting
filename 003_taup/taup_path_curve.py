@@ -28,6 +28,8 @@
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
 # - Updated: 2024/05/10 - Enhancement: Plot specific distance and depth ranges
 # - Updated: 2024/09/06 - Enhancement: Travel time (curve) with distance (cumulative)
+# - Udpated: 2025/03/27 - Maintenance: Adjust building file name
+# - Updated: 2025/03/29 - Enhancement: Introduce function taup_style
 # #############################################################################
 
 
@@ -36,6 +38,7 @@ import pygmt
 from obspy.taup import TauPyModel
 
 from taup_color import taup_color
+from taup_style import taup_style
 
 
 def taup_path(
@@ -130,10 +133,11 @@ def taup_path(
     color_highlight = "255/90/0"
     box_standard = "+gwhite+p0.1p,gray30+r2p"
 
-    # Colors for seismological phases
-    # Adjust and extend the dictionary for your needs in taup_path.py
+    # Line colors and styles for the seismological phases
+    # Adjust and extend the dictionary for your needs in taup_color.py
     phase_colors = taup_color()
-
+    # Adjust and extend the dictionary for your needs in taup_style.py
+    phase_styles = taup_style()
 
     # %%
     # -------------------------------------------------------------------------
@@ -357,7 +361,7 @@ def taup_path(
         fig_path.plot(
             x=pp_dist_used,
             y=pp_depth,
-            pen=f"{thick_line_path},{phase_colors[phase_label_split[0]]}",
+            pen=f"{thick_line_path},{phase_colors[phase_label_split[0]]},{phase_styles[phase_label_split[0]]}",
             label=f"{phase_label_split[0]} | {phase_time_split[0]} s+S0.5c/1c{leg_col_str}",
         )
 
@@ -587,7 +591,7 @@ fig_path = taup_path(
     min_dist=-5,
     max_dist=10,
     min_depth=0,
-    max_depth=700,
+    max_depth=800,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
     # fig_save=True,
     # save_path="02_your_example_figures/",
