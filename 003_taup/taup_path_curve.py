@@ -31,6 +31,7 @@
 # - Udpated: 2025/03/27 - Maintenance: Adjust building file name
 # - Updated: 2025/03/29 - Enhancement: Introduce function taup_style
 # - Updated: 2025/03/30 - Enhancement: Allow setting step of epicentral distance annotations
+# - Updated: 2025/03/31 - Enhancement: Add crust
 # #############################################################################
 
 
@@ -189,7 +190,7 @@ def taup_path(
 
     # -------------------------------------------------------------------------
     # Set up colors for Earth concentric shells or circles
-    bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # depth in kilometers
+    bounds = [30, 120, 440, 660, 2700, 2900, 5120, 6371]  # depth in kilometers
     earth_colors = ["none", "white", "tan", "gray", "bilbao_gray", "bilbao_brown"]
 
     # Adjust for your needs
@@ -205,22 +206,22 @@ def taup_path(
             colors = ["white"] * len(bounds)
         case "tan":
             colors = [
-                "244/236/236", "235/222/204", "229/211/188",
+                "244/236/236", "244/236/236", "235/222/204", "229/211/188",
                 "224/203/176", "220/197/167", "217/193/160", "white",
             ]
         case "gray":
             colors = [
-                "246.03", "228.09", "210.16",
+                "253", "246.03", "228.09", "210.16",
                 "193.22", "gray69", "159.34", "white",
             ]
         case "bilbao_gray":
             colors = [
-                "245.03/245.03/244.06", "225.09/224.09/223.09", "208.16/206.16/199.31",
+                "245.03/245.03/244.06", "245.03/245.03/244.06", "225.09/224.09/223.09", "208.16/206.16/199.31",
                 "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34", "white",
             ]
         case "bilbao_brown":
             colors = [
-                "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34",
+                "197.22/193.22/177.22", "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34",
                 "177.41/157.41/116.41", "172/142.47/105", "168/127.53/98.531", "white",
             ]
 
@@ -286,6 +287,7 @@ def taup_path(
                     case 660: y_offset = -200
                     case 440: y_offset = -50
                     case 120: y_offset = -70
+                    case 30: y_offset = -1000  # outside of plot
                 fig_path.plot(
                     x=np.linspace(min_dist, max_dist, max_dist),
                     y=np.ones(max_dist) * (r_earth - bound + y_offset),
@@ -540,8 +542,8 @@ fig_path, fig_curve = taup_path(
     max_dist=360,
     phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "SKIKS", "SKJKS"],
     time_curve=True,
-    # fig_save=True,
-    # save_path="02_your_example_figures/",
+    fig_save=True,
+    save_path="02_your_example_figures/",
 )
 
 fig_path = taup_path(
@@ -555,8 +557,8 @@ fig_path = taup_path(
     min_depth=660,
     max_depth=4000,
     phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "SKIKS", "SKJKS"],
-    # fig_save=True,
-    # save_path="02_your_example_figures/",
+    fig_save=True,
+    save_path="02_your_example_figures/",
 )
 
 # -----------------------------------------------------------------------------
@@ -568,8 +570,8 @@ fig_path = taup_path(
     min_dist=-5,
     max_dist=100,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-    # fig_save=True,
-    # save_path="02_your_example_figures/",
+    fig_save=True,
+    save_path="02_your_example_figures/",
 )
 
 fig_path = taup_path(
@@ -582,8 +584,8 @@ fig_path = taup_path(
     min_depth=0,
     max_depth=4000,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-    # fig_save=True,
-    # save_path="02_your_example_figures/",
+    fig_save=True,
+    save_path="02_your_example_figures/",
 )
 
 fig_path = taup_path(
@@ -597,8 +599,8 @@ fig_path = taup_path(
     min_depth=0,
     max_depth=800,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-    # fig_save=True,
-    # save_path="02_your_example_figures/",
+    fig_save=True,
+    save_path="02_your_example_figures/",
 )
 
 
@@ -637,6 +639,6 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
         curve_time_range=[0, 2700],
         legend_path=False,
-        # fig_save=fig_save,
-        # save_path="02_your_example_figures/",
+        fig_save=fig_save,
+        save_path="02_your_example_figures/",
     )
