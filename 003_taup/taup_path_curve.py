@@ -542,8 +542,8 @@ fig_path, fig_curve = taup_path(
     max_dist=360,
     phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "SKIKS", "SKJKS"],
     time_curve=True,
-    fig_save=True,
-    save_path="02_your_example_figures/",
+    # fig_save=True,
+    # save_path="02_your_example_figures/",
 )
 
 fig_path = taup_path(
@@ -557,8 +557,8 @@ fig_path = taup_path(
     min_depth=660,
     max_depth=4000,
     phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "SKIKS", "SKJKS"],
-    fig_save=True,
-    save_path="02_your_example_figures/",
+    # fig_save=True,
+    # save_path="02_your_example_figures/",
 )
 
 # -----------------------------------------------------------------------------
@@ -570,8 +570,8 @@ fig_path = taup_path(
     min_dist=-5,
     max_dist=100,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-    fig_save=True,
-    save_path="02_your_example_figures/",
+    # fig_save=True,
+    # save_path="02_your_example_figures/",
 )
 
 fig_path = taup_path(
@@ -584,8 +584,8 @@ fig_path = taup_path(
     min_depth=0,
     max_depth=4000,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-    fig_save=True,
-    save_path="02_your_example_figures/",
+    # fig_save=True,
+    # save_path="02_your_example_figures/",
 )
 
 fig_path = taup_path(
@@ -599,8 +599,8 @@ fig_path = taup_path(
     min_depth=0,
     max_depth=800,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
-    fig_save=True,
-    save_path="02_your_example_figures/",
+    # fig_save=True,
+    # save_path="02_your_example_figures/",
 )
 
 
@@ -639,6 +639,6 @@ for dist in np.arange(dist_min, dist_max + dist_step, dist_step):
         curve_dist_range=[dist_min - dist_step, dist_max + dist_step],
         curve_time_range=[0, 2700],
         legend_path=False,
-        fig_save=fig_save,
-        save_path="02_your_example_figures/",
+        # fig_save=fig_save,
+        # save_path="02_your_example_figures/",
     )
