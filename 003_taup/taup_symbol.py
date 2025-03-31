@@ -56,4 +56,4 @@ def taup_symbol():
     #     "sScS": "c",
     # }
 
-    return phase_symbol
+    return phase_symbols

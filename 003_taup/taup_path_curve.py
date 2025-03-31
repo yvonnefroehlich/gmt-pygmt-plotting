@@ -41,7 +41,7 @@ from obspy.taup import TauPyModel
 
 from taup_color import taup_color
 from taup_style import taup_style
-from taup_symobl import taup_symbol
+from taup_symbol import taup_symbol
 
 def taup_path(
     source_depth,
