@@ -392,7 +392,7 @@ def taup_path(
                     fig_curve.plot(
                         x=-1,
                         y=-1,
-                        style=f"{phase_symbol[phase_label_split[0]]}0.2c",
+                        style=f"{phase_symbol[phase]}0.2c",
                         fill=phase_colors[phase],
                         pen="0.05p,gray10",
                         label=f"{phase}{info_str}{col_str}+S0.15c",
