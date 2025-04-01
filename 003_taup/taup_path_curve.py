@@ -32,6 +32,7 @@
 # - Updated: 2025/03/29 - Enhancement: Introduce function taup_style
 # - Updated: 2025/03/30 - Enhancement: Allow setting step of epicentral distance annotations
 # - Updated: 2025/03/31 - Enhancement: Introduce function taup_symbol
+# - Updated: 2025/03/31 - Enhancement: Add crust
 # #############################################################################
 
 
@@ -192,7 +193,7 @@ def taup_path(
 
     # -------------------------------------------------------------------------
     # Set up colors for Earth concentric shells or circles
-    bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # depth in kilometers
+    bounds = [30, 120, 440, 660, 2700, 2900, 5120, 6371]  # depth in kilometers
     earth_colors = ["none", "white", "tan", "gray", "bilbao_gray", "bilbao_brown"]
 
     # Adjust for your needs
@@ -208,22 +209,22 @@ def taup_path(
             colors = ["white"] * len(bounds)
         case "tan":
             colors = [
-                "244/236/236", "235/222/204", "229/211/188",
+                "white", "244/236/236", "235/222/204", "229/211/188",
                 "224/203/176", "220/197/167", "217/193/160", "white",
             ]
         case "gray":
             colors = [
-                "246.03", "228.09", "210.16",
+                "white", "246.03", "228.09", "210.16",
                 "193.22", "gray69", "159.34", "white",
             ]
         case "bilbao_gray":
             colors = [
-                "245.03/245.03/244.06", "225.09/224.09/223.09", "208.16/206.16/199.31",
+                "white", "245.03/245.03/244.06", "225.09/224.09/223.09", "208.16/206.16/199.31",
                 "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34", "white",
             ]
         case "bilbao_brown":
             colors = [
-                "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34",
+                "white", "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34",
                 "177.41/157.41/116.41", "172/142.47/105", "168/127.53/98.531", "white",
             ]
 
@@ -289,6 +290,7 @@ def taup_path(
                     case 660: y_offset = -200
                     case 440: y_offset = -50
                     case 120: y_offset = -70
+                    case 30: y_offset = -1000  # outside of plot
                 fig_path.plot(
                     x=np.linspace(min_dist, max_dist, max_dist),
                     y=np.ones(max_dist) * (r_earth - bound + y_offset),
@@ -603,7 +605,6 @@ fig_path = taup_path(
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
-
 
 # -----------------------------------------------------------------------------
 dist_min = 0  # degrees
