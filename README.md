@@ -9,7 +9,7 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 
 ## Content
 
-| Folder | Overview | Content | Related publication |
+| Folder | Overview | Content | Related publications |
 | --- | --- | --- | --- |
 | **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_000general.png" width="250"> | Custom symbols, colorwheel, colorbar font scaling, Earth section | - |
 | **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_001bfo.png" width="250"> | Maps related to anisotropy and SWS underneath the BFO| [**_Ritter et al. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w) |
