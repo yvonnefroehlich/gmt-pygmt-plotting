@@ -31,6 +31,8 @@
 # - Udpated: 2025/03/27 - Maintenance: Adjust building file name
 # - Updated: 2025/03/29 - Enhancement: Introduce function taup_style
 # - Updated: 2025/03/30 - Enhancement: Allow setting step of epicentral distance annotations
+# - Updated: 2025/03/31 - Enhancement: Introduce function taup_symbol
+# - Updated: 2025/03/31 - Enhancement: Add crust
 # #############################################################################
 
 
@@ -40,7 +42,7 @@ from obspy.taup import TauPyModel
 
 from taup_color import taup_color
 from taup_style import taup_style
-
+from taup_symbol import taup_symbol
 
 def taup_path(
     source_depth,
@@ -136,11 +138,13 @@ def taup_path(
     color_highlight = "255/90/0"
     box_standard = "+gwhite+p0.1p,gray30+r2p"
 
-    # Line colors and styles for the seismological phases
-    # Adjust and extend the dictionary for your needs in taup_color.py
+    # Seismological phases
+    # Colors: adjust and extend the dictionary for your needs in taup_color.py
     phase_colors = taup_color()
-    # Adjust and extend the dictionary for your needs in taup_style.py
+    # Line styles: adjust and extend the dictionary for your needs in taup_style.py
     phase_styles = taup_style()
+	# Symbols: adjust and extend the dictionary for your needs in taup_symbol.py
+    phase_symbol = taup_symbol()
 
     # %%
     # -------------------------------------------------------------------------
@@ -189,7 +193,7 @@ def taup_path(
 
     # -------------------------------------------------------------------------
     # Set up colors for Earth concentric shells or circles
-    bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # depth in kilometers
+    bounds = [30, 120, 440, 660, 2700, 2900, 5120, 6371]  # depth in kilometers
     earth_colors = ["none", "white", "tan", "gray", "bilbao_gray", "bilbao_brown"]
 
     # Adjust for your needs
@@ -205,22 +209,22 @@ def taup_path(
             colors = ["white"] * len(bounds)
         case "tan":
             colors = [
-                "244/236/236", "235/222/204", "229/211/188",
+                "white", "244/236/236", "235/222/204", "229/211/188",
                 "224/203/176", "220/197/167", "217/193/160", "white",
             ]
         case "gray":
             colors = [
-                "246.03", "228.09", "210.16",
+                "white", "246.03", "228.09", "210.16",
                 "193.22", "gray69", "159.34", "white",
             ]
         case "bilbao_gray":
             colors = [
-                "245.03/245.03/244.06", "225.09/224.09/223.09", "208.16/206.16/199.31",
+                "white", "245.03/245.03/244.06", "225.09/224.09/223.09", "208.16/206.16/199.31",
                 "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34", "white",
             ]
         case "bilbao_brown":
             colors = [
-                "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34",
+                "white", "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34",
                 "177.41/157.41/116.41", "172/142.47/105", "168/127.53/98.531", "white",
             ]
 
@@ -286,6 +290,7 @@ def taup_path(
                     case 660: y_offset = -200
                     case 440: y_offset = -50
                     case 120: y_offset = -70
+                    case 30: y_offset = -1000  # outside of plot
                 fig_path.plot(
                     x=np.linspace(min_dist, max_dist, max_dist),
                     y=np.ones(max_dist) * (r_earth - bound + y_offset),
@@ -375,7 +380,7 @@ def taup_path(
             fig_curve.plot(
                 x=receiver_dist,
                 y=phase_time_split[0],
-                style="c0.13c",
+                style=f"{phase_symbol[phase_label_split[0]]}0.13c",
                 fill=phase_colors[phase_label_split[0]],
                 pen="0.001p,gray10",
                 no_clip=True,
@@ -389,7 +394,7 @@ def taup_path(
                     fig_curve.plot(
                         x=-1,
                         y=-1,
-                        style="c0.2c",
+                        style=f"{phase_symbol[phase]}0.2c",
                         fill=phase_colors[phase],
                         pen="0.05p,gray10",
                         label=f"{phase}{info_str}{col_str}+S0.15c",
@@ -600,7 +605,6 @@ fig_path = taup_path(
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
-
 
 # -----------------------------------------------------------------------------
 dist_min = 0  # degrees
