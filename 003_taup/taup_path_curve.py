@@ -31,6 +31,7 @@
 # - Udpated: 2025/03/27 - Maintenance: Adjust building file name
 # - Updated: 2025/03/29 - Enhancement: Introduce function taup_style
 # - Updated: 2025/03/30 - Enhancement: Allow setting step of epicentral distance annotations
+# - Updated: 2025/03/31 - Enhancement: Introduce function taup_symbol
 # #############################################################################
 
 
@@ -40,7 +41,7 @@ from obspy.taup import TauPyModel
 
 from taup_color import taup_color
 from taup_style import taup_style
-
+from taup_symbol import taup_symbol
 
 def taup_path(
     source_depth,
@@ -136,11 +137,13 @@ def taup_path(
     color_highlight = "255/90/0"
     box_standard = "+gwhite+p0.1p,gray30+r2p"
 
-    # Line colors and styles for the seismological phases
-    # Adjust and extend the dictionary for your needs in taup_color.py
+    # Seismological phases
+    # Colors: adjust and extend the dictionary for your needs in taup_color.py
     phase_colors = taup_color()
-    # Adjust and extend the dictionary for your needs in taup_style.py
+    # Line styles: adjust and extend the dictionary for your needs in taup_style.py
     phase_styles = taup_style()
+	# Symbols: adjust and extend the dictionary for your needs in taup_symbol.py
+    phase_symbol = taup_symbol()
 
     # %%
     # -------------------------------------------------------------------------
@@ -375,7 +378,7 @@ def taup_path(
             fig_curve.plot(
                 x=receiver_dist,
                 y=phase_time_split[0],
-                style="c0.13c",
+                style=f"{phase_symbol[phase_label_split[0]]}0.13c",
                 fill=phase_colors[phase_label_split[0]],
                 pen="0.001p,gray10",
                 no_clip=True,
@@ -389,7 +392,7 @@ def taup_path(
                     fig_curve.plot(
                         x=-1,
                         y=-1,
-                        style="c0.2c",
+                        style=f"{phase_symbol[phase]}0.2c",
                         fill=phase_colors[phase],
                         pen="0.05p,gray10",
                         label=f"{phase}{info_str}{col_str}+S0.15c",
