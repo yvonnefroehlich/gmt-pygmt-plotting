@@ -35,10 +35,10 @@ import pygmt as gmt
 # Choose for your needs
 # -----------------------------------------------------------------------------
 # Quantity for color-coding: station, backazimuth, epicentral distance
-cmap_quantity = "baz"  ## "sta", "dist", "baz"
+cmap_quantity = "sta"  ## "sta", "dist", "baz"
 
 # Projection: Robison, orthographic, epi-distance projections
-status_proj = "epi"  ## "rob", "ortho", "epi"
+status_proj = "rob"  ## "rob", "ortho", "epi"
 
 # Add colorbar: True, False
 status_cb = True
