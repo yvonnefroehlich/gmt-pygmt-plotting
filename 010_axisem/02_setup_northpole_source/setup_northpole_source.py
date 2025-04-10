@@ -35,10 +35,10 @@ import pygmt as gmt
 # Choose for your needs
 # -----------------------------------------------------------------------------
 # Quantity for color-coding: station, backazimuth, epicentral distance
-cmap_quantity = "dist"  ## "sta", "dist", "baz"
+cmap_quantity = "baz"  ## "sta", "dist", "baz"
 
 # Projection: Robison, orthographic, epi-distance projections
-status_proj = "ortho"  ## "rob", "ortho", "epi"
+status_proj = "epi"  ## "rob", "ortho", "epi"
 
 # Add colorbar: True, False
 status_cb = True
@@ -265,6 +265,6 @@ fig_name = (
     f"setup_northpole_source_global_step{coord_step}deg_"
     + f"{cmap_quantity}{cmap_sta}_{status_proj}{cb_str}"
 )
-# for ext in ["png"]:  # "pdf", "png", "eps"
-#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+for ext in ["png"]:  # "pdf", "png", "eps"
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
