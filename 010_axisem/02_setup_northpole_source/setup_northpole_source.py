@@ -11,10 +11,10 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/03/09
-# - Updated: 2025/04/10
+# - Updated: 2025/04/10 - Improve plotting the colorbar
 # -----------------------------------------------------------------------------
 # Versions
-#   PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
+#   PyGMT v0.15.0 -> https://www.pygmt.org/v0.15.0/ | https://www.pygmt.org/
 #   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
