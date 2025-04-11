@@ -11,9 +11,10 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/03/09
+# - Updated: 2025/04/10 - Improve plotting the colorbar
 # -----------------------------------------------------------------------------
 # Versions
-#   PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
+#   PyGMT v0.15.0 -> https://www.pygmt.org/v0.15.0/ | https://www.pygmt.org/
 #   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
@@ -67,7 +68,7 @@ source_lat = 89.999  # degrees North
 coord_step = 10  # degrees
 
 cb_str = ""
-if status_cb == True:
+if status_cb == True and cmap_quantity != "sta":
     cb_str = "_cb"
 
 match cmap_quantity:
@@ -80,21 +81,23 @@ match cmap_quantity:
 
 match status_proj:
     case "rob":
-        proj_used = "N18c"
+        fig_width = 18
+        proj_used = f"N{fig_width}c"
         no_clip_used = True
         sta_lat_min = 90
         sta_lat_max = -90
         y_text_add = 3.1
         sta_font = 4
     case "ortho":
-        proj_used = "G0/2/10c"
+        fig_width = 12
+        proj_used = f"G0/2/{fig_width}c"
         no_clip_used = False
         sta_lat_min = 80
         sta_lat_max = -70
         y_text_add = 2.5
         sta_font = 4.5
     case "epi":
-        fig_width = 14
+        fig_width = 12
         proj_dist = 160
         dist2fig = fig_width / proj_dist
         proj_used = f"E{source_lon}/{source_lat}/{proj_dist}/{fig_width}c"
@@ -159,12 +162,6 @@ if cmap_quantity == "baz":
         color_model=f"+c{cb_annot_baz}",
         cyclic=True,
     )
-    if status_cb == True:
-        with gmt.config(MAP_FRAME_PEN="0.2p", FONT="8p"):
-            # +r reverse the sense of the positive direction
-            fig.colorbar(
-                cmap=True, position="JRM+jMC+w9c/0.2c+o0.5c/-0.2c+r", equalsize=0.2
-            )
 
 # for epicentral distance (-> latitude)
 elif cmap_quantity == "dist":
@@ -181,11 +178,12 @@ elif cmap_quantity == "dist":
         color_model=f"+c{cb_annot_dist}",
         reverse=True,
     )
-    if status_cb == True:
-        with gmt.config(MAP_FRAME_PEN="0.2p", FONT="8p"):
-            fig.colorbar(
-                cmap=True, position="JRM+jMC+w9.3c/0.2c+o0.5c/0c+r", equalsize=0.2
-            )
+
+if status_cb == True and cmap_quantity != "sta":
+    with gmt.config(MAP_FRAME_PEN="0.2p", FONT="8p"):
+        fig.colorbar(
+            cmap=True, position=f"JRM+jMC+w{fig_width-0.5}c/0.2c+o0.5c/0c+r", equalsize=0.2
+        )
 
 # -----------------------------------------------------------------------------
 # Plot recording stations with color-coding
