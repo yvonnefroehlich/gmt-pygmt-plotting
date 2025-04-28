@@ -28,7 +28,7 @@
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
 # - Updated: 2024/05/10 - Enhancement: Plot specific distance and depth ranges
 # - Updated: 2024/09/06 - Enhancement: Travel time (curve) with distance (cumulative)
-# - Udpated: 2025/03/27 - Maintenance: Adjust building file name
+# - Updated: 2025/03/27 - Maintenance: Adjust building file name
 # - Updated: 2025/03/29 - Enhancement: Introduce function taup_style
 # - Updated: 2025/03/30 - Enhancement: Allow setting step of epicentral distance annotations
 # - Updated: 2025/03/31 - Enhancement: Introduce function taup_symbol
@@ -410,7 +410,7 @@ def taup_path(
         fig_name_phase.append(phase_label_split[0])
         # Remove doublictes
         fig_name_phase = list(dict.fromkeys(fig_name_phase))
-    # Use submitted phase list in case the list of the existing phases is emtpy
+    # Use submitted phase list in case the list of the existing phases is empty
     if fig_name_phase == []:
         fig_name_phase = phases
 
