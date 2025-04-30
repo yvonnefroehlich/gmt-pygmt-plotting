@@ -91,7 +91,7 @@ or [submit a pull request](https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 
 ## References
 
-_Please note_: Specific references are given in the single notebooks and scripts
+_Please note_: Specific references are given in the single notebooks and scripts.
 
 - [**_Bird, P. (2003)_**](https://doi.org/10.1029/2001GC000252).
   An updated digital model of plate boundaries.
