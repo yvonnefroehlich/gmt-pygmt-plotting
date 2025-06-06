@@ -5,11 +5,6 @@
 # - Is related to the function taup_path_curve.py
 # Feel free to adjust and extend the dictionary for your needs (:
 # -----------------------------------------------------------------------------
-# Contact
-# - Author: Yvonne Fröhlich
-# - ORCID: https://orcid.org/0000-0002-8566-0619
-# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
 # Related to
 #   Fröhlich Y., Grund M. & Ritter J. R. R. (2024).
 #   Lateral and vertical variations of seismic anisotropy in the lithosphere-
@@ -19,6 +14,11 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/05/07
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 

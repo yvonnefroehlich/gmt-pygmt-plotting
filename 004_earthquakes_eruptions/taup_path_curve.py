@@ -8,26 +8,30 @@
 #   - travel time(s) in separate Figures
 #   - travel time curve with epicentral distance cumulative in one Figure
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
-# Related to:
+# Related to
 #   Fröhlich Y., Grund M. & Ritter J. R. R. (2024).
 #   Lateral and vertical variations of seismic anisotropy in the lithosphere-
 #   asthenosphere system underneath Central Europe from long-term splitting
 #   measurements. Geophysical Journal International, 239(1), 112-135.
 #   https://doi.org/10.1093/gji/ggae245.
 # -----------------------------------------------------------------------------
+# History
 # - Created: 2024/04/07
-#   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
-#   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # - Updated: 2024/04/23 - Maintenance: Coding style
 # - Updated: 2024/05/04 - Maintenance: Arguments and comments for colors
 # - Updated: 2024/05/04 - Enhancement: PyGMT Figure instance
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
 # - Updated: 2024/05/10 - Enhancement: Plot specific distance and depth ranges
 # - Updated: 2024/09/06 - Enhancement: Travel time (curve) with distance (cumulative)
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.14.0 -> https://www.pygmt.org/v0.14.0/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 

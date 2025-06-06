@@ -1,6 +1,8 @@
 # #############################################################################
 # Shear wave splitting database
 #
+# Spatial distribution of splits (i.e. nulls are not considered)
+#
 # Wüstefeld A., Bokelmann G., Barruol G., Montagner J.-P., (2009). Identifying
 # global seismic anisotropy patterns by correlating shear-wave splitting and
 # surface-wave data. Physics of the Earth and Planetary Interiors, 176(3–4),
@@ -9,22 +11,25 @@
 # Shear wave splitting data is available at http://ds.iris.edu/ds/products/sws-dbs/
 # - SWS-DB: The Géosciences Montpellier SplitLab Shear-Wave Splitting Database
 #   http://ds.iris.edu/ds/products/sws-db/, last access 2024/09/08
-#   https://doi.org/10.18715/sks_splitting_database, outdated
-#   http://splitting.gm.univ-montp2.fr/, outdated
+#   https://doi.org/10.18715/sks_splitting_database
+#   http://splitting.gm.univ-montp2.fr/
 # - SWS-DB-MST: The Missouri S&T western and central United States shear-wave splitting database
 #   http://ds.iris.edu/ds/products/sws-db-mst/, last access 2024/09/08
-#
-# Spatial distribution of splits (i.e. nulls are not considered)
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
-# - Created: 2024/05/10
+# History
+# - Created: 2024/04/29
 # - Updated: 2025/02/15
-#   PyGMT v0.11.0 - v0.14.2 -> https://www.pygmt.org/
-#   GMT 6.4.0 - 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.11.0 - v0.14.2 -> https://www.pygmt.org/
+# - GMT 6.4.0 - 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
+
 
 
 import pandas as pd

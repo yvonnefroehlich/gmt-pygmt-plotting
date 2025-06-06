@@ -14,8 +14,8 @@
 # - Updated: 2025/04/10 - Improve plotting the colorbar
 # -----------------------------------------------------------------------------
 # Versions
-#   PyGMT v0.15.0 -> https://www.pygmt.org/v0.15.0/ | https://www.pygmt.org/
-#   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# - PyGMT v0.15.0 -> https://www.pygmt.org/v0.15.0/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich
