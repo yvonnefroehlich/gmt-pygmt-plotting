@@ -6,7 +6,7 @@
 # provinces. Geochemistry, Geophysics, Geosystems, 24, e2023GC011070.
 # https://doi.org/10.1029/2023GC011070
 #
-# Data is available at https://github.com/wolfjonathan/Deep_Mantle_Anisotropy_Database
+# Data are available at https://github.com/wolfjonathan/Deep_Mantle_Anisotropy_Database
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/04/29
