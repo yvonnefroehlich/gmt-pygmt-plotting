@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 # #############################################################################
 # Myanmar earthquake on 2025/03/28
-# See also: https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL046099
-#           (https://doi.org/10.1029/2010GL046099)
-#           (last access: 2025/03/28)
+# See also https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2010GL046099
+#          (https://doi.org/10.1029/2010GL046099)
+#          (last access: 2025/03/28)
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/03/28
