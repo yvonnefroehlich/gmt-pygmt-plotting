@@ -1,16 +1,24 @@
 # #############################################################################
 # Deep anisotropy database
-# Source
-# - Data: https://github.com/wolfjonathan/Deep_Mantle_Anisotropy_Database
-# - Publication: https://doi.org/10.1029/2023GC011070
+#
+# Wolf, J., Long, M. D., Li, M., & Garnero, E. (2023). Global compilation of
+# deep mantle anisotropy observations and possible correlation with low velocity
+# provinces. Geochemistry, Geophysics, Geosystems, 24, e2023GC011070.
+# https://doi.org/10.1029/2023GC011070
+#
+# Data is available at https://github.com/wolfjonathan/Deep_Mantle_Anisotropy_Database
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
+# History
 # - Created: 2024/04/29
-#   PyGMT v0.11.0 / v0.12.0 -> https://www.pygmt.org/
-#   GMT 6.4.0 / 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.11.0 / v0.12.0 -> https://www.pygmt.org/
+# - GMT 6.4.0 / 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 
