@@ -40,8 +40,8 @@ for i_letter in range(len(lower_letters)):
 fig.hlines(y=0, pen="0.8p,2_2")
 
 fig_name = "greek_letters"
-for ext in ["png"]:
-    fig.savefig(fname=f"{fig_name}.{ext}")
+# for ext in ["png"]:
+#     fig.savefig(fname=f"{fig_name}.{ext}")
 fig.show()
 print(fig_name)
 
