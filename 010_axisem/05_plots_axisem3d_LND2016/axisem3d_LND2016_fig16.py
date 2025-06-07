@@ -82,27 +82,32 @@ with pygmt.config(
         frame=["WrSt", "xa2f3g2+lseismic period / s", "ya1f3g+lnumber of processors"],
     )
 
+# Plot decay lines and text
 fig.plot(x=[2, 16], y=[98, 0.5], pen=f"0.5p,{color_highlight},4_2")
 fig.plot(x=[5, 40], y=[28000, 10], pen=f"0.5p,{color_highlight},4_2")
 fig.text(x=4.3, y=5.5, text="~@~w@~@+3@+", font=f"14p,Helvetica-Bold,{color_highlight}")
 fig.text(x=8.2, y=1600, text="~@~w@~@+4@+", font=f"14p,Helvetica-Bold,{color_highlight}")
 
+# Plot data points as lines
 fig.plot(x=t_axisem, y=p_axisem, pen=f"0.6p,{color_axisem},")
 fig.plot(x=t_specfem, y=p_specfem, pen=f"0.6p,{color_specfem}")
 fig.plot(x=t_s362ani, y=p_s362ani, pen=f"0.6p,{color_s362ani}")
 fig.plot(x=t_s40rts, y=p_s40rts, pen=f"0.6p,{color_s40rts}")
 
+# Plot data points as symbols
 fig.plot(x=t_axisem, y=p_axisem, fill=color_axisem, style=f"{symbol_axisem}{size}", pen=pen)
 fig.plot(x=t_specfem, y=p_specfem, fill=color_specfem, style=f"{symbol_specfem}{size}", pen=pen)
 fig.plot(x=t_s362ani, y=p_s362ani, fill=color_s362ani, style=f"{symbol_s362ani}{size}", pen=pen)
 fig.plot(x=t_s40rts, y=p_s40rts, fill=color_s40rts, style=f"{symbol_s40rts}{size}", pen=pen)
 
+# Create legend
 fig.plot(fill=color_axisem, style=f"{symbol_axisem}{size}", label="AxiSEM", **args_leg)
 fig.plot(fill=color_specfem, style=f"{symbol_specfem}{size}", label="SPECFEM", **args_leg)
 fig.plot(fill=color_s362ani, style=f"{symbol_s362ani}{size}", label="AxiSEM3D s362ani", **args_leg)
 fig.plot(fill=color_s40rts, style=f"{symbol_s40rts}{size}", label="AxiSEM3D s40rts", **args_leg)
 fig.legend(position="jTL+w3.4c+o0.2c", box=box_standard)
 
+# Save and show figure
 fig.show()
 fig_name = "axisem3d_LND2016_fig16"
 # for ext in ["png"]: #, "pdf"]:
