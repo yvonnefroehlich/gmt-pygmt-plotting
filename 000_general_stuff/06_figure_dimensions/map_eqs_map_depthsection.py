@@ -147,7 +147,7 @@ with pygmt.config(FONT="16p"):
 with fig.shift_origin(yshift=f"-{width_depth + 0.4}c"):
     with pygmt.config(MAP_FRAME_TYPE="plain"):
         fig.basemap(
-            # only needed for bottom longitude axis (South), random latitude range
+            # Only needed for bottom longitude axis (South), random latitude range
             region=[lon_min, lon_max, -1, 1],
             projection=f"M{width_main}c",
             frame=["S", "xa2f0.5"],
@@ -178,7 +178,7 @@ with fig.shift_origin(xshift="+w+0.4c"):
 
 # -----------------------------------------------------------------------------
 fig_name = "map_eqs_map_depthsection"
-for ext in ["png", "pdf"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+# for ext in ["png"]: #, "pdf"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 fig.show()
 print(fig_name)
