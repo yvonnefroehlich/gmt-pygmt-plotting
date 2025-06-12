@@ -18,8 +18,6 @@
 import pandas as pd
 import pygmt
 
-
-
 # %%
 # -----------------------------------------------------------------------------
 # General stuff
@@ -30,7 +28,6 @@ width_depth = 6
 box_standard = "+gwhite@30+p0.3p,gray30+r2p"
 
 path_out = "02_out_figs"
-
 
 
 # %%
@@ -66,7 +63,12 @@ file_dim_main = "map_dim_main"
 with pygmt.clib.Session() as session:
     session.call_module(
         module="mapproject",
-        args=[f"-J{projection_main}", f"-R{region_main}", "-W", f"->{file_dim_main}.txt"],
+        args=[
+            f"-J{projection_main}",
+            f"-R{region_main}",
+            "-W",
+            f"->{file_dim_main}.txt",
+        ],
     )
 map_dim_main = pd.read_csv(f"{file_dim_main}.txt", sep="\t", names=["width", "hight"])
 hight_depth = map_dim_main["hight"][0]
@@ -75,7 +77,9 @@ hight_depth = map_dim_main["hight"][0]
 # Get width of depth-latitude map
 factor_depth = 10  # To keep values within in value range expected for longitude
 projection_lat = f"M{hight_depth}c+dh"  # Give hight instead of width
-region_lat = f"{depth_min/factor_depth}/{depth_max/factor_depth}/{lat_min}/{lat_max}"
+region_lat = (
+    f"{depth_min / factor_depth}/{depth_max / factor_depth}/{lat_min}/{lat_max}"
+)
 
 file_dim_lat = "map_dim_lat"
 with pygmt.clib.Session() as session:
@@ -88,7 +92,6 @@ width_lat = map_dim_lat["width"][0]
 
 # Scale depth relative to latitude
 depth2lat = width_lat / width_depth * factor_depth
-
 
 
 # %%
@@ -180,7 +183,7 @@ with fig.shift_origin(xshift="+w+0.4c"):
 
 # -----------------------------------------------------------------------------
 fig_name = "map_eqs_map_depthsection"
-# for ext in ["png"]: #, "pdf"]:
-#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+for ext in ["png"]:  # , "pdf"]:
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 fig.show()
 print(fig_name)
