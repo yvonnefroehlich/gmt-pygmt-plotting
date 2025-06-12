@@ -18,6 +18,7 @@
 import pandas as pd
 import pygmt
 
+
 # %%
 # -----------------------------------------------------------------------------
 # General stuff
@@ -64,10 +65,7 @@ with pygmt.clib.Session() as session:
     session.call_module(
         module="mapproject",
         args=[
-            f"-J{projection_main}",
-            f"-R{region_main}",
-            "-W",
-            f"->{file_dim_main}.txt",
+            f"-J{projection_main}", f"-R{region_main}", "-W", f"->{file_dim_main}.txt"
         ],
     )
 map_dim_main = pd.read_csv(f"{file_dim_main}.txt", sep="\t", names=["width", "hight"])
@@ -83,7 +81,7 @@ region_lat = (
 
 file_dim_lat = "map_dim_lat"
 with pygmt.clib.Session() as session:
-    session.call_module(
+   session.call_module(
         module="mapproject",
         args=[f"-J{projection_lat}", f"-R{region_lat}", "-W", f"->{file_dim_lat}.txt"],
     )
@@ -115,7 +113,7 @@ with pygmt.config(FONT="16p"):
 
 fig.coast(shorelines="1/0.1p,gray10", frame=["NsWe", "a2f0.5g1"])
 
-# Hypocenteral depth
+# Color-coding hypocenteral depth
 pygmt.makecpt(cmap="lajolla", series=[depth_min, depth_max])
 fig.plot(
     x=df_eqs.longitude,
@@ -135,12 +133,14 @@ with pygmt.config(FONT="16p"):
 # Depth sections
 args_dethplot = {
     "fill": df_eqs.magnitude,
+    "size": 0.02 * 2**df_eqs.magnitude,
     "cmap": True,
-    "style": "c0.25c",
+    "style": "cc",
     "pen": "0.3p,gray10",
     "no_clip": True,
 }
 
+# Color-coding moment magnitude
 pygmt.makecpt(cmap="acton", series=[mag_min, mag_max], reverse=True)
 with pygmt.config(FONT="16p"):
     fig.colorbar(
@@ -149,7 +149,7 @@ with pygmt.config(FONT="16p"):
 
 # .............................................................................
 # Longitude-depth plot
-with fig.shift_origin(yshift=f"-{width_depth + 0.4}c"):
+with fig.shift_origin(yshift=f"-{width_depth + 1}c"):
     with pygmt.config(MAP_FRAME_TYPE="plain"):
         fig.basemap(
             # Only needed for bottom longitude axis (South), random latitude range
@@ -167,7 +167,7 @@ with fig.shift_origin(yshift=f"-{width_depth + 0.4}c"):
 
 # .............................................................................
 # Depth-latitude plot
-with fig.shift_origin(xshift="+w+0.4c"):
+with fig.shift_origin(xshift="+w+1c"):
     fig.basemap(
         region=[depth_min, depth_max, lat_min, lat_max],
         projection=f"X{width_depth}c/{hight_depth}c",
@@ -183,7 +183,7 @@ with fig.shift_origin(xshift="+w+0.4c"):
 
 # -----------------------------------------------------------------------------
 fig_name = "map_eqs_map_depthsection"
-# for ext in ["png"]:  # , "pdf"]:
-#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+for ext in ["png"]:  # , "pdf"]:
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 fig.show()
 print(fig_name)
