@@ -183,7 +183,7 @@ with fig.shift_origin(xshift="+w+0.4c"):
 
 # -----------------------------------------------------------------------------
 fig_name = "map_eqs_map_depthsection"
-for ext in ["png"]:  # , "pdf"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+# for ext in ["png"]:  # , "pdf"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 fig.show()
 print(fig_name)
