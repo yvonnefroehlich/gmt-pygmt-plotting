@@ -1,5 +1,5 @@
 # #############################################################################
-# Earthquake map with depth sections at the bottom and right sides
+# Earthquake map with lon-depth and depth-lat sections at the bottom and right sides
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/06/07
