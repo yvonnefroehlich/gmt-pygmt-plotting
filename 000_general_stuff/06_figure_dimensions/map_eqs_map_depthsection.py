@@ -5,7 +5,7 @@
 # - Created: 2025/06/07
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.14.2 / dev -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
+# - PyGMT v0.15.0 / dev -> https://www.pygmt.org/v0.15.0/ | https://www.pygmt.org/
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
@@ -51,9 +51,8 @@ lon_max = df_eqs.longitude.max() + 1
 lat_min = df_eqs.latitude.min() - 1
 lat_max = df_eqs.latitude.max() + 1
 
-region_main = f"{lon_min}/{lon_max}/{lat_min}/{lat_max}"  # string need for GMT !!!
+region_main = f"{lon_min}/{lon_max}/{lat_min}/{lat_max}"  # Need string for GMT !!!
 projection_main = f"M{width_main}c"
-
 
 
 # %%
@@ -73,17 +72,20 @@ map_dim_main = pd.read_csv(f"{file_dim_main}.txt", sep="\t", names=["width", "hi
 hight_depth = map_dim_main["hight"][0]
 
 # -----------------------------------------------------------------------------
-# Geht width of depth - latitude map
-file_dim_lat = "map_dim_lat"
+# Get width of depth-latitude map
 factor_depth = 10  # To keep values within in value range expected for longitude
-region_lat=f"{depth_min/factor_depth}/{depth_max/factor_depth}/{lat_min}/{lat_max}"
+projection_lat = f"M{hight_depth}c+dh"  # Give hight instead of width
+region_lat = f"{depth_min/factor_depth}/{depth_max/factor_depth}/{lat_min}/{lat_max}"
+
+file_dim_lat = "map_dim_lat"
 with pygmt.clib.Session() as session:
     session.call_module(
         module="mapproject",
-        args=[f"-JM{hight_depth}c+dh", f"-R{region_lat}", "-W", f"->{file_dim_lat}.txt"],
+        args=[f"-J{projection_lat}", f"-R{region_lat}", "-W", f"->{file_dim_lat}.txt"],
     )
 map_dim_lat = pd.read_csv(f"{file_dim_lat}.txt", sep="\t", names=["width", "hight"])
 width_lat = map_dim_lat["width"][0]
+
 # Scale depth relative to latitude
 depth2lat = width_lat / width_depth * factor_depth
 
@@ -91,7 +93,7 @@ depth2lat = width_lat / width_depth * factor_depth
 
 # %%
 # -----------------------------------------------------------------------------
-# Create Map with depth sections on the bottom and right sides
+# Create map with depth sections on the bottom and right sides
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
 pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
@@ -143,7 +145,7 @@ with pygmt.config(FONT="16p"):
     )
 
 # .............................................................................
-# Longitude - depth plot
+# Longitude-depth plot
 with fig.shift_origin(yshift=f"-{width_depth + 0.4}c"):
     with pygmt.config(MAP_FRAME_TYPE="plain"):
         fig.basemap(
@@ -161,7 +163,7 @@ with fig.shift_origin(yshift=f"-{width_depth + 0.4}c"):
     fig.plot(x=df_eqs.longitude, y=df_eqs.depth_km, **args_dethplot)
 
 # .............................................................................
-# Depth - latitude plot
+# Depth-latitude plot
 with fig.shift_origin(xshift="+w+0.4c"):
     fig.basemap(
         region=[depth_min, depth_max, lat_min, lat_max],
