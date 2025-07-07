@@ -104,9 +104,9 @@ _Please note_: Specific references are given in the single notebooks and scripts
   True colors of oceanography: Guidelines for effective and accurate colormap selection.
   *Oceanography*, volume 29, issue 3, pages 9-13.
   http://dx.doi.org/10.5670/oceanog.2016.66.
-- [**_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Schlitzer, W., Grund, M., Jones, M., Toney, L., Yao, J., Tong, J-H., Magen, Y., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2024)_**](https://doi.org/10.5281/zenodo.15071586).
-  PyGMT: A Python interface for the Generic Mapping Tools, version v0.14.2.
-  *Zenodo*. https://doi.org/10.5281/zenodo.15071586 (v0.15.0), https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
+- [**_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Grund, M., Schlitzer, W., Jones, M., Toney, L., Yao, J., Tong, J-H., Magen, Y., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2024)_**](https://doi.org/10.5281/zenodo.15071586).
+  PyGMT: A Python interface for the Generic Mapping Tools, version v0.16.0.
+  *Zenodo*. https://doi.org/10.5281/zenodo.15628725 (v0.16.0), https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
 - [**_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J. F. & Wobbe. F. (2013)_**](https://doi.org/10.1002/2013EO450001).
   Generic mapping tools: improved version released.
   *Eos, Transactions American Geophysical Union*, volume 94, issue 45, pages 409-410.
@@ -127,4 +127,4 @@ The presented research and YF received support from various sources:
 - [Graduate Funding from the German States](https://www.khys.kit.edu/english/graduate_funding.php) (scholarship)
 - [NSF grant EAR-1948602](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1948602) (travel support for AGU24)
 - [DFG grant RI1133/14-1](https://gepris.dfg.de/gepris/projekt/521545943?language=en) within the
-  [DFG Priority Program 2404 DeepDyn](https://www.geo.lmu.de/deepdyn/en/) (research assisstent)
+  [DFG Priority Program 2404 DeepDyn](https://www.geo.lmu.de/deepdyn/en/) (research assistant)
