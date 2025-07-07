@@ -5,7 +5,7 @@
 _Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
 
 - **[01_logo](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/012_euro25/euro25_logo.py)**
-- **[02_groups](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/012_euro25/euro25_gropus.py)**
+- **[02_groups](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/012_euro25/euro25_groups.py)**
 - **[03_]()**
 
 
