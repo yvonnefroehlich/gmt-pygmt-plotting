@@ -75,6 +75,6 @@ fig.plot(data=[[0, 0, 0.5, -295, -43]], style=f"m0.3c+e+a40+h0+g{color_highlight
 
 fig.show()
 fig_name = "axisem3d_LND2016_fig1"
-# for ext in ["png"]: #, "pdf"]:
+# for ext in ["png"]: #, "pdf", "eps"]:
 #     fig.savefig(fname = f"{path_out}/{fig_name}.{ext}")
 print(fig_name)

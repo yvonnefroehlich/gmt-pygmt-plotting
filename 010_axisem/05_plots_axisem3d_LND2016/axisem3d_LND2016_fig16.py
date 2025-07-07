@@ -110,6 +110,6 @@ fig.legend(position="jTL+w3.4c+o0.2c", box=box_standard)
 # Save and show figure
 fig.show()
 fig_name = "axisem3d_LND2016_fig16"
-# for ext in ["png"]: #, "pdf"]:
+# for ext in ["png"]: #, "pdf", "eps"]:
 #     fig.savefig(fname = f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
