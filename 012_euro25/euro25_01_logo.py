@@ -16,6 +16,7 @@ import pygmt
 
 path_out = "02_out_figs"
 fig_name = "euro25_logo"
+dpi_png = 720
 
 size = 5
 
@@ -43,4 +44,4 @@ fig.plot(x=3, style=f"w{dia_out}/45/385+i{dia_in}", **args_letter)
 
 fig.show()
 for ext in ["png"]: # "pdf", "eps"
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=720)
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)

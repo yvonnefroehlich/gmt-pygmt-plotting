@@ -16,7 +16,8 @@ import pygmt
 
 
 path_out = "02_out_figs"
-fig_name = "euro25_groups"
+fig_name = "euro25_countries"
+dpi_png = 720
 
 fig_width = "15c"
 
@@ -69,4 +70,4 @@ with pygmt.config(FONT="8p"):
 
 fig.show()
 for ext in ["png"]: # "pdf", "eps"
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=720)
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)

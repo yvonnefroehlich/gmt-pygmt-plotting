@@ -1,0 +1,128 @@
+# -*- coding: utf-8 -*-
+# #############################################################################
+#
+# -----------------------------------------------------------------------------
+# Author: Yvonne Fröhlich
+# ORCID: https://orcid.org/0000-0002-8566-0619
+# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
+# -----------------------------------------------------------------------------
+# - Created:
+#   PyGMT v0.14.2 / dev -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
+#   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# #############################################################################
+
+
+import numpy as np
+import pygmt
+
+
+path_out = "02_out_figs"
+fig_name = "euro25_goals"
+dpi_png = 720
+
+color_gra = "254/202/139"
+color_grb = "242/111/111"
+color_grc = "248/154/68"
+color_grd = "127/210/232"
+colors = [color_gra, color_grb, color_grc, color_grd]
+
+countries_gra = ["Switzerland", "Norway", "Iceland", "Finland"]
+countries_grb = ["Spain", "Portugal", "Belgium", "Italy"]
+countries_grc = ["Germany", "Poland", "Denmark", "Sweden"]
+countries_grd = ["France", "England", "Wales", "Netherlands"]
+countries = [countries_gra, countries_grb, countries_grc, countries_grd]
+
+x = np.array([0.5, 0.5])
+
+goals_pos = np.array([
+   [[1, 2, 0, 1],  # day 1
+    [5, 0, 0, 1],
+    [2, 0, 0, 1],
+    [2, 1, 0, 3]],
+   [[3, 4, 0, 2],  # day 2
+    [11, 1, 2, 2],
+    [4, 0, 1, 1],
+    [2, 1, 0, 3]],
+   [[11, 11, 11, 11],  # day 3
+    [11, 11, 11, 11],
+    [11, 11, 11, 11],
+    [11, 11, 11, 11]],
+])
+
+goals_neg = np.array([
+   [[2, 1, 1, 0],  # day 1
+    [0, 5, 1, 0],
+    [0, 2, 1, 0],
+    [1, 2, 3, 0]],
+   [[2, 1, 1, 0],  # day 2
+    [0, 5, 1, 0],
+    [1, 2, 1, 0],
+    [1, 2, 3, 0]],
+   [[11, 11, 11, 11],  # day 3
+    [11, 11, 11, 11],
+    [11, 11, 11, 11],
+    [11, 11, 11, 11]],
+])
+
+
+fig = pygmt.Figure()
+pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
+
+for i_day in range (3):
+    for i_group, group in enumerate(["A", "B", "C", "D"]):
+
+        frame_title = "tbrW"
+        if i_day == 0: frame_title = f"tbrW+tgroup {group}"
+        frame_y = "yf1g1"
+        if group == "A": frame_y = "ya2f1g1+lgoals"
+        frame = [frame_title, frame_y]
+
+        fig.basemap(region=[0, 4, -15, 15], projection="X5c/9c", frame=frame)
+
+        for i_country in range(4):
+            fig.plot(
+                x=x + i_country,
+                y=[0, goals_pos[i_day][i_group][i_country]],
+                pen=f"20p,{colors[i_group]}",
+            )
+            fig.plot(
+                x=x + i_country,
+                y=[0, -goals_neg[i_day][i_group][i_country]],
+                pen=f"20p,{colors[i_group]}",
+            )
+            fig.text(
+                text=goals_pos[i_day][i_group][i_country],
+                x=x[0] + i_country,
+                y=goals_pos[i_day][i_group][i_country] + 0.5,
+                justify="CB",
+                font="12p,1,black",
+            )
+            fig.text(
+                text=-goals_neg[i_day][i_group][i_country],
+                x=x[0] + i_country,
+                y=-goals_neg[i_day][i_group][i_country] - 0.5,
+                justify="CT",
+                font="12p,1,black",
+            )
+            fig.hlines(y=0, pen="1p,black")
+            if i_day == 0:
+                fig.text(
+                    text=countries[i_group][i_country],
+                    x=x[0] + i_country,
+                    y=-14.5,
+                    justify="LM",
+                    font="14p",
+                    angle=90,  # rotates also justify
+                )
+
+        frame_y = "yf1"
+        if group == "D": frame_y = f"yf1+lmatch day {i_day + 1}"
+        frame = ["wsnE", frame_y]
+        fig.basemap(region=[0, 4, -15, 15], projection="X5c/9c", frame=frame)
+
+        fig.shift_origin(xshift="+w0.5c")
+    fig.shift_origin(xshift="-22c", yshift="-h-0.25c")
+
+fig.show()
+for ext in ["png"]: # "pdf", "eps"
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
