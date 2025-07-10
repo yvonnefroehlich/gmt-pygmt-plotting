@@ -16,7 +16,7 @@ import pygmt
 
 
 path_out = "02_out_figs"
-fig_name = "euro25_countries"
+fig_name = "euro25_02_countries"
 dpi_png = 720
 
 fig_width = "15c"

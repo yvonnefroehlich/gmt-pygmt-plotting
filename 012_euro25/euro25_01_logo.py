@@ -15,7 +15,7 @@ import pygmt
 
 
 path_out = "02_out_figs"
-fig_name = "euro25_logo"
+fig_name = "euro25_01_logo"
 dpi_png = 720
 
 size = 5

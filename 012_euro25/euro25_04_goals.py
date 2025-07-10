@@ -17,7 +17,7 @@ import pygmt
 
 
 path_out = "02_out_figs"
-fig_name = "euro25_goals"
+fig_name = "euro25_04_goals"
 dpi_png = 720
 
 color_gra = "254/202/139"
@@ -35,38 +35,38 @@ countries = [countries_gra, countries_grb, countries_grc, countries_grd]
 x = np.array([0.5, 0.5])
 
 goals_pos = np.array([
-   [[1, 2, 0, 1],  # day 1
+   [[1, 2, 0, 1],  # match day 1
     [5, 0, 0, 1],
     [2, 0, 0, 1],
     [2, 1, 0, 3]],
-   [[3, 4, 0, 2],  # day 2
+   [[3, 4, 0, 2],  # match day 2
     [11, 1, 2, 2],
     [4, 0, 1, 4],
-    [2, 1, 0, 3]],
-   [[11, 11, 11, 11],  # day 3
-    [11, 11, 11, 11],
-    [11, 11, 11, 11],
-    [11, 11, 11, 11]],
+    [6, 5, 1, 3]],
+   [[3, 4, 0, 2],  # match day 3
+    [11, 1, 2, 2],
+    [4, 0, 1, 4],
+    [6, 5, 1, 3]],
 ])
 
 goals_neg = np.array([
-   [[2, 1, 1, 0],  # day 1
+   [[2, 1, 1, 0],  # match day 1
     [0, 5, 1, 0],
     [0, 2, 1, 0],
     [1, 2, 3, 0]],
-   [[2, 1, 1, 0],  # day 2
+   [[2, 1, 1, 0],  # match day 2
     [0, 5, 1, 0],
     [1, 2, 1, 0],
-    [1, 2, 3, 0]],
-   [[11, 11, 11, 11],  # day 3
-    [11, 11, 11, 11],
-    [11, 11, 11, 11],
-    [11, 11, 11, 11]],
+    [2, 2, 7, 4]],
+   [[2, 1, 1, 0],  # match day 3
+    [0, 5, 1, 0],
+    [1, 2, 1, 0],
+    [2, 2, 7, 4]],
 ])
 
 
 fig = pygmt.Figure()
-pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
+pygmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray70")
 
 for i_day in range (3):
     for i_group, group in enumerate(["A", "B", "C", "D"]):

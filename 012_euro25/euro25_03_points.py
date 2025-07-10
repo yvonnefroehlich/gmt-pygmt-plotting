@@ -17,7 +17,7 @@ import pygmt
 
 
 path_out = "02_out_figs"
-fig_name = "euro25_points"
+fig_name = "euro25_03_points"
 dpi_png = 720
 
 region = [0, 4, 0, 9.5]
@@ -38,22 +38,23 @@ countries = [countries_gra, countries_grb, countries_grc, countries_grd]
 x = np.array([0.5, 0.5])
 
 points = np.array([
-   [[0, 3, 0, 3],  # day 1
+   [[0, 3, 0, 3],  # match day 1
     [3, 0, 0, 3],
     [3, 0, 0, 3],
     [3, 0, 0, 3]],
-   [[3, 6, 0, 3],  # day 2
+   [[3, 6, 0, 3],  # match day 2
     [6, 1, 0, 4],
     [6, 0, 0, 6],
-    [11, 11, 11, 11]],
-   [[11, 11, 11, 11],  # day 3
-    [11, 11, 11, 11],
-    [11, 11, 11, 11],
-    [11, 11, 11, 11]],
+    [6, 3, 0, 3]],
+   [[3, 6, 0, 3],  # match day 3
+    [6, 1, 0, 4],
+    [6, 0, 0, 6],
+    [6, 3, 0, 3]],
 ])
 
 
 fig = pygmt.Figure()
+pygmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray70")
 
 for i_day in range (3):
     for i_group, group in enumerate(["A", "B", "C", "D"]):
