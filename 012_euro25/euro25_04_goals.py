@@ -20,6 +20,9 @@ path_out = "02_out_figs"
 fig_name = "euro25_04_goals"
 dpi_png = 720
 
+region = [0, 4, -15, 15]
+projection = "X5c/9c"
+
 color_gra = "254/202/139"
 color_grb = "242/111/111"
 color_grc = "248/154/68"
@@ -68,28 +71,28 @@ goals_neg = np.array([
 fig = pygmt.Figure()
 pygmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray70")
 
-for i_day in range (3):
+for i_day in range(3):
+
     for i_group, group in enumerate(["A", "B", "C", "D"]):
 
         frame_title = "tbrW"
         if i_day == 0: frame_title = f"tbrW+tgroup {group}"
-        frame_y = "yf1g1"
-        if group == "A": frame_y = "ya2f1g1+lgoals"
-        frame = [frame_title, frame_y]
+        frame_left = "yf1g1"
+        if group == "A": frame_left = "ya2f1g1+lgoals"
 
-        fig.basemap(region=[0, 4, -15, 15], projection="X5c/9c", frame=frame)
+        fig.basemap(region=region, projection=projection, frame=[frame_title, frame_left])
 
         for i_country in range(4):
-            fig.plot(
-                x=x + i_country,
-                y=[0, goals_pos[i_day][i_group][i_country]],
-                pen=f"20p,{colors[i_group]}",
-            )
-            fig.plot(
-                x=x + i_country,
-                y=[0, -goals_neg[i_day][i_group][i_country]],
-                pen=f"20p,{colors[i_group]}",
-            )
+            # vertical bars for goals
+            for goals in [goals_pos, -goals_neg]:
+                fig.plot(
+                    x=x + i_country,
+                    y=[0, goals[i_day][i_group][i_country]],
+                    pen=f"20p,{colors[i_group]}",
+                )
+            fig.hlines(y=0, pen="1p,black")
+
+            # labels for goals
             fig.text(
                 text=goals_pos[i_day][i_group][i_country],
                 x=x[0] + i_country,
@@ -104,7 +107,8 @@ for i_day in range (3):
                 justify="CT",
                 font="12p,1,black",
             )
-            fig.hlines(y=0, pen="1p,black")
+
+            # labels for countries
             if i_day == 0:
                 fig.text(
                     text=countries[i_group][i_country],
@@ -115,12 +119,12 @@ for i_day in range (3):
                     angle=90,  # rotates also justify
                 )
 
-        frame_y = "yf1"
-        if group == "D": frame_y = f"yf1+lmatch day {i_day + 1}"
-        frame = ["wsnE", frame_y]
-        fig.basemap(region=[0, 4, -15, 15], projection="X5c/9c", frame=frame)
+        frame_right = "yf1"
+        if group == "D": frame_right = f"yf1+lmatch day {i_day + 1}"
+        fig.basemap(region=region, projection=projection, frame=["wsnE", frame_right])
 
         fig.shift_origin(xshift="+w0.5c")
+
     fig.shift_origin(xshift="-22c", yshift="-h-0.25c")
 
 fig.show()

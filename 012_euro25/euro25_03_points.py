@@ -56,23 +56,26 @@ points = np.array([
 fig = pygmt.Figure()
 pygmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray70")
 
-for i_day in range (3):
+for i_day in range(3):
+
     for i_group, group in enumerate(["A", "B", "C", "D"]):
 
         frame_title = "tbrW"
         if i_day == 0: frame_title = f"tbrW+tgroup {group}"
-        frame_y = "yf1g1"
-        if group == "A": frame_y = "ya1f1g1+lpoints+e"
-        frame = [frame_title, frame_y]
+        frame_left = "yf1g1"
+        if group == "A": frame_left = "ya1f1g1+lpoints+e"
 
-        fig.basemap(region=region, projection=projection, frame=frame)
+        fig.basemap(region=region, projection=projection, frame=[frame_title, frame_left])
 
         for i_country in range(4):
+            # vertical bars for points
             fig.plot(
                 x=x + i_country,
                 y=[0, points[i_day][i_group][i_country]],
                 pen=f"20p,{colors[i_group]}",
             )
+
+            # label for points
             fig.text(
                 text=points[i_day][i_group][i_country],
                 x=x[0] + i_country,
@@ -80,21 +83,21 @@ for i_day in range (3):
                 justify="CB",
                 font="12p,1,black",
             )
+
+            # label for countries
             if i_day == 0:
                 fig.text(
                     text=countries[i_group][i_country],
                     x=x[0] + i_country,
-                    y=0,
+                    y=6,
                     justify="LM",
-                    offset="0c/6c",
                     font="14p",
                     angle=90,
                 )
 
-        frame_y = "yf1"
-        if group == "D": frame_y = f"yf1+lmatch day {i_day + 1}"
-        frame = ["wsnE", frame_y]
-        fig.basemap(region=region, projection=projection, frame=frame)
+        frame_right = "yf1"
+        if group == "D": frame_right = f"yf1+lmatch day {i_day + 1}"
+        fig.basemap(region=region, projection=projection, frame=["wsnE", frame_right])
 
         fig.shift_origin(xshift="+w0.5c")
     fig.shift_origin(xshift="-22c", yshift="-h-0.25c")
