@@ -20,7 +20,7 @@ path_out = "02_out_figs"
 fig_name = "euro25_03_points"
 dpi_png = 720
 
-region = [0, 4, 0, 9.5]
+region = [0, 4, 0, 10]
 projection = "X5c/9c"
 
 color_gra = "254/202/139"
@@ -46,7 +46,7 @@ points = np.array([
     [6, 1, 0, 4],
     [6, 0, 0, 6],
     [6, 3, 0, 3]],
-   [[3, 6, 0, 3],  # match day 3
+   [[4, 9, 0, 4],  # match day 3
     [6, 1, 0, 4],
     [6, 0, 0, 6],
     [6, 3, 0, 3]],
