@@ -27,6 +27,7 @@
 # See also:
 # - GMT / PyGMT pre-workshop
 #   https://www.generic-mapping-tools.org/agu24workshop/tut02_spec_pd_gpd.html
+#   https://zenodo.org/records/15809717
 # - PyGMT basic tutorial
 #   https://www.pygmt.org/v0.13.0/tutorials/basics/plot.html
 
