@@ -28,6 +28,7 @@ path_out = "02_out_figs"
 
 color_neg = "darkorange"
 color_pos = "darkgreen"
+color_null = "white"
 
 lon_min = -26
 lon_max = 52
@@ -66,6 +67,7 @@ for i_land in range(len(df_pop)):
     # Creat simple diverging colormap via semi-transparency
     color_sign = color_pos
     if change < 0: color_sign = color_neg
+    elif change == 0: color_sing = color_null
     color_trans = f"{color_sign}@{abs_max_change - abs(change)}"
 
     # Make a choropleth map using dcw
