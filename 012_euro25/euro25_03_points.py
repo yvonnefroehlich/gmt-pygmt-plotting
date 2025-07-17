@@ -104,4 +104,3 @@ for i_day in range(3):
 fig.show()
 for ext in ["png"]: # "pdf", "eps"
     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
-

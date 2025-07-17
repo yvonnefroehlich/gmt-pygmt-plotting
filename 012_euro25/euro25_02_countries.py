@@ -46,11 +46,12 @@ box_standard = "+gwhite@30+p0.1p,gray30+r2p"
 fig = pygmt.Figure()
 fig.basemap(projection=projection, region=region, frame=True)
 
-fig.coast(dcw=[
-    f"Switzerland,Norway,Iceland,Finland+g{color_gra}",
-    f"Spain,Portugal,Belgium,Italy+g{color_grb}",
-    f"Germany,Poland,Denmark,Sweden+g{color_grc}",
-    f"France,GB,Netherlands+g{color_grd}",  # England, Wales in one group
+fig.coast(
+    dcw=[
+        f"Switzerland,Norway,Iceland,Finland+g{color_gra}",
+        f"Spain,Portugal,Belgium,Italy+g{color_grb}",
+        f"Germany,Poland,Denmark,Sweden+g{color_grc}",
+        f"France,GB,Netherlands+g{color_grd}",  # England, Wales in one group
     ]
 )
 fig.coast(
