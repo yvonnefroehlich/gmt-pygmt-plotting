@@ -1,13 +1,12 @@
-# -*- coding: utf-8 -*-
 # #############################################################################
-#
+# UEFA WOMEN'S EURO 2025 - group phase points
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
 # ORCID: https://orcid.org/0000-0002-8566-0619
 # GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # -----------------------------------------------------------------------------
-# - Created:
-#   PyGMT v0.14.2 / dev -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
+# - Created: 2025/07/07
+#   PyGMT v0.16.0 / dev -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
 #   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # #############################################################################
 

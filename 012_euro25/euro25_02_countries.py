@@ -1,5 +1,5 @@
 # #############################################################################
-# UEFA WOMEN'S EURO 2025 - maps with groups
+# UEFA WOMEN'S EURO 2025 - group phase countries
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
 # ORCID: https://orcid.org/0000-0002-8566-0619
