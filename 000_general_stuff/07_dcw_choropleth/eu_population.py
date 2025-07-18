@@ -2,8 +2,8 @@
 # Population in Europe: change between July 1st 1990 and 2023
 # Source of data: UN population prospect 2024
 # See also:
-#  https://www.visualcapitalist.com/mapped-how-europes-population-has-changed-1990-2023/
-#  last accessed 2025/07/17
+#   https://www.visualcapitalist.com/mapped-how-europes-population-has-changed-1990-2023/
+#   last accessed 2025/07/17
 # -----------------------------------------------------------------------------
 # Author: Yvonne Fröhlich
 # ORCID: https://orcid.org/0000-0002-8566-0619

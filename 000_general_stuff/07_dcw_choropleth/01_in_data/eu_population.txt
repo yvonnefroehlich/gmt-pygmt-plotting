@@ -1,4 +1,4 @@
-land	land_code	change_percent	note
+land	land_code	change_percent
 Iceland	ISL	52
 Norway	NOR	30
 Sweden	SWE	23
