@@ -4,10 +4,10 @@
 # - Variation with longitude -> backzimuth / seismogram components
 # -----------------------------------------------------------------------------
 # Related to
-# - Fröhlich Y., Ritter J. R. R. (2024) http://dx.doi.org/10.5281/zenodo.14510993
+# - Fröhlich Y., Ritter J. R. R. (2024) https://dx.doi.org/10.5281/zenodo.14510993
 #   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper
 #   Mantle Underneath the Upper Rhine Graben, Central Europe. Annual Meeting of
-#   the American Geophysical Union. http://dx.doi.org/10.5281/zenodo.14510993.
+#   the American Geophysical Union. https://dx.doi.org/10.5281/zenodo.14510993.
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/03/09
