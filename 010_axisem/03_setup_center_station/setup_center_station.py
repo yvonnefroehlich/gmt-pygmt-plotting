@@ -88,7 +88,8 @@ fig.text(
 )
 
 # -----------------------------------------------------------------------------
-# Epicentral distance 120Â°, i.e. latitude -30Â° N
+# Epicentral distance 120°, i.e. latitude -30° N
+
 fig.plot(
     style=f"w{90 * dist2fig}c/-90/270+i{150 * dist2fig}c",
     fill=f"{color_highlight}@{alpha_highlight}",
@@ -103,7 +104,8 @@ for dist in [90, 150]:
 fig.plot(style=f"E-{120 * 2}+d", pen=f"1p,{color_highlight}", **center_args)
 
 # -----------------------------------------------------------------------------
-# Sources in steps of 30Â° E longitude
+# Sources in steps of 30° E longitude
+
 fig.plot(
     x=np.arange(-180, 151, 30),  # [min, max[, step
     y=np.full(12, -30),  # amount, value
@@ -112,7 +114,8 @@ fig.plot(
     pen="0.2p,black",
 )
 
-# Source S01 should be at longitude 0Â° E
+# Source S01 should be at longitude 0° E
+
 sta_step = 30
 x_all = np.arange(0, 360, sta_step)  # [start, end[, step
 for i_st in range(1, len(x_all) + 1):  # [start, end[
