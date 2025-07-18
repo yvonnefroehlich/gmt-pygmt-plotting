@@ -2,10 +2,10 @@
 # Station-centered configuration for XKS phases (epicentral distance 120 deg)
 # -----------------------------------------------------------------------------
 # Related to
-# - Fr�hlich Y., Ritter J. R. R. (2024) http://dx.doi.org/10.5281/zenodo.14510993
+# - Fröhlich Y., Ritter J. R. R. (2024) http://dx.doi.org/10.5281/zenodo.14510993
 #   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper
 #   Mantle Underneath the Upper Rhine Graben, Central Europe. Annual Meeting of
-#   the American Geophysical Union. http://dx.doi.org/10.5281/zenodo.14510993.
+#   the American Geophysical Union. https://dx.doi.org/10.5281/zenodo.14510993.
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/01/26
@@ -15,7 +15,7 @@
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
-# - Author: Yvonne Fr�hlich
+# - Author: Yvonne Fröhlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
@@ -88,7 +88,7 @@ fig.text(
 )
 
 # -----------------------------------------------------------------------------
-# Epicentral distance 120°, i.e. latitude -30° N
+# Epicentral distance 120Â°, i.e. latitude -30Â° N
 fig.plot(
     style=f"w{90 * dist2fig}c/-90/270+i{150 * dist2fig}c",
     fill=f"{color_highlight}@{alpha_highlight}",
@@ -103,7 +103,7 @@ for dist in [90, 150]:
 fig.plot(style=f"E-{120 * 2}+d", pen=f"1p,{color_highlight}", **center_args)
 
 # -----------------------------------------------------------------------------
-# Sources in steps of 30° E longitude
+# Sources in steps of 30Â° E longitude
 fig.plot(
     x=np.arange(-180, 151, 30),  # [min, max[, step
     y=np.full(12, -30),  # amount, value
@@ -112,7 +112,7 @@ fig.plot(
     pen="0.2p,black",
 )
 
-# Source S01 should be at longitude 0° E
+# Source S01 should be at longitude 0Â° E
 sta_step = 30
 x_all = np.arange(0, 360, sta_step)  # [start, end[, step
 for i_st in range(1, len(x_all) + 1):  # [start, end[
