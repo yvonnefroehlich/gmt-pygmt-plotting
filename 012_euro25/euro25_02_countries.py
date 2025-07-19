@@ -54,14 +54,10 @@ fig.coast(
         f"France,GB,Netherlands+g{color_grd}",  # England, Wales in one group
     ]
 )
-fig.coast(
-    resolution="low",
-    water="gray95",
-    shorelines="0.1p,gray30",
-    borders="1/0.2p,gray20",
-)
+fig.coast(shorelines="1/0.1p,gray30", borders="1/0.2p,gray20")
 
-args_leg = {"x": 0, "y": 0, "style": "s0.4c"}
+# Plot dummy data points for legend
+args_leg = {"x": 0, "y": 0, "style": "s0.4c", "pen": "0.1p,gray30"}
 fig.plot(fill=color_gra, **args_leg, label="group A")
 fig.plot(fill=color_grb, **args_leg, label="group B")
 fig.plot(fill=color_grc, **args_leg, label="group C")
