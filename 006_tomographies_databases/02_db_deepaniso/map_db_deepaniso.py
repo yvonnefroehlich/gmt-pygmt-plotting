@@ -34,11 +34,11 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_projection = "ROB"  # "ROB", "EPI"
-status_color = "MONO"  # "MONO", "CMAP"
-status_labels = "NO"  # "NO", "YES"
-status_legend = "NO"  # "NO", "RIGHT", "LEFT", "BOTTOM
-status_title = "YES"  # "NO", "YES"
+status_projection = "EPI"  # "ROB", "EPI"
+status_color = "CMAP"  # "MONO", "CMAP"
+status_labels = "YES"  # "NO", "YES"
+status_legend = "LEFT"  # "NO", "RIGHT", "LEFT", "BOTTOM
+status_title = "NO"  # "NO", "YES"
 
 epi_lon = 7  # degrees East
 epi_lat = 50  # degrees North
@@ -122,7 +122,7 @@ for analysis in folders_analysis:
         # Set up text for legend
         if i_area == 0:  # first legend entery with title for legend
             ana_leg_add = ""
-            if analysis in ["SKS-SKKS", "S-ScS"]: ana_leg_add = "discrepancies"
+            if analysis in ["SKS-SKKS", "S-ScS"]: ana_leg_add = " discrepancies"
             cb_columns = f"+N2+HStudies regarding LMM anisotropy using {analysis}" + \
                          f"{ana_leg_add}+f8p"
         else:
@@ -175,7 +175,7 @@ for analysis in folders_analysis:
 
     fig_name = f"deepaniso_{analysis}_projection{status_projection}_color{status_color}" + \
                f"_legend{status_legend}_labels{status_labels}_title{status_title}"
-    # for ext in ["png"]:  # , "pdf", "eps"]:
-    #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+    for ext in ["png"]:  # , "pdf", "eps"]:
+        fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 
     print(fig_name)
