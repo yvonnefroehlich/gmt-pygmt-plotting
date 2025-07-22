@@ -1,5 +1,5 @@
 # #############################################################################
-# Collatz Problem
+# Collatz problem
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2023/12/11
@@ -79,5 +79,5 @@ for rand_int_start in range(2, max_number, 1):
 
 fig.show()
 fig_name = "collatz_problem"
-for ext in ["png"]:  #, "pdf"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+# for ext in ["png"]:  #, "pdf"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")

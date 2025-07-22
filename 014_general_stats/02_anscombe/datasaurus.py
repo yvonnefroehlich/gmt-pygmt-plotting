@@ -62,5 +62,5 @@ fig.plot(
 
 fig.show()
 fig_name = "datasaurus"
-for ext in ["png"]:  # "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+# for ext in ["png"]:  # "pdf", "eps"]:
+#    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")

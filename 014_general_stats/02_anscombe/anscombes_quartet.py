@@ -116,5 +116,5 @@ for i_plot in range(4):
 
 fig.show()
 fig_name= "anscombes_quartet"
-for ext in ["png"]:  # "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+# for ext in ["png"]:  # "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
