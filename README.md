@@ -23,6 +23,7 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 | **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_009deepdyn.png" width="250"> | Maps related to the DeepDyn project | [SEDI DeepDyn poster](https://doi.org/10.5281/zenodo.12658821) |
 | **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_010axisem.png" width="250"> | Maps and visualizations related to AxiSEM3D | [AGU URG talk](https://dx.doi.org/10.5281/zenodo.14510993) |
 | **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_011pygmt.png" width="250"> | Plots related to PyGMT = GMT + Python & Scientific Python Ecosystem | [AGU PyGMT talk](https://doi.org/10.6084/m9.figshare.28049495) |
+| **[013_general_maps](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/013_general_maps)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_013maps.png" width="250"> |  | - |
 
 
 ## Citation
