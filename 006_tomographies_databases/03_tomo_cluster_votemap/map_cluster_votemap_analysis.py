@@ -2,13 +2,18 @@
 # Cluster analysis; Lekic et al. 2012
 # Votemap analysis; Shephard et al. 2017
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
+# History
 # - Created: 2024/04/29
-#   PyGMT v0.11.0 / v0.12.0 -> https://www.pygmt.org/
-#   GMT 6.4.0 / 6.5.0 -> https://www.generic-mapping-tools.org/
+# - Updated: 2025/02/16
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.11.0 - v0.14.2 -> https://www.pygmt.org/
+# - GMT 6.4.0 - 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 
@@ -21,11 +26,12 @@ import pygmt as gmt
 # Paths
 path_in = "01_in_data"
 path_out = "02_out_figs"
+file_pb = "plate_boundaries_Bird_2003.txt"
 
 # Colors
 color_land = "gray95"
-color_shorelines = "gray50"
-color_platebound = "216.750/82.875/24.990"
+color_sl = "gray50"  # shorelines
+color_pb = "216.750/82.875/24.990"  # plate boundaries
 
 
 # %%
@@ -56,7 +62,9 @@ for analysis in analysis_all:
     fig = gmt.Figure()
     gmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray", FONT_LABEL="10p")
 
-    fig.coast(region="d", projection="N11c", land=color_land)
+    fig.basemap(region="d", projection="N11c", frame=0)
+
+    fig.coast(land=color_land)
 
 # -----------------------------------------------------------------------------
     # Plot grid with color-coding
@@ -78,13 +86,10 @@ for analysis in analysis_all:
 
 # -----------------------------------------------------------------------------
     # Plot shorelines
-    fig.coast(shorelines=f"1/0.1p,{color_shorelines}")
+    fig.coast(shorelines=f"1/0.1p,{color_sl}")
 
     # Plot plate boundaries
-    fig.plot(
-        data=f"{path_in}/plate_boundaries_Bird_2003.txt",
-        pen=f"0.2p,{color_platebound}",
-    )
+    fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.2p,{color_pb}")
 
     # Add map frame
     fig.basemap(frame=["WSnE", "xa90f30", "ya30f15"])
