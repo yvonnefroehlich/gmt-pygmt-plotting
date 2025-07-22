@@ -10,7 +10,7 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/04/29
-# - Updated: 2025/07/22 - Add colorcoding
+# - Updated: 2025/07/22 - Add color-coding and numeric labels with legend
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
@@ -34,10 +34,10 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_projection = "EPI"  # "ROB", "EPI"
-status_color = "CMAP"  # "MONO", "CMAP"
+status_projection = "ROB"  # "ROB", "EPI"
+status_color = "MONO"  # "MONO", "CMAP"
 status_labels = "NO"  # "NO", "YES"
-status_legend = "BOTTOM"  # "NO", "RIGHT", "LEFT", "BOTTOM
+status_legend = "NO"  # "NO", "RIGHT", "LEFT", "BOTTOM
 status_title = "YES"  # "NO", "YES"
 
 epi_lon = 7  # degrees East
@@ -156,8 +156,8 @@ for analysis in folders_analysis:
     # Add legend with studies related to the numbers
     if status_legend != "NO":
         match status_legend:
-            case "LEFT": legend_pos = "JLT+jRT+w11.5c"
-            case "RIGHT": legend_pos = "JRT+jLM+o1c/0c+w11.5c"
+            case "LEFT": legend_pos = "JLM+jRM+o0c/1c+w11.5c"
+            case "RIGHT": legend_pos = "JRM+jLM+o1c/1c+w11.5c"
             case "BOTTOM": legend_pos = "JBC+jTC+o0c/0.7c+w11.5c"
         with gmt.config(FONT="7p"):
             fig.legend(position=legend_pos)
@@ -176,6 +176,6 @@ for analysis in folders_analysis:
     fig_name = f"deepaniso_{analysis}_projection{status_projection}_color{status_color}" + \
                f"_legend{status_legend}_labels{status_labels}_title{status_title}"
     # for ext in ["png"]:  # , "pdf", "eps"]:
-        # fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+    #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 
     print(fig_name)
