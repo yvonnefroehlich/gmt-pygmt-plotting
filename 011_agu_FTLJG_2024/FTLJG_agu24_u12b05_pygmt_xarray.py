@@ -27,6 +27,7 @@
 # See also:
 # - GMT / PyGMT pre-workshop
 #   https://www.generic-mapping-tools.org/agu24workshop/tut03_spe_xarray.html
+#   https://zenodo.org/records/15809717
 # - PyGMT gallery example
 #   https://www.pygmt.org/v0.13.0/gallery/images/grdgradient.html
 
