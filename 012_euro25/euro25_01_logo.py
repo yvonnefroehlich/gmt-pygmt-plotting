@@ -47,5 +47,6 @@ fig.plot(x=1.3, style=f"w{dia_out}/60/215+i{dia_in}", **args_letter)
 fig.plot(x=3, style=f"w{dia_out}/45/385+i{dia_in}", **args_letter)
 
 fig.show()
-for ext in ["png"]: # "pdf", "eps"
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+# for ext in ["png"]: # "pdf", "eps"
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+print(fig_name)
