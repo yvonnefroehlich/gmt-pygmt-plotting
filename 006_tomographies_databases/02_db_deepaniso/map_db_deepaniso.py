@@ -122,7 +122,7 @@ for analysis in folders_analysis:
         mean_lat = np.mean(data_use_df["lat"])
 
         # Set up text for legend entries
-        if i_area == 0:  # first legend entery with title for legend
+        if i_area == 0:  # first legend entry with title for legend
             ana_leg_add = ""
             if analysis in ["SKS-SKKS", "S-ScS"]: ana_leg_add = " discrepancies"
             cb_columns = f"+N2+HStudies regarding LMM anisotropy using {analysis}" + \
@@ -169,7 +169,7 @@ for analysis in folders_analysis:
         fig.plot(x=epi_lon, y=epi_lat, style="i0.25c", fill=color_hl, pen="0.1p,gray30")
 
 # -----------------------------------------------------------------------------
-    # Plot map frame ontop
+    # Plot map frame on top
     fig.basemap(frame=["WSnE", "xa90f30", "ya30f15"])
 
 # -----------------------------------------------------------------------------
