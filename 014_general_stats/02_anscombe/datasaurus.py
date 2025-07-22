@@ -48,14 +48,15 @@ df_dino = pd.read_csv(f"{path_in}/datasaurus_data.csv", sep="\t",)
 # Datasaurus
 # -----------------------------------------------------------------------------
 fig = gmt.Figure()
-fig.basemap(projection="X5c/5c", region=[7, 115, -10, 110], frame="btrl+gtan@20")
+fig.basemap(projection="X8c/8c", region=[7, 115, -10, 110], frame="btrl+gtan@20")
 
-gmt.makecpt(cmap="batlow", series=[min(df_dino["x"]), max(df_dino["x"])])
+# gmt.makecpt(cmap="batlow", series=[min(df_dino["x"]), max(df_dino["x"])])
 fig.plot(
     x=df_dino["x"],
     y=df_dino["y"],
-    fill=df_dino["x"],
-    cmap=True,
+    fill="brown",
+    # fill=df_dino["x"],
+    # cmap=True,
     style="c0.08c",
     pen="0.1p,gray30",
 )
@@ -63,4 +64,4 @@ fig.plot(
 fig.show()
 fig_name = "datasaurus"
 # for ext in ["png"]:  # "pdf", "eps"]:
-#    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
