@@ -27,7 +27,6 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 | **[014_general_stats](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/014_general_stats)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_014stats.png" width="250"> | Collatz problem, Anscombe's quartet | - |
 
 
-
 ## Citation
 
 If you make use of this material, please acknowledge the relating publications in which framework these scripts and notebooks were written:
