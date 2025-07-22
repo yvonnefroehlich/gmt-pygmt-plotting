@@ -10,10 +10,11 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/04/29
+# - Updated: 2025/07/22 - Add colorcoding
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.11.0 / v0.12.0 -> https://www.pygmt.org/
-# - GMT 6.4.0 / 6.5.0 -> https://www.generic-mapping-tools.org/
+# - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich
@@ -24,7 +25,24 @@
 
 import os
 
+import numpy as np
+import pandas as pd
 import pygmt as gmt
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Adjust for your needs
+# -----------------------------------------------------------------------------
+status_projection = "EPI"  # "ROB", "EPI"
+status_color = "CMAP"  # "MONO", "CMAP"
+status_labels = "NO"  # "NO", "YES"
+status_legend = "BOTTOM"  # "NO", "RIGHT", "LEFT", "BOTTOM
+status_title = "YES"  # "NO", "YES"
+
+epi_lon = 7  # degrees East
+epi_lat = 50  # degrees North
+epi_max = 90  # degrees
 
 
 # %%
@@ -39,9 +57,15 @@ file_pb = "plate_boundaries_Bird_2003.txt"
 # Colors
 color_pb = "216.750/82.875/24.990"  # plate boundaries after Bird 2003
 color_sl = "gray50"  # shorelines (used data built-in in PyGMT / GMT)
+color_hl = "255/90/0"  # highlight
 color_land = "gray95"
 color_llpv = "brown"
 pattern_llpv = "p8+b+f"
+
+# Projection
+match status_projection:
+    case "ROB": projection = "N11c"
+    case "EPI": projection = f"E{epi_lon}/{epi_lat}/{epi_max}/11c"
 
 
 # %%
@@ -53,23 +77,21 @@ folders_analysis = os.listdir(f"{path_in}/01_aniso/")
 for analysis in folders_analysis:
     files_areas = os.listdir(f"{path_in}/01_aniso/{analysis}")
 
-    color_aniso = "tan"
-    if analysis == "SKS-SKKS":
-        color_aniso = "darkorange"
-    elif analysis == "S-ScS":
-        color_aniso = "purple"
+    match analysis:
+        case "SKS-SKKS": color_aniso = "darkorange"
+        case "S-ScS": color_aniso = "purple"
+        case _: color_aniso = "tan"
+
+    match status_title:
+        case "YES": frame_title = f"+tLMM seismic anisotropy - {analysis}"
+        case "NO": frame_title =  0
 
 # -----------------------------------------------------------------------------
     fig = gmt.Figure()
     gmt.config(FONT_TITLE="12p", FONT_LABEL="10p")
 
-    fig.coast(
-        region="d",
-        projection="N11c",
-        land=color_land,
-        shorelines=f"1/0.05p,{color_sl}",
-        frame=f"+tLMM seismic anisotropy - {analysis}",
-    )
+    fig.basemap(region="d", projection=projection, frame=frame_title)
+    fig.coast(land=color_land, shorelines=f"1/0.05p,{color_sl}")
 
 # -----------------------------------------------------------------------------
     # Plate boundaries
@@ -87,13 +109,62 @@ for analysis in folders_analysis:
 
 # -----------------------------------------------------------------------------
     # LMM Anisotropy
-    for area in files_areas:
-        fig.plot(
-            data=f"{path_in}/01_aniso/{analysis}/{area}",
-            pen="0.1p,gray10",
-            fill=f"{color_aniso}@60",
-            close=True,
-        )
+    gmt.makecpt(cmap="batlow", series=[0, len(files_areas), 1], transparency=40)
+
+    for i_area, area in enumerate(files_areas):
+        data_use = f"{path_in}/01_aniso/{analysis}/{area}"
+        data_use_df = pd.read_csv(data_use, delimiter=",", names=["lon", "lat", "value"])
+
+        # Arithmetic mean is good approximation for center
+        mean_lon = np.mean(data_use_df["lon"])
+        mean_lat = np.mean(data_use_df["lat"])
+
+        # Set up text for legend
+        if i_area == 0:  # first legend entery with title for legend
+            ana_leg_add = ""
+            if analysis in ["SKS-SKKS", "S-ScS"]: ana_leg_add = "discrepancies"
+            cb_columns = f"+N2+HStudies regarding LMM anisotropy using {analysis}" + \
+                         f"{ana_leg_add}+f8p"
+        else:
+            cb_columns = ""
+
+        # Plot areas in color
+        args_col = {
+            "data": data_use,
+            "pen": "0.1p,gray10",
+            "close": True,
+            "label": f"({i_area}) {area}{cb_columns}",
+        }
+        match status_color:
+            case "MONO":
+                fig.plot(fill=f"{color_aniso}@60", **args_col)
+            case "CMAP":
+                fig.plot(fill="+z", zvalue=i_area, cmap=True, **args_col)
+
+        # Add numbers as labels for each area
+        if status_labels == "YES":
+            fig.text(
+                x=mean_lon,
+                y=mean_lat,
+                text=f"({i_area})",
+                offset="-0.25c/0.1c",
+                font="6p,Helvetica-Bold,black",
+                fill="white@50",
+                clearance="0.05c/0.05c+tO",
+            )
+
+    # Add legend with studies related to the numbers
+    if status_legend != "NO":
+        match status_legend:
+            case "LEFT": legend_pos = "JLT+jRT+w11.5c"
+            case "RIGHT": legend_pos = "JRT+jLM+o1c/0c+w11.5c"
+            case "BOTTOM": legend_pos = "JBC+jTC+o0c/0.7c+w11.5c"
+        with gmt.config(FONT="7p"):
+            fig.legend(position=legend_pos)
+
+    # Mark center of epidistance plot
+    if status_projection == "EPI":
+        fig.plot(x=epi_lon, y=epi_lat, style="i0.25c", fill=color_hl, pen="0.1p,gray30")
 
 # -----------------------------------------------------------------------------
     # Map frame
@@ -102,8 +173,9 @@ for analysis in folders_analysis:
 # -----------------------------------------------------------------------------
     fig.show()
 
-    fig_name = f"{path_out}/deepaniso_{analysis}"
+    fig_name = f"deepaniso_{analysis}_projection{status_projection}_color{status_color}" + \
+               f"_legend{status_legend}_labels{status_labels}_title{status_title}"
     # for ext in ["png"]:  # , "pdf", "eps"]:
-    #     fig.savefig(fname=f"{fig_name}.{ext}")
+        # fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 
     print(fig_name)
