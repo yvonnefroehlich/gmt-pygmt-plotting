@@ -5,7 +5,7 @@
 # - Created: 2025/06/07
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.15.0 / dev -> https://www.pygmt.org/v0.15.0/ | https://www.pygmt.org/
+# - PyGMT v0.16.0 / dev -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
@@ -182,8 +182,8 @@ with fig.shift_origin(xshift="+w+1c"):
     fig.plot(x=df_eqs.depth_km / depth2lat, y=df_eqs.latitude, **args_dethplot)
 
 # -----------------------------------------------------------------------------
-fig_name = "map_eqs_map_depthsection"
-for ext in ["png"]:  # , "pdf"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+fig_name = "map_eqs_depthsection"
+# for ext in ["png"]:  # , "pdf"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 fig.show()
 print(fig_name)
