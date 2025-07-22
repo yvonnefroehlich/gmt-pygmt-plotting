@@ -11,7 +11,7 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 
 | Folder | Overview | Content | Related publications |
 | --- | --- | --- | --- |
-| **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_000general.png" width="250"> | Custom symbols, colorwheel, colorbar font scaling, Earth section, choropleth via dcw | - |
+| **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_000stuff.png" width="250"> | Custom symbols, colorwheel, colorbar font scaling, Earth section | - |
 | **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_001bfo.png" width="250"> | Maps related to anisotropy and SWS underneath the BFO | [**_Ritter et al. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w) |
 | **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024)** | _Up coming_ | Maps related to anisotropy and SWS underneath the URG area | [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245) |
 | **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_003taup.png" width="250"> | Travel paths and travel time curves of seismological phases | [**_Fröhlich et al. (2024)_**](https://doi.org/10.1093/gji/ggae245) |
@@ -21,8 +21,9 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 | **[007_magnetic_field](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_magnetic_field)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_007magnetic.png" width="250"> | `gufm1` | [DGG DeepDyn poster](https://doi.org/10.5281/zenodo.10927349) |
 | **[008_XXX_XXX]()** | _Up coming_ |  |  |
 | **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_009deepdyn.png" width="250"> | Maps related to the DeepDyn project | [SEDI DeepDyn poster](https://doi.org/10.5281/zenodo.12658821) |
-| **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_010axisem.png" width="250"> | Maps and visualizations related to AxiSEM3D | [AGU URG talk](http://dx.doi.org/10.5281/zenodo.14510993) |
+| **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_010axisem.png" width="250"> | Maps and visualizations related to AxiSEM3D | [AGU URG talk](https://dx.doi.org/10.5281/zenodo.14510993) |
 | **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_011pygmt.png" width="250"> | Plots related to PyGMT = GMT + Python & Scientific Python Ecosystem | [AGU PyGMT talk](https://doi.org/10.6084/m9.figshare.28049495) |
+| **[013_general_maps](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/013_general_maps)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_013maps.png" width="250"> |  | - |
 
 
 ## Citation
@@ -40,12 +41,12 @@ If you make use of this material, please acknowledge the relating publications i
   https://doi.org/10.1007/s10950-022-10112-w, correction https://doi.org/10.1007/s10950-023-10136-w.
 
 **Presentations**
-- [**_Fröhlich Y. & Ritter J. R. R. (2024)_**](http://dx.doi.org/10.5281/zenodo.14510993).
+- [**_Fröhlich Y. & Ritter J. R. R. (2024)_**](https://dx.doi.org/10.5281/zenodo.14510993).
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
   *Annual Meeting of the American Geophysical Union*, Washington D.C..
   Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral, DI21A-02.
   [Abstract ID 1578275](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275).
-  http://dx.doi.org/10.5281/zenodo.14510993.
+  https://dx.doi.org/10.5281/zenodo.14510993.
 - [**_Fröhlich Y., Tian D., Leong W. J., Jones M. & Grund M. (2024)_**](https://doi.org/10.6084/m9.figshare.28049495).
   PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
   *Annual Meeting of the American Geophysical Union*, Washington D.C..
@@ -97,13 +98,13 @@ _Please note_: Specific references are given in the single notebooks and scripts
   An updated digital model of plate boundaries.
   *Geochemistry, Geophysics, Geosystems*, volume 4, issue 3, page 1027.
   https://doi.org/10.1029/2001GC000252.
-- [**_Crameri, F. (2021)_**](http://doi.org/10.5281/zenodo.1243862).
+- [**_Crameri, F. (2021)_**](https://doi.org/10.5281/zenodo.1243862).
   Scientific colour maps.
-  *Zenodo*. http://www.fabiocrameri.ch/colourmaps.php. http://doi.org/10.5281/zenodo.1243862.
-- [**_Thyng, K. M., Greene, C. A., Hetland, R. D., Zimmerle, H. M. & DiMarco, S. F. (2016)_**](http://dx.doi.org/10.5670/oceanog.2016.66).
+  *Zenodo*. https://www.fabiocrameri.ch/colourmaps.php. https://doi.org/10.5281/zenodo.1243862.
+- [**_Thyng, K. M., Greene, C. A., Hetland, R. D., Zimmerle, H. M. & DiMarco, S. F. (2016)_**](https://dx.doi.org/10.5670/oceanog.2016.66).
   True colors of oceanography: Guidelines for effective and accurate colormap selection.
   *Oceanography*, volume 29, issue 3, pages 9-13.
-  http://dx.doi.org/10.5670/oceanog.2016.66.
+  https://dx.doi.org/10.5670/oceanog.2016.66.
 - [**_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Grund, M., Schlitzer, W., Jones, M., Toney, L., Yao, J., Tong, J-H., Magen, Y., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2024)_**](https://doi.org/10.5281/zenodo.15071586).
   PyGMT: A Python interface for the Generic Mapping Tools, version v0.16.0.
   *Zenodo*. https://doi.org/10.5281/zenodo.15628725 (v0.16.0), https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
