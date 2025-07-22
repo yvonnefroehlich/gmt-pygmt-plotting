@@ -100,7 +100,7 @@ for analysis in folders_analysis:
     fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.1p,{color_pb}")
 
 # -----------------------------------------------------------------------------
-    # LLPV
+    # LLVP
     for i_model in range(2, 9, 1):
         fig.plot(
             data=f"{path_in}/02_llvp/3model_2016_{i_model}.txt",
@@ -110,7 +110,7 @@ for analysis in folders_analysis:
         )
 
 # -----------------------------------------------------------------------------
-    # LMM Anisotropy
+    # Lowermost mantle (LMM) anisotropy
     gmt.makecpt(cmap="batlow", series=[0, len(files_areas), 1], transparency=40)
 
     for i_area, area in enumerate(files_areas):
