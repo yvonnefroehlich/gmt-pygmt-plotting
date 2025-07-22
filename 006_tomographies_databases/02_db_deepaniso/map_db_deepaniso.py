@@ -175,7 +175,7 @@ for analysis in folders_analysis:
 
     fig_name = f"deepaniso_{analysis}_projection{status_projection}_color{status_color}" + \
                f"_legend{status_legend}_labels{status_labels}_title{status_title}"
-    for ext in ["png"]:  # , "pdf", "eps"]:
-        fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+    # for ext in ["png"]:  # , "pdf", "eps"]:
+    #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 
     print(fig_name)
