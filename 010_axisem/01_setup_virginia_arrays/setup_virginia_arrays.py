@@ -2,17 +2,17 @@
 # Virginia source with USArray, ScanArray, and AlpArray recording stations
 # -----------------------------------------------------------------------------
 # Related to
-# - Fröhlich Y., Ritter J. R. R. (2024) http://dx.doi.org/10.5281/zenodo.14510993
+# - Fröhlich Y., Ritter J. R. R. (2024) https://dx.doi.org/10.5281/zenodo.14510993
 #   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper
 #   Mantle Underneath the Upper Rhine Graben, Central Europe. Annual Meeting of
-#   the American Geophysical Union. http://dx.doi.org/10.5281/zenodo.14510993.
+#   the American Geophysical Union. https://dx.doi.org/10.5281/zenodo.14510993.
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/03/09
 # -----------------------------------------------------------------------------
 # Versions
-#   PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
-#   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich

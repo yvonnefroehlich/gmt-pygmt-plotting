@@ -8,31 +8,36 @@
 #   - travel time(s) in separate Figures
 #   - travel time curve with epicentral distance cumulative in one Figure
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
-# Related to:
+# Related to
 #   Fröhlich Y., Grund M. & Ritter J. R. R. (2024).
 #   Lateral and vertical variations of seismic anisotropy in the lithosphere-
 #   asthenosphere system underneath Central Europe from long-term splitting
 #   measurements. Geophysical Journal International, 239(1), 112-135.
 #   https://doi.org/10.1093/gji/ggae245.
 # -----------------------------------------------------------------------------
+# History
 # - Created: 2024/04/07
-#   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
-#   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # - Updated: 2024/04/23 - Maintenance: Coding style
 # - Updated: 2024/05/04 - Maintenance: Arguments and comments for colors
 # - Updated: 2024/05/04 - Enhancement: PyGMT Figure instance
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
 # - Updated: 2024/05/10 - Enhancement: Plot specific distance and depth ranges
 # - Updated: 2024/09/06 - Enhancement: Travel time (curve) with distance (cumulative)
-# - Udpated: 2025/03/27 - Maintenance: Adjust building file name
+# - Updated: 2025/03/27 - Maintenance: Adjust building file name
 # - Updated: 2025/03/29 - Enhancement: Introduce function taup_style
 # - Updated: 2025/03/30 - Enhancement: Allow setting step of epicentral distance annotations
 # - Updated: 2025/03/31 - Enhancement: Introduce function taup_symbol
 # - Updated: 2025/03/31 - Enhancement: Add crust
+# - Updated: 2025/05/01 - Maintenance: Adjust creating legend for travel time curves
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.14.0 -> https://www.pygmt.org/v0.14.0/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 
@@ -386,34 +391,30 @@ def taup_path(
                 no_clip=True,
             )
 
-            # Add legend for phases in travel time plot
-            if legend_curve == True:
-                for j_phase, phase in enumerate(phases):
-                    col_str = ""
-                    info_str = ""
-                    fig_curve.plot(
-                        x=-1,
-                        y=-1,
-                        style=f"{phase_symbol[phase]}0.2c",
-                        fill=phase_colors[phase],
-                        pen="0.05p,gray10",
-                        label=f"{phase}{info_str}{col_str}+S0.15c",
-                    )
-                hight_legend = 0.4 * len(phases)
-                fig_curve.legend(
-                    position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c",
-                    box=box_standard,
-                )
-
     # -------------------------------------------------------------------------
         # Use only the existing phases in the file name
         fig_name_phase.append(phase_label_split[0])
         # Remove doublictes
         fig_name_phase = list(dict.fromkeys(fig_name_phase))
-    # Use submitted phase list in case the list of the existing phases is emtpy
+    # Use submitted phase list in case the list of the existing phases is empty
     if fig_name_phase == []:
         fig_name_phase = phases
 
+    # -------------------------------------------------------------------------
+    # Add legend for phases in travel time plot
+    if time_curve == True and legend_curve == True:
+        for phase in phases:
+            col_str = ""
+            info_str = ""
+            fig_curve.plot(
+                x=-1,
+                y=-1,
+                style="c0.05c",
+                fill=phase_colors[phase],
+                pen="0.05p,gray10",
+                label=f"{phase}{info_str}{col_str}+S0.15c",
+            )
+        fig_curve.legend(position="JRT+jTL+o0.2/0c+w2c", box=box_standard)
     # -------------------------------------------------------------------------
     # Add legend for phase names and travel times in travel path plot
     # Adjust width and height for your needs (+w)

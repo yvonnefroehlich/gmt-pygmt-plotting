@@ -2,14 +2,18 @@
 # Cluster analysis; Lekic et al. 2012
 # Votemap analysis; Shephard et al. 2017
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
+# History
 # - Created: 2024/04/29
 # - Updated: 2025/02/16
-#   PyGMT v0.11.0 - v0.14.2 -> https://www.pygmt.org/
-#   GMT 6.4.0 - 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.11.0 - v0.14.2 -> https://www.pygmt.org/
+# - GMT 6.4.0 - 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 
