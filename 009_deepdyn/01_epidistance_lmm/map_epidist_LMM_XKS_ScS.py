@@ -5,19 +5,21 @@
 # - moment magnitude Mw   |  > 6
 # - hypocentral depth     |  > 50 km
 # - time window           |  [2010,2020]
+#
+# Station coordinates input files were modified from GMT map
+# "005_map_equidist_siberia" by Michael Grund
+# Source of original script, data, and manual (last access 2022/04/06)
+# https://github.com/michaelgrund/GMT-plotting/tree/main/005_map_equidist_siberia
+# a modified version is part of his PhD thesis (DOI: 10.5445/IR/1000091425)
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
-# Related to:
+# Related to
 # - Fröhlich Y., Dillah M. I. F., Dorn F., Ritter J. R. R. (2024).
 #   Investigation of seismic anisotropy in the D'' layer and at the CMB
 #   regarding intense magnetic flux regions. 18th Symposium of Study of the
 #   Earth's Deep Interior, proceedings, session 2-04.
 #   https://doi.org/10.5281/zenodo.12658821.
 # -----------------------------------------------------------------------------
-# History:
+# History
 # - Created: 2022/07/11
 # - Updated: 2022/08/16
 # - Updated: 2022/09/01
@@ -28,18 +30,17 @@
 # - Updated: 2024/10/02 - Improve input parameters
 # - Updated: 2024/10/04 - Add option to plot ray paths
 # -----------------------------------------------------------------------------
-# Versions:
+# Versions
 # - PyGMT v0.7.0  with GMT 6.4.0
 # - PyGMT v0.9.0  with GMT 6.4.0
 # - PyGMT v0.10.0 with GMT 6.4.0
 # - PyGMT v0.12.0 with GMT 6.5.0 -> https://www.pygmt.org/v0.12.0/
 # - PyGMT v0.13.0 with GMT 6.5.0 -> https://www.pygmt.org/v0.13.0/
 # -----------------------------------------------------------------------------
-# Station coordinates input files were modified from GMT map
-# "005_map_equidist_siberia" by Michael Grund
-# Source of original script, data, and manual (last access 2022/04/06)
-# https://github.com/michaelgrund/GMT-plotting/tree/main/005_map_equidist_siberia
-# a modified version is part of his PhD thesis (DOI: 10.5445/IR/1000091425)
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 
@@ -126,7 +127,7 @@ def sws_lmm_deepdyn(
         case "XKS":
             sta2tag_min = 22.5  # size_tag_main_deg + 2  # rough eastimation
             sta2tag_max = 35  # size_tag_main_deg + 20
-        case "ScS":  # middel
+        case "ScS":  # middle
             sta2tag_min = size_epi_min_deg / 2
             sta2tag_max = size_epi_max_deg / 2
 

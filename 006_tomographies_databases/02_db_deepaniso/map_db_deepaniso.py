@@ -1,22 +1,31 @@
 # #############################################################################
 # Deep anisotropy database
-# Source
-# - Data: https://github.com/wolfjonathan/Deep_Mantle_Anisotropy_Database
-# - Publication: https://doi.org/10.1029/2023GC011070
+#
+# Wolf, J., Long, M. D., Li, M., & Garnero, E. (2023). Global compilation of
+# deep mantle anisotropy observations and possible correlation with low velocity
+# provinces. Geochemistry, Geophysics, Geosystems, 24, e2023GC011070.
+# https://doi.org/10.1029/2023GC011070
+#
+# Data are available at https://github.com/wolfjonathan/Deep_Mantle_Anisotropy_Database
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
+# History
 # - Created: 2024/04/29
-#   PyGMT v0.11.0 / v0.12.0 -> https://www.pygmt.org/
-#   GMT 6.4.0 / 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.11.0 / v0.12.0 -> https://www.pygmt.org/
+# - GMT 6.4.0 / 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 
 import os
 
 import pygmt as gmt
+
 
 # %%
 # -----------------------------------------------------------------------------
@@ -25,11 +34,11 @@ import pygmt as gmt
 # Paths
 path_in = "01_in_data"
 path_out = "02_out_figs"
-data_platebound = "plate_boundaries_Brid_2003.txt"
+file_pb = "plate_boundaries_Bird_2003.txt"
 
 # Colors
-color_platebound = "216.750/82.875/24.990"
-color_shorelines = "gray50"
+color_pb = "216.750/82.875/24.990"  # plate boundaries after Bird 2003
+color_sl = "gray50"  # shorelines (used data built-in in PyGMT / GMT)
 color_land = "gray95"
 color_llpv = "brown"
 pattern_llpv = "p8+b+f"
@@ -58,16 +67,13 @@ for analysis in folders_analysis:
         region="d",
         projection="N11c",
         land=color_land,
-        shorelines=f"1/0.05p,{color_shorelines}",
+        shorelines=f"1/0.05p,{color_sl}",
         frame=f"+tLMM seismic anisotropy - {analysis}",
     )
 
 # -----------------------------------------------------------------------------
     # Plate boundaries
-    fig.plot(
-        data=f"{path_in}/plate_boundaries_Bird_2003.txt",
-        pen=f"0.1p,{color_platebound}",
-    )
+    fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.1p,{color_pb}")
 
 # -----------------------------------------------------------------------------
     # LLPV
