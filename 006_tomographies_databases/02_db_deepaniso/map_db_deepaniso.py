@@ -1,12 +1,13 @@
 # #############################################################################
 # Deep anisotropy database
 #
-# Wolf, J., Long, M. D., Li, M., & Garnero, E. (2023). Global compilation of
-# deep mantle anisotropy observations and possible correlation with low velocity
-# provinces. Geochemistry, Geophysics, Geosystems, 24, e2023GC011070.
-# https://doi.org/10.1029/2023GC011070
+#   Wolf, J., Long, M. D., Li, M., & Garnero, E. (2023). Global compilation of
+#   deep mantle anisotropy observations and possible correlation with low velocity
+#   provinces. Geochemistry, Geophysics, Geosystems, 24, e2023GC011070.
+#   https://doi.org/10.1029/2023GC011070
 #
-# Data are available at https://github.com/wolfjonathan/Deep_Mantle_Anisotropy_Database
+#   Data are available at
+#   https://github.com/wolfjonathan/Deep_Mantle_Anisotropy_Database
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/04/29
@@ -34,10 +35,10 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_projection = "EPI"  # "ROB", "EPI"
+status_projection = "ROB"  # "ROB", "EPI"
 status_color = "CMAP"  # "MONO", "CMAP"
 status_labels = "YES"  # "NO", "YES"
-status_legend = "LEFT"  # "NO", "RIGHT", "LEFT", "BOTTOM
+status_legend = "BOTTOM"  # "NO", "RIGHT", "LEFT", "BOTTOM
 status_title = "NO"  # "NO", "YES"
 
 epi_lon = 7  # degrees East
@@ -63,9 +64,10 @@ color_llpv = "brown"
 pattern_llpv = "p8+b+f"
 
 # Projection
+map_size = 11  # in centimeters
 match status_projection:
-    case "ROB": projection = "N11c"
-    case "EPI": projection = f"E{epi_lon}/{epi_lat}/{epi_max}/11c"
+    case "ROB": projection = f"N{map_size}c"
+    case "EPI": projection = f"E{epi_lon}/{epi_lat}/{epi_max}/{map_size}c"
 
 
 # %%
@@ -115,11 +117,11 @@ for analysis in folders_analysis:
         data_use = f"{path_in}/01_aniso/{analysis}/{area}"
         data_use_df = pd.read_csv(data_use, delimiter=",", names=["lon", "lat", "value"])
 
-        # Arithmetic mean is good approximation for center
+        # Use arithmetic mean as approximation for centers of the areas
         mean_lon = np.mean(data_use_df["lon"])
         mean_lat = np.mean(data_use_df["lat"])
 
-        # Set up text for legend
+        # Set up text for legend entries
         if i_area == 0:  # first legend entery with title for legend
             ana_leg_add = ""
             if analysis in ["SKS-SKKS", "S-ScS"]: ana_leg_add = " discrepancies"
@@ -162,12 +164,12 @@ for analysis in folders_analysis:
         with gmt.config(FONT="7p"):
             fig.legend(position=legend_pos)
 
-    # Mark center of epidistance plot
+    # Mark center of epidistance plot as inverse triangle for theoretical recording station
     if status_projection == "EPI":
         fig.plot(x=epi_lon, y=epi_lat, style="i0.25c", fill=color_hl, pen="0.1p,gray30")
 
 # -----------------------------------------------------------------------------
-    # Map frame
+    # Plot map frame ontop
     fig.basemap(frame=["WSnE", "xa90f30", "ya30f15"])
 
 # -----------------------------------------------------------------------------
