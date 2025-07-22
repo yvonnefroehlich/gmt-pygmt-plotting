@@ -98,6 +98,6 @@ with pygmt.config(FONT="9p"):
 
 # Show and save figure
 fig.show()
-fig_name = f"eu_population_sorted_by_{sort_by}"
-for ext in ["png"]: #, "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+fig_name = f"dcw_choropleth_sorted_by_{sort_by}"
+# for ext in ["png"]: #, "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
