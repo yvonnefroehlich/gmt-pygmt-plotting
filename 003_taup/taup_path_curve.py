@@ -8,26 +8,36 @@
 #   - travel time(s) in separate Figures
 #   - travel time curve with epicentral distance cumulative in one Figure
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
-# Related to:
+# Related to
 #   Fröhlich Y., Grund M. & Ritter J. R. R. (2024).
 #   Lateral and vertical variations of seismic anisotropy in the lithosphere-
 #   asthenosphere system underneath Central Europe from long-term splitting
 #   measurements. Geophysical Journal International, 239(1), 112-135.
 #   https://doi.org/10.1093/gji/ggae245.
 # -----------------------------------------------------------------------------
+# History
 # - Created: 2024/04/07
-#   PyGMT v0.11.0 -> https://www.pygmt.org/v0.11.0/ | https://www.pygmt.org/
-#   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
 # - Updated: 2024/04/23 - Maintenance: Coding style
 # - Updated: 2024/05/04 - Maintenance: Arguments and comments for colors
 # - Updated: 2024/05/04 - Enhancement: PyGMT Figure instance
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
 # - Updated: 2024/05/10 - Enhancement: Plot specific distance and depth ranges
 # - Updated: 2024/09/06 - Enhancement: Travel time (curve) with distance (cumulative)
+# - Updated: 2025/03/27 - Maintenance: Adjust building file name
+# - Updated: 2025/03/29 - Enhancement: Introduce function taup_style
+# - Updated: 2025/03/30 - Enhancement: Allow setting step of epicentral distance annotations
+# - Updated: 2025/03/31 - Enhancement: Introduce function taup_symbol
+# - Updated: 2025/03/31 - Enhancement: Add crust
+# - Updated: 2025/05/01 - Maintenance: Adjust creating legend for travel time curves
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.14.0 -> https://www.pygmt.org/v0.14.0/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 
@@ -36,7 +46,8 @@ import pygmt
 from obspy.taup import TauPyModel
 
 from taup_color import taup_color
-
+from taup_style import taup_style
+from taup_symbol import taup_symbol
 
 def taup_path(
     source_depth,
@@ -48,6 +59,7 @@ def taup_path(
     max_depth=None,
     min_dist=0,
     max_dist=None,
+    step_dist=10,
     font_size="4p",
     earth_color="tan",
     path_overlay=False,
@@ -79,6 +91,7 @@ def taup_path(
     # - max_depth: Maximum for plotting | km | Default Earth's radius
     # - min_dist: Minimum for plotting | degrees | Default 0
     # - max_dist: Maximum for plotting | degrees | Default epicentral distance + 10
+    # - step_dist: Step of epicentral distance annotations | degrees | Default 10
     # - font_size: Font size for text | Default "4p"
     # - path_overlay: Plot travel path on top of each other | False
     # - earth_color: Colors for Earth concentric shells or circles | Default "tan"
@@ -130,10 +143,13 @@ def taup_path(
     color_highlight = "255/90/0"
     box_standard = "+gwhite+p0.1p,gray30+r2p"
 
-    # Colors for seismological phases
-    # Adjust and extend the dictionary for your needs in taup_path.py
+    # Seismological phases
+    # Colors: adjust and extend the dictionary for your needs in taup_color.py
     phase_colors = taup_color()
-
+    # Line styles: adjust and extend the dictionary for your needs in taup_style.py
+    phase_styles = taup_style()
+	# Symbols: adjust and extend the dictionary for your needs in taup_symbol.py
+    phase_symbol = taup_symbol()
 
     # %%
     # -------------------------------------------------------------------------
@@ -182,7 +198,7 @@ def taup_path(
 
     # -------------------------------------------------------------------------
     # Set up colors for Earth concentric shells or circles
-    bounds = [120, 440, 660, 2700, 2900, 5120, 6371]  # depth in kilometers
+    bounds = [30, 120, 440, 660, 2700, 2900, 5120, 6371]  # depth in kilometers
     earth_colors = ["none", "white", "tan", "gray", "bilbao_gray", "bilbao_brown"]
 
     # Adjust for your needs
@@ -198,22 +214,22 @@ def taup_path(
             colors = ["white"] * len(bounds)
         case "tan":
             colors = [
-                "244/236/236", "235/222/204", "229/211/188",
+                "white", "244/236/236", "235/222/204", "229/211/188",
                 "224/203/176", "220/197/167", "217/193/160", "white",
             ]
         case "gray":
             colors = [
-                "246.03", "228.09", "210.16",
+                "white", "246.03", "228.09", "210.16",
                 "193.22", "gray69", "159.34", "white",
             ]
         case "bilbao_gray":
             colors = [
-                "245.03/245.03/244.06", "225.09/224.09/223.09", "208.16/206.16/199.31",
+                "white", "245.03/245.03/244.06", "225.09/224.09/223.09", "208.16/206.16/199.31",
                 "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34", "white",
             ]
         case "bilbao_brown":
             colors = [
-                "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34",
+                "white", "197.22/193.22/177.22", "190.28/183.28/156.28", "184.34/172.34/135.34",
                 "177.41/157.41/116.41", "172/142.47/105", "168/127.53/98.531", "white",
             ]
 
@@ -279,6 +295,7 @@ def taup_path(
                     case 660: y_offset = -200
                     case 440: y_offset = -50
                     case 120: y_offset = -70
+                    case 30: y_offset = -1000  # outside of plot
                 fig_path.plot(
                     x=np.linspace(min_dist, max_dist, max_dist),
                     y=np.ones(max_dist) * (r_earth - bound + y_offset),
@@ -357,12 +374,9 @@ def taup_path(
         fig_path.plot(
             x=pp_dist_used,
             y=pp_depth,
-            pen=f"{thick_line_path},{phase_colors[phase_label_split[0]]}",
+            pen=f"{thick_line_path},{phase_colors[phase_label_split[0]]},{phase_styles[phase_label_split[0]]}",
             label=f"{phase_label_split[0]} | {phase_time_split[0]} s+S0.5c/1c{leg_col_str}",
         )
-
-        # Use only the existing phases in the file name
-        fig_name_phase.append(phase_label_split[0])
 
     # -------------------------------------------------------------------------
         # Plot travel times
@@ -371,31 +385,36 @@ def taup_path(
             fig_curve.plot(
                 x=receiver_dist,
                 y=phase_time_split[0],
-                style="c0.13c",
+                style=f"{phase_symbol[phase_label_split[0]]}0.13c",
                 fill=phase_colors[phase_label_split[0]],
                 pen="0.001p,gray10",
                 no_clip=True,
             )
 
-            # Add legend for phases in travel time plot
-            if legend_curve == True:
-                for j_phase, phase in enumerate(phases):
-                    col_str = ""
-                    info_str = ""
-                    fig_curve.plot(
-                        x=-1,
-                        y=-1,
-                        style="c0.2c",
-                        fill=phase_colors[phase],
-                        pen="0.05p,gray10",
-                        label=f"{phase}{info_str}{col_str}+S0.15c",
-                    )
-                hight_legend = 0.4 * len(phases)
-                fig_curve.legend(
-                    position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c",
-                    box=box_standard,
-                )
+    # -------------------------------------------------------------------------
+        # Use only the existing phases in the file name
+        fig_name_phase.append(phase_label_split[0])
+        # Remove doublictes
+        fig_name_phase = list(dict.fromkeys(fig_name_phase))
+    # Use submitted phase list in case the list of the existing phases is empty
+    if fig_name_phase == []:
+        fig_name_phase = phases
 
+    # -------------------------------------------------------------------------
+    # Add legend for phases in travel time plot
+    if time_curve == True and legend_curve == True:
+        for phase in phases:
+            col_str = ""
+            info_str = ""
+            fig_curve.plot(
+                x=-1,
+                y=-1,
+                style="c0.05c",
+                fill=phase_colors[phase],
+                pen="0.05p,gray10",
+                label=f"{phase}{info_str}{col_str}+S0.15c",
+            )
+        fig_curve.legend(position="JRT+jTL+o0.2/0c+w2c", box=box_standard)
     # -------------------------------------------------------------------------
     # Add legend for phase names and travel times in travel path plot
     # Adjust width and height for your needs (+w)
@@ -419,7 +438,7 @@ def taup_path(
     if path_overlay == False:
         # Affects the last addressed Figure instance
         with pygmt.config(FORMAT_GEO_MAP="+D"):  # 0°-360°
-            fig_path.basemap(frame=["xa10f5", "wbNe"])
+            fig_path.basemap(frame=[f"xa{step_dist}f5", "wbNe"])
 
     # Plot receiver always at surface, i.e., 0 km
     if min_depth == 0 and receiver_dist <= max_dist:
@@ -525,13 +544,12 @@ fig_path, fig_curve = taup_path(
     source_depth=500,
     receiver_dist=142,
     max_dist=360,
-    phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
+    phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "SKIKS", "SKJKS"],
     time_curve=True,
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
 
-# -----------------------------------------------------------------------------
 fig_path = taup_path(
     fig_path_width="8c",
     font_size="6.5p",
@@ -542,11 +560,12 @@ fig_path = taup_path(
     max_dist=180,
     min_depth=660,
     max_depth=4000,
-    phases=["S", "ScS", "SKS", "PKS", "SKKS", "PKKS", "SKJKS"],
+    phases=["S", "ScS", "PKS", "PKKS", "SKS", "SKKS", "SKIKS", "SKJKS"],
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
 
+# -----------------------------------------------------------------------------
 fig_path = taup_path(
     fig_path_width="8c",
     font_size="6.5p",
@@ -578,15 +597,15 @@ fig_path = taup_path(
     font_size="6.5p",
     source_depth=500,
     receiver_dist=95,
-    min_dist=-5,
-    max_dist=10,
+    min_dist=-3,
+    max_dist=7,
+    step_dist=5,
     min_depth=0,
-    max_depth=700,
+    max_depth=800,
     phases=["SKS", "pSKS", "sSKS", "SKKS", "pSKKS", "sSKKS"],
     # fig_save=True,
     # save_path="02_your_example_figures/",
 )
-
 
 # -----------------------------------------------------------------------------
 dist_min = 0  # degrees

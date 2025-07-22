@@ -10,19 +10,24 @@
 #
 # Slides of the talk are freely available at https://doi.org/10.6084/m9.figshare.28049495
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
+# History
 # - Created: 2024/11/30
-#   PyGMT v0.13.0 -> https://www.pygmt.org/v0.13.0/ | https://www.pygmt.org/
-#   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.13.0 -> https://www.pygmt.org/v0.13.0/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 
 # See also:
 # - GMT / PyGMT pre-workshop
 #   https://www.generic-mapping-tools.org/agu24workshop/tut02_spec_pd_gpd.html
+#   https://zenodo.org/records/15809717
 # - PyGMT basic tutorial
 #   https://www.pygmt.org/v0.13.0/tutorials/basics/plot.html
 
