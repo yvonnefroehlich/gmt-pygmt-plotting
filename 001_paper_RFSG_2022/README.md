@@ -10,7 +10,7 @@ https://doi.org/10.1007/s10950-022-10112-w. https://doi.org/10.1007/s10950-023-1
 
 _Recommended versions_: PyGMT v0.11.0, GMT 6.4.0
 
-- [RFSG_FigS4_left_swsm.ipynb](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_left_swsm.ipynb): Piercing points in the lowermost mantle related to SWSMs at BFO
+- [RFSG_FigS4_left_swsm.ipynb](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_left_swsm.ipynb): piercing points in the lowermost mantle related to SWSMs at BFO
 - [RFSG_FigS4_right_pairs.ipynb](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_right_pairs.ipynb): SKS-SKKS pairs in the lowermost mantle related to SWSMs at BFO
 - _See also_ [RFSG_Fig1](https://github.com/michaelgrund/GMT-plotting/tree/main/010_paper_RFSG2022) by [Michael Grund](https://github.com/michaelgrund)
 
