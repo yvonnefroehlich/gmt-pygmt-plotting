@@ -229,7 +229,7 @@ if status_projection == "epi":
                 **center_coord,
             )
 
-        # Lable epicentral distance range for XKS phases
+        # Label epicentral distance range for XKS phases
         for epi_lim in [dist_min, dist_max]:
             fig.text(
                 text=f"{epi_lim}@.",
