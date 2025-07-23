@@ -29,7 +29,7 @@ lon_min = -27
 lon_max = 35
 lat_min = 35
 lat_max = 72
-# Calcualte projection center
+# Calculate projection center
 lon0_lamb = np.mean([lon_min, lon_max])
 lat0_lamb = np.mean([lat_min, lat_max])
 # Calculate two standard parallels (only these two distortion-free)
