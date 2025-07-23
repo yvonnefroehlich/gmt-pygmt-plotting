@@ -44,7 +44,7 @@ path_out = "02_out_figs"
 # Data
 df_ansc = pd.read_csv(f"{path_in}/anscombes_quartet.txt", sep="\t")
 
-# Usefull definitions
+# Useful definitions
 args_text01 = {"position": "BL", "justify": "LM", "font": "10p"}
 args_text02 = {"position": "BC", "justify": "LM", "font": "10p"}
 

@@ -59,7 +59,7 @@ projection_main = f"M{width_main}c"
 # -> https://docs.generic-mapping-tools.org/dev/mapproject.html#w
 # -> https://www.pygmt.org/dev/api/generated/pygmt.clib.Session.html
 # -----------------------------------------------------------------------------
-# Get hight of main map
+# Get height of main map
 file_dim_main = "map_dim_main"
 with pygmt.clib.Session() as session:
     session.call_module(
@@ -68,13 +68,13 @@ with pygmt.clib.Session() as session:
             f"-J{projection_main}", f"-R{region_main}", "-W", f"->{file_dim_main}.txt"
         ],
     )
-map_dim_main = pd.read_csv(f"{file_dim_main}.txt", sep="\t", names=["width", "hight"])
-hight_depth = map_dim_main["hight"][0]
+map_dim_main = pd.read_csv(f"{file_dim_main}.txt", sep="\t", names=["width", "height"])
+height_depth = map_dim_main["height"][0]
 
 # -----------------------------------------------------------------------------
 # Get width of depth-latitude map
 factor_depth = 10  # To keep values within in value range expected for longitude
-projection_lat = f"M{hight_depth}c+dh"  # Give hight instead of width
+projection_lat = f"M{height_depth}c+dh"  # Give height instead of width
 region_lat = (
     f"{depth_min / factor_depth}/{depth_max / factor_depth}/{lat_min}/{lat_max}"
 )
@@ -85,7 +85,7 @@ with pygmt.clib.Session() as session:
         module="mapproject",
         args=[f"-J{projection_lat}", f"-R{region_lat}", "-W", f"->{file_dim_lat}.txt"],
     )
-map_dim_lat = pd.read_csv(f"{file_dim_lat}.txt", sep="\t", names=["width", "hight"])
+map_dim_lat = pd.read_csv(f"{file_dim_lat}.txt", sep="\t", names=["width", "height"])
 width_lat = map_dim_lat["width"][0]
 
 # Scale depth relative to latitude
@@ -170,7 +170,7 @@ with fig.shift_origin(yshift=f"-{width_depth + 1}c"):
 with fig.shift_origin(xshift="+w+1c"):
     fig.basemap(
         region=[depth_min, depth_max, lat_min, lat_max],
-        projection=f"X{width_depth}c/{hight_depth}c",
+        projection=f"X{width_depth}c/{height_depth}c",
         frame=["Sn", "xa100f50g100+lhypocentral depth / km"],
     )
     with pygmt.config(MAP_FRAME_TYPE="plain"):
