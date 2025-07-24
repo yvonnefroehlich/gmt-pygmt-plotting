@@ -35,10 +35,10 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_projection = "EPI"  # "ROB", "EPI"
+status_projection = "ROB"  # "ROB", "EPI"
 status_color = "CMAP"  # "MONO", "CMAP"
 status_labels = "YES"  # "NO", "YES"
-status_legend = "LEFT"  # "NO", "RIGHT", "LEFT", "BOTTOM
+status_legend = "BOTTOM"  # "NO", "RIGHT", "LEFT", "BOTTOM
 status_title = "NO"  # "NO", "YES"
 
 epi_lon = 7  # degrees East
@@ -94,7 +94,7 @@ for analysis in folders_analysis:
     gmt.config(FONT_TITLE="12p", FONT_LABEL="10p")
 
     fig.basemap(
-        region="d",
+        region="g",
         projection=projection,
         frame=["WSnE", "xa90f30", "ya30f15", frame_title],
     )
@@ -130,8 +130,8 @@ for analysis in folders_analysis:
         if i_area == 0:  # first legend entry with title for legend
             ana_leg_add = ""
             if analysis in ["SKS-SKKS", "S-ScS"]: ana_leg_add = " discrepancies"
-            cb_columns = f"+N2+HLMM anisotropy studies using {analysis}" + \
-                         f"{ana_leg_add}              @;white;.@;;+f8p"
+            cb_columns = f"+N2+HLowermost mantle anisotropy studies using {analysis}" + \
+                         f" {ana_leg_add}         @;white;.@;;+f8p"
         else:
             cb_columns = ""
 
