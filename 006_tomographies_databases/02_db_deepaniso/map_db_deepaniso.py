@@ -43,7 +43,7 @@ status_title = "NO"  # "NO", "YES"
 
 epi_lon = 7  # degrees East
 epi_lat = 50  # degrees North
-epi_max = 90  # degrees
+epi_max = 60  # degrees
 
 
 # %%
@@ -58,6 +58,7 @@ file_pb = "plate_boundaries_Bird_2003.txt"
 # Colors
 color_pb = "216.750/82.875/24.990"  # plate boundaries after Bird 2003
 color_sl = "gray50"  # shorelines (used data built-in in PyGMT / GMT)
+color_sta = "gold"
 color_hl = "255/90/0"  # highlight
 color_land = "gray95"
 color_llpv = "brown"
@@ -92,7 +93,11 @@ for analysis in folders_analysis:
     fig = gmt.Figure()
     gmt.config(FONT_TITLE="12p", FONT_LABEL="10p")
 
-    fig.basemap(region="d", projection=projection, frame=frame_title)
+    fig.basemap(
+        region="g",
+        projection=projection,
+        frame=["WSnE", "xa90f30", "ya30f15", frame_title],
+    )
     fig.coast(land=color_land, shorelines=f"1/0.05p,{color_sl}")
 
 # -----------------------------------------------------------------------------
@@ -125,17 +130,19 @@ for analysis in folders_analysis:
         if i_area == 0:  # first legend entry with title for legend
             ana_leg_add = ""
             if analysis in ["SKS-SKKS", "S-ScS"]: ana_leg_add = " discrepancies"
-            cb_columns = f"+N2+HStudies regarding LMM anisotropy using {analysis}" + \
-                         f"{ana_leg_add}+f8p"
+            cb_columns = f"+N2+HLowermost mantle anisotropy studies using {analysis}" + \
+                         f" {ana_leg_add}         @;white;.@;;+f8p"
         else:
             cb_columns = ""
 
         # Plot areas in color
+        area_split = area.split("_")
+        area_whitespace = " ".join(area_split)
         args_col = {
             "data": data_use,
             "pen": "0.1p,gray10",
             "close": True,
-            "label": f"({i_area}) {area}{cb_columns}",
+            "label": f"({i_area + 1}) {area_whitespace}{cb_columns}",  # start at 1
         }
         match status_color:
             case "MONO":
@@ -145,11 +152,13 @@ for analysis in folders_analysis:
 
         # Add numbers as labels for each area
         if status_labels == "YES":
+            offset = 0
+            if status_projection == "ROB": offset = "-0.25c/0.1c"
             fig.text(
                 x=mean_lon,
                 y=mean_lat,
-                text=f"({i_area})",
-                offset="-0.25c/0.1c",
+                offset=offset,
+                text=f"({i_area + 1})",
                 font="6p,Helvetica-Bold,black",
                 fill="white@50",
                 clearance="0.05c/0.05c+tO",
@@ -158,19 +167,19 @@ for analysis in folders_analysis:
     # Add legend with studies related to the numbers
     if status_legend != "NO":
         match status_legend:
-            case "LEFT": legend_pos = "JLM+jRM+o0c/1c+w11.5c"
-            case "RIGHT": legend_pos = "JRM+jLM+o1c/1c+w11.5c"
-            case "BOTTOM": legend_pos = "JBC+jTC+o0c/0.7c+w11.5c"
+            case "LEFT": legend_pos = "JLM+jRM+o0c/1c+w9.3c"
+            case "RIGHT": legend_pos = "JRM+jLM+o0.5c/1c+w9.3c"
+            case "BOTTOM": legend_pos = "JCB+jCT+o0.5c/0.6c+w9.3c"
         with gmt.config(FONT="7p"):
             fig.legend(position=legend_pos)
 
     # Mark center of epidistance plot as inverse triangle for theoretical recording station
     if status_projection == "EPI":
-        fig.plot(x=epi_lon, y=epi_lat, style="i0.25c", fill=color_hl, pen="0.1p,gray30")
+        fig.plot(x=epi_lon, y=epi_lat, style="i0.3c", fill=color_sta, pen="0.5p,black")
 
 # -----------------------------------------------------------------------------
     # Plot map frame on top
-    fig.basemap(frame=["WSnE", "xa90f30", "ya30f15"])
+    fig.basemap(frame=0)
 
 # -----------------------------------------------------------------------------
     fig.show()
