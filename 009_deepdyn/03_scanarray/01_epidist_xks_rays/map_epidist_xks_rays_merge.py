@@ -77,31 +77,32 @@ fig.image(imagefile=f"{path_out}/{fig_all}", position=f"JLT+jLT+w{dia_single}c")
 fig.image(imagefile=f"{path_out}/{fig_zoom}", position=f"JRT+jRT+w{dia_single}c")
 
 # -----------------------------------------------------------------------------
-# Add zoom circle
+# Hide map frame of the right map
 fig.plot(
     x=dia_single / 2 * 3 + 2,
     y=dia_single / 2,
     style=f"c{dia_single}c",
-    pen="6p,white",  # Hide map frame of the single map
+    pen="6p,white",
 )
+
+# Add zoom lines
+fig.plot(
+    x=[dia_single / 2, dia_single / 2 * 3],
+    y=[dia_single / 4 * 3 + 0.05, dia_single - 0.5],
+    pen=f"1.5p,{color_zoom},{dashed_zoom}",
+)
+fig.plot(
+    x=[dia_single / 2, dia_single / 2 * 3],
+    y=[dia_single / 4 - 0.05, 0.5],
+    pen=f"1.5p,{color_zoom},{dashed_zoom}",
+)
+
+# Add zoom circle
 fig.plot(
     x=dia_single / 2 * 3 + 2,
     y=dia_single / 2,
     style=f"c{dia_single - 0.2}c",
     pen=f"2p,{color_zoom},{dashed_zoom}",
-)
-
-# -----------------------------------------------------------------------------
-# Add zoom lines
-fig.plot(
-    x=[dia_single / 2, dia_single / 2 * 3 + 2 - 0.3],
-    y=[dia_single / 4 * 3 + 0.05, dia_single - 0.086],
-    pen=f"1.5p,{color_zoom},{dashed_zoom}",
-)
-fig.plot(
-    x=[dia_single / 2, dia_single / 2 * 3 + 2 - 0.3],
-    y=[dia_single / 4 - 0.05, 0.08],
-    pen=f"1.5p,{color_zoom},{dashed_zoom}",
 )
 
 # -----------------------------------------------------------------------------
