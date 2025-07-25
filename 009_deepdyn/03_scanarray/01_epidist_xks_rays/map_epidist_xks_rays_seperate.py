@@ -35,7 +35,7 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # What to plot - choose
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-status_area = "zoom"  ## "all", "zoom"
+status_area = "all"  ## "all", "zoom"
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 # -----------------------------------------------------------------------------
@@ -43,7 +43,7 @@ status_area = "zoom"  ## "all", "zoom"
 
 path_in = "01_in_data"
 path_out = "02_out_figs"
-fig_name = f"eqidist_SA_MG2pygmt_{status_area}"
+fig_name = f"map_epidist_xks_rays_{status_area}"
 myfont = "4p"
 
 lon_cent = 74.305

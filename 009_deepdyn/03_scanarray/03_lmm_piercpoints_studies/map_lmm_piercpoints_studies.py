@@ -202,7 +202,7 @@ with gmt.config(FONT="4.5p"):
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
-fig_name = "map_GR2019_DR14_pygmt"
+fig_name = "map_lmm_piercpoints_studies_GR2019_DR14"
 # for ext in ["png"]: #, "pdf", "eps"]:
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)

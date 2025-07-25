@@ -203,7 +203,7 @@ fig.text(
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
-fig_name= "map_scandinavia_stations_pairs"
+fig_name= "map_network_xks_pairs"
 # for ext in ["png"]:  #, "pdf", "eps"]:
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
