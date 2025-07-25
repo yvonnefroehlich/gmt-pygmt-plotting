@@ -74,7 +74,7 @@ projection = f"L{lon0}/{lat0}/{lat1}/{lat2}/10c"
 # -----------------------------------------------------------------------------
 # Data - recording stations
 # -----------------------------------------------------------------------------
-# >>> tabes were replaced externally by four white spaces <<<
+# >>> tabs were replaced externally by four white spaces <<<
 # >>> trailing white spaces were removed externally <<<
 # Mixture of tabs, white spaces, tabs with with spaces
 
