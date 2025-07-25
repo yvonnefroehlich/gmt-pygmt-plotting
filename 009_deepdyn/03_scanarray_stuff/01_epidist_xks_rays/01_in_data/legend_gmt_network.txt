@@ -1,0 +1,14 @@
+# legend for equidis_SA - Perm anaomalie
+# stations / networks
+
+N 1
+G 0.05c
+S 0.35c i 0.35c dodgerblue2 1.0p,black 0.75c AlpArray
+G 0.05c
+S 0.35c i 0.35c darkblue 1.0p,black 0.75c Russia
+G 0.05c
+S 0.35c i 0.35c darkorange 1.0p,black 0.75c ScanArray
+G 0.05c
+S 0.35c i 0.35c springgreen3 1.0p,black 0.75c Greenland
+G 0.05c
+S 0.35c i 0.35c darkred 1.0p,black 0.75c USArray
