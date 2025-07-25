@@ -1,22 +1,29 @@
-# -----------------------------------------------------------------------------
-# -----------------------------------------------------------------------------
-# Script I
+# #############################################################################
 # Reproduction with modifications of GMT map "005_map_equidist_siberia"
 # by Michael Grund in PyGMT
+#
+# Script I
+#
 # source of original script, data, and manual (last access 2022/04/06):
 # https://github.com/michaelgrund/GMT-plotting/tree/main/005_map_equidist_siberia
 # a modified version is part of his PhD thesis (DOI: 10.5445/IR/1000091425)
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich
+# History
+# - Created: 2022/04/04 - PyGMT v0.6.0 with GMT 6.3.0
+# - Updated: 2023/08/08 - PyGMT v0.9.0 / dev with GMT 6.4.0
+# - Updated: 2023/09/18 - PyGMT v0.10.0 / dev with GMT 6.4.0
+# - Updated: 2024/05/15 - PyGMT v0.12.0 / dev with GMT 6.5.0
+# - Updated: 2025/07/25 - PyGMT v0.16.0 / dev with GMT 6.5.0
 # -----------------------------------------------------------------------------
-# created: 2022/04/04 - PyGMT v0.6.0 with GMT 6.3.0
-# updated: 2023/08/08 - PyGMT v0.9.0 / dev with GMT 6.4.0
-# updated: 2023/09/18 - PyGMT v0.10.0 / dev with GMT 6.4.0
-# updated: 2024/05/15 - PyGMT v0.12.0 / dev with GMT 6.5.0
+# Versions
+# - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
-# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
+# #############################################################################
 
 
 import pygmt as gmt
@@ -28,12 +35,14 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # What to plot - choose
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-status_area = "all"  ## "all", "zoom"
+status_area = "zoom"  ## "all", "zoom"
 # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 # -----------------------------------------------------------------------------
 # Fixed values - do not change
 
+path_in = "01_in_data"
+path_out = "02_out_figs"
 fig_name = f"eqidist_SA_MG2pygmt_{status_area}"
 myfont = "4p"
 
@@ -54,22 +63,22 @@ match status_area:
 
 # -----------------------------------------------------------------------------
 # Colors - can be changed based on your personal preferences
-col_patb = "216.750/82.875/24.990"  # plate boundaries
-col_land = "lightgray"  # land masses
-col_water = "white"  # waster masses
-col_taget = "gold@30"  # target area
-col_epi = "white"  # epicenter
-col_outl = "gray50"  # outline of large circles
+color_pb = "216.750/82.875/24.990"  # plate boundaries
+color_land = "lightgray"  # land masses
+color_water = "white"  # waster masses
+color_taget = "gold@30"  # target area
+color_epi = "white"  # epicenter
+color_outl = "gray50"  # outline of large circles
 
-col_AA = "dodgerblue2"  # AlpArray
-col_RUS = "darkblue"  # Russia
-col_SA = "darkorange"  # ScanArray
-col_GL = "springgreen3"  # Greenland
-col_USA = "darkred"  # USArray
+color_AA = "dodgerblue2"  # AlpArray
+color_RUS = "darkblue"  # Russia
+color_SA = "darkorange"  # ScanArray
+color_GL = "springgreen3"  # Greenland
+color_USA = "darkred"  # USArray
 
 # -----------------------------------------------------------------------------
 # Data
-data_patb = "PB2002_boundaries_GMTready.txt"  # plate boundaries
+data_pb = "PB2002_boundaries_GMTready.txt"  # plate boundaries
 data_epi = "EQall.dat"  # epicenters
 
 # Coordinates of recording stations
@@ -104,14 +113,14 @@ path_USA = "pathlist_USA.dat"
 
 # Fill color of station markers and line color of ray paths
 dic_col = {
-    "AA_perm": col_AA,
-    "AA_temp": col_AA,
-    "GL": col_GL,
-    "RUS": col_RUS,
-    "SA": col_SA,
-    "SA_2": col_SA,
-    "USA": col_USA,
-    "USA_sub": col_USA,
+    "AA_perm": color_AA,
+    "AA_temp": color_AA,
+    "GL": color_GL,
+    "RUS": color_RUS,
+    "SA": color_SA,
+    "SA_2": color_SA,
+    "USA": color_USA,
+    "USA_sub": color_USA,
 }
 
 # Semi-transparence of ray paths
@@ -151,33 +160,20 @@ dic_path = {
 }
 
 
+# %%
 # -----------------------------------------------------------------------------
 # Make geographic map
 # -----------------------------------------------------------------------------
-
 # Create figure objection
 fig = gmt.Figure()
+gmt.config(MAP_FRAME_WIDTH="1p")
 
-# -----------------------------------------------------------------------------
-# Global changes of default values of GMT
-gmt.config(MAP_FRAME_WIDTH="1p")  # thickness of map frame
-
-# -----------------------------------------------------------------------------
 # Epidistance plot
-fig.coast(
-    region="g",
-    projection=f"E{lon_cent}/{lat_cent}/{pro_area}/{map_size}",
-    resolution="c",
-    land=col_land,
-    water=col_water,
-)
+fig.basemap(region="g", projection=f"E{lon_cent}/{lat_cent}/{pro_area}/{map_size}", frame=0)
+fig.coast(resolution="c", land=color_land, water=color_water)
 
-# -----------------------------------------------------------------------------
 # Plate boundaries after Bird 2003
-fig.plot(
-    data=data_patb,
-    pen="0.25p," + col_patb,
-)
+fig.plot(data=f"{path_in}/{data_pb}", pen=f"0.25p,{color_pb}")
 
 # -----------------------------------------------------------------------------
 # Ray paths
@@ -192,18 +188,17 @@ for key in key_choose:
         incols_second = 1
 
     fig.plot(
-        data=dic_path[key],
+        data=f"{path_in}/{dic_path[key]}",
         pen=f"0.1p,{dic_col[key]}{dic_trans[key]}",
         incols=[incols_first, incols_second],
     )
 
-
 # -----------------------------------------------------------------------------
 # Epicenters
 fig.plot(
-    data=data_epi,
-    style="a0.1c",  # star
-    fill=col_epi,
+    data=f"{path_in}/{data_epi}",
+    style="a0.1c",
+    fill=color_epi,
     pen="0.1p,black",
     incols=[1, 0],
 )
@@ -221,7 +216,7 @@ for key in key_choose:
         incols_second = 0
 
     fig.plot(
-        data=dic_sta[key],
+        data=f"{path_in}/{dic_sta[key]}",
         style="i0.1c",
         fill=dic_col[key],
         pen="0.1p,black",
@@ -235,7 +230,7 @@ if status_area == "all":
         x=lon_cent,
         y=lat_cent,
         style=f"c{rad_zoom}",
-        pen=f"0.7p,{col_outl},3_1:0p",  # dashed line
+        pen=f"0.7p,{color_outl},3_1:0p",  # dashed line
         # line segment length _ gap length : offset from origin; all in points
     )
 
@@ -244,8 +239,8 @@ fig.plot(
     x=lon_cent,
     y=lat_cent,
     style=f"c{rad_taget}",
-    fill=col_taget,
-    pen=f"0.25p,{col_outl}",
+    fill=color_taget,
+    pen=f"0.25p,{color_outl}",
 )
 
 # -----------------------------------------------------------------------------
@@ -283,5 +278,5 @@ fig.basemap(frame=True)
 # Show and save figure
 fig.show()
 # for ext in ["eps"]:  #, "png", "pdf"]:
-#     fig.savefig(fname=f"{fig_name}.{ext}")
-
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+print(fig_name)
