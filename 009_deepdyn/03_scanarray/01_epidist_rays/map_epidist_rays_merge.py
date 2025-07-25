@@ -38,9 +38,9 @@ path_in = "01_in_data"
 path_out = "02_out_figs"
 
 # Figure names
-fig_all = "map_epidist_xks_rays_all.eps"
-fig_zoom = "map_epidist_xks_rays_zoom.eps"
-fig_out = "map_epidist_xks_rays_merge"
+fig_all = "map_epidist_rays_all.eps"
+fig_zoom = "map_epidist_rays_zoom.eps"
+fig_out = "map_epidist_rays_merge"
 
 # Size
 dia_single = 10  # diameter
