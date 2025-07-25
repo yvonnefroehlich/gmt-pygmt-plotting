@@ -1,4 +1,4 @@
-# legend for equidis_SA - Perm anaomalie
+# legend for equidis_SA - Perm anomaly
 # stations / networks
 
 N 1
