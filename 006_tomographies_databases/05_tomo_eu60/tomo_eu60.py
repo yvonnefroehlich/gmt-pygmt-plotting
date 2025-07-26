@@ -33,7 +33,7 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
-quantity = ["phi", "strength"]  # "phi", "strength"
+quantities = ["phi", "strength"]  # "phi", "strength"
 
 depth_min = 200
 depth_max = 200
@@ -71,14 +71,14 @@ region = [lon_min_lamb, lon_max_lamb, lat_min_lamb, lat_max_lamb]
 
 
 # %%
-for quantity_str in quantity:
+for quantity in quantities:
 
     for depth in range(depth_min, depth_max + depth_step, depth_step):  # in km
 
 # -----------------------------------------------------------------------------
 # Load data
 # -----------------------------------------------------------------------------
-        path_eu60 = f"{path_in}/{quantity_str}/"
+        path_eu60 = f"{path_in}/{quantity}/"
         file_eu60 = f"tomoEU60_file_anisoazi_BAR_{depth}km.txt"
 
         file_aniso = open(f"{path_eu60}{file_eu60}", "r")
@@ -104,7 +104,7 @@ for quantity_str in quantity:
 
 # -----------------------------------------------------------------------------
         # Set up colormap for
-        match quantity_str:
+        match quantity:
             case "phi":
                 gmt.makecpt(series=[-90, 90], cmap="phase", cyclic=True)
                 cb_afg = "a30f10"
@@ -114,7 +114,7 @@ for quantity_str in quantity:
                 gmt.config(COLOR_BACKGROUND="cyan", COLOR_FOREGROUND="orange1")
                 gmt.makecpt(series=[0, 4], cmap="navia", overrule_bg=True)
                 cb_afg = "a0.5f0.1"
-                cb_label = f"{quantity_str} / %"
+                cb_label = f"{quantity} / %"
                 cb_pos = "+o-1c/0.87c+h+ef0.4c"
 
 # -----------------------------------------------------------------------------
@@ -139,7 +139,7 @@ for quantity_str in quantity:
 # -----------------------------------------------------------------------------
         # Show and save figure
         fig.show()
-        fig_name = f"map_eu60_azi_{quantity_str}_{depth}km"
+        fig_name = f"map_eu60_azi_{quantity}_{depth}km"
         # for ext in ["png"]:  # , "pdf", "eps"]:
         #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
         print(fig_name)
