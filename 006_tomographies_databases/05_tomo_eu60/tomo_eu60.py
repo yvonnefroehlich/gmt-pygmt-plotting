@@ -2,7 +2,7 @@
 # Tomography EU60
 #
 # Azimuthal anisotropy - phi and strength
-# Central Europe, upper mantle 198 km - 200 km - 202 km
+# Central Europe, upper mantle 100 km - 200 km - 300 km - 400 km
 #
 # Hejun Zhu, Ebru Bozdağ, Jeroen Tromp, (2015).
 # Seismic structure of the European upper mantle based on adjoint tomography.
@@ -37,7 +37,7 @@ quantity = ["phi", "strength"]  # "phi", "strength"
 
 depth_min = 200
 depth_max = 200
-depth_step = 2  # data is provided in steps of 2 km
+depth_step = 100  # data are included in steps 100 km
 
 path_in = "01_in_data"
 path_out = "02_out_figs"
@@ -142,5 +142,4 @@ for quantity_str in quantity:
         fig_name = f"map_eu60_azi_{quantity_str}_{depth}km"
         # for ext in ["png"]:  # , "pdf", "eps"]:
         #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
-
         print(fig_name)
