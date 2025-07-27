@@ -36,7 +36,7 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_area = "norsa"  # "scandinavia", "norsa"
+status_area = "scandinavia"  # "scandinavia", "norsa"
 
 status_network = "ALL"  ## "NO", "ALL", "PERMANENT", "TEMPORARY", "SA"
 status_color = "NETWORK"  # "NO", "NETWORK"
@@ -455,6 +455,6 @@ if status_area == "norsa":
 fig.show()
 fig_name= f"map_scanarray_{status_grid}_{status_area}" + \
           f"_network{status_network}_color{status_color}{add_stereo}"
-for ext in ["png"]:  # "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=360)
+# for ext in ["png"]:  # "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=360)
 print(fig_name)
