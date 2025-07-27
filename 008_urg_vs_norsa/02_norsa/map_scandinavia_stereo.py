@@ -36,7 +36,7 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_area = "scandinavia"  # "scandinavia", "norsa"
+status_area = "norsa"  # "scandinavia", "norsa"
 
 status_network = "ALL"  ## "NO", "ALL", "PERMANENT", "TEMPORARY", "SA"
 status_color = "NETWORK"  # "NO", "NETWORK"
@@ -45,7 +45,6 @@ status_grid = "tectonic"  ## "land", "elevation", "tectonic"
 status_method = "SC"  ## "SC", "RC"
 status_quality = "all"  ## "all", "goodfair"
 status_phase = "XKS"  ## "XKS", "SKS", "SKKS", "PKS"
-status_obs = "swsms"  ## "swsms", "nulls", "splits"
 
 size_station_symbol = 0.1  # in centimeters
 stereo_size = 0.4  # in centimeters
@@ -75,7 +74,7 @@ match status_area:
         stereo_size = 2.75
         status_label = "station"
         leg_pos = "jRB+o0.1c+w3.4c"
-        add_stereo = f"_stereo_{status_quality}_{status_method}_{status_phase}_{status_obs}"
+        add_stereo = f"_stereo_{status_quality}_{status_method}_{status_phase}"
     case _:
         lon_min = 3.5  # in degrees East
         lon_max = 37
@@ -394,7 +393,7 @@ if status_area == "norsa":
         for sta_temp in df_net["station"]:
 
             stereo_name = f"Stereo_{sta_temp}_{status_quality}_" + \
-                          f"{status_method}_{status_phase}_{status_obs}_" + \
+                          f"{status_method}_{status_phase}_swsms_" + \
                            "single_BAZ0to360_phase_noall_MG"
             df_sta_temp = df_net[df_net["station"] == sta_temp]
             lon_temp = float(df_sta_temp["longitude"].iloc[0])
@@ -425,7 +424,7 @@ if status_area == "norsa":
                     )
 
     # Add colorbar for fast polarization direction
-    if status_network!="NO" and status_obs!="nulls":
+    if status_network!="NO":
         with gmt.config(
             FONT="12p",
             MAP_FRAME_PEN="0.05p",
@@ -445,7 +444,7 @@ if status_area == "norsa":
         fig.text(
             position="TC",
             offset="0c/-0.4c",
-            text=f"{status_obs} | {status_phase} | {status_method} | {status_quality}",
+            text=f"{status_phase} | {status_method} | {status_quality}",
             font=f"6p,{color_hl}",
             fill="white@30",
             clearance=clearance_standard,
