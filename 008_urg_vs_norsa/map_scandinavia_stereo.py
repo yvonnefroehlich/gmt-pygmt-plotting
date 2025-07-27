@@ -9,16 +9,21 @@
 # - Grund & Ritter 2020 GJI (-> GitHub: recording stations)
 # -----------------------------------------------------------------------------
 # Related to
-# - ScanArray / LITHOCAP project by Michael Grund 2014 - 2020
-# - DeepDyn project by Yvonne Fröhlich 2023/08 - present
+# - ScanArray / LITHOCAP project by Michael Grund 2014/06 - 2019/02
+# - DeepDyn project by Yvonne Fröhlich 2023/08 - 2025/03
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fröhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
+# History
 # - Created: 2024/06/07
-#   PyGMT v0.12.0 -> https://www.pygmt.org/v0.12.0/ | https://www.pygmt.org/
-#   GMT 6.4.0 -> https://www.generic-mapping-tools.org/
+# - Updated: 2025/27/07
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 
@@ -34,8 +39,6 @@ import pygmt as gmt
 
 # if 1==1:
 def scanarray_stereosMG(
-    status_pc,  ## "private", "gpi"
-
     status_network,  ## "NO", "ALL", "PERMANENT", "TEMPORARY", "SA"
     status_color,  ## "NO", "NETWORK", "PAIRS"
     status_grid,  ## "LAND", "ELEVATION", "TECTONIC"
@@ -48,6 +51,7 @@ def scanarray_stereosMG(
 
     size_station_symbol=0.1,  # in centimeters
     stereo_size=0.4,  # in centimeters
+
     lon_min=3.5,  # in degrees East
     lon_max=36,
     lat_min=54,  # in degrees North
@@ -68,21 +72,14 @@ def scanarray_stereosMG(
 # General stuff
 # -----------------------------------------------------------------------------
     # Path
-    match status_pc:
-        case "gpi":
-            path_same = "/home/yfroe/Documents"
-        case "private":
-            path_same = "C:/Users/Admin/C2/EigeneDokumente/Studium/Promotion"
-
-    stereo_path = f"{path_same}/D_Matlab/stereoplots/02_stereo_SA_NOgrid/"
-    path_in = "01_in_data/"
-    path_out = "02_out_fig/03_stereo"
+    path_in = "01_in_data"
+    path_out = "02_out_figs"
 
 # -----------------------------------------------------------------------------
     # Region and projection
     # Mercator projection
-    region_used = [lon_min, lon_max, lat_min, lat_max]
-    projection_used = "M10c"
+    region = [lon_min, lon_max, lat_min, lat_max]
+    projection = "M10c"
 
     # Lambert projection
     # Determine projection center
@@ -91,8 +88,8 @@ def scanarray_stereosMG(
     # Calculate two standard parallels (only these two distortion-free)
     lat1 = lat_min + (lat_max - lat_min) / 3
     lat2 = lat_min + (lat_max - lat_min) / 3 * 2
-    region_used = [lon_min, lon_max, lat_min, lat_max]
-    projection_used = f"L{lon0}/{lat0}/{lat1}/{lat2}/10c"
+    region = [lon_min, lon_max, lat_min, lat_max]
+    projection = f"L{lon0}/{lat0}/{lat1}/{lat2}/10c"
 
 # -----------------------------------------------------------------------------
     # Colors
@@ -102,9 +99,6 @@ def scanarray_stereosMG(
     color_shorelines = "gray70"
     color_borders = "gray60"
     color_highlight = "255/90/0"  # -> orange | URG paper
-
-    color_disc = "lightmagenta"
-    color_same = "0/197/205"
 
     style_station = f"i{size_station_symbol}c"
     pen_station = "0.1p,gray10"
@@ -121,7 +115,7 @@ def scanarray_stereosMG(
 # Data - Recording stations
 # -----------------------------------------------------------------------------
     # >>> externally modified from Excel file provided along with GR2019 <<<
-    file_stations = f"{path_in}sta_coordinates_whitespace.txt"
+    file_stations = f"{path_in}/sta_coordinates_whitespace.txt"
     col_names = ["station", "longitude", "latitude"]
     df_stations = pd.read_csv(file_stations, sep=" ", names=col_names)
 
@@ -160,14 +154,8 @@ def scanarray_stereosMG(
 # Data - SKS-SKKS pairs
 # -----------------------------------------------------------------------------
     # >>> externally modified from Excel file provided along with GR2019 <<<
-    data_pairs = f"{path_in}2019049_TableDR1_mod.csv"
+    data_pairs = f"{path_in}/2019049_TableDR1_mod.csv"
     df_pairs = pd.read_csv(data_pairs, sep=";")
-
-    df_pairs_same = df_pairs[df_pairs["pair"]=="same"]
-    df_pairs_same_reset = df_pairs_same.reset_index(drop=True)
-
-    df_pairs_disc = df_pairs[df_pairs["pair"]=="disc"]
-    df_pairs_disc_reset = df_pairs_disc.reset_index(drop=True)
 
     stacods_pairs = []
     lons_pairs = []
@@ -282,7 +270,7 @@ def scanarray_stereosMG(
     )
 
     # Make basic map
-    fig.basemap(region=region_used, projection=projection_used, frame=0)
+    fig.basemap(region=region, projection=projection, frame=0)
 
 # -----------------------------------------------------------------------------
     # Plot tectonic units
@@ -333,11 +321,7 @@ def scanarray_stereosMG(
 
     # Download and plot elevation grid
     if status_grid=="ELEVATION":
-        fig.grdimage(
-            grid="@earth_relief_30s",
-            region=region_used,
-            cmap=f"{path_in}/topo.cpt",
-        )
+        fig.grdimage(grid="@earth_relief_30s", region=region, cmap=f"{path_in}/topo.cpt")
 
     # Plot shorelines and borders, frame, and water (not the stacking approach)
     fig.coast(
@@ -430,7 +414,7 @@ def scanarray_stereosMG(
                lat_temp > lat_min and lat_temp < lat_max:
                 try:
                     fig.image(
-                        imagefile=f"{stereo_path}02_stereo_{network}/{stereo_name}.eps",
+                        imagefile=f"{path_in}/02_stereo_{network}/{stereo_name}.eps",
                         position=f"g{lon_temp}/{lat_temp}+jMC+w{stereo_size}c",
                     )
                 except:
@@ -558,8 +542,6 @@ for sub_region in [
                                     pass
                                 else:
                                     scanarray_stereosMG(
-                                        status_pc="private",
-
                                         status_grid=status_grid,
                                         status_color=status_color,
                                         status_network=status_network,
