@@ -147,7 +147,7 @@ sta_perm_ids = [
 sta_perm_ids = ["permanent"]
 sta_temp_ids = ["SA", "NWG", "N1", "N2", "NBB"]
 
-# Set up dictionary to asing colors to the differenct station networks
+# Set up dictionary to asing colors to the different station networks
 color_N2_NBB = "darkorange"
 color_permanent = "dodgerblue"
 color_no_network = "gray40"
@@ -180,7 +180,7 @@ filein = f"{path_in}/scan_tectonic.dat"
 namescol = ["lon", "lat", "name", "num"]
 datatab = pd.read_table(filein, sep="\t", skiprows=5, names=namescol)
 
-# Set up dictionary to asign colors to the tectonic unis
+# Set up dictionary to assign colors to the tectonic unis
 dict_prov_col = {
     "Phanerozoic2":     "115/195/128",
     "Svecofennian":     "248/188/203",
@@ -262,7 +262,7 @@ fig.basemap(region=region, projection=projection, frame=0)
 # Plot tectonic units
 if status_grid=="tectonic":
     # Fix small unclean edges for NORSA region
-    # Manuell adjusted for region and size
+    # Manual adjusted for region and size
     fig.plot(x=11.95, y=61.27, style="s1.5c", fill=dict_prov_col["Caledonides"])
     fig.plot(x=11.60, y=61.15, style="s1c", fill=dict_prov_col["Caledonides"])
     fig.plot(x=11.38, y=60.975, style="s0.7c", fill=dict_prov_col["TIB"])
@@ -322,7 +322,7 @@ fig.coast(
 )
 
 # -----------------------------------------------------------------------------
-# Color based on network choosen for plotting stereoplots
+# Color based on network chosen for plotting stereoplots
 sta_ids = [status_network]
 net_outl_all = [status_network]
 net_tria_all = ["permanent"] + sta_temp_ids
