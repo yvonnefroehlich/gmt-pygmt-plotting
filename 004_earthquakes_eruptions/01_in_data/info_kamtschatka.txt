@@ -1,0 +1,14 @@
+# Infos on Kamtschatka earthquake
+#
+# For usage in GMT / PyGMT
+# paragraph mode
+# x y [font angle justify] linespace parwidth parjust
+# new line by blank line
+> 221 65.5 13p 4.7c l
+Date: 2025/07/29 23:24:50 (UTC)
+
+Epicenter: 160.165@.E, 52.530@.N
+
+Hypocentral depth: 20.7 km
+
+Moment magnitude: 8.8
