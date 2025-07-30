@@ -1,4 +1,4 @@
-# Infos on LaPalma eruption
+# Infos on La Palma eruption
 #
 # For usage in GMT / PyGMT 
 # paragraph mode
