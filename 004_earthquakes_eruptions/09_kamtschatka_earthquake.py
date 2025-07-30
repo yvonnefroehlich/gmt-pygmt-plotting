@@ -67,7 +67,7 @@ color_land = "gray70"
 color_sl = "gray30"
 color_pb = "216.750/82.875/24.990"  # plate boundaries # -> darkorange
 color_nb = "gray70"  # national boundaries
-color_highlight = "255/90/0"  # -> orange
+color_hl = "255/90/0"  # higlight -> orange
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
@@ -110,8 +110,8 @@ fig.plot(
     x=lon_eq,
     y=lat_eq,
     style=f"k{path_in}/earthquake.def/1c",
-    fill=color_highlight,
-    pen=color_highlight,
+    fill=color_hl,
+    pen=color_hl,
 )
 
 """
@@ -121,7 +121,7 @@ fig.meca(
     spec=f"{path_in}/meca_kamtschatka.txt",
     convention="aki",
     scale="1c",
-    compressionfill=color_highlight,  # fill color of compressive quadrants
+    compressionfill=color_hl,  # fill color of compressive quadrants
     offset=pen_epi,
     outline=pen_epi,
 )
@@ -134,7 +134,7 @@ fig.text(
     font="8p,Helvetica-Bold,black",
     offset="0c/-0.7c",
     fill="white@30",
-    pen=f"0.8p,{color_highlight}",
+    pen=f"0.8p,{color_hl}",
     clearance="0.1c/0.1c+tO",
 )
 # Info text
@@ -186,7 +186,7 @@ with fig.inset(position=pos_study_inset):
     fig.plot(
         data=[[lon_min, lat_min, lon_max, lat_max]],
         style="r+s",
-        pen=f"1p,{color_highlight}",
+        pen=f"1p,{color_hl}",
     )
 
 # -----------------------------------------------------------------------------
