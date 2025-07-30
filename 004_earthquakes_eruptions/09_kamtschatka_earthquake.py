@@ -39,9 +39,15 @@ file_pb = "plate_boundaries_Bird_2003.txt"
 
 # -----------------------------------------------------------------------------
 # Define region and projections
+# Zoom around Kamtschatka
+lon_min = 150  # degrees East
+lon_max = 180
+lat_min = 45   # degrees North
+lat_max = 60
+# With east coast of US
 lon_min = 115  # degrees East
 lon_max = 250
-lat_min = 15 # degrees North
+lat_min = 15   # degrees North
 lat_max = 70
 region = [lon_min, lon_max, lat_min, lat_max]
 center_str = f"{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}"
@@ -67,7 +73,7 @@ color_highlight = "255/90/0"  # -> orange
 # Stuff for scale, legends, colorbars, and insets
 basemap_scale = f"JLB+jLB+w1000+c{center_str}+f+lkm+at+o4c/0.7c"
 
-pos_study_inset = "jTL+w3c+o-1c"
+pos_study_inset = "jTL+w3c+o-0.7c"
 
 pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c+e"
 frame_cb_grid = "xa2500f500+lelevation / m"
@@ -186,8 +192,6 @@ with fig.inset(position=pos_study_inset):
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
-
 # for ext in ["png"]:  # , "pdf", "eps"]:
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
-
 print(fig_name)
