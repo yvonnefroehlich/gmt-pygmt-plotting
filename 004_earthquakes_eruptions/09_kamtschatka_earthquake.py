@@ -25,7 +25,7 @@ import pygmt as gmt
 # >>> Adjust for your needs <<<
 fig_name = "09_kamtschatka_earthquake"  # Name of output figure
 dpi_png = 360  # Resolution of output PNG
-grid_res = "03m"  # Resolution of elevation grid
+grid_res = "05m"  # Resolution of elevation grid
 grid_reg = "g"  # Registration of elevation grid
 
 # -----------------------------------------------------------------------------
@@ -114,7 +114,6 @@ fig.plot(
     pen=color_hl,
 )
 
-"""
 # Beachball
 pen_epi = "0.5p,black"
 fig.meca(
@@ -125,7 +124,7 @@ fig.meca(
     offset=pen_epi,
     outline=pen_epi,
 )
-"""
+
 # Label
 fig.text(
     x=lon_eq,
@@ -137,6 +136,7 @@ fig.text(
     pen=f"0.8p,{color_hl}",
     clearance="0.1c/0.1c+tO",
 )
+
 # Info text
 # Adjust position in txt file
 fig.text(
