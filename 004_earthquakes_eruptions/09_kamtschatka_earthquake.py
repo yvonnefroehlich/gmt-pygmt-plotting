@@ -148,7 +148,6 @@ fig.text(
     pen="0.5p,gray30",
 )
 
-
 # -----------------------------------------------------------------------------
 # Add colorbar for elevation
 fig.colorbar(position=pos_cb_grid, frame=frame_cb_grid, box=box_standard)
