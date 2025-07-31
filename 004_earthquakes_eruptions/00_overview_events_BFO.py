@@ -6,6 +6,7 @@
 # - Updated: 2024/04/23 - Improve coding style
 # - Updated: 2025/03/28 - Reorganize folder, rewrite code
 # - Updated: 2025/03/29 - Introduce dictionary for events
+# - Updated: 2025/07/31 - Polish code, highlight XKS epicentral distance range
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
@@ -36,6 +37,7 @@ path_out = "02_out_figs"
 data_pb = "plate_boundaries_Bird_2003.txt"
 
 # Recording station, here Black Forest Observatory BFO
+name_sta = "BFO"
 lon_sta = 8.33
 lat_sta = 48.33
 
@@ -85,30 +87,34 @@ df_events = pd.DataFrame(
 # -----------------------------------------------------------------------------
 # Colors
 color_sta = "255/215/0"
-color_event = "255/90/0"  # -> orange
+color_hl = "255/90/0"  # -> orange
 color_pd = "216.750/82.875/24.990"  # plate boundaries  # -> dark orange
 color_sl = "darkgray"  # shorelines
+color_nb = "gray50"  # national borders
 color_land = "gray90"
 color_water = "steelblue"
 
 # Standards
 font = "7p"
-clearance_standard = "0.1c/0.1c+tO"
+clearance_standard = "0.1c+tO"
 
 # -----------------------------------------------------------------------------
 # Region and projections
-map_size = 10  # in centimeters
+map_size = 10  # centimeters
 
 # Epicentral distance plot
-epi_min = 80  # degrees
+epi_min = 90  # degrees
 epi_max = 150
+epi_plot = 160
 center_lon = lon_sta
 center_lat = lat_sta
-epi_plot = 160
+center_coord = {"x": center_lon, "y": center_lat}
 
 proj_epi = f"E{center_lon}/{center_lat}/{epi_plot}/{map_size}c"
 proj_rob = f"N{map_size}c"
 proj_used = proj_epi
+
+size2dist = map_size / epi_plot
 
 
 # %%
@@ -119,45 +125,44 @@ fig = gmt.Figure()
 fig.basemap(region="d", projection=proj_used, frame=True)
 
 # Plot shorelines
-fig.coast(land=color_land, shorelines=f"1/0.01p,{color_sl}", borders="1/0.01p,gray50")
+fig.coast(land=color_land, shorelines=f"1/0.1p,{color_sl}", borders=f"1/0.1p,{color_nb}")
 
 # Plot plate boundaries
 fig.plot(data=f"{path_in}/{data_pb}", pen=f"0.3p,{color_pd}")
 
-# Epicentral distance range used in this study
+# -----------------------------------------------------------------------------
+# Epicentral distance range range for XKS phases
+fig.plot(
+    style=f"w{epi_min * size2dist}/0/360+i{epi_max * size2dist}",
+    fill=f"{color_sta}@90",
+    **center_coord,
+)
+
 for epi_limit in [epi_min, epi_max]:
-    if epi_limit == epi_min:
-        offset_station_label = "0c/-2.5c"
-    elif epi_limit == epi_max:
-        offset_station_label = "0c/-4.7c"
 
     # Circles
-    fig.plot(
-        x=center_lon,
-        y=center_lat,
-        style=f"E-{epi_limit * 2}+d",
-        pen=f"1p,{color_sta},-",
-    )
+    fig.plot(style=f"E-{epi_limit * 2}+d", pen=f"1p,{color_sta},4_2", **center_coord)
+
     # Annotations
     fig.text(
-        x=center_lon,
-        y=center_lat,
-        offset=offset_station_label,
         text=f"{epi_limit}@.",  # degree sign in GMT
+        offset=f"0c/-{epi_limit * size2dist / 2}c",
         font=font,
         fill="white@30",
         pen=f"0.5p,{color_sta}",
         clearance=clearance_standard,
+        **center_coord,
     )
 
+# -----------------------------------------------------------------------------
 # Plot epicenters
 df_eqs = df_events[df_events["event_type"] == "earthquake"]
 fig.plot(
     x=df_eqs.lon,
     y=df_eqs.lat,
     style=f"k{path_in}/earthquake.def/0.7c",
-    fill=color_event,
-    pen=color_event,
+    fill=color_hl,
+    pen=color_hl,
 )
 
 # Plot volcanos
@@ -166,25 +171,27 @@ fig.plot(
     x=df_erp.lon,
     y=df_erp.lat,
     style="kvolcano/0.4c",
-    fill=color_event,
+    fill=color_hl,
     pen="0.1p,black",
 )
 
+# -----------------------------------------------------------------------------
 # Plot recording station
-fig.plot(x=center_lon, y=center_lat, style="i0.4c", fill=color_sta, pen="0.3p,black")
+fig.plot(style="i0.4c", fill=color_sta, pen="0.3p,black", **center_coord)
+
 # Add label for recording station
 fig.text(
-    text="BFO",
-    x=center_lon,
-    y=center_lat,
+    text=name_sta,
     justify="MC",
     offset="0c/0.4c",
     font=font,
     fill="white@30",
     pen=f"0.7p,{color_sta}",
     clearance=clearance_standard,
+    **center_coord,
 )
 
+# -----------------------------------------------------------------------------
 # Add labels for event ID
 fig.text(
     text=df_events["event_id"],
@@ -194,17 +201,16 @@ fig.text(
     offset="0c/-0.35c",
     font="5p",
     fill="white@30",
-    pen=f"0.1p,{color_event}",
-    clearance="0.05c/0.05c+tO",
+    pen=f"0.1p,{color_hl}",
+    clearance="0.05c+tO",
 )
 
+# -----------------------------------------------------------------------------
 # Show and save
 fig.show()  # method="external")
-
 # for ext in ["png"]:  # , "pdf", "eps"]:
-#     transparent = False
-#     if ext == "png":
-#         transparent = True
-#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
-
+    # transparent = False
+    # if ext == "png":
+    #     transparent = True
+    # fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
 print(fig_name)
