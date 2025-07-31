@@ -7,7 +7,7 @@
 > 224 65.7 13p 4.2c l
 Date: 2025/07/29 23:24:52 (UTC)
 
-Epicenter: 160.165@.E, 52.530@.N
+Epicenter: 160.324@.E, 52.512@.N
 
 Hypocentral depth: 21.5 km
 

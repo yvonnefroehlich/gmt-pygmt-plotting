@@ -1,7 +1,7 @@
 # #############################################################################
 # Kamtschatka earthquake on 2025/07/29-30
 # See also: https://earthquake.usgs.gov/earthquakes/eventpage/pt25210002/executive
-#           last accessed: 2025/07/30
+#           last accessed: 2025/07/31
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/07/30
@@ -57,8 +57,8 @@ projection_ortho = f"G{center_str}/?"
 
 # -----------------------------------------------------------------------------
 # Coordinates of epicenter
-lon_eq = 160.165  # degrees East
-lat_eq = 52.530  # degrees North
+lon_eq = 160.324  # degrees East
+lat_eq = 52.512  # degrees North
 
 # -----------------------------------------------------------------------------
 # Colors
