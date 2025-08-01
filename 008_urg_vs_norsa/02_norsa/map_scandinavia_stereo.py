@@ -36,13 +36,12 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_area = "scandinavia"  # "scandinavia", "norsa"
+status_area = "norsa"  # "scandinavia", "norsa"
 
 status_network = "ALL"  ## "NO", "ALL", "PERMANENT", "TEMPORARY", "SA"
 status_color = "NETWORK"  # "NO", "NETWORK"
 status_grid = "tectonic"  ## "land", "elevation", "tectonic"
 
-status_method = "SC"  ## "SC", "RC"
 status_quality = "all"  ## "all", "goodfair"
 status_phase = "XKS"  ## "XKS", "SKS", "SKKS", "PKS"
 
@@ -74,7 +73,7 @@ match status_area:
         stereo_size = 2.75
         status_label = "station"
         leg_pos = "jRB+o0.1c+w3.4c"
-        add_stereo = f"_stereo_{status_quality}_{status_method}_{status_phase}"
+        add_stereo = f"_stereo_{status_quality}_SC_{status_phase}"
     case _:
         lon_min = 3.5  # in degrees East
         lon_max = 37
@@ -393,7 +392,7 @@ if status_area == "norsa":
         for sta_temp in df_net["station"]:
 
             stereo_name = f"Stereo_{sta_temp}_{status_quality}_" + \
-                          f"{status_method}_{status_phase}_swsms_" + \
+                          f"SC_{status_phase}_swsms_" + \
                            "single_BAZ0to360_phase_noall_MG"
             df_sta_temp = df_net[df_net["station"] == sta_temp]
             lon_temp = float(df_sta_temp["longitude"].iloc[0])
@@ -444,7 +443,7 @@ if status_area == "norsa":
         fig.text(
             position="TC",
             offset="0c/-0.4c",
-            text=f"{status_phase} | {status_method} | {status_quality}",
+            text=f"{status_phase} | SC | {status_quality}",
             font=f"6p,{color_hl}",
             fill="white@30",
             clearance=clearance_standard,
