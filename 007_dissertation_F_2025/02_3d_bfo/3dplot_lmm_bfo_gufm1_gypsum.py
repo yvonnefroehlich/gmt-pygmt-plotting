@@ -205,14 +205,14 @@ for plane in planes:
             path_swsm = f"{path_in}/02_pp2700km/BFO_pp2700km_"
             if ray_groups_str == "KN_KKN_KNN_KKNN":
                 fig.plot(
-                    data=[f"{path_swsm}K_sp_N_goodfair.txt", f"{path_swsm}K_sp_NN_goodfair.txt"],
+                    data=[f"{path_swsm}KN_goodfair.txt", f"{path_swsm}KNN_goodfair.txt"],
                     style="c0.12c",
                     fill=f"{color_SKS}",
                     pen=pen_pp,
                     perspective=True,
                 )
                 fig.plot(
-                    data=[f"{path_swsm}KK_sp_N_goodfair.txt", f"{path_swsm}KK_sp_NN_goodfair.txt"],
+                    data=[f"{path_swsm}KKN_goodfair.txt", f"{path_swsm}KKNN_goodfair.txt"],
                     style="c0.12c",
                     fill=f"{color_SKKS}",
                     pen=pen_pp,
@@ -220,28 +220,28 @@ for plane in planes:
                 )
             else:
                 fig.plot(
-                    data=f"{path_swsm}K_sp_NN_goodfair.txt",
+                    data=f"{path_swsm}KNN_goodfair.txt",
                     style="c0.12c",
                     fill=color_SKS,
                     pen=pen_pp,
                     perspective=True,
                 )
                 fig.plot(
-                    data=f"{path_swsm}KK_sp_NN_goodfair.txt",
+                    data=f"{path_swsm}KKNN_goodfair.txt",
                     style="c0.12c",
                     fill=color_SKKS,
                     pen=pen_pp,
                     perspective=True,
                 )
                 fig.plot(
-                    data=f"{path_swsm}K_sp_N_goodfair.txt",
+                    data=f"{path_swsm}KN_goodfair.txt",
                     style="c0.12c",
                     fill=color_null,
                     pen=f"0.5p,{color_SKS}",
                     perspective=True,
                 )
                 fig.plot(
-                    data=f"{path_swsm}KK_sp_N_goodfair.txt",
+                    data=f"{path_swsm}KKN_goodfair.txt",
                     style="c0.12c",
                     fill=color_null,
                     pen=f"0.5p,{color_SKKS}",
@@ -269,7 +269,7 @@ for plane in planes:
                     case "KKN": color_pp410 = color_ray_KKN
                     case "KKNN": color_pp410 = color_ray_KKNN
                 fig.plot(
-                    data=f"{path_in}/03_pp410km/tt_path_{pierce_group}_goodfair_pp410km.txt",
+                    data=f"{path_in}/03_pp410km/BFO_pp410km_{pierce_group}_goodfair.txt",
                     style="c0.07c",
                     fill=color_pp410,
                     perspective=True,
