@@ -465,6 +465,6 @@ if status_lgd == True:
 # -----------------------------------------------------------------------------
 fig.show()
 fig_name = f"maps_3d_lmm_bfo_{ray_groups_str}_{fig_name_add}"
-for ext in ["png"]:  # "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=360)
+# for ext in ["png"]:  # "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=360)
 print(fig_name)
