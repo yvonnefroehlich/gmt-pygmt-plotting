@@ -9,7 +9,7 @@
 # - Updated: 2025/07/31 - Polish code, highlight XKS epicentral distance range
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
+# - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
@@ -199,7 +199,7 @@ fig.text(
     y=df_events["lat"],
     justify="MC",
     offset="0c/-0.35c",
-    font="5p",
+    font="5p,1",
     fill="white@30",
     pen=f"0.1p,{color_hl}",
     clearance="0.05c+tO",
@@ -209,8 +209,8 @@ fig.text(
 # Show and save
 fig.show()  # method="external")
 # for ext in ["png"]:  # , "pdf", "eps"]:
-    # transparent = False
-    # if ext == "png":
-    #     transparent = True
-    # fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
+#     transparent = False
+#     if ext == "png":
+#         transparent = True
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
 print(fig_name)
