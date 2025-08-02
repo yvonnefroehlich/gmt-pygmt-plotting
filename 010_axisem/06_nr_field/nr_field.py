@@ -108,7 +108,7 @@ for simul_run in ["C"]:  # "A", "B", "C"
                             case "6p3": style_nr = "p0.2p"
 
 
-                        path_wfs = f"{path_in}/runs{simul_run}"
+                        path_wfs = f"{path_in}"  #runs{simul_run}"
                         file_wfs = f"scanning_output_{prem}PREM_{ani}" + \
                                     f"{period_set}s_Nr{nr_const_set}_" + \
                                     f"{file_wfs_end}.nc"
