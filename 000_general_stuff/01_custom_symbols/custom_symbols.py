@@ -48,4 +48,4 @@ fig.plot(
 )
 
 fig.show()
-# fig.savefig(fname="custom_symbols.png")
+fig.savefig(fname="custom_symbols.png")
