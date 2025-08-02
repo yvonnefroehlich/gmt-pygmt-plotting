@@ -190,9 +190,9 @@ for simul_run in ["C"]:  # "A", "B", "C"
 
                         fig.show()
                         fig_out = f"{file_out_basic}_{nr_type}_section"
-                        fig_path = f"{path_out}/runs{simul_run}"
-                        # for ext in ["png"]:
-                        #     fig.savefig(fname=f"{fig_path}/{fig_out}.{ext}")
+                        fig_path = f"{path_out}"  # /runs{simul_run}"
+                        for ext in ["png"]:  # "eps", "pdf"]:
+                            fig.savefig(fname=f"{fig_path}/{fig_out}.{ext}")
                         print(fig_out)
 
 
@@ -251,7 +251,7 @@ for simul_run in ["C"]:  # "A", "B", "C"
 
                         fig.show()
                         fig_out = f"{file_out_basic}_{nr_type}_histogram"
-                        fig_path = f"{path_out}/runs{simul_run}"
-                        # for ext in ["png"]:
-                        #     fig.savefig(fname=f"{fig_path}/{fig_out}.{ext}")
+                        fig_path = f"{path_out}"  # "runs{simul_run}"
+                        for ext in ["png"]:  # "eps", "pdf"]:
+                            fig.savefig(fname=f"{fig_path}/{fig_out}.{ext}")
                         print(fig_out)
