@@ -40,6 +40,7 @@ fig.plot(x=0, y=-1, style="kpinetree_yf.def/1c", fill="darkgreen")
 fig.plot(x=2, y=-1, style="kpoplar_yf.def/1c", fill="seagreen")
 fig.plot(x=4, y=-1, style="ktree_circle_yf.def/1c", fill="lightgreen")
 
+# Mark plotting points
 fig.plot(
     x=[-3, -1, 1, 3, -4, -2, 0, 2, 4],
     y=[0.5, 0.5, 0.5, 0.5, -1, -1, -1, -1, -1],
