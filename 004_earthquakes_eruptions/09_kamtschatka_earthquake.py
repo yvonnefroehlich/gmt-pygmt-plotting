@@ -92,7 +92,7 @@ fig.basemap(region=region, projection=projection_main, frame=0)
 
 # -----------------------------------------------------------------------------
 # Download and plot elevation grid
-fig.grdimage(grid=grid, region=region, cmap="oleron", shading=True)
+fig.grdimage(grid=grid, region=region, cmap="oleron")  #, shading=True)
 
 # -----------------------------------------------------------------------------
 # Plot plate boundaries after Bird 2003
