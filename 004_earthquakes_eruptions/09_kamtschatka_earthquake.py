@@ -19,6 +19,8 @@
 
 import pygmt as gmt
 
+
+# %%
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
@@ -34,26 +36,25 @@ path_in = "01_in_data"
 path_out = "02_out_figs"
 
 # -----------------------------------------------------------------------------
-# File name for plate boundaries after Bird 2003
-file_pb = "plate_boundaries_Bird_2003.txt"
-
-# -----------------------------------------------------------------------------
 # Define region and projections
-# Zoom around Kamtschatka
-lon_min = 150  # degrees East
-lon_max = 180
-lat_min = 45   # degrees North
-lat_max = 60
-# With east coast of US
 lon_min = 115  # degrees East
 lon_max = 250
-lat_min = 15   # degrees North
+lat_min = 15  # degrees North
 lat_max = 70
+
 region = [lon_min, lon_max, lat_min, lat_max]
 center_str = f"{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}"
 
-projection_main = "M12c"  # Mercator
+fig_width = 12  # in centimeters
+projection_main = f"M{fig_width}c"  # Mercator
 projection_ortho = f"G{center_str}/?"
+
+# -----------------------------------------------------------------------------
+# File name for plate boundaries after Bird 2003
+file_pb = "plate_boundaries_Bird_2003.txt"
+
+# File name for elevation grid
+grid = f"@earth_relief_{grid_res}_{grid_reg}"
 
 # -----------------------------------------------------------------------------
 # Coordinates of epicenter
@@ -65,15 +66,16 @@ lat_eq = 52.512  # degrees North
 color_water = "steelblue"
 color_land = "gray70"
 color_sl = "gray30"
-color_pb = "216.750/82.875/24.990"  # plate boundaries # -> darkorange
+color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
 color_nb = "gray70"  # national boundaries
 color_hl = "255/90/0"  # highlight -> orange
+color_line = "darkblue"
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
 basemap_scale = f"JLB+jLB+w1000+c{center_str}+f+lkm+at+o4c/0.7c"
 
-pos_study_inset = "jTL+w3c+o-0.7c"
+pos_study_inset = "jBL+w3.5c+o-0.7c/-2c"
 
 pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c+e"
 frame_cb_grid = "xa2500f500+lelevation / m"
@@ -85,26 +87,39 @@ box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
 # -----------------------------------------------------------------------------
 # Make geographic map
 # -----------------------------------------------------------------------------
-
-# Create new Figure() instance
 fig = gmt.Figure()
-fig.basemap(region=region, projection=projection_main, frame=["wSnE", "af"])
+gmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray30")
+
+fig.basemap(region=region, projection=projection_main, frame=0)
 
 # -----------------------------------------------------------------------------
 # Download and plot elevation grid
-fig.grdimage(grid=f"@earth_relief_{grid_res}_{grid_reg}", region=region, cmap="oleron")
+fig.grdimage(grid=grid, region=region, cmap="oleron")  #, shading=True)
 
 # -----------------------------------------------------------------------------
 # Plot plate boundaries after Bird 2003
 fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pb}")
 
-# -----------------------------------------------------------------------------
 # Plot national boundaries
 fig.coast(borders=f"1/0.1p,{color_nb}")
 
+# Add frame
+fig.basemap(frame=["wSnE", "xa20f5g10", "ya10f5g10"])
+
+# Add lines
+fig.hlines(y=lat_eq, pen=f"1p,{color_line}")
+fig.vlines(x=lon_eq, pen=f"1p,{color_line},4_2")
+
+# -----------------------------------------------------------------------------
+# Add colorbar for elevation
+fig.colorbar(position=pos_cb_grid, frame=frame_cb_grid, box=box_standard)
+
+# Add length scale
+with gmt.config(FONT="8p"):
+    fig.basemap(map_scale=basemap_scale, box=box_standard)
+
 # -----------------------------------------------------------------------------
 # Plot earthquake
-
 # Epicenter
 fig.plot(
     x=lon_eq,
@@ -148,14 +163,66 @@ fig.text(
     pen="0.5p,gray30",
 )
 
-# -----------------------------------------------------------------------------
-# Add colorbar for elevation
-fig.colorbar(position=pos_cb_grid, frame=frame_cb_grid, box=box_standard)
 
 # -----------------------------------------------------------------------------
-# Add length scale
-with gmt.config(FONT="8p"):
-    fig.basemap(map_scale=basemap_scale, box=box_standard)
+# Profil plot elevation
+fig.shift_origin(yshift="+h+0.4c")
+
+lon0 = 180
+total_lon = lon_max - lon_min
+lon2width = fig_width / total_lon
+y_min = -5000
+y_max = 2000
+
+for side in ["left", "right"]:
+
+    match side:
+        case "left":
+            lon_start = lon_min
+            lon_end = lon0
+            delta_lon = lon0 - lon_min
+        case "right":
+            lon_start = -(lon0 -0.001)
+            lon_end = -(360 - lon_max)
+            delta_lon = lon_max - lon0
+
+    # Generate points along a great circle corresponding to the survey line
+    track_df = gmt.project(
+        center=[lon_start, lat_eq],  # Start point of survey line (longitude, latitude)
+        endpoint=[lon_end, lat_eq],  # End point of survey line (longitude, latitude)
+        generate=0.05,  # Output data in steps
+    )
+    gmt.config(MAP_FRAME_PEN="0.001p,white@100")
+    fig.basemap(
+        region=[lon_start, lon_end, y_min, y_max],
+        projection=f"X{delta_lon * lon2width}c/6c",
+        frame=0,
+    )
+    # Plot water in lightblue
+    fig.plot(data=[[lon_start, y_min, lon_end, 0]], style="r+s", fill="lightblue")
+    # Extract the elevation at the generated points from the downloaded grid
+    track_df = gmt.grdtrack(grid=grid, points=track_df, newcolname="elevation")
+    # Plot elevation
+    fig.plot(
+        x=track_df.r,
+        y=track_df.elevation,
+        fill="bisque",
+        pen=f"0.5p,{color_line},solid",
+        close=f"+y{y_min}",
+    )
+
+    match side:
+        case "left":
+            fig.basemap(frame=["WNrb", "xa20f5g10", "yf500g1000+lelevation / meters"])
+            fig.plot(x=[lon_eq, lon_eq], y=[y_min, y_max], pen=f"1p,{color_line},4_2")
+            fig.shift_origin(xshift="+w")
+        case "right":
+            fig.basemap(frame=["ENrb", "xa20f5g10", "ya1000f500g1000"])
+            fig.shift_origin(xshift=f"-{(lon0 - lon_min) * lon2width}c")
+
+gmt.config(MAP_FRAME_PEN="1p,black")
+fig.basemap(projection=f"X{fig_width}c/6c", region=[-1, 1, -1, 1], frame=0)
+
 
 # -----------------------------------------------------------------------------
 # Inset map of study region
@@ -169,24 +236,22 @@ with fig.inset(position=pos_study_inset):
     #  - lon0/lat0: set projection center
     #  - horizon: maximum distance from projection center (in degrees, <= 90, default 90)
     #  - scale or width: set figure size
-
+    fig.basemap(region="g", projection=projection_ortho, frame=0)
     fig.coast(
-        region="g",  # global
-        projection=projection_ortho,
         area_thresh="50000",
         resolution="c",
         shorelines=color_sl,
         land=color_land,
         water=color_water,
-        frame="g",
     )
+    fig.basemap(frame="g")
 
     # Plot rectangle at study area
     fig.plot(
-        data=[[lon_min, lat_min, lon_max, lat_max]],
-        style="r+s",
-        pen=f"1p,{color_hl}",
+        data=[[lon_min, lat_min, lon_max, lat_max]], style="r+s", pen=f"1p,{color_hl}"
     )
+    fig.plot(x=lon_eq, y=lat_eq, style="c0.1c", fill=color_hl)
+
 
 # -----------------------------------------------------------------------------
 # Show and save figure
