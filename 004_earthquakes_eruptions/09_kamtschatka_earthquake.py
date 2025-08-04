@@ -28,7 +28,7 @@ import pygmt as gmt
 # >>> Adjust for your needs <<<
 fig_name = "09_kamtschatka_earthquake"  # Name of output figure
 dpi_png = 360  # Resolution of output PNG
-grid_res = "05m"  # Resolution of elevation grid
+grid_res = "30m"  # Resolution of elevation grid
 grid_reg = "g"  # Registration of elevation grid
 
 # -----------------------------------------------------------------------------
@@ -169,7 +169,7 @@ fig.text(
 fig.text(
     x=[152, 153, 182],
     y=[55.5, 33, 56],
-    text=["Okhotsk Microplate", "Pazific Plate", "North America Plate"],
+    text=["Okhotsk Microplate", "Pazific Plate", "North American Plate"],
     angle=[55, 50, 0],
     font="6p,Helvetica-Bold,black",
     fill="white@30",
@@ -206,7 +206,7 @@ for side in ["left", "right"]:
             delta_lon = lon_max - lon0
 
     # Generate points along a great circle corresponding to the survey line
-    track_df = gmt.project(
+    track_df_points = gmt.project(
         center=[lon_start, lat_eq],  # Start point of survey line (longitude, latitude)
         endpoint=[lon_end, lat_eq],  # End point of survey line (longitude, latitude)
         generate=0.01,  # Output data in steps
@@ -220,7 +220,7 @@ for side in ["left", "right"]:
     # Plot water in lightblue
     fig.plot(data=[[lon_start, y_min, lon_end, 0]], style="r+s", fill="lightblue")
     # Extract the elevation at the generated points from the downloaded grid
-    track_df = gmt.grdtrack(grid=grid, points=track_df, newcolname="elevation")
+    track_df = gmt.grdtrack(grid=grid, points=track_df_points, newcolname="elevation")
     # Plot elevation
     fig.plot(
         x=track_df.r,
