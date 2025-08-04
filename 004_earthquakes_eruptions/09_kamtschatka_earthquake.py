@@ -5,6 +5,7 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/07/30
+# - Updated: 2025/08/03 - add profil for elevation
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0 | https://www.pygmt.org/
@@ -69,7 +70,7 @@ color_sl = "gray30"
 color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
 color_nb = "gray70"  # national boundaries
 color_hl = "255/90/0"  # highlight -> orange
-color_line = "darkblue"
+color_profil = "darkblue"
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
@@ -107,8 +108,8 @@ fig.coast(borders=f"1/0.1p,{color_nb}")
 fig.basemap(frame=["wSnE", "xa20f5g10", "ya10f5g10"])
 
 # Add lines
-fig.hlines(y=lat_eq, pen=f"1p,{color_line}")
-fig.vlines(x=lon_eq, pen=f"1p,{color_line},4_2")
+fig.hlines(y=lat_eq, pen=f"1p,{color_profil}")
+fig.vlines(x=lon_eq, pen=f"1p,{color_hl},4_2")
 
 # -----------------------------------------------------------------------------
 # Add colorbar for elevation
@@ -207,14 +208,14 @@ for side in ["left", "right"]:
         x=track_df.r,
         y=track_df.elevation,
         fill="bisque",
-        pen=f"0.5p,{color_line},solid",
+        pen=f"0.5p,{color_profil},solid",
         close=f"+y{y_min}",
     )
 
     match side:
         case "left":
             fig.basemap(frame=["WNrb", "xa20f5g10", "yf500g1000+lelevation / meters"])
-            fig.plot(x=[lon_eq, lon_eq], y=[y_min, y_max], pen=f"1p,{color_line},4_2")
+            fig.plot(x=[lon_eq, lon_eq], y=[y_min, y_max], pen=f"1p,{color_hl},4_2")
             fig.shift_origin(xshift="+w")
         case "right":
             fig.basemap(frame=["ENrb", "xa20f5g10", "ya1000f500g1000"])
