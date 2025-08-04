@@ -28,7 +28,7 @@ import pygmt as gmt
 # >>> Adjust for your needs <<<
 fig_name = "09_kamtschatka_earthquake"  # Name of output figure
 dpi_png = 360  # Resolution of output PNG
-grid_res = "30m"  # Resolution of elevation grid
+grid_res = "03m"  # Resolution of elevation grid
 grid_reg = "g"  # Registration of elevation grid
 
 # -----------------------------------------------------------------------------
@@ -49,6 +49,9 @@ center_str = f"{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}"
 fig_width = 12  # in centimeters
 projection_main = f"M{fig_width}c"  # Mercator
 projection_ortho = f"G{center_str}/?"
+
+y_min = -8000
+y_max = 3000
 
 # -----------------------------------------------------------------------------
 # File name for plate boundaries after Bird 2003
@@ -95,7 +98,7 @@ fig.basemap(region=region, projection=projection_main, frame=0)
 
 # -----------------------------------------------------------------------------
 # Download and plot elevation grid
-gmt.makecpt(cmap="oleron", series=[-6000, 3000])  #, overrule_bg=True)
+gmt.makecpt(cmap="oleron", series=[y_min, y_max])  #, overrule_bg=True)
 fig.grdimage(grid=grid, region=region, cmap=True)  #, shading=True)
 
 # -----------------------------------------------------------------------------
@@ -190,8 +193,6 @@ fig.shift_origin(yshift="+h+0.4c")
 lon0 = 180
 total_lon = lon_max - lon_min
 lon2width = fig_width / total_lon
-y_min = -5000
-y_max = 2000
 
 for side in ["left", "right"]:
 
@@ -210,6 +211,7 @@ for side in ["left", "right"]:
         center=[lon_start, lat_eq],  # Start point of survey line (longitude, latitude)
         endpoint=[lon_end, lat_eq],  # End point of survey line (longitude, latitude)
         generate=0.01,  # Output data in steps
+        flat_earth=True,
     )
     gmt.config(MAP_FRAME_PEN="0.001p,white@100")
     fig.basemap(
@@ -219,6 +221,7 @@ for side in ["left", "right"]:
     )
     # Plot water in lightblue
     fig.plot(data=[[lon_start, y_min, lon_end, 0]], style="r+s", fill="lightblue")
+    fig.plot(x=[lon_start, lon_end], y=[0, 0], pen="0.5p,black")
     # Extract the elevation at the generated points from the downloaded grid
     track_df = gmt.grdtrack(grid=grid, points=track_df_points, newcolname="elevation")
     # Plot elevation
@@ -275,6 +278,6 @@ with fig.inset(position=pos_study_inset):
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
-# for ext in ["png"]:  # , "pdf", "eps"]:
-#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+for ext in ["png"]:  # , "pdf", "eps"]:
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
