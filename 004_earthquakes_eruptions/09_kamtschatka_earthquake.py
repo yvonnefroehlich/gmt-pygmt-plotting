@@ -5,6 +5,7 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/07/30
+# - Updated: 2025/08/03 - add profil for elevation
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0 | https://www.pygmt.org/
@@ -27,7 +28,7 @@ import pygmt as gmt
 # >>> Adjust for your needs <<<
 fig_name = "09_kamtschatka_earthquake"  # Name of output figure
 dpi_png = 360  # Resolution of output PNG
-grid_res = "05m"  # Resolution of elevation grid
+grid_res = "03m"  # Resolution of elevation grid
 grid_reg = "g"  # Registration of elevation grid
 
 # -----------------------------------------------------------------------------
@@ -49,6 +50,9 @@ fig_width = 12  # in centimeters
 projection_main = f"M{fig_width}c"  # Mercator
 projection_ortho = f"G{center_str}/?"
 
+y_min = -8000  # in meters
+y_max = 3000
+
 # -----------------------------------------------------------------------------
 # File name for plate boundaries after Bird 2003
 file_pb = "plate_boundaries_Bird_2003.txt"
@@ -69,7 +73,7 @@ color_sl = "gray30"
 color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
 color_nb = "gray70"  # national boundaries
 color_hl = "255/90/0"  # highlight -> orange
-color_line = "darkblue"
+color_profil = "darkblue"
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
@@ -77,7 +81,7 @@ basemap_scale = f"JLB+jLB+w1000+c{center_str}+f+lkm+at+o4c/0.7c"
 
 pos_study_inset = "jBL+w3.5c+o-0.7c/-2c"
 
-pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c+e"
+pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c+e0.2c"
 frame_cb_grid = "xa2500f500+lelevation / m"
 
 box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
@@ -94,7 +98,8 @@ fig.basemap(region=region, projection=projection_main, frame=0)
 
 # -----------------------------------------------------------------------------
 # Download and plot elevation grid
-fig.grdimage(grid=grid, region=region, cmap="oleron")  #, shading=True)
+gmt.makecpt(cmap="oleron", series=[y_min, y_max])
+fig.grdimage(grid=grid, region=region, cmap=True)
 
 # -----------------------------------------------------------------------------
 # Plot plate boundaries after Bird 2003
@@ -107,8 +112,8 @@ fig.coast(borders=f"1/0.1p,{color_nb}")
 fig.basemap(frame=["wSnE", "xa20f5g10", "ya10f5g10"])
 
 # Add lines
-fig.hlines(y=lat_eq, pen=f"1p,{color_line}")
-fig.vlines(x=lon_eq, pen=f"1p,{color_line},4_2")
+fig.hlines(y=lat_eq, pen=f"1p,{color_profil}")
+fig.vlines(x=lon_eq, pen=f"1p,{color_hl},4_2")
 
 # -----------------------------------------------------------------------------
 # Add colorbar for elevation
@@ -120,6 +125,7 @@ with gmt.config(FONT="8p"):
 
 # -----------------------------------------------------------------------------
 # Plot earthquake
+
 # Epicenter
 fig.plot(
     x=lon_eq,
@@ -163,6 +169,24 @@ fig.text(
     pen="0.5p,gray30",
 )
 
+# Plate names
+fig.text(
+    x=[152, 153, 182],
+    y=[55.5, 33, 56],
+    text=["Okhotsk Microplate", "Pazific Plate", "North American Plate"],
+    angle=[55, 50, 0],
+    font="6p,Helvetica-Bold,black",
+    fill="white@30",
+    clearance="0.05c/0.05c+tO",
+)
+
+# Plate motion direction
+fig.plot(
+    data=[[150.5, 35, 137, 0.6], [157.5, 40.5, 137, 0.6]],
+    style="v0.3c+e+h0.1+a45",
+    pen=f"3p,{color_hl}",
+    fill=color_hl,
+)
 
 # -----------------------------------------------------------------------------
 # Profil plot elevation
@@ -171,8 +195,6 @@ fig.shift_origin(yshift="+h+0.4c")
 lon0 = 180
 total_lon = lon_max - lon_min
 lon2width = fig_width / total_lon
-y_min = -5000
-y_max = 2000
 
 for side in ["left", "right"]:
 
@@ -187,10 +209,11 @@ for side in ["left", "right"]:
             delta_lon = lon_max - lon0
 
     # Generate points along a great circle corresponding to the survey line
-    track_df = gmt.project(
+    track_df_points = gmt.project(
         center=[lon_start, lat_eq],  # Start point of survey line (longitude, latitude)
         endpoint=[lon_end, lat_eq],  # End point of survey line (longitude, latitude)
-        generate=0.05,  # Output data in steps
+        generate=0.01,  # Output data in steps
+        flat_earth=True,
     )
     gmt.config(MAP_FRAME_PEN="0.001p,white@100")
     fig.basemap(
@@ -198,26 +221,27 @@ for side in ["left", "right"]:
         projection=f"X{delta_lon * lon2width}c/6c",
         frame=0,
     )
-    # Plot water in lightblue
+    # Plot water
     fig.plot(data=[[lon_start, y_min, lon_end, 0]], style="r+s", fill="lightblue")
+    fig.plot(x=[lon_start, lon_end], y=[0, 0], pen="0.5p,black")
     # Extract the elevation at the generated points from the downloaded grid
-    track_df = gmt.grdtrack(grid=grid, points=track_df, newcolname="elevation")
+    track_df = gmt.grdtrack(grid=grid, points=track_df_points, newcolname="elevation")
     # Plot elevation
     fig.plot(
         x=track_df.r,
         y=track_df.elevation,
         fill="bisque",
-        pen=f"0.5p,{color_line},solid",
+        pen=f"0.5p,{color_profil},solid",
         close=f"+y{y_min}",
     )
 
     match side:
         case "left":
-            fig.basemap(frame=["WNrb", "xa20f5g10", "yf500g1000+lelevation / meters"])
-            fig.plot(x=[lon_eq, lon_eq], y=[y_min, y_max], pen=f"1p,{color_line},4_2")
+            fig.basemap(frame=["WNrs", "xa20f5g10", "yf500g1000+lelevation / meters"])
+            fig.plot(x=[lon_eq, lon_eq], y=[y_min, y_max], pen=f"1p,{color_hl},4_2")
             fig.shift_origin(xshift="+w")
         case "right":
-            fig.basemap(frame=["ENrb", "xa20f5g10", "ya1000f500g1000"])
+            fig.basemap(frame=["ENrs", "xa20f5g10", "ya1000f500g1000"])
             fig.shift_origin(xshift=f"-{(lon0 - lon_min) * lon2width}c")
 
 gmt.config(MAP_FRAME_PEN="1p,black")
