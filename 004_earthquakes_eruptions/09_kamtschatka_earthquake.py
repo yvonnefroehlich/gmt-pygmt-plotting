@@ -50,7 +50,7 @@ fig_width = 12  # in centimeters
 projection_main = f"M{fig_width}c"  # Mercator
 projection_ortho = f"G{center_str}/?"
 
-y_min = -8000
+y_min = -8000  # in meters
 y_max = 3000
 
 # -----------------------------------------------------------------------------
@@ -92,14 +92,14 @@ box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
 # Make geographic map
 # -----------------------------------------------------------------------------
 fig = gmt.Figure()
-gmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray30")  #, COLOR_BACKGROUND="magenta")
+gmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray30")
 
 fig.basemap(region=region, projection=projection_main, frame=0)
 
 # -----------------------------------------------------------------------------
 # Download and plot elevation grid
-gmt.makecpt(cmap="oleron", series=[y_min, y_max])  #, overrule_bg=True)
-fig.grdimage(grid=grid, region=region, cmap=True)  #, shading=True)
+gmt.makecpt(cmap="oleron", series=[y_min, y_max])
+fig.grdimage(grid=grid, region=region, cmap=True)
 
 # -----------------------------------------------------------------------------
 # Plot plate boundaries after Bird 2003
@@ -125,6 +125,7 @@ with gmt.config(FONT="8p"):
 
 # -----------------------------------------------------------------------------
 # Plot earthquake
+
 # Epicenter
 fig.plot(
     x=lon_eq,
@@ -178,6 +179,7 @@ fig.text(
     fill="white@30",
     clearance="0.05c/0.05c+tO",
 )
+
 # Plate motion direction
 fig.plot(
     data=[[150.5, 35, 137, 0.6], [157.5, 40.5, 137, 0.6]],
@@ -219,7 +221,7 @@ for side in ["left", "right"]:
         projection=f"X{delta_lon * lon2width}c/6c",
         frame=0,
     )
-    # Plot water in lightblue
+    # Plot water
     fig.plot(data=[[lon_start, y_min, lon_end, 0]], style="r+s", fill="lightblue")
     fig.plot(x=[lon_start, lon_end], y=[0, 0], pen="0.5p,black")
     # Extract the elevation at the generated points from the downloaded grid
@@ -278,6 +280,6 @@ with fig.inset(position=pos_study_inset):
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
-for ext in ["png"]:  # , "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+# for ext in ["png"]:  # , "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
