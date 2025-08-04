@@ -78,7 +78,7 @@ basemap_scale = f"JLB+jLB+w1000+c{center_str}+f+lkm+at+o4c/0.7c"
 
 pos_study_inset = "jBL+w3.5c+o-0.7c/-2c"
 
-pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c+e"
+pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c+e0.2c"
 frame_cb_grid = "xa2500f500+lelevation / m"
 
 box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
@@ -89,13 +89,14 @@ box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
 # Make geographic map
 # -----------------------------------------------------------------------------
 fig = gmt.Figure()
-gmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray30")
+gmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray30")  #, COLOR_BACKGROUND="magenta")
 
 fig.basemap(region=region, projection=projection_main, frame=0)
 
 # -----------------------------------------------------------------------------
 # Download and plot elevation grid
-fig.grdimage(grid=grid, region=region, cmap="oleron")  #, shading=True)
+gmt.makecpt(cmap="oleron", series=[-6000, 3000])  #, overrule_bg=True)
+fig.grdimage(grid=grid, region=region, cmap=True)  #, shading=True)
 
 # -----------------------------------------------------------------------------
 # Plot plate boundaries after Bird 2003
@@ -164,6 +165,23 @@ fig.text(
     pen="0.5p,gray30",
 )
 
+# Plate names
+fig.text(
+    x=[152, 153, 182],
+    y=[55.5, 33, 56],
+    text=["Okhotsk Microplate", "Pazific Plate", "North America Plate"],
+    angle=[55, 50, 0],
+    font="6p,Helvetica-Bold,black",
+    fill="white@30",
+    clearance="0.05c/0.05c+tO",
+)
+# Plate motion direction
+fig.plot(
+    data=[[150.5, 35, 137, 0.6], [157.5, 40.5, 137, 0.6]],
+    style="v0.3c+e+h0.1+a45",
+    pen=f"3p,{color_hl}",
+    fill=color_hl,
+)
 
 # -----------------------------------------------------------------------------
 # Profil plot elevation
@@ -191,7 +209,7 @@ for side in ["left", "right"]:
     track_df = gmt.project(
         center=[lon_start, lat_eq],  # Start point of survey line (longitude, latitude)
         endpoint=[lon_end, lat_eq],  # End point of survey line (longitude, latitude)
-        generate=0.05,  # Output data in steps
+        generate=0.01,  # Output data in steps
     )
     gmt.config(MAP_FRAME_PEN="0.001p,white@100")
     fig.basemap(
@@ -214,11 +232,11 @@ for side in ["left", "right"]:
 
     match side:
         case "left":
-            fig.basemap(frame=["WNrb", "xa20f5g10", "yf500g1000+lelevation / meters"])
+            fig.basemap(frame=["WNrs", "xa20f5g10", "yf500g1000+lelevation / meters"])
             fig.plot(x=[lon_eq, lon_eq], y=[y_min, y_max], pen=f"1p,{color_hl},4_2")
             fig.shift_origin(xshift="+w")
         case "right":
-            fig.basemap(frame=["ENrb", "xa20f5g10", "ya1000f500g1000"])
+            fig.basemap(frame=["ENrs", "xa20f5g10", "ya1000f500g1000"])
             fig.shift_origin(xshift=f"-{(lon0 - lon_min) * lon2width}c")
 
 gmt.config(MAP_FRAME_PEN="1p,black")
