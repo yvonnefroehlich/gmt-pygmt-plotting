@@ -1,16 +1,16 @@
 # #############################################################################
 # Earthquakes related to shear wave splitting measurements (SWSMs) at the
 # recording station Black Forest Observatory (BFO)
-# - epicenters
-# - (projected) rays
-# - areas of SKS and SKKS piercing points (receiver side)
+#   - epicenters
+#   - (projected) rays
+#   - areas of SKS and SKKS piercing points (receiver side)
 # -----------------------------------------------------------------------------
 # Related to
 #   - Figure 1 (a) of
-#     Shear wave splitting analysis of long-term data:
-#     Anisotropy studies in the Upper Rhine Graben area, Central Europe
-#     Yvonne Fröhlich, Dissertation, KIT-GPI, 2025/07/04.
-#     TODO KITopen DOI after upload
+#     Yvonne Fröhlich (2025). Shear wave splitting analysis of long-term data:
+#     Anisotropy studies in the Upper Rhine Graben area, Central Europe.
+#     Dissertation, Karlsruhe Institute of Technology, Geophysical Institute.
+#     10.5445/IR/1000183786, https://publikationen.bibliothek.kit.edu/1000183786.
 #  - SWSM dataset available at https://dx.doi.org/10.35097/685
 #     published along with the publication https://doi.org/10.1093/gji/ggae245
 # -----------------------------------------------------------------------------
@@ -73,9 +73,9 @@ file_pb = "plate_boundaries_Bird_2003.txt"
 color_sta = "gold"  # station
 color_land = "gray90"
 color_water = "white"
-color_pb = "216.750/82.875/24.990"  # plate boundaries
+color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
 color_sl = "gray60"  # shorelines
-color_hl = "255/90/0"  # highlight
+color_hl = "255/90/0"  # highlight -> orange
 color_epi = "steelblue"
 color_SKS = "205/0/0"  # -> red
 color_SKKS = "238/118/0"  # -> orange

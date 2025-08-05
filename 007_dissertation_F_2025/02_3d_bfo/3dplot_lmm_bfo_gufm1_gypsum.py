@@ -16,7 +16,7 @@
 #     Shear wave splitting analysis of long-term data:
 #     Anisotropy studies in the Upper Rhine Graben area, Central Europe
 #     Yvonne Fröhlich, Dissertation, KIT-GPI, 2025/07/04.
-#     TODO KITopen DOI after upload
+#     10.5445/IR/1000183786
 #  - SWSM dataset available at https://dx.doi.org/10.35097/685
 #     published along with the publication https://doi.org/10.1093/gji/ggae245
 # -----------------------------------------------------------------------------
