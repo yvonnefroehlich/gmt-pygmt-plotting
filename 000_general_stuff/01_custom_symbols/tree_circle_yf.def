@@ -1,0 +1,12 @@
+# #############################################################################
+# Tree symbol for usage in GMT or PyGMT
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
+# #############################################################################
+
+# Bottom at 0 0
+0.00    0.25    0.10    0.50    r   -Gdarkbrown
+0.00	0.61    0.47   c

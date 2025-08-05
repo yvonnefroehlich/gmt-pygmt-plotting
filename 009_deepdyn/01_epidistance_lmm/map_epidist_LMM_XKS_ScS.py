@@ -1,5 +1,5 @@
 # #############################################################################
-# This maps show the epicenters of equarthakes usable to study shear wave
+# These maps show the epicenters of earthquakes usable to study shear wave
 # splitting related to the lowermost mantle:
 # - phases                |  XKS | ScS
 # - moment magnitude Mw   |  > 6
@@ -10,7 +10,7 @@
 # "005_map_equidist_siberia" by Michael Grund
 # Source of original script, data, and manual (last access 2022/04/06)
 # https://github.com/michaelgrund/GMT-plotting/tree/main/005_map_equidist_siberia
-# a modified version is part of his PhD thesis (DOI: 10.5445/IR/1000091425)
+# a modified version is part of his dissertation (DOI: 10.5445/IR/1000091425)
 # -----------------------------------------------------------------------------
 # Related to
 # - Fröhlich Y., Dillah M. I. F., Dorn F., Ritter J. R. R. (2024).
@@ -31,8 +31,8 @@
 # - Updated: 2024/10/04 - Add option to plot ray paths
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.7.0  with GMT 6.4.0
-# - PyGMT v0.9.0  with GMT 6.4.0
+# - PyGMT v0.7.0 with GMT 6.4.0
+# - PyGMT v0.9.0 with GMT 6.4.0
 # - PyGMT v0.10.0 with GMT 6.4.0
 # - PyGMT v0.12.0 with GMT 6.5.0 -> https://www.pygmt.org/v0.12.0/
 # - PyGMT v0.13.0 with GMT 6.5.0 -> https://www.pygmt.org/v0.13.0/
