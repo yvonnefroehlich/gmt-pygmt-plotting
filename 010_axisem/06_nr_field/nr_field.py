@@ -3,6 +3,8 @@
 # - wavefield scanning / learning
 # - complexity map
 # - Cartesian histogram
+# See publications Leng et al. 2016, 2019 for details and background
+# https://doi.org/10.1093/gji/ggw363 and https://doi.org/10.1093/gji/ggz092
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/08/02
