@@ -12,13 +12,13 @@
 # Note: No consideration of the spherical shape of the Earth
 # -----------------------------------------------------------------------------
 # Related to
-#   - Figure 1 (b) of
-#     Shear wave splitting analysis of long-term data:
-#     Anisotropy studies in the Upper Rhine Graben area, Central Europe
-#     Yvonne Fröhlich, Dissertation, KIT-GPI, 2025/07/04.
-#     10.5445/IR/1000183786
-#  - SWSM dataset available at https://dx.doi.org/10.35097/685
-#     published along with the publication https://doi.org/10.1093/gji/ggae245
+# - Fig. 1 (b) of
+#   Fröhlich Y. (2025). Shear wave splitting analysis of long-term data:
+#   Anisotropy studies in the Upper Rhine Graben area, Central Europe.
+#   Dissertation, Karlsruhe Institute of Technology, Geophysical Institute.
+#   10.5445/IR/1000183786, https://publikationen.bibliothek.kit.edu/1000183786.
+# - SWSM dataset available at https://dx.doi.org/10.35097/685
+#   published along with the publication https://doi.org/10.1093/gji/ggae245
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/02/09

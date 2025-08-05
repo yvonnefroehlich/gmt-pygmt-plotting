@@ -1,18 +1,18 @@
 # #############################################################################
 # Earthquakes related to shear wave splitting measurements (SWSMs) at the
 # recording station Black Forest Observatory (BFO)
-#   - epicenters
-#   - (projected) rays
-#   - areas of SKS and SKKS piercing points (receiver side)
+# - epicenters
+# - (projected) rays
+# - areas of SKS and SKKS piercing points (receiver side)
 # -----------------------------------------------------------------------------
 # Related to
-#   - Figure 1 (a) of
-#     Yvonne Fröhlich (2025). Shear wave splitting analysis of long-term data:
-#     Anisotropy studies in the Upper Rhine Graben area, Central Europe.
-#     Dissertation, Karlsruhe Institute of Technology, Geophysical Institute.
-#     10.5445/IR/1000183786, https://publikationen.bibliothek.kit.edu/1000183786.
-#  - SWSM dataset available at https://dx.doi.org/10.35097/685
-#     published along with the publication https://doi.org/10.1093/gji/ggae245
+# - Fig. 1 (a) and Fig. C.3 of
+#   Fröhlich Y. (2025). Shear wave splitting analysis of long-term data:
+#   Anisotropy studies in the Upper Rhine Graben area, Central Europe.
+#   Dissertation, Karlsruhe Institute of Technology, Geophysical Institute.
+#   10.5445/IR/1000183786, https://publikationen.bibliothek.kit.edu/1000183786.
+# - SWSM dataset available at https://dx.doi.org/10.35097/685
+#   published along with the publication https://doi.org/10.1093/gji/ggae245
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/07/31
