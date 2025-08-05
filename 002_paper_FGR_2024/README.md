@@ -10,6 +10,7 @@ Jupyter notebooks to reproduce some figures of
 > [!NOTE]
 > Currently under development - Use with caution!
 
+
 ## Content
 
 _Recommended versions_: PyGMT v0.12.0, GMT 6.4.0-6.5.0

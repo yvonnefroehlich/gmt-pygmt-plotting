@@ -1,5 +1,6 @@
 # 004_earthquakes_eruptions
 
+
 ## Content
 
 _Recommended versions_: PyGMT v0.11.0-v0.16.0, GMT 6.4.0-6.5.0
