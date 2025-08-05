@@ -1,5 +1,6 @@
 # #############################################################################
-# Map in PyGMT for ScanArray network
+# Map of ScanArray network
+# - Generated in PyGMT
 # - Focus on SKS-SKKS pairs
 # Note: Partly affected by a SplitLab bug, see https://doi.org/10.4401/ag-8781
 # -----------------------------------------------------------------------------

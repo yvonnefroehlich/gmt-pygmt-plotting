@@ -1,5 +1,5 @@
 # #############################################################################
-# Map of Grund & Ritter 2019 Data Repository DR14
+# Map of Grund & Ritter 2019 Geology Data Repository DR14
 # - Reproduced in PyGMT
 # - Modified highlighting concept
 # - SKS and SKKS piercing points in the lowermost mantle
