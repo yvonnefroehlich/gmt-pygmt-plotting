@@ -1,8 +1,18 @@
 # #############################################################################
-# Perspective 3-D plot
-# - Earth magnetic field model gufm1 from 1981 at the core mantel boundary (CMB)
+# This script allows to reproduce
+#   Fig. 1 (b) and Fig. C.3 of
+#   Fröhlich Y. (2025). Shear wave splitting analysis of long-term data:
+#   Anisotropy studies in the Upper Rhine Graben area, Central Europe.
+#   Dissertation, Karlsruhe Institute of Technology, Geophysical Institute.
+#   https://doi.org/10.5445/IR/1000183786.
+# using the
+#   SWSM dataset available at https://dx.doi.org/10.35097/685
+#   published along with the publication https://doi.org/10.1093/gji/ggae245
+# -----------------------------------------------------------------------------
+# 3-D plot with different layers
+# - Earth's magnetic field model gufm1 from 1981 at the core mantel boundary (CMB)
 # - tomography GyPSum dvs for D'' layer by Simmons et al. 2010
-# - areas of reduced shear wave velocity by Wolf et al. 2023
+#   on top areas of reduced shear wave velocity by Wolf et al. 2023
 # - 410 km plane
 # - elevation at surface
 # with shear wave splitting measurements (SWSMs) at the recording station Black
@@ -10,15 +20,6 @@
 # - piercing points at the CMB
 # - rays from the CMB to the surface (receiver side)
 # Note: No consideration of the spherical shape of the Earth
-# -----------------------------------------------------------------------------
-# Related to
-# - Fig. 1 (b) and Fig. C.3 of
-#   Fröhlich Y. (2025). Shear wave splitting analysis of long-term data:
-#   Anisotropy studies in the Upper Rhine Graben area, Central Europe.
-#   Dissertation, Karlsruhe Institute of Technology, Geophysical Institute.
-#   https://doi.org/10.5445/IR/1000183786.
-# - SWSM dataset available at https://dx.doi.org/10.35097/685
-#   published along with the publication https://doi.org/10.1093/gji/ggae245
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/02/09
