@@ -7,7 +7,7 @@ Python scripts to reproduce figures of seismological travel paths and travel tim
 > *Geophysical Journal International*. 239(1), 112-135.
 > https://doi.org/10.1093/gji/ggae245.
 
-> [**_Fröhlich Y. (2025)_**](https://publikationen.bibliothek.kit.edu/1000183786).
+> [**_Fröhlich Y. (2025a)_**](https://publikationen.bibliothek.kit.edu/1000183786).
 > Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
 > *Karlsruhe Institute of Technology*, *Geophysical Institute*, Dissertation.
 > 10.5445/IR/1000183786, https://publikationen.bibliothek.kit.edu/1000183786.

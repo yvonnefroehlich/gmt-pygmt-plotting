@@ -4,7 +4,6 @@
 
 _Recommended versions_: PyGMT v0.11.0-v0.16.0, GMT 6.4.0-6.5.0
 
-
 | Script | Location | Date and time | Map |
 | --- | --- | --- | --- |
 | [00_overview_events_BFO.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/00_overview_events_BFO.py)          | global                | 2021 - present                             | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/004_earthquakes_eruptions/02_out_figs/00_overview_events_BFO.png" width="60">     |
