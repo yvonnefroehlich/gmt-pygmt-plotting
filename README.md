@@ -73,11 +73,11 @@ If you make use of this material, please acknowledge the relating publications i
 **Doctoral thesis**
 - [**_Fröhlich Y. (2025a)_**](https://doi.org/10.5445/IR/1000183786).
   Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
-  *Karlsruhe Institute of Technology, Geophysical Institute*, Dissertation.
+  Dissertation, *Karlsruhe Institute of Technology, Geophysical Institute*.
   https://doi.org/10.5445/IR/1000183786.
 - [**_Fröhlich Y. (2025b)_**](https://doi.org/10.5281/zenodo.15982581).
   Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
-  *Karlsruhe Institute of Technology, Geophysical Institute*, Disputation.
+  Disputation, *Karlsruhe Institute of Technology, Geophysical Institute*.
   https://doi.org/10.5281/zenodo.15982581.
 
 
