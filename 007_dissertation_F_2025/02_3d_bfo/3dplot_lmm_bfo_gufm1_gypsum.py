@@ -12,7 +12,7 @@
 # Note: No consideration of the spherical shape of the Earth
 # -----------------------------------------------------------------------------
 # Related to
-# - Fig. 1 (b) of
+# - Fig. 1 (b) and Fig. C.3 of
 #   Fröhlich Y. (2025). Shear wave splitting analysis of long-term data:
 #   Anisotropy studies in the Upper Rhine Graben area, Central Europe.
 #   Dissertation, Karlsruhe Institute of Technology, Geophysical Institute.

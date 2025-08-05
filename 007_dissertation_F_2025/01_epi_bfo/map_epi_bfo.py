@@ -6,7 +6,7 @@
 # - areas of SKS and SKKS piercing points (receiver side)
 # -----------------------------------------------------------------------------
 # Related to
-# - Fig. 1 (a) and Fig. C.3 of
+# - Fig. 1 (a) of
 #   Fröhlich Y. (2025). Shear wave splitting analysis of long-term data:
 #   Anisotropy studies in the Upper Rhine Graben area, Central Europe.
 #   Dissertation, Karlsruhe Institute of Technology, Geophysical Institute.
