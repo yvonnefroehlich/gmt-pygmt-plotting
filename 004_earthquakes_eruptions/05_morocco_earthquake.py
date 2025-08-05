@@ -1,5 +1,5 @@
 # #############################################################################
-# Marocco earthquake on 2023/09/08 at 22:11:02 (UTC)
+# Morocco earthquake on 2023/09/08 at 22:11:02 (UTC)
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/04/07
@@ -23,7 +23,7 @@ import pygmt as gmt
 # General stuff
 # -----------------------------------------------------------------------------
 # >>> Adjust for your needs <<<
-fig_name = "05_marocco_earthquake"  # Name of output figure
+fig_name = "05_morocco_earthquake"  # Name of output figure
 dpi_png = 360  # Resolution of output PNG
 grid_res = "05m"  # Resolution of elevation grid
 grid_reg = "g"  # Registration of elevation grid
@@ -105,7 +105,7 @@ fig.plot(
 # Beachball
 pen_epi = "0.5p,black"
 fig.meca(
-    spec=f"{path_in}/meca_marocco.txt",
+    spec=f"{path_in}/meca_morocco.txt",
     convention="aki",
     scale="1c",
     compressionfill=color_highlight,  # fill color of compressive quadrants
@@ -116,7 +116,7 @@ fig.meca(
 fig.text(
     x=lon_eq,
     y=lat_eq,
-    text="Marocco",
+    text="Morocco",
     font="8p,Helvetica-Bold,black",
     offset="-0.5c/-0.8c",
     fill="white@30",
@@ -126,7 +126,7 @@ fig.text(
 # Info text
 # Adjust position in txt file
 fig.text(
-    textfiles=f"{path_in}/info_marocco.txt",
+    textfiles=f"{path_in}/info_morocco.txt",
     M=True,  # paragraph mode # read from file
     font="8p,black",
     fill="white@30",
