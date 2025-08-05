@@ -1,10 +1,10 @@
 # 003_taup
 
-Python scripts to reproduce figures of seismological travel path and travel time curves shown in
+Python scripts to reproduce figures of seismological travel paths and travel time curves shown in
 
 > [**_Fröhlich Y., Grund M. & Ritter J. R. R. (2024)_**](https://doi.org/10.1093/gji/ggae245).
 > Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere system underneath Central Europe from long-term splitting measurements.
-> *Geophysical Journal International*.
+> *Geophysical Journal International*. 239(1), 112-135.
 > https://doi.org/10.1093/gji/ggae245.
 
 > [**_Fröhlich Y. (2025)_**](https://publikationen.bibliothek.kit.edu/1000183786).

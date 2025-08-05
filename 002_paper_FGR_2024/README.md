@@ -4,7 +4,7 @@ Jupyter notebooks to reproduce some figures of
 
 > [**_Fröhlich Y., Grund M. & Ritter J. R. R. (2024)_**](https://doi.org/10.1093/gji/ggae245).
 > Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere system underneath Central Europe from long-term splitting measurements.
-> *Geophysical Journal International*.
+> *Geophysical Journal International*. 239(1), 112-135.
 > https://doi.org/10.1093/gji/ggae245.
 
 > [!NOTE]
