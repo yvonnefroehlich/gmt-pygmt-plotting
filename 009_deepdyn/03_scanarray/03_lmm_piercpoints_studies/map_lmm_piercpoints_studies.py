@@ -2,6 +2,8 @@
 # Map of Grund & Ritter 2019 Data Repository DR14
 # - Reproduced in PyGMT
 # - Modified highlighting concept
+# - SKS and SKKS piercing points in the lowermost mantle
+# Note: Partly affected by a SplitLab bug, see https://doi.org/10.4401/ag-8781
 # -----------------------------------------------------------------------------
 # Usage of data provided along with
 # - Grund & Ritter 2019 Geology (-> Data Repository: SKS-SKKS pairs)

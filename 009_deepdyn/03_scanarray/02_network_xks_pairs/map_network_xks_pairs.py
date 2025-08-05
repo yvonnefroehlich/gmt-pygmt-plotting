@@ -1,6 +1,7 @@
 # #############################################################################
 # Map in PyGMT for ScanArray network
 # - Focus on SKS-SKKS pairs
+# Note: Partly affected by a SplitLab bug, see https://doi.org/10.4401/ag-8781
 # -----------------------------------------------------------------------------
 # Usage of data provided along with
 # - Grund & Ritter 2019 Geology (-> Data Repository: SKS-SKKS pairs)
