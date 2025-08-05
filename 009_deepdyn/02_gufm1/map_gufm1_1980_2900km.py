@@ -55,7 +55,7 @@ gmt.makecpt(cmap="vik", series=[-z_lim, z_lim, z_step], reverse=True)
 
 fig.grdimage(grid=f"{path_in}/gufm1_1980_2900km_Z.grd", cmap=True)
 
-with gmt.config(FONT="10p"):
+with gmt.config(FONT="12p"):
     fig.colorbar(
         frame=["xaf+lgufm1: 1980 - 2900 km - Z component", "y+lnT"],
         position="JBC+o0c/0.8c+h+w7c+ml",
