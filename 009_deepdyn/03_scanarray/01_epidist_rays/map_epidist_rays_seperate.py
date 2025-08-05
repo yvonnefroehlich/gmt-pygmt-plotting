@@ -6,7 +6,7 @@
 #
 # source of original script, data, and manual (last access 2022/04/06):
 # https://github.com/michaelgrund/GMT-plotting/tree/main/005_map_equidist_siberia
-# a modified version is part of his PhD thesis (DOI: 10.5445/IR/1000091425)
+# a modified version is part of his doctoral thesis (DOI: 10.5445/IR/1000091425)
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2022/04/04 - PyGMT v0.6.0 with GMT 6.3.0
