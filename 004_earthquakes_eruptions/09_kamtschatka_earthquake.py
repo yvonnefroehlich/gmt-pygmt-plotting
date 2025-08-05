@@ -6,7 +6,7 @@
 # History
 # - Created: 2025/07/30
 # - Updated: 2025/08/03 - add profil for elevation
-# - Updated: 2025/08/04 - fix profil for elevatin, add plate names and motion direction
+# - Updated: 2025/08/04 - fix profil for elevation, add plate names and motion direction
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0 | https://www.pygmt.org/
