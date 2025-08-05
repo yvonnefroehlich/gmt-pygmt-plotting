@@ -1,4 +1,4 @@
-# Infos on Myabnar earthquake
+# Infos on Myanmar earthquake
 #
 # For usage in GMT / PyGMT
 # paragraph mode

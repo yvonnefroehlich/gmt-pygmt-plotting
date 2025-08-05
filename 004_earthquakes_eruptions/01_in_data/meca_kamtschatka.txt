@@ -1,0 +1,7 @@
+# Beachball of Kamtschatka earthquake
+# source: https://earthquake.usgs.gov/earthquakes/eventpage/pt25210002/moment-tensor
+# last access: 2025/07/31
+#
+# For usage in GMT / PyGMT
+# lon_eq lat_eq hdepth strike dip rake magnitude lon_plot lat_plot
+160.324 52.512 21.5 198 18 51 8.8 190 43
