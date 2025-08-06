@@ -23,6 +23,7 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/02/09
+# - Updated: 2025/08/06 - adjust code for GitHub
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
@@ -45,9 +46,9 @@ import pygmt as gmt
 # General stuff
 # -----------------------------------------------------------------------------
 # "KN", "KKN", "KNN", "KKNN"
-ray_groups = ["KN", "KKN"]
-ray_groups = ["KNN", "KKNN"]
-# ray_groups = ["KN", "KKN", "KNN", "KKNN"]
+# ray_groups = ["KN", "KKN"]
+# ray_groups = ["KNN", "KKNN"]
+ray_groups = ["KN", "KKN", "KNN", "KKNN"]
 ray_groups_str = "_".join(ray_groups)
 pierce_groups = ray_groups
 

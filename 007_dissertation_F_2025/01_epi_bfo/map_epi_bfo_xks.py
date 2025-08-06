@@ -16,7 +16,8 @@
 # - areas of SKS and SKKS piercing points (receiver side)
 # -----------------------------------------------------------------------------
 # History
-# - Created: 2025/07/31
+# - Created: 2025/05
+# - Updated: 2025/08/06 - adjust code for GitHub
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
