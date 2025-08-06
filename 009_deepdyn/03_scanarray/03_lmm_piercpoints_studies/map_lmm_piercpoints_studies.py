@@ -1,14 +1,16 @@
 # #############################################################################
-# Map of Grund & Ritter 2019 Data Repository DR14
+# Map of Grund & Ritter 2019 Geology Data Repository DR14
 # - Reproduced in PyGMT
 # - Modified highlighting concept
+# - SKS and SKKS piercing points in the lowermost mantle
+# Note: Partly affected by a SplitLab bug, see https://doi.org/10.4401/ag-8781
 # -----------------------------------------------------------------------------
 # Usage of data provided along with
 # - Grund & Ritter 2019 Geology (-> Data Repository: SKS-SKKS pairs)
 # - Wolf et al. 2023 G^3 (-> GitHub: LLSVPs)
 # -----------------------------------------------------------------------------
 # Related to
-# - ScanArray / LITHOCAP project by Michael Grund, KIT, 2014/06 - 2019/02
+# - ScanArray / LITHOCAP project by Michael Grund, KIT, 2014/08 - 2019/02
 # - DeepDyn project by Yvonne Fröhlich, KIT, 2023/08 - 2025/03
 # -----------------------------------------------------------------------------
 # History
