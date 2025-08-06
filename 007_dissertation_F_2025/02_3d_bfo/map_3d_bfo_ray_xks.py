@@ -71,7 +71,7 @@ file_pb = "plate_boundaries_Bird_2003.txt"
 
 # -----------------------------------------------------------------------------
 # Colors
-color_hl = "255/90/0"  # ->  orange | URG paper
+color_hl = "255/90/0"  # -> orange | URG paper
 color_station = "gold"
 color_land = "gray80"
 color_sl = "gray40"  # shorelines by GMT
