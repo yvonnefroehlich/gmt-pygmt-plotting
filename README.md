@@ -70,7 +70,7 @@ If you make use of this material, please acknowledge the relating publications i
   *84th Annual Meeting of the German Geophysical Society*, Jena.
   https://doi.org/10.5281/zenodo.10927349.
 
-**Doctoral thesis**
+**Doctoral studies**
 - [**_Fröhlich Y. (2025a)_**](https://doi.org/10.5445/IR/1000183786).
   Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
   Dissertation, *Karlsruhe Institute of Technology, Geophysical Institute*.
