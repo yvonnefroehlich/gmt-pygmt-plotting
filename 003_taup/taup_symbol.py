@@ -6,11 +6,15 @@
 # Feel free to adjust and extend the dictionary for your needs (:
 # -----------------------------------------------------------------------------
 # Related to
-#   Fröhlich Y., Grund M. & Ritter J. R. R. (2024).
+# - Fröhlich Y., Grund M. & Ritter J. R. R. (2024).
 #   Lateral and vertical variations of seismic anisotropy in the lithosphere-
 #   asthenosphere system underneath Central Europe from long-term splitting
 #   measurements. Geophysical Journal International, 239(1), 112-135.
 #   https://doi.org/10.1093/gji/ggae245.
+# - Fröhlich Y. (2025). Shear wave splitting analysis of long-term data:
+#   Anisotropy studies in the Upper Rhine Graben area, Central Europe.
+#   Dissertation, Karlsruhe Institute of Technology, Geophysical Institute.
+#   https://doi.org/10.5445/IR/1000183786.
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/03/31
