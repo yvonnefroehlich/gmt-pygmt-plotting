@@ -1,0 +1,15 @@
+# #############################################################################
+# Radioactivity triangle symbol for usage in GMT or PyGMT
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
+# #############################################################################
+
+# Center at 0 0
+0.00	0.00	1.00	t	-W1p,black	-Ggold
+0.00	0.00	0.40	245	295	w	-Gblack
+0.00	0.00	0.40	5	55	w	-Gblack
+0.00	0.00	0.40	125	175	w	-Gblack
+0.00	0.00	0.10	c	-W1p,gold	-Gblack
