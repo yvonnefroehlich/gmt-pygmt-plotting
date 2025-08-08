@@ -1,0 +1,15 @@
+# #############################################################################
+# Radioactivity circle symbol for usage in GMT or PyGMT
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
+# #############################################################################
+
+# Center at 0 0
+0.00    0.00   1.00    c    -Ggold  -W1p,black
+0.00    0.00   0.80  245  295   w    -Gblack
+0.00    0.00   0.80    5   55   w    -Gblack
+0.00    0.00   0.80  125  175   w    -Gblack
+0.00    0.00   0.20    c    -Gblack -W1p,gold
