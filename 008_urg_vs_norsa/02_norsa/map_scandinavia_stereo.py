@@ -8,7 +8,8 @@
 # - Grund & Ritter 2020 GJI (-> GitHub: digitalized tectonic, recording stations)
 # -----------------------------------------------------------------------------
 # Related to
-# - ScanArray / LITHOCAP project by Michael Grund 2014/06 - 2019/02
+# - ScanArray / LITHOCAP project by Michael Grund 2014/08 - 2019/02
+#   https://github.com/michaelgrund/GMT-plotting/tree/main/008_map_scan_tectonic
 # - DeepDyn project by Yvonne Fröhlich 2023/08 - 2025/03
 # -----------------------------------------------------------------------------
 # History
