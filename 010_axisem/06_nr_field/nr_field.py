@@ -1,13 +1,17 @@
 # #############################################################################
 # AxiSEM3D - Nr field
-# - wavefield scanning / learning
 # - complexity map
 # - Cartesian histogram
-# See publications Leng et al. 2016, 2019 for details and background
+# Note: This script is a general example on how to plot the Nr field based on the input
+#       and output of a dummy simulation
+# For details on wavefield scanning / learning see publications
+# Leng et al. 2016, 2019 for details and background
 # https://doi.org/10.1093/gji/ggw363 and https://doi.org/10.1093/gji/ggz092
 # -----------------------------------------------------------------------------
 # History
-# - Created: 2025/08/02
+# - Created: 2023/05/15
+# - Rewritten: 2024/09/20
+# - Updated: 2025/08/02 - adjusted for GitHub
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
@@ -30,7 +34,7 @@ import pygmt as gmt
 # General stuff
 # -----------------------------------------------------------------------------
 cmap_nr = "bamako"  # "lapaz"
-color_highlight = "255/90/0"  # ->  orange | URG paper
+color_highlight = "255/90/0"  # -> orange | URG paper
 radius_earth = 6371  # in km
 
 path_in = "01_in_data"
