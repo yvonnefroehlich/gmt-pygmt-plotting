@@ -42,7 +42,7 @@ status_network = "ALL"  ## "NO", "ALL", "PERMANENT", "TEMPORARY", "SA"
 status_color = "NETWORK"  # "NO", "NETWORK"
 status_grid = "tectonic"  ## "land", "elevation", "tectonic"
 
-status_quality = "all"  ## "all", "goodfair"
+status_quality = "goodfair"
 status_phase = "XKS"  ## "XKS", "SKS", "SKKS", "PKS"
 
 size_station_symbol = 0.1  # in centimeters
