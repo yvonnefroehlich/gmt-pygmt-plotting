@@ -1,13 +1,15 @@
-# Python Scripts and Jupyter Notebooks using PyGMT
+# PyGMT plotting
 
 Collection of Python scripts or Jupyter notebooks (supported by JupyterLab) to reproduce some of the geographic maps shown in the
 publications I am involved. To prepare these maps I am using [_PyGMT_](https://www.pygmt.org/latest/) the Python wrapper for the
 [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org/).
 
-_Please note_: Scripts or notebooks are available up on acceptance of the related publication.
+<img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.png">
 
 
 ## Content
+
+_Please note_: Scripts or notebooks are available up on acceptance of the related publication.
 
 | Folder | Overview | Content |
 | --- | --- | --- |
