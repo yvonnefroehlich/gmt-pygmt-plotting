@@ -6,7 +6,9 @@
 # -----------------------------------------------------------------------------
 # Usage of data provided along with
 # - Grund & Ritter 2019 Geology (-> Data Repository: SKS-SKKS pairs)
-# - Grund & Ritter 2020 GJI (-> GitHub: Stations)
+#   https://doi.org/10.5445/IR/1000091425
+# - Grund & Ritter 2020 GJI (-> GitHub: recording stations)
+#   https://doi.org/10.1093/gji/ggaa388
 # -----------------------------------------------------------------------------
 # Related to
 # - ScanArray / LITHOCAP project by Michael Grund, KIT, 2014/08 - 2019/02

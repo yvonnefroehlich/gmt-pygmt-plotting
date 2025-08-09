@@ -2,10 +2,13 @@
 # Map in PyGMT for ScanArray network
 # - showing good and fair SWSMs at NORSA by Michael Grund
 # - stereoplots re-generated with phase colormap by Yvonne Fröhlich
+# Note: Partly affected by a SplitLab bug, see https://doi.org/10.4401/ag-8781
 # -----------------------------------------------------------------------------
 # Usage of data provided along with
 # - Grund 2019 doctoral thesis KIT-GPI (-> Stuff at GPI: SplitLab *txt output files)
+#   https://doi.org/10.5445/IR/1000091425
 # - Grund & Ritter 2020 GJI (-> GitHub: digitalized tectonic, recording stations)
+#   https://doi.org/10.1093/gji/ggaa388
 # -----------------------------------------------------------------------------
 # Related to
 # - ScanArray / LITHOCAP project by Michael Grund 2014/08 - 2019/02
