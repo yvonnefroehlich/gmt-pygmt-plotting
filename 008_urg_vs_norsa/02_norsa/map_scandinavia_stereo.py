@@ -36,19 +36,19 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_area = "scandinavia"  ## "scandinavia" | "norsa"
+status_area = "norsa"  ## "scandinavia" | "norsa"
 
 status_network = "ALL"  ## "NO" | "ALL" | "PERMANENT" | "TEMPORARY" | "SA"
-status_color = "Network"  ## "NO" | "NETWORK"
-status_grid = "elevation"  ## "land" | "elevation" | "tectonic"
-grd_res = "15s"
+status_color = "NETWORK"  ## "NO" | "NETWORK"
+status_grid = "tectonic"  ## "land" | "elevation" | "tectonic"
+grd_res = "30s"
 
 status_phase = "XKS"  ## "XKS" | "SKS" | "SKKS" | "PKS"
 
 size_station_symbol = 0.1  # in centimeters
 stereo_size = 0.4  # in centimeters
-thick_circle = "0.001p"
-add_stereo_size = 0.001
+thick_circle = "0.01p"
+add_stereo_size = 0
 fill_circle = "white@30"
 font = "5p"
 status_quality = "goodfair"  # stereoplots are only provided for good and fair qualities
@@ -83,7 +83,9 @@ match status_area:
         size_station_symbol = 0.15
         stereo_size = 0.4
         status_label = "no"
-        leg_pos = "jRB+o0.55c/0.58c+w3.25c"
+        leg_width = 3.25
+        if status_grid == "elevation": leg_width = 1.5  # in centimeters
+        leg_pos = f"jRB+o0.55c/0.58c+w{leg_width}c"
         add_stereo = ""
 
 # Lambert projection
@@ -119,7 +121,7 @@ if status_grid != "land": color_land = "white@100"
 color_sta = "gold"  # recording stations
 color_sl = "gray70"  # shorelines
 color_nb = "gray60"  # national boundaries
-color_hl = "255/90/0"  # highlight ->orange | URG paper
+color_hl = "255/90/0"  # highlight -> orange | URG paper
 
 style_station = f"i{size_station_symbol}c"
 pen_station = "0.1p,gray10"
