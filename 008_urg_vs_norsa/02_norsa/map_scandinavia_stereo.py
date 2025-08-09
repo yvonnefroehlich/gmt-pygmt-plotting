@@ -1,11 +1,11 @@
 # #############################################################################
 # Map in PyGMT for ScanArray network
-# - showing SWSMs by Michael Grund PhD 2019
-# - stereoplots re-generated with phasemap colormap by Yvonne Fröhlich
+# - showing good and fair SWSMs at NORSA by Michael Grund
+# - stereoplots re-generated with phase colormap by Yvonne Fröhlich
 # -----------------------------------------------------------------------------
 # Usage of data provided along with
 # - Grund & Ritter 2019 Geology (-> Data Repository: SKS-SKKS pairs)
-# - Grund 2019 PhD (-> Stuff at GPI: SplitLab *txt output files)
+# - Grund 2019 doctoral thesis KIT-GPI (-> Stuff at GPI: SplitLab *txt output files)
 # - Grund & Ritter 2020 GJI (-> GitHub: recording stations)
 # -----------------------------------------------------------------------------
 # Related to
@@ -14,7 +14,7 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/06/07
-# - Updated: 2025/27/07
+# - Updated: 2025/27/07 - reduced and adjusted for GitHub
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
@@ -36,14 +36,14 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_area = "scandinavia"  # "scandinavia", "norsa"
+status_area = "norsa"  # "scandinavia" | "norsa"
 
-status_network = "ALL"  ## "NO", "ALL", "PERMANENT", "TEMPORARY", "SA"
-status_color = "NO"  # "NO", "NETWORK"
-status_grid = "elevation"  ## "land", "elevation", "tectonic"
+status_network = "ALL"  ## "NO" | "ALL" | "PERMANENT" | "TEMPORARY" | "SA"
+status_color = "NETWORK"  # "NO" | "NETWORK"
+status_grid = "tectonic"  ## "land" | "elevation" | "tectonic"
 
 status_quality = "goodfair"
-status_phase = "XKS"  ## "XKS", "SKS", "SKKS", "PKS"
+status_phase = "XKS"  ## "XKS" | "SKS" | "SKKS" | "PKS"
 
 size_station_symbol = 0.1  # in centimeters
 stereo_size = 0.4  # in centimeters
