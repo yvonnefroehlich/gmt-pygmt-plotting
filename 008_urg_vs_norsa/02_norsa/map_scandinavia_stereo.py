@@ -36,13 +36,13 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_area = "norsa"  # "scandinavia" | "norsa"
+status_area = "scandinavia"  ## "scandinavia" | "norsa"
 
 status_network = "ALL"  ## "NO" | "ALL" | "PERMANENT" | "TEMPORARY" | "SA"
-status_color = "NETWORK"  # "NO" | "NETWORK"
-status_grid = "tectonic"  ## "land" | "elevation" | "tectonic"
+status_color = "Network"  ## "NO" | "NETWORK"
+status_grid = "elevation"  ## "land" | "elevation" | "tectonic"
+grd_res = "15s"
 
-status_quality = "goodfair"
 status_phase = "XKS"  ## "XKS" | "SKS" | "SKKS" | "PKS"
 
 size_station_symbol = 0.1  # in centimeters
@@ -51,6 +51,7 @@ thick_circle = "0.001p"
 add_stereo_size = 0.001
 fill_circle = "white@30"
 font = "5p"
+status_quality = "goodfair"  # stereoplots are only provided for good and fair qualities
 
 
 # %%
@@ -111,11 +112,11 @@ match status_area:
 
 # -----------------------------------------------------------------------------
 # Colors
-color_sta = "lightgray"
 color_water = "white"
+if status_grid == "elevation": color_water = "white@100"
 color_land = "gray95"
-if status_grid != "land":
-    color_land = "white@100"
+if status_grid != "land": color_land = "white@100"
+color_sta = "gold"  # recording stations
 color_sl = "gray70"  # shorelines
 color_nb = "gray60"  # national boundaries
 color_hl = "255/90/0"  # highlight ->orange | URG paper
@@ -306,7 +307,7 @@ if status_grid=="tectonic":
 
 # Download and plot elevation grid
 if status_grid == "elevation":
-    fig.grdimage(grid="@earth_relief_30s", region=region, cmap="oleron")
+    fig.grdimage(grid=f"@earth_relief_{grd_res}", region=region, cmap="oleron", shading=True)
     with gmt.config(FONT="10p"):
         fig.colorbar(frame=["xa1000f100+lelevation", "y+lm"])
 
