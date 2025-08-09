@@ -4,9 +4,8 @@
 # - stereoplots re-generated with phase colormap by Yvonne Fröhlich
 # -----------------------------------------------------------------------------
 # Usage of data provided along with
-# - Grund & Ritter 2019 Geology (-> Data Repository: SKS-SKKS pairs)
 # - Grund 2019 doctoral thesis KIT-GPI (-> Stuff at GPI: SplitLab *txt output files)
-# - Grund & Ritter 2020 GJI (-> GitHub: recording stations)
+# - Grund & Ritter 2020 GJI (-> GitHub: digitalized tectonic, recording stations)
 # -----------------------------------------------------------------------------
 # Related to
 # - ScanArray / LITHOCAP project by Michael Grund 2014/06 - 2019/02
