@@ -7,7 +7,9 @@
 # -----------------------------------------------------------------------------
 # Usage of data provided along with
 # - Grund & Ritter 2019 Geology (-> Data Repository: SKS-SKKS pairs)
+#   https://doi.org/10.1130/G45514.1
 # - Wolf et al. 2023 G^3 (-> GitHub: LLSVPs)
+#   https://doi.org/10.1029/2023GC011070
 # -----------------------------------------------------------------------------
 # Related to
 # - ScanArray / LITHOCAP project by Michael Grund, KIT, 2014/08 - 2019/02
