@@ -4,7 +4,7 @@ Collection of Python scripts or Jupyter notebooks (supported by JupyterLab) to r
 publications I am involved. To prepare these maps I am using [_PyGMT_](https://www.pygmt.org/latest/) the Python wrapper for the
 [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org/).
 
-<img width="2041" height="694" alt="anisotropy_sws" src="https://github.com/user-attachments/assets/9bc173f6-172c-48d6-9c65-3a4368b87366" />
+<img width="2041" height="694" src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.png" />
 
 
 ## Content
