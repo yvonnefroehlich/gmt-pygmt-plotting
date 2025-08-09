@@ -10,7 +10,7 @@
 # "005_map_equidist_siberia" by Michael Grund
 # Source of original script, data, and manual (last access 2022/04/06)
 # https://github.com/michaelgrund/GMT-plotting/tree/main/005_map_equidist_siberia
-# a modified version is part of his dissertation (DOI: 10.5445/IR/1000091425)
+# a modified version is part of his dissertation (https://doi.org/10.5445/IR/1000091425)
 # -----------------------------------------------------------------------------
 # Related to
 # - Fröhlich Y., Dillah M. I. F., Dorn F., Ritter J. R. R. (2024).
