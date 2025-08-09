@@ -36,11 +36,11 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_area = "norsa"  # "scandinavia", "norsa"
+status_area = "scandinavia"  # "scandinavia", "norsa"
 
 status_network = "ALL"  ## "NO", "ALL", "PERMANENT", "TEMPORARY", "SA"
-status_color = "NETWORK"  # "NO", "NETWORK"
-status_grid = "tectonic"  ## "land", "elevation", "tectonic"
+status_color = "NO"  # "NO", "NETWORK"
+status_grid = "elevation"  ## "land", "elevation", "tectonic"
 
 status_quality = "goodfair"
 status_phase = "XKS"  ## "XKS", "SKS", "SKKS", "PKS"
@@ -111,6 +111,7 @@ match status_area:
 
 # -----------------------------------------------------------------------------
 # Colors
+color_sta = "lightgray"
 color_water = "white"
 color_land = "gray95"
 if status_grid != "land":
@@ -148,7 +149,7 @@ sta_temp_ids = ["SA", "NWG", "N1", "N2", "NBB"]
 # Set up dictionary to asing colors to the different station networks
 color_N2_NBB = "darkorange"
 color_permanent = "dodgerblue"
-color_no_network = "gray40"
+color_no_network = color_sta
 
 dict_net_col = {
     "SA":         "gold",
@@ -305,8 +306,9 @@ if status_grid=="tectonic":
 
 # Download and plot elevation grid
 if status_grid == "elevation":
-    print("elevation")
-    fig.grdimage(grid="@earth_relief_30s", region=region, cmap=f"{path_in}/topo.cpt")
+    fig.grdimage(grid="@earth_relief_30s", region=region, cmap="oleron")
+    with gmt.config(FONT="10p"):
+        fig.colorbar(frame=["xa1000f100+lelevation", "y+lm"])
 
 # Plot shorelines and borders, frame, and water (not the stacking approach)
 fig.coast(
