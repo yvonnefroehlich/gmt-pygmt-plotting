@@ -49,8 +49,8 @@ histo_region_max = 300000
 histo_bin_width = 50
 histo_frame_xa = 100
 
-file_wfs = "scanning_output_isoPREM_3Dani_6p3s_Nr1200_2000s_100km.nc"
-file_out_basic = "runsC_6p3s_isoPREM_3Dani_Nr1200"
+file_basic = "isoPREM_3Dani_6p3s_Nr1200_2000s_100km"
+file_wfs = f"scanning_output_{file_basic}.nc"
 
 
 # %%
@@ -112,12 +112,12 @@ for nr_type in ["input", "output"]:  ## "input", "output"
 
     with gmt.config(FONT="12p"):
         fig.colorbar(
-            frame=[f"x{nr_cb_afg}+l{file_out_basic}_{nr_str[0:9]}","y+lNr"],
+            frame=[f"x{nr_cb_afg}+l{nr_str}","y+lNr"],
             position="JBC+h+w5c/0.3c+o-0.5c/1.6c+ef0.3c+ml",
         )
 
     fig.show()
-    fig_name = f"{file_out_basic}_{nr_type}_section"
+    fig_name = f"{file_basic}_{nr_type}_SECTION"
     # for ext in ["png"]:  # "eps", "pdf"]:
     #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
     print(fig_name)
@@ -142,7 +142,7 @@ for nr_type in ["input", "output"]:  ## "input", "output"
     )
 
     for i_y, Nr_text in enumerate([
-        f"{file_out_basic}",
+        f"{file_basic}",
         f"{nr_str}",
         f"  - Nr_min = {Nr_min}",
         f"  - Nr_max = {Nr_max}",
@@ -172,7 +172,7 @@ for nr_type in ["input", "output"]:  ## "input", "output"
         )
 
     fig.show()
-    fig_name = f"{file_out_basic}_{nr_type}_histogram"
+    fig_name = f"{file_basic}_{nr_type}_HISTOGRAM"
     # for ext in ["png"]:  # "eps", "pdf"]:
     #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
     print(fig_name)
