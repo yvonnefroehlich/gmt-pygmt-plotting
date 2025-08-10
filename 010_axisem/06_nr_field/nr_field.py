@@ -49,7 +49,7 @@ histo_region_max = 300000
 histo_bin_width = 50
 histo_frame_xa = 100
 
-file_basic = "isoPREM_3Dani_6p3s_Nr1200_2000s_100km"
+file_basic = "TEST_simulation"
 file_wfs = f"scanning_output_{file_basic}.nc"
 
 
@@ -104,16 +104,16 @@ for nr_type in ["input", "output"]:  ## "input", "output"
         projection="X6c/12c",
         # half circle in Cartesian coordinates
         region=[0, radius_earth, -radius_earth, radius_earth],
-        frame=["WSne", "a1000f500g500", "x+lkm", "y+lkm"],
+        frame=["WsNe", "a1000f500g500", "x+lkm", "y+lkm"],
         data=array_wfs,
         style="p0.2p",
         cmap=True,
     )
 
-    with gmt.config(FONT="12p"):
+    with gmt.config(FONT="14p"):  # for GMT > 6.5.0
         fig.colorbar(
-            frame=[f"x{nr_cb_afg}+l{nr_str}","y+lNr"],
-            position="JBC+h+w5c/0.3c+o-0.5c/1.6c+ef0.3c+ml",
+            frame=[f"x{nr_cb_afg}+l{nr_str}", "y+lNr"],
+            position="JBC+h+w5c/0.35c+o-0.5c/0.8c+ml+ef0.25c",
         )
 
     fig.show()
