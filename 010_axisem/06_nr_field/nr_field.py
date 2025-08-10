@@ -4,7 +4,7 @@
 # - Cartesian histogram
 # Note: This script is a general example on how to plot the Nr field based on the input
 #       and output of a dummy simulation
-# For details on wavefield scanning / learning see publications
+# For details on wavefield scanning (wfs) / learning see publications
 # Leng et al. 2016, 2019 for details and background
 # https://doi.org/10.1093/gji/ggw363 and https://doi.org/10.1093/gji/ggz092
 # -----------------------------------------------------------------------------
@@ -55,7 +55,7 @@ file_wfs = f"{file_basic}_scanning_output.nc"
 
 # %%
 # -----------------------------------------------------------------------------
-# Load data of wavefield scanning / learning
+# Load data of wavefield scanning (wfs) / learning
 # -----------------------------------------------------------------------------
 for nr_type in ["input", "output"]:  ## "input", "output"
 
@@ -87,7 +87,7 @@ for nr_type in ["input", "output"]:  ## "input", "output"
 
 # %%
 # -----------------------------------------------------------------------------
-# Make geographic map
+# Plot depth section (complexity map)
 # -----------------------------------------------------------------------------
     fig = gmt.Figure()
     gmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray50", FONT="8p")
