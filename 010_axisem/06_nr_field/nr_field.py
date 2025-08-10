@@ -50,7 +50,7 @@ histo_bin_width = 50
 histo_frame_xa = 100
 
 file_basic = "TEST_simulation"
-file_wfs = f"scanning_output_{file_basic}.nc"
+file_wfs = f"{file_basic}_scanning_output.nc"
 
 
 # %%
