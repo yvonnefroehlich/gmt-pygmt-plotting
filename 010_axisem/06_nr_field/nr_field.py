@@ -49,7 +49,7 @@ histo_region_max = 300000
 histo_bin_width = 50
 histo_frame_xa = 100
 
-file_wfs = "scanning_output_isoPREM_3Dani_6p3s_Nr1200_2000s_100km_JW.nc"
+file_wfs = "scanning_output_isoPREM_3Dani_6p3s_Nr1200_2000s_100km.nc"
 file_out_basic = "runsC_6p3s_isoPREM_3Dani_Nr1200"
 
 
@@ -90,19 +90,14 @@ for nr_type in ["input", "output"]:  ## "input", "output"
 # Make geographic map
 # -----------------------------------------------------------------------------
     fig = gmt.Figure()
-    gmt.config(
-        MAP_GRID_PEN_PRIMARY="0.1p,gray50",
-        FONT="8p",
-        MAP_FRAME_PEN="0.5p",
-        MAP_TICK_LENGTH_PRIMARY="3p",
-    )
+    gmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray50", FONT="8p")
 
     overrule_bg = False
     if nr_type == "output":
         gmt.config(COLOR_BACKGROUND=color_hl, COLOR_FOREGROUND=color_hl)
         overrule_bg = True
     gmt.makecpt(
-        series=[0, nr_cmap_max, 1], cmap=cmap_nr, reverse=True, overrule_bg=overrule_bg,
+        series=[0, nr_cmap_max, 1], cmap=cmap_nr, reverse=True, overrule_bg=overrule_bg
     )
 
     fig.plot(
@@ -115,15 +110,16 @@ for nr_type in ["input", "output"]:  ## "input", "output"
         cmap=True,
     )
 
-    fig.colorbar(
-        frame=[f"x{nr_cb_afg}+l{file_out_basic}_{nr_str[0:9]}","y+lNr"],
-        position="JBC+h+w5c/0.3c+o-0.5c/1.6c+ef0.3c+ml",
-    )
+    with gmt.config(FONT="12p"):
+        fig.colorbar(
+            frame=[f"x{nr_cb_afg}+l{file_out_basic}_{nr_str[0:9]}","y+lNr"],
+            position="JBC+h+w5c/0.3c+o-0.5c/1.6c+ef0.3c+ml",
+        )
 
     fig.show()
     fig_name = f"{file_out_basic}_{nr_type}_section"
-    for ext in ["png"]:  # "eps", "pdf"]:
-        fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+    # for ext in ["png"]:  # "eps", "pdf"]:
+    #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
     print(fig_name)
 
 
@@ -157,7 +153,7 @@ for nr_type in ["input", "output"]:  ## "input", "output"
 
         font_add = ""
         fill = "gray97"
-        if i_y==0:
+        if i_y == 0:
             font_add = ",Helvetica-Bold"
             fill = f"{color_hl}@85"
         pen = None
@@ -177,6 +173,6 @@ for nr_type in ["input", "output"]:  ## "input", "output"
 
     fig.show()
     fig_name = f"{file_out_basic}_{nr_type}_histogram"
-    for ext in ["png"]:  # "eps", "pdf"]:
-        fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+    # for ext in ["png"]:  # "eps", "pdf"]:
+    #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
     print(fig_name)
