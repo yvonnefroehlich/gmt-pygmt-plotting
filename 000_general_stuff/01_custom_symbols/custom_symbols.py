@@ -43,7 +43,6 @@ fig.plot(x=4, y=-1.5, style="ktree_circle_yf.def/1c", fill="lightgreen")
 
 fig.plot(x=1, y=-3.5, style="kflower_square_yf.def/1c", fill="purple")
 fig.plot(x=3, y=-3.5, style="kflower_circle_yf.def/1c", fill="darkred")
-
 fig.plot(x=-3, y=-2.5, style="klense_yf.def/1.5c", pen="3p,gray30")
 
 # Mark plotting points
