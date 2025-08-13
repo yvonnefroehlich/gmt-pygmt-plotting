@@ -1,6 +1,6 @@
 # #############################################################################
 # Fršhlich et al. (2024), GJI: Fig. S1
-# Earthquake distribution as epicentral-distance plot
+# Earthquake distribution as epicentral distance plot
 # -----------------------------------------------------------------------------
 # Fršhlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
@@ -8,17 +8,18 @@
 # Geophysical Journal International. 239(1), 112-135.
 # https://doi.org/10.1093/gji/ggae245.
 # -----------------------------------------------------------------------------
-# Author: Yvonne Fršhlich
-# ORCID: https://orcid.org/0000-0002-8566-0619
-# GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# -----------------------------------------------------------------------------
 # History
 # - Created: 2025/01/19
 # - Updated: 2025/08/13 - adjusted for GitHub
 # -----------------------------------------------------------------------------
 # Versions
-#  PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
-#  GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
+# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fršhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
 
