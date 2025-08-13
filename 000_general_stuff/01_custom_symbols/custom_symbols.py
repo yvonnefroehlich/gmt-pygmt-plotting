@@ -11,6 +11,7 @@
 # History
 # - Created: 2024/05/16
 # - Updated: 2025/08/02 - Add more symbols
+# - Updated: 2025/08/13 - Add more symbols
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
@@ -27,7 +28,7 @@ import pygmt as gmt
 
 
 fig = gmt.Figure()
-fig.basemap(region=[-5, 5, -4, 5.5], projection="X10c/6c", frame=0)
+fig.basemap(region=[-5, 5, -4, 5.5], projection="X10c/6c", frame=[0, "+gbisque"])
 
 fig.plot(x=-3, y=1, style="kwindturbine_yf.def/1c", fill="darkgray", pen="black")
 fig.plot(x=-1, y=1, style="kwindturbine_yf.def/0.5c", fill="darkgray", pen="black")
@@ -40,13 +41,15 @@ fig.plot(x=0, y=-1.5, style="kpinetree_yf.def/1c", fill="darkgreen")
 fig.plot(x=2, y=-1.5, style="kpoplar_yf.def/1c", fill="seagreen")
 fig.plot(x=4, y=-1.5, style="ktree_circle_yf.def/1c", fill="lightgreen")
 
-fig.plot(x=-1, y=-3.5, style="kflower_square_yf.def/1c", fill="purple")
-fig.plot(x=1, y=-3.5, style="kflower_circle_yf.def/1c", fill="darkred")
+fig.plot(x=1, y=-3.5, style="kflower_square_yf.def/1c", fill="purple")
+fig.plot(x=3, y=-3.5, style="kflower_circle_yf.def/1c", fill="darkred")
+
+fig.plot(x=-3, y=-2.5, style="klense_yf.def/1.5c", pen="3p,gray30")
 
 # Mark plotting points
 fig.plot(
-    x=[-3, -1, 1, 3, -4, -2, 0, 2, 4, -1, 1],
-    y=[1, 1, 1, 1, -1, -1.5, -1.5, -1.5, -1.5, -3.5, -3.5],
+    x=[-3, -1, 1, 3, -4, -2, 0, 2, 4, -3, 1, 3],
+    y=[1, 1, 1, 1, -1, -1.5, -1.5, -1.5, -1.5, -2.5, -3.5, -3.5],
     style="x0.2c",
     fill="255/90/0",
 )
