@@ -10,8 +10,9 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/05/16
-# - Updated: 2025/08/02 - Add more symbols
-# - Updated: 2025/08/13 - Add more symbols
+# - Updated: 2025/08/02 - Add more symbols (earthquake, marker, trees)
+# - Updated: 2025/08/03 - Add more symbols (flowers)
+# - Updated: 2025/08/13 - Add more symbols (lense)
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
