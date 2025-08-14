@@ -347,7 +347,7 @@ with fig.inset(position="JMR+jMR+w6c+o-1.5c/-3.6"):
 
 # -----------------------------------------------------------------------------
     # Plot epicenters
-    df_epi_raw = pd.read_csv(f"{path_in}/STU_epi_swsm_all.txt", sep="\t", header=2)
+    df_epi_raw = pd.read_csv(f"{path_in}/STU_epi_swsm_all.txt", sep="\t", header=1)
     df_epi = df_epi_raw
     df_epi.moment_magnitude = np.exp(df_epi_raw.moment_magnitude / 1.7) * 0.0035
 

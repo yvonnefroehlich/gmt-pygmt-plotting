@@ -110,14 +110,10 @@ with fig.subplot(
     for i_sta, sta in enumerate(sta_all):
         center_coord = {"x": dict_lon[sta], "y": dict_lat[sta]}
 
-        file_epi_in = f"{sta}_epi_swsm_all.txt"
-        df_epi_raw = pd.read_csv(
-            f"{path_in}/{file_epi_in}",
-            delimiter=" ",
-            names=["longitude", "latitude", "magnitude", "hdepth"],
-        )
+        file_epi_in = f"{path_in}/{sta}_epi_swsm_all.txt"
+        df_epi_raw = pd.read_csv(file_epi_in, delimiter="\t", header=1)
         df_epi = df_epi_raw
-        df_epi.magnitude = np.exp(df_epi_raw.magnitude / 1.7) * 0.0035
+        df_epi.moment_magnitude = np.exp(df_epi_raw.moment_magnitude / 1.7) * 0.0035
 
 # -----------------------------------------------------------------------------
         with fig.set_panel(i_sta):  # Set panel corresponding to station
@@ -155,8 +151,8 @@ with fig.subplot(
             fig.plot(
                 x=df_epi.longitude,
                 y=df_epi.latitude,
-                size=df_epi.magnitude,
-                fill=df_epi.hdepth,
+                size=df_epi.moment_magnitude,
+                fill=df_epi.hypocentral_depth_km,
                 style="c",
                 cmap=True,
                 pen="0.01,gray20",
