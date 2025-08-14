@@ -57,7 +57,7 @@ file_epi_in = f"{path_in}/epicenters"
 textfile_geology_in = f"{path_in}/rhein_geology_large.dat"
 
 # Recording stations
-df_sta = pd.read_csv(file_station_in, sep="\t")
+df_sta = pd.read_csv(file_station_in, sep="\t", header=2)
 stations = ["BFO", "WLS", "STU", "ECH", "44", "07"]
 
 # -----------------------------------------------------------------------------
@@ -347,13 +347,9 @@ with fig.inset(position="JMR+jMR+w6c+o-1.5c/-3.6"):
 
 # -----------------------------------------------------------------------------
     # Plot epicenters
-    df_epi_raw = pd.read_csv(
-        f"{path_in}/STU_epi_swsm_all.txt",
-        delimiter=" ",
-        names=["longitude", "latitude", "magnitude", "hdepth"],
-    )
+    df_epi_raw = pd.read_csv(f"{path_in}/STU_epi_swsm_all.txt", sep="\t", header=2)
     df_epi = df_epi_raw
-    df_epi.magnitude = np.exp(df_epi_raw.magnitude / 1.7) * 0.0035
+    df_epi.moment_magnitude = np.exp(df_epi_raw.moment_magnitude / 1.7) * 0.0035
 
 # -----------------------------------------------------------------------------
     # Colormap hypocentral depth - Scientific Colour maps by F. Crameri
@@ -364,8 +360,8 @@ with fig.inset(position="JMR+jMR+w6c+o-1.5c/-3.6"):
     fig.plot(
         x=df_epi.longitude,
         y=df_epi.latitude,
-        size=df_epi.magnitude,
-        fill=df_epi.hdepth,
+        size=df_epi.moment_magnitude,
+        fill=df_epi.hypocentral_depth_km,
         style="c",
         cmap=cmap_hypo,
         pen="0.01,gray20",

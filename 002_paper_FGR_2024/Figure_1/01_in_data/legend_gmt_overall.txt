@@ -1,6 +1,5 @@
-# legend for URG map
-# Overall
-
+# Upper Rhine Graben map
+# Legend for main map
 
 N 1
 S 0.45c i 0.45c gold 1p,black 1.1c permanent recording station
