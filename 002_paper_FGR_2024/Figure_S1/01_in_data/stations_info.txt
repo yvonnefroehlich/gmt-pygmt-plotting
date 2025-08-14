@@ -1,4 +1,4 @@
-network station lon lat
+network station longitude latitude
 FR	WLS		7.354	48.413
 G	ECH		7.159	48.216
 GE	STU		9.194	48.771

@@ -1,0 +1,23 @@
+#usable in Python with PyGMT
+#x, y[, angle, font, justify], text
+#in Python script set font = True, angle = True, justify = True
+#!!!different to GMT: x, y[, font, angle, justify], text!!!
+
+
+6.79 49.70	30	10,Helvetica-Bold   5      Rhenohercynian
+7.30 49.72	30	10,Helvetica-Bold   5      HT
+8.14 47.79	30	10,Helvetica-Bold   5      BLZ
+	
+
+#for piercing points
+9.00 49.00  22 	10,Helvetica-Bold   5      Saxothuringian
+9.20 48.89  22	10,Helvetica-Bold   5      Moldanubian
+7.95 48.10  75	10,Helvetica-Bold   5      Black Forest
+7.90 48.75  60	10,Helvetica-Bold   5      Upper Rhine Graben
+6.70 47.74  65	10,Helvetica-Bold   5      Vosges
+8.50 48.69  24	10,Helvetica-Bold   5      LLBB
+# 9.00 47.10	22	10,Helvetica-Bold   5      Alps
+# Correction for URG paper below epicenter plot
+8.85 46.83	22	10,Helvetica-Bold   5      Alps	
+##9.30 48.000   0    10,Helvetica-Bold   5      South German		
+##9.42 47.945   0    10,Helvetica-Bold   5      Block	

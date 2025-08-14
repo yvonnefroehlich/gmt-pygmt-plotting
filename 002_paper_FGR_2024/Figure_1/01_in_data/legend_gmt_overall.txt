@@ -1,0 +1,18 @@
+# legend for URG map
+# Overall
+
+
+N 1
+S 0.45c i 0.45c gold 1p,black 1.1c permanent recording station
+G 0.05c
+S 0.45c i 0.35c gold 1p,black 1.1c semi-permanent recording station
+G 0.05c
+S 0.45c - 0.8c dodgerblue2 1p,dodgerblue2 1.1c rivers
+G 0.05c
+S 0.45c - 0.8c black 1p,black 1.1c political boundaries
+G 0.05c
+S 0.45c - 0.8c 216.750/82.875/24.990 1p,216.750/82.875/24.990 1.1c plate boundaries (right inset)
+G 0.05c
+S 0.45c f+r+f 0.3i/-4/0.15i darkbrown 1p,darkbrown 1.1c normal fault
+G 0.05c
+S 0.45c f+r+t 0.3i/-4/0.05i darkbrown 1p,darkbrown 1.1c thrust fault
