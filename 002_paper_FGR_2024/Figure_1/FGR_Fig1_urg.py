@@ -53,9 +53,6 @@ file_plate_in = f"{path_in}/plate_boundaries_Bird_2003.txt"
 # Epicenter distribution
 file_epi_in = f"{path_in}/epicenters"
 
-# Elevation
-file_ele_in = f"{path_in}/srtm_FRBS.grd"
-
 # Tectonic
 textfile_geology_in = f"{path_in}/rhein_geology_large.dat"
 
@@ -159,7 +156,7 @@ fig.basemap(region=region_main, projection=proj_main, frame=0)
 cmap_ele_in = f"{path_in}/europe_3.cpt"
 cmap_ele = f"{path_in}/europe_3_resampeled_ele.cpt"
 gmt.makecpt(cmap=cmap_ele_in, series=[0, 2000, 10], output=cmap_ele)
-fig.grdimage(grid=file_ele_in, cmap=cmap_ele)
+fig.grdimage(grid="@earth_relief_01m", region=region_main, cmap=cmap_ele)
 
 fig.coast(
     resolution="f",  # (f)ull, (h)igh, (i)ntermediate, (l)ow, (c)rude
