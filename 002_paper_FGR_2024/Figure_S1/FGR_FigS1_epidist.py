@@ -17,7 +17,7 @@
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
-# - Author: Yvonne Fršhlich
+# - Author: Yvonne Fröhlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
@@ -195,7 +195,7 @@ fig.legend(
 # -----------------------------------------------------------------------------
 # Show and save the figure
 fig.show()
-fig_name = f"paperURG_SWS_epi_ALL_{orientation}"
+fig_name = f"FGR2024_GJI_FigS1_{orientation}"
 for ext in ["png"]:  #, "pdf", "eps"]:
     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
