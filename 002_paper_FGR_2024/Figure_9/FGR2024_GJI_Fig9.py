@@ -144,8 +144,8 @@ fig.basemap(region=region_main, projection=proj_main, frame=0)
 
 # -----------------------------------------------------------------------------
 # Elevation
-cmap_ele_in = f"{path_in}/europe_3.cpt"
-cmap_ele = f"{path_in}/europe_3_resampeled_ele.cpt"
+cmap_ele_in = "grayC"
+cmap_ele = f"{path_in}/{cmap_ele_in}_resampeled_ele.cpt"
 gmt.makecpt(cmap=cmap_ele_in, series=[0, 2000, 10], output=cmap_ele)
 fig.grdimage(grid="@earth_relief_01m", region=region_main, cmap=cmap_ele)
 
