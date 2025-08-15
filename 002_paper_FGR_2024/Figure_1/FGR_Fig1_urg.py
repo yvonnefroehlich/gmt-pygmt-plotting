@@ -34,7 +34,7 @@ import numpy as np
 # -----------------------------------------------------------------------------
 path_in = "01_in_data"
 path_out = "02_out_figs"
-png_dpi = 360
+dpi_png = 360
 
 # -----------------------------------------------------------------------------
 # Towns
@@ -416,7 +416,7 @@ with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
-fig_name = "FGR2024_GJI_FigS1"
+fig_name = "FGR2024_GJI_Fig1"
 for ext in ["png"]:  #, "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=720)
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)

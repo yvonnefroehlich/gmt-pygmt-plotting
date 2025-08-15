@@ -32,7 +32,7 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
-orientation = "vertical"  ## "vertical" | "horizontal"
+orientation = "horizontal"  ## "vertical" | "horizontal"
 dpi_png = 360
 font_label = "9p,Helvetica-Bold"
 rad_tot = 5.7  # radius
@@ -178,7 +178,7 @@ with fig.subplot(
 with gmt.config(FONT="15p"):
     fig.colorbar(
         position="JBR+jBR+w4.5c/0.3+o0.7c/-1c+h+ml+ef0.15c",
-        frame="xa100f50+lhypocentral depth /km",
+        frame="xa100f50+lhypocentral depth / km",
     )
 
 # Add legend for moment magnitude
@@ -193,5 +193,5 @@ fig.legend(
 fig.show()
 fig_name = f"FGR2024_GJI_FigS1_{orientation}"
 for ext in ["png"]:  #, "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)

@@ -1,0 +1,10 @@
+# Upper Rhine Graben map
+# Recording stations
+
+longitude	latitude	station
+7.354	48.413	WLS
+7.159	48.216	ECH
+9.194	48.771	STU
+8.330	48.331	BFO
+8.367	49.020	TMO07
+8.492	48.989	TMO44

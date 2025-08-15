@@ -1,0 +1,14 @@
+# GMT map
+# lowermost mantle - piercing points
+# color-coding by phi or SI
+
+N 1
+S 0.3c i 0.25c gold 1p,black 0.7c station
+G 0.05c
+S 0.3c C 0.2c gray85 1p,black 0.7c SKS
+G 0.05c
+S 0.3c S 0.2c gray85 1p,black 0.7c SKKS
+G 0.05c
+S 0.3c D 0.2c gray85 1p,black 0.7c PKS
+G 0.05c
+S 0.3c - 0.5c black 0.2p,black 0.7c ray path
