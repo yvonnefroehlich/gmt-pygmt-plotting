@@ -31,7 +31,7 @@ import numpy as np
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_station = "URGwithBFO"  ## "BFO" | "URG" | "URGwithBFO"
+status_station = "URG"  ## "BFO" | "URG" | "URGwithBFO"
 status_pp = "phi"  ## "phase" | "phi" | "dt" | "si" | "baz"
 
 
