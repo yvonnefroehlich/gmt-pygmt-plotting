@@ -35,7 +35,7 @@ status_station = "URGwithBFO"  ## "BFO" | "URG" | "URGwithBFO"
 status_pp = "phi"  ## "phase" | "phi" | "dt" | "si" | "baz"
 
 
-#%%
+# %%
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
@@ -98,7 +98,7 @@ cb_baz_label = "a60f30+lbackazimuth @."
 cb_baz_pos = cb_sp_pos
 
 # -----------------------------------------------------------------------------
-# colors
+# Colors
 color_land = "gray95"
 color_sl = "gray50"  # shorelines
 color_sta = "255/215/0"  # recording station -> GMT "gold"
