@@ -32,6 +32,7 @@ import numpy as np
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
+status_pp = "phi"  ## "station" | "phi" | "dt" | "si" | "baz"
 path_in = "01_in_data"
 path_out = "02_out_figs"
 dpi_png = 360
@@ -42,6 +43,21 @@ file_twons_in = f"{path_in}/rhein_towns.dat"
 
 # Recording stations
 file_station_in = f"{path_in}/stations_info.txt"
+dict_net = {}
+dict_lat = {}
+dict_lon = {}
+dict_file = {}
+dict_col = {}
+
+station_file = open(f"{path_in}/stations_info.txt", "r")
+lines = station_file.readlines()
+for line in lines[4:]:  # skip header line(s)
+   (lon, lat, key) = line.split()
+   dict_lon[key] = float(lon)
+   dict_lat[key] = float(lat)
+   dict_file[key] = key
+   dict_col[key] = "cyan"
+station_file.close()
 
 # Faults
 file_URGnormal_in = f"{path_in}/faults_URGnormal.geo"
@@ -76,12 +92,41 @@ color_borders = "black"
 color_sl = "darkgray"
 
 # -----------------------------------------------------------------------------
-# Region and Projection
-lon_min = 6
-lon_max = 10
-lat_min = 46.5
-lat_max = 50.7
+# Create colormaps and colorbars
+# elevation
+cb_ele_pos  = "JBL+jBL+o4.0c/0.65c+w4.5c/0.2c+h+ml"
 
+# fast polarization direction
+cmap_phi_in = "phase"
+cmap_phi = f"{path_in}/{cmap_phi_in}_resampled_phi.cpt"
+gmt.makecpt(cmap=cmap_phi_in, output=cmap_phi, series=[-90, 90], cyclic=True)
+cb_phi_label = "a30f10+lsplit app. fast pol. dir. @~f@~@-a@- / N@.E"
+cb_sp_pos = "JRB+jRB+o0.6c/0.6c+w4.7c/0.2c+h+ml"
+cb_phi_pos = f"{cb_sp_pos}" #+n "
+
+# delay time
+cmap_dt_in = "lapaz"
+cmap_dt = f"{path_in}/{cmap_dt_in}_resampled_dt.cpt"
+gmt.makecpt(cmap=cmap_dt_in, output=cmap_dt, series=[0, 3], reverse=True)
+cb_dt_label = "a1f0.5+lsplit app. delay time @~d@~t@-a@- / s"
+cb_dt_pos = f"{cb_sp_pos}+ef0.2c" #"+n "
+
+# splitting intenstiy
+cmap_si_in = "vik"
+cmap_si = f"{path_in}/{cmap_si_in}_resampled_si.cpt"
+gmt.makecpt(cmap=cmap_si_in, output=cmap_si, series=[-2, 2])
+cb_si_label = "a1f0.5+lsplitting intensity SI"
+cb_si_pos = f"{cb_sp_pos}+e0.2c"
+
+# backazimuth
+cmap_baz_in = "romaO"
+cmap_baz = f"{path_in}/{cmap_baz_in}_resampled_baz.cpt"
+gmt.makecpt(cmap=cmap_baz_in, output=cmap_baz, series=[0, 360, 1], cyclic=True)
+cb_baz_label = "a60f30+lbackazimuth @."
+cb_baz_pos = cb_sp_pos
+
+# -----------------------------------------------------------------------------
+# Region and Projection
 lon_min = 6
 lon_max = 10.15
 lat_min = 47.4
@@ -96,19 +141,6 @@ proj_study = "M?"
 
 # -----------------------------------------------------------------------------
 # Legends, colorbar, scale
-
-# files for legends
-leg_sta_file = "legend_gmt_stations.txt"
-leg_mag_file = "legend_gmt_magitude.txt"
-leg_fal_file = "legend_gmt_faults.txt"
-leg_all_file = "legend_gmt_overall.txt"
-
-# positions
-leg_all_pos = "JBL+jBL+o0.135c/1.52c+w6.1c"
-leg_fal_pos = "JLB+jLB+w3.15c+o0.17c/1.45c"
-leg_mag_pos = "JBR+jBR+o0.1c/4.3c+w3.7c"
-cb_hd_pos   = "JBR+jBR+o0.65c/3.45c+w3.7c/0.2c+h+ml"
-cb_ele_pos  = "JBL+jBL+o4.0c/0.65c+w4.5c/0.2c+h+ml"
 
 # scale
 basemap_scale = f"JLB+jLB+w50+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}+f+lkm+at+o0.45c/0.55c"
@@ -255,6 +287,170 @@ with gmt.config(MAP_SCALE_HEIGHT="9p"):
 
 # %%
 # -----------------------------------------------------------------------------
+# Piercing points
+# -----------------------------------------------------------------------------
+for station in stations:
+    # lon | lat | phi_SL | phi_GMT | dt | si | baz | thick
+    data_pp_end = "goodfair_hd0km.txt"
+    data_path = f"{path_in}/pps/{station}_pp200km_"
+    data_K_N_pp = f"{data_path}K_sp_N_{data_pp_end}"
+    data_K_NN_pp = f"{data_path}K_sp_NN_{data_pp_end}"
+    data_KK_N_pp = f"{data_path}KK_sp_N_{data_pp_end}"
+    data_KK_NN_pp = f"{data_path}KK_sp_NN_{data_pp_end}"
+    data_P_N_pp = f"{data_path}P_sp_N_{data_pp_end}"
+    data_P_NN_pp = f"{data_path}P_sp_NN_{data_pp_end}"
+
+# -----------------------------------------------------------------------------
+    if status_pp == "station":  # color-coded by station
+
+        color_pp = dict_col[station]
+        args_pp_NN_sta = {
+            "style": "j",
+            "fill": dict_col[station],
+            "pen": "0.2p,black",
+            "incols": [0, 1, 3, 4, 7],
+        }
+        args_pp_N_sta = {
+            "style": "C0.2",
+            "fill": "white",
+            "pen": f"1p,{color_pp}",
+        }
+
+        # non-null
+        try:
+            fig.plot(data=data_K_NN_pp, **args_pp_NN_sta)
+        except: print(f"{station} no pp K_NN")
+        try:
+            fig.plot(data=data_KK_NN_pp, **args_pp_NN_sta)
+        except: print(f"{station} no pp KK_NN")
+        try:
+            fig.plot(data=data_P_NN_pp, **args_pp_NN_sta)
+        except: print(f"{station} no pp P_NN")
+        # null
+        try:
+            fig.plot(data=data_K_N_pp, **args_pp_N_sta)
+        except: print(f"{station} no pp K_N")
+        try:
+            fig.plot(data=data_KK_N_pp, **args_pp_N_sta)
+        except: print(f"{station} no pp KK_N")
+        try:
+            fig.plot(data=data_P_N_pp, **args_pp_N_sta)
+        except: print(f"{station} no pp P_N")
+
+# -----------------------------------------------------------------------------
+    elif status_pp!="station":  # color-coded by
+        match status_pp:
+            case "phi":  # fast polarization direction (phi)
+                color_pp = cmap_phi
+                incols_pp = [0, 1, 2, 3, 4, 7]
+                incols_pp_N = [0, 1, 2]
+            case "dt":  # delay time (dt)
+                color_pp = cmap_dt
+                incols_pp = [0, 1, 4, 3, 4, 7]
+                incols_pp_N = [0, 1, 4]
+            case "si":  # splitting intensity (si)
+                color_pp = cmap_si
+                incols_pp = [0, 1, 5, 3, 4, 7]
+                incols_pp_N = [0, 1, 5]
+            case "baz":  # backazimuth (baz)
+                color_pp= cmap_baz
+                incols_pp = [0, 1, 6, 3, 4, 7]
+                incols_pp_N = [0, 1, 6]
+
+        args_pp_NN_sp = {
+            "style": "j",
+            "cmap": color_pp,
+            "pen": "0.2p,black",
+            "incols": incols_pp,
+        }
+        args_pp_N_sp = {
+            "style": "C0.2c",
+            "cmap": color_pp,
+            "pen": "1p,black",
+            "incols": incols_pp_N,
+        }
+
+        # null
+        try:
+            fig.plot(data=data_K_N_pp, **args_pp_N_sp)
+        except: print(f"{station} no pp K_N")
+        try:
+            fig.plot(data=data_KK_N_pp, **args_pp_N_sp)
+        except: print(f"{station} no pp KK_N")
+        try:
+            fig.plot(data=data_P_N_pp, **args_pp_N_sp)
+        except: print(f"{station} no pp P_N")
+        # non-null
+        try:
+            fig.plot(data=data_K_NN_pp, **args_pp_NN_sp)
+        except: print(f"{station} no pp K_NN")
+        try:
+            fig.plot(data=data_KK_NN_pp, **args_pp_NN_sp)
+        except: print(f"{station} no pp KK_NN")
+        try:
+            fig.plot(data=data_P_NN_pp, **args_pp_NN_sp)
+        except: print(f"{station} no pp P_NN")
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Legends
+leg_pp_pos = "JRB+jRB+w2.0c+o0.2c/3.0c"
+leg_dt_pos = "JRB+jRB+w2.8c+o0.2c/1.4c"
+
+leg_pp_file = "legend_gmt_pp.txt"
+leg_dt_file = "legend_gmt_pp_dt.txt"
+
+fig.legend(spec=f"{path_in}/{leg_pp_file}", position=leg_pp_pos, box=box_standard)
+fig.legend(spec=f"{path_in}/{leg_dt_file}", position=leg_dt_pos, box=box_standard)
+
+# -----------------------------------------------------------------------------
+# Labels
+args_label = {
+    "pen": f"0.8p,{color_hl}",
+    "font": f"9p,Helvetica-Bold,{color_hl}",
+    "fill": "white@30",
+    "clearance": clearance_standard,
+}
+# depth
+fig.text(text="@@200 km", position="TR", offset="-0.3c", **args_label)
+
+# -----------------------------------------------------------------------------
+# Colorbars
+with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
+
+    # elevation
+    fig.colorbar(
+        cmap=cmap_ele,
+        position=f"{cb_ele_pos}+ef0.15c",
+        box=box_standard,
+        frame="+lelevation / m",
+    )
+
+    # piercing points
+    match status_pp:
+        case "phi":
+            cmap_pp = cmap_phi
+            frame_pp = cb_phi_label
+            pos_pp = cb_phi_pos
+        case "si":
+            cmap_pp = cmap_si
+            frame_pp = cb_si_label
+            pos_pp = cb_si_pos
+        case "dt":
+            cmap_pp = cmap_dt
+            frame_pp = cb_dt_label
+            pos_pp = cb_dt_pos
+        case "baz":
+            cmap_pp = cmap_baz
+            frame_pp = cb_baz_label
+            pos_pp = cb_baz_pos
+    if status_pp != "station":
+        fig.colorbar(cmap=cmap_pp, frame=frame_pp, position=pos_pp, box=box_standard)
+
+
+# %%
+# -----------------------------------------------------------------------------
 # Inset map of Central Europe
 # -----------------------------------------------------------------------------
 with fig.inset(position="jTL+jTL+w3.5c+o-0.25c/0.05c"):
@@ -290,28 +486,10 @@ with fig.inset(position="jTL+jTL+w3.5c+o-0.25c/0.05c"):
         pen=f"1p,{color_hl}",
     )
 
-
-# %%
-# -----------------------------------------------------------------------------
-# Legends
-
-
-# -----------------------------------------------------------------------------
-# Colorbars
-with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
-
-    # elevation
-    fig.colorbar(
-        cmap=cmap_ele,
-        position=f"{cb_ele_pos}+ef0.15c",
-        box=box_standard,
-        frame="+lelevation / m",
-    )
-
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
-fig_name = "FGR2024_GJI_Fig9"
+fig_name = f"FGR2024_GJI_Fig9_{status_pp}"
 for ext in ["png"]:  #, "pdf", "eps"]:
     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
