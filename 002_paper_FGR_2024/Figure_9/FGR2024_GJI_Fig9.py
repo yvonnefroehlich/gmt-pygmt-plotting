@@ -170,6 +170,7 @@ gmt.config(
     MAP_ANNOT_OFFSET="0.05i",  # distance of scale ticks labels from scale
     MAP_LABEL_OFFSET="3.5p",  # distance of label from scale
     MAP_TICK_LENGTH_PRIMARY="5p",  # length of scale ticks
+    COLOR_NAN="white",  # color for NaN, default 127.5
 )
 
 fig.basemap(region=region_main, projection=proj_main, frame=0)
