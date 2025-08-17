@@ -1,6 +1,6 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Fig. 1
-# Topographic map of the Upper Rhine Graben area
+# Fröhlich et al. (2024), GJI: Fig. 9
+# Piercing points in the upper mantle
 # -----------------------------------------------------------------------------
 # Fröhlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
@@ -32,6 +32,7 @@ import numpy as np
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
+# color-coding used for the piercing points
 status_pp = "phi"  ## "station" | "phi" | "dt" | "si" | "baz"
 path_in = "01_in_data"
 path_out = "02_out_figs"
@@ -63,52 +64,6 @@ lon_VVC = 9.242944
 lat_VVC = 50.533528
 
 # -----------------------------------------------------------------------------
-# Colors
-color_land = "gray80"
-color_water = "steelblue"
-color_pb = "216.750/82.875/24.990"  # plate boundaries
-color_URG = "darkbrown"  # "sienna"
-color_sta = "gold"  # -> GMT "gold"
-color_hl = "255/90/0"  # -> orange | URG paper
-color_rivers = "dodgerblue2"
-color_borders = "black"
-color_sl = "darkgray"
-
-# -----------------------------------------------------------------------------
-# Create colormaps and colorbars
-# elevation
-cb_ele_pos  = "JBL+jBL+o4.0c/0.65c+w4.5c/0.2c+h+ml"
-
-# fast polarization direction
-cmap_phi_in = "phase"
-cmap_phi = f"{path_in}/{cmap_phi_in}_resampled_phi.cpt"
-gmt.makecpt(cmap=cmap_phi_in, output=cmap_phi, series=[-90, 90], cyclic=True)
-cb_phi_label = "a30f10+lsplit app. fast pol. dir. @~f@~@-a@- / N@.E"
-cb_sp_pos = "JRB+jRB+o0.6c/0.6c+w4.7c/0.2c+h+ml"
-cb_phi_pos = f"{cb_sp_pos}" #+n "
-
-# delay time
-cmap_dt_in = "lapaz"
-cmap_dt = f"{path_in}/{cmap_dt_in}_resampled_dt.cpt"
-gmt.makecpt(cmap=cmap_dt_in, output=cmap_dt, series=[0, 3], reverse=True)
-cb_dt_label = "a1f0.5+lsplit app. delay time @~d@~t@-a@- / s"
-cb_dt_pos = f"{cb_sp_pos}+ef0.2c" #"+n "
-
-# splitting intenstiy
-cmap_si_in = "vik"
-cmap_si = f"{path_in}/{cmap_si_in}_resampled_si.cpt"
-gmt.makecpt(cmap=cmap_si_in, output=cmap_si, series=[-2, 2])
-cb_si_label = "a1f0.5+lsplitting intensity SI"
-cb_si_pos = f"{cb_sp_pos}+e0.2c"
-
-# backazimuth
-cmap_baz_in = "romaO"
-cmap_baz = f"{path_in}/{cmap_baz_in}_resampled_baz.cpt"
-gmt.makecpt(cmap=cmap_baz_in, output=cmap_baz, series=[0, 360, 1], cyclic=True)
-cb_baz_label = "a60f30+lbackazimuth @."
-cb_baz_pos = cb_sp_pos
-
-# -----------------------------------------------------------------------------
 # Region and Projection
 lon_min = 6
 lon_max = 10.15
@@ -122,6 +77,56 @@ proj_main = "M15c"
 # inset study area: orthographic projection
 proj_study = "M?"
 
+# scale
+scale_pos = f"{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}"
+basemap_scale = f"JLB+jLB+w50+c{scale_pos}+f+lkm+at+o0.45c/0.55c"
+
+# -----------------------------------------------------------------------------
+# Create colormaps and colorbars
+# elevation
+cb_ele_pos  = "JBL+jBL+o4.0c/0.6c+w4.5c/0.2c+h+ml+ef0.15c"
+
+# fast polarization direction
+cmap_phi_in = "phase"
+cmap_phi = f"{path_in}/{cmap_phi_in}_resampled_phi.cpt"
+gmt.makecpt(cmap=cmap_phi_in, output=cmap_phi, series=[-90, 90], cyclic=True)
+cb_phi_label = "a30f10+lsplit app. fast pol. dir. @~f@~@-a@- / N@.E"
+cb_pp_pos = "JRB+jRB+o0.6c/0.6c+w4.3c/0.2c+h+ml"
+cb_phi_pos = cb_pp_pos
+
+# delay time
+cmap_dt_in = "lapaz"
+cmap_dt = f"{path_in}/{cmap_dt_in}_resampled_dt.cpt"
+gmt.makecpt(cmap=cmap_dt_in, output=cmap_dt, series=[0, 3], reverse=True)
+cb_dt_label = "a1f0.5+lsplit app. delay time @~d@~t@-a@- / s"
+cb_dt_pos = f"{cb_pp_pos}+ef0.15c"
+
+# splitting intenstiy
+cmap_si_in = "vik"
+cmap_si = f"{path_in}/{cmap_si_in}_resampled_si.cpt"
+gmt.makecpt(cmap=cmap_si_in, output=cmap_si, series=[-2, 2])
+cb_si_label = "a1f0.5+lsplitting intensity SI"
+cb_si_pos = f"{cb_pp_pos}+e0.15c"
+
+# backazimuth
+cmap_baz_in = "romaO"
+cmap_baz = f"{path_in}/{cmap_baz_in}_resampled_baz.cpt"
+gmt.makecpt(cmap=cmap_baz_in, output=cmap_baz, series=[0, 360, 1], cyclic=True)
+cb_baz_label = "a60f30+lbackazimuth @."
+cb_baz_pos = cb_pp_pos
+
+# -----------------------------------------------------------------------------
+# Colors
+color_land = "gray80"
+color_water = "steelblue"
+color_pb = "216.750/82.875/24.990"  # plate boundaries
+color_URG = "darkbrown"  # "sienna"
+color_sta = "gold"  # -> GMT "gold"
+color_hl = "255/90/0"  # -> orange | URG paper
+color_rivers = "dodgerblue2"
+color_borders = "black"
+color_sl = "darkgray"
+
 # -----------------------------------------------------------------------------
 # Legends
 leg_pp_file = "legend_gmt_pp.txt"
@@ -129,13 +134,9 @@ leg_dt_file = "legend_gmt_pp_dt.txt"
 leg_pp_pos = "JRB+jRB+w2.0c+o0.2c/3.0c"
 leg_dt_pos = "JRB+jRB+w2.8c+o0.2c/1.4c"
 
-# scale
-scale_pos = f"{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}"
-basemap_scale = f"JLB+jLB+w50+c{scale_pos}+f+lkm+at+o0.45c/0.55c"
-
 # text
 clearance_standard = "0.1c+tO"
-font_sta = f"10p,Helvetica-Bold,{color_hl}"
+font_sta = f"9.5p,Helvetica-Bold,{color_hl}"
 
 box_standard = "+gwhite@30+p0.8p,black+r2p"
 
@@ -273,18 +274,13 @@ for station in stations:
         color_sta = color_str[5:len(color_str)]  # index + tab -> 4 signs
 
     # markers
-    fig.plot(
-        data=df_sta_temp,
-        style=style_sta,
-        fill=color_sta,
-        pen="1p,black",
-    )
+    fig.plot(data=df_sta_temp, style=style_sta, fill=color_sta, pen="1p,black")
     # labels
     fig.text(
         text=label_sta,
         x=df_sta_temp["longitude"],
         y=df_sta_temp["latitude"],
-        offset="0c/-0.65c",
+        offset="0c/-0.6c",
         fill="white@30",
         font=font_sta,
         pen=f"0.8p,{color_hl}",
@@ -389,7 +385,7 @@ args_label = {
     "clearance": clearance_standard,
 }
 # depth
-fig.text(text="@@200 km", position="TR", offset="-0.3c", **args_label)
+fig.text(text="@@200 km", position="TR", offset="-0.2c/-0.25c", **args_label)
 
 # -----------------------------------------------------------------------------
 # Colorbars
@@ -398,7 +394,7 @@ with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
     # elevation
     fig.colorbar(
         cmap=cmap_ele,
-        position=f"{cb_ele_pos}+ef0.15c",
+        position=cb_ele_pos,
         box=box_standard,
         frame="+lelevation / m",
     )
@@ -429,8 +425,8 @@ with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
 # -----------------------------------------------------------------------------
 # Inset map of Central Europe
 # -----------------------------------------------------------------------------
-with fig.inset(position="jTL+jTL+w3.5c+o-0.25c/0.05c"):
-    gmt.config(MAP_FRAME_TYPE="plain")
+with fig.inset(position="jTL+jTL+w3.5c+o-0.24c/0.05c"):
+    gmt.config(MAP_FRAME_TYPE="plain", MAP_TICK_LENGTH_PRIMARY="0p")
     # >>> use ? <<<
     # otherwise something goes wrong with the box around the study area
 
@@ -443,7 +439,7 @@ with fig.inset(position="jTL+jTL+w3.5c+o-0.25c/0.05c"):
         shorelines="1/0.15p,black",
         borders="1/0.35p,black",
     )
-    fig.basemap(frame=["wsne", "f"])
+    fig.basemap(frame="f")
 
     # label for countries
     fig.text(

@@ -324,7 +324,7 @@ with fig.inset(position="JMR+jMR+w6c+o-1.5c/-3.6"):
     #   Elon0/lat0[/horizon]/width
     # - horizon max. distance to the projection center
     #   i.e. the visible portion of the rest of the world map
-    #   in degrees <= 180° (default 180°)
+    #   in degrees <= 180 deg (default 180 deg)
     fig.basemap(region="g", projection=proj_epi, frame=0)
     fig.coast(
         area_thresh="50000",
@@ -333,6 +333,8 @@ with fig.inset(position="JMR+jMR+w6c+o-1.5c/-3.6"):
         land=color_land,
         water="white",
     )
+    # with gmt.config(MAP_FRAME_WIDTH="5p"):
+    fig.basemap(frame="f")
 
     # plate boundaries
     fig.plot(data=file_plate_in, pen=f"0.5p,{color_pb}")

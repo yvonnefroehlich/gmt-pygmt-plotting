@@ -32,7 +32,7 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
-orientation = "horizontal"  ## "vertical" | "horizontal"
+orientation = "vertical"  ## "vertical" | "horizontal"
 dpi_png = 360
 font_label = "9p,Helvetica-Bold"
 rad_tot = 5.7  # radius
@@ -139,7 +139,7 @@ with fig.subplot(
             fig.plot(data=f"{path_in}/{file_plate_in}", pen=f"0.5p,{color_pb}")
 
 # -----------------------------------------------------------------------------
-            # HighlighteEpicentral distance range used in this study
+            # Highlighte epicentral distance range used in this study
             for epi_dist, y in zip([90, 150], [-28, -88]):
                 # Plot circles
                 fig.plot(style=f"E-{epi_dist * 2}+d", pen="1p,gray50,4_2", **center_coord)

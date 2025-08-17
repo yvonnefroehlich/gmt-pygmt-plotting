@@ -94,7 +94,7 @@ cb_si_pos = f"{cb_sp_pos}+e0.2c"
 cmap_baz_in = "romaO"
 cmap_baz = f"{path_in}/{cmap_baz_in}_resampled_baz.cpt"
 gmt.makecpt(cmap=cmap_baz_in, output=cmap_baz, series=[0, 360, 1], cyclic=True)
-cb_baz_label = "a60f30+lbackazimuth @."
+cb_baz_label = "a60f30+lbackazimuth / @."
 cb_baz_pos = cb_sp_pos
 
 # -----------------------------------------------------------------------------
