@@ -1,0 +1,17 @@
+# #############################################################################
+# CND symbol for usage in GMT or PyGMT
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
+# #############################################################################
+
+# Center at 0 0
+ 0.00	0.00	1.00	c	-W5p,black	-Gwhite
+ 0.00	0.00	0.10	1.00	r	-Gblack
+-50	O
+ 0.00	-0.20	0.10	0.50	r	-Gblack
+ 50	O
+ 50	O
+ 0.00	-0.20	0.10	0.50	r	-Gblack

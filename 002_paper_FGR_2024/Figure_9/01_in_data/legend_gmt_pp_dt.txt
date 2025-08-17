@@ -1,0 +1,12 @@
+# legend for URG map - piercing points
+# upper mantle
+# delay time
+# >>> length of bar unscaled delay time <<<
+
+
+N 1
+S 1.00c c 0.10c white@100 1.1p,white@100 2.10c @~d@~t@-a@-
+G 0.10c
+S 1.00c - 1.00 black 1.2p,black 2.10c 1 s
+G 0.05c
+S 1.00c - 2.00 black 1.0p,black 2.10c 2 s
