@@ -462,6 +462,6 @@ with fig.inset(position="jTL+jTL+w3.5c+o-0.24c/0.05c"):
 # Show and save figure
 fig.show()
 fig_name = f"FGR2024_GJI_Fig9_{status_pp}"
-for ext in ["png"]:  #, "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+# for ext in ["png"]:  #, "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)

@@ -424,6 +424,6 @@ fig.legend(
 # -----------------------------------------------------------------------------
 fig.show()
 fig_name = f"FGR2024_GJI_FigS22_{status_station}_{status_pp}"
-for ext in ["png"]: #, "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=png_dpi)
+# for ext in ["png"]: #, "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=png_dpi)
 print(fig_name)

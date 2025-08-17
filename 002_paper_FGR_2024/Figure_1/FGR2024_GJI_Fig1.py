@@ -419,6 +419,6 @@ with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
 # Show and save figure
 fig.show()
 fig_name = "FGR2024_GJI_Fig1"
-for ext in ["png"]:  #, "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+# for ext in ["png"]:  #, "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)

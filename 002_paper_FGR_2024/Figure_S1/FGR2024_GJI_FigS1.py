@@ -192,6 +192,6 @@ fig.legend(
 # Show and save the figure
 fig.show()
 fig_name = f"FGR2024_GJI_FigS1_{orientation}"
-for ext in ["png"]:  #, "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+# for ext in ["png"]:  #, "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
