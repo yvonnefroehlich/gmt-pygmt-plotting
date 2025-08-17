@@ -1,0 +1,21 @@
+# Usable in Python with PyGMT
+# x, y[, angle, font, justify], text
+# In Python script set font=True, angle=True, justify=True
+# >>> different to GMT: x, y[, font, angle, justify], text <<<
+
+8.467	49.490 	0   8,Helvetica-Bold   5    Mannheim
+8.672	49.399 	0   8,Helvetica-Bold   5    Heidelberg
+9.180	48.778	0   8,Helvetica-Bold   5    Stuttgart
+8.403	49.007  0   8,Helvetica-Bold   5    Karlsruhe
+7.842	47.999	0	8,Helvetica-Bold   5    Freiburg
+7.751 	48.585	0   8,Helvetica-Bold   5    Strasbourg
+6.996	49.234	0   8,Helvetica-Bold   5    Saarbrucken
+6.130	49.816	0   8,Helvetica-Bold   5    Luxembourg
+8.682	50.111	0   8,Helvetica-Bold   5    Frankfurt am Main
+8.276	50.001  0   8,Helvetica-Bold   5    Mainz
+6.176	49.120	0   8,Helvetica-Bold   5    Metz
+6.183	48.694	0   8,Helvetica-Bold   5    Nancy
+7.589	47.560	0   8,Helvetica-Bold   5    Basel
+8.542	47.372	0   8,Helvetica-Bold   5    Zurich
+11.575	48.137	0   8,Helvetica-Bold   5    Munich
+11.077	49.453	0   8,Helvetica-Bold   5    Nuremberg
