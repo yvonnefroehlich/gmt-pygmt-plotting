@@ -41,24 +41,6 @@ dpi_png = 360
 # Towns
 file_twons_in = f"{path_in}/rhein_towns.dat"
 
-# Recording stations
-file_station_in = f"{path_in}/stations_info.txt"
-dict_net = {}
-dict_lat = {}
-dict_lon = {}
-dict_file = {}
-dict_col = {}
-
-station_file = open(f"{path_in}/stations_info.txt", "r")
-lines = station_file.readlines()
-for line in lines[4:]:  # skip header line(s)
-   (lon, lat, key) = line.split()
-   dict_lon[key] = float(lon)
-   dict_lat[key] = float(lat)
-   dict_file[key] = key
-   dict_col[key] = "cyan"
-station_file.close()
-
 # Faults
 file_URGnormal_in = f"{path_in}/faults_URGnormal.geo"
 file_faults_in = f"{path_in}/faults_LLBB_TH_BLZ.geo"
@@ -67,8 +49,9 @@ file_faults_in = f"{path_in}/faults_LLBB_TH_BLZ.geo"
 textfile_geology_in = f"{path_in}/rhein_geology_large.dat"
 
 # Recording stations
+file_station_in = f"{path_in}/stations_info.txt"
 df_sta = pd.read_csv(file_station_in, sep="\t", header=2)
-stations = ["BFO", "WLS", "STU", "ECH", "44", "07"]
+stations = ["BFO", "WLS", "STU", "ECH", "TMO44", "TMO07"]
 
 # -----------------------------------------------------------------------------
 # Kaiserstuhl Volcanic Complex (KVC)
@@ -140,16 +123,21 @@ proj_main = "M15c"
 proj_study = "M?"
 
 # -----------------------------------------------------------------------------
-# Legends, colorbar, scale
+# Legends
+leg_pp_file = "legend_gmt_pp.txt"
+leg_dt_file = "legend_gmt_pp_dt.txt"
+leg_pp_pos = "JRB+jRB+w2.0c+o0.2c/3.0c"
+leg_dt_pos = "JRB+jRB+w2.8c+o0.2c/1.4c"
 
 # scale
-basemap_scale = f"JLB+jLB+w50+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}+f+lkm+at+o0.45c/0.55c"
-
-box_standard = "+gwhite@30+p0.8p,black+r2p"
+scale_pos = f"{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}"
+basemap_scale = f"JLB+jLB+w50+c{scale_pos}+f+lkm+at+o0.45c/0.55c"
 
 # text
 clearance_standard = "0.1c+tO"
 font_sta = f"10p,Helvetica-Bold,{color_hl}"
+
+box_standard = "+gwhite@30+p0.8p,black+r2p"
 
 
 # %%
@@ -233,29 +221,6 @@ fig.text(
 )
 
 # -----------------------------------------------------------------------------
-# Recording stations
-
-# markers
-for sta in stations:
-    style_sta = "i0.5c"
-    if sta in ["44", "07"]: style_sta = "i0.4c"
-    print(sta)
-    fig.plot(
-        data=df_sta[df_sta["station"] == sta],
-        style=style_sta, fill=color_sta,
-        pen="1p,black",
-    )
-# labels
-fig.text(
-    textfiles=file_station_in,
-    offset="0c/-0.65c",
-    fill="white@30",
-    font=font_sta,
-    pen=f"0.8p,{color_hl}",
-    clearance=clearance_standard,
-)
-
-# -----------------------------------------------------------------------------
 # Volcanic Complexes
 # marker - self-defined symbol, read from file
 for lon, lat, size in zip([lon_KVC, lon_VVC], [lat_KVC, lat_VVC], [0.7, 1]):
@@ -291,6 +256,42 @@ with gmt.config(MAP_SCALE_HEIGHT="9p"):
 # Piercing points
 # -----------------------------------------------------------------------------
 for station in stations:
+
+# -----------------------------------------------------------------------------
+    # Recording stations
+    df_sta_temp = df_sta[df_sta["station"] == station]
+
+    style_sta = "i0.5c"
+    label_sta = station
+    if station in ["TMO44", "TMO07"]:
+        style_sta = "i0.4c"
+        label_sta = station[3:5]
+        color_sta = color_sta
+    if status_pp == "station":
+        color_df = df_sta_temp["color"]
+        color_str = color_df.to_string()
+        color_sta = color_str[5:len(color_str)]  # index + tab -> 4 signs
+
+    # markers
+    fig.plot(
+        data=df_sta_temp,
+        style=style_sta,
+        fill=color_sta,
+        pen="1p,black",
+    )
+    # labels
+    fig.text(
+        text=label_sta,
+        x=df_sta_temp["longitude"],
+        y=df_sta_temp["latitude"],
+        offset="0c/-0.65c",
+        fill="white@30",
+        font=font_sta,
+        pen=f"0.8p,{color_hl}",
+        clearance=clearance_standard,
+    )
+
+# -----------------------------------------------------------------------------
     # lon | lat | phi_SL | phi_GMT | dt | si | baz | thick
     data_pp_end = "goodfair_hd0km.txt"
     data_path = f"{path_in}/pps/{station}_pp200km_"
@@ -304,42 +305,32 @@ for station in stations:
 # -----------------------------------------------------------------------------
     if status_pp == "station":  # color-coded by station
 
-        color_pp = dict_col[station]
         args_pp_NN_sta = {
             "style": "j",
-            "fill": dict_col[station],
+            "fill": color_sta,
             "pen": "0.2p,black",
             "incols": [0, 1, 3, 4, 7],
         }
         args_pp_N_sta = {
             "style": "C0.2",
             "fill": "white",
-            "pen": f"1p,{color_pp}",
+            "pen": f"1p,{color_sta}",
         }
 
         # non-null
-        try:
-            fig.plot(data=data_K_NN_pp, **args_pp_NN_sta)
-        except: print(f"{station} no pp K_NN")
-        try:
-            fig.plot(data=data_KK_NN_pp, **args_pp_NN_sta)
-        except: print(f"{station} no pp KK_NN")
-        try:
-            fig.plot(data=data_P_NN_pp, **args_pp_NN_sta)
-        except: print(f"{station} no pp P_NN")
+        for data, phase in zip([data_K_NN_pp, data_KK_NN_pp, data_P_NN_pp], ["K", "KK", "P"]):
+            try:
+                fig.plot(data=data, **args_pp_NN_sta)
+            except: print(f"{station} no pp {phase}_NN")
         # null
-        try:
-            fig.plot(data=data_K_N_pp, **args_pp_N_sta)
-        except: print(f"{station} no pp K_N")
-        try:
-            fig.plot(data=data_KK_N_pp, **args_pp_N_sta)
-        except: print(f"{station} no pp KK_N")
-        try:
-            fig.plot(data=data_P_N_pp, **args_pp_N_sta)
-        except: print(f"{station} no pp P_N")
+        for data, phase in zip([data_K_N_pp, data_KK_N_pp, data_P_N_pp], ["K", "KK", "P"]):
+            try:
+                fig.plot(data=data, **args_pp_N_sta)
+            except: print(f"{station} no pp {phase}_N")
 
 # -----------------------------------------------------------------------------
     elif status_pp!="station":  # color-coded by
+
         match status_pp:
             case "phi":  # fast polarization direction (phi)
                 color_pp = cmap_phi
@@ -354,7 +345,7 @@ for station in stations:
                 incols_pp = [0, 1, 5, 3, 4, 7]
                 incols_pp_N = [0, 1, 5]
             case "baz":  # backazimuth (baz)
-                color_pp= cmap_baz
+                color_pp = cmap_baz
                 incols_pp = [0, 1, 6, 3, 4, 7]
                 incols_pp_N = [0, 1, 6]
 
@@ -372,36 +363,20 @@ for station in stations:
         }
 
         # null
-        try:
-            fig.plot(data=data_K_N_pp, **args_pp_N_sp)
-        except: print(f"{station} no pp K_N")
-        try:
-            fig.plot(data=data_KK_N_pp, **args_pp_N_sp)
-        except: print(f"{station} no pp KK_N")
-        try:
-            fig.plot(data=data_P_N_pp, **args_pp_N_sp)
-        except: print(f"{station} no pp P_N")
+        for data, phase in zip([data_K_N_pp, data_KK_N_pp, data_P_N_pp], ["K", "KK", "P"]):
+            try:
+                fig.plot(data=data, **args_pp_N_sp)
+            except: print(f"{station} no pp {phase}_N")
         # non-null
-        try:
-            fig.plot(data=data_K_NN_pp, **args_pp_NN_sp)
-        except: print(f"{station} no pp K_NN")
-        try:
-            fig.plot(data=data_KK_NN_pp, **args_pp_NN_sp)
-        except: print(f"{station} no pp KK_NN")
-        try:
-            fig.plot(data=data_P_NN_pp, **args_pp_NN_sp)
-        except: print(f"{station} no pp P_NN")
+        for data, phase in zip([data_K_NN_pp, data_KK_NN_pp, data_P_NN_pp], ["K", "KK", "P"]):
+            try:
+                fig.plot(data=data, **args_pp_NN_sp)
+            except: print(f"{station} no pp {phase}_NN")
 
 
 # %%
 # -----------------------------------------------------------------------------
 # Legends
-leg_pp_pos = "JRB+jRB+w2.0c+o0.2c/3.0c"
-leg_dt_pos = "JRB+jRB+w2.8c+o0.2c/1.4c"
-
-leg_pp_file = "legend_gmt_pp.txt"
-leg_dt_file = "legend_gmt_pp_dt.txt"
-
 fig.legend(spec=f"{path_in}/{leg_pp_file}", position=leg_pp_pos, box=box_standard)
 fig.legend(spec=f"{path_in}/{leg_dt_file}", position=leg_dt_pos, box=box_standard)
 
