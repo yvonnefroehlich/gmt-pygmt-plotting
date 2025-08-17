@@ -1,9 +1,0 @@
-# Upper Rhine Graben map
-# Legend for moment magnitude of inset for epicenter distribution at recording station STU
-# >>> scaling of size of circle np.exp(float(df.epi_raw.magnitude) / 1.7) * 0.0035 <<<
-
-N 4
-S 0.05c c 0.10000 white@100 1.0p,white@100 0.20c M@-w@-
-S 0.1c c 0.11936 gray80 1p,gray30 0.3c 6
-S 0.1c c 0.21495 gray80 1p,gray30 0.3c 7
-S 0.1c c 0.38708 gray80 1p,gray30 0.4c 8
