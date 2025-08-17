@@ -7,6 +7,9 @@
 # system underneath Central Europe from long-term splitting measurements.
 # Geophysical Journal International. 239(1), 112-135.
 # https://doi.org/10.1093/gji/ggae245.
+#
+# LLSVP data taken from Wolf et al. (2023). https://doi.org/10.1029/2023GC011070.
+# Data are available at https://github.com/wolfjonathan/Deep_Mantle_Anisotropy_Database
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/01/19
