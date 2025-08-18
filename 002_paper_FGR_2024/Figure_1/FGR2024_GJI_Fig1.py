@@ -157,7 +157,7 @@ fig.basemap(region=region_main, projection=proj_main, frame=0)
 # -----------------------------------------------------------------------------
 # Elevation
 cmap_ele_in = f"{path_in}/europe_3.cpt"
-cmap_ele = f"{path_in}/europe_3_resampeled_ele.cpt"
+cmap_ele = f"{path_in}/europe_3_resampled_ele.cpt"
 gmt.makecpt(cmap=cmap_ele_in, series=[0, 2000, 10], output=cmap_ele)
 fig.grdimage(grid="@earth_relief_01m", region=region_main, cmap=cmap_ele)
 
@@ -360,7 +360,7 @@ with fig.inset(position="JMR+jMR+w6c+o-1.5c/-3.6"):
 # -----------------------------------------------------------------------------
     # Colormap hypocentral depth - Scientific Colour maps by F. Crameri
     cmap_hypo_in = "lajolla"
-    cmap_hypo = f"{path_in}/{cmap_hypo_in}_resampeled_hypo.cpt"
+    cmap_hypo = f"{path_in}/{cmap_hypo_in}_resampled_hypo.cpt"
     hypodepth_max = 500
     gmt.makecpt(cmap=cmap_hypo_in, series=[0, hypodepth_max], output=cmap_hypo)
     fig.plot(

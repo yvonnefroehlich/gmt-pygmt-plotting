@@ -94,7 +94,7 @@ basemap_scale = f"JLB+jLB+w50+c{scale_pos}+f+lkm+at+o0.45c/0.55c"
 # Create colormaps and colorbars
 # elevation
 cmap_ele_in = "grayC"
-cmap_ele = f"{path_in}/{cmap_ele_in}_resampeled_ele.cpt"
+cmap_ele = f"{path_in}/{cmap_ele_in}_resampled_ele.cpt"
 gmt.makecpt(cmap=cmap_ele_in, series=[0, 2000, 10], output=cmap_ele)
 cb_ele_pos  = "JBL+jBL+o4.0c/0.6c+w4.5c/0.2c+h+ml+ef0.15c"
 
