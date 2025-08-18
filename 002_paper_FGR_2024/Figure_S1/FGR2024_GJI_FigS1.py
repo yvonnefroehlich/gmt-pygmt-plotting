@@ -1,5 +1,5 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Fig. S1
+# Fröhlich et al. (2024), GJI: Figure S1
 # Earthquake distribution around the Upper Rhine Graben area as epicentral distance plot
 # -----------------------------------------------------------------------------
 # Fröhlich Y., Grund M., Ritter J. R. R. (2024)
@@ -9,7 +9,7 @@
 # https://doi.org/10.1093/gji/ggae245.
 # -----------------------------------------------------------------------------
 # History
-# - Created: 2025/01/19
+# - Created: -
 # - Updated: 2025/08/13 - adjusted for GitHub
 # -----------------------------------------------------------------------------
 # Versions
@@ -30,15 +30,20 @@ import pygmt as gmt
 
 # %%
 # -----------------------------------------------------------------------------
-# General stuff
+# Choose
 # -----------------------------------------------------------------------------
 orientation = "vertical"  ## "vertical" | "horizontal"
+
+
+# %%
+# -----------------------------------------------------------------------------
+# General stuff
+# -----------------------------------------------------------------------------
+path_in = "01_in_data"
+path_out = "02_out_figs"
 dpi_png = 360
 font_label = "9p,Helvetica-Bold"
 rad_tot = 5.7  # radius
-
-path_in = "01_in_data"
-path_out = "02_out_figs"
 
 # Recording stations
 file_sta_in = "stations_info.txt"

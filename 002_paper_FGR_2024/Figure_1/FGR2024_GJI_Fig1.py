@@ -1,6 +1,6 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Fig. 1
-# Topographic map of the Upper Rhine Graben area
+# Fröhlich et al. (2024), GJI: Figure 1
+# Topographic map of the Upper Rhine Graben area with recording stations
 # -----------------------------------------------------------------------------
 # Fröhlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
@@ -9,7 +9,7 @@
 # https://doi.org/10.1093/gji/ggae245.
 # -----------------------------------------------------------------------------
 # History
-# - Created: 2025/01/19
+# - Created: -
 # - Updated: 2025/08/13 - adjusted for GitHub
 # -----------------------------------------------------------------------------
 # Versions
@@ -22,6 +22,9 @@
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
+
+import glob
+import os
 
 import pandas as pd
 import pygmt as gmt
@@ -154,7 +157,7 @@ fig.basemap(region=region_main, projection=proj_main, frame=0)
 # -----------------------------------------------------------------------------
 # Elevation
 cmap_ele_in = f"{path_in}/europe_3.cpt"
-cmap_ele = f"{path_in}/europe_3_resampeled_ele.cpt"
+cmap_ele = f"{path_in}/europe_3_resampled_ele.cpt"
 gmt.makecpt(cmap=cmap_ele_in, series=[0, 2000, 10], output=cmap_ele)
 fig.grdimage(grid="@earth_relief_01m", region=region_main, cmap=cmap_ele)
 
@@ -213,12 +216,13 @@ fig.text(
 
 # markers
 for sta in stations:
-    style_sta = "i0.5c"
-    if sta in ["44", "07"]: style_sta = "i0.4c"
-    print(sta)
+    size_sta = 0.5  # in centimeters
+    if sta in ["44", "07"]:
+        style_sta = 0.4
     fig.plot(
         data=df_sta[df_sta["station"] == sta],
-        style=style_sta, fill=color_sta,
+        style=f"i{size_sta}c",
+        fill=color_sta,
         pen="1p,black",
     )
 # labels
@@ -356,7 +360,7 @@ with fig.inset(position="JMR+jMR+w6c+o-1.5c/-3.6"):
 # -----------------------------------------------------------------------------
     # Colormap hypocentral depth - Scientific Colour maps by F. Crameri
     cmap_hypo_in = "lajolla"
-    cmap_hypo = f"{path_in}/{cmap_hypo_in}_resampeled_hypo.cpt"
+    cmap_hypo = f"{path_in}/{cmap_hypo_in}_resampled_hypo.cpt"
     hypodepth_max = 500
     gmt.makecpt(cmap=cmap_hypo_in, series=[0, hypodepth_max], output=cmap_hypo)
     fig.plot(
@@ -422,3 +426,7 @@ fig_name = "FGR2024_GJI_Fig1"
 # for ext in ["png"]:  #, "pdf", "eps"]:
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
+
+# Remove colormap files
+for cpt in glob.glob(f"{path_in}/*resampled*.cpt"):
+    os.remove(cpt)

@@ -1,0 +1,14 @@
+# Usable in Python with PyGMT
+# x, y[, angle, font, justify], text
+# In Python script set font=True, angle=True, justify=True
+# >>> different to GMT: x, y[, font, angle, justify], text <<<
+
+6.89 49.72   30   9,Helvetica-Bold   5      Rhenohercynian
+7.30 49.72   30   9,Helvetica-Bold   5      HT
+8.22 47.83   30   9,Helvetica-Bold   5      BLZ
+9.00 48.97   22   9,Helvetica-Bold   5      Saxothuringian
+9.15 48.90   22   9,Helvetica-Bold   5      Moldanubian
+7.85 48.10   78   9,Helvetica-Bold   5      Black Forest
+7.64 48.64   60   9,Helvetica-Bold   5      Upper Rhine Graben
+6.90 47.98   22   9,Helvetica-Bold   5      Vosges
+8.365 48.68  22   9,Helvetica-Bold   5      LLBB
