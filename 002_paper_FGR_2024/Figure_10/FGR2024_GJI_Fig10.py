@@ -1,5 +1,5 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Fig. 10
+# Fröhlich et al. (2024), GJI: Figure 10
 # Topographic map of the Upper Rhine Graben area with stereoplots
 # -----------------------------------------------------------------------------
 # Fröhlich Y., Grund M., Ritter J. R. R. (2024)
@@ -22,6 +22,9 @@
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
+
+import glob
+import os
 
 import pandas as pd
 import pygmt as gmt
@@ -233,10 +236,6 @@ for station in stations:
     lat_str = lat_df.to_string()
     lat_sta = lat_str[5:len(lat_str)]  # index + tab -> 4 signs
 
-    # color_df = df_sta_temp["color"]
-    # color_str = color_df.to_string()
-    # color_sta = color_str[5:len(color_str)]  # index + tab -> 4 signs
-
     # First plot semi-transparent white filled circle behind fully transparent
     # stereoplot to increase visibility
     fig.plot(x=lon_sta, y=lat_sta, fill="white@70", style=f"C{size_stereo}c")
@@ -297,7 +296,7 @@ for station in stations:
 # -----------------------------------------------------------------------------
 style_vector = "v0.4c+ba+ea+a30+h0"
 
-# layer number change S-N direction
+# Layer number change in South-North direction
 fig.plot(
     x=8.82,
     y=48.15,
@@ -317,7 +316,7 @@ fig.text(
     clearance=clearance_standard,
 )
 
-# Fast polarization direction change East West sides of the URG
+# Fast polarization direction change between the East West sides of the URG
 fig.plot(
     x=7.6,
     y=48.39,
@@ -336,7 +335,7 @@ fig.text(
     clearance=clearance_standard,
 )
 
-# null anomaly at BFO SW quadrant
+# Null anomaly at BFO in the SW quadrant
 fig.text(
     x=7.7,
     y=48.235,
@@ -367,6 +366,10 @@ with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
 # Show and save figure
 fig.show()
 fig_name = "FGR2024_GJI_Fig10"
-for ext in ["png"]:  #, "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+# for ext in ["png"]:  #, "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
+
+# Remove colormap files
+for cpt in glob.glob(f"{path_in}/*resampled*.cpt"):
+    os.remove(cpt)

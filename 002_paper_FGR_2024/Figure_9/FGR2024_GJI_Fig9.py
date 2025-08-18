@@ -1,5 +1,5 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Fig. 9
+# Fröhlich et al. (2024), GJI: Figure 9
 # Topographic map of the Upper Rhine Graben area with piercing points in the upper mantle
 # -----------------------------------------------------------------------------
 # Fröhlich Y., Grund M., Ritter J. R. R. (2024)
@@ -23,6 +23,9 @@
 # #############################################################################
 
 
+import glob
+import os
+
 import pandas as pd
 import pygmt as gmt
 import numpy as np
@@ -30,10 +33,16 @@ import numpy as np
 
 # %%
 # -----------------------------------------------------------------------------
+# Choose
+# -----------------------------------------------------------------------------
+# Color-coding used for the piercing points
+status_pp = "phi"  ## "station" | "phi" | "dt" | "si" | "baz"
+
+
+# %%
+# -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
-# color-coding used for the piercing points
-status_pp = "phi"  ## "station" | "phi" | "dt" | "si" | "baz"
 path_in = "01_in_data"
 path_out = "02_out_figs"
 dpi_png = 360
@@ -471,3 +480,7 @@ fig_name = f"FGR2024_GJI_Fig9_{status_pp}"
 # for ext in ["png"]:  #, "pdf", "eps"]:
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
+
+# Remove colormap files
+for cpt in glob.glob(f"{path_in}/*resampled*.cpt"):
+    os.remove(cpt)

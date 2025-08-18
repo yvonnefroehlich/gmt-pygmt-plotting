@@ -1,5 +1,5 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Fig. S22
+# Fröhlich et al. (2024), GJI: Figure S22
 # Piercing points in the lowermost mantle
 # -----------------------------------------------------------------------------
 # Fröhlich Y., Grund M., Ritter J. R. R. (2024)
@@ -26,13 +26,16 @@
 # #############################################################################
 
 
+import glob
+import os
+
 import pygmt as gmt
 import numpy as np
 
 
 # %%
 # -----------------------------------------------------------------------------
-# Adjust for your needs
+# Choose
 # -----------------------------------------------------------------------------
 status_station = "URG"  ## "BFO" | "URG" | "URGwithBFO"
 status_pp = "phi"  ## "phase" | "phi" | "dt" | "si" | "baz"
@@ -430,3 +433,7 @@ fig_name = f"FGR2024_GJI_FigS22_{status_station}_{status_pp}"
 # for ext in ["png"]: #, "pdf", "eps"]:
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=png_dpi)
 print(fig_name)
+
+# Remove colormap files
+for cpt in glob.glob(f"{path_in}/*resampled*.cpt"):
+    os.remove(cpt)

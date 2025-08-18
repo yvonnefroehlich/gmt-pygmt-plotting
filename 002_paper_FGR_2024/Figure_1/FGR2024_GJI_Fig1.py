@@ -1,5 +1,5 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Fig. 1
+# Fröhlich et al. (2024), GJI: Figure 1
 # Topographic map of the Upper Rhine Graben area with recording stations
 # -----------------------------------------------------------------------------
 # Fröhlich Y., Grund M., Ritter J. R. R. (2024)
@@ -22,6 +22,9 @@
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
+
+import glob
+import os
 
 import pandas as pd
 import pygmt as gmt
@@ -423,3 +426,7 @@ fig_name = "FGR2024_GJI_Fig1"
 # for ext in ["png"]:  #, "pdf", "eps"]:
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
+
+# Remove colormap files
+for cpt in glob.glob(f"{path_in}/*resampled*.cpt"):
+    os.remove(cpt)

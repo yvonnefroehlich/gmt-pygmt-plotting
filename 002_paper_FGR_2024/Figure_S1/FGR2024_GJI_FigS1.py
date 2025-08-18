@@ -1,5 +1,5 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Fig. S1
+# Fröhlich et al. (2024), GJI: Figure S1
 # Earthquake distribution around the Upper Rhine Graben area as epicentral distance plot
 # -----------------------------------------------------------------------------
 # Fröhlich Y., Grund M., Ritter J. R. R. (2024)
@@ -23,6 +23,9 @@
 # #############################################################################
 
 
+import glob
+import os
+
 import numpy as np
 import pandas as pd
 import pygmt as gmt
@@ -30,15 +33,20 @@ import pygmt as gmt
 
 # %%
 # -----------------------------------------------------------------------------
-# General stuff
+# Choose
 # -----------------------------------------------------------------------------
 orientation = "vertical"  ## "vertical" | "horizontal"
+
+
+# %%
+# -----------------------------------------------------------------------------
+# General stuff
+# -----------------------------------------------------------------------------
+path_in = "01_in_data"
+path_out = "02_out_figs"
 dpi_png = 360
 font_label = "9p,Helvetica-Bold"
 rad_tot = 5.7  # radius
-
-path_in = "01_in_data"
-path_out = "02_out_figs"
 
 # Recording stations
 file_sta_in = "stations_info.txt"
@@ -195,3 +203,7 @@ fig_name = f"FGR2024_GJI_FigS1_{orientation}"
 # for ext in ["png"]:  #, "pdf", "eps"]:
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
+
+# Remove colormap files
+for cpt in glob.glob(f"{path_in}/*resampled*.cpt"):
+    os.remove(cpt)
