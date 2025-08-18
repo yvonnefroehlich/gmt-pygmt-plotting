@@ -371,10 +371,11 @@ for station in stations:
 
 
 # %%
+# Sketch for piercing points
 # -----------------------------------------------------------------------------
-# Legends
-fig.legend(spec=f"{path_in}/{leg_pp_file}", position=leg_pp_pos, box=box_standard)
-fig.legend(spec=f"{path_in}/{leg_dt_file}", position=leg_dt_pos, box=box_standard)
+# Externaly created in Microsoft PowerPoint
+pp_image = "percingpoints_inset_orange.eps"
+fig.image(imagefile=f"{path_in}/{pp_image}", position="jTR+w3c+o0.1c")
 
 # -----------------------------------------------------------------------------
 # Labels
@@ -385,7 +386,12 @@ args_label = {
     "clearance": clearance_standard,
 }
 # depth
-fig.text(text="@@200 km", position="TR", offset="-0.2c/-0.25c", **args_label)
+fig.text(text="@@200 km", position="TR", offset="-3.4c/-0.25c", **args_label)
+
+# -----------------------------------------------------------------------------
+# Legends
+fig.legend(spec=f"{path_in}/{leg_pp_file}", position=leg_pp_pos, box=box_standard)
+fig.legend(spec=f"{path_in}/{leg_dt_file}", position=leg_dt_pos, box=box_standard)
 
 # -----------------------------------------------------------------------------
 # Colorbars
