@@ -294,57 +294,28 @@ for station in stations:
 # -----------------------------------------------------------------------------
 # Highlight subregions by labels
 # -----------------------------------------------------------------------------
-style_vector = "v0.4c+ba+ea+a30+h0"
+args_vector = {
+    "style": "v0.4c+ba+ea+a30+h0",  # direction cc from horizontal, length in centimeters
+    "pen": f"2p,{color_hl}",
+    "fill": color_hl,
+}
+args_label = {
+    "font": "8p,Helvetica-Bold,black",
+    "fill": "white@30",
+    "pen": f"0.8p,{color_hl}",
+    "clearance": clearance_standard
+}
 
 # Layer number change in South-North direction
-fig.plot(
-    x=8.82,
-    y=48.15,
-    # direction cc from horizontal, length in centimeters
-    direction=[[90], [7.6]],
-    style=style_vector,
-    pen=f"2p,{color_hl}",
-    fill=color_hl,
-)
-fig.text(
-    x=8.88,
-    y=48.5,
-    text="change of layer number",
-    font="8p,Helvetica-Bold,black",
-    fill="white@30",
-    pen=f"0.8p,{color_hl}",
-    clearance=clearance_standard,
-)
+fig.plot(x=8.82, y=48.15, direction=[[90], [7.6]], **args_vector)
+fig.text(x=8.88, y=48.5, text="change of layer number", **args_label)
 
 # Fast polarization direction change between the East West sides of the URG
-fig.plot(
-    x=7.6,
-    y=48.39,
-    direction=[[20], [8.1]],
-    style=style_vector,
-    pen=f"2p,{color_hl}",
-    fill=color_hl,
-)
-fig.text(
-    x=8.06,
-    y=48.54,
-    text="change of fast polarization direction",
-    font="8p,Helvetica-Bold,black",
-    fill="white@30",
-    pen=f"0.8p,{color_hl}",
-    clearance=clearance_standard,
-)
+fig.plot(x=7.6, y=48.39, direction=[[20], [8.1]], **args_vector)
+fig.text(x=8.06, y=48.54, text="change of fast polarization direction", **args_label)
 
 # Null anomaly at BFO in the SW quadrant
-fig.text(
-    x=7.7,
-    y=48.235,
-    text="null anomaly",
-    font="8p,Helvetica-Bold,black",
-    fill="white@30",
-    pen=f"0.8p,{color_hl}",
-    clearance=clearance_standard,
-)
+fig.text(x=7.7, y=48.235, text="null anomaly", **args_label)
 
 
 # %%
