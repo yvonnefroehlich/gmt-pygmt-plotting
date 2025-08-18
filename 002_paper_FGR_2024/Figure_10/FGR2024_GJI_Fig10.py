@@ -124,6 +124,7 @@ gmt.config(
     MAP_FRAME_TYPE="fancy+",
     # formatting template for geographical coordinates F adds NESW after degree sign
     FORMAT_GEO_MAP="ddd.xF",
+    MAP_ANNOT_OBLIQUE="lat_parallel",
     MAP_FRAME_WIDTH="3p",
     FONT_LABEL="9p",
     FONT_ANNOT_PRIMARY="9p",
@@ -271,7 +272,7 @@ for station in stations:
 
     offset_x_sta = 0  # in centimeters
     offset_y_sta = -1.4  # in centimeters
-    if station in ["WLS"]:
+    if station in ["WLS", "ECH"]:
         offset_x_sta = 0.4
         offset_y_sta = -0.6
 
@@ -288,6 +289,69 @@ for station in stations:
         pen=f"0.8p,{color_hl}",
         clearance=clearance_standard,
     )
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Highlight subregions by labels (patterns see above)
+# -----------------------------------------------------------------------------
+style_vector = "v0.4c+ba+ea+a30+h0"#+p0.5p,black"
+# layer number change S-N direction
+fig.plot(
+    x=8.82,
+    y=48.15,
+    # direction cc from horizontal, length in centimeters
+    direction=[[90], [7.6]],
+    style=style_vector,
+    pen=f"2p,{color_hl}",
+    fill=color_hl,
+)
+fig.text(
+    x=8.88,
+    y=48.5,
+    text="change of layer number",
+    font="8p,Helvetica-Bold,black",
+    fill="white@30",
+    pen=f"0.8p,{color_hl}",
+    clearance=clearance_standard,
+)
+
+# -----------------------------------------------------------------------------
+# Fast polarization direction change East West sides of URG
+x_EW = 7.6
+y_EW = 48.39
+dir_EW = [[20], [8.1]]
+y_EW_text = 48.54
+
+fig.plot(
+    x=x_EW,
+    y=y_EW,
+    direction=dir_EW,
+    style=style_vector,
+    pen=f"2p,{color_hl}",
+    fill=color_hl,
+)
+fig.text(
+    x=8.06,
+    y=y_EW_text,
+    text="change of fast polarization direction",
+    font="8p,Helvetica-Bold,black",
+    fill="white@30",
+    pen=f"0.8p,{color_hl}",
+    clearance=clearance_standard,
+)
+
+# -----------------------------------------------------------------------------
+# null anomaly at BFO SW quadrant
+fig.text(
+    x=7.7,
+    y=48.235,
+    text="null anomaly",
+    font="8p,Helvetica-Bold,black",
+    fill="white@30",
+    pen=f"0.8p,{color_hl}",
+    clearance=clearance_standard,
+)
 
 
 # %%
