@@ -12,7 +12,7 @@
 # Data are available at https://github.com/wolfjonathan/Deep_Mantle_Anisotropy_Database
 # -----------------------------------------------------------------------------
 # History
-# - Created: 2025/01/19
+# - Created: -
 # - Updated: 2025/08/13 - adjusted for GitHub
 # -----------------------------------------------------------------------------
 # Versions

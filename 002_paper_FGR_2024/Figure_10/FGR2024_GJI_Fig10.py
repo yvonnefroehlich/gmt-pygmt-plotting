@@ -9,8 +9,8 @@
 # https://doi.org/10.1093/gji/ggae245.
 # -----------------------------------------------------------------------------
 # History
-# - Created: 2025/01/19
-# - Updated: 2025/08/13 - adjusted for GitHub
+# - Created: -
+# - Updated: 2025/08/18 - adjusted for GitHub
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
@@ -293,9 +293,10 @@ for station in stations:
 
 # %%
 # -----------------------------------------------------------------------------
-# Highlight subregions by labels (patterns see above)
+# Highlight subregions by labels
 # -----------------------------------------------------------------------------
-style_vector = "v0.4c+ba+ea+a30+h0"#+p0.5p,black"
+style_vector = "v0.4c+ba+ea+a30+h0"
+
 # layer number change S-N direction
 fig.plot(
     x=8.82,
@@ -316,24 +317,18 @@ fig.text(
     clearance=clearance_standard,
 )
 
-# -----------------------------------------------------------------------------
-# Fast polarization direction change East West sides of URG
-x_EW = 7.6
-y_EW = 48.39
-dir_EW = [[20], [8.1]]
-y_EW_text = 48.54
-
+# Fast polarization direction change East West sides of the URG
 fig.plot(
-    x=x_EW,
-    y=y_EW,
-    direction=dir_EW,
+    x=7.6,
+    y=48.39,
+    direction=[[20], [8.1]],
     style=style_vector,
     pen=f"2p,{color_hl}",
     fill=color_hl,
 )
 fig.text(
     x=8.06,
-    y=y_EW_text,
+    y=48.54,
     text="change of fast polarization direction",
     font="8p,Helvetica-Bold,black",
     fill="white@30",
@@ -341,7 +336,6 @@ fig.text(
     clearance=clearance_standard,
 )
 
-# -----------------------------------------------------------------------------
 # null anomaly at BFO SW quadrant
 fig.text(
     x=7.7,
