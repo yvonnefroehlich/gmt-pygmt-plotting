@@ -1,6 +1,6 @@
 # #############################################################################
 # Fröhlich et al. (2024), GJI: Fig. 9
-# Piercing points in the upper mantle
+# Topographic map of the Upper Rhine Graben area with piercing points in the upper mantle
 # -----------------------------------------------------------------------------
 # Fröhlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere

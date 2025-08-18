@@ -1,6 +1,6 @@
 # #############################################################################
 # Fröhlich et al. (2024), GJI: Fig. 10
-# Map with stereoplots
+# Topographic map of the Upper Rhine Graben area with stereoplots
 # -----------------------------------------------------------------------------
 # Fröhlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere

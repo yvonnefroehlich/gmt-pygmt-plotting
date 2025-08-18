@@ -1,6 +1,6 @@
 # #############################################################################
 # Fröhlich et al. (2024), GJI: Fig. 1
-# Topographic map of the Upper Rhine Graben area
+# Topographic map of the Upper Rhine Graben area with recording stations
 # -----------------------------------------------------------------------------
 # Fröhlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
