@@ -74,7 +74,7 @@ region_main = [lon_min, lon_max, lat_min, lat_max]
 # main map: Mercator
 proj_main = "M15c"
 
-# inset study area: orthographic projection
+# inset study area: Mercator
 proj_study = "M?"
 
 # scale
@@ -84,6 +84,9 @@ basemap_scale = f"JLB+jLB+w50+c{scale_pos}+f+lkm+at+o0.45c/0.55c"
 # -----------------------------------------------------------------------------
 # Create colormaps and colorbars
 # elevation
+cmap_ele_in = "grayC"
+cmap_ele = f"{path_in}/{cmap_ele_in}_resampeled_ele.cpt"
+gmt.makecpt(cmap=cmap_ele_in, series=[0, 2000, 10], output=cmap_ele)
 cb_ele_pos  = "JBL+jBL+o4.0c/0.6c+w4.5c/0.2c+h+ml+ef0.15c"
 
 # fast polarization direction
@@ -166,13 +169,10 @@ fig.basemap(region=region_main, projection=proj_main, frame=0)
 
 # -----------------------------------------------------------------------------
 # Elevation
-cmap_ele_in = "grayC"
-cmap_ele = f"{path_in}/{cmap_ele_in}_resampeled_ele.cpt"
-gmt.makecpt(cmap=cmap_ele_in, series=[0, 2000, 10], output=cmap_ele)
 fig.grdimage(grid="@earth_relief_01m", region=region_main, cmap=cmap_ele)
 
 fig.coast(
-    resolution="f",  # (f)ull, (h)igh, (i)ntermediate, (l)ow, (c)rude
+    resolution="f",
     borders=f"1/1p,{color_borders}",
     rivers=f"r/1p,{color_rivers}",
     water=color_water,
@@ -262,19 +262,19 @@ for station in stations:
     # Recording stations
     df_sta_temp = df_sta[df_sta["station"] == station]
 
-    style_sta = "i0.5c"
+    size_sta = 0.5  # in centimeters
     label_sta = station
     if station in ["TMO44", "TMO07"]:
-        style_sta = "i0.4c"
+        size_sta = 0.4
         label_sta = station[3:5]
-        color_sta = color_sta
+
     if status_pp == "station":
         color_df = df_sta_temp["color"]
         color_str = color_df.to_string()
         color_sta = color_str[5:len(color_str)]  # index + tab -> 4 signs
 
     # markers
-    fig.plot(data=df_sta_temp, style=style_sta, fill=color_sta, pen="1p,black")
+    fig.plot(data=df_sta_temp, style=f"i{size_sta}c", fill=color_sta, pen="1p,black")
     # labels
     fig.text(
         text=label_sta,
@@ -373,7 +373,7 @@ for station in stations:
 # %%
 # Sketch for piercing points
 # -----------------------------------------------------------------------------
-# Externaly created in Microsoft PowerPoint
+# Externally created in Microsoft PowerPoint
 pp_image = "percingpoints_sketch_orange.eps"
 fig.image(imagefile=f"{path_in}/{pp_image}", position="jTR+w3c+o0.1c")
 

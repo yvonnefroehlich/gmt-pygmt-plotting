@@ -213,12 +213,13 @@ fig.text(
 
 # markers
 for sta in stations:
-    style_sta = "i0.5c"
-    if sta in ["44", "07"]: style_sta = "i0.4c"
-    print(sta)
+    size_sta = 0.5  # in centimeters
+    if sta in ["44", "07"]:
+        style_sta = 0.4
     fig.plot(
         data=df_sta[df_sta["station"] == sta],
-        style=style_sta, fill=color_sta,
+        style=f"i{size_sta}c",
+        fill=color_sta,
         pen="1p,black",
     )
 # labels
