@@ -374,7 +374,7 @@ for station in stations:
 # Sketch for piercing points
 # -----------------------------------------------------------------------------
 # Externaly created in Microsoft PowerPoint
-pp_image = "percingpoints_inset_orange.eps"
+pp_image = "percingpoints_sketch_orange.eps"
 fig.image(imagefile=f"{path_in}/{pp_image}", position="jTR+w3c+o0.1c")
 
 # -----------------------------------------------------------------------------
