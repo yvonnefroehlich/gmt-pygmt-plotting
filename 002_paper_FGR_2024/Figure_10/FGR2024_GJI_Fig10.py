@@ -292,7 +292,7 @@ for station in stations:
 
 # %%
 # -----------------------------------------------------------------------------
-# Highlight subregions by labels
+# Highlight subregions by labels and vectors
 # -----------------------------------------------------------------------------
 args_vector = {
     "style": "v0.4c+ba+ea+a30+h0",  # direction cc from horizontal, length in centimeters
