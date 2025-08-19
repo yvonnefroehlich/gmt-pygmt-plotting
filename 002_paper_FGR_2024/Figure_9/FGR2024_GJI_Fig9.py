@@ -1,8 +1,8 @@
 # #############################################################################
-# Froehlich et al. (2024), GJI: Figure 9
+# Fröhlich et al. (2024), GJI: Figure 9
 # Topographic map of the Upper Rhine Graben area with piercing points in the upper mantle
 # -----------------------------------------------------------------------------
-# Froehlich Y., Grund M., Ritter J. R. R. (2024)
+# Fröhlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
 # system underneath Central Europe from long-term splitting measurements.
 # Geophysical Journal International. 239(1), 112-135.
@@ -17,7 +17,7 @@
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
-# - Author: Yvonne Froehlich
+# - Author: Yvonne Fröhlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
@@ -267,7 +267,7 @@ with gmt.config(MAP_SCALE_HEIGHT="9p"):
 # Piercing points
 # -----------------------------------------------------------------------------
 for station in stations:
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # Recording stations
     df_sta_temp = df_sta[df_sta["station"] == station]
 
@@ -296,7 +296,7 @@ for station in stations:
         clearance=clearance_standard,
     )
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # lon | lat | phi_SL | phi_GMT | dt | si | baz | thick
     data_pp_end = "goodfair_hd0km.txt"
     data_path = f"{path_in}/pps/{station}_pp200km_"
@@ -307,7 +307,7 @@ for station in stations:
     data_P_N_pp = f"{data_path}P_sp_N_{data_pp_end}"
     data_P_NN_pp = f"{data_path}P_sp_NN_{data_pp_end}"
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     if status_pp == "station":  # color-coded by station
         args_pp_NN_sta = {
             "style": "j",
@@ -338,7 +338,7 @@ for station in stations:
             except:
                 print(f"{station} no pp {phase}_N")
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     elif status_pp != "station":  # color-coded by
         match status_pp:
             case "phi":  # fast polarization direction (phi)

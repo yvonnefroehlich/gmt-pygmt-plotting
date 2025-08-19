@@ -1,8 +1,8 @@
 # #############################################################################
-# Froehlich et al. (2024), GJI: Figure S22
+# Fröhlich et al. (2024), GJI: Figure S22
 # Piercing points in the lowermost mantle
 # -----------------------------------------------------------------------------
-# Froehlich Y., Grund M., Ritter J. R. R. (2024)
+# Fröhlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
 # system underneath Central Europe from long-term splitting measurements.
 # Geophysical Journal International. 239(1), 112-135.
@@ -20,7 +20,7 @@
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
-# - Author: Yvonne Froehlich
+# - Author: Yvonne Fröhlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################

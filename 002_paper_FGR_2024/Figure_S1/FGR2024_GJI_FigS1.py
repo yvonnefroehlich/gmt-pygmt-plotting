@@ -1,8 +1,8 @@
 # #############################################################################
-# Froehlich et al. (2024), GJI: Figure S1
+# Fröhlich et al. (2024), GJI: Figure S1
 # Earthquake distribution around the Upper Rhine Graben area as epicentral distance plot
 # -----------------------------------------------------------------------------
-# Froehlich Y., Grund M., Ritter J. R. R. (2024)
+# Fröhlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
 # system underneath Central Europe from long-term splitting measurements.
 # Geophysical Journal International. 239(1), 112-135.
@@ -17,7 +17,7 @@
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
-# - Author: Yvonne Froehlich
+# - Author: Yvonne Fröhlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
@@ -108,7 +108,7 @@ with fig.subplot(
     frame="lrtb",
     autolabel="(a)",
 ):
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     for i_sta, sta in enumerate(sta_all):
         center_coord = {"x": dict_lon[sta], "y": dict_lat[sta]}
 
@@ -117,7 +117,7 @@ with fig.subplot(
         df_epi = df_epi_raw
         df_epi.moment_magnitude = np.exp(df_epi_raw.moment_magnitude / 1.7) * 0.0035
 
-        # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
         with fig.set_panel(i_sta):  # Set panel corresponding to station
             # Make azimuthal equistant plots / projection direct in GMT
             # azimuthal equidistant projection
@@ -140,7 +140,7 @@ with fig.subplot(
             # Plot plate boundaries
             fig.plot(data=f"{path_in}/{file_plate_in}", pen=f"0.5p,{color_pb}")
 
-            # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
             # Highlighte epicentral distance range used in this study
             for epi_dist, y in zip([90, 150], [-28, -88], strict=False):
                 # Plot circles
@@ -152,7 +152,7 @@ with fig.subplot(
                     x=center_coord["x"], y=y, text=f"{epi_dist}@.", font="9p,black"
                 )
 
-            # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
             # Plot epicenters
             fig.plot(
                 x=df_epi.longitude,
@@ -164,7 +164,7 @@ with fig.subplot(
                 pen="0.01,gray20",
             )
 
-            # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
             # Plot recording station
             # marker
             fig.plot(style="i0.4", fill=color_sta, pen="0.6p,black", **center_coord)

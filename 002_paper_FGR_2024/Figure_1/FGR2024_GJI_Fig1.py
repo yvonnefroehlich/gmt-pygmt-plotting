@@ -1,8 +1,8 @@
 # #############################################################################
-# Froehlich et al. (2024), GJI: Figure 1
+# Fröhlich et al. (2024), GJI: Figure 1
 # Topographic map of the Upper Rhine Graben area with recording stations
 # -----------------------------------------------------------------------------
-# Froehlich Y., Grund M., Ritter J. R. R. (2024)
+# Fröhlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
 # system underneath Central Europe from long-term splitting measurements.
 # Geophysical Journal International. 239(1), 112-135.
@@ -17,7 +17,7 @@
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
-# - Author: Yvonne Froehlich
+# - Author: Yvonne Fröhlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
@@ -344,7 +344,7 @@ with fig.inset(position="JMR+jMR+w6c+o-1.5c/-3.6"):
     # plate boundaries
     fig.plot(data=file_plate_in, pen=f"0.5p,{color_pb}")
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # Mark epicentral distance range used in this study
     for epi_dist, y in zip([90, 150], [-28, -88], strict=False):
         # Plot circles
@@ -352,13 +352,13 @@ with fig.inset(position="JMR+jMR+w6c+o-1.5c/-3.6"):
         # Add label for annotations limits of epicentral distance range
         fig.text(x=center_coord["x"], y=y, text=f"{epi_dist}@.", font="9p,black")
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # Plot epicenters
     df_epi_raw = pd.read_csv(f"{path_in}/STU_epi_swsm_all.txt", sep="\t", header=1)
     df_epi = df_epi_raw
     df_epi.moment_magnitude = np.exp(df_epi_raw.moment_magnitude / 1.7) * 0.0035
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # Colormap hypocentral depth - Scientific Colour maps by F. Crameri
     cmap_hypo_in = "lajolla"
     cmap_hypo = f"{path_in}/{cmap_hypo_in}_resampled_hypo.cpt"
@@ -374,7 +374,7 @@ with fig.inset(position="JMR+jMR+w6c+o-1.5c/-3.6"):
         pen="0.01,gray20",
     )
 
-    # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
     # Recording station
     # Marker
     fig.plot(style="i0.47c", fill=color_sta, pen="0.6p,black", **center_coord)
