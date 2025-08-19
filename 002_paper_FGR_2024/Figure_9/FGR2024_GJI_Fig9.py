@@ -100,7 +100,14 @@ cb_ele_pos = "JBL+jBL+o4.0c/0.6c+w4.5c/0.2c+h+ml+ef0.15c"
 # fast polarization direction
 cmap_phi_in = "phase"
 cmap_phi = f"{path_in}/{cmap_phi_in}_resampled_phi.cpt"
-gmt.makecpt(cmap=cmap_phi_in, output=cmap_phi, series=[-90, 90], cyclic=True)
+with gmt.config(COLOR_NAN="white"):
+    gmt.makecpt(
+        cmap=cmap_phi_in,
+        output=cmap_phi,
+        series=[-90, 90],
+        cyclic=True,
+        overrule_bg=True,
+    )
 cb_phi_label = "a30f10+lsplit app. fast pol. dir. @~f@~@-a@- / N@.E"
 cb_pp_pos = "JRB+jRB+o0.6c/0.6c+w4.3c/0.2c+h+ml"
 cb_phi_pos = cb_pp_pos
@@ -170,7 +177,6 @@ gmt.config(
     MAP_ANNOT_OFFSET="0.05i",  # distance of scale ticks labels from scale
     MAP_LABEL_OFFSET="3.5p",  # distance of label from scale
     MAP_TICK_LENGTH_PRIMARY="5p",  # length of scale ticks
-    COLOR_NAN="white",  # color for NaN, default 127.5
 )
 
 fig.basemap(region=region_main, projection=proj_main, frame=0)

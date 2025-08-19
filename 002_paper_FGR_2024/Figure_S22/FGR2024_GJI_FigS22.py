@@ -76,7 +76,14 @@ region_lamb = f"{lon_min_lamb}/{lon_max_lamb}/{lat_min_lamb}/{lat_max_lamb}"
 # fast polarization direction
 cmap_phi_in = "phase"
 cmap_phi = f"{path_in}/{cmap_phi_in}_resampled_phi.cpt"
-gmt.makecpt(cmap=cmap_phi_in, output=cmap_phi, series=[-90, 90], cyclic=True)
+with gmt.config(COLOR_NAN="white"):
+    gmt.makecpt(
+        cmap=cmap_phi_in,
+        output=cmap_phi,
+        series=[-90, 90],
+        cyclic=True,
+        overrule_bg=True,
+    )
 cb_phi_label = "a30f10+lnull | split app. fast pol. dir. @~f@~@-a@- / N@.E"
 cb_sp_pos = "JRT+jRT+w3.5/0.25+o0.34c/0c+h+ml"
 cb_phi_pos = f"{cb_sp_pos}+n "
@@ -178,9 +185,7 @@ match status_station:
 # Create geographic maps
 # -----------------------------------------------------------------------------
 fig = gmt.Figure()
-gmt.config(
-    MAP_GRID_PEN_PRIMARY="0.2p,lightgray", FONT_LABEL=font_size, COLOR_NAN="white"
-)
+gmt.config(MAP_GRID_PEN_PRIMARY="0.2p,lightgray", FONT_LABEL=font_size)
 
 fig.basemap(projection=proj_lamb, region=region_lamb, frame=["WSne", "a10g10f5"])
 fig.coast(land=color_land, shorelines=f"1/0.01p,{color_sl}")
