@@ -1,8 +1,8 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Figure 1
+# Froehlich et al. (2024), GJI: Figure 1
 # Topographic map of the Upper Rhine Graben area with recording stations
 # -----------------------------------------------------------------------------
-# Fröhlich Y., Grund M., Ritter J. R. R. (2024)
+# Froehlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
 # system underneath Central Europe from long-term splitting measurements.
 # Geophysical Journal International. 239(1), 112-135.
@@ -17,7 +17,7 @@
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
-# - Author: Yvonne Fröhlich
+# - Author: Yvonne Froehlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
@@ -26,10 +26,9 @@
 import glob
 import os
 
+import numpy as np
 import pandas as pd
 import pygmt as gmt
-import numpy as np
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -119,8 +118,8 @@ leg_all_file = "legend_gmt_overall.txt"
 leg_all_pos = "JBL+jBL+o0.135c/1.52c+w6.1c"
 leg_fal_pos = "JLB+jLB+w3.15c+o0.17c/1.45c"
 leg_mag_pos = "JBR+jBR+o0.1c/4.3c+w3.7c"
-cb_hd_pos   = "JBR+jBR+o0.65c/3.45c+w3.7c/0.2c+h+ml"
-cb_ele_pos  = "JBL+jBL+o4.0c/0.65c+w4.5c/0.2c+h+ml"
+cb_hd_pos = "JBR+jBR+o0.65c/3.45c+w3.7c/0.2c+h+ml"
+cb_ele_pos = "JBL+jBL+o4.0c/0.65c+w4.5c/0.2c+h+ml"
 
 # scale
 basemap_scale = f"JLB+jLB+w50+c{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}+f+lkm+at+o0.45c/0.55c"
@@ -238,7 +237,9 @@ fig.text(
 # -----------------------------------------------------------------------------
 # Volcanic Complexes
 # marker - self-defined symbol, read from file
-for lon, lat, size in zip([lon_KVC, lon_VVC], [lat_KVC, lat_VVC], [0.7, 1]):
+for lon, lat, size in zip(
+    [lon_KVC, lon_VVC], [lat_KVC, lat_VVC], [0.7, 1], strict=False
+):
     fig.plot(
         x=lon,
         y=lat,
@@ -343,21 +344,21 @@ with fig.inset(position="JMR+jMR+w6c+o-1.5c/-3.6"):
     # plate boundaries
     fig.plot(data=file_plate_in, pen=f"0.5p,{color_pb}")
 
-# -----------------------------------------------------------------------------
+    # -----------------------------------------------------------------------------
     # Mark epicentral distance range used in this study
-    for epi_dist, y in zip([90, 150], [-28, -88]):
+    for epi_dist, y in zip([90, 150], [-28, -88], strict=False):
         # Plot circles
         fig.plot(style=f"E-{epi_dist * 2}+d", pen="1p,gray50,4_2", **center_coord)
         # Add label for annotations limits of epicentral distance range
         fig.text(x=center_coord["x"], y=y, text=f"{epi_dist}@.", font="9p,black")
 
-# -----------------------------------------------------------------------------
+    # -----------------------------------------------------------------------------
     # Plot epicenters
     df_epi_raw = pd.read_csv(f"{path_in}/STU_epi_swsm_all.txt", sep="\t", header=1)
     df_epi = df_epi_raw
     df_epi.moment_magnitude = np.exp(df_epi_raw.moment_magnitude / 1.7) * 0.0035
 
-# -----------------------------------------------------------------------------
+    # -----------------------------------------------------------------------------
     # Colormap hypocentral depth - Scientific Colour maps by F. Crameri
     cmap_hypo_in = "lajolla"
     cmap_hypo = f"{path_in}/{cmap_hypo_in}_resampled_hypo.cpt"
@@ -373,7 +374,7 @@ with fig.inset(position="JMR+jMR+w6c+o-1.5c/-3.6"):
         pen="0.01,gray20",
     )
 
-# -----------------------------------------------------------------------------
+    # -----------------------------------------------------------------------------
     # Recording station
     # Marker
     fig.plot(style="i0.47c", fill=color_sta, pen="0.6p,black", **center_coord)
@@ -402,7 +403,6 @@ fig.legend(spec=f"{path_in}/{leg_mag_file}", position=leg_mag_pos, box=box_stand
 # -----------------------------------------------------------------------------
 # Colorbars
 with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
-
     # hypocentral depth
     fig.colorbar(
         cmap=cmap_hypo,

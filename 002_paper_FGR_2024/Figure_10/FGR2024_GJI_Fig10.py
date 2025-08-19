@@ -1,8 +1,8 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Figure 10
+# Froehlich et al. (2024), GJI: Figure 10
 # Topographic map of the Upper Rhine Graben area with stereoplots
 # -----------------------------------------------------------------------------
-# Fröhlich Y., Grund M., Ritter J. R. R. (2024)
+# Froehlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
 # system underneath Central Europe from long-term splitting measurements.
 # Geophysical Journal International. 239(1), 112-135.
@@ -17,7 +17,7 @@
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
-# - Author: Yvonne Fröhlich
+# - Author: Yvonne Froehlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
@@ -28,7 +28,6 @@ import os
 
 import pandas as pd
 import pygmt as gmt
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -143,7 +142,9 @@ fig.basemap(region=region_main, projection=proj_main, frame=0)
 # Elevation
 fig.grdimage(grid="@earth_relief_15s", region=region_main, cmap=cmap_ele)
 
-fig.coast(resolution="f", borders=f"1/1p,{color_borders}", rivers=f"r/1p,{color_rivers}")
+fig.coast(
+    resolution="f", borders=f"1/1p,{color_borders}", rivers=f"r/1p,{color_rivers}"
+)
 
 # -----------------------------------------------------------------------------
 # Faults
@@ -191,7 +192,9 @@ fig.text(
 # -----------------------------------------------------------------------------
 # Volcanic Complexes
 # marker - self-defined symbol, read from file
-for lon, lat, size in zip([lon_KVC, lon_VVC], [lat_KVC, lat_VVC], [0.7, 1]):
+for lon, lat, size in zip(
+    [lon_KVC, lon_VVC], [lat_KVC, lat_VVC], [0.7, 1], strict=False
+):
     fig.plot(
         x=lon,
         y=lat,
@@ -224,17 +227,16 @@ with gmt.config(MAP_SCALE_HEIGHT="9p"):
 # Stereoplots
 # -----------------------------------------------------------------------------
 for station in stations:
-
     df_sta_temp = df_sta[df_sta["station"] == station]
 
     # Not very elegant but works
     lon_df = df_sta_temp["longitude"]
     lon_str = lon_df.to_string()
-    lon_sta = lon_str[5:len(lon_str)]  # index + tab -> 4 signs
+    lon_sta = lon_str[5 : len(lon_str)]  # index + tab -> 4 signs
 
     lat_df = df_sta_temp["latitude"]
     lat_str = lat_df.to_string()
-    lat_sta = lat_str[5:len(lat_str)]  # index + tab -> 4 signs
+    lat_sta = lat_str[5 : len(lat_str)]  # index + tab -> 4 signs
 
     # First plot semi-transparent white filled circle behind fully transparent
     # stereoplot to increase visibility
@@ -248,7 +250,7 @@ for station in stations:
         fig.plot(style=f"w{size_stereo}c/140/300", **args_stereo)
     if station == "WLS":
         fig.plot(style=f"w{size_stereo}c/10/30", **args_stereo)
-    if station =="ECH":
+    if station == "ECH":
         fig.plot(style=f"w{size_stereo}c/10/30", **args_stereo)
     if station == "TMO07":
         fig.plot(style=f"w{size_stereo}c/190/220", **args_stereo)
@@ -261,7 +263,7 @@ for station in stations:
         position=f"g{lon_sta}/{lat_sta}+jMC+w{size_stereo}c",
     )
 
-# -----------------------------------------------------------------------------
+    # -----------------------------------------------------------------------------
     # Recording stations
     size_sta = 0.5  # in centimeters
     label_sta = station
@@ -303,7 +305,7 @@ args_label = {
     "font": "8p,Helvetica-Bold,black",
     "fill": "white@30",
     "pen": f"0.8p,{color_hl}",
-    "clearance": clearance_standard
+    "clearance": clearance_standard,
 }
 
 # Layer number change in South-North direction
@@ -326,12 +328,15 @@ fig.legend(spec=f"{path_in}/{leg_pp_file}", position=leg_pp_pos, box=box_standar
 # -----------------------------------------------------------------------------
 # Colorbars
 with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
-
     # elevation
-    fig.colorbar(cmap=cmap_ele, frame=cb_ele_label, position=cb_ele_pos, box=box_standard)
+    fig.colorbar(
+        cmap=cmap_ele, frame=cb_ele_label, position=cb_ele_pos, box=box_standard
+    )
 
     # piercing points
-    fig.colorbar(cmap=cmap_phi, frame=cb_phi_label, position=cb_phi_pos, box=box_standard)
+    fig.colorbar(
+        cmap=cmap_phi, frame=cb_phi_label, position=cb_phi_pos, box=box_standard
+    )
 
 # -----------------------------------------------------------------------------
 # Show and save figure
