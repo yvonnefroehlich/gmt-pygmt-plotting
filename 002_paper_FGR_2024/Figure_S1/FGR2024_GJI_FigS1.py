@@ -1,8 +1,8 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Figure S1
+# FrÃ¶hlich et al. (2024), GJI: Figure S1
 # Earthquake distribution around the Upper Rhine Graben area as epicentral distance plot
 # -----------------------------------------------------------------------------
-# Fröhlich Y., Grund M., Ritter J. R. R. (2024)
+# FrÃ¶hlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
 # system underneath Central Europe from long-term splitting measurements.
 # Geophysical Journal International. 239(1), 112-135.
@@ -17,7 +17,7 @@
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
-# - Author: Yvonne Fröhlich
+# - Author: Yvonne FrÃ¶hlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
@@ -26,7 +26,6 @@
 import numpy as np
 import pandas as pd
 import pygmt as gmt
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -71,10 +70,10 @@ hd_max = 500  # hypocentral depth
 box_standard = "+gwhite@30+p0.8p,black+r1p"
 clearance_standard = "0.1c/0.1c+tO"
 
-if orientation=="horizontal":
+if orientation == "horizontal":
     nrows_use = 2
     ncols_use = 3
-elif orientation=="vertical":
+elif orientation == "vertical":
     nrows_use = 3
     ncols_use = 2
 
@@ -84,15 +83,14 @@ dict_net = {}
 dict_lat = {}
 dict_lon = {}
 
-station_file = open(f"{path_in}/{file_sta_in}", "r")
+station_file = open(f"{path_in}/{file_sta_in}")
 lines = station_file.readlines()
 for line in lines[1:]:  # skip header line(s)
-   (net, key, lon, lat) = line.split()
-   dict_net[key] = net
-   dict_lon[key] = float(lon)
-   dict_lat[key] = float(lat)
+    (net, key, lon, lat) = line.split()
+    dict_net[key] = net
+    dict_lon[key] = float(lon)
+    dict_lat[key] = float(lat)
 station_file.close()
-
 
 
 # %%
@@ -104,13 +102,12 @@ fig = gmt.Figure()
 gmt.makecpt(cmap=cmap_hypo_in, series=[0, hd_max])
 
 with fig.subplot(
-        nrows=nrows_use,
-        ncols=ncols_use,
-        subsize=(rad_tot, rad_tot),
-        frame="lrtb",
-        autolabel="(a)",
+    nrows=nrows_use,
+    ncols=ncols_use,
+    subsize=(rad_tot, rad_tot),
+    frame="lrtb",
+    autolabel="(a)",
 ):
-
 # -----------------------------------------------------------------------------
     for i_sta, sta in enumerate(sta_all):
         center_coord = {"x": dict_lon[sta], "y": dict_lat[sta]}
@@ -145,11 +142,15 @@ with fig.subplot(
 
 # -----------------------------------------------------------------------------
             # Highlighte epicentral distance range used in this study
-            for epi_dist, y in zip([90, 150], [-28, -88]):
+            for epi_dist, y in zip([90, 150], [-28, -88], strict=False):
                 # Plot circles
-                fig.plot(style=f"E-{epi_dist * 2}+d", pen="1p,gray50,4_2", **center_coord)
+                fig.plot(
+                    style=f"E-{epi_dist * 2}+d", pen="1p,gray50,4_2", **center_coord
+                )
                 # Add label for annotations limits of epicentral distance range
-                fig.text(x=center_coord["x"], y=y, text=f"{epi_dist}@.", font="9p,black")
+                fig.text(
+                    x=center_coord["x"], y=y, text=f"{epi_dist}@.", font="9p,black"
+                )
 
 # -----------------------------------------------------------------------------
             # Plot epicenters

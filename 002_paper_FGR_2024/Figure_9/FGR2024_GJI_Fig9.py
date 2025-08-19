@@ -1,8 +1,8 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Figure 9
+# FrÃ¶hlich et al. (2024), GJI: Figure 9
 # Topographic map of the Upper Rhine Graben area with piercing points in the upper mantle
 # -----------------------------------------------------------------------------
-# Fröhlich Y., Grund M., Ritter J. R. R. (2024)
+# FrÃ¶hlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
 # system underneath Central Europe from long-term splitting measurements.
 # Geophysical Journal International. 239(1), 112-135.
@@ -17,7 +17,7 @@
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
-# - Author: Yvonne Fröhlich
+# - Author: Yvonne FrÃ¶hlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
@@ -26,10 +26,9 @@
 import glob
 import os
 
+import numpy as np
 import pandas as pd
 import pygmt as gmt
-import numpy as np
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -96,12 +95,19 @@ basemap_scale = f"JLB+jLB+w50+c{scale_pos}+f+lkm+at+o0.45c/0.55c"
 cmap_ele_in = "grayC"
 cmap_ele = f"{path_in}/{cmap_ele_in}_resampled_ele.cpt"
 gmt.makecpt(cmap=cmap_ele_in, series=[0, 2000, 10], output=cmap_ele)
-cb_ele_pos  = "JBL+jBL+o4.0c/0.6c+w4.5c/0.2c+h+ml+ef0.15c"
+cb_ele_pos = "JBL+jBL+o4.0c/0.6c+w4.5c/0.2c+h+ml+ef0.15c"
 
 # fast polarization direction
 cmap_phi_in = "phase"
 cmap_phi = f"{path_in}/{cmap_phi_in}_resampled_phi.cpt"
-gmt.makecpt(cmap=cmap_phi_in, output=cmap_phi, series=[-90, 90], cyclic=True)
+with gmt.config(COLOR_NAN="white"):
+    gmt.makecpt(
+        cmap=cmap_phi_in,
+        output=cmap_phi,
+        series=[-90, 90],
+        cyclic=True,
+        overrule_bg=True,
+    )
 cb_phi_label = "a30f10+lsplit app. fast pol. dir. @~f@~@-a@- / N@.E"
 cb_pp_pos = "JRB+jRB+o0.6c/0.6c+w4.3c/0.2c+h+ml"
 cb_phi_pos = cb_pp_pos
@@ -171,7 +177,6 @@ gmt.config(
     MAP_ANNOT_OFFSET="0.05i",  # distance of scale ticks labels from scale
     MAP_LABEL_OFFSET="3.5p",  # distance of label from scale
     MAP_TICK_LENGTH_PRIMARY="5p",  # length of scale ticks
-    COLOR_NAN="white",  # color for NaN, default 127.5
 )
 
 fig.basemap(region=region_main, projection=proj_main, frame=0)
@@ -233,7 +238,9 @@ fig.text(
 # -----------------------------------------------------------------------------
 # Volcanic Complexes
 # marker - self-defined symbol, read from file
-for lon, lat, size in zip([lon_KVC, lon_VVC], [lat_KVC, lat_VVC], [0.7, 1]):
+for lon, lat, size in zip(
+    [lon_KVC, lon_VVC], [lat_KVC, lat_VVC], [0.7, 1], strict=False
+):
     fig.plot(
         x=lon,
         y=lat,
@@ -266,7 +273,6 @@ with gmt.config(MAP_SCALE_HEIGHT="9p"):
 # Piercing points
 # -----------------------------------------------------------------------------
 for station in stations:
-
 # -----------------------------------------------------------------------------
     # Recording stations
     df_sta_temp = df_sta[df_sta["station"] == station]
@@ -280,7 +286,7 @@ for station in stations:
     if status_pp == "station":
         color_df = df_sta_temp["color"]
         color_str = color_df.to_string()
-        color_sta = color_str[5:len(color_str)]  # index + tab -> 4 signs
+        color_sta = color_str[5 : len(color_str)]  # index + tab -> 4 signs
 
     # markers
     fig.plot(data=df_sta_temp, style=f"i{size_sta}c", fill=color_sta, pen="1p,black")
@@ -309,7 +315,6 @@ for station in stations:
 
 # -----------------------------------------------------------------------------
     if status_pp == "station":  # color-coded by station
-
         args_pp_NN_sta = {
             "style": "j",
             "fill": color_sta,
@@ -323,19 +328,24 @@ for station in stations:
         }
 
         # non-null
-        for data, phase in zip([data_K_NN_pp, data_KK_NN_pp, data_P_NN_pp], ["K", "KK", "P"]):
+        for data, phase in zip(
+            [data_K_NN_pp, data_KK_NN_pp, data_P_NN_pp], ["K", "KK", "P"], strict=False
+        ):
             try:
                 fig.plot(data=data, **args_pp_NN_sta)
-            except: print(f"{station} no pp {phase}_NN")
+            except:
+                print(f"{station} no pp {phase}_NN")
         # null
-        for data, phase in zip([data_K_N_pp, data_KK_N_pp, data_P_N_pp], ["K", "KK", "P"]):
+        for data, phase in zip(
+            [data_K_N_pp, data_KK_N_pp, data_P_N_pp], ["K", "KK", "P"], strict=False
+        ):
             try:
                 fig.plot(data=data, **args_pp_N_sta)
-            except: print(f"{station} no pp {phase}_N")
+            except:
+                print(f"{station} no pp {phase}_N")
 
 # -----------------------------------------------------------------------------
-    elif status_pp!="station":  # color-coded by
-
+    elif status_pp != "station":  # color-coded by
         match status_pp:
             case "phi":  # fast polarization direction (phi)
                 color_pp = cmap_phi
@@ -368,15 +378,21 @@ for station in stations:
         }
 
         # null
-        for data, phase in zip([data_K_N_pp, data_KK_N_pp, data_P_N_pp], ["K", "KK", "P"]):
+        for data, phase in zip(
+            [data_K_N_pp, data_KK_N_pp, data_P_N_pp], ["K", "KK", "P"], strict=False
+        ):
             try:
                 fig.plot(data=data, **args_pp_N_sp)
-            except: print(f"{station} no pp {phase}_N")
+            except:
+                print(f"{station} no pp {phase}_N")
         # non-null
-        for data, phase in zip([data_K_NN_pp, data_KK_NN_pp, data_P_NN_pp], ["K", "KK", "P"]):
+        for data, phase in zip(
+            [data_K_NN_pp, data_KK_NN_pp, data_P_NN_pp], ["K", "KK", "P"], strict=False
+        ):
             try:
                 fig.plot(data=data, **args_pp_NN_sp)
-            except: print(f"{station} no pp {phase}_NN")
+            except:
+                print(f"{station} no pp {phase}_NN")
 
 
 # %%
@@ -405,7 +421,6 @@ fig.legend(spec=f"{path_in}/{leg_dt_file}", position=leg_dt_pos, box=box_standar
 # -----------------------------------------------------------------------------
 # Colorbars
 with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
-
     # elevation
     fig.colorbar(
         cmap=cmap_ele,
@@ -458,7 +473,7 @@ with fig.inset(position="jTL+jTL+w3.5c+o-0.24c/0.05c"):
 
     # label for countries
     fig.text(
-        x=np.array([10.50,  4.50,  8.30]),
+        x=np.array([10.50, 4.50, 8.30]),
         y=np.array([51.10, 47.80, 46.70]),
         text=["DE", "FR", "CH"],
         font="8p,black",

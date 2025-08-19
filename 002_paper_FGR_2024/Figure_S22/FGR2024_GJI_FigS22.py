@@ -1,8 +1,8 @@
 # #############################################################################
-# Fröhlich et al. (2024), GJI: Figure S22
+# FrÃ¶hlich et al. (2024), GJI: Figure S22
 # Piercing points in the lowermost mantle
 # -----------------------------------------------------------------------------
-# Fröhlich Y., Grund M., Ritter J. R. R. (2024)
+# FrÃ¶hlich Y., Grund M., Ritter J. R. R. (2024)
 # Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere
 # system underneath Central Europe from long-term splitting measurements.
 # Geophysical Journal International. 239(1), 112-135.
@@ -20,7 +20,7 @@
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
-# - Author: Yvonne Fröhlich
+# - Author: Yvonne FrÃ¶hlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
@@ -29,9 +29,8 @@
 import glob
 import os
 
-import pygmt as gmt
 import numpy as np
-
+import pygmt as gmt
 
 # %%
 # -----------------------------------------------------------------------------
@@ -77,7 +76,14 @@ region_lamb = f"{lon_min_lamb}/{lon_max_lamb}/{lat_min_lamb}/{lat_max_lamb}"
 # fast polarization direction
 cmap_phi_in = "phase"
 cmap_phi = f"{path_in}/{cmap_phi_in}_resampled_phi.cpt"
-gmt.makecpt(cmap=cmap_phi_in, output=cmap_phi, series=[-90, 90], cyclic=True)
+with gmt.config(COLOR_NAN="white"):
+    gmt.makecpt(
+        cmap=cmap_phi_in,
+        output=cmap_phi,
+        series=[-90, 90],
+        cyclic=True,
+        overrule_bg=True,
+    )
 cb_phi_label = "a30f10+lnull | split app. fast pol. dir. @~f@~@-a@- / N@.E"
 cb_sp_pos = "JRT+jRT+w3.5/0.25+o0.34c/0c+h+ml"
 cb_phi_pos = f"{cb_sp_pos}+n "
@@ -147,13 +153,13 @@ dict_lat = {}
 dict_lon = {}
 dict_file = {}
 
-station_file = open(f"{path_in}/stations_info.txt", "r")
+station_file = open(f"{path_in}/stations_info.txt")
 lines = station_file.readlines()
 for line in lines[4:]:  # skip header line(s)
-   (lon, lat, key) = line.split()
-   dict_lon[key] = float(lon)
-   dict_lat[key] = float(lat)
-   dict_file[key] = key
+    (lon, lat, key) = line.split()
+    dict_lon[key] = float(lon)
+    dict_lat[key] = float(lat)
+    dict_file[key] = key
 station_file.close()
 
 match status_station:
@@ -174,12 +180,12 @@ match status_station:
         text_sta = status_station
 
 
-#%%
+# %%
 # -----------------------------------------------------------------------------
 # Create geographic maps
 # -----------------------------------------------------------------------------
 fig = gmt.Figure()
-gmt.config(MAP_GRID_PEN_PRIMARY="0.2p,lightgray", FONT_LABEL=font_size, COLOR_NAN="white")
+gmt.config(MAP_GRID_PEN_PRIMARY="0.2p,lightgray", FONT_LABEL=font_size)
 
 fig.basemap(projection=proj_lamb, region=region_lamb, frame=["WSne", "a10g10f5"])
 fig.coast(land=color_land, shorelines=f"1/0.01p,{color_sl}")
@@ -188,7 +194,8 @@ fig.coast(land=color_land, shorelines=f"1/0.01p,{color_sl}")
 # Plot LLVPs
 for i_model in range(2, 9, 1):
     label = None
-    if i_model == 2: label = "LLPVs"
+    if i_model == 2:
+        label = "LLPVs"
     fig.plot(
         data=f"{path_in}/llvp/3model_2016_{i_model}.txt",
         pen=f"0.2p,{color_llvp}",
@@ -211,23 +218,29 @@ for station in stations:
     # null
     try:
         fig.plot(data=file_ray_K_N, pen=f"1p,{color_ray_K_N}{alpha_ray}")
-    except: print(f"{dict_file[station]} no ray K_N")
+    except:
+        print(f"{dict_file[station]} no ray K_N")
     try:
         fig.plot(data=file_ray_KK_N, pen=f"1p,{color_ray_KK_N}{alpha_ray}")
-    except: print(f"{dict_file[station]} no ray KK_N")
+    except:
+        print(f"{dict_file[station]} no ray KK_N")
     try:
         fig.plot(data=file_ray_P_N, pen=f"1p,{color_ray_P_N}{alpha_ray}")
-    except: print(f"{dict_file[station]} no ray P_N")
+    except:
+        print(f"{dict_file[station]} no ray P_N")
     # non-null
     try:
         fig.plot(data=file_ray_K_NN, pen=f"1p,{color_ray_K_NN}{alpha_ray}")
-    except: print(f"{dict_file[station]} no ray K_NN")
+    except:
+        print(f"{dict_file[station]} no ray K_NN")
     try:
         fig.plot(data=file_ray_KK_NN, pen=f"1p,{color_ray_KK_NN}{alpha_ray}")
-    except: print(f"{dict_file[station]} no ray KK_NN")
+    except:
+        print(f"{dict_file[station]} no ray KK_NN")
     try:
         fig.plot(data=file_ray_P_NN, pen=f"1p,{color_ray_P_NN}{alpha_ray}")
-    except: print(f"{dict_file[station]} no ray P_NN")
+    except:
+        print(f"{dict_file[station]} no ray P_NN")
 
 # -----------------------------------------------------------------------------
 # Plot piercing points (iasp91)
@@ -274,12 +287,13 @@ for station in stations:
         # null
         try:
             fig.plot(
-                data=data_K_N_pp, # SKS
+                data=data_K_N_pp,  # SKS
                 style=f"C{marker_size_pp}",
                 fill=f"{color_pp_N}{alpha_pp}",
                 pen=f"{outline_width_pp},{color_pp_K}{alpha_pp}",
             )
-        except: print(f"{dict_file[station]} no pp K_N")
+        except:
+            print(f"{dict_file[station]} no pp K_N")
         try:
             fig.plot(
                 data=data_KK_N_pp,  # SKKS
@@ -287,7 +301,8 @@ for station in stations:
                 fill=f"{color_pp_N}{alpha_pp}",
                 pen=f"{outline_width_pp},{color_pp_KK}{alpha_pp}",
             )
-        except: print(f"{dict_file[station]} no pp KK_N")
+        except:
+            print(f"{dict_file[station]} no pp KK_N")
         try:
             fig.plot(
                 data=data_P_N_pp,  # PKS
@@ -295,7 +310,8 @@ for station in stations:
                 fill=f"{color_pp_N}{alpha_pp}",
                 pen=f"{outline_width_pp},{color_pp_P}{alpha_pp}",
             )
-        except: print(f"{dict_file[station]} no pp P_N")
+        except:
+            print(f"{dict_file[station]} no pp P_N")
         # non-null
         try:
             fig.plot(
@@ -304,7 +320,8 @@ for station in stations:
                 fill=f"{color_pp_K}{alpha_pp}",
                 pen=f"{outline_width_pp},black{alpha_pp}",
             )
-        except: print(f"{dict_file[station]} no pp K_NN")
+        except:
+            print(f"{dict_file[station]} no pp K_NN")
         try:
             fig.plot(
                 data=data_KK_NN_pp,  # SKKS
@@ -312,7 +329,8 @@ for station in stations:
                 fill=f"{color_pp_KK}{alpha_pp}",
                 pen=f"{outline_width_pp},black{alpha_pp}",
             )
-        except: print(f"{dict_file[station]} no pp KK_NN")
+        except:
+            print(f"{dict_file[station]} no pp KK_NN")
         try:
             fig.plot(
                 data=data_P_NN_pp,  # PKS
@@ -320,7 +338,8 @@ for station in stations:
                 fill=f"{color_pp_P}{alpha_pp}",
                 pen=f"{outline_width_pp},black{alpha_pp}",
             )
-        except: print(f"{dict_file[station]} no pp P_NN")
+        except:
+            print(f"{dict_file[station]} no pp P_NN")
 
     elif status_pp in ["phi", "dt", "si", "baz"]:
         # null
@@ -332,7 +351,8 @@ for station in stations:
                 pen=f"{outline_width_pp},black",
                 incols=incols_pp,
             )
-        except: print(f"{dict_file[station]} no pp K_N")
+        except:
+            print(f"{dict_file[station]} no pp K_N")
         try:
             fig.plot(
                 data=data_KK_N_pp,
@@ -341,7 +361,8 @@ for station in stations:
                 pen=f"{outline_width_pp},black",
                 incols=incols_pp,
             )
-        except: print(f"{dict_file[station]} no pp KK_N")
+        except:
+            print(f"{dict_file[station]} no pp KK_N")
         try:
             fig.plot(
                 data=data_P_N_pp,
@@ -350,35 +371,39 @@ for station in stations:
                 pen=f"{outline_width_pp},black",
                 incols=incols_pp,
             )
-        except: print(f"{dict_file[station]} no pp P_N")
+        except:
+            print(f"{dict_file[station]} no pp P_N")
         # non-null
         try:
             fig.plot(
                 data=data_K_NN_pp,
-                style=f"C{marker_size_pp}",  #"j"
+                style=f"C{marker_size_pp}",  # "j"
                 cmap=color_pp,
                 pen=f"{outline_width_pp},black",
                 incols=incols_pp,
             )
-        except: print(f"{dict_file[station]} no pp K_NN")
+        except:
+            print(f"{dict_file[station]} no pp K_NN")
         try:
             fig.plot(
                 data=data_KK_NN_pp,
-                style=f"S{marker_size_pp}",  #"j"
+                style=f"S{marker_size_pp}",  # "j"
                 cmap=color_pp,
                 pen=f"{outline_width_pp},black",
                 incols=incols_pp,
             )
-        except: print(f"{dict_file[station]} no pp KK_NN")
+        except:
+            print(f"{dict_file[station]} no pp KK_NN")
         try:
             fig.plot(
                 data=data_P_NN_pp,
-                style=f"D{marker_size_pp}",  #"j"
+                style=f"D{marker_size_pp}",  # "j"
                 cmap=color_pp,
                 pen=f"{outline_width_pp},black",
                 incols=incols_pp,
             )
-        except: print(f"{dict_file[station]} no pp P_NN")
+        except:
+            print(f"{dict_file[station]} no pp P_NN")
 
 # -----------------------------------------------------------------------------
 # Plot station symbol
@@ -400,7 +425,6 @@ fig.text(text="@@2700 km", position="TC", no_clip=True, **args_label)
 # -----------------------------------------------------------------------------
 # Add colorbars
 with gmt.config(FONT="15p", MAP_FRAME_PEN="0.5p", MAP_TICK_LENGTH_PRIMARY="3p"):
-
     match status_pp:
         case "phi":
             fig.colorbar(cmap=cmap_phi, position=cb_phi_pos, frame=cb_phi_label)
