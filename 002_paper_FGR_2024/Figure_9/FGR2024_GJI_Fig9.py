@@ -431,7 +431,7 @@ with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
                 cmap_pp = cmap_baz
                 frame_pp = cb_baz_label
                 pos_pp = cb_baz_pos
-    if status_pp == "baz" and status_cw == True:
+    if status_pp == "station" or (status_pp == "baz" and status_cw == True):
         pass
     else:
         fig.colorbar(cmap=cmap_pp, frame=frame_pp, position=pos_pp, box=box_standard)
