@@ -551,7 +551,7 @@ else:
         )
         fig.basemap(frame="f")
 
-        # Label for countries
+        # Labels for countries
         fig.text(
             x=np.array([10.50, 4.50, 8.30]),
             y=np.array([51.10, 47.80, 46.70]),
