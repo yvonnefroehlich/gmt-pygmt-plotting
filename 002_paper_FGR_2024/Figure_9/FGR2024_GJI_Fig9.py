@@ -11,6 +11,8 @@
 # History
 # - Created: -
 # - Updated: 2025/08/13 - adjusted for GitHub
+# - Updated: 2025/08/18 - add piercing point sketch
+# - Updated: 2025/08/25 - add colorwheel for backazimuth colormap
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
@@ -36,6 +38,8 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Color-coding used for the piercing points
 status_pp = "phi"  ## "station" | "phi" | "dt" | "si" | "baz"
+# Use colorwheel for colormap of backazimuth (status_pp = "baz")
+status_cw = True  ## True | False
 
 
 # %%
@@ -47,15 +51,15 @@ path_out = "02_out_figs"
 dpi_png = 360
 
 # -----------------------------------------------------------------------------
-# Towns
-file_twons_in = f"{path_in}/rhein_towns.dat"
-
 # Faults
 file_URGnormal_in = f"{path_in}/faults_URGnormal.geo"
 file_faults_in = f"{path_in}/faults_LLBB_TH_BLZ.geo"
 
 # Tectonic
 textfile_geology_in = f"{path_in}/rhein_geology_large.dat"
+
+# Plate boundaries after Bird 2003
+file_pb = f"{path_in}/plate_boundaries_Bird_2003.txt"
 
 # Recording stations
 file_station_in = f"{path_in}/stations_info.txt"
@@ -141,7 +145,6 @@ color_pb = "216.750/82.875/24.990"  # plate boundaries
 color_URG = "darkbrown"  # "sienna"
 color_sta = "gold"  # -> GMT "gold"
 color_hl = "255/90/0"  # -> orange | URG paper
-color_rivers = "dodgerblue2"
 color_borders = "black"
 color_sl = "darkgray"
 
@@ -185,12 +188,7 @@ fig.basemap(region=region_main, projection=proj_main, frame=0)
 # Elevation
 fig.grdimage(grid="@earth_relief_01m", region=region_main, cmap=cmap_ele)
 
-fig.coast(
-    resolution="f",
-    borders=f"1/1p,{color_borders}",
-    rivers=f"r/1p,{color_rivers}",
-    water=color_water,
-)
+fig.coast(resolution="f", borders=f"1/1p,{color_borders}")
 
 # -----------------------------------------------------------------------------
 # Faults
@@ -205,21 +203,6 @@ fig.plot(
     style="f0.25i/0.15c+r+t+o.5c",  # trust fault
     fill=color_URG,
     pen=f"1.2p,{color_URG}",
-)
-
-# -----------------------------------------------------------------------------
-# Towns
-# marker
-fig.plot(data=file_twons_in, style="s0.3c", fill="white", pen="1p,black")
-# labels
-fig.text(
-    textfiles=file_twons_in,
-    font=True,  # read from file
-    angle=True,  # read from file
-    justify=True,  # read from file
-    offset="0.2c",
-    fill="white@30",
-    clearance=clearance_standard,
 )
 
 # -----------------------------------------------------------------------------
@@ -396,10 +379,10 @@ for station in stations:
 
 
 # %%
+# -----------------------------------------------------------------------------
 # Sketch for piercing points
 # -----------------------------------------------------------------------------
-# Externally created in Microsoft PowerPoint
-pp_image = "percingpoints_sketch_orange.eps"
+pp_image = "percingpoints_sketch_orange.eps"  # Externally created in MS PowerPoint
 fig.image(imagefile=f"{path_in}/{pp_image}", position="jTR+w3c+o0.1c")
 
 # -----------------------------------------------------------------------------
@@ -444,49 +427,147 @@ with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
             frame_pp = cb_dt_label
             pos_pp = cb_dt_pos
         case "baz":
-            cmap_pp = cmap_baz
-            frame_pp = cb_baz_label
-            pos_pp = cb_baz_pos
-    if status_pp != "station":
+            if status_cw == False:
+                cmap_pp = cmap_baz
+                frame_pp = cb_baz_label
+                pos_pp = cb_baz_pos
+    if status_pp == "station" or (status_pp == "baz" and status_cw == True):
+        pass
+    else:
         fig.colorbar(cmap=cmap_pp, frame=frame_pp, position=pos_pp, box=box_standard)
+
+
+ # %%
+# -----------------------------------------------------------------------------
+# Add colorwheel for backazimuth instead of normal colorbar
+# -> eps file external created, see
+# https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff/
+# -> folder 02_colorwheel
+# -----------------------------------------------------------------------------
+if status_pp == "baz" and status_cw == True:
+    rad_tot = 6.3
+    width_cw = rad_tot * 0.888  # manually adjusted
+    lon_center = 8.330  # BFO
+    lat_center = 48.331
+
+    with fig.inset(position= f"JLT+jLT+w{rad_tot}c+o0.1c"):
+
+        # Azimuthal equidistant projection
+        # - elon0/lat0[/horizon]/scale  OR
+        #   Elon0/lat0[/horizon]/width
+        # - horizon max. distance to the projection center
+        #   i.e. the visible portion of the rest of the world map
+        #   in degrees <= 180¡ (default 180¡)
+        fig.basemap(region="g", projection=f"E{lon_center}/{lat_center}/170/?", frame=0)
+
+        # Land and water masses and shorelines
+        fig.coast(
+            area_thresh="50000",
+            resolution="c",
+            land=color_land,
+            water="white",
+            shorelines="1/0.1p,darkgray"
+        )
+
+# -----------------------------------------------------------------------------
+        # Colorwheel via eps file externally created
+        fig.image(
+            imagefile=f"{path_in}/colorwheel_N_cw_pygmt_romaO.eps",
+            position=f"x{rad_tot / 2}/{rad_tot / 2}c+jMC+w{width_cw}c",
+        )
+
+# -----------------------------------------------------------------------------
+        # Plate boundaries
+        fig.plot(data=file_pb, pen=f"0.5p,{color_pb}")
+
+        # Epicentral distance range used in this study
+        for epi, y in zip([90, 150], [-29, -88]):  # degrees
+            # circles
+            fig.plot(x=lon_center, y=lat_center, style=f"E-{epi * 2}+d", pen="1p,gray50,-")
+            # annotations
+            fig.text(x=lon_center, y=y, text=f"{epi}@.", font="10p,black")
+
+# -----------------------------------------------------------------------------
+        # Epicenters
+        # raypaths
+        for file_rays in ["NN", "N"]:
+            fig.plot(
+                data=f"{path_in}/BFO_rays_swsm_{file_rays}_goodfair.txt",
+                pen="0.2p,gray25@70",
+            )
+        # non-nulls
+        fig.plot(
+            data=f"{path_in}/BFO_epi_swsm_NN_goodfair.txt",
+            style="c0.17c",
+            fill="gray70",
+            pen="0.5p,gray25",
+        )
+        # nulls
+        fig.plot(
+            data=f"{path_in}/BFO_epi_swsm_N_goodfair.txt",
+            style="c0.12c",
+            fill="white",
+            pen="0.5p,gray25",
+        )
+
+# -----------------------------------------------------------------------------
+        # Recording station
+        # marker
+        fig.plot(
+            x=lon_center, y=lat_center, style="i0.47c", fill=color_sta, pen="0.6p,black"
+        )
+        # label
+        fig.text(
+            x=lon_center,
+            y=lat_center,
+            text="BFO",
+            offset="0c/-0.6c",
+            fill="white@30",
+            pen=f"0.8p,{color_hl}",
+            clearance=clearance_standard,
+        )
 
 
 # %%
 # -----------------------------------------------------------------------------
 # Inset map of Central Europe
-# -----------------------------------------------------------------------------
-with fig.inset(position="jTL+jTL+w3.5c+o-0.24c/0.05c"):
-    gmt.config(MAP_FRAME_TYPE="plain", MAP_TICK_LENGTH_PRIMARY="0p")
-    # >>> use ? <<<
-    # otherwise something goes wrong with the box around the study area
+# -----------------------------------------------------------------------------:
+if status_pp == "baz" and status_cw == True:
+    pass
+else:
+    with fig.inset(position="jTL+jTL+w3.4c+o-0.2c/0.1c"):
+        gmt.config(MAP_FRAME_TYPE="plain", MAP_TICK_LENGTH_PRIMARY="0p")
+        # >>> use ? <<<
+        # otherwise something goes wrong with the box around the study area
 
-    fig.basemap(region=[2.8, 16, 46, 56], projection=proj_study, frame=0)
-    fig.coast(
-        land=color_land,
-        water=color_water,
-        area_thresh="20/0/1",
-        resolution="h",
-        shorelines="1/0.15p,black",
-        borders="1/0.35p,black",
-    )
-    fig.basemap(frame="f")
+        fig.basemap(region=[2.8, 16, 46, 56], projection=proj_study, frame=0)
+        fig.coast(
+            land=color_land,
+            water=color_water,
+            area_thresh="20/0/1",
+            resolution="h",
+            shorelines="1/0.15p,black",
+            borders="1/0.35p,black",
+        )
+        fig.basemap(frame="f")
 
-    # label for countries
-    fig.text(
-        x=np.array([10.50, 4.50, 8.30]),
-        y=np.array([51.10, 47.80, 46.70]),
-        text=["DE", "FR", "CH"],
-        font="8p,black",
-        fill="white@30",
-        clearance=clearance_standard,
-    )
+        # Labels for countries
+        fig.text(
+            x=np.array([10.50, 4.50, 8.30]),
+            y=np.array([51.10, 47.80, 46.70]),
+            text=["DE", "FR", "CH"],
+            font="8p,black",
+            fill="white@30",
+            clearance=clearance_standard,
+        )
 
-    # rectangle at study area
-    fig.plot(
-        x=[lon_min, lon_min, lon_max, lon_max, lon_min],
-        y=[lat_min, lat_max, lat_max, lat_min, lat_min],
-        pen=f"1p,{color_hl}",
-    )
+        # Rectangle at study area
+        fig.plot(
+            x=[lon_min, lon_min, lon_max, lon_max, lon_min],
+            y=[lat_min, lat_max, lat_max, lat_min, lat_min],
+            pen=f"1p,{color_hl}",
+        )
+
 
 # -----------------------------------------------------------------------------
 # Show and save figure

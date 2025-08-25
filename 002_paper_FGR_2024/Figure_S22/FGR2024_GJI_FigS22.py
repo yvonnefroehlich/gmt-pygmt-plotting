@@ -37,7 +37,7 @@ import pygmt as gmt
 # Choose
 # -----------------------------------------------------------------------------
 status_station = "URG"  ## "BFO" | "URG" | "URGwithBFO"
-status_pp = "phi"  ## "phase" | "phi" | "dt" | "si" | "baz"
+status_pp = "si"  ## "phase" | "phi" | "dt" | "si" | "baz"
 
 
 # %%
