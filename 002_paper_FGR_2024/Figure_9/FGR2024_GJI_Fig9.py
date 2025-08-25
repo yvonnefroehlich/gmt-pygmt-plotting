@@ -452,13 +452,14 @@ if status_pp == "baz" and status_cw == True:
 
     with fig.inset(position= f"JLT+jLT+w{rad_tot}c+o0.1c"):
 
-        # azimuthal equidistant projection
+        # Azimuthal equidistant projection
         # - elon0/lat0[/horizon]/scale  OR
         #   Elon0/lat0[/horizon]/width
         # - horizon max. distance to the projection center
         #   i.e. the visible portion of the rest of the world map
         #   in degrees <= 180¡ (default 180¡)
         fig.basemap(region="g", projection=f"E{lon_center}/{lat_center}/170/?", frame=0)
+
         # Land and water masses and shorelines
         fig.coast(
             area_thresh="50000",
@@ -467,6 +468,8 @@ if status_pp == "baz" and status_cw == True:
             water="white",
             shorelines="1/0.1p,darkgray"
         )
+
+# -----------------------------------------------------------------------------
         # Colorwheel via eps file externally created
         fig.image(
             imagefile=f"{path_in}/colorwheel_N_cw_pygmt_romaO.eps",
@@ -548,7 +551,7 @@ else:
         )
         fig.basemap(frame="f")
 
-        # label for countries
+        # Label for countries
         fig.text(
             x=np.array([10.50, 4.50, 8.30]),
             y=np.array([51.10, 47.80, 46.70]),
@@ -558,7 +561,7 @@ else:
             clearance=clearance_standard,
         )
 
-        # rectangle at study area
+        # Rectangle at study area
         fig.plot(
             x=[lon_min, lon_min, lon_max, lon_max, lon_min],
             y=[lat_min, lat_max, lat_max, lat_min, lat_min],
