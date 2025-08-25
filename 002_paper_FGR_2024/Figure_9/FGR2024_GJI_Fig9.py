@@ -513,7 +513,7 @@ if status_pp == "baz" and status_cw == True:
         fig.plot(
             x=lon_center, y=lat_center, style="i0.47c", fill=color_sta, pen="0.6p,black"
         )
-        # lable
+        # label
         fig.text(
             x=lon_center,
             y=lat_center,
