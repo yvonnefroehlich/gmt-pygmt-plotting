@@ -439,9 +439,11 @@ with gmt.config(MAP_TICK_LENGTH_PRIMARY="2p", FONT="17p"):
 
  # %%
 # -----------------------------------------------------------------------------
-# Add colorwheel for backazimuth
+# Add colorwheel for backazimuth instead of normal colorbar
+# -> eps file external created, see
+# https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff/
+# -> folder 02_colorwheel
 # -----------------------------------------------------------------------------
-# Add colorwheel for backazimuth as eps file instead of colorbar
 if status_pp == "baz" and status_cw == True:
     rad_tot = 6.3
     width_cw = rad_tot * 0.888  # manually adjusted
