@@ -60,4 +60,4 @@ with pygmt.config(FONT=f"{font_size / font_scaling2}"):
     fig.colorbar(cmap="navia", position=f"jBC+w{cb2_width}c+h", frame=f"x+l{cb2_label}")
 
 fig.show()
-fig.savefig(fname="cb_font_scaling.png")
+# fig.savefig(fname="cb_font_scaling.png")
