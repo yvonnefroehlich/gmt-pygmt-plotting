@@ -6,9 +6,10 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/11/26
+# - Updated: 2025/08/26
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.13.0 -> https://www.pygmt.org/v0.13.0/ | https://www.pygmt.org/
+# - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
@@ -41,14 +42,16 @@ def scale_cb_font(cb_width):
 
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
-fig.basemap(region=[-plot_size, plot_size] * 2, projection=f"X{plot_size}c", frame=0)
+with pygmt.config(FONT=font_size):
+    fig.basemap(region=[-plot_size, plot_size] * 2, projection=f"X{plot_size}c", frame=1)
 
 fig.colorbar(cmap="navia", position=f"jTC+w{cb1_width}c+h", frame=f"x+l{cb1_label}")
 fig.colorbar(cmap="navia", position=f"jBC+w{cb2_width}c+h", frame=f"x+l{cb2_label}")
 
 # -----------------------------------------------------------------------------
-fig.shift_origin(xshift="5.5c")
-fig.basemap(region=[-plot_size, plot_size] * 2, projection=f"X{plot_size}c", frame=0)
+fig.shift_origin(xshift="6c")
+with pygmt.config(FONT=font_size):
+    fig.basemap(region=[-plot_size, plot_size] * 2, projection=f"X{plot_size}c", frame=1)
 
 font_scaling = scale_cb_font(cb1_width)
 with pygmt.config(FONT=f"{font_size / font_scaling}"):
