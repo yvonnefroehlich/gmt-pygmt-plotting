@@ -39,7 +39,7 @@ def scale_cb_font(cb_width):
 
 fig = pygmt.Figure()
 
-# (Left)
+# Left
 pygmt.config(FONT=font_size)
 fig.basemap(region=[-plot_size, plot_size] * 2, projection=f"X{plot_size}c", frame=1)
 
@@ -48,7 +48,7 @@ fig.colorbar(cmap="navia", position=f"jBC+w{cb2_width}c+h", frame=f"x+l{cb2_labe
 
 fig.shift_origin(xshift="6c")
 
-# (Right)
+# Right
 with pygmt.config(FONT=font_size):
     fig.basemap(region=[-plot_size, plot_size] * 2, projection=f"X{plot_size}c", frame=1)
 
