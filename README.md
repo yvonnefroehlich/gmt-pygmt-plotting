@@ -130,9 +130,9 @@ _Please note_: Specific references are given in the single notebooks and scripts
   The Generic Mapping Tools version 6.
   *Geochemistry, Geophysics, Geosystems*, volume 20, issue 11, pages 5556-5564.
   https://doi.org/10.1029/2019GC008515.
-- [**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M. & Esteban, F. (2024)_**](https://doi.org/10.5281/zenodo.10119499).
-  The Generic Mapping Tools, version 6.5.0.
-  *Zenodo*. https://doi.org/10.5281/zenodo.10119499 (6.5.0), https://doi.org/10.5281/zenodo.3407865 (all versions / latest version).
+- [**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., Esteban, F. & Fröhlich, Y. (2025)_**](https://doi.org/10.5281/zenodo.16448627).
+  The Generic Mapping Tools, version 6.6.0.
+  *Zenodo*. https://doi.org/10.5281/zenodo.16448627 (6.6.0), https://doi.org/10.5281/zenodo.3407865 (all versions / latest version).
 
 
 ## Funding
