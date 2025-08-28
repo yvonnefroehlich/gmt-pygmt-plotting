@@ -87,14 +87,14 @@ If you make use of this material, please acknowledge the relating publications i
 
 _Please note_: The required versions are given above in the single folders as well as notebooks and scripts.
 
-- [PyGMT](https://www.pygmt.org/latest/)
-- [GMT](https://www.generic-mapping-tools.org/)
-- [Python](https://www.python.org/)
-- [Jupyter notebook](https://jupyter.org/) or [JupyterLab](https://jupyter.org/)
-- [NumPy](https://numpy.org/)
-- [pandas](https://pandas.pydata.org/)
-- [ObsPy](https://docs.obspy.org/)
-- [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal/)
+- [PyGMT](https://www.pygmt.org)
+- [GMT](https://www.generic-mapping-tools.org)
+- [Python](https://www.python.org)
+- [Jupyter notebook](https://jupyter.org) or [JupyterLab](https://jupyter.org)
+- [NumPy](https://numpy.org)
+- [pandas](https://pandas.pydata.org)
+- [ObsPy](https://docs.obspy.org)
+- [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal)
 
 
 ## Contributing
