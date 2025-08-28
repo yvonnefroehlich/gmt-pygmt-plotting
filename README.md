@@ -35,23 +35,33 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 If you make use of this material, please acknowledge the relating publications in which framework these scripts and notebooks were written:
 
 **Peer-reviewed journal articles**
-- [**_Fröhlich Y., Grund M. & Ritter J. R. R. (2024)_**](https://doi.org/10.1093/gji/ggae245).
+- [**_Fröhlich Y, Grund M, Ritter J R R (2024)_**](https://doi.org/10.1093/gji/ggae245).
   Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere system underneath Central Europe from long-term splitting measurements.
-  *Geophysical Journal International*, 239(1), 112-135.
+  *Geophysical Journal International*, 239(1):112-135.
   https://doi.org/10.1093/gji/ggae245.
-- [**_Ritter J. R. R., Fröhlich Y., Sanz Alonso Y. & Grund M. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w).
+- [**_Ritter J R R, Fröhlich Y, Sanz Alonso Y, Grund M (2022)_**](https://doi.org/10.1007/s10950-022-10112-w).
   Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures.
-  *Journal of Seismology*, 26, 1137-1156.
+  *Journal of Seismology*, 26:1137-1156.
   https://doi.org/10.1007/s10950-022-10112-w, correction https://doi.org/10.1007/s10950-023-10136-w.
+  
+**Doctoral studies**
+- [**_Fröhlich Y (2025a)_**](https://doi.org/10.5445/IR/1000183786).
+  Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
+  Dissertation, *Karlsruhe Institute of Technology, Geophysical Institute*.
+  https://doi.org/10.5445/IR/1000183786.
+- [**_Fröhlich Y (2025b)_**](https://doi.org/10.5281/zenodo.15982581).
+  Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
+  Disputation, *Karlsruhe Institute of Technology, Geophysical Institute*.
+  https://doi.org/10.5281/zenodo.15982581.
 
 **Presentations**
-- [**_Fröhlich Y. & Ritter J. R. R. (2024)_**](https://dx.doi.org/10.5281/zenodo.14510993).
+- [**_Fröhlich Y, Ritter J R R (2024)_**](https://dx.doi.org/10.5281/zenodo.14510993).
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
   *Annual Meeting of the American Geophysical Union*, Washington D.C..
   Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral, DI21A-02.
   [Abstract ID 1578275](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275).
   https://dx.doi.org/10.5281/zenodo.14510993.
-- [**_Fröhlich Y., Tian D., Leong W. J., Jones M. & Grund M. (2024)_**](https://doi.org/10.6084/m9.figshare.28049495).
+- [**_Fröhlich Y, Tian D, Leong W J, Jones M, Grund M (2024)_**](https://doi.org/10.6084/m9.figshare.28049495).
   PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
   *Annual Meeting of the American Geophysical Union*, Washington D.C..
   Union Session The impact of GMT in the Earth, Ocean and Space sciences: What's next? I Oral, U12B-05 (invited).
@@ -59,28 +69,18 @@ If you make use of this material, please acknowledge the relating publications i
   https://doi.org/10.6084/m9.figshare.28049495.
 
 **Posters**
-- [**_Fröhlich Y., Dorn F., Dillah M. I. F. & Ritter J. R. R. (2024)_**](https://doi.org/10.5281/zenodo.14801004).
-  Investigation of seismic anisotropy in the D'' layer using XKS pairs.
+- [**_Fröhlich Y, Dorn F, Dillah M I F, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14801004).
+  Investigation of seismic anisotropy in the D'' layer using *X*KS pairs.
   *2th DeepDyn annual meeting*, Rügen.
   https://doi.org/10.5281/zenodo.14801004.
-- [**_Fröhlich Y., Dillah M. I. F., Dorn F. & Ritter J. R. R. (2024)_**](https://doi.org/10.5281/zenodo.12658821).
+- [**_Fröhlich Y, Dillah M I F, Dorn F, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.12658821).
   Investigation of seismic anisotropy in the D'' layer and at the CMB regarding intense magnetic flux regions.
   *18th Symposium of Study of the Earth's Deep Interior*, Great Barrington.
   https://doi.org/10.5281/zenodo.12658821.
-- [**_Fröhlich Y., Thiyagarajan H., Tölle L. S., Ritter J. R. R. & Thomas C. (2024)_**](https://doi.org/10.5281/zenodo.10927349).
+- [**_Fröhlich Y, Thiyagarajan H, Tölle L S, Ritter J R R, Thomas C (2024)_**](https://doi.org/10.5281/zenodo.10927349).
   Understanding the influence of seismic mantle structures at the core-mantle boundary on intense magnetic flux regions.
   *84th Annual Meeting of the German Geophysical Society*, Jena.
   https://doi.org/10.5281/zenodo.10927349.
-
-**Doctoral studies**
-- [**_Fröhlich Y. (2025a)_**](https://doi.org/10.5445/IR/1000183786).
-  Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
-  Dissertation, *Karlsruhe Institute of Technology, Geophysical Institute*.
-  https://doi.org/10.5445/IR/1000183786.
-- [**_Fröhlich Y. (2025b)_**](https://doi.org/10.5281/zenodo.15982581).
-  Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
-  Disputation, *Karlsruhe Institute of Technology, Geophysical Institute*.
-  https://doi.org/10.5281/zenodo.15982581.
 
 
 ## Requirements
@@ -108,29 +108,29 @@ or [submit a pull request](https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 
 _Please note_: Specific references are given in the single notebooks and scripts.
 
-- [**_Bird, P. (2003)_**](https://doi.org/10.1029/2001GC000252).
+- [**_Bird P (2003)_**](https://doi.org/10.1029/2001GC000252).
   An updated digital model of plate boundaries.
   *Geochemistry, Geophysics, Geosystems*, volume 4, issue 3, page 1027.
   https://doi.org/10.1029/2001GC000252.
-- [**_Crameri, F. (2021)_**](https://doi.org/10.5281/zenodo.1243862).
+- [**_Crameri F (2021)_**](https://doi.org/10.5281/zenodo.1243862).
   Scientific colour maps.
   *Zenodo*. https://www.fabiocrameri.ch/colourmaps.php. https://doi.org/10.5281/zenodo.1243862.
-- [**_Thyng, K. M., Greene, C. A., Hetland, R. D., Zimmerle, H. M. & DiMarco, S. F. (2016)_**](https://dx.doi.org/10.5670/oceanog.2016.66).
+- [**_Thyng K M, Greene C A, Hetland R D, Zimmerle H M, DiMarco S F (2016)_**](https://dx.doi.org/10.5670/oceanog.2016.66).
   True colors of oceanography: Guidelines for effective and accurate colormap selection.
   *Oceanography*, volume 29, issue 3, pages 9-13.
   https://dx.doi.org/10.5670/oceanog.2016.66.
-- [**_Tian, D., Uieda, L., Leong, W. J., Fröhlich, Y., Grund, M., Schlitzer, W., Jones, M., Toney, L., Yao, J., Tong, J.-H., Magen, Y., Materna, K., Belem, A., Newton, T., Anant, A., Ziebarth, M., Quinn, J. & Wessel, P. (2024)_**](https://doi.org/10.5281/zenodo.15071586).
+- [**_Tian D, Uieda L, Leong W J, Fröhlich Y, Grund M, Schlitzer W, Jones M, Toney L, Yao J, Tong J-H, Mage Y, Materna K, Belem A, Newton T, Anant A, Ziebarth M, Quinn J, Wessel P (2024)_**](https://doi.org/10.5281/zenodo.15071586).
   PyGMT: A Python interface for the Generic Mapping Tools, version v0.16.0.
   *Zenodo*. https://doi.org/10.5281/zenodo.15628725 (v0.16.0), https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
-- [**_Wessel, P., Smith, W. H. F., Scharroo, R., Luis, J. F. & Wobbe. F. (2013)_**](https://doi.org/10.1002/2013EO450001).
+- [**_Wessel P, Smith W H F, Scharroo R, Luis J F, Wobbe F (2013)_**](https://doi.org/10.1002/2013EO450001).
   Generic mapping tools: improved version released.
   *Eos, Transactions American Geophysical Union*, volume 94, issue 45, pages 409-410.
   https://doi.org/10.1002/2013EO450001.
-- [**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F. & Tian, D. (2019)_**](https://doi.org/10.1029/2019GC008515).
+- [**_Wessel P, Luis J F, Uieda L, Scharroo R, Wobbe F, Smith W H F, Tian D (2019)_**](https://doi.org/10.1029/2019GC008515).
   The Generic Mapping Tools version 6.
   *Geochemistry, Geophysics, Geosystems*, volume 20, issue 11, pages 5556-5564.
   https://doi.org/10.1029/2019GC008515.
-- [**_Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., Tian, D., Jones, M., Esteban, F. & Fröhlich, Y. (2025)_**](https://doi.org/10.5281/zenodo.16448627).
+- [**_Wessel P, Luis J F, Uieda L, Scharroo R, Wobbe F, Smith W H F, Tian D, Jones M, Esteban F, Fröhlich Y (2025)_**](https://doi.org/10.5281/zenodo.16448627).
   The Generic Mapping Tools, version 6.6.0.
   *Zenodo*. https://doi.org/10.5281/zenodo.16448627 (6.6.0), https://doi.org/10.5281/zenodo.3407865 (all versions / latest version).
 
