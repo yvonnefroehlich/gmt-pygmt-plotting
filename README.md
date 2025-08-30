@@ -114,18 +114,18 @@ _Please note_: Specific references are given in the single notebooks and scripts
   *Zenodo*. https://doi.org/10.5281/zenodo.1243862.
 - [**_Thyng K M, Greene C A, Hetland R D, Zimmerle H M, DiMarco S F (2016)_**](https://dx.doi.org/10.5670/oceanog.2016.66).
   True colors of oceanography: Guidelines for effective and accurate colormap selection.
-  *Oceanography*, volume 29, issue 3, pages 9-13.
+  *Oceanography*, 29(3):9-13.
   https://dx.doi.org/10.5670/oceanog.2016.66.
 - [**_Tian D, Uieda L, Leong W J, Fröhlich Y, Grund M, Schlitzer W, Jones M, Toney L, Yao J, Tong J-H, Mage Y, Materna K, Belem A, Newton T, Anant A, Ziebarth M, Quinn J, Wessel P (2024)_**](https://doi.org/10.5281/zenodo.15071586).
   PyGMT: A Python interface for the Generic Mapping Tools, version v0.16.0.
   *Zenodo*. https://doi.org/10.5281/zenodo.15628725 (v0.16.0), https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
 - [**_Wessel P, Smith W H F, Scharroo R, Luis J F, Wobbe F (2013)_**](https://doi.org/10.1002/2013EO450001).
   Generic mapping tools: improved version released.
-  *Eos, Transactions American Geophysical Union*, volume 94, issue 45, pages 409-410.
+  *Eos, Transactions American Geophysical Union*, 94(45):409-410.
   https://doi.org/10.1002/2013EO450001.
 - [**_Wessel P, Luis J F, Uieda L, Scharroo R, Wobbe F, Smith W H F, Tian D (2019)_**](https://doi.org/10.1029/2019GC008515).
   The Generic Mapping Tools version 6.
-  *Geochemistry, Geophysics, Geosystems*, volume 20, issue 11, pages 5556-5564.
+  *Geochemistry, Geophysics, Geosystems*, 20(11):5556-5564.
   https://doi.org/10.1029/2019GC008515.
 - [**_Wessel P, Luis J F, Uieda L, Scharroo R, Wobbe F, Smith W H F, Tian D, Jones M, Esteban F, Fröhlich Y (2025)_**](https://doi.org/10.5281/zenodo.16448627).
   The Generic Mapping Tools, version 6.6.0.
