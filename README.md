@@ -1,8 +1,8 @@
 # PyGMT plotting
 
-Collection of Python scripts or Jupyter notebooks (supported by JupyterLab) to reproduce some of the geographic maps shown in the
-publications I am involved. To prepare these maps I am using [_PyGMT_](https://www.pygmt.org/latest/) the Python wrapper for the
-[_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org/).
+Collection of Python scripts or Jupyter notebooks (supported by JupyterLab) to reproduce some of the geographic and
+geophysical maps shown in the publications I am involved. To prepare these maps [_PyGMT_](https://www.pygmt.org) the
+Python wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org) is used.
 
 <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.png">
 
@@ -43,7 +43,7 @@ If you make use of this material, please acknowledge the relating publications i
   Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures.
   *Journal of Seismology*, 26:1137-1156.
   https://doi.org/10.1007/s10950-022-10112-w, correction https://doi.org/10.1007/s10950-023-10136-w.
-  
+
 **Doctoral studies**
 - [**_Fröhlich Y (2025a)_**](https://doi.org/10.5445/IR/1000183786).
   Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
@@ -108,13 +108,10 @@ or [submit a pull request](https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 
 _Please note_: Specific references are given in the single notebooks and scripts.
 
-- [**_Bird P (2003)_**](https://doi.org/10.1029/2001GC000252).
-  An updated digital model of plate boundaries.
-  *Geochemistry, Geophysics, Geosystems*, volume 4, issue 3, page 1027.
-  https://doi.org/10.1029/2001GC000252.
-- [**_Crameri F (2021)_**](https://doi.org/10.5281/zenodo.1243862).
+- [**_Crameri F (2023)_**](https://doi.org/10.5281/zenodo.1243862).
   Scientific colour maps.
-  *Zenodo*. https://www.fabiocrameri.ch/colourmaps.php. https://doi.org/10.5281/zenodo.1243862.
+  https://www.fabiocrameri.ch/colourmaps.php.
+  *Zenodo*. https://doi.org/10.5281/zenodo.1243862.
 - [**_Thyng K M, Greene C A, Hetland R D, Zimmerle H M, DiMarco S F (2016)_**](https://dx.doi.org/10.5670/oceanog.2016.66).
   True colors of oceanography: Guidelines for effective and accurate colormap selection.
   *Oceanography*, volume 29, issue 3, pages 9-13.
