@@ -1,8 +1,8 @@
 # PyGMT plotting
 
 Collection of Python scripts or Jupyter notebooks (supported by JupyterLab) to reproduce some of the geographic and
-geophysical maps shown in the publications I am involved. To prepare these maps [_PyGMT_](https://www.pygmt.org) the
-Python wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org) is used.
+geophysical maps shown in the publications I am involved in. To prepare these maps, [_PyGMT_](https://www.pygmt.org)
+the Python wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org) is used.
 
 <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.png">
 
