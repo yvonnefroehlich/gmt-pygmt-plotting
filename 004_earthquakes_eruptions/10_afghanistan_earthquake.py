@@ -2,6 +2,8 @@
 # Afghanistan earthquake on 2025/08/31
 # See also: https://earthquake.usgs.gov/earthquakes/eventpage/us7000qsvj/region-info
 #           last accessed: 2025/09/01
+#           https://earthquakeinsights.substack.com/p/deadly-m6-earthquake-strikes-northeastern
+#           last accessed: 2025/09/01
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/09/01
