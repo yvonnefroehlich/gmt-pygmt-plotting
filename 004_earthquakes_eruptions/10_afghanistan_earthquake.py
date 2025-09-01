@@ -129,7 +129,6 @@ fig.plot(
     fill=color_hl,
     pen=color_hl,
 )
-
 # Beachball
 pen_epi = "0.5p,black"
 fig.meca(
@@ -140,7 +139,6 @@ fig.meca(
     offset=pen_epi,
     outline=pen_epi,
 )
-
 # Label
 fig.text(
     x=lon_eq,
@@ -201,7 +199,6 @@ with fig.inset(position=pos_study_inset):
         data=[[lon_min, lat_min, lon_max, lat_max]], style="r+s", pen=f"1p,{color_hl}"
     )
     fig.plot(x=lon_eq, y=lat_eq, style="c0.1c", fill=color_hl)
-
 
 # -----------------------------------------------------------------------------
 # Show and save figure
