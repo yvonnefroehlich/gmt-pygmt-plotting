@@ -109,16 +109,13 @@ fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pb}")
 fig.coast(borders=f"1/1p,{color_nb}", rivers=f"1/1p,{color_river}")
 fig.coast(dcw=f"AF+p1p,{color_hl},2_4")
 
-# Add frame
-fig.basemap(frame=["af", "wSnE"])
-
 # -----------------------------------------------------------------------------
 # Add colorbar for elevation
 fig.colorbar(position=pos_cb_grid, frame=frame_cb_grid, box=box_standard)
 
-# Add length scale
+# Add frame and length scale
 with gmt.config(FONT="8p"):
-    fig.basemap(map_scale=basemap_scale, box=box_standard)
+    fig.basemap(map_scale=basemap_scale, box=box_standard, frame=["af", "wSnE"])
 
 # -----------------------------------------------------------------------------
 # Plot earthquake
