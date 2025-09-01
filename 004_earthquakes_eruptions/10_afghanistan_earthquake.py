@@ -67,7 +67,7 @@ lat_eq = 34.519  # degrees North
 # -----------------------------------------------------------------------------
 # Colors
 color_water = "steelblue"
-color_river = "darkblue"
+color_river = "steelblue4"
 color_land = "gray70"
 color_sl = "gray30"  # shorelines
 color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
@@ -128,6 +128,17 @@ fig.plot(
     pen=color_hl,
 )
 
+# Beachball
+pen_epi = "0.5p,black"
+fig.meca(
+    spec=f"{path_in}/meca_afghanistan.txt",
+    convention="aki",
+    scale="1c",
+    compressionfill=color_hl,  # fill color of compressive quadrants
+    offset=pen_epi,
+    outline=pen_epi,
+)
+
 # Label
 fig.text(
     x=lon_eq,
@@ -154,7 +165,7 @@ fig.text(
 # Plate names
 fig.text(
     x=[73, 80],
-    y=[32.2, 39],
+    y=[30, 39],
     text=["India Plate", "Eurasia Plate"],
     font="6p,Helvetica-Bold,black",
     fill="white@30",

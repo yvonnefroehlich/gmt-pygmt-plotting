@@ -1,0 +1,7 @@
+# Beachball of Afghanistan earthquake
+# source: https://earthquake.usgs.gov/earthquakes/eventpage/us7000qsvj/moment-tensor
+# last access: 2025/09/01
+#
+# For usage in GMT / PyGMT
+# lon_eq lat_eq hdepth strike dip rake magnitude lon_plot lat_plot
+70.734 34.519 8 251 41 108 6 73 32
