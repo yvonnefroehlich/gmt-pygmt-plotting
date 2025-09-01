@@ -4,7 +4,7 @@
 # paragraph mode
 # x y [font angle justify] linespace parwidth parjust
 # new line by blank line
-> 72 39 13p 4.2c l
+> 71.3 43.4 13p 4.2c l
 Date: 2025/08/31 19:17:34 (UTC)
 
 Epicenter: 70.734@.E, 34.519@.N

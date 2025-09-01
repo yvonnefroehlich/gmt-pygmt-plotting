@@ -37,15 +37,10 @@ path_out = "02_out_figs"
 
 # -----------------------------------------------------------------------------
 # Define region and projections
-lon_min = 65  # degrees East
-lon_max = 75
-lat_min = 30  # degrees North
-lat_max = 37
-
 lon_min = 60  # degrees East
-lon_max = 75
-lat_min = 27  # degrees North
-lat_max = 40
+lon_max = 85
+lat_min = 26  # degrees North
+lat_max = 45
 
 region = [lon_min, lon_max, lat_min, lat_max]
 center_str = f"{(lon_max + lon_min) / 2}/{(lat_max + lat_min) / 2}"
@@ -82,12 +77,12 @@ color_profil = "darkblue"
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
-basemap_scale = f"JLB+jLB+w100+c{center_str}+f+lkm+at+o4c/0.7c"
+basemap_scale = f"JLB+jLB+w200+c{center_str}+f+lkm+at+o4.2c/0.55c"
 
-pos_study_inset = "jTL+w3.5c+o0.1c"
+pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c/0.55c+e0.2c"
+frame_cb_grid = "xa1000f500+lelevation / m"
 
-pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c+e0.2c"
-frame_cb_grid = "xa2500f500+lelevation / m"
+pos_study_inset = "jTL+w3.5c+o-0.6c"
 
 box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
 
@@ -112,10 +107,10 @@ fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pb}")
 
 # Plot national boundaries and rivers
 fig.coast(borders=f"1/1p,{color_nb}", rivers=f"1/1p,{color_river}")
-fig.coast(dcw=f"AF+p1p,{color_hl},4_2")
+fig.coast(dcw=f"AF+p1p,{color_hl},2_4")
 
 # Add frame
-fig.basemap(frame=["wSnE", "afg"])
+fig.basemap(frame=["af", "wSnE"])
 
 # -----------------------------------------------------------------------------
 # Add colorbar for elevation
@@ -137,24 +132,13 @@ fig.plot(
     pen=color_hl,
 )
 
-# Beachball
-# pen_epi = "0.5p,black"
-# fig.meca(
-#     spec=f"{path_in}/meca_afghanistan.txt",
-#     convention="aki",
-#     scale="1c",
-#     compressionfill=color_hl,  # fill color of compressive quadrants
-#     offset=pen_epi,
-#     outline=pen_epi,
-# )
-
 # Label
 fig.text(
     x=lon_eq,
     y=lat_eq,
     text="Jalālābād",
     font="8p,Helvetica-Bold,black",
-    offset="0c/-0.7c",
+    offset="-1.2c/0c",
     fill="white@30",
     pen=f"0.8p,{color_hl}",
     clearance="0.1c/0.1c+tO",
@@ -171,24 +155,15 @@ fig.text(
     pen="0.5p,gray30",
 )
 
-# # Plate names
-# fig.text(
-#     x=[152, 153, 182],
-#     y=[55.5, 33, 56],
-#     text=["Okhotsk Microplate", "Pazific Plate", "North American Plate"],
-#     angle=[55, 50, 0],
-#     font="6p,Helvetica-Bold,black",
-#     fill="white@30",
-#     clearance="0.05c/0.05c+tO",
-# )
-
-# # Plate motion direction
-# fig.plot(
-#     data=[[150.5, 35, 137, 0.6], [157.5, 40.5, 137, 0.6]],
-#     style="v0.3c+e+h0.1+a45",
-#     pen=f"3p,{color_hl}",
-#     fill=color_hl,
-# )
+# Plate names
+fig.text(
+    x=[73, 80],
+    y=[32.2, 39],
+    text=["India Plate", "Eurasia Plate"],
+    font="6p,Helvetica-Bold,black",
+    fill="white@30",
+    clearance="0.05c/0.05c+tO",
+)
 
 # -----------------------------------------------------------------------------
 # Inset map of study region
@@ -222,6 +197,6 @@ with fig.inset(position=pos_study_inset):
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
-for ext in ["png"]:  # , "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+# for ext in ["png"]:  # , "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
