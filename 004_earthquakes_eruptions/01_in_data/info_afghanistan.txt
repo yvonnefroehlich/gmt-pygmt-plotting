@@ -1,0 +1,14 @@
+# Infos on Afghanistan earthquake
+#
+# For usage in GMT / PyGMT
+# paragraph mode
+# x y [font angle justify] linespace parwidth parjust
+# new line by blank line
+> 224 65.7 13p 4.2c l
+Date: 2025/31/08 19:17:34 (UTC)
+
+Epicenter: 70.734@.E, 34.519@.N
+
+Hypocentral depth: 8.0 km
+
+Moment magnitude: 6.0
