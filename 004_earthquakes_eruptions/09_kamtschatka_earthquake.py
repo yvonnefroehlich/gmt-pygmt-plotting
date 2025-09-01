@@ -5,8 +5,8 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/07/30
-# - Updated: 2025/08/03 - add profil for elevation
-# - Updated: 2025/08/04 - fix profil for elevation, add plate names and motion direction
+# - Updated: 2025/08/03 - add profile for elevation
+# - Updated: 2025/08/04 - fix profile for elevation, add plate names and motion direction
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0 | https://www.pygmt.org/
@@ -74,7 +74,7 @@ color_sl = "gray30"
 color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
 color_nb = "gray70"  # national boundaries
 color_hl = "255/90/0"  # highlight -> orange
-color_profil = "darkblue"
+color_profile = "darkblue"
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
@@ -113,7 +113,7 @@ fig.coast(borders=f"1/0.1p,{color_nb}")
 fig.basemap(frame=["wSnE", "xa20f5g10", "ya10f5g10"])
 
 # Add lines
-fig.hlines(y=lat_eq, pen=f"1p,{color_profil}")
+fig.hlines(y=lat_eq, pen=f"1p,{color_profile}")
 fig.vlines(x=lon_eq, pen=f"1p,{color_hl},4_2")
 
 # -----------------------------------------------------------------------------
@@ -190,7 +190,7 @@ fig.plot(
 )
 
 # -----------------------------------------------------------------------------
-# Profil plot elevation
+# profile plot elevation
 fig.shift_origin(yshift="+h+0.4c")
 
 lon0 = 180
@@ -205,7 +205,7 @@ for side in ["left", "right"]:
             lon_end = lon0
             delta_lon = lon0 - lon_min
         case "right":
-            lon_start = -(lon0 -0.001)
+            lon_start = -(lon0 - 0.001)
             lon_end = -(360 - lon_max)
             delta_lon = lon_max - lon0
 
@@ -232,7 +232,7 @@ for side in ["left", "right"]:
         x=track_df.r,
         y=track_df.elevation,
         fill="bisque",
-        pen=f"0.5p,{color_profil},solid",
+        pen=f"0.5p,{color_profile},solid",
         close=f"+y{y_min}",
     )
 
