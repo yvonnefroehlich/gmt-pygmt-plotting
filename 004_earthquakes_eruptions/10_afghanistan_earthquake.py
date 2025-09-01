@@ -69,11 +69,10 @@ lat_eq = 34.519  # degrees North
 color_water = "steelblue"
 color_river = "darkblue"
 color_land = "gray70"
-color_sl = "gray30"
+color_sl = "gray30"  # shorelines
 color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
 color_nb = "black"  # national boundaries
 color_hl = "255/90/0"  # highlight -> orange
-color_profil = "darkblue"
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
