@@ -111,7 +111,7 @@ fig.grdimage(grid=grid, region=region, cmap=True, shading=True)
 fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pb}")
 
 # Plot national boundaries and rivers
-fig.coast(borders=f"1/0.5p,{color_nb}", rivers=f"1/1p,{color_river}")
+fig.coast(borders=f"1/1p,{color_nb}", rivers=f"1/1p,{color_river}")
 fig.coast(dcw=f"AF+p1p,{color_hl},4_2")
 
 # Add frame
@@ -163,7 +163,7 @@ fig.text(
 # Info text
 # Adjust position in txt file
 fig.text(
-    textfiles=f"{path_in}/info_kamtschatka.txt",
+    textfiles=f"{path_in}/info_afghanistan.txt",
     M=True,  # paragraph mode # read from file
     font="8p,black",
     fill="white@30",
