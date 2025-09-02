@@ -1,6 +1,6 @@
 # 001_paper_RFSG_2022
 
-Jupyter notebook to reproduce **Fig. S4** of
+Jupyter notebooks to reproduce **Fig. S4** of
 
 > [**_Ritter J. R. R., Fröhlich Y., Sanz Alonso Y. & Grund M. (2022)_**](https://doi.org/10.1007/s10950-022-10112-w).
 > Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany – implications for the determination of anisotropic structures.
