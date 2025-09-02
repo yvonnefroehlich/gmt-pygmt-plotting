@@ -2,9 +2,9 @@
 
 _Recommended versions_: PyGMT v0.11.0-v0.16.0, GMT 6.4.0-6.5.0
 
-| Script | Location | Date and time | Map |
+| Code | Location | Date and time | Map |
 | --- | --- | --- | --- |
-| [00_overview_events_BFO.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/00_overview_events_BFO.py)         | global        | 2021 - present                   | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/004_earthquakes_eruptions/02_out_figs/00_overview_events_BFO.png" width="60">     |
+| [00_overview_events_BFO.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/00_overview_events_BFO.py)         | Global        | 2021 - present                   | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/004_earthquakes_eruptions/02_out_figs/00_overview_events_BFO.png" width="60">     |
 | [01_la_palma_eruption.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/01_la_palma_eruption.py)             | La Palma      | 2021/09/19 - 2021/12/13          | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/004_earthquakes_eruptions/02_out_figs/01_la_palma_eruption.png" width="60">       |
 | [02_tonga_eruption.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/02_tonga_eruption.py)                   | Tonga         | 2022/01/14-15                    | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/004_earthquakes_eruptions/02_out_figs/02_tonga_eruption.png" width="60">          |
 | [03_esmeraldas_earthquake.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/03_esmeraldas_earthquake.py)     | Esmeraldas    | 2022/03/27 at 04:28 (UTC)        | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/004_earthquakes_eruptions/02_out_figs/03_esmeraldas_earthquake.png" width="60">   |
