@@ -16,5 +16,3 @@ _Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
 | [Figure 10](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_10)   | Topographic map with stereoplots                      | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_10/02_out_figs/FGR2024_GJI_Fig10.png" width="150">          |
 | [Figure S1](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_S1)   | Epicenter distribution                                | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_S1/02_out_figs/FGR2024_GJI_FigS1_vertical.png" width="150"> |
 | [Figure S22](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_S22) | Piercing points in the lowermost mantle               | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_S22/02_out_figs/FGR2024_GJI_FigS22_URG_si.png" width="150"> |
-
-![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_002urg.png)
