@@ -11,7 +11,7 @@ _Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
 
 | **[Figure 1](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_1/FGR2024_GJI_Fig1.py)** | **[Figure 9](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_9/FGR2024_GJI_Fig9.py)** | **[Figure 10](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_10/FGR2024_GJI_Fig10.py)** |
 | --- | --- | --- |
-| Topographic map with seismological recording stations | Piercing points in the upper mantle | Topographic map with stereoplots |
+| Topographic map <br> with seismological recording stations | Topographic map <br> with piercing points in the upper mantle | Topographic map <br> with stereoplots |
 | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_1/02_out_figs/FGR2024_GJI_Fig1.png" width="250"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_9/02_out_figs/FGR2024_GJI_Fig9_phi.png" width="250"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_10/02_out_figs/FGR2024_GJI_Fig10.png" width="250"> |
 
 | **[Figure S1](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_S1/FGR2024_GJI_FigS1.py)** | **[Figure S9](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/use-tables-readmes/003_taup#003_taup)** | **[Figure S22](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_S22/FGR2024_GJI_FigS22.py)** |
