@@ -12,8 +12,9 @@ Python scripts related to:
 
 _Recommended versions_: PyGMT v0.13.0, GMT 6.5.0
 
-| [pygmt_pandas](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/011_agu_FTLJG_2024/FTLJG_agu24_u12b05_pygmt_pandas.py) <br> DataFrame → Tabular data | [pygmt_geopandas](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/011_agu_FTLJG_2024/FTLJG_agu24_u12b05_pygmt_geopandas.py) <br> GeoDataFrame → Spatial data | [pygmt_xarray](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/011_agu_FTLJG_2024/FTLJG_agu24_u12b05_pygmt_xarray.py) <br> DataArray → Gridded data | [pygmt_contextily](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/011_agu_FTLJG_2024/FTLJG_agu24_u12b05_pygmt_contextily.py) <br> Titled maps → Background maps |
+| [pygmt_pandas](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/011_agu_FTLJG_2024/FTLJG_agu24_u12b05_pygmt_pandas.py) | [pygmt_geopandas](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/011_agu_FTLJG_2024/FTLJG_agu24_u12b05_pygmt_geopandas.py) | [pygmt_xarray](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/011_agu_FTLJG_2024/FTLJG_agu24_u12b05_pygmt_xarray.py) | [pygmt_contextily](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/011_agu_FTLJG_2024/FTLJG_agu24_u12b05_pygmt_contextily.py) |
 | --- | --- | --- | --- |
+| DataFrame → Tabular data | GeoDataFrame → Spatial data | DataArray → Gridded data | Titled maps → Background maps |
 | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/011_agu_FTLJG_2024/02_out_figs/FTLJG_agu24_u12b05_pygmt_pandas.png" width="200"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/011_agu_FTLJG_2024/02_out_figs/FTLJG_agu24_u12b05_pygmt_geopandas.png" width="200"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/011_agu_FTLJG_2024/02_out_figs/FTLJG_agu24_u12b05_pygmt_xarray.png" width="200"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/011_agu_FTLJG_2024/02_out_figs/FTLJG_agu24_u12b05_pygmt_contextily.png" width="200"> |
 
 _See also_
