@@ -9,7 +9,7 @@ Jupyter notebooks to reproduce **Fig. S4** of
 
 _Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
 
-| Code | Description | Figure |
+| Code | Description | Figure(s) |
 | --- | --- | --- |
 | [RFSG_FigS4_left_swsm.ipynb](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_left_swsm.ipynb)                  | Piercing points in the lowermost mantle related to SWSMs at BFO | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_left_swsm.png" width="150">   |
 | [RFSG_FigS4_right_pairs.ipynb](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_right_pairs.ipynb)              | SKS-SKKS pairs in the lowermost mantle related to SWSMs at BFO  | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_right_pairs.png" width="150"> |

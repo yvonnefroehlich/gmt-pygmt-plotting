@@ -2,7 +2,7 @@
 
 _Recommended versions_: PyGMT v0.13.0, GMT 6.5.0
 
-| Code | Description | Figure |
+| Code | Description | Figure(s) |
 | --- | --- | --- |
 | [01_epidistance_lmm](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/009_deepdyn/01_epidistance_lmm) | Source-receiver constellation | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/009_deepdyn/01_epidistance_lmm/02_out_figs/map_epidist_LMM_XKS_center42E35N_epi140E15N.png" width="150"> |
 | [02_gufm1](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/009_deepdyn/02_gufm1)                     | Earth's magnetic field model gufm1 by [Jackson et al. (2000)](https://www.jstor.org/stable/2666741) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/009_deepdyn/02_gufm1/02_out_figs/gufm1_1980_2900km_Z.png" width="150"> |

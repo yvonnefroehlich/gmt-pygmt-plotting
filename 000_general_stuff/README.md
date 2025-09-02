@@ -2,7 +2,7 @@
 
 _Recommended versions_: PyGMT v0.11.0-v0.14.0, GMT 6.4.0-6.5.0
 
-| Code | Description | Figure |
+| Code | Description | Figure(s) |
 | --- | --- | --- |
 | [01_custom_symbols](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff/01_custom_symbols)   | Custom symbols in GMT                                      | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/000_general_stuff/01_custom_symbols/custom_symbols.png" width="150">             |
 | [02_colorwheel](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff/02_colorwheel)           | Cyclic colormaps as colorwheel                             | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/000_general_stuff/02_colorwheel/colorwheel_all_cmaps.png" width="150">           |

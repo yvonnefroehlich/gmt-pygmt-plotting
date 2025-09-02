@@ -9,7 +9,7 @@ Python scripts to reproduce some figures of
 
 _Recommended versions_: PyGMT v0.14.0-v0.16.0, GMT 6.5.0
 
-| Code | Description | Figure |
+| Code | Description | Figure(s) |
 | --- | --- | --- |
 | [01_setup_virginia_arrays](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/010_axisem/01_setup_virginia_arrays)   | Fig. C.9           | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/010_axisem/01_setup_virginia_arrays/02_out_figs/setup_virginia_arrays_dist80deg.png" width="150"> |
 | [02_setup_northpole_source](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/010_axisem/02_setup_northpole_source) | Fig. C.10, C.11    | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/010_axisem/02_setup_northpole_source/02_out_figs/setup_northpole_source_global_step10deg_distbatlow_ortho_cb.png" width="150"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/010_axisem/02_setup_northpole_source/02_out_figs/setup_northpole_source_global_step10deg_bazromaO_epi_cb.png" width="150"> |

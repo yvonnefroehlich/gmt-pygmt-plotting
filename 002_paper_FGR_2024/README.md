@@ -9,7 +9,7 @@ Python scripts to reproduce some figures of
 
 _Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
 
-| Code | Description | Figure |
+| Code | Description | Figure(s) |
 | --- | --- | --- |
 | [Figure 1](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_1)      | Topographic map with seismological recording stations | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_1/02_out_figs/FGR2024_GJI_Fig1.png" width="150">            |
 | [Figure 9](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_9)      | Piercing points in the upper mantle                   | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_9/02_out_figs/FGR2024_GJI_Fig9_phi.png" width="150">        |

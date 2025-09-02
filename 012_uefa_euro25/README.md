@@ -2,7 +2,7 @@
 
 _Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
 
-| Code | Description | Figure |
+| Code | Description | Figure(s) |
 | --- | --- | --- |
 | [01_logo](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/012_uefa_euro25/euro25_01_logo.py)           | Logo   | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/012_uefa_euro25/02_out_figs/euro25_01_logo.png" width="150">      |
 | [02_countries](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/012_uefa_euro25/euro25_02_countries.py) | Groups | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/012_uefa_euro25/02_out_figs/euro25_02_countries.png" width="150"> |
