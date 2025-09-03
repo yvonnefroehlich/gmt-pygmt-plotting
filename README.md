@@ -13,7 +13,7 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 
 | Folder | Overview | Content |
 | --- | --- | --- |
-| **[000_general_stuff]([repo_url]tree/main/000_general_stuff#000_general_stuff)** | <img src="[repo_url]raw/main/_images/github_maps_readme_000stuff.png" width="250"> | • custom symbols <br> • colorwheel <br> • colorbar font scaling <br> • Earth section <br> • Greek letters |
+| **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff#000_general_stuff)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_000stuff.png" width="250"> | • custom symbols <br> • colorwheel <br> • colorbar font scaling <br> • Earth section <br> • Greek letters |
 | **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022#001_paper_RFSG_2022)** <br> <br> → [_Ritter et al. (2022)_](https://doi.org/10.1007/s10950-022-10112-w) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_001bfo.png" width="250"> | Anisotropy beneath the BFO |
 | **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024#002_paper_FGR_2024)** <br> <br> → [_Fröhlich et al. (2024)_](https://doi.org/10.1093/gji/ggae245) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_002urg.png" width="250"> | Anisotropy beneath the URG area <br> • topography <br> • piercing points <br> • stereoplots <br> • backazimuthal coverage |
 | **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup#003_taup)** <br> <br> → [_Fröhlich et al. (2024)_](https://doi.org/10.1093/gji/ggae245) <br> → [_Fröhlich (2025a)_](https://doi.org/10.5445/IR/1000183786) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_003taup.png" width="250"> | Seismological phases <br> • travel paths <br> • travel time curves |
@@ -140,6 +140,3 @@ The presented research and YF received support from various sources:
 - [NSF grant EAR-1948602](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1948602) (travel support for AGU24)
 - [DFG grant RI1133/14-1](https://gepris.dfg.de/gepris/projekt/521545943?language=en) within the
   [DFG Priority Program 2404 DeepDyn](https://www.geo.lmu.de/deepdyn/en/) (research assistant)
-
-
-[repo_url]: https://github.com/yvonnefroehlich/gmt-pygmt-plotting/
