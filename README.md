@@ -27,7 +27,7 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 | --- | --- | --- | --- | --- |
 | [*AGU_URG_talk*](https://dx.doi.org/10.5281/zenodo.14510993) <br> [*Fröhlich_(2025a)*](https://doi.org/10.5445/IR/1000183786) | [*AGU_PyGMT_talk*](https://doi.org/10.6084/m9.figshare.28049495) |  |  |  |
 | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_010axisem.png" width="200"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_011pygmt.png" width="200"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_012euro25.png" width="200"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_013maps.png" width="200"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_014stats.png" width="200"> |
-| **AxiSEM3D** <br> • setups <br> • PREM <br> • Leng et al. 2016 <br> • Nr field | **PyGMT** <br> = GMT <br> + Python & SPE <br> <br> <br> | UEFA <br> WOMEN'S EURO 2025 <br> <br> <br> | • figure height for depth sections <br> • choropleth map via dcw <br> <br> | • Collatz problem <br> • Anscombe's quartet <br> <br> <br> |
+| **AxiSEM3D** <br> • setups <br> • PREM <br> • [Leng_et_al._(2016)](https://doi.org/10.1093/gji/ggw363) <br> • Nr field | **PyGMT** <br> = GMT <br> + Python & SPE <br> <br> <br> | UEFA <br> WOMEN'S EURO 2025 <br> <br> <br> | • figure height for depth sections <br> • choropleth map via dcw <br> <br> | • Collatz problem <br> • Anscombe's quartet <br> <br> <br> |
 
 
 ## Citation
