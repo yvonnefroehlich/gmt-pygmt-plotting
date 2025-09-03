@@ -1,5 +1,5 @@
 # #############################################################################
-# PREM Earth model
+# PREM Earth's model
 #
 # Data are available from
 # https://github.com/AxiSEMunity/AxiSEM3D/tree/master/examples/05_anisotropy_global/PREM_anisotropy_w_and_wo_full_Cij_50s/processing/Cijkl_for_ani_PREM
