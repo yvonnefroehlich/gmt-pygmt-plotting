@@ -8,6 +8,7 @@
 # History
 # - Created: 2025/01/26
 # - Updated: 2025/07/23
+# - Updated: 2025/09/07
 # -----------------------------------------------------------------------------
 # Versions
 #   PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
@@ -34,11 +35,11 @@ import pandas as pd
 # Set projection of map
 status_projection = "epi"  ## "rob" | "epi" | "ortho"
 
-# Use color- and size-coding for hypocentral depth and moment magnitude, respectively
+# Use color- and size-coding for hypocentral depth or moment magnitude, respectively
 status_color = "CMAP"  ## "MONO" | "CMAP"
 
 # Mark specific epicentral distance rage for XKS phases
-status_phase = "YES"  ## "YES", "NO"
+status_phase = "YES"  ## "YES" | "NO"
 if status_projection != "epi":
     status_phase = "NO"
 
@@ -56,15 +57,15 @@ dpi_png = 360
 
 # -----------------------------------------------------------------------------
 # Plotting
-color_highlight = "255/90/0"
+color_hl = "255/90/0"  # highlight -> orange
 color_sta = "gold"
 color_land = "gray90"
 color_water = "white"
-color_pb = "216.750/82.875/24.990"
-color_sl = "gray60"
+color_pb = "216.750/82.875/24.990"  # plate boundaries after Bird 2003
+color_sl = "gray60"  # shorelines
 
 box_standard = "+gwhite@30+p0.8p,gray50+r2p"
-clearance_standard = "0.1c/0.1c+tO"
+clearance_standard = "0.1c+tO"
 
 # File names
 file_pb = "plate_boundaries_Bird_2003.txt"
@@ -138,7 +139,6 @@ data_eq_used["mag_scaled"] = np.exp(data_eq_used["mag"] / 1.7) * 0.0035
 fig = pygmt.Figure()
 fig.basemap(projection=proj_used, region="d", frame=0)
 
-# -----------------------------------------------------------------------------
 # Plot shorelines, color land and water masses
 fig.coast(shorelines=f"1/0.01p,{color_sl}", land=color_land, water=color_water)
 
@@ -150,7 +150,7 @@ fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.8p,{color_pb}")
 if status_projection == "epi" and status_phase == "YES":
     fig.plot(
         style=f"w{dist_min * size2dist}/0/360+i{dist_max* size2dist}",
-        fill=f"{color_highlight}@90",
+        fill=f"{color_hl}@90",
         **center_coord,
     )
 
@@ -160,21 +160,13 @@ pygmt.makecpt(cmap="lajolla", series=[0, 500, 1])
 
 # Plot epicenters
 epi_columns = ["longitude", "latitude", "depth", "mag_scaled"]
+data = data_eq_used[epi_columns]
 
 match status_color:
     case "MONO":
-        fig.plot(
-            data=data_eq_used[epi_columns],
-            style="a0.15c",
-            fill="darkred",
-        )
+        fig.plot(data=data, style="a0.15c", fill="darkred")
     case "CMAP":
-        fig.plot(
-            data=data_eq_used[epi_columns],
-            style="cc",
-            cmap=True,
-            pen="0.3p,gray30",
-        )
+        fig.plot(data=data, style="cc", cmap=True, pen="0.3p,gray30")
 
         # Add colorbar for hypocentral depth color-coding
         with pygmt.config(FONT="14p"):
@@ -186,9 +178,7 @@ match status_color:
 
         # Add legend for magnitude size-coding
         fig.legend(
-            spec=f"{path_in}/{file_legend}",
-            position="JBC+o3c/1.2c+w4c",
-            box=box_standard,
+            spec=f"{path_in}/{file_legend}", position="JBC+o3c/1.2c+w4c", box=box_standard
         )
 
         # Add label for time period
@@ -215,19 +205,15 @@ if status_projection == "epi":
         text=center_text,
         offset="0c/0.4c",
         fill="white@30",
-        pen=f"0.8p,{color_highlight}",
+        pen=f"0.8p,{color_hl}",
         clearance=clearance_standard,
-        font=f"8p,1,{color_highlight}",
+        font=f"8p,1,{color_hl}",
         **center_coord,
     )
     if status_phase == "YES":
         # Mark epicentral distance range for XKS phases
         for epi_lim in [dist_min, dist_max]:
-            fig.plot(
-                style=f"E-{epi_lim*2}+d",
-                pen=f"1p,{color_highlight},-",
-                **center_coord,
-            )
+            fig.plot(style=f"E-{epi_lim*2}+d", pen=f"1p,{color_hl},-", **center_coord)
 
         # Label epicentral distance range for XKS phases
         for epi_lim in [dist_min, dist_max]:
@@ -235,7 +221,7 @@ if status_projection == "epi":
                 text=f"{epi_lim}@.",
                 offset=f"0c/-{epi_lim * size2dist / 2}c",
                 fill="white@30",
-                pen=f"0.3p,{color_highlight}",
+                pen=f"0.3p,{color_hl}",
                 clearance=clearance_standard,
                 no_clip=True,
                 **center_coord,
