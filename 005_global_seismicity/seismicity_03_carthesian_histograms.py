@@ -54,11 +54,11 @@ min_mag_w = 6
 max_mag_w = 10
 
 eq_catalog_name = f"global_seismicity_{start_date}to{end_date}_mw{min_mag_w}to{max_mag_w}"
-data_eq_raw = pd.read_csv(f"{path_in}/data_{eq_catalog_name}.csv", sep="\t")
+df_eq_raw = pd.read_csv(f"{path_in}/data_{eq_catalog_name}.csv", sep="\t")
 
 # Filter data
 # mw, mwc, mwb, mwr, mww
-data_eq_used = data_eq_raw[data_eq_raw["magType"].str.contains("mw")]
+df_eq = df_eq_raw[df_eq_raw["magType"].str.contains("mw")]
 
 
 # %%
@@ -72,7 +72,7 @@ fig.histogram(
     region=[-10.1, 500, 0, 4700],
     projection="X17c/10c",
     frame=["WStr", "xa50f10+lhypcentral depth / km", "y+lcounts of earthquakes"],
-    data=data_eq_used["depth"],
+    data=df_eq["depth"],
     series=10,
     fill="gray@85",
     pen="0.5p,gray40,solid",
@@ -118,7 +118,7 @@ fig.histogram(
     region=[6, 9.5, 0, 0],
     projection="X10c",
     frame=["WStr", "xa0.50.1+lmoment magnitude", "y+lcounts of earthquakes"],
-    data=data_eq_used["mag"],
+    data=df_eq["mag"],
     series=0.1,
     fill="gray@85",
     pen="0.5p,gray40,solid",

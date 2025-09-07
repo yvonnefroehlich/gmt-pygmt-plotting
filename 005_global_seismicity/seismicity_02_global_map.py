@@ -118,18 +118,18 @@ min_mag_w = 6
 max_mag_w = 10
 
 eq_catalog_name = f"global_seismicity_{start_date}to{end_date}_mw{min_mag_w}to{max_mag_w}"
-data_eq_raw = pd.read_csv(f"{path_in}/data_{eq_catalog_name}.csv", sep="\t")
+df_eq_raw = pd.read_csv(f"{path_in}/data_{eq_catalog_name}.csv", sep="\t")
 
 # Filter data
 # mw, mwc, mwb, mwr, mww
-data_eq_used = data_eq_raw[data_eq_raw["magType"].str.contains("mw")]
+df_eq = df_eq_raw[df_eq_raw["magType"].str.contains("mw")]
 
 # Sort descending by magnitude to avoid overplotting
-data_eq_used = data_eq_used.sort_values(by=["mag"], ascending=False)
+df_eq = df_eq.sort_values(by=["mag"], ascending=False)
 
 # Scale hypocentral depth for size-coding
 # >>> If you change the scaling you also have to update the legend file <<<
-data_eq_used["mag_scaled"] = np.exp(data_eq_used["mag"] / 1.7) * 0.0035
+df_eq["mag_scaled"] = np.exp(df_eq["mag"] / 1.7) * 0.0035
 
 
 # %%
@@ -160,13 +160,13 @@ pygmt.makecpt(cmap="lajolla", series=[0, 500, 1])
 
 # Plot epicenters
 epi_columns = ["longitude", "latitude", "depth", "mag_scaled"]
-data = data_eq_used[epi_columns]
+df_eq_used = df_eq[epi_columns]
 
 match status_color:
     case "MONO":
-        fig.plot(data=data, style="a0.15c", fill="darkred")
+        fig.plot(data=df_eq_used, style="a0.15c", fill="darkred")
     case "CMAP":
-        fig.plot(data=data, style="cc", cmap=True, pen="0.3p,gray30")
+        fig.plot(data=df_eq_used, style="cc", cmap=True, pen="0.3p,gray30")
 
         # Add colorbar for hypocentral depth color-coding
         with pygmt.config(FONT="14p"):
