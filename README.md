@@ -1,4 +1,4 @@
-# PyGMT plotting
+# PyGMT Plotting
 
 Collection of Python scripts or Jupyter notebooks (supported by JupyterLab) to reproduce some of the geographic and
 geophysical maps shown in the publications I am involved in. To prepare these maps, [_PyGMT_](https://www.pygmt.org)
