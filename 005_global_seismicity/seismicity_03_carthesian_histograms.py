@@ -132,7 +132,7 @@ fig.text(text=f"M@-w@- = {min_mag_w} to {max_mag_w}", offset="-0.6c/-1.2c", **ar
 
 # fig.histogram(
 #     region=[6, 9.5, 0, 0],
-#     projection="X10c/10cl",
+#     projection="X10c/10cl",  # log10 for y-axis
 #     frame=["WStr", "xa0.5+lmoment magnitude", "ya100"],
 #     data=df_eq["mag"],
 #     series=0.1,
