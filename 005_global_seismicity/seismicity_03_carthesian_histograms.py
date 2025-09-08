@@ -117,7 +117,7 @@ pygmt.config(FONT="11p")
 fig.histogram(
     region=[6, 9.5, 0, 0],
     projection="X10c",
-    frame=["WStr", "xa0.50.1+lmoment magnitude", "y+lcounts of earthquakes"],
+    frame=["WStr", "xa0.5+lmoment magnitude", "y+lcounts of earthquakes"],
     data=df_eq["mag"],
     series=0.1,
     fill="gray@85",
@@ -125,9 +125,22 @@ fig.histogram(
     histtype=0,
     annotate="+o2p+r+f7p",
 )
-
 fig.text(text=f"{start_date} to {end_date}", offset="-0.6c/-0.5c", **args_text)
 fig.text(text=f"M@-w@- = {min_mag_w} to {max_mag_w}", offset="-0.6c/-1.2c", **args_text)
+
+# fig.shift_origin(xshift="+w1.3c")
+
+# fig.histogram(
+#     region=[6, 9.5, 0, 0],
+#     projection="X10c/10cl",
+#     frame=["WStr", "xa0.5+lmoment magnitude", "ya100"],
+#     data=df_eq["mag"],
+#     series=0.1,
+#     fill="gray@85",
+#     pen="0.5p,gray40,solid",
+#     histtype=0,
+#     annotate="+o2p+r+f7p",
+# )
 
 fig.show()
 fig_name = f"histo_mw_{eq_catalog_name}"
