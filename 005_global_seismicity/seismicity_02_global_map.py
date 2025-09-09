@@ -2,8 +2,8 @@
 # Global seismicity
 # - Create geographic map with coding for
 #   - color (hypocentral depth)
-#   - size (moment magitude)
-# For making a gif: https://ezgif.com/maker
+#   - size (moment magnitude)
+# For making a GIF: https://ezgif.com/maker
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/01/26

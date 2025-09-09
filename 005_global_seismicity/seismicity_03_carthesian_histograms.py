@@ -2,7 +2,7 @@
 # Global seismicity
 # - Create histograms for
 #   - hypocentral depth
-#   - moment magitude
+#   - moment magnitude
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/07/23
