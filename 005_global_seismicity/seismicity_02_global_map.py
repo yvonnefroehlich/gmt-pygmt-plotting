@@ -22,9 +22,8 @@
 
 
 import numpy as np
-import pygmt
 import pandas as pd
-
+import pygmt
 
 # %%
 # -----------------------------------------------------------------------------
@@ -44,7 +43,7 @@ if status_projection != "epi":
     status_phase = "NO"
 
 
-#%%
+# %%
 # -----------------------------------------------------------------------------
 # General stuff
 # -----------------------------------------------------------------------------
@@ -117,7 +116,9 @@ end_date = "2019-12-31"
 min_mag_w = 6
 max_mag_w = 10
 
-eq_catalog_name = f"global_seismicity_{start_date}to{end_date}_mw{min_mag_w}to{max_mag_w}"
+eq_catalog_name = (
+    f"global_seismicity_{start_date}to{end_date}_mw{min_mag_w}to{max_mag_w}"
+)
 df_eq_raw = pd.read_csv(f"{path_in}/data_{eq_catalog_name}.csv", sep="\t")
 
 # Filter data
@@ -149,7 +150,7 @@ fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.8p,{color_pb}")
 # Color epicentral distance range for XKS phases
 if status_projection == "epi" and status_phase == "YES":
     fig.plot(
-        style=f"w{dist_min * size2dist}/0/360+i{dist_max* size2dist}",
+        style=f"w{dist_min * size2dist}/0/360+i{dist_max * size2dist}",
         fill=f"{color_hl}@90",
         **center_coord,
     )
@@ -178,7 +179,9 @@ match status_color:
 
         # Add legend for magnitude size-coding
         fig.legend(
-            spec=f"{path_in}/{file_legend}", position="JBC+o3c/1.2c+w4c", box=box_standard
+            spec=f"{path_in}/{file_legend}",
+            position="JBC+o3c/1.2c+w4c",
+            box=box_standard,
         )
 
         # Add label for time period
@@ -213,7 +216,7 @@ if status_projection == "epi":
     if status_phase == "YES":
         # Mark epicentral distance range for XKS phases
         for epi_lim in [dist_min, dist_max]:
-            fig.plot(style=f"E-{epi_lim*2}+d", pen=f"1p,{color_hl},-", **center_coord)
+            fig.plot(style=f"E-{epi_lim * 2}+d", pen=f"1p,{color_hl},-", **center_coord)
 
         # Label epicentral distance range for XKS phases
         for epi_lim in [dist_min, dist_max]:
