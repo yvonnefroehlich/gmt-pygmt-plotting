@@ -33,7 +33,7 @@ import pygmt as gmt
 # Figure.meca always uses the "depth" column for color-coding
 # "depth" | "dis" | "magnitude" | "strike" | "dip" | "rake"
 # "fault" | "xks"
-status_color = "magnitude"
+status_color = "xks"
 
 # Time window
 year_min = 2020  # since 1976
