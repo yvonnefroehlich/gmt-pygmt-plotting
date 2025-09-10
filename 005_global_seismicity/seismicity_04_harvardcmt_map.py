@@ -60,7 +60,7 @@ rake_intval = 10  # degrees
 epi_dist = 180  # degrees
 
 # Resolution of output image
-dpi_png = 720
+dpi_png = 360  #dpi
 
 # Path
 path_in = "01_in_data"
