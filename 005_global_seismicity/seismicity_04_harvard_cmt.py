@@ -29,26 +29,29 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 # Adjust for your needs
 # -----------------------------------------------------------------------------
-status_color = "xks"  ## "xks" | "fault"
-
 # Use another quantity for color-coding as the hypocentral depth
 # Figure.meca always uses the "depth" column for color-coding
 # "depth" | "dis" | "magnitude" | "strike" | "dip" | "rake"
-quantity_for_color = "depth"
+# "fault" | "xks"
+status_color = "magnitude"
 
 # Time window
 year_min = 2020  # since 1976
 year_max = 2025  # until 2025
 
 # Moment magnitude
-min_mag = 6
+min_plot_mag = 6
+max_plot_mag = 10
+min_cmap_mag = min_plot_mag
+max_cmap_mag = max_plot_mag
+step_mag = 0.1
+
 if status_color == "xks":
-    min_mag = 6  # Needed to observe a clear waveform
-max_mag = 9
-step_mag = 0.5
+    min_plot_mag = 6  # Needed to observe a clear waveform
+    max_plot_mag = 10
 
 # Interval considered for the rake to classify the fault types; -/+ around the rake value
-fault_intval = 10  # degrees
+rake_intval = 10  # degrees
 
 # Maximum epicentral distance of the map (i.e, radius)
 epi_dist = 180  # degrees
@@ -102,7 +105,7 @@ dist_max = 150
 file_pb = "plate_boundaries_Bird_2003.txt"
 
 # Colormaps
-match quantity_for_color:
+match status_color:
     case "depth":
         cmap = "lajolla"
         cmap_min = 0
@@ -115,8 +118,8 @@ match quantity_for_color:
         cmap_label = ["x+lepicentral distance", "y+ldeg"]
     case "magnitude":
         cmap = "hawaii"
-        cmap_min = min_mag
-        cmap_max = max_mag
+        cmap_min = min_cmap_mag
+        cmap_max = max_cmap_mag
         cmap_label = ["x+lmoment magnitude"]
     case "strike":
         cmap = "romaO"
@@ -151,45 +154,44 @@ columns = [
 
 df_eq_mod = df_eq_raw[columns]
 # Quantity used for color-coding by Figure.meca has to be in the "depth" column
-df_eq_mod["depth"] = df_eq_raw[quantity_for_color]  # row_indexer, col_indexer
+quantity_for_color = status_color
+if status_color in ["fault", "xks"]:
+    quantity_for_color = "depth"
+df_eq_mod["depth"] = df_eq_raw[quantity_for_color]
 df_eq_mod["depth_km"] = df_eq_raw["depth"]  # hypocentral depth
 
 df_eq = df_eq_mod
 # Sort descending by magnitude to avoid overplotting
 df_eq = df_eq.sort_values(by=["magnitude"], ascending=False)
 
-fig_name_basic = f"map_harvardcmt_{year_min}to{year_max}_meca_"
+# Subset based on year
+df_eq_temp00 = df_eq[df_eq["year"] >= year_min]
+df_eq_temp01 = df_eq_temp00[df_eq_temp00["year"] <= year_max]
+
+# Subset based on moment magnitude
+df_eq_temp02 = df_eq_temp01[df_eq_temp01["magnitude"] >= min_plot_mag]
+df_eq_temp03 = df_eq_temp02[df_eq_temp02["magnitude"] <= max_plot_mag]
+# Scale moment magnitude for plotting
+df_eq_temp03["magnitude"] = np.exp(df_eq_temp03["magnitude"] / 1.7) * 0.0035
+
+fig_name_basic = f"map_harvardcmt_{year_min}to{year_max}_" + \
+                    f"Mw{min_plot_mag}to{max_plot_mag}_meca_"
 
 
 
 # %%
 # -----------------------------------------------------------------------------
-# Make map related to fault type or xks phases
+# Make epicentral distance map
 # -----------------------------------------------------------------------------
 
-# Subset based on moment magnitude and year
-df_eq_temp00 = df_eq.loc[df_eq["magnitude"] >= min_mag]
-
-if len(df_eq_temp00) > 0:
-    df_eq_temp01 = df_eq_temp00[df_eq_temp00["year"] >= year_min]
-    if len(df_eq_temp01) > 0:
-        df_eq_temp02 = df_eq_temp01[df_eq_temp01["year"] <= year_max]
-
-        # Scale moment magnitude for plotting
-        if len(df_eq_temp02) > 0:
-            df_eq_temp02["magnitude"] = np.exp(df_eq_temp02["magnitude"] / 1.7) * 0.0035
-
-# -----------------------------------------------------------------------------
 fig_merge = gmt.Figure()
 
 for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 600]):
 
     # Subset based on hypocentral depth
     df_eq_used = []
-    if len(df_eq_temp02) > 0:
-        df_eq_temp03 = df_eq_temp02[df_eq_temp02["depth_km"] >= depth_min]
-        if len(df_eq_temp03) > 0:
-            df_eq_used = df_eq_temp03[df_eq_temp03["depth_km"] < depth_max]
+    df_eq_temp04 = df_eq_temp03[df_eq_temp03["depth_km"] >= depth_min]
+    df_eq_used = df_eq_temp04[df_eq_temp04["depth_km"] < depth_max]
 
     # Subsets based on
     if len(df_eq_used) > 0:
@@ -197,20 +199,20 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
             # rake
             case "fault":
                 # strike-slip left
-                df_eq_ssl_temp = df_eq_used[df_eq_used["rake"] >= 0 - fault_intval]
+                df_eq_ssl_temp = df_eq_used[df_eq_used["rake"] >= 0 - rake_intval]
                 if len(df_eq_ssl_temp) > 0:
-                    df_eq_ssl = df_eq_ssl_temp[df_eq_ssl_temp["rake"] <= 0 + fault_intval]
+                    df_eq_ssl = df_eq_ssl_temp[df_eq_ssl_temp["rake"] <= 0 + rake_intval]
                 # strike-slip right
-                df_eq_ssr_01 = df_eq_used[df_eq_used["rake"] >= 180 - fault_intval]
-                df_eq_ssr_02 = df_eq_used[df_eq_used["rake"] <= -180 + fault_intval]
+                df_eq_ssr_01 = df_eq_used[df_eq_used["rake"] >= 180 - rake_intval]
+                df_eq_ssr_02 = df_eq_used[df_eq_used["rake"] <= -180 + rake_intval]
                 # dip-slip normal
-                df_eq_dsn_temp = df_eq_used[df_eq_used["rake"] <= -90 + fault_intval]
+                df_eq_dsn_temp = df_eq_used[df_eq_used["rake"] <= -90 + rake_intval]
                 if len(df_eq_dsn_temp) > 0:
-                    df_eq_dsn = df_eq_dsn_temp[df_eq_dsn_temp["rake"] >= -90 - fault_intval]
+                    df_eq_dsn = df_eq_dsn_temp[df_eq_dsn_temp["rake"] >= -90 - rake_intval]
                 # dip-slip reverse
-                df_eq_dsr_temp = df_eq_used[df_eq_used["rake"] >= 90 - fault_intval]
+                df_eq_dsr_temp = df_eq_used[df_eq_used["rake"] >= 90 - rake_intval]
                 if len(df_eq_dsr_temp) > 0:
-                    df_eq_dsr = df_eq_dsr_temp[df_eq_dsr_temp["rake"] <= 90 + fault_intval]
+                    df_eq_dsr = df_eq_dsr_temp[df_eq_dsr_temp["rake"] <= 90 + rake_intval]
             # epicentral distance
             case "xks":
                 df_eq_close = df_eq_used[df_eq_used["dis"] < dist_min]
@@ -222,14 +224,14 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
 # -----------------------------------------------------------------------------
     fig_single = gmt.Figure()
 
-    for fig in [fig_merge, fig_single]:
+    for fig in [fig_single, fig_merge]:
 
         # Set up basic map
         fig.basemap(region="g", projection=projection, frame=True)
         with gmt.config(FONT="10p", MAP_TITLE_OFFSET="-5p"):
             fig.basemap(
                 frame=f"+t{year_min}-{year_max}   "
-                f"Mw=[{min_mag},10]   "
+                f"Mw=[{min_plot_mag},{max_plot_mag}]   "
                 f"hd=[{depth_min},{depth_max}[ km   "
                 f"{len(df_eq_used)}/{len(df_eq_temp02)} events"
             )
@@ -243,20 +245,6 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
 
         # Mark epicentral distance
         match status_color:
-            case "fault":
-                # in steps of 30 degrees
-                for epi_lim in np.arange(dist_step, epi_dist, dist_step):
-                    fig.plot(style=f"E-{epi_lim * 2}+d", pen="0.3p,black,-", **center_coord)
-                    fig.text(
-                        text=f"{epi_lim}@.",
-                        font="6p",
-                        offset=f"0c/-{epi_lim * size2dist / 2}c",
-                        fill="white@30",
-                        pen="0.1p,black",
-                        clearance=clearance_standard,
-                        no_clip=True,
-                        **center_coord,
-                    )
             case "xks":
                 # range for XKS phases
                 fig.plot(
@@ -272,6 +260,20 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
                         offset=f"0c/-{epi_lim * size2dist / 2}c",
                         fill="white@30",
                         pen=f"0.3p,{color_hl}",
+                        clearance=clearance_standard,
+                        no_clip=True,
+                        **center_coord,
+                    )
+            case _:
+                # in steps of 30 degrees
+                for epi_lim in np.arange(dist_step, epi_dist, dist_step):
+                    fig.plot(style=f"E-{epi_lim * 2}+d", pen="0.3p,black,-", **center_coord)
+                    fig.text(
+                        text=f"{epi_lim}@.",
+                        font="6p",
+                        offset=f"0c/-{epi_lim * size2dist / 2}c",
+                        fill="white@30",
+                        pen="0.1p,black",
                         clearance=clearance_standard,
                         no_clip=True,
                         **center_coord,
@@ -302,6 +304,18 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
                             compressionfill=color_dist,
                             outline="0.3p,gray10",
                         )
+            case _:
+                gmt.makecpt(cmap=cmap, series=[cmap_min, cmap_max])
+                if len(df_eq_used) > 0:
+                    fig.meca(
+                        spec=df_eq_used, scale="12c", cmap=True, outline="0.3p,gray10"
+                    )
+                with gmt.config(FONT="15p"):
+                    # if fig == fig_single:
+                    #     fig_single.colorbar(frame=cmap_label, position="+e0.25c")
+                    # Add colorbar only once for merge figure
+                    if fig == fig_merge and depth_min == 50:
+                        fig_merge.colorbar(frame=cmap_label, position="+e0.25c")
 
         # Mark center of the map as recording station
         fig.plot(style="i0.4c", fill=color_sta, pen="0.5p,black", **center_coord)
@@ -329,6 +343,9 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
             yshift=f"-h{-y_shift}c", xshift=f"-{(fig_size + x_shift) * 3}c"
         )
 
+    fig_add = status_color
+    if status_color == "fault":
+        fig_add = f"{status_color}_rakeD{rake_intval}deg"
     fig_name = f"{fig_name_basic}{status_color}_depth"
 
     # Save single plot
@@ -338,118 +355,6 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
         )
 
 # Save merge plot
-for ext in ["png"]:  # "pdf", "eps"
-    fig_merge.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
-print(fig_name)
-
-
-
-# %%
-# -----------------------------------------------------------------------------
-# Make map with color-coding
-# -----------------------------------------------------------------------------
-# Subset based on year
-df_eq_temp00 = df_eq[df_eq["year"] >= year_min]
-if len(df_eq_temp00) > 0:
-    df_eq_temp01 = df_eq_temp00[df_eq_temp00["year"] <= year_max]
-
-# -----------------------------------------------------------------------------
-fig_merge = gmt.Figure()
-
-for i_mag, lim_mag in enumerate(np.arange(min_mag, max_mag, step_mag)):  # [ [
-
-    # Subset based on moment magnitude
-    df_eq_used = []
-    if len(df_eq_temp01) > 0:
-        df_eq_temp02 = df_eq_temp01[df_eq_temp01["magnitude"] >= lim_mag]
-        if len(df_eq_temp02) > 0:
-            df_eq_used = df_eq_temp02[df_eq_temp02["magnitude"] < (lim_mag + step_mag)]
-
-            # Scale moment magnitude for plotting
-            if len(df_eq_used) > 0:
-                df_eq_used["magnitude"] = np.exp(df_eq_used["magnitude"] / 1.7) * 0.0035
-
-# -----------------------------------------------------------------------------
-    fig_single = gmt.Figure()
-
-    for fig in [fig_merge, fig_single]:
-
-        # Set up basic map
-        fig.basemap(region="g", projection=projection, frame=True)
-        with gmt.config(FONT="10p", MAP_TITLE_OFFSET="-5p"):
-            fig.basemap(
-                frame=f"+t{year_min}-{year_max}   "
-                f"Mw=[{lim_mag},{lim_mag + step_mag}[   "
-                f"{len(df_eq_used)}/{len(df_eq_temp01)} events"
-            )
-
-        # Color land and water masses
-        fig.coast(land=color_land, water=color_water)
-        # Plot shorelines
-        fig.coast(shorelines=f"1/0.01p,{color_sl}")
-        # Plot plate boundaries
-        fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.8p,{color_pb}")
-
-        # Mark epicentral distance in steps of 30 degrees
-        for epi_lim in np.arange(dist_step, epi_dist, dist_step):
-            fig.plot(style=f"E-{epi_lim * 2}+d", pen="0.3p,black,-", **center_coord)
-            fig.text(
-                text=f"{epi_lim}@.",
-                font="6p",
-                offset=f"0c/-{epi_lim * size2dist / 2}c",
-                fill="white@30",
-                pen="0.1p,black",
-                clearance=clearance_standard,
-                no_clip=True,
-                **center_coord,
-            )
-
-        # Plot epicenters as beachballs with color-coding
-        gmt.makecpt(cmap=cmap, series=[cmap_min, cmap_max])
-        if len(df_eq_used) > 0:
-            fig.meca(spec=df_eq_used, scale="12c", cmap=True, outline="0.3p,gray10")
-        with gmt.config(FONT="15p"):
-            # if fig == fig_single:
-            #     fig_single.colorbar(frame=cmap_label, position="+e0.25c")
-            if fig == fig_merge and i_mag == 4:  # Add colorbar only once for merge figure
-                fig_merge.colorbar(frame=cmap_label, position="+e0.25c")
-
-        # Mark center of the map as recording station
-        fig.plot(style="i0.4c", fill=color_sta, pen="0.5p,black", **center_coord)
-        fig.text(
-            text=center_text,
-            offset="0c/0.4c",
-            fill="white@30",
-            pen=f"0.8p,{color_hl}",
-            clearance=clearance_standard,
-            font=f"8p,1,{color_hl}",
-            **center_coord,
-        )
-
-        # Frame on top
-        fig.basemap(frame=True)
-
-# -----------------------------------------------------------------------------
-        # Show figure
-        fig.show()
-
-    # Shift plot origin of merge figure
-    fig_merge.shift_origin(xshift=f"+w{x_shift}c")
-    if i_mag == 2:
-        fig_merge.shift_origin(
-            yshift=f"-h-{y_shift}c", xshift=f"-{(fig_size + x_shift) * 3}c"
-        )
-
-    fig_name = f"{fig_name_basic}{quantity_for_color}_Mw"
-
-    # Save single figure
-    for ext in ["png"]:  # "pdf", "eps"
-        fig_single.savefig(
-            fname=f"{path_out}/{fig_name}{lim_mag}to{lim_mag + step_mag}.{ext}",
-            dpi=dpi_png,
-        )
-
-# Save merge figure
 for ext in ["png"]:  # "pdf", "eps"
     fig_merge.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
