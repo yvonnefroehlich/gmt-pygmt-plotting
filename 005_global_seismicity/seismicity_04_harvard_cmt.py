@@ -33,7 +33,7 @@ import pygmt as gmt
 # Figure.meca always uses the "depth" column for color-coding
 # "depth" | "dis" | "magnitude" | "strike" | "dip" | "rake"
 # "fault" | "xks"
-status_color = "xks"
+status_color = "fault"
 
 # Time window
 year_min = 2020  # since 1976
@@ -136,6 +136,7 @@ match status_color:
         cmap_min = -180
         cmap_max = 180
         cmap_label = ["x+lrake", "y+ldeg"]
+
 
 
 # %%
@@ -343,10 +344,10 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
             yshift=f"-h{-y_shift}c", xshift=f"-{(fig_size + x_shift) * 3}c"
         )
 
-    fig_add = status_color
+    fig_name_add = status_color
     if status_color == "fault":
-        fig_add = f"{status_color}_rakeD{rake_intval}deg"
-    fig_name = f"{fig_name_basic}{status_color}_depth"
+        fig_name_add = f"{status_color}_rakeD{rake_intval}deg"
+    fig_name = f"{fig_name_basic}{fig_name_add}_depth"
 
     # Save single plot
     for ext in ["png"]:  # "pdf", "eps"
