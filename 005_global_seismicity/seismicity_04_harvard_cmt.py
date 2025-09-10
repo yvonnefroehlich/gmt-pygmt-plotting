@@ -33,7 +33,7 @@ import pygmt as gmt
 # Figure.meca always uses the "depth" column for color-coding
 # "depth" | "dis" | "magnitude" | "strike" | "dip" | "rake"
 # "fault" | "xks"
-status_color = "fault"
+status_color = "magnitude"
 
 # Time window
 year_min = 2020  # since 1976
@@ -312,11 +312,11 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
                         spec=df_eq_used, scale="12c", cmap=True, outline="0.3p,gray10"
                     )
                 with gmt.config(FONT="15p"):
-                    # if fig == fig_single:
-                    #     fig_single.colorbar(frame=cmap_label, position="+e0.25c")
+                    if fig == fig_single:
+                        fig_single.colorbar(frame=cmap_label, position="+o0c/0.8c+e0.25c+ml")
                     # Add colorbar only once for merge figure
                     if fig == fig_merge and depth_min == 50:
-                        fig_merge.colorbar(frame=cmap_label, position="+e0.25c")
+                        fig_merge.colorbar(frame=cmap_label, position="+e0.25c+ml")
 
         # Mark center of the map as recording station
         fig.plot(style="i0.4c", fill=color_sta, pen="0.5p,black", **center_coord)
