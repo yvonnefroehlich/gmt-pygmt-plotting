@@ -1,10 +1,13 @@
 # #############################################################################
 # Global seismicity
-# - Create geographic map with
+# - Create epidistance map with
 #   - beachballs for epicenters
 #   - color-coding for different quantities
-#   - size for moment magitude
-# Single figures and subplot figures
+#   - size for moment magnitude
+# Single and combined figures
+# -----------------------------------------------------------------------------
+# Data is the earthquake catalog provided along with the MATLAB package SplitLab
+# (Wüstefeld et al. 2008) exported as CSV file
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/09/08
