@@ -1,6 +1,6 @@
 # #############################################################################
 # Harvard CMT catalog
-# - Carthesian plots for strike dip rake (Aki & Richards convention)
+# - Cartesian plots for strike dip rake (Aki and Richards convention)
 # - Data are from the earthquake catalog provided along with the MATLAB package
 #   SplitLab (Wüstefeld et al. 2008) exported as CSV file
 #   See https://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/COMBO/combo.ndk
