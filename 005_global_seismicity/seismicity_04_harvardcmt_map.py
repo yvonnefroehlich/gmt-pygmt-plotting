@@ -256,7 +256,9 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
                 )
                 # limits for XKS phases
                 for epi_lim in [dist_min, dist_max]:
-                    fig.plot(style=f"E-{epi_lim * 2}+d", pen=f"1p,{color_hl},-", **center_coord)
+                    fig.plot(
+                        style=f"E-{epi_lim * 2}+d", pen=f"1p,{color_hl},-", **center_coord,
+                    )
                     fig.text(
                         text=f"{epi_lim}@.",
                         offset=f"0c/-{epi_lim * size2dist / 2}c",
@@ -269,7 +271,9 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
             case _:
                 # in steps of 30 degrees
                 for epi_lim in np.arange(dist_step, epi_dist, dist_step):
-                    fig.plot(style=f"E-{epi_lim * 2}+d", pen="0.3p,black,-", **center_coord)
+                    fig.plot(
+                        style=f"E-{epi_lim * 2}+d", pen="0.3p,black,-", **center_coord
+                    )
                     fig.text(
                         text=f"{epi_lim}@.",
                         font="6p",
