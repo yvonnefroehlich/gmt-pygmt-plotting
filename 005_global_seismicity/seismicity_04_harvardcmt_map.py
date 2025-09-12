@@ -61,7 +61,7 @@ rake_intval = 10  # degrees
 # Maximum epicentral distance of the map (i.e, radius)
 epi_dist = 180  # degrees
 
-# Resolution of output image
+# Resolution of output PNG
 dpi_png = 360  #dpi
 
 # Path

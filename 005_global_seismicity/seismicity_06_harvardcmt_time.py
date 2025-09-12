@@ -30,7 +30,7 @@ import pygmt as gmt
 # Adjust for your needs
 # -----------------------------------------------------------------------------
 # minimum hypocentral depth
-min_depth = 50  # kilometers
+min_depth = 20  # kilometers
 
 # Resolution of output PNG
 dpi_png = 360  # dpi
