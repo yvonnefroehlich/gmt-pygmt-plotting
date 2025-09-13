@@ -54,7 +54,8 @@ url_usgs_request = url_usgs + "?" + \
         "orderby=" + order_records,
     ])
 
-eq_catalog_name = f"global_seismicity_{start_date}to{end_date}_mw{min_mag_w}to{max_mag_w}"
+eq_catalog_name = "globalseis_" + "".join(str(start_date).split("-")) + "to" + \
+    "".join(str(end_date).split("-")) + f"_mw{min_mag_w}to{max_mag_w}"
 
 # Download data into a pandas DataFrame
 data_eq_raw = pd.read_csv(url_usgs_request)

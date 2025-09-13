@@ -178,7 +178,7 @@ df_eq_temp03 = df_eq_temp02[df_eq_temp02["magnitude"] <= max_plot_mag]
 df_eq_temp03["magnitude"] = np.exp(df_eq_temp03["magnitude"] / 1.7) * 0.0035
 
 fig_name_basic = f"map_harvardcmt_{year_min}to{year_max}_" + \
-                    f"Mw{min_plot_mag}to{max_plot_mag}_meca_"
+                    f"mw{min_plot_mag}to{max_plot_mag}_beachball_"
 
 
 # %%
@@ -361,6 +361,6 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
         )
 
 # Save merge plot
-for ext in ["png"]:  # "pdf", "eps"
-    fig_merge.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+# for ext in ["png"]:  # "pdf", "eps"
+#     fig_merge.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)

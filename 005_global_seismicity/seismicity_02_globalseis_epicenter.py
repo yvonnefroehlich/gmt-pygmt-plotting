@@ -116,9 +116,9 @@ end_date = "2019-12-31"
 min_mag_w = 6
 max_mag_w = 10
 
-eq_catalog_name = (
-    f"global_seismicity_{start_date}to{end_date}_mw{min_mag_w}to{max_mag_w}"
-)
+eq_catalog_name = "globalseis_" + "".join(str(start_date).split("-")) + "to" + \
+    "".join(str(end_date).split("-")) + f"_mw{min_mag_w}to{max_mag_w}"
+
 df_eq_raw = pd.read_csv(f"{path_in}/data_{eq_catalog_name}.csv", sep="\t")
 
 # Filter data
@@ -233,7 +233,7 @@ if status_projection == "epi":
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
-fig_name = f"map_{status_projection}_{eq_catalog_name}_color{status_color}_rangemarked{status_phase}"
+fig_name = f"map_{eq_catalog_name}_color{status_color}_rangemarked{status_phase}_{status_projection}"
 # for ext in ["png"]:  # "pdf", "eps"
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)

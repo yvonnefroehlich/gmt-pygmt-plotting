@@ -44,7 +44,7 @@ path_out = "02_out_figs"
 # -----------------------------------------------------------------------------
 # Load data
 # -----------------------------------------------------------------------------
-df_eq_raw = pd.read_csv(f"{path_in}/harvardCMT.csv", sep=",")
+df_eq_raw = pd.read_csv(f"{path_in}/harvardcmt.csv", sep=",")
 
 # Keep only relevant columns
 columns = [
@@ -87,6 +87,6 @@ for min_mag in np.arange(4, 10 + step_mag, step_mag):
     fig.show()
     fig_name = f"plot_harvardcmt_year_day_hd{min_depth}km_mw" + \
                 "p".join(str(min_mag).split("."))
-    for ext in ["png"]:  # "pdf", "eps"
-        fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+    # for ext in ["png"]:  # "pdf", "eps"
+    #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
     print(fig_name)

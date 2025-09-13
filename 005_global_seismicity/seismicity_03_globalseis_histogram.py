@@ -52,15 +52,16 @@ end_date = "2019-12-31"
 min_mag_w = 6
 max_mag_w = 10
 
-eq_catalog_name = (
-    f"global_seismicity_{start_date}to{end_date}_mw{min_mag_w}to{max_mag_w}"
-)
+eq_catalog_name = "globalseis_" + "".join(str(start_date).split("-")) + "to" + \
+    "".join(str(end_date).split("-")) + f"_mw{min_mag_w}to{max_mag_w}"
+
 df_eq_raw = pd.read_csv(f"{path_in}/data_{eq_catalog_name}.csv", sep="\t")
 
 # Filter data
 # mw, mwc, mwb, mwr, mww
 df_eq = df_eq_raw[df_eq_raw["magType"].str.contains("mw")]
 
+fig_name_basic = f"histo_{eq_catalog_name}"
 
 # %%
 # -----------------------------------------------------------------------------
@@ -102,7 +103,7 @@ fig.text(text=f"{start_date} to {end_date}", offset="-0.6c/-0.5c", **args_text)
 fig.text(text=f"M@-w@- = {min_mag_w} to {max_mag_w}", offset="-0.6c/-1.2c", **args_text)
 
 fig.show()
-fig_name = f"histo_hdepth_{eq_catalog_name}"
+fig_name = f"{fig_name_basic}_hdepth"
 # for ext in ["png"]:  # "pdf", "eps"
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
@@ -144,7 +145,7 @@ fig.text(text=f"M@-w@- = {min_mag_w} to {max_mag_w}", offset="-0.6c/-1.2c", **ar
 # )
 
 fig.show()
-fig_name = f"histo_mw_{eq_catalog_name}"
+fig_name = f"{fig_name_basic}_mw"
 # for ext in ["png"]:  # "pdf", "eps"
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)

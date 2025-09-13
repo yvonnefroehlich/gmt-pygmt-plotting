@@ -43,7 +43,7 @@ path_out = "02_out_figs"
 # -----------------------------------------------------------------------------
 # Load data
 # -----------------------------------------------------------------------------
-df_eq_raw = pd.read_csv(f"{path_in}/harvardCMT.csv", sep=",")
+df_eq_raw = pd.read_csv(f"{path_in}/harvardcmt.csv", sep=",")
 
 # Keep only relevant columns
 columns = [
@@ -92,6 +92,6 @@ for i_plot in range(3):
     fig.show()
     fig_name = "plot_harvardcmt_" + "_".join(columns) + \
                 "_mw" + "p".join(str(min_mag).split("."))
-    for ext in ["png"]:  # "pdf", "eps"
-        fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+    # for ext in ["png"]:  # "pdf", "eps"
+    #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
     print(fig_name)
