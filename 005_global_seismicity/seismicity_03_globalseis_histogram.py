@@ -103,7 +103,7 @@ fig.text(text=f"{start_date} to {end_date}", offset="-0.6c/-0.5c", **args_text)
 fig.text(text=f"M@-w@- = {min_mag_w} to {max_mag_w}", offset="-0.6c/-1.2c", **args_text)
 
 fig.show()
-fig_name = f"{fig_name_basic}_hdepth"
+fig_name = f"{fig_name_basic}_depth"
 # for ext in ["png"]:  # "pdf", "eps"
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
