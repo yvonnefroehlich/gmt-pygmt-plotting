@@ -1,7 +1,7 @@
 # #############################################################################
 # Harvard CMT catalog
 # - Create epidistance map with
-#   - beach balls for epicenters
+#   - beachballs for epicenters
 #   - color-coding for different quantities
 #   - size for moment magnitude
 # - Single and combined figures are generated
@@ -285,7 +285,7 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
                         **center_coord,
                     )
 
-        # Plot epicenters as beach balls
+        # Plot epicenters as beachballs
         match status_color:
             case "fault":
                 for df_eq_fault, color_fault in zip(
