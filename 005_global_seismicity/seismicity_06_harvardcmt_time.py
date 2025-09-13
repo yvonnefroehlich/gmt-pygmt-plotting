@@ -85,8 +85,8 @@ for min_mag in np.arange(4, 10 + step_mag, step_mag):
         fig.plot(fill="steelblue@95", **args_plot)
 
     fig.show()
-    fig_name = f"plot_harvardcmt_1976to2025_year_day_hd{min_depth}km_mw" + \
-                "p".join(str(min_mag).split("."))
+    fig_name = "plot_harvardcmt_1976to2025_mw" + "p".join(str(min_mag).split(".")) + \
+                f"_year_day_hdepth{min_depth}km"
     for ext in ["png"]:  # "pdf", "eps"
         fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
     print(fig_name)
