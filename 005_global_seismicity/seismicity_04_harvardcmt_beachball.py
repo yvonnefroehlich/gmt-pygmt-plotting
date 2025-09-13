@@ -146,7 +146,7 @@ match status_color:
 # -----------------------------------------------------------------------------
 # Load data
 # -----------------------------------------------------------------------------
-df_eq_raw = pd.read_csv(f"{path_in}/harvardCMT.csv", sep=",")
+df_eq_raw = pd.read_csv(f"{path_in}/harvardcmt.csv", sep=",")
 
 # Keep only relevant columns without depth
 columns = [
