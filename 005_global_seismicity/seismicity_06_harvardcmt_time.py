@@ -30,7 +30,7 @@ import pygmt as gmt
 # Adjust for your needs
 # -----------------------------------------------------------------------------
 # minimum hypocentral depth
-min_depth = 20  # kilometers
+min_depth = 0 # kilometers
 
 # Resolution of output PNG
 dpi_png = 360  # dpi
@@ -81,9 +81,8 @@ for min_mag in np.arange(4, 10 + step_mag, step_mag):
 
     if len(df_eq_mag) > 0:
         args_plot = {"x": df_eq_mag["year"], "y": df_eq_mag["day"], "style": "s0.35c"}
+        fig.plot(fill="white", **args_plot)
         fig.plot(fill="steelblue@95", **args_plot)
-        if min_mag >= 6:
-            fig.plot(pen="steelblue", **args_plot)
 
     fig.show()
     fig_name = f"plot_harvardcmt_year_day_hd{min_depth}km_mw" + \
