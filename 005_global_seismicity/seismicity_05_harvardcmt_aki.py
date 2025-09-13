@@ -43,7 +43,7 @@ path_out = "02_out_figs"
 # -----------------------------------------------------------------------------
 # Load data
 # -----------------------------------------------------------------------------
-df_eq_raw = pd.read_csv(f"{path_in}/data_harvardcmt.csv", sep=",")
+df_eq_raw = pd.read_csv(f"{path_in}/data_harvardcmt_1976to2025_mw4to10.csv", sep=",")
 
 # Keep only relevant columns
 columns = [
@@ -90,8 +90,8 @@ for i_plot in range(3):
         fig.colorbar(frame=frame_cb)
 
     fig.show()
-    fig_name = "plot_harvardcmt_" + "_".join(columns) + \
+    fig_name = "plot_harvardcmt_1976to2025_" + "_".join(columns) + \
                 "_mw" + "p".join(str(min_mag).split("."))
-    # for ext in ["png"]:  # "pdf", "eps"
-    #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+    for ext in ["png"]:  # "pdf", "eps"
+        fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
     print(fig_name)
