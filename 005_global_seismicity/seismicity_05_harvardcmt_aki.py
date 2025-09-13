@@ -92,6 +92,6 @@ for i_plot in range(3):
     fig.show()
     fig_name = "plot_harvardcmt_1976to2025_mw" + "p".join(str(min_mag).split(".")) + \
                 "_" + "_".join(columns)
-    for ext in ["png"]:  # "pdf", "eps"
-        fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+    # for ext in ["png"]:  # "pdf", "eps"
+    #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
     print(fig_name)
