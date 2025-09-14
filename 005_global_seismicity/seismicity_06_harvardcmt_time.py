@@ -1,6 +1,6 @@
 # #############################################################################
 # Global seismicity based on the Harvard CMT catalog
-# - Cartesian plots year-day as function of the moment magnitude
+# - Cartesian plots for year-day as function of the moment magnitude
 # - Data are from the earthquake catalog provided along with the MATLAB package
 #   SplitLab (Wüstefeld et al. 2008) exported as CSV file
 #   See https://www.ldeo.columbia.edu/~gcmt/projects/CMT/catalog/COMBO/combo.ndk

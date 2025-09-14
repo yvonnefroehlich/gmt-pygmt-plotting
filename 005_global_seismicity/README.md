@@ -14,7 +14,7 @@ Python scripts to reproduce some figures of
 
 _Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
 
-| **[01_usgsfdsn_webservice](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_01_usgsfdsn_request.py)** | **[02_usgsfdsn_epicenter](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_02_usgsfdsn_epicenter.py)** | **[03_usgsfdsn_histogram](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_03_usgsfdsn_histogram.py)** |
+| **[01_usgsfdsn_webservice](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_01_usgsfdsn_webservice.py)** | **[02_usgsfdsn_epicenter](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_02_usgsfdsn_epicenter.py)** | **[03_usgsfdsn_histogram](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_03_usgsfdsn_histogram.py)** |
 | --- | --- | --- |
 | USGS FDSN catalog - webservice | USGS FDSN catalog - epicenters | USGS FDSN catalog - histograms |
 | - | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/add-harvardcmt/005_global_seismicity/02_out_figs/map_usgsfdsn_19910101to20191231_mw6to10_epi_colorCMAP_rangemarkedYES.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/add-harvardcmt/005_global_seismicity/02_out_figs/histo_usgsfdsn_19910101to20191231_mw6to10_depth.png" width="220"> |
