@@ -26,6 +26,8 @@ import pandas as pd
 # Request earthquake data
 # -----------------------------------------------------------------------------
 # >>> Set for your needs <<<
+# Note the limitation to a search limit of 20000 events
+# Exceeding this limit leads to Error 400: Bad Request
 
 start_date = "1991-01-01"
 end_date = "2019-12-31"
