@@ -1,6 +1,6 @@
 # #############################################################################
-# Global seismicity
-# - Request earthquake data from USGS
+# Global seismicity based on the USGS FDSN catalog
+# - Data request via the webservice
 # - Download the data into a pandas DataFrame
 # - Write the data to a CSV file
 # -----------------------------------------------------------------------------
