@@ -55,7 +55,7 @@ max_mag_w = 10
 eq_catalog_name = "usgsfdsn_" + "".join(str(start_date).split("-")) + "to" + \
     "".join(str(end_date).split("-")) + f"_mw{min_mag_w}to{max_mag_w}"
 
-df_eq_raw = pd.read_csv(f"{path_in}/data_{eq_catalog_name}.csv", sep="\t")
+df_eq_raw = pd.read_csv(f"{path_in}/catalog_{eq_catalog_name}.csv", sep="\t")
 
 # Filter data
 # mw, mwc, mwb, mwr, mww

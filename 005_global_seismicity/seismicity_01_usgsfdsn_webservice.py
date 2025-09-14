@@ -40,7 +40,7 @@ path_in = "01_in_data"
 # -----------------------------------------------------------------------------
 # Download earthquake data
 # -----------------------------------------------------------------------------
-# Set up request
+# Set up request using the webservice
 # see https://earthquake.usgs.gov/fdsnws/event/1/
 # last access: 2025/01/26
 url_usgs = "https://earthquake.usgs.gov/fdsnws/event/1/query.csv"
@@ -54,7 +54,7 @@ url_usgs_request = url_usgs + "?" + \
         "orderby=" + order_records,
     ])
 
-eq_catalog_name = "globalseis_" + "".join(str(start_date).split("-")) + "to" + \
+eq_catalog_name = "usgsfdsn_" + "".join(str(start_date).split("-")) + "to" + \
     "".join(str(end_date).split("-")) + f"_mw{min_mag_w}to{max_mag_w}"
 
 # Download data into a pandas DataFrame
@@ -62,7 +62,7 @@ data_eq_raw = pd.read_csv(url_usgs_request)
 
 # Write data to a CSV file
 data_eq_raw.to_csv(
-    path_or_buf=f"{path_in}/data_{eq_catalog_name}.csv", sep="\t", index=False
+    path_or_buf=f"{path_in}/catalog_{eq_catalog_name}.csv", sep="\t", index=False
 )
 
 print(f"Saved file '{eq_catalog_name}.csv' to folder '{path_in}'!")
