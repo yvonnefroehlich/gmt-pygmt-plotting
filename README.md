@@ -4,30 +4,28 @@ Collection of Python scripts or Jupyter notebooks (supported by JupyterLab) to r
 geophysical maps shown in the publications I am involved in. To prepare these maps, [_PyGMT_](https://www.pygmt.org)
 the Python wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org) is used.
 
-<img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.png">
-
 
 ## Content
 
 _Please note_: Scripts or notebooks are available up on acceptance of the related publication.
 
-- **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff#000_general_stuff)**
-- **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022#001_paper_RFSG_2022)**
-- **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024#002_paper_FGR_2024)**
-- **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup#003_taup)**
-- **[004_eqs_erupts](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions#004_earthquakes_eruptions)**
-- **[005_global_seismicity](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/005_global_seismicity#005_global_seismicity)**
-- **[006_tomos_dbs](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases#006_tomographies_databases)**
-- **[007_dissert_F_2025](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_dissertation_F_2025#007_dissertation_F_2025)**
-- **[008_urg_vs_norsa](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/008_urg_vs_norsa#008_urg_vs_norsa)**
-- **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn#009_deepdyn)**
-- **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem#010_axisem)**
-- **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024#011_agu_FTLJG_2024)** 
-- **[012_uefa_euro25](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/012_uefa_euro25#012_uefa_euro25)**
-- **[013_general_maps](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/013_general_maps#013_general_maps)**
-- **[014_general_stats](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/014_general_stats#014_general_stats)**
+| Folder of repository (click for more content) | Overview |
+| --- | --- |
+| • **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff#000_general_stuff)** <br> • **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022#001_paper_RFSG_2022)** <br> • **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024#002_paper_FGR_2024)** <br> • **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup#003_taup)** <br> • **[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions#004_earthquakes_eruptions)** <br> • **[005_global_seismicity](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/005_global_seismicity#005_global_seismicity)** <br> • **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases#006_tomographies_databases)** <br> • **[007_dissrtation_F_2025](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_dissertation_F_2025#007_dissertation_F_2025)** <br> • **[008_urg_vs_norsa](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/008_urg_vs_norsa#008_urg_vs_norsa)** <br> • **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn#009_deepdyn)** <br> • **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem#010_axisem)** <br> • **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024#011_agu_FTLJG_2024)** <br> • **[012_uefa_euro25](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/012_uefa_euro25#012_uefa_euro25)** <br> • **[013_general_maps](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/013_general_maps#013_general_maps)** <br> • **[014_general_stats](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/014_general_stats#014_general_stats)** | ![github_maps_readme_main](https://github.com/user-attachments/assets/fa61c920-0111-44dd-8544-345466f5b8d7) |
 
-<img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.gif">
+
+## Requirements
+
+_Please note_: The required versions are given above in the single folders as well as notebooks and scripts.
+
+- [PyGMT](https://www.pygmt.org)
+- [GMT](https://www.generic-mapping-tools.org)
+- [Python](https://www.python.org)
+- [Jupyter notebook](https://jupyter.org) or [JupyterLab](https://jupyter.org)
+- [NumPy](https://numpy.org)
+- [pandas](https://pandas.pydata.org)
+- [ObsPy](https://docs.obspy.org)
+- [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal)
 
 
 ## Citation
@@ -81,20 +79,6 @@ If you make use of this material, please acknowledge the relating publications i
   Understanding the influence of seismic mantle structures at the core-mantle boundary on intense magnetic flux regions.
   *84th Annual Meeting of the German Geophysical Society*, Jena.
   https://doi.org/10.5281/zenodo.10927349.
-
-
-## Requirements
-
-_Please note_: The required versions are given above in the single folders as well as notebooks and scripts.
-
-- [PyGMT](https://www.pygmt.org)
-- [GMT](https://www.generic-mapping-tools.org)
-- [Python](https://www.python.org)
-- [Jupyter notebook](https://jupyter.org) or [JupyterLab](https://jupyter.org)
-- [NumPy](https://numpy.org)
-- [pandas](https://pandas.pydata.org)
-- [ObsPy](https://docs.obspy.org)
-- [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal)
 
 
 ## Contributing
