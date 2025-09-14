@@ -11,23 +11,23 @@ the Python wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic
 
 _Please note_: Scripts or notebooks are available up on acceptance of the related publication.
 
-| **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff#000_general_stuff)** |  **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022#001_paper_RFSG_2022)** | **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024#002_paper_FGR_2024)** | **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup#003_taup)** | **[004_eqs_erupts](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions#004_earthquakes_eruptions)** |
-| --- | --- | --- | --- | --- |
-|  | [*Ritter_et_al._(2022)*](https://doi.org/10.1007/s10950-022-10112-w) | [*Fröhlich_et_al._(2024)*](https://doi.org/10.1093/gji/ggae245) | [*Fröhlich_et_al._(2024)*](https://doi.org/10.1093/gji/ggae245) <br> [*Fröhlich_(2025a)*](https://doi.org/10.5445/IR/1000183786) |  |
-| <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_000stuff.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_001bfo.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_002urg.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_003taup.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_004events.png" width="120"> |
-| • custom symbols <br> • colorwheel <br> • colorbar font <br> • Earth section <br> • Greek letters | **Anisotropy BFO**  <br> • piercing points  <br> • topography <br> <br> <br> | **Anisotropy URG** <br> • topography <br> • piercing points <br> • stereoplots <br> • ray coverage | **Seismic phases** <br> • travel paths <br> • travel time curves <br> <br> <br> | **Events**  <br> • Earthquakes <br> • Eruptions <br> <br> <br> |
+| Folder of repository (click for more content) | Overview |
+| --- | --- |
+| • **[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff#000_general_stuff)** <br> • **[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022#001_paper_RFSG_2022)** <br> • **[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024#002_paper_FGR_2024)** <br> • **[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup#003_taup)** <br> • **[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions#004_earthquakes_eruptions)** <br> • **[005_global_seismicity](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/005_global_seismicity#005_global_seismicity)** <br> • **[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases#006_tomographies_databases)** <br> • **[007_dissrtation_F_2025](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_dissertation_F_2025#007_dissertation_F_2025)** <br> • **[008_urg_vs_norsa](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/008_urg_vs_norsa#008_urg_vs_norsa)** <br> • **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn#009_deepdyn)** <br> • **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem#010_axisem)** <br> • **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024#011_agu_FTLJG_2024)** <br> • **[012_uefa_euro25](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/012_uefa_euro25#012_uefa_euro25)** <br> • **[013_general_maps](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/013_general_maps#013_general_maps)** <br> • **[014_general_stats](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/014_general_stats#014_general_stats)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.gif"> |
 
-| **[005_global_seismicity](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/005_global_seismicity#005_global_seismicity)** | **[006_tomos_dbs](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases#006_tomographies_databases)** | **[007_dissert_F_2025](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_dissertation_F_2025#007_dissertation_F_2025)** | **[008_urg_vs_norsa](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/008_urg_vs_norsa#008_urg_vs_norsa)** | **[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn#009_deepdyn)** |
-| --- | --- | --- | --- | --- |
-| [*Fröhlich_(2025a)*](https://doi.org/10.5445/IR/1000183786) <br> [*Fröhlich_(2025b)*](https://doi.org/10.5281/zenodo.15982581) | [*DGG_DeepDyn_poster*](https://doi.org/10.5281/zenodo.10927349) <br> [*SEDI_DeepDyn_poster*](https://doi.org/10.5281/zenodo.12658821) | [*Fröhlich_(2025a)*](https://doi.org/10.5445/IR/1000183786) | [*Fröhlich_et_al._(2024)*](https://doi.org/10.1093/gji/ggae245) <br> [*Grund_Ritter_(2020)*](https://doi.org/10.1093/gji/ggaa388) | [*DGG_DeepDyn_poster*](https://doi.org/10.5281/zenodo.10927349) <br> [*SEDI_DeepDyn_poster*](https://doi.org/10.5281/zenodo.12658821) |
-| <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_005seismicity.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_006tomos.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_007dissertation.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_008norsa.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_009deepdyn.png" width="120"> |
-| **Global seismicity** <br> • USGS FDSN <br> • Harvard CMT <br> <br> <br> <br> <br> | • shear wave splitting <br> • deep anisotropy <br> • votemap analysis <br> • cluster analysis <br> • tomo GyPSuM <br> • tomo EU60 | **SK(K)S phases** <br> • source-receiver  <br> • 3-D ray paths <br> <br> <br> <br> | **Shear wave splitting** <br> • in the URG area <br> • at NORSA <br> <br> <br> <br> | **DeepDyn** <br> • source-receiver <br> • gufm1 <br> • ScanArray <br> <br> <br> |
 
-| **[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem#010_axisem)** | **[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024#011_agu_FTLJG_2024)** | **[012_uefa_euro25](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/012_uefa_euro25#012_uefa_euro25)** | **[013_general_maps](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/013_general_maps#013_general_maps)** | **[014_general_stats](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/014_general_stats#014_general_stats)** |
-| --- | --- | --- | --- | --- |
-| [*AGU_URG_talk*](https://dx.doi.org/10.5281/zenodo.14510993) <br> [*Fröhlich_(2025a)*](https://doi.org/10.5445/IR/1000183786) | [*AGU_PyGMT_talk*](https://doi.org/10.6084/m9.figshare.28049495) |  |  |  |
-| <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_010axisem.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_011pygmt.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_012euro25.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_013maps.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_014stats.png" width="120"> |
-| **AxiSEM3D** <br> • setups <br> • PREM <br> •[Leng_et_al._(2016)](https://doi.org/10.1093/gji/ggw363) <br> • Nr field | **PyGMT** <br> = GMT <br> + Python & SPE <br> <br> <br> | UEFA <br> WOMEN'S EURO 2025 <br> <br> <br> | • figure height for depth sections <br> • choropleth map <br> via dcw <br> <br> | • Collatz problem <br> • Anscombe's quartet <br> <br> <br> |
+## Requirements
+
+_Please note_: The required versions are given above in the single folders as well as notebooks and scripts.
+
+- [PyGMT](https://www.pygmt.org)
+- [GMT](https://www.generic-mapping-tools.org)
+- [Python](https://www.python.org)
+- [Jupyter notebook](https://jupyter.org) or [JupyterLab](https://jupyter.org)
+- [NumPy](https://numpy.org)
+- [pandas](https://pandas.pydata.org)
+- [ObsPy](https://docs.obspy.org)
+- [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal)
 
 
 ## Citation
@@ -81,20 +81,6 @@ If you make use of this material, please acknowledge the relating publications i
   Understanding the influence of seismic mantle structures at the core-mantle boundary on intense magnetic flux regions.
   *84th Annual Meeting of the German Geophysical Society*, Jena.
   https://doi.org/10.5281/zenodo.10927349.
-
-
-## Requirements
-
-_Please note_: The required versions are given above in the single folders as well as notebooks and scripts.
-
-- [PyGMT](https://www.pygmt.org)
-- [GMT](https://www.generic-mapping-tools.org)
-- [Python](https://www.python.org)
-- [Jupyter notebook](https://jupyter.org) or [JupyterLab](https://jupyter.org)
-- [NumPy](https://numpy.org)
-- [pandas](https://pandas.pydata.org)
-- [ObsPy](https://docs.obspy.org)
-- [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal)
 
 
 ## Contributing
