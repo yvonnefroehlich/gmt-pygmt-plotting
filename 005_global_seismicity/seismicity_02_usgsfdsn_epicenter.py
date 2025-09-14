@@ -233,7 +233,8 @@ if status_projection == "epi":
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
-fig_name = f"map_{eq_catalog_name}_{status_projection}_color{status_color}_rangemarked{status_phase}"
+fig_name = f"map_{eq_catalog_name}_{status_projection}_color{status_color}_" + \
+            f"rangemarked{status_phase}"
 # for ext in ["png"]:  # "pdf", "eps"
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)

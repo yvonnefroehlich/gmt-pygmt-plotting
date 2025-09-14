@@ -63,6 +63,7 @@ df_eq = df_eq_raw[df_eq_raw["magType"].str.contains("mw")]
 
 fig_name_basic = f"histo_{eq_catalog_name}"
 
+
 # %%
 # -----------------------------------------------------------------------------
 # Make histogram for hypocentral depth

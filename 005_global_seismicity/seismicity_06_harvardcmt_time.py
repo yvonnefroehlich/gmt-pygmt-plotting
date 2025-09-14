@@ -25,7 +25,6 @@ import numpy as np
 import pandas as pd
 import pygmt as gmt
 
-
 # %%
 # -----------------------------------------------------------------------------
 # Adjust for your needs

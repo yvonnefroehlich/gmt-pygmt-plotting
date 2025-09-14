@@ -29,7 +29,6 @@ import numpy as np
 import pandas as pd
 import pygmt as gmt
 
-
 # %%
 # -----------------------------------------------------------------------------
 # Adjust for your needs
@@ -355,10 +354,10 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
     fig_name = f"{fig_name_basic}{fig_name_add}_depth"
 
     # Save single plot
-    for ext in ["png"]:  # "pdf", "eps"
-        fig_single.savefig(
-            fname=f"{path_out}/{fig_name}{depth_min}to{depth_max}km.{ext}", dpi=dpi_png
-        )
+    # for ext in ["png"]:  # "pdf", "eps"
+    #     fig_single.savefig(
+    #         fname=f"{path_out}/{fig_name}{depth_min}to{depth_max}km.{ext}", dpi=dpi_png
+    #     )
 
 # Save merge plot
 # for ext in ["png"]:  # "pdf", "eps"
