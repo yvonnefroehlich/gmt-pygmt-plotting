@@ -1,5 +1,5 @@
 # #############################################################################
-# Harvard CMT catalog
+# Global seismicity based on the Harvard CMT catalog
 # - Create epidistance map with
 #   - beachballs for epicenters
 #   - color-coding for different quantities

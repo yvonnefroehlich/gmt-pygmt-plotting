@@ -1,5 +1,5 @@
 # #############################################################################
-# Harvard CMT catalog
+# Global seismicity based on the Harvard CMT catalog
 # - Cartesian plots year vs. day
 # - Data are from the earthquake catalog provided along with the MATLAB package
 #   SplitLab (Wüstefeld et al. 2008) exported as CSV file

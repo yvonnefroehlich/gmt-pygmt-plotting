@@ -14,10 +14,10 @@ Python scripts to reproduce some figures of
 
 _Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
 
-| **[01_globalseis_request](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_01_globalseis_request.py)** | **[02_globalseis_epicenter](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_02_globalseis_epicenter.py)** | **[03_globalseis_histogram](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_03_globalseis_histogram.py)** |
+| **[01_usgsfdsn_request](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_01_usgsfdsn_request.py)** | **[02_usgsfdsn_epicenter](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_02_usgsfdsn_epicenter.py)** | **[03_usgsfdsn_histogram](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_03_usgsfdsn_histogram.py)** |
 | --- | --- | --- |
-| Global seismicity - data request | Global seismicity - epicenters | Global seismicity - histograms |
-| - | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/add-harvardcmt/005_global_seismicity/02_out_figs/map_globalseis_19910101to20191231_mw6to10_epi_colorCMAP_rangemarkedYES.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/add-harvardcmt/005_global_seismicity/02_out_figs/histo_globalseis_19910101to20191231_mw6to10_depth.png" width="220"> |
+| USGS FDSN catalog - webservice | USGS FDSN catalog - epicenters | USGS FDSN catalog - histograms |
+| - | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/add-harvardcmt/005_global_seismicity/02_out_figs/map_usgsfdsn_19910101to20191231_mw6to10_epi_colorCMAP_rangemarkedYES.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/add-harvardcmt/005_global_seismicity/02_out_figs/histo_usgsfdsn_19910101to20191231_mw6to10_depth.png" width="220"> |
 
 | **[seismicity_04_harvardcmt_beachball](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_04_harvardcmt_beachball.py)** | **[seismicity_05_harvardcmt_aki](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_05_harvardcmt_aki.py)** | **[seismicity_06_harvardcmt_time](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-harvardcmt/005_global_seismicity/seismicity_06_harvardcmt_time.py)** |
 | --- | --- | --- |
