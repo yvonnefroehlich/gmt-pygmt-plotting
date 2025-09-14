@@ -1,8 +1,8 @@
 # #############################################################################
 # Global seismicity based on the USGS FDSN catalog
-# - Create geographic map with coding for
-#   - hypocentral depth -> color
-#   - moment magnitude -> size
+# - Create geographic map with
+#   - color-coding for the hypocentral depth
+#   - size-coding for the moment magnitude
 # For making a GIF: https://ezgif.com/maker
 # -----------------------------------------------------------------------------
 # History
