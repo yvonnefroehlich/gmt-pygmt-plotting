@@ -42,6 +42,9 @@ If you make use of this material, please acknowledge the relating publications i
   Disputation, *Karlsruhe Institute of Technology, Geophysical Institute*.
   https://doi.org/10.5281/zenodo.15982581.
 
+<details><summary>Please click for details on <b>Presentations</b> and <b>Posters.</b> </summary>
+<p>
+
 **Presentations**
 - [**_Fröhlich Y, Ritter J R R (2024)_**](https://dx.doi.org/10.5281/zenodo.14510993).
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
@@ -69,6 +72,9 @@ If you make use of this material, please acknowledge the relating publications i
   Understanding the influence of seismic mantle structures at the core-mantle boundary on intense magnetic flux regions.
   *84th Annual Meeting of the German Geophysical Society*, Jena.
   https://doi.org/10.5281/zenodo.10927349.
+
+</p>
+</details>
 
 
 ## Contributing
