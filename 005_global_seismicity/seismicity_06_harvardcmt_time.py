@@ -31,7 +31,7 @@ import pygmt as gmt
 # Adjust for your needs
 # -----------------------------------------------------------------------------
 # Set minimum hypocentral depth
-min_depth = 20 # kilometers
+min_depth = 20  # kilometers
 
 # Resolution of output PNG
 dpi_png = 360  # dpi
@@ -39,6 +39,21 @@ dpi_png = 360  # dpi
 # Path
 path_in = "01_in_data"
 path_out = "02_out_figs"
+
+# Plotting
+fill = "steelblue@95"
+symbol_shape = "rounded"
+
+match symbol_shape:
+    case "square":
+        style = "s0.32c"
+        style_leg = "s0.4c"
+    case "circle":
+        style = "c0.23c"
+        style_leg = "c0.31c"
+    case "rounded":
+        style = "R0.22c/0.22c/0.05c"
+        style_leg = "R0.3c/0.3c/0.06c"
 
 
 # %%
@@ -71,7 +86,6 @@ n_layer = 2
 y_box = -5.5
 
 step_mag = 0.5
-
 for min_mag in np.arange(4, 10 + step_mag, step_mag):
     df_eq_mag = df_eq_depth[df_eq_depth["magnitude"] >= min_mag]
 
@@ -92,9 +106,9 @@ for min_mag in np.arange(4, 10 + step_mag, step_mag):
 # -----------------------------------------------------------------------------
     # Plot data points with semi-transparency to indicate density
     if len(df_eq_mag) > 0:
-        args_plot = {"x": df_eq_mag["year"], "y": df_eq_mag["day"], "style": "s0.35c"}
+        args_plot = {"x": df_eq_mag["year"], "y": df_eq_mag["day"], "style": style}
         fig.plot(fill="white", **args_plot)
-        fig.plot(fill="steelblue@95", **args_plot)
+        fig.plot(fill=fill, **args_plot)
 
 # -----------------------------------------------------------------------------
     # Create legend
@@ -105,8 +119,8 @@ for min_mag in np.arange(4, 10 + step_mag, step_mag):
             fig.plot(
                 x=x_box_temp,
                 y=[y_box] * len(x_box_temp),
-                style="s0.35c",
-                fill="steelblue@95",
+                style=style_leg,
+                fill=fill,
                 pen="1p,black",
                 no_clip=True
             )
@@ -126,7 +140,7 @@ for min_mag in np.arange(4, 10 + step_mag, step_mag):
 # -----------------------------------------------------------------------------
     fig.show()
     fig_name = "plot_harvardcmt_1976to2025_mw" + "p".join(str(min_mag).split(".")) + \
-            f"_year_day_depth{min_depth}km"
+            f"_year_day_depth{min_depth}km_{symbol_shape}"
     for ext in ["png"]:  # "pdf", "eps"
         fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
     print(fig_name)
