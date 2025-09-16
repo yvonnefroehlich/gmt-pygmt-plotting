@@ -1,5 +1,5 @@
 # #############################################################################
-# Earth magnetic field gufm1 1980
+# Earth's magnetic field model gufm1 1980 by Jackson et al. (2000)
 # -----------------------------------------------------------------------------
 # Grid calculated with pymagglobal
 # https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal
