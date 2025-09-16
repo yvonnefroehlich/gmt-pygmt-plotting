@@ -1,6 +1,6 @@
 # #############################################################################
 # Earth's magnetic field model gufm1 1980 by Jackson et al. (2000)
-# - North and south poles: maps with contour lines for inclindation and declination
+# - North and south poles: maps with contour lines for inclination and declination
 # -----------------------------------------------------------------------------
 # Grid calculated with pymagglobal
 # https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal
