@@ -141,6 +141,6 @@ for min_mag in np.arange(4, 10 + step_mag, step_mag):
     fig.show()
     fig_name = "plot_harvardcmt_1976to2025_mw" + "p".join(str(min_mag).split(".")) + \
             f"_year_day_depth{min_depth}km_{symbol_shape}"
-    for ext in ["png"]:  # "pdf", "eps"
-        fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+    # for ext in ["png"]:  # "pdf", "eps"
+    #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
     print(fig_name)
