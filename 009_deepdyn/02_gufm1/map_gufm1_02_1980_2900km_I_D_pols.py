@@ -25,11 +25,16 @@ import pygmt as gmt
 
 # %%
 # -----------------------------------------------------------------------------
-# General stuff
+# Adjust for your needs
 # -----------------------------------------------------------------------------
 status_quantity = "I"  # "I" for inclination | "D" for declination
 status_pole = "north"  # "north" for north pole | "south" for south pole
 
+
+# %%
+# -----------------------------------------------------------------------------
+# General stuff
+# -----------------------------------------------------------------------------
 # Paths
 path_in = "01_in_data"
 path_out = "02_out_figs"
