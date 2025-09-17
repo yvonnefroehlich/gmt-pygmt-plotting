@@ -5,7 +5,7 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/01/12
-# - Updated: 2025/09/17 - Update codes
+# - Updated: 2025/09/17 - Allow to select from different color combinations
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
