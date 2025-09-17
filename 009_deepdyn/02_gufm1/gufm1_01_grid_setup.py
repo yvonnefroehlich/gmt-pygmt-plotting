@@ -60,9 +60,7 @@ lons = grid_pymag[1]
 # https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal/package_documentation.html#pymagglobal.utils.nez2dif
 N, E, Z = field(grid_pymag, gufm1, field_type="nez")  # north, east, down components
 D, I, F = field(grid_pymag, gufm1, field_type="dif")  # declination, inclination, intensity
-
 quantities = {"Z": Z, "N": N, "E": E, "D": D, "I": I, "F": F}
-
 
 # -----------------------------------------------------------------------------
 # Make GMT-ready grid
