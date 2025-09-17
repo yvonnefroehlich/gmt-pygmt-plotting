@@ -72,7 +72,7 @@ fig.coast(shorelines=f"1/0.1p,{color_shorelines}")
 
 # -----------------------------------------------------------------------------
 fig.show()
-fig_name = f"{path_out}/map_gufm1_01_1980_2900km_Z_global"
+fig_name = f"{path_out}/map_gufm1_1980_2900km_Z_global"
 # for ext in ["png"]:  # , "pdf", "eps"]:
 #     fig.savefig(fname=f"{fig_name}.{ext}")
 print(fig_name)
