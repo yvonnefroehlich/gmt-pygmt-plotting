@@ -61,19 +61,19 @@ lons = grid_pymag[1]
 N, E, Z = field(grid_pymag, gufm1, field_type="nez")  # north, east, down components
 D, I, F = field(grid_pymag, gufm1, field_type="dif")  # declination, inclination, intensity
 
+quantities = {"Z": Z, "N": N, "E": E, "D": D, "I": I, "F": F}
+
 
 # -----------------------------------------------------------------------------
 # Make GMT-ready grid
-quantities = [Z, N, E, D, I, F]
-quantities_str = ["Z", "N", "E", "D", "I", "F"]
-for i_quantity, quantity in enumerate(quantities):
+for quantity in ["Z", "I", "D"]:
 
-    grid_name = f"{model}_{year}_{depth}km_{quantities_str[i_quantity]}"
+    grid_name = f"{model}_{year}_{depth}km_{quantity}"
 
     gmt.surface(
         x=lons,
         y=lats,
-        z=quantity,
+        z=quantities[quantity],
         spacing=grid_spacing,
         tension=0.35,
         region="d",
