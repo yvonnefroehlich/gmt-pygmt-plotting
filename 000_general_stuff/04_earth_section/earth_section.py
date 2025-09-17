@@ -1,13 +1,14 @@
 # #############################################################################
-# Earth section
+# Sketches of Earth section
 # >>> Not to scale <<<
 # -> Adjust the ellipses for your needs
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/01/12
+# - Updated: 2025/09/17 - Update codes
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.14.0 -> https://www.pygmt.org/v0.14.0/ | https://www.pygmt.org/
+# - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
@@ -19,28 +20,43 @@
 
 import pygmt
 
-
+# -----------------------------------------------------------------------------
 def earth_section(
     # Select section type: Choose from
-    # "open_vertical", "half_vertical", "half_horizontal", northeast_quadrant"
+    # "open_vertical" | "half_vertical" | "half_horizontal" | northeast_quadrant"
     section_type,
-    color_land="lightbrown",
-    color_water="lightblue",
-    color_shorelines="brown",
-    color_cover="white",
+    color_concept="green",  # "green" | "brown" | "kit" | "own"
+    # Set colors used for color_concept="own"
+    color_land="yellowgreen",
+    color_water="steelblue",
+    color_sl="white",
     pen_grid="0.1p,gray60",
     pen_map="0.8p,gray30",
     pen_sec="0.01p,gray90",
     pen_qua="0.5p,gray30,dashed",
+    color_cover="white",
     # Uncomment line 124 to save the images
     # Set path to folder where images should be stored
     path_out="",
 ):
 
-
-# -----------------------------------------------------------------------------
-    fig = pygmt.Figure()
-    pygmt.config(MAP_GRID_PEN_PRIMARY=pen_grid, MAP_FRAME_PEN=pen_map)
+    match color_concept:
+        case "green":
+            color_land = "yellowgreen"
+            color_water = "steelblue"
+            color_sl = "white"
+        case "kit":
+            color_land = "76/181/167"
+            color_water = "217/239/236"
+            color_sl = "0/150/130"
+        case "brown":
+            color_land = "lightbrown"
+            color_water = "lightblue"
+            color_sl = "brown"
+        case "own":
+            color_land = color_land
+            color_water = color_water
+            color_sl = color_sl
 
     match section_type:
         case "open_vertical" | "half_vertical":
@@ -57,14 +73,13 @@ def earth_section(
             x_qua = [-10, -10, 100, 40]
             y_qua = [90, 0, 0, 90]
 
-    fig.coast(
-        projection=projection,
-        region="g",
-        frame="g10",
-        land=color_land,
-        water=color_water,
-        shorelines=f"1/0.01p,{color_shorelines}",
-    )
+# -----------------------------------------------------------------------------
+    fig = pygmt.Figure()
+    pygmt.config(MAP_GRID_PEN_PRIMARY=pen_grid, MAP_FRAME_PEN=pen_map)
+
+    fig.basemap(projection=projection, region="g", frame=0)
+    fig.coast(land=color_land, water=color_water, shorelines=f"1/0.01p,{color_sl}")
+    fig.basemap(frame="g10")
 
 # -----------------------------------------------------------------------------
     match section_type:
@@ -110,29 +125,27 @@ def earth_section(
             fig.coast(
                 land=f"{color_land}@90",
                 water=f"{color_water}@90",
-                shorelines=f"1/0.01p,{color_shorelines}@50",
+                shorelines=f"1/0.01p,{color_sl}@50",
             )
             fig.basemap(frame="g10")
 
 # -----------------------------------------------------------------------------
     fig.show()
-    fig_name = f"earth_section_{section_type}"
+    fig_name = f"earth_section_{section_type}_{color_concept}"
     for ext in ["png"]:
         alpha_png = False
         if ext == "png":
             alpha_png = True
-        # fig.savefig(fname=f"{path_out}{fig_name}.{ext}", dpi=360, transparent=alpha_png)
+        # fig.savefig(fname=f"{path_out}{fig_name}.{ext}", transparent=alpha_png)
     print(fig_name)
 
 
 # %%
 # -----------------------------------------------------------------------------
-# Example
+# Examples
 # -----------------------------------------------------------------------------
-for section_type in [
-    "open_vertical",
-    "half_vertical",
-    "half_horizontal",
-    "northeast_quadrant",
-]:
-    earth_section(section_type=section_type)
+earth_section(section_type="open_vertical")
+
+earth_section(section_type="half_horizontal", color_concept="brown")
+
+earth_section(section_type="northeast_quadrant", color_concept="kit")
