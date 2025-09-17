@@ -9,5 +9,5 @@ _Recommended versions_: PyGMT v0.11.0-v0.16.0, GMT 6.4.0-6.5.0
 
 | **[04_earth_section](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff/04_earth_section/earth_section.py)** |
 | --- |
-| Earth section (currently not to scale) |
-| <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/000_general_stuff/04_earth_section/earth_section_open_vertical.png" width="150"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/000_general_stuff/04_earth_section/earth_section_northeast_quadrant.png" width="150"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/000_general_stuff/04_earth_section/earth_section_half_horizontal.png" width="150"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/000_general_stuff/04_earth_section/earth_section_half_vertical.png" width="150"> |
+| Sketches of Earth section (currently not to scale) |
+| <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/000_general_stuff/04_earth_section/earth_section_open_vertical_green.png" width="100"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/000_general_stuff/04_earth_section/earth_section_half_horizontal_brown.png" width="100"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/000_general_stuff/04_earth_section/earth_section_northeast_quadrant_kit.png" width="100"> |
