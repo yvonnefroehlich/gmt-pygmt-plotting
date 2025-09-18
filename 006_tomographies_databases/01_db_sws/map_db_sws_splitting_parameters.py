@@ -22,7 +22,7 @@
 # - Updated: 2025/02/15
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.11.0 - v0.14.2 -> https://www.pygmt.org/
+# - PyGMT v0.16.0 -> https://www.pygmt.org/
 # - GMT 6.4.0 - 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
@@ -91,7 +91,7 @@ fig.plot(data=f"{path_in}/plate_boundaries_Bird_2003.txt", pen=f"0.4p,{color_pb}
 # bars according to phi and dt; nulls as white-filled black-outlined circles
 
 # Make colormap for phi
-gmt.makecpt(cmap=f"{path_in}/phase.cpt", series=[-90, 90], cyclic=True)
+gmt.makecpt(cmap="phase", series=[-90, 90], cyclic=True)
 
 # Plot splits
 fig.plot(data=df_bar_max_order, incols="0,1,2,3,4+s0.05,5+s0.006", style="j", cmap=True)
