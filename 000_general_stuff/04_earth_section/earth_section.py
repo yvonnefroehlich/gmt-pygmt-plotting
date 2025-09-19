@@ -6,6 +6,7 @@
 # History
 # - Created: 2025/01/12
 # - Updated: 2025/09/17 - Allow to select from different color combinations
+# - Updated: 2025/09/19 - Improve coding style
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
@@ -29,9 +30,9 @@ def earth_section(
     # Set colors used for color_concept="own"
     color_land="yellowgreen",
     color_water="steelblue",
-    color_sl="white",
+    color_sl="white",  # shorelines
     pen_grid="0.1p,gray60",
-    pen_map="0.8p,gray30",
+    pen_frame="0.8p,gray30",
     pen_sec="0.01p,gray90",
     pen_qua="0.5p,gray30,dashed",
     color_cover="white",
@@ -75,7 +76,7 @@ def earth_section(
 
 # -----------------------------------------------------------------------------
     fig = pygmt.Figure()
-    pygmt.config(MAP_GRID_PEN_PRIMARY=pen_grid, MAP_FRAME_PEN=pen_map)
+    pygmt.config(MAP_GRID_PEN_PRIMARY=pen_grid, MAP_FRAME_PEN=pen_frame)
 
     fig.basemap(projection=projection, region="g", frame=0)
     fig.coast(land=color_land, water=color_water, shorelines=f"1/0.01p,{color_sl}")
@@ -84,39 +85,45 @@ def earth_section(
 # -----------------------------------------------------------------------------
     match section_type:
         case "open_vertical":
-            fig.plot(x=x_sec, y=y_sec, fill="gray55", pen=pen_map)
+            fig.plot(x=x_sec, y=y_sec, fill="gray55", pen=pen_frame)
 
-            fig.plot(x=0.8, y=0, style="e90/8.0/2.7", pen=pen_sec, fill="gray65")
-            fig.plot(x=0.5, y=0, style="e90/5.0/1.9", pen=pen_sec, fill="gray75")
-            fig.plot(x=0.6, y=0, style="e90/2.5/1.2", pen=pen_sec, fill="gray85")
+            args_sec = {"y": 0, "pen": pen_sec}
 
-            fig.plot(x=0, y=0, style="w10.0c/-90/90", pen=pen_sec, fill="gray60")
-            fig.plot(x=0, y=0, style="w8.0c/-90/90", pen=pen_sec, fill="gray70")
-            fig.plot(x=0, y=0, style="w5.0c/-90/90", pen=pen_sec, fill="gray80")
-            fig.plot(x=0, y=0, style="w2.5c/-90/90", pen=pen_sec, fill="gray90")
+            fig.plot(x=0.8, style="e90/8.0/2.7", fill="gray65", **args_sec)
+            fig.plot(x=0.5, style="e90/5.0/1.9", fill="gray75", **args_sec)
+            fig.plot(x=0.6, style="e90/2.5/1.2", fill="gray85", **args_sec)
+
+            fig.plot(x=0, style="w10.0c/-90/90", fill="gray60", **args_sec)
+            fig.plot(x=0, style="w8.0c/-90/90", fill="gray70", **args_sec)
+            fig.plot(x=0, style="w5.0c/-90/90", fill="gray80", **args_sec)
+            fig.plot(x=0, style="w2.5c/-90/90", fill="gray90", **args_sec)
 
             fig.basemap(frame=0)
 
         case "half_vertical":
             fig.plot(x=x_sec, y=y_sec, fill=color_cover)
 
-            fig.plot(x=0, y=0, style="w10c/-90/90", pen="1.5p,white", no_clip=True)
+            args_sec = {"x": 0, "y": 0}
 
-            fig.plot(x=0, y=0, style="e90/10/3.6", pen=pen_map, fill="gray55", no_clip=True)
-            fig.plot(x=0, y=0, style="e90/8.0/2.7", pen=pen_sec, fill="gray65")
-            fig.plot(x=0, y=0, style="e90/5.0/1.9", pen=pen_sec, fill="gray75")
-            fig.plot(x=0, y=0, style="e90/2.5/1.2", pen=pen_sec, fill="gray85")
+            fig.plot(style="w10c/-90/90", pen="1.5p,white", no_clip=True, **args_sec)
+
+            fig.plot(style="e90/10/3.6", pen=pen_frame, fill="gray55", no_clip=True, **args_sec)
+            fig.plot(style="e90/8.0/2.7", pen=pen_sec, fill="gray65", **args_sec)
+            fig.plot(style="e90/5.0/1.9", pen=pen_sec, fill="gray75", **args_sec)
+            fig.plot(style="e90/2.5/1.2", pen=pen_sec, fill="gray85", **args_sec)
 
         case "half_horizontal":
-            fig.plot(x=0, y=20, style="w10c/0/180", pen="1.5p,white", fill=color_cover, no_clip=True)
+            args_sec = {"x": 0, "y": 20}
 
-            fig.plot(x=0, y=20, style="e0/10.0/3.6", pen=pen_map, fill="gray55", no_clip=True)
-            fig.plot(x=0, y=20, style="e0/8.0/2.7", pen=pen_sec, fill="gray65")
-            fig.plot(x=0, y=20, style="e0/5.0/1.9", pen=pen_sec, fill="gray75")
-            fig.plot(x=0, y=20, style="e0/2.5/1.2", pen=pen_sec, fill="gray85")
+            fig.plot(style="w10c/0/180", pen="1.5p,white", fill=color_cover, no_clip=True, **args_sec)
+
+            fig.plot(style="e0/10.0/3.6", pen=pen_frame, fill="gray55", no_clip=True, **args_sec)
+            fig.plot(style="e0/8.0/2.7", pen=pen_sec, fill="gray65", **args_sec)
+            fig.plot(style="e0/5.0/1.9", pen=pen_sec, fill="gray75", **args_sec)
+            fig.plot(style="e0/2.5/1.2", pen=pen_sec, fill="gray85", **args_sec)
 
         case "northeast_quadrant":
-            fig.plot(x=x_qua, y=y_qua, fill="gray95", pen=pen_map)
+            fig.plot(x=x_qua, y=y_qua, fill="gray95", pen=pen_frame)
 
             fig.plot(x=[0, 0], y=[90, 10], pen=pen_qua)
             fig.plot(x=[-10, 0], y=[0, 10], pen=pen_qua)
@@ -127,6 +134,7 @@ def earth_section(
                 water=f"{color_water}@90",
                 shorelines=f"1/0.01p,{color_sl}@50",
             )
+
             fig.basemap(frame="g10")
 
 # -----------------------------------------------------------------------------
@@ -145,6 +153,8 @@ def earth_section(
 # Examples
 # -----------------------------------------------------------------------------
 earth_section(section_type="open_vertical")
+
+earth_section(section_type="half_vertical", color_concept="brown")
 
 earth_section(section_type="half_horizontal", color_concept="brown")
 
