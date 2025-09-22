@@ -17,7 +17,6 @@
 
 import pygmt as gmt
 import pandas as pd
-import numpy as np
 
 # %%
 # -----------------------------------------------------------------------------
@@ -26,8 +25,8 @@ import numpy as np
 # Note the limitation to a search limit of 20000 events
 # Exceeding this limit leads to Error 400: Bad Request
 
-start_date = "2025-01-29"
-end_date = "2025-02-06"
+start_date = "2025-01-01"
+end_date = "2025-03-14"
 min_mag_w = "0"
 max_mag_w = "10"
 min_lon = 25.25
@@ -160,21 +159,22 @@ for cmap, reverse, series, fill_usgs, fill_cmt, fill_external, frame, label in z
         fill=fill_external,
         cmap=True,
     )
-    # Mw >= 3.9
+    # # Mw >= 3.9
     # fig.plot(
     #     x=df_eq_usgs.longitude,
     #     y=df_eq_usgs.latitude,
     #     style="c0.07c",
-    #     fill=fill_usgs,
-    #     cmap=True,
+    #     fill="cyan",  # fill_usgs,
+    #     # cmap=True,
     # )
-    # CMT
+    # # CMT
     # df_eq_cmt_mod["depth"] = fill_cmt
     # fig.meca(
     #     spec=df_eq_cmt_mod,
     #     scale="0.45c",
     #     outline="0.1p,gray50",
-    #     cmap=True,
+    #     compressionfill="magenta",
+    #     # cmap=True,
     # )
 
     fig.shift_origin(xshift="w+0.5c")
