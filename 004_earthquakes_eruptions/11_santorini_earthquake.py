@@ -24,7 +24,6 @@ import pygmt as gmt
 import pandas as pd
 import datetime
 from dateutil.rrule import rrule, DAILY
-import numpy as np
 
 # %%
 # -----------------------------------------------------------------------------
@@ -35,9 +34,9 @@ path_in = "01_in_data"
 path_out = "02_out_figs"
 
 # Time window
-start_date_data = datetime.datetime(2025, 1, 1, 0, 0, 0)
-start_date_plot = datetime.datetime(2025, 1, 15, 0, 0, 0)
-end_date_plot = datetime.datetime(2025, 3, 15, 0, 0, 0)
+start_date_data = datetime.datetime(2025, 1, 1, 0, 0)
+start_date_plot = datetime.datetime(2025, 1, 15, 0, 0)
+end_date_plot = datetime.datetime(2025, 3, 15, 0, 0)
 
 # Colors
 color_sl = "gray10"
@@ -47,7 +46,7 @@ color_land = "tan"
 
 # Plotting region
 min_lon = 25.34
-max_lon = 25.90
+max_lon = 25.91
 min_lat = 36.35
 max_lat = 36.81
 region = [min_lon, max_lon, min_lat, max_lat]
@@ -70,7 +69,7 @@ for i_event in range(len(df_eq_external_raw)):
         df_eq_external_raw["day"][i_event],
         df_eq_external_raw["hour"][i_event],
         df_eq_external_raw["minute"][i_event],
-        int(np.floor(df_eq_external_raw["seconds"][i_event])),
+        # int(np.floor(df_eq_external_raw["seconds"][i_event])),
     )
 
 df_eq_external = df_eq_external_raw[df_eq_external_raw["date_time"] >= start_date_data]
@@ -82,10 +81,17 @@ df_eq_external = df_eq_external_raw[df_eq_external_raw["date_time"] >= start_dat
 # -----------------------------------------------------------------------------
 for day in rrule(DAILY, dtstart=start_date_plot, until=end_date_plot):
 
-    # print(day)
-    df_eq_external_cum = df_eq_external[df_eq_external["date_time"] < day]
-    # df_eq_external_day = df_eq_external[df_eq_external["date_time"] == day]
-    # print(len(df_eq_external_cum))
+    print(day)
+    print(day + datetime.timedelta(days=1))
+    df_eq_external_cum = df_eq_external[
+        df_eq_external["date_time"] < (day + datetime.timedelta(days=1))
+    ]
+    df_eq_external_before = df_eq_external[
+        df_eq_external["date_time"] < day
+    ]
+    print(len(df_eq_external_cum))
+    print(len(df_eq_external_before))
+    N_eq_day = len(df_eq_external_cum) - len(df_eq_external_before)
 
     fig = gmt.Figure()
     gmt.config(MAP_TITLE_OFFSET="-5p")
@@ -94,7 +100,7 @@ for day in rrule(DAILY, dtstart=start_date_plot, until=end_date_plot):
         ["magnitude", "depth", "date_time"],
         [
             "WSne+tSantorini–Amorgos",
-            "wSne+t earthquakes",
+            f"wSne+t@;{color_hl};{N_eq_day}@;; / {len(df_eq_external_cum)} earthquakes",
             "wSne+t" + str(start_date_data).split(" ")[0] + \
                f" — @;{color_hl};" + str(day).split(" ")[0] + "@;;",
         ],
