@@ -51,9 +51,9 @@ color_land = "tan"
 
 # Plotting region
 min_lon = 25.34
-max_lon = 25.91
+max_lon = 25.92
 min_lat = 36.35
-max_lat = 36.82
+max_lat = 36.81
 region = [min_lon, max_lon, min_lat, max_lat]
 
 
@@ -136,7 +136,6 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         fig.shift_origin(xshift="w+0.5c")
 
     fig.show()
-
     fig_name = "11_santorini_earthquake_" + str(day).split(" ")[0]
     for ext in ["png"]:  # "pdf", "eps"
         fig.savefig(fname=f"{path_out}/santorini/{fig_name}.{ext}")
@@ -162,3 +161,7 @@ for i_day, x_day in enumerate(x_days):
     fig.text(text=N_eqs_days[i_day], x=x_day, y=N_eqs_days[i_day] + 8)
 
 fig.show()
+fig_name = "11_santorini_earthquakes_per_day"
+for ext in ["png"]:  # "pdf", "eps"
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+print(fig_name)
