@@ -2,13 +2,15 @@
 # Santorini earthquakes January - February 2025
 # - 2-D maps for epicenters with different color-coding per day
 # - 3-D plots for hypocenters with different color-coding per day
-# - histogram for earthquakes per day
-# - histograms for magnitude distribution per day
+# - Histogram for earthquakes per day
+# - Histograms for magnitude distribution per day
 #
 # Data taken from
 #   Karakostas V, Lomax A, Anagnostou V, Papadimitriou E, Acoccela V, & Hicks S (2025).
 #   2025 Santorini–Amorgos NLL-SSST-coherence high-precision relocated earthquake catalog.
 #   Zenodo. https://doi.org/10.5281/zenodo.15111649.
+#
+# Make GIF: https://ezgif.com/pdf-to-gif, last accessed 2025/09/25
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/09/21
