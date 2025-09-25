@@ -1,5 +1,9 @@
 # #############################################################################
 # Santorini earthquakes January - February 2025
+# - 2-D maps for epicenters with different color-coding per day
+# - 3-D plots for hypocenters with different color-coding per day
+# - histogram for earthquakes per day
+# - histograms for magnitude distribution per day
 #
 # Data taken from
 #   Karakostas V, Lomax A, Anagnostou V, Papadimitriou E, Acoccela V, & Hicks S (2025).
@@ -85,7 +89,7 @@ df_eq = df_eq_raw[df_eq_raw["date_time"] >= start_date_data]
 # Create plots over time (days)
 # -----------------------------------------------------------------------------
 
-# Carthesian histogram for magnitude distribution per day
+# Histograms for magnitude distribution per day
 fig_histo = gmt.Figure()
 gmt.config(FONT="8p", MAP_TITLE_OFFSET="3p", MAP_GRID_PEN_PRIMARY="0.1p,gray70")
 i_histo = 0
@@ -104,13 +108,13 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
     # print(len(df_eq_cum))
 
 # -----------------------------------------------------------------------------
-    # Epicenters with different color-codings per day
+    # Epicenters or hypocenters with different color-codings per day
 
-    # 2-D map
+    # 2-D maps
     fig2d = gmt.Figure()
     gmt.config(MAP_TITLE_OFFSET="-5p")
 
-    # 3-D plot
+    # 3-D plots
     fig3d = gmt.Figure()
     gmt.config(FONT="20p", MAP_GRID_PEN_PRIMARY="0.1p,gray30")
 
