@@ -84,17 +84,62 @@ df_eq = df_eq_raw[df_eq_raw["date_time"] >= start_date_data]
 # -----------------------------------------------------------------------------
 # Make maps of epicenters with different color-codings over time
 # -----------------------------------------------------------------------------
+
+# Create Carthesian histogram for magnitude distribution per day
+fig_histo = gmt.Figure()
+gmt.config(FONT="8p", MAP_TITLE_OFFSET="3p", MAP_GRID_PEN_PRIMARY="0.1p,gray70")
+i_histo = 0
+
+# -----------------------------------------------------------------------------
 for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date_plot)):
 
     df_eq_cum = df_eq[df_eq["date_time"] < (day + add_one_day)]
-    df_eq_before = df_eq[df_eq["date_time"] < day]
-    N_eqs_day = len(df_eq_cum) - len(df_eq_before)
+    df_eq_day = df_eq_cum[df_eq_cum["date_time"] > day]
+    N_eqs_day = len(df_eq_day)
     N_eqs_days[i_day] = N_eqs_day
 
     print(day)
-    print(len(df_eq_cum))
-    print(day + add_one_day)
-    print(len(df_eq_before))
+    # print(day + add_one_day)
+    # print(len(df_eq_day))
+    # print(len(df_eq_cum))
+
+# -----------------------------------------------------------------------------
+    if day > datetime.datetime(2025, 1, 23, 0, 0) and \
+        day < datetime.datetime(2025, 2, 17, 0, 0):
+
+        x_afg_l = "xf0.5g1"
+        y_afg_l = "yf5g5"
+        if i_histo > 17:
+            x_afg_l = "xa1f0.5g1+lmagnitude"
+        if i_histo in [0, 6, 12, 18]:
+            y_afg_l = "ya5g5+lnumber of earthquakes"
+
+        fig_histo.basemap(
+            region=[0, 6, 0, 40],
+            projection="X6c/5c",
+            frame=[
+                f"WStr+t@;{color_hl};{N_eqs_day}@;; earthquakes on @;{color_hl};" + \
+                    str(day).split(" ")[0] + "@;;",
+                x_afg_l, y_afg_l,
+            ],
+        )
+        if len(df_eq_day) > 0:
+            fig_histo.histogram(
+                data=df_eq_day["magnitude"],
+                series=0.1,
+                barwidth="0.08",
+                fill=f"{color_hl}@40",
+                histtype=0,  # counts
+            )
+        fig_histo.basemap(frame=0)
+
+        fig_histo.shift_origin(xshift="+w+0.2c")
+        if i_histo in [5, 11, 17, 23, 29]:
+            fig_histo.shift_origin(yshift="-h-0.7c", xshift="-37.2c")
+
+        i_histo = i_histo + 1
+
+        # fig_histo.show()
 
 # -----------------------------------------------------------------------------
     # Create 2-D map
@@ -123,7 +168,12 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         cmap_fill = f"{path_in}/{cmap}_fill.cpt"
         gmt.makecpt(cmap=cmap, series=series, reverse=reverse, output=cmap_fill)
         cb_x_afg = ""
-        if fill_quantity=="date_time": cb_x_afg = "xa1O"
+        if fill_quantity=="date_time":
+            cb_x_afg = "xa1O"
+
+        z_label = " "
+        if fill_quantity=="magnitude":
+            z_label = "negative depth / km"
 
 # -----------------------------------------------------------------------------
         fig2d.basemap(projection="M12c", region=region, frame=["af", f"{frame}+t{title}"])
@@ -151,8 +201,6 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         fig2d.shift_origin(xshift="w+0.5c")
 
 # -----------------------------------------------------------------------------
-        z_label = " "
-        if fill_quantity=="magnitude": z_label = "negative depth / km"
         fig3d.plot3d(
             projection="X15c",
             region=[lon_min, lon_max, lat_min, lat_max, -15, 0],
@@ -195,22 +243,22 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
 
 # -----------------------------------------------------------------------------
     fig_name = "d_santorini_earthquakes_" + str(day).split(" ")[0]
-
     fig2d.show()
     for ext in ["png"]:  # "pdf", "eps"
         fig2d.savefig(fname=f"{path_out}/2{fig_name}.{ext}")
-    print(fig_name)
-
     fig3d.show()
     for ext in ["png"]:  # "pdf", "eps"
         fig3d.savefig(fname=f"{path_out}/3{fig_name}.{ext}")
     print(fig_name)
 
+fig_histo.show()
+fig_name = "histo_santorini_magnitude_per_day"
+for ext in ["png"]:  # "pdf", "eps"
+    fig_histo.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+print(fig_name)
 
-# %%
 # -----------------------------------------------------------------------------
 # Make bar plot for earthquakes per day
-# -----------------------------------------------------------------------------
 fig = gmt.Figure()
 fig.basemap(
     region=[0, len(N_eqs_days) + 1, 0, 550],
@@ -222,11 +270,16 @@ fig.basemap(
 )
 
 for i_day, x_day in enumerate(x_days):
-    fig.plot(x=[x_day, x_day], y=[0, N_eqs_days[i_day]], pen="5p,gray30")
+    fill_bar = "gray50"
+    if x_day > 9 and x_day < 34:
+        fill_bar = f"{color_hl}@40"
+    fig.plot(x=[x_day, x_day], y=[0, N_eqs_days[i_day]], pen=f"5p,{fill_bar}")
     fig.text(text=N_eqs_days[i_day], x=x_day, y=N_eqs_days[i_day] + 8)
 
+fig.basemap(frame=0)
+
 fig.show()
-fig_name = "11_santorini_earthquakes_per_day"
+fig_name = "histo_santorini_earthquakes_per_day"
 for ext in ["png"]:  # "pdf", "eps"
     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
