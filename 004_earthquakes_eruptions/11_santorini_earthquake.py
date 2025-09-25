@@ -20,11 +20,11 @@
 # #############################################################################
 
 
-import pygmt as gmt
-import pandas as pd
 import datetime
 from dateutil.rrule import rrule, DAILY
 import numpy as np
+import pygmt as gmt
+import pandas as pd
 
 # %%
 # -----------------------------------------------------------------------------
@@ -50,11 +50,11 @@ color_water = "gray"
 color_land = "tan"
 
 # Plotting region
-min_lon = 25.34
-max_lon = 25.92
-min_lat = 36.35
-max_lat = 36.81
-region = [min_lon, max_lon, min_lat, max_lat]
+lon_min = 25.34
+lon_max = 25.93
+lat_min = 36.35
+lat_max = 36.80
+region = [lon_min, lon_max, lat_min, lat_max]
 
 
 # %%
@@ -97,15 +97,21 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
     print(len(df_eq_before))
 
 # -----------------------------------------------------------------------------
-    fig = gmt.Figure()
+    # Create 2-D map
+    fig2d = gmt.Figure()
     gmt.config(MAP_TITLE_OFFSET="-5p")
 
-    for fill_quantity, title, cmap, reverse, series, cb_label in zip(
+    # Create 3-D plot
+    fig3d = gmt.Figure()
+    gmt.config(FONT="20p", MAP_GRID_PEN_PRIMARY="0.1p,gray30")
+
+    for fill_quantity, frame ,title, cmap, reverse, series, cb_label in zip(
         ["magnitude", "depth", "date_time"],
+        ["WSne", "wSne", "wSne"],
         [
-            "WSne+tSantorini–Amorgos",
-            f"wSne+t@;{color_hl};{N_eqs_day}@;; / {len(df_eq_cum)} earthquakes",
-            "wSne+t" + str(start_date_data).split(" ")[0] + \
+            "Santorini–Amorgos",
+            f"@;{color_hl};{N_eqs_day}@;; / {len(df_eq_cum)} earthquakes",
+            str(start_date_data).split(" ")[0] + \
                f" — @;{color_hl};" + str(day).split(" ")[0] + "@;;",
         ],
         ["lipari", "lajolla", "hawaii"],
@@ -114,31 +120,90 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         ["magnitude", "hypocentral depth / km", "date"],
     ):
 
-        # Create basic map
-        fig.basemap(projection="M12c", region=region, frame=["af", title])
-        fig.coast(land=color_land, water=color_water, shorelines=f"1/0.5p,{color_sl}")
+        cmap_fill = f"{path_in}/{cmap}_fill.cpt"
+        gmt.makecpt(cmap=cmap, series=series, reverse=reverse, output=cmap_fill)
+        cb_x_afg = ""
+        if fill_quantity=="date_time": cb_x_afg = "a1O"
+
+# -----------------------------------------------------------------------------
+        fig2d.basemap(projection="M12c", region=region, frame=["af", f"{frame}+t{title}"])
+        fig2d.coast(land=color_land, water=color_water, shorelines=f"1/0.5p,{color_sl}")
 
         # Mark Santorini
-        fig.plot(x=25.43, y=36.42, style="x0.6c", pen=f"5p,{color_hl}")
+        fig2d.plot(x=25.43, y=36.42, style="x0.6c", pen=f"5p,{color_hl}")
 
         # Plot epicenters
-        gmt.makecpt(cmap=cmap, series=series, reverse=reverse)
         with gmt.config(FONT="15p"):
-            fig.colorbar(frame=f"x+l{cb_label}", position="+o0c/1.5c+e0.3c+ml")
-        fig.plot(
+            fig2d.colorbar(
+                frame=f"x{cb_x_afg}+l{cb_label}",
+                position="+o0c/1.5c+e0.3c+ml",
+                cmap=cmap_fill,
+            )
+        fig2d.plot(
             x=df_eq_cum.longitude,
             y=df_eq_cum.latitude,
-            style="c0.07c",
+            size=0.1 * df_eq_cum.magnitude,
             fill=df_eq_cum[fill_quantity],
-            cmap=True,
+            style="cc",  # 0.07c
+            cmap=cmap_fill,
         )
 
-        fig.shift_origin(xshift="w+0.5c")
+        fig2d.shift_origin(xshift="w+0.5c")
 
-    fig.show()
-    fig_name = "11_santorini_earthquake_" + str(day).split(" ")[0]
+# -----------------------------------------------------------------------------
+        z_label = " "
+        if fill_quantity=="magnitude": z_label = "negative depth / km"
+        fig3d.plot3d(
+            projection="X15c",
+            region=[lon_min, lon_max, lat_min, lat_max, -15, 0],
+            frame=[
+                f"wSnEZ1+g{color_water}+t{title}",
+                "xafg+u° E",
+                "yafg+u° N+e",
+                f"za1f0.5g0.5+l{z_label}",
+            ],
+            perspective=[150, 20],
+            zscale=2,
+            x=df_eq_cum.longitude,
+            y=df_eq_cum.latitude,
+            z=-1 * df_eq_cum.depth,
+            size=0.1 * df_eq_cum.magnitude,
+            fill=df_eq_cum[fill_quantity],
+            style="uc",
+            cmap=cmap_fill,
+        )
+        fig3d.colorbar(
+            frame=f"x{cb_x_afg}+l{cb_label}",
+            position="+o0c/0.8c+e0.3c+ml",
+            cmap=cmap_fill,
+        )
+
+        fig3d.shift_origin(yshift="28.2c")
+
+        fig3d.coast(
+            frame=["WSNE", "f"],
+            perspective=True,
+            land=color_land,
+            water=f"{color_water}@80",
+            shorelines=f"1/0.5p,{color_sl}",
+        )
+        fig3d.plot(
+            x=25.43, y=36.42, style="x0.6c", pen=f"5p,{color_hl}", perspective=True
+        )
+
+        fig3d.shift_origin(xshift="w+2c", yshift="-28.2c")
+
+# -----------------------------------------------------------------------------
+    fig_name = "d_santorini_earthquake_" + str(day).split(" ")[0]
+
+    fig2d.show()
     for ext in ["png"]:  # "pdf", "eps"
-        fig.savefig(fname=f"{path_out}/santorini/{fig_name}.{ext}")
+        fig2d.savefig(fname=f"{path_out}/santorini/2{fig_name}.{ext}")
+    print(fig_name)
+
+    fig3d.show()
+    for ext in ["png"]:  # "pdf", "eps"
+        fig3d.savefig(fname=f"{path_out}/santorini/3{fig_name}.{ext}")
     print(fig_name)
 
 
