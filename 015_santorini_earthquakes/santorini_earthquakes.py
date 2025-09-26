@@ -115,7 +115,10 @@ fig_ele.colorbar(frame=["xa500f100+lelevation", "y+lm"], position="+e0.3c+o0c/1.
 
 # Mark zoom area using in following maps
 fig_ele.plot(
-    data=[[lon_min, lat_min, lon_max, lat_max]], style="r+s", pen=f"2p,{color_hl}"
+    data=[[lon_min, lat_min, lon_max, lat_max]],
+    style="r+s",
+    pen=f"2p,{color_hl}",
+    fill=f"{color_hl}@80",
 )
 
 fig_ele.show()
