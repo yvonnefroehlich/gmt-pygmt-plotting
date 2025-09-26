@@ -69,6 +69,7 @@ lon_max = 25.93
 lat_min = 36.35
 lat_max = 36.80
 region = [lon_min, lon_max, lat_min, lat_max]
+region_ele = [21, 28.99, 34.5, 39.5]
 
 # Santorini
 args_santo = {"x": 25.43, "y": 36.42, "style": "x0.6c", "pen": f"5p,{color_hl}"}
@@ -99,9 +100,35 @@ df_eq = df_eq_raw[df_eq_raw["date_time"] >= start_date_data]
 
 # %%
 # -----------------------------------------------------------------------------
+# Create map for elevation
+# -----------------------------------------------------------------------------
+# Download elevation grid
+grd_ele = gmt.datasets.load_earth_relief(region=region_ele, resolution="15s")
+
+# Create map for study region
+fig_ele = gmt.Figure()
+fig_ele.basemap(projection="M12c", region=region_ele, frame=["WSne", "a1f0.5"])
+
+gmt.makecpt(cmap="oleron", series=[-1000, 2000])
+fig_ele.grdimage(grid=grd_ele, cmap=True, shading=True)
+fig_ele.colorbar(frame=["xa500f100+lelevation", "y+lm"], position="+e0.3c+o0c/1.3c+ml")
+
+# Mark zoom area using in following maps
+fig_ele.plot(
+    data=[[lon_min, lat_min, lon_max, lat_max]], style="r+s", pen=f"2p,{color_hl}"
+)
+
+fig_ele.show()
+fig_name = "map_santorini_elevation"
+for ext in ["png"]:  # "pdf", "eps"
+    fig_ele.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+print(fig_name)
+
+
+# %%
+# -----------------------------------------------------------------------------
 # Create plots over time (days)
 # -----------------------------------------------------------------------------
-
 # Histograms for magnitude distribution per day
 fig_histo = gmt.Figure()
 gmt.config(FONT="8p", MAP_TITLE_OFFSET="3p", MAP_GRID_PEN_PRIMARY="0.1p,gray70")
