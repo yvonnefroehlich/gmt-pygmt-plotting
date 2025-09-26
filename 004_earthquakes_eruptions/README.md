@@ -15,6 +15,6 @@ _Recommended versions_: PyGMT v0.11.0-v0.16.0, GMT 6.4.0-6.5.0
 | **[08_myanmar_earthquake.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/08_myanmar_earthquake.py)**           | Myanmar       | 2025/03/28              | 06:20:54     |
 | **[09_kamtschatka_earthquake.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/09_kamtschatka_earthquake.py)**   | Kamtschatka   | 2025/07/29-30           | 23:24:52     |
 | **[10_afghanistan_earthquake.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/10_afghanistan_earthquake.py)**   | Afghanistan   | 2025/08/31              | 19:17:34     |
-| **[11_santorini_earthquakes](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/015_santorini_earthquakes#015_santorini_earthquakes)**          | Santorini     | 2025/01/26 - 2025/03/03 | - |
+| **[11_santorini_earthquakes.txt](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/11_santorini_earthquakes.txt)**   | Santorini     | 2025/01/27 - 2025/03/03 | - |
 
 ![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_004events.png)

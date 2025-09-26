@@ -1,5 +1,5 @@
 # #############################################################################
-# Santorini earthquakes January - February 2025
+# Santorini earthquakes January - March 2025
 # - 2-D maps for epicenters with different color-coding per day
 # - 3-D plots for hypocenters with different color-coding per day
 # - Histogram for earthquakes per day
