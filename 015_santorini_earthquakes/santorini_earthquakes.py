@@ -62,6 +62,9 @@ lat_min = 36.35
 lat_max = 36.80
 region = [lon_min, lon_max, lat_min, lat_max]
 
+# Santorini
+args_santo = {"x": 25.43, "y": 36.42, "style": "x0.6c", "pen": f"5p,{color_hl}"}
+
 
 # %%
 # -----------------------------------------------------------------------------
@@ -110,13 +113,11 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
     # print(len(df_eq_cum))
 
 # -----------------------------------------------------------------------------
-    # Epicenters or hypocenters with different color-codings per day
-
-    # 2-D maps
+    # 2-D maps of epiceneters with different color-codings per day
     fig2d = gmt.Figure()
     gmt.config(MAP_TITLE_OFFSET="-5p")
 
-    # 3-D plots
+    # 3-D plots of hypcenters with different color-codings per day
     fig3d = gmt.Figure()
     gmt.config(FONT="20p", MAP_GRID_PEN_PRIMARY="0.1p,gray30")
 
@@ -135,12 +136,14 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         ["magnitude", "hypocentral depth / km", "date"],
     ):
 
+        # Create colormap for epi- or hypocenters
         cmap_fill = f"{path_in}/{cmap}_fill.cpt"
         gmt.makecpt(cmap=cmap, series=series, reverse=reverse, output=cmap_fill)
         cb_x_afg = ""
         if fill_quantity=="date_time":
             cb_x_afg = "xa1O"
 
+        # Vertical axis of 3-D plot
         z_label = " "
         if fill_quantity=="magnitude":
             z_label = "negative depth / km"
@@ -150,7 +153,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         fig2d.coast(land=color_land, water=color_water, shorelines=f"1/0.5p,{color_sl}")
 
         # Mark Santorini
-        fig2d.plot(x=25.43, y=36.42, style="x0.6c", pen=f"5p,{color_hl}")
+        fig2d.plot(**args_santo)
 
         # Plot epicenters
         with gmt.config(FONT="15p"):
@@ -171,6 +174,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         fig2d.shift_origin(xshift="w+0.5c")
 
 # -----------------------------------------------------------------------------
+        # Plot hypocenters
         fig3d.plot3d(
             projection="X15c",
             region=[lon_min, lon_max, lat_min, lat_max, -15, 0],
@@ -198,6 +202,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
 
         fig3d.shift_origin(yshift="28.2c")
 
+        # Plot map at the top
         fig3d.coast(
             frame=["WSNE", "f"],
             perspective=True,
@@ -205,9 +210,8 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
             water=f"{color_water}@80",
             shorelines=f"1/0.5p,{color_sl}",
         )
-        fig3d.plot(
-            x=25.43, y=36.42, style="x0.6c", pen=f"5p,{color_hl}", perspective=True
-        )
+        # Mark Santorini
+        fig3d.plot(perspective=True, **args_santo)
 
         fig3d.shift_origin(xshift="w+2c", yshift="-28.2c")
 
