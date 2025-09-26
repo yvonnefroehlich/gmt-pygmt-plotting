@@ -5,12 +5,20 @@
 # - Histogram for earthquakes per day
 # - Histograms for magnitude distribution per day
 #
-# Data taken from
-#   Karakostas V, Lomax A, Anagnostou V, Papadimitriou E, Acoccela V, & Hicks S (2025).
-#   2025 Santorini–Amorgos NLL-SSST-coherence high-precision relocated earthquake catalog.
-#   Zenodo. https://doi.org/10.5281/zenodo.15111649.
+# Make GIF, e.g.,
+# - https://ezgif.com/pdf-to-gif (last accessed 2025/09/25)
 #
-# Make GIF: https://ezgif.com/pdf-to-gif, last accessed 2025/09/25
+# Data taken from
+# - Karakostas V, Lomax A, Anagnostou V, Papadimitriou E, Acoccela V, & Hicks S (2025).
+#   2025 Santorini–Amorgos NLL-SSST-coherence high-precision relocated earthquake
+#   catalog. Zenodo. https://doi.org/10.5281/zenodo.15111649 .
+#
+# More inforamtion
+# - Isken M P, Karstens J, Nomikou P et al. (2025) Volcanic crisis reveals coupled
+#   magma system at Santorini and Kolumbo. Nature, 645:939–945.
+#   https://doi.org/10.1038/s41586-025-09525-7 .
+# - https://www.geomar.de/en/news/article/magmaverlagerung-loeste-zehntausende-erdbeben-aus
+#   (last accessed 2025/09/26)
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/09/21
