@@ -69,9 +69,8 @@ lon_max = 25.93
 lat_min = 36.35
 lat_max = 36.80
 region = [lon_min, lon_max, lat_min, lat_max]
-region_ele = [21, 28.99, 34.5, 39.5]
-region_surf = [25.22, 26.05, 36.25, 36.9]
-region_surf = [25.245, 26.025, 36.275, 36.875]
+region_ele = [21, 29.5, 34.5, 39]
+region_surf = [25.251, 26.025, 36.275, 36.875]
 
 # Santorini
 args_santo = {"x": 25.43, "y": 36.42, "style": "x0.6c", "pen": f"5p,{color_hl}"}
@@ -108,8 +107,8 @@ df_eq = df_eq_raw[df_eq_raw["date_time"] >= start_date_data]
 grd_ele = gmt.datasets.load_earth_relief(region=region_ele, resolution="15s")
 grd_surf = gmt.datasets.load_earth_relief(region=region_surf, resolution="03s")
 
-
 # -----------------------------------------------------------------------------
+# 2-D map
 fig_ele = gmt.Figure()
 fig_ele.basemap(projection="M12c", region=region_ele, frame=["WSne", "a1f0.5"])
 
@@ -122,7 +121,7 @@ for data in [
     [[region_surf[0], region_surf[2], region_surf[1], region_surf[3]]],
     [[lon_min, lat_min, lon_max, lat_max]]
 ]:
-    fig_ele.plot(data=data, style="r+s", pen=f"1.5p,{color_hl}", fill=f"{color_hl}@80")
+    fig_ele.plot(data=data, style="r+s", pen=f"1p,{color_hl}", fill=f"{color_hl}@90")
 
 fig_ele.show()
 fig_name = "santorini_map_elevation"
@@ -130,11 +129,14 @@ for ext in ["png"]:  # "pdf", "eps"
     fig_ele.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
 
-
 # -----------------------------------------------------------------------------
+# 3-D plot - takes some time
 fig_surf = gmt.Figure()
 fig_surf.basemap(
-    projection="M12c", region=region_surf, frame=["wSnE", "af"], perspective=[150, 20]
+    projection="M12c",
+    region=region_surf,
+    frame=["wSnE", "af", "+e"],
+    perspective=[150, 20],
 )
 
 gmt.makecpt(cmap="oleron", series=[-1000, 800])
@@ -148,7 +150,7 @@ fig_surf.grdview(
     plane="-1000+ggrey",
     facadepen="gray10",
 )
-fig_surf.colorbar(frame=["xa500f100+lelevation", "y+lm"], position="+e0.3c+ml")
+fig_surf.colorbar(frame=["xa500f100+lelevation", "y+lm"], position="+e0.3c+o0c/0.4c+ml")
 
 fig_surf.show()
 fig_name = "santorini_surface_elevation"
