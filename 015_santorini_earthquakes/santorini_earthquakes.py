@@ -70,6 +70,8 @@ lat_min = 36.35
 lat_max = 36.80
 region = [lon_min, lon_max, lat_min, lat_max]
 region_ele = [21, 28.99, 34.5, 39.5]
+region_surf = [25.22, 26.05, 36.25, 36.9]
+region_surf = [25.245, 26.025, 36.275, 36.875]
 
 # Santorini
 args_santo = {"x": 25.43, "y": 36.42, "style": "x0.6c", "pen": f"5p,{color_hl}"}
@@ -100,12 +102,14 @@ df_eq = df_eq_raw[df_eq_raw["date_time"] >= start_date_data]
 
 # %%
 # -----------------------------------------------------------------------------
-# Create map for elevation
+# Create plots for elevation
 # -----------------------------------------------------------------------------
 # Download elevation grid
 grd_ele = gmt.datasets.load_earth_relief(region=region_ele, resolution="15s")
+grd_surf = gmt.datasets.load_earth_relief(region=region_surf, resolution="03s")
 
-# Create map for study region
+
+# -----------------------------------------------------------------------------
 fig_ele = gmt.Figure()
 fig_ele.basemap(projection="M12c", region=region_ele, frame=["WSne", "a1f0.5"])
 
@@ -114,17 +118,42 @@ fig_ele.grdimage(grid=grd_ele, cmap=True, shading=True)
 fig_ele.colorbar(frame=["xa500f100+lelevation", "y+lm"], position="+e0.3c+o0c/1.3c+ml")
 
 # Mark zoom area using in following maps
-fig_ele.plot(
-    data=[[lon_min, lat_min, lon_max, lat_max]],
-    style="r+s",
-    pen=f"2p,{color_hl}",
-    fill=f"{color_hl}@80",
-)
+for data in [
+    [[region_surf[0], region_surf[2], region_surf[1], region_surf[3]]],
+    [[lon_min, lat_min, lon_max, lat_max]]
+]:
+    fig_ele.plot(data=data, style="r+s", pen=f"1.5p,{color_hl}", fill=f"{color_hl}@80")
 
 fig_ele.show()
-fig_name = "map_santorini_elevation"
+fig_name = "santorini_map_elevation"
 for ext in ["png"]:  # "pdf", "eps"
     fig_ele.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+print(fig_name)
+
+
+# -----------------------------------------------------------------------------
+fig_surf = gmt.Figure()
+fig_surf.basemap(
+    projection="M12c", region=region_surf, frame=["wSnE", "af"], perspective=[150, 20]
+)
+
+gmt.makecpt(cmap="oleron", series=[-1000, 800])
+fig_surf.grdview(
+    grid=grd_surf,
+    cmap=True,
+    shading=True,
+    perspective=True,
+    zsize=1.5,
+    surftype="s",
+    plane="-1000+ggrey",
+    facadepen="gray10",
+)
+fig_surf.colorbar(frame=["xa500f100+lelevation", "y+lm"], position="+e0.3c+ml")
+
+fig_surf.show()
+fig_name = "santorini_surface_elevation"
+for ext in ["png"]:  # "pdf", "eps"
+    fig_surf.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
 
 
@@ -253,13 +282,15 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
 
         fig3d.shift_origin(xshift="w+2c", yshift="-28.2c")
 
-    fig_name = "d_santorini_earthquakes_" + str(day).split(" ")[0]
+    fig_name = "santorini_2d_epicenters_" + str(day).split(" ")[0]
     fig2d.show()
     for ext in ["png"]:  # "pdf", "eps"
-        fig2d.savefig(fname=f"{path_out}/2{fig_name}.{ext}")
+        fig2d.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+    print(fig_name)
     fig3d.show()
+    fig_name = "santorini_3d_hypocenters_" + str(day).split(" ")[0]
     for ext in ["png"]:  # "pdf", "eps"
-        fig3d.savefig(fname=f"{path_out}/3{fig_name}.{ext}")
+        fig3d.savefig(fname=f"{path_out}/{fig_name}.{ext}")
     print(fig_name)
 
 
@@ -301,7 +332,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
 
         fig_histo.show()
 # fig_histo.show()
-fig_name = "histo_santorini_magnitude_per_day"
+fig_name = "santorini_histo_magnitude_per_day"
 for ext in ["png"]:  # "pdf", "eps"
     fig_histo.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
@@ -329,7 +360,7 @@ for i_day, x_day in enumerate(x_days):
 fig_bar.basemap(frame=0)
 
 fig_bar.show()
-fig_name = "histo_santorini_earthquakes_per_day"
+fig_name = "santorini_histo_earthquakes_per_day"
 for ext in ["png"]:  # "pdf", "eps"
     fig_bar.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
