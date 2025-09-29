@@ -10,12 +10,12 @@
 #
 # Data taken from
 # - Karakostas V, Lomax A, Anagnostou V, Papadimitriou E, Acoccela V, Hicks S (2025).
-#   2025 Santorini–Amorgos NLL-SSST-coherence high-precision relocated earthquake
+#   2025 Santorini-Amorgos NLL-SSST-coherence high-precision relocated earthquake
 #   catalog. Zenodo. https://doi.org/10.5281/zenodo.15111649 .
 #
 # More inforamtion
 # - Isken M P, Karstens J, Nomikou P, et al. (2025) Volcanic crisis reveals coupled
-#   magma system at Santorini and Kolumbo. Nature, 645:939–945.
+#   magma system at Santorini and Kolumbo. Nature, 645:939-945.
 #   https://doi.org/10.1038/s41586-025-09525-7 .
 # - https://www.geomar.de/en/news/article/magmaverlagerung-loeste-zehntausende-erdbeben-aus
 #   (last accessed 2025/09/26)
@@ -35,10 +35,11 @@
 
 
 import datetime
-from dateutil.rrule import rrule, DAILY
+
 import numpy as np
-import pygmt as gmt
 import pandas as pd
+import pygmt as gmt
+from dateutil.rrule import DAILY, rrule
 
 # %%
 # -----------------------------------------------------------------------------
@@ -119,7 +120,7 @@ fig_ele.colorbar(frame=["xa500f100+lelevation", "y+lm"], position="+e0.3c+o0c/1.
 # Mark zoom area using in following maps
 for data in [
     [[region_surf[0], region_surf[2], region_surf[1], region_surf[3]]],
-    [[lon_min, lat_min, lon_max, lat_max]]
+    [[lon_min, lat_min, lon_max, lat_max]],
 ]:
     fig_ele.plot(data=data, style="r+s", pen=f"1p,{color_hl}", fill=f"{color_hl}@90")
 
@@ -170,7 +171,6 @@ i_histo = 0
 
 # -----------------------------------------------------------------------------
 for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date_plot)):
-
     df_eq_cum = df_eq[df_eq["date_time"] < (day + add_one_day)]
     df_eq_day = df_eq_cum[df_eq_cum["date_time"] > day]
     N_eqs_day = len(df_eq_day)
@@ -190,35 +190,39 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
     fig3d = gmt.Figure()
     gmt.config(FONT="20p", MAP_GRID_PEN_PRIMARY="0.1p,gray30")
 
-    for fill_quantity, frame ,title, cmap, reverse, series, cb_label in zip(
+    for fill_quantity, frame, title, cmap, reverse, series, cb_label in zip(
         ["magnitude", "depth", "date_time"],
         ["WSne", "wSne", "wSne"],
         [
             "Santorini–Amorgos",
             f"@;{color_hl};{N_eqs_day}@;; / {len(df_eq_cum)} earthquakes",
-            str(start_date_data).split(" ")[0] + \
-               f" — @;{color_hl};" + str(day).split(" ")[0] + "@;;",
+            str(start_date_data).split(" ")[0]
+            + f" — @;{color_hl};"
+            + str(day).split(" ")[0]
+            + "@;;",
         ],
         ["lipari", "lajolla", "hawaii"],
         [True, False, True],
         [[3, 5], [3, 15], [start_date_plot, end_date_plot]],
         ["magnitude", "hypocentral depth / km", "date"],
+        strict=False,
     ):
-
         # Create colormap for epi- or hypocenters
         cmap_fill = f"{path_in}/{cmap}_fill.cpt"
         gmt.makecpt(cmap=cmap, series=series, reverse=reverse, output=cmap_fill)
         cb_x_afg = ""
-        if fill_quantity=="date_time":
+        if fill_quantity == "date_time":
             cb_x_afg = "xa1O"
 
         # Vertical axis of 3-D plot
         z_label = " "
-        if fill_quantity=="magnitude":
+        if fill_quantity == "magnitude":
             z_label = "negative depth / km"
 
 # -----------------------------------------------------------------------------
-        fig2d.basemap(projection="M12c", region=region, frame=["af", f"{frame}+t{title}"])
+        fig2d.basemap(
+            projection="M12c", region=region, frame=["af", f"{frame}+t{title}"]
+        )
         fig2d.coast(land=color_land, water=color_water, shorelines=f"1/0.5p,{color_sl}")
 
         # Mark Santorini
@@ -295,11 +299,9 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         fig3d.savefig(fname=f"{path_out}/{fig_name}.{ext}")
     print(fig_name)
 
-
 # -----------------------------------------------------------------------------
     if day > datetime.datetime(2025, 1, 23, 0, 0) and \
-        day < datetime.datetime(2025, 2, 17, 0, 0):
-
+       day < datetime.datetime(2025, 2, 17, 0, 0):
         x_afg_l = "xf0.5g1"
         y_afg_l = "yf5g5"
         if i_histo > 17:
@@ -311,9 +313,11 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
             region=[0, 6, 0, 40],
             projection="X6c/5c",
             frame=[
-                f"WStr+t@;{color_hl};{N_eqs_day}@;; earthquakes on @;{color_hl};" + \
-                    str(day).split(" ")[0] + "@;;",
-                x_afg_l, y_afg_l,
+                f"WStr+t@;{color_hl};{N_eqs_day}@;; earthquakes on @;{color_hl};"
+                + str(day).split(" ")[0]
+                + "@;;",
+                x_afg_l,
+                y_afg_l,
             ],
         )
         if len(df_eq_day) > 0:
@@ -349,7 +353,7 @@ fig_bar.basemap(
     frame=[
         "x+ldays up on " + str(start_date_plot).split(" ")[0],
         "y+lnumber of earthquakes",
-    ]
+    ],
 )
 
 for i_day, x_day in enumerate(x_days):
