@@ -31,7 +31,7 @@ import pandas as pd
 
 start_date = "1991-01-01"
 end_date = "2019-12-31"
-min_mag_w = "6"  # magnitude, later filter regarding moment magnitude
+min_mag_w = "6"  # magnitude
 max_mag_w = "10"
 order_records = "time-asc"  # "time-asc" | "magnitude"
 
