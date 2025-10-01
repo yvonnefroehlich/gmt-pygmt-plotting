@@ -7,7 +7,7 @@
 # History
 # - Created: 2024/11/26
 # - Updated: 2025/08/26 - Include annotations
-# - Updated: 2025/10/01 - Adjust specific font size default parameters
+# - Updated: 2025/10/01 - Adjust specific fontsize default parameters
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
