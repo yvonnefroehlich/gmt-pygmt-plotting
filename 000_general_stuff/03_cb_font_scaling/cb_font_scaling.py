@@ -6,8 +6,8 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/11/26
-# - Updated: 2025/08/26 - Add annotations
-# - Updated: 2025/10/01 - Add specific font size default parameters
+# - Updated: 2025/08/26 - Include annotations
+# - Updated: 2025/10/01 - Adjust specific font size default parameters
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
@@ -25,7 +25,7 @@ import numpy as np
 
 # -----------------------------------------------------------------------------
 def scale_cb_font(cb_width):
-    scale_factor = 1 / 15  # scale factor used in GMT 6.5
+    scale_factor = 1 / 15  # scale factor used in GMT >= 6.5
     font_scaling = np.sqrt(cb_width * scale_factor)
     return font_scaling
 # -----------------------------------------------------------------------------
@@ -35,8 +35,14 @@ def scale_cb_font(cb_width):
 # -----------------------------------------------------------------------------
 # Example 1
 # -----------------------------------------------------------------------------
-plot_size = 5
 font_size = 7
+
+plot_size = 5
+args_bmap = {
+    "region": [-plot_size, plot_size] * 2,
+    "projection": f"X{plot_size}c",
+    "frame": 1,
+}
 
 cb1_width = 4
 cb2_width = 2
@@ -48,7 +54,7 @@ fig = pygmt.Figure()
 
 # Left
 pygmt.config(FONT=font_size)
-fig.basemap(region=[-plot_size, plot_size] * 2, projection=f"X{plot_size}c", frame=1)
+fig.basemap(**args_bmap)
 
 fig.colorbar(cmap="navia", position=f"jTC+w{cb1_width}c+h", frame=f"x+l{cb1_label}")
 fig.colorbar(cmap="navia", position=f"jBC+w{cb2_width}c+h", frame=f"x+l{cb2_label}")
@@ -57,7 +63,7 @@ fig.colorbar(cmap="navia", position=f"jBC+w{cb2_width}c+h", frame=f"x+l{cb2_labe
 fig.shift_origin(xshift="6c")
 
 with pygmt.config(FONT=font_size):
-    fig.basemap(region=[-plot_size, plot_size] * 2, projection=f"X{plot_size}c", frame=1)
+    fig.basemap(**args_bmap)
 
 font_scaling1 = scale_cb_font(cb1_width)
 with pygmt.config(FONT=f"{font_size / font_scaling1}"):
@@ -78,11 +84,16 @@ font_size = 18
 
 plot_size = 5
 args_bmap = {
-    "region": [-1, 1, -plot_size, plot_size], "projection": f"X4c/{plot_size}c", "frame": 1}
+    "region": [-1, 1, -plot_size, plot_size],
+    "projection": f"X4c/{plot_size}c",
+    "frame": 1,
+}
 
 cb_width = 4
 args_cb = {
-    "cmap": "batlow", "position": f"jMC+w{cb_width}c", "frame": ["x+lquantity", "y+lunit"]
+    "cmap": "batlow",
+    "position": f"jMC+w{cb_width}c",
+    "frame": ["x+lquantity", "y+lunit"],
 }
 font_scaling = scale_cb_font(cb_width)
 
@@ -98,10 +109,10 @@ fig.colorbar(**args_cb)
 fig.shift_origin(xshift="+w+1c")
 
 with pygmt.config(
-    FONT_ANNOT_PRIMARY=f"{font_size}p",  # x-axis annotations (-> numbers)
-    FONT_ANNOT_SECONDARY=f"{font_size}p",  # y-axis label (-> unit)
-    FONT_LABEL=f"{font_size}p",  # x-axis label (-> quantity)
-    # FONT=f"{font_size}p"  # all
+    FONT_ANNOT_PRIMARY=f"{font_size}p",  # x-annotations (-> numbers)
+    FONT_ANNOT_SECONDARY=f"{font_size}p",  # y-label (-> unit)
+    FONT_LABEL=f"{font_size}p",  # x-label (-> quantity)
+    # FONT=f"{font_size}p"  # all three
 ):
     fig.basemap(**args_bmap)
 
