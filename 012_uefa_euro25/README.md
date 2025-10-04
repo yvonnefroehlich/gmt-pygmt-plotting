@@ -1,4 +1,4 @@
-# 012_euro25
+# 012_uefa_euro25
 
 _Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
 
