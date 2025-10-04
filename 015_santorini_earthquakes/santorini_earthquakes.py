@@ -126,8 +126,8 @@ for data in [
 
 fig_ele.show()
 fig_name = "santorini_map_elevation"
-for ext in ["png"]:  # "pdf", "eps"
-    fig_ele.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+# for ext in ["png"]:  # "pdf", "eps"
+#     fig_ele.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
 
 # -----------------------------------------------------------------------------
@@ -155,8 +155,8 @@ fig_surf.colorbar(frame=["xa500f100+lelevation", "y+lm"], position="+e0.3c+o0c/0
 
 fig_surf.show()
 fig_name = "santorini_surface_elevation"
-for ext in ["png"]:  # "pdf", "eps"
-    fig_surf.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+# for ext in ["png"]:  # "pdf", "eps"
+    # fig_surf.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
 
 
@@ -290,13 +290,13 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
 
     fig_name = "santorini_2d_epicenters_" + str(day).split(" ")[0]
     fig2d.show()
-    for ext in ["png"]:  # "pdf", "eps"
-        fig2d.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+    # for ext in ["png"]:  # "pdf", "eps"
+    #     fig2d.savefig(fname=f"{path_out}/{fig_name}.{ext}")
     print(fig_name)
     fig3d.show()
     fig_name = "santorini_3d_hypocenters_" + str(day).split(" ")[0]
-    for ext in ["png"]:  # "pdf", "eps"
-        fig3d.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+    # for ext in ["png"]:  # "pdf", "eps"
+    #     fig3d.savefig(fname=f"{path_out}/{fig_name}.{ext}")
     print(fig_name)
 
 # -----------------------------------------------------------------------------
@@ -339,8 +339,8 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         fig_histo.show()
 # fig_histo.show()
 fig_name = "santorini_histo_magnitude_per_day"
-for ext in ["png"]:  # "pdf", "eps"
-    fig_histo.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+# for ext in ["png"]:  # "pdf", "eps"
+#     fig_histo.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
 
 
@@ -367,6 +367,6 @@ fig_bar.basemap(frame=0)
 
 fig_bar.show()
 fig_name = "santorini_histo_earthquakes_per_day"
-for ext in ["png"]:  # "pdf", "eps"
-    fig_bar.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+# for ext in ["png"]:  # "pdf", "eps"
+#     fig_bar.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
