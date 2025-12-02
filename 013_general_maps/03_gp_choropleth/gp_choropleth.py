@@ -95,4 +95,4 @@ fig.colorbar(
 fig.legend(position="jTR+o0.2c+l1.7", box=Box(fill="white@30", pen="0.5p,gray50"))
 
 fig.show()
-fig.savefig(fname="geopandas_choropleth_chicago.png")
+fig.savefig(fname="gp_choropleth_chicago.png")
