@@ -12,6 +12,9 @@
 #   https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places
 #   https://www.naturalearthdata.com/downloads/10m-cultural-vectors/ports
 #   https://www.naturalearthdata.com/downloads/10m-cultural-vectors/airports
+#
+# Issue regarding non-ASCII characters not working under Windows
+# https://github.com/GenericMappingTools/pygmt/pull/4224
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/12/02
@@ -66,18 +69,18 @@ fig.coast(shorelines=True, lakes="lightblue", land="gray95")
 
 # Polygon geometry: lot population
 pygmt.makecpt(cmap="bilbao", series=[0, chicago["population"].max()])
-fig.plot(data=chicago, pen="0.5p,gray30", fill="+z", cmap=True, aspatial="Z=population")
+fig.plot(data=chicago[["geometry", "population"]], pen="0.5p,gray30", fill="+z", cmap=True, aspatial="Z=population")
 
 # Line geometry: Plot railroads
 fig.plot(data=railroads, pen="2p,black")
 fig.plot(data=railroads, pen="1p,white,2_2")
 
 # Point geometry: Plot cities
-fig.plot(data=cities, style="s0.32c", fill="red", pen="1p", label="city")
+fig.plot(data=cities["geometry"], style="s0.32c", fill="red", pen="1p", label="city")
 # Point geometry: Plot ports
-fig.plot(data=ports, style="i0.35c", fill="steelblue", pen="1p", label="port")
+fig.plot(data=ports["geometry"], style="i0.35c", fill="steelblue", pen="1p", label="port")
 # Point geometry: Plot airports
-fig.plot(data=airports, style="t0.35c", fill="darkorange", pen="1p", label="airport")
+fig.plot(data=airports["geometry"], style="t0.35c", fill="darkorange", pen="1p", label="airport")
 # Label airports
 fig.text(
     x=airports.geometry.x,
