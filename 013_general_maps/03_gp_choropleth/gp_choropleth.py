@@ -5,7 +5,13 @@
 #
 # Data (last accessed 2025/12/02)
 # - Population in Chicago: geodatasets
+#   https://geodatasets.readthedocs.io/en/latest/introduction.html
+#   https://geodacenter.github.io/data-and-lab//airbnb
+#   https://geodacenter.github.io/data-and-lab//data/airbnb.zip
 # - Railroads, cities, ports, airports: Natural Earth, 1:10 m datasets
+#   https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places
+#   https://www.naturalearthdata.com/downloads/10m-cultural-vectors/ports
+#   https://www.naturalearthdata.com/downloads/10m-cultural-vectors/airports
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/12/02
