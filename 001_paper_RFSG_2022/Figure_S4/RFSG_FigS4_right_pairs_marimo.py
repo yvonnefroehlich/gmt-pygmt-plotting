@@ -1,7 +1,7 @@
 import marimo
 
 __generated_with = "0.18.4"
-app = marimo.App(auto_download=["ipynb"])
+app = marimo.App()
 
 
 @app.cell(hide_code=True)
@@ -121,7 +121,6 @@ def _():
         color_station_label,
         color_station_symbol,
         dpi_jn,
-        dpi_png,
         file_platbound,
         fname_fig_out,
         incols_pp,
@@ -482,10 +481,10 @@ def _(mo):
 
 
 @app.cell
-def _(dpi_png, fig, fname_fig_out):
+def _(fname_fig_out):
     # Uncomment to save the figure in PNG, PDF, or EPS format
-    for ext in ["png"]: #, "pdf", "eps"]:
-        fig.savefig(fname=f"{fname_fig_out}_marimo.{ext}", dpi=dpi_png)
+    # for ext in ["png"]: #, "pdf", "eps"]:
+    #     fig.savefig(fname=f"{fname_fig_out}_marimo.{ext}", dpi=dpi_png)
 
     print(fname_fig_out)
     return
