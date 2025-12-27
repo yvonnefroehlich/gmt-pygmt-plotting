@@ -47,7 +47,6 @@ path_out = "02_out_figs"
 # Colors
 color_pb = "216.750/82.875/24.990"  # plate boundaries
 color_land = "gray90"
-color_water = "white"
 color_sl = "gray30"  # shorelines
 fill_null_max = "white"
 pen_null = "0.4p,gray10"
@@ -109,6 +108,6 @@ fig.show()
 
 fig_name = f"{path_out}/db_sws_splitting_parameters"
 # for ext in ["png"]:  # , "pdf", "eps"]:
-#    fig.savefig(fname=f"{fig_name}.{ext}")
+#     fig.savefig(fname=f"{fig_name}.{ext}")
 
 print(fig_name)
