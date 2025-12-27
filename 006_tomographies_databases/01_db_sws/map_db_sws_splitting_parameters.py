@@ -20,9 +20,10 @@
 # History
 # - Created: 2024/04/29
 # - Updated: 2025/02/15
+# - Updated: 2025/12/27 - Update SWS database
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.16.0 -> https://www.pygmt.org/
+# - PyGMT v0.17.0 -> https://www.pygmt.org/
 # - GMT 6.4.0 - 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
