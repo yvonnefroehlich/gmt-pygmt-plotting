@@ -55,7 +55,7 @@ pen_null = "0.4p,gray10"
 # -----------------------------------------------------------------------------
 # Load SWSM data
 # -----------------------------------------------------------------------------
-file_swsm = "sws_db_swsm_barruol_et_al_20250506_COR_GMT_phiGMT4j.txt"
+file_swsm = "sws_db_swsm_barruol_et_al_20251227_COR_GMT_phiGMT4j.txt"
 df_swsm_raw = pd.read_csv(f"{path_in}/{file_swsm}", delimiter=",")
 df_swsm_split = df_swsm_raw[df_swsm_raw.obs == "Split"]
 df_swsm_null = df_swsm_raw[df_swsm_raw.obs == "Null"]
