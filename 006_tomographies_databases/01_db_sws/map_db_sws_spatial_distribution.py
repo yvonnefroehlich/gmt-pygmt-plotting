@@ -125,6 +125,6 @@ for spacing in range(5, 21, 5):  # size of blocks in degrees
 
     fig_name = f"{path_out}/db_sws_spatial_distribution_splits_spacing{spacing}deg"
     # for ext in ["png"]:  # , "pdf", "eps"]:
-    #     fig.savefig(fname=f"{fig_name}.{ext}")
+    #    fig.savefig(fname=f"{fig_name}.{ext}")
 
     print(fig_name)
