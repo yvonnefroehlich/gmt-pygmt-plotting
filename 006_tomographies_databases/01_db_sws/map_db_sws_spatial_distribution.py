@@ -47,7 +47,7 @@ path_out = "02_out_figs"
 # Colors
 color_pb = "216.750/82.875/24.990"  # plate boundaries
 color_land = "gray90"
-color_sl = "darkred"  # shorelines
+color_sl = "gray30"  # shorelines
 color_split = "white"
 
 # Region and projection
@@ -125,6 +125,6 @@ for spacing in range(5, 21, 5):  # size of blocks in degrees
 
     fig_name = f"{path_out}/db_sws_spatial_distribution_splits_spacing{spacing}deg"
     # for ext in ["png"]:  # , "pdf", "eps"]:
-    #    fig.savefig(fname=f"{fig_name}.{ext}")
+    #     fig.savefig(fname=f"{fig_name}.{ext}")
 
     print(fig_name)
