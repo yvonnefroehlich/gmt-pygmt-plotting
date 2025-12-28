@@ -21,8 +21,8 @@
 # - Created: 2024/04/29
 # - Updated: 2025/02/15
 # - Updated: 2025/12/27 - Update SWS database
-# - Updated: 2025/12/27 - Add codes for orthographic map, study by study map
-# - Updated: 2025/12/28 - Add code for year map
+# - Updated: 2025/12/27 - Add orthographic map, studies cumulative map
+# - Updated: 2025/12/28 - Add year map, carthesian histogram year
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.17.0 -> https://www.pygmt.org/
@@ -182,7 +182,34 @@ print(fig_name)
 
 # %%
 # -----------------------------------------------------------------------------
-# Make geographic maps - study by study
+# Carthesian Histogram - year
+# -----------------------------------------------------------------------------
+fig = gmt.Figure()
+
+fig.histogram(
+    data=df_swsm_raw["year"],
+    region=[
+        df_swsm_raw["year"].min(),
+        df_swsm_raw["year"].max() + 1,
+        0,
+        len(df_swsm_raw) + 7000,
+    ],
+    frame=["xa5f1+lyear", "yaf+lcounts"],
+    series=1,
+    fill="gray90",
+    pen="0.5p,gray70",
+    histtype=0,
+    cumulative=True,
+    annotate="+o3p+r+f8.5p,gray20",
+)
+
+fig.show()
+
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Make geographic maps - studies cumulative
 # -----------------------------------------------------------------------------
 for ref_id in ref_ids_unique:
     if ref_id > -1:
@@ -246,8 +273,8 @@ for ref_id in ref_ids_unique:
 
         fig.show()
         fig_name = f"{path_out}/ref_id/db_sws_sp_refid{ref_id}_{tag_ay}"
-        # for ext in ["png"]:  # , "pdf", "eps"]:
-            # fig.savefig(fname=f"{fig_name}.{ext}")
+        for ext in ["png"]:  # , "pdf", "eps"]:
+            fig.savefig(fname=f"{fig_name}.{ext}")
         print(fig_name)
 
 
