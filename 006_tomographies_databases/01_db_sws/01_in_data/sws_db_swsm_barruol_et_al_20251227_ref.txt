@@ -27,7 +27,7 @@ id|Tag|Authors|Year|Title|Journal|No|Pages|DOI|Link|Comment
 25|Russo1996|Russo, R.M., Silver, P.G., Franke, M., Ambeh, W.B., James, D.E.,|1996|Shear-wave splitting in northeast Venezuela, Trinidad and the Eastern Caribbean|Phys. Earth Planet. Int.|95|251-275| | | 
 26|Savage1996|Savage, M.K., Sheehan, A.F., Lerner-Lam, A.|1996|Shear wave splitting across the Rocky Mountain Front|Geophys. Res. Lett.|23|2267-2270| | | 
 27|Vinnik1996|Vinnik, L.P., Green, R.W.E., Nicolaysen, L.O.|1996|Seismic constraints on dynamics of the mantle of the Kaapvaal craton|Phys. Earth Planet. Int.|95|139-151| | | 
-28|Barruol1997a|Barruol, G., Silver, P.G , Vauchez, A.|1997|Seismic anisotropy in the eastern United States: Deep structure of a complex continental plate|J. Geophys. Res|102|8329-8348| | | 
+28|Barruol1997a|Barruol, G., Silver, P.G., Vauchez, A.|1997|Seismic anisotropy in the eastern United States: Deep structure of a complex continental plate|J. Geophys. Res|102|8329-8348| | | 
 29|Barruol1997b|Barruol, G., Helffrich, G., Vauchez, A.|1997|Shear wave splitting around the northern Atlantic, frozen Pangaean lithospheric anisotropy?|Tectonophysics|279(1-4)|135-148| | | 
 30|Sandvol1997|Sandvol, E.A., Ni, J.F., Kind, R., Zhao, W.|1997|Seismic anisotropy beneath the southern Himalayas-Tibet collision zone|J. Geophys. Res.|102(8)|17813-17823| | | 
 31|Barruol1998|Barruol, G., Souriau, A., Vauchez, A., Diaz, J., Gallart, J., Tubia, J., Cuevas, J.|1998|Lithospheric anisotropy beneath the Pyrenees from shear wave splitting|J. Geophys. Res.|103(12)|30039-30053| | | 
