@@ -62,24 +62,18 @@ pen_null = "0.4p,gray10"
 
 # %%
 # -----------------------------------------------------------------------------
-# Load SWSM data
+# Load and preparare SWSM data
 # -----------------------------------------------------------------------------
-file_swsm = "sws_db_swsm_barruol_et_al_20251227_COR_GMT_phiGMT4j.txt"
-df_swsm_raw = pd.read_csv(f"{path_in}/{file_swsm}", delimiter=",")
-df_swsm_split = df_swsm_raw[df_swsm_raw.obs == "Split"]
-df_swsm_null = df_swsm_raw[df_swsm_raw.obs == "Null"]
+file_swsm = "sws_db_swsm_barruol_et_al_20251227_COR_GMT_phiGMT4j"
+df_swsm_raw = pd.read_csv(f"{path_in}/{file_swsm}.txt", delimiter=",")
 
-df_null_circle = df_swsm_null[["lon", "lat"]]
-columns_bar = ["lon", "lat", "phi_sl", "phi_gmt", "dt", "thick", "ref_id"]
-df_split_bar = df_swsm_split[columns_bar]
-incols_j = "3,4+s0.05,5+s0.006"
-ref_ids_unique = list(set(df_split_bar["ref_id"]))
-
-file_ref = "sws_db_swsm_barruol_et_al_20251227_ref.txt"
-df_swsm_ref = pd.read_csv(f"{path_in}/{file_ref}", delimiter="|")
-
+file_ref = "sws_db_swsm_barruol_et_al_20251227_ref"
+df_swsm_ref = pd.read_csv(f"{path_in}/{file_ref}.txt", delimiter="|")
 
 # %%
+# -----------------------------------------------------------------------------
+"""
+# Add column for publication year of study
 # Takes some time ...
 years = [1] * len(df_swsm_raw)
 
@@ -95,6 +89,24 @@ for df_swsm_raw_ind in df_swsm_raw.index:
     years[df_swsm_raw_ind] = int(year)
 
 df_swsm_raw["year"] = years
+
+df_swsm_raw.to_csv(f"{path_in}/{file_swsm}_year.txt", index=False)
+"""
+
+#%%
+df_swsm_raw = pd.read_csv(f"{path_in}/{file_swsm}_year.txt", delimiter=",")
+df_swsm_raw.sort_values(by=["year"])
+
+# -----------------------------------------------------------------------------
+# Creat subsets
+df_swsm_split = df_swsm_raw[df_swsm_raw.obs == "Split"]
+df_swsm_null = df_swsm_raw[df_swsm_raw.obs == "Null"]
+
+df_null_circle = df_swsm_null[["lon", "lat"]]
+columns_bar = ["lon", "lat", "phi_sl", "phi_gmt", "dt", "thick", "ref_id"]
+df_split_bar = df_swsm_split[columns_bar]
+incols_j = "3,4+s0.05,5+s0.006"
+ref_ids_unique = list(set(df_split_bar["ref_id"]))
 
 
 
