@@ -95,7 +95,7 @@ df_swsm_raw.to_csv(f"{path_in}/{file_swsm}_year.txt", index=False)
 
 #%%
 df_swsm_raw = pd.read_csv(f"{path_in}/{file_swsm}_year.txt", delimiter=",")
-df_swsm_raw.sort_values(by=["year"])
+df_swsm_raw.sort_values(by="year")
 
 # -----------------------------------------------------------------------------
 # Creat subsets
@@ -224,7 +224,7 @@ fig.show()
 # Make geographic maps - studies cumulative
 # -----------------------------------------------------------------------------
 for ref_id in ref_ids_unique:
-    if ref_id > -1:
+    if ref_id > 212:
 
         fig = gmt.Figure()
         fig.basemap(region="d", projection="N11c", frame=0)
@@ -242,11 +242,11 @@ for ref_id in ref_ids_unique:
         gmt.makecpt(cmap="phase", series=[-90, 90], cyclic=True)
         fig.plot(
             data=df_split_bar[df_split_bar["ref_id"] == ref_id],
-            incols=f"0,1,2,{incols_j}",
-            # incols=f"0,1,{incols_j}",
+            # incols=f"0,1,2,{incols_j}",
+            incols=f"0,1,{incols_j}",
             style="j",
-            cmap=True,
-            # fill=color_hl,
+            # cmap=True,
+            fill=color_hl,
         )
 
         df_swsm_ref_temp =  df_swsm_ref[df_swsm_ref["id"] == ref_id]
@@ -265,20 +265,20 @@ for ref_id in ref_ids_unique:
         N_splits = len(df_split_bar[df_split_bar["ref_id"] == ref_id])
         cb_xlabel = f"{authors_three} ({year}) - {N_splits} splits"
         cb_ylabel = "@~f@~@-a@- / N@.E"
-        # fig.text(
-        #     text=cb_xlabel,
-        #     position="TC",
-        #     justify="BC",
-        #     offset="0c/0.3c",
-        #     font=f"8p,{color_hl}",
-        #     no_clip=True,
-        # )
-        with gmt.config(FONT_LABEL="10p"):
-            fig.colorbar(
-                cmap=True,
-                frame=[f"xa30f10+l{cb_xlabel}", f"y+l{cb_ylabel}"],
-                position="jBC+o0c/-1.4c+jMC+w8c+h+ml",
-            )
+        fig.text(
+            text=cb_xlabel,
+            position="TC",
+            justify="BC",
+            offset="0c/0.3c",
+            font=f"8p,{color_hl}",
+            no_clip=True,
+        )
+        # with gmt.config(FONT_LABEL="10p"):
+        #     fig.colorbar(
+        #         cmap=True,
+        #         frame=[f"xa30f10+l{cb_xlabel}", f"y+l{cb_ylabel}"],
+        #         position="jBC+o0c/-1.4c+jMC+w8c+h+ml",
+        #     )
 
         with gmt.config(FONT="7p"):
             fig.basemap(frame=["WSnE", "xa90f30", "ya30f15"])
