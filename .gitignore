@@ -1,0 +1,5 @@
+# Jupyter notebook
+.ipynb_checkpoints/
+
+# Python function 003_taup
+003_taup/__pycache__/
