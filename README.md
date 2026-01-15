@@ -96,9 +96,9 @@ _Please note_: Specific references are given in the single notebooks and scripts
   True colors of oceanography: Guidelines for effective and accurate colormap selection.
   *Oceanography*, 29(3):9-13.
   https://dx.doi.org/10.5670/oceanog.2016.66.
-- [**_Tian D, Leong W J, Fröhlich Y, Grund M, Schlitzer W, Jones M, Toney L, Yao J, Tong J-H, Mage Y, Materna K, Belem A, Newton T, Anant A, Ziebarth M, Quinn J, Uieda L, Wessel P (2024)_**](https://doi.org/10.5281/zenodo.17156962).
-  PyGMT: A Python interface for the Generic Mapping Tools, version v0.17.0.
-  *Zenodo*. https://doi.org/10.5281/zenodo.17156962 (v0.17.0), https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
+- [**_Tian D, Leong W J, Fröhlich Y, Grund M, Schlitzer W, Jones M, Toney L, Yao J, Tong J-H, Mage Y, Materna K, Belem A, Newton T, Anant A, Ziebarth M, Quinn J, He X, Uieda L, Wessel P (2024)_**](https://doi.org/10.5281/zenodo.18080259).
+  PyGMT: A Python interface for the Generic Mapping Tools, version v0.18.0.
+  *Zenodo*. https://doi.org/10.5281/zenodo.18080259 (v0.18.0), https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
 - [**_Wessel P, Smith W H F, Scharroo R, Luis J F, Wobbe F (2013)_**](https://doi.org/10.1002/2013EO450001).
   Generic mapping tools: improved version released.
   *Eos, Transactions American Geophysical Union*, 94(45):409-410.
