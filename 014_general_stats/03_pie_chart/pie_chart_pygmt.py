@@ -1,5 +1,8 @@
 # #############################################################################
-# Function to create a pie chart in PyGMT
+# Python function to create a pie chart in PyGMT
+# - sectors, ring sectors
+# - single colors, colormap
+# - labels with absolute values, percentage
 #
 # >>> Note <<<
 # >>> Numbers and trends are difficult to read visually from pie charts.
