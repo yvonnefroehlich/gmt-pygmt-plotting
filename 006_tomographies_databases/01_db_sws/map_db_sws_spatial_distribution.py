@@ -19,9 +19,10 @@
 # History
 # - Created: 2024/04/29
 # - Updated: 2025/02/15
+# - Updated: 2025/12/27 - Update SWS database
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.11.0 - v0.14.2 -> https://www.pygmt.org/
+# - PyGMT v0.17.0 -> https://www.pygmt.org/
 # - GMT 6.4.0 - 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
@@ -46,7 +47,7 @@ path_out = "02_out_figs"
 # Colors
 color_pb = "216.750/82.875/24.990"  # plate boundaries
 color_land = "gray90"
-color_sl = "darkred"  # shorelines
+color_sl = "gray30"  # shorelines
 color_split = "white"
 
 # Region and projection
@@ -58,7 +59,7 @@ projection = "N11c"  # Robinson projection
 # -----------------------------------------------------------------------------
 # Load SWSM data
 # -----------------------------------------------------------------------------
-file_swsm = "sws_db_swsm_barruol_et_al_20231005_COR_GMT_phiGMT4j.txt"
+file_swsm = "sws_db_swsm_barruol_et_al_20251227_COR_GMT_phiGMT4j.txt"
 df_swsm_raw = pd.read_csv(f"{path_in}/{file_swsm}", delimiter=",")
 df_swsm_split = df_swsm_raw[df_swsm_raw.obs == "Split"]
 df_swsm_null = df_swsm_raw[df_swsm_raw.obs == "Null"]
