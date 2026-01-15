@@ -1,5 +1,9 @@
 # #############################################################################
 # Function to create a pie chart in PyGMT
+#
+# >>> Note <<<
+# >>> Numbers and trends are difficult to read visually from pie charts.
+# >>> If possible test and consider using another plot type, e.g., a bar chart.
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/10/16
