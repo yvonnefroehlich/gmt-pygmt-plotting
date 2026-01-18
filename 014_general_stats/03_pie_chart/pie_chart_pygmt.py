@@ -2,7 +2,7 @@
 # Python function to create a pie chart in PyGMT
 # - sectors, ring sectors
 # - single colors, colormap
-# - labels with absolute values, percentage
+# - labels with absolute values, percent
 #
 # >>> Note <<<
 # >>> Numbers and trends are difficult to read visually from pie charts.
@@ -50,7 +50,7 @@ def pie_chart(
       Give a list of strings. | Default "sector1", ..., "sectorN"
     - colors: Fill of the sectors. Give a colormap or a list of
       colors. | Default colors based on colormap "batlow"
-    - radius_out: Set size of plot. Give outer radius | Defaullt 10
+    - radius_out: Set size of plot. Give outer radius | Default 10
     - radius_in: Create ring sectors. Give inner radius | Default 0
     - colorbar: Add a colorbar | Default True
     - sector_labels: Write labels in the sectors. Choose from "value_percent",
@@ -58,7 +58,7 @@ def pie_chart(
     - unit: Add unit to values. | Default no unit
     - cb_label: Add a label to the colorbar. | Default no label
     - round_digits: Round values to specific number of digits. | Default 2
-    - outline: Outline fo the sectors. Give a disered pen to adjust color,
+    - outline: Outline of the sectors. Give a disered pen to adjust color,
       thickness and style. | Default "1p,gray20,solid"
     - font: Size, style, color of the font used for the sector_labels. |
       Default "10p"
@@ -94,7 +94,7 @@ def pie_chart(
     if radius_in == True:
         radius_in = radius_out - radius_out * 0.5
 
-    # Caclulate percent for sectors
+    # Calculate percent for sectors
     if isinstance(sectors, list):
         sectors_array = np.array(sectors)
     else:
