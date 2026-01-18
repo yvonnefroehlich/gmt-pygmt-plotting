@@ -40,13 +40,13 @@ def pie_chart(
     cb_label="",
     round_digits=2,
     outline="1p,gray20,solid",
-    font="10p",
+    font="8p",
 ):
     """
     Required
     - sectors
     Optional
-    - annotations: Annotations assigned to the colors and added to the colorbar.
+    - annotations: Annotations assigned to the colors and used for the colorbar.
       Give a list of strings. | Default "sector1", ..., "sectorN"
     - colors: Fill of the sectors. Give a colormap or a list of
       colors. | Default colors based on colormap "batlow"
