@@ -30,32 +30,58 @@ import pygmt
 # -----------------------------------------------------------------------------
 def pie_chart(
     sectors,
-    labels=[],
+    annotations=[],
     colors=[],
-    radius=10,
-    ring=False,
-    colorbar=True,  # True | False
-    sector_labels="value_percent",  # "value_percent" | "value" | "percent" | None
+    radius_out=10,
+    radius_in=0,
+    colorbar=True,
+    sector_labels="value_percent",
     unit="",
     cb_label="",
     round_digits=2,
-    color_outline="gray20",
+    outline="1p,gray20,solid",
+    font="10p",
 ):
+    """
+    Required
+    - sectors
+    Optional
+    - annotations: Annotations assigned to the colors and added to the colorbar.
+      Give a list of strings. | Default "sector1", ..., "sectorN"
+    - colors: Fill of the sectors. Give a colormap or a list of
+      colors. | Default colors based on colormap "batlow"
+    - radius_out: Set size of plot. Give outer radius | Defaullt 10
+    - radius_in: Create ring sectors. Give inner radius | Default 0
+    - colorbar: Add a colorbar | Default True
+    - sector_labels: Write labels in the sectors. Choose from "value_percent",
+      "value", "percent", None. | Default "value_percent"
+    - unit: Add unit to values. | Default no unit
+    - cb_label: Add a label to the colorbar. | Default no label
+    - round_digits: Round values to specific number of digits. | Default 2
+    - outline: Outline fo the sectors. Give a disered pen to adjust color,
+      thickness and style. | Default "1p,gray20,solid"
+    - font: Size, style, color of the font used for the sector_labels. |
+      Default "10p"
+    """
 
-    # Check labels
-    if len(sectors) != len(labels) and len(labels) != 0:
-        print("The length of 'sectors' and 'cb_annot' must be identical! " + \
-              "Using default colorbar annotations 'sector1' ... 'sectorN'.")
+    # Check annotations
+    if len(sectors) != len(annotations) and len(annotations) != 0:
+        print(
+            "The lengths of 'sectors' and 'cb_annot' must be identical. " + \
+            "Using default colorbar annotations 'sector1' ... 'sectorN'."
+        )
 
-    if labels == [] or (len(sectors) != len(labels)):
-        labels = []
+    if annotations == [] or (len(sectors) != len(annotations)):
+        annotations = []
         for i_sector in range(len(sectors)):
-            labels.append(f"sector {i_sector + 1}")
+            annotations.append(f"sector {i_sector + 1}")
 
     # Check colors
     if (len(sectors) != len(colors)) and (len(colors) > 1):
-        print("The length of sectors and colors must be identical! " + \
-              "Using default colormap 'batlow'.")
+        print(
+            "The lengths of sectors and colors must be identical! " + \
+            "Using default colormap 'batlow'."
+        )
 
     if len(colors) == 1:
         cmap = colors
@@ -65,12 +91,8 @@ def pie_chart(
         cmap = "batlow"
 
     # Set inner radius of sectors
-    if ring == False:
-        radius_inner = 0
-    elif ring == True:
-        radius_inner = radius - radius * 0.5
-    else:
-        radius_inner = ring
+    if radius_in == True:
+        radius_in = radius_out - radius_out * 0.5
 
     # Caclulate percent for sectors
     if isinstance(sectors, list):
@@ -82,13 +104,13 @@ def pie_chart(
 
 # -----------------------------------------------------------------------------
     fig = pygmt.Figure()
-    pygmt.config(FORMAT_GEO_MAP="+D")
-    fig.basemap(region=[0, 360, 0, 1], projection=f"P{radius}c", frame=0)
+    pygmt.config(FORMAT_GEO_MAP="+D",  MAP_FRAME_PEN=outline)
+    fig.basemap(region=[0, 360, 0, 1], projection=f"P{radius_out}c", frame="+n")
 
     pygmt.makecpt(
         cmap=cmap,
         series=[0, len(sectors) - 1, 1],
-        color_model="+c" + ",".join(labels),
+        color_model="+c" + ",".join(annotations),
     )
 
     # Plot sectors
@@ -99,8 +121,8 @@ def pie_chart(
         fig.plot(
             x=0,
             y=0,
-            style=f"w{radius}c/{angel_start}/{angel_end}+i{radius_inner}c",
-            pen=f"1p,{color_outline}",
+            style=f"w{radius_out}c/{angel_start}/{angel_end}+i{radius_in}c",
+            pen=outline,
             fill="+z",
             zvalue=i_sector,
             cmap=True,
@@ -126,7 +148,7 @@ def pie_chart(
                 case "percent":
                     text = f"{round(percent, round_digits)} %"
             if colorbar == False:
-                text = labels[i_sector]
+                text = annotations[i_sector]
 
             fig.text(
                 text=text,
@@ -135,6 +157,7 @@ def pie_chart(
                 fill="white@30",
                 pen="0.1p,gray30",
                 clearance="+tO",
+                font=font,
                 no_clip=True,
             )
 
@@ -151,34 +174,48 @@ sectors = [50, 10, 8, 12, 15, 13, 42, 5]
 
 pie_chart(sectors=sectors)
 
-labels = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh"]
+annotations = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh"]
 
-pie_chart(sectors=sectors, labels=labels)
+pie_chart(sectors=sectors, annotations=annotations)
 
 colors = ["hawaii"]
 
-pie_chart(sectors=sectors, labels=labels, colors=colors)
-pie_chart(sectors=sectors, labels=labels, colors=colors, ring=True, unit="kg")
+pie_chart(sectors=sectors, annotations=annotations, colors=colors)
+pie_chart(
+    sectors=sectors,
+    annotations=annotations,
+    colors=colors,
+    radius_in=True,
+    unit="kg",
+)
 
 sectors = np.array([33, 48, 26, 13, 13, 42, 5])
 colors = ["darkred", "lightred", "tomato", "brown", "darkbrown", "pink", "bisque"]
 
 pie_chart(
     sectors=sectors,
-    labels=labels,
+    annotations=annotations,
     colors=colors,
-    ring=8,
+    radius_in=8,
     unit="kg",
     sector_labels="value",
 )
 pie_chart(
     sectors=sectors,
-    labels=labels,
+    annotations=annotations,
     colors=colors,
-    ring=8,
+    radius_in=8,
     unit="kg",
     sector_labels="percent",
     cb_label="Letters",
     round_digits=0,
+    outline="1p,white",
 )
-pie_chart(sectors=sectors, labels=labels, colors=colors, ring=True, colorbar=False)
+pie_chart(
+    sectors=sectors,
+    annotations=annotations,
+    colors=colors,
+    radius_in=True,
+    colorbar=False,
+    outline="0.5p,brown,dashed",
+)
