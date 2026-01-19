@@ -209,7 +209,7 @@ pie_chart(
 )
 pie_chart(
     sectors=sectors,
-    annot=annot,
+    annot=annot[0:-1],
     colors=colors,
     radius_in=8,
     unit="kg",
@@ -220,9 +220,9 @@ pie_chart(
 )
 pie_chart(
     sectors=sectors,
-    annot=annot,
+    annot=annot[0:-1],
     colors=colors,
     radius_in=True,
     colorbar=False,
-    outline="0.5p,brown,2_2",
+    outline=None,
 )

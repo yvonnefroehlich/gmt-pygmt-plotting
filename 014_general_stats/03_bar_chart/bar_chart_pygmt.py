@@ -32,6 +32,7 @@ def bar_chart(
     width=0.8,
     colorbar=True,
     bar_labels="value_percent",
+    bar_label_offset=None,
     unit="",
     cb_label="",
     round_digits=2,
@@ -51,6 +52,9 @@ def bar_chart(
     - colorbar: Add a colorbar | Default True
     - bar_labels: Write labels in the bars. Choose from "value_percent",
       "value", "percent", None. | Default "value_percent"
+    - bar_label_offset: Offset of bar label and top of bar. Give offsets in x-
+      and y-directions as string with the format <xoffset/yoffset>. |
+      Default f"0c/{max(bars) * 0.003}c"
     - unit: Add unit to values. | Default no unit
     - cb_label: Add a label to the colorbar. | Default no label
     - round_digits: Round values to specific number of digits. | Default 2
@@ -97,6 +101,9 @@ def bar_chart(
     # Add white space before unit
     if unit != "":
         unit = f" {unit}"
+    # ofset
+    if bar_label_offset == None:
+        bar_label_offset = f"0c/{max(bars) * 0.003}c"
 
     # Create dataframe
     x = np.arange(1, len(bars) + 1, 1)
@@ -144,7 +151,7 @@ def bar_chart(
                 text=text,
                 x=x[i_bar],
                 y=bars[i_bar],
-                offset=f"0c/{max(bars) * 0.003}c",
+                offset=bar_label_offset,
                 fill="white@30",
                 pen="0.1p,gray30",
                 clearance="+tO",
@@ -204,5 +211,5 @@ bar_chart(
     annot=annot[0:-1],
     colors=colors,
     colorbar=False,
-    outline="0.5p,brown,2_2",
+    outline=None,
 )
