@@ -1,7 +1,7 @@
 # legend for URG map - piercing points
 # upper mantle
 
-# upper distace / space to adjust for delay time legend with is a bit higher due to the subscript ((a)pparent)
+# upper distance / space to adjust for delay time legend with is a bit higher due to the subscript ((a)pparent)
 
 N 1
 G 0.05c
