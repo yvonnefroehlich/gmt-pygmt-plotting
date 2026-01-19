@@ -123,7 +123,7 @@ def bar_chart(
             y_offset = xy_offset
         case "horizontal":
             region = [0, np.max(bars) + np.max(bars) * 0.1, 0, len(bars) + 1]
-            projection = f"X6c/{len(bars) + 1}c"
+            projection = f"X6c/-{len(bars) + 1}c"
             frame = ["lStr", "xaf"]
             dict_bars = {"x": bars, "y": xy}
             style = "B"
