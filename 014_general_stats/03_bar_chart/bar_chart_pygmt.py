@@ -1,6 +1,6 @@
 # #############################################################################
 # Python function to create a bar chart in PyGMT
-# - vertical bars
+# - vertical, horizontal bars
 # - single colors, colormap
 # - labels with absolute values, percent
 # -----------------------------------------------------------------------------
@@ -30,6 +30,7 @@ def bar_chart(
     annot=[],
     colors=[],
     width=0.8,
+    orientation="vertical",
     colorbar=True,
     bar_labels="value_percent",
     bar_label_offset=None,
@@ -49,6 +50,8 @@ def bar_chart(
     - colors: Fill of the bars. Give a colormap or a list of
       colors. | Default colors based on colormap "batlow"
     - width: Set width of the bars. | Default 0.9
+    - orientation: Orientation of the bars. Choose between "horizontal" or
+      "vertical". | Default "vertical"
     - colorbar: Add a colorbar | Default True
     - bar_labels: Write labels in the bars. Choose from "value_percent",
       "value", "percent", None. | Default "value_percent"
@@ -101,33 +104,54 @@ def bar_chart(
     # Add white space before unit
     if unit != "":
         unit = f" {unit}"
-    # ofset
-    if bar_label_offset == None:
-        bar_label_offset = f"0c/{max(bars) * 0.003}c"
 
-    # Create dataframe
-    x = np.arange(1, len(bars) + 1, 1)
-    dict_bars = {"x": x, "y": bars}
+    # Create dataframe based on orientation of bars
+    xy = np.arange(1, len(bars) + 1, 1)
+    xy_offset = max(bars) * 0.0025
+
+    match orientation:
+        case "vertical":
+            region = [0, len(bars) + 1, 0, np.max(bars) + np.max(bars) * 0.1]
+            projection = f"X{len(bars) + 1}c/6c"
+            frame = ["Wbtr", "yaf"]
+            dict_bars = {"x": xy, "y": bars}
+            style = "b"
+            x_text = xy
+            y_text = bars
+            justify_text = "BC"
+            x_offset = 0
+            y_offset = xy_offset
+        case "horizontal":
+            region = [0, np.max(bars) + np.max(bars) * 0.1, 0, len(bars) + 1]
+            projection = f"X6c/{len(bars) + 1}c"
+            frame = ["lStr", "xaf"]
+            dict_bars = {"x": bars, "y": xy}
+            style = "B"
+            x_text = bars
+            y_text = xy
+            justify_text = "ML"
+            x_offset = xy_offset
+            y_offset = 0
+
     df_bars = pd.DataFrame(dict_bars, columns=["x", "y"])
-    df_bars["color"] = df_bars["x"]
+    df_bars["color"] = xy
     df_bars["percent"] = percents
+
+    # Default of bar label offset
+    if bar_label_offset == None:
+        bar_label_offset = f"{x_offset}c/{y_offset}c"
+
 
 # -----------------------------------------------------------------------------
     fig = pygmt.Figure()
 
-    fig.basemap(
-        region=[0, len(bars) + 1, 0, np.max(bars) + np.max(bars) * 0.1],
-        projection=f"X{len(bars) + 1}c/6c",
-        frame=0,
-    )
+    fig.basemap(region=region, projection=projection, frame=0)
     pygmt.makecpt(
-        cmap=cmap,
-        series=[1, len(bars), 1],
-        color_model="+c" + ",".join(annot),
+        cmap=cmap, series=[1, len(bars), 1], color_model="+c" + ",".join(annot)
     )
 
     # Plot bars
-    fig.plot(data=df_bars, style=f"b{width}c", pen=outline, cmap=True)
+    fig.plot(data=df_bars, style=f"{style}{width}c", pen=outline, cmap=True)
 
     if colorbar == True:
         fig.colorbar(equalsize=0.2, S=f"+x{cb_label}", position="+e0c+ml")
@@ -149,19 +173,19 @@ def bar_chart(
 
             fig.text(
                 text=text,
-                x=x[i_bar],
-                y=bars[i_bar],
+                x=x_text[i_bar],
+                y=y_text[i_bar],
                 offset=bar_label_offset,
                 fill="white@30",
                 pen="0.1p,gray30",
                 clearance="+tO",
-                justify="BC",
+                justify=justify_text,
                 font=font,
                 no_clip=True,
             )
 
     # Add frame on top
-    fig.basemap(frame=["Wbtr", "yaf"])
+    fig.basemap(frame=frame)
 
     fig.show()
 
@@ -189,13 +213,7 @@ bar_chart(bars=bars, annot=annot, colors=colors, unit="kg")
 bars = np.array([33, 48, 26, 13, 13, 42, 5])
 colors = ["darkred", "lightred", "tomato", "brown", "darkbrown", "pink", "bisque"]
 
-bar_chart(
-    bars=bars,
-    annot=annot,
-    colors=colors,
-    unit="kg",
-    bar_labels="value",
-)
+bar_chart(bars=bars, annot=annot, colors=colors, unit="kg", bar_labels="value")
 bar_chart(
     bars=bars,
     annot=annot[0:-1],
@@ -212,4 +230,5 @@ bar_chart(
     colors=colors,
     colorbar=False,
     outline=None,
+    orientation="horizontal",
 )

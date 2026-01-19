@@ -9,7 +9,7 @@
 # >>> If applicable use another plot type, e.g., a bar chart.
 # -----------------------------------------------------------------------------
 # History
-# - Created: 2025/10/16
+# - Created: 2026/01/18
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org/v0.18.0 | https://www.pygmt.org
@@ -187,13 +187,7 @@ pie_chart(sectors=sectors, annot=annot)
 colors = ["hawaii"]
 
 pie_chart(sectors=sectors, annot=annot, colors=colors)
-pie_chart(
-    sectors=sectors,
-    annot=annot,
-    colors=colors,
-    radius_in=True,
-    unit="kg",
-)
+pie_chart(sectors=sectors, annot=annot, colors=colors, radius_in=True, unit="kg")
 
 # -----------------------------------------------------------------------------
 sectors = np.array([33, 48, 26, 13, 13, 42, 5])
