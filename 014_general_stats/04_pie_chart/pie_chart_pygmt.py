@@ -46,7 +46,7 @@ def pie_chart(
     Required
     - sectors
     Optional
-    - annot: annot assigned to the colors and used for the colorbar.
+    - annot: annotations assigned to the colors and used for the colorbar.
       Give always a list of strings. | Default "sector1", ..., "sectorN"
     - colors: Fill of the sectors. Give a colormap or a list of
       colors. | Default colors based on colormap "batlow"

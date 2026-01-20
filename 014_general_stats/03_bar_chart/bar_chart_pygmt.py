@@ -45,7 +45,7 @@ def bar_chart(
     Required
     - bars
     Optional
-    - annot: annot assigned to the colors and used for the colorbar.
+    - annot: annotations assigned to the colors and used for the colorbar.
       Give always a list of strings. | Default "bar1", ..., "barN"
     - colors: Fill of the bars. Give a colormap or a list of
       colors. | Default colors based on colormap "batlow"
