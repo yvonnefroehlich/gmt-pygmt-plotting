@@ -117,7 +117,7 @@ def pie_chart(
     # Create plot
     # -------------------------------------------------------------------------
     fig = pygmt.Figure()
-    pygmt.config(FORMAT_GEO_MAP="+D",  MAP_FRAME_PEN=outline)
+    pygmt.config(FORMAT_GEO_MAP="+D")
     fig.basemap(region=[0, 360, 0, 1], projection=f"P{radius_out}c", frame="+n")
 
     pygmt.makecpt(
@@ -131,15 +131,18 @@ def pie_chart(
     for i_sector, percent in enumerate(percents):
         angel_end = angel_start + percent * 3.6  # Convert percent to degrees
 
-        fig.plot(
-            x=0,
-            y=0,
-            style=f"w{radius_out}c/{angel_start}/{angel_end}+i{radius_in}c",
-            pen=outline,
-            fill="+z",
-            zvalue=i_sector,
-            cmap=True,
-        )
+        args_sector = {
+            "x": 0,
+            "y": 0,
+            "style": f"w{radius_out}c/{angel_start}/{angel_end}+i{radius_in}c",
+            "fill": "+z",
+            "zvalue": i_sector,
+            "cmap": True,
+        }
+        if outline in [None, False, 0, "0p"]:
+            fig.plot(**args_sector)
+        else:
+            fig.plot(pen=outline, **args_sector)
 
         angel_start = angel_end
 
@@ -153,7 +156,7 @@ def pie_chart(
             move_text="label",
         )
 
-    # Add labels on top of sectors
+    # Add labels within the sectors
     if sector_labels != None:
 
         angel_start = 0
@@ -182,6 +185,11 @@ def pie_chart(
             )
 
             angel_start = angel_end
+
+    # Add frame on top
+    if outline not in [None, False, 0, "0p"]:
+        pygmt.config(MAP_FRAME_PEN=outline)
+        fig.basemap(frame=0)
 
     fig.show()
 

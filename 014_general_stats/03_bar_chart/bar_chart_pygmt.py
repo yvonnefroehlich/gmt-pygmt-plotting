@@ -163,7 +163,11 @@ def bar_chart(
     )
 
     # Plot bars
-    fig.plot(data=df_bars, style=f"{style}{bar_width}c", pen=outline, cmap=True)
+    args_bar = {"data": df_bars, "style": f"{style}{bar_width}c", "cmap": True}
+    if outline in [None, False, 0, "0p"]:
+        fig.plot(**args_bar)
+    else:
+        fig.plot(pen=outline, **args_bar)
 
     if colorbar == True:
         fig.colorbar(
@@ -175,7 +179,7 @@ def bar_chart(
             move_text="label",
         )
 
-    # Add labels on top of bars
+    # Add labels on top of the bars
     if bar_labels != None:
 
         for i_bar, percent in enumerate(percents):
