@@ -24,10 +24,8 @@
 
 import numpy as np
 import pygmt
+from pygmt.params import Position
 
-# -----------------------------------------------------------------------------
-# Function to create a pie chart
-# -----------------------------------------------------------------------------
 def pie_chart(
     sectors,
     annot=[],
@@ -42,28 +40,35 @@ def pie_chart(
     outline="1p,black,solid",
     font="8p",
 ):
-    """
-    Required
-    - sectors
-    Optional
-    - annot: annotations assigned to the colors and used for the colorbar.
-      Give always a list of strings. | Default "sector1", ..., "sectorN"
-    - colors: Fill of the sectors. Give a colormap or a list of
-      colors. | Default colors based on colormap "batlow"
-    - radius_out: Set size of plot. Give outer radius | Default 10
-    - radius_in: Create ring sectors. Give inner radius | Default 0
-    - colorbar: Add a colorbar | Default True
-    - sector_labels: Write labels in the sectors. Choose from "value_percent",
-      "value", "percent", None. | Default "value_percent"
-    - unit: Add unit to values. | Default no unit
-    - cb_label: Add a label to the colorbar. | Default no label
-    - round_digits: Round values to specific number of digits. | Default 2
-    - outline: Outline of the sectors. Give a disered pen to adjust color,
-      thickness and style. | Default "1p,black,solid"
-    - font: Size, style, color of the font used for the sector_labels. |
-      Default "10p"
-    """
+    # %%
+    # -------------------------------------------------------------------------
+    # Input
+    # -------------------------------------------------------------------------
+    # Required
+    # - sectors
+    # Optional
+    # - annot: annotations assigned to the colors and used for the colorbar.
+    #   Give always a list of strings. | Default "sector1", ..., "sectorN"
+    # - colors: Fill of the sectors. Give a colormap or a list of
+    #   colors. | Default colors based on colormap "batlow"
+    # - radius_out: Set size of plot. Give outer radius | Default 10
+    # - radius_in: Create ring sectors. Give inner radius | Default 0
+    # - colorbar: Add a colorbar | Default True
+    # - sector_labels: Write labels in the sectors. Choose from "value_percent",
+    #   "value", "percent", None. | Default "value_percent"
+    # - unit: Add unit to values. | Default no unit
+    # - cb_label: Add a label to the colorbar. | Default no label
+    # - round_digits: Round values to specific number of digits. | Default 2
+    # - outline: Outline of the sectors. Give a disered pen to adjust color,
+    #   thickness and style. | Default "1p,black,solid"
+    # - font: Size, style, color of the font used for the sector_labels. |
+    #   Default "10p"
 
+
+    # %%
+    # -------------------------------------------------------------------------
+    # Check and prepare input
+    # -------------------------------------------------------------------------
     # Check annot
     if len(sectors) != len(annot) and len(annot) != 0:
         print(
@@ -106,7 +111,11 @@ def pie_chart(
     if unit != "":
         unit = f" {unit}"
 
-# -----------------------------------------------------------------------------
+
+    # %%
+    # -------------------------------------------------------------------------
+    # Create plot
+    # -------------------------------------------------------------------------
     fig = pygmt.Figure()
     pygmt.config(FORMAT_GEO_MAP="+D",  MAP_FRAME_PEN=outline)
     fig.basemap(region=[0, 360, 0, 1], projection=f"P{radius_out}c", frame="+n")
@@ -135,7 +144,14 @@ def pie_chart(
         angel_start = angel_end
 
     if colorbar == True:
-        fig.colorbar(equalsize=0.2, S=f"+x{cb_label}", position="+e0c+ml")
+        fig.colorbar(
+            position=Position("BC", anchor="TC", offset=(0, 0.5)),
+            orientation="horizontal",
+            length=radius_out - radius_out * 0.15,
+            equalsize=0.2,
+            S=f"+x{cb_label}",
+            move_text="label",
+        )
 
     # Add labels on top of sectors
     if sector_labels != None:
@@ -168,6 +184,7 @@ def pie_chart(
             angel_start = angel_end
 
     fig.show()
+
 
 
 # %%

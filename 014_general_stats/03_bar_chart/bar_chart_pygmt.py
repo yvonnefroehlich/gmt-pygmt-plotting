@@ -21,15 +21,13 @@
 import pandas as pd
 import numpy as np
 import pygmt
+from pygmt.params import Position
 
-# -----------------------------------------------------------------------------
-# Function to create a bar chart
-# -----------------------------------------------------------------------------
 def bar_chart(
     bars,
     annot=[],
     colors=[],
-    width=0.8,
+    bar_width=0.8,
     orientation="vertical",
     colorbar=True,
     bar_labels="value_percent",
@@ -41,32 +39,39 @@ def bar_chart(
     font="5p",
 
 ):
-    """
-    Required
-    - bars
-    Optional
-    - annot: annotations assigned to the colors and used for the colorbar.
-      Give always a list of strings. | Default "bar1", ..., "barN"
-    - colors: Fill of the bars. Give a colormap or a list of
-      colors. | Default colors based on colormap "batlow"
-    - width: Set width of the bars. | Default 0.9
-    - orientation: Orientation of the bars. Choose between "horizontal" or
-      "vertical". | Default "vertical"
-    - colorbar: Add a colorbar | Default True
-    - bar_labels: Write labels in the bars. Choose from "value_percent",
-      "value", "percent", None. | Default "value_percent"
-    - bar_label_offset: Offset of bar label and top of bar. Give offsets in x-
-      and y-directions as string with the format <xoffset/yoffset>. |
-      Default f"0c/{max(bars) * 0.003}c"
-    - unit: Add unit to values. | Default no unit
-    - cb_label: Add a label to the colorbar. | Default no label
-    - round_digits: Round values to specific number of digits. | Default 2
-    - outline: Outline of the bars. Give a disered pen to adjust color,
-      thickness and style. | Default "1p,black,solid"
-    - font: Size, style, color of the font used for the bar_labels. |
-      Default "10p"
-    """
+    # %%
+    # -------------------------------------------------------------------------
+    # Input
+    # -------------------------------------------------------------------------
+    # Required
+    # - bars
+    # Optional
+    # - annot: annotations assigned to the colors and used for the colorbar.
+    #   Give always a list of strings. | Default "bar1", ..., "barN"
+    # - colors: Fill of the bars. Give a colormap or a list of
+    #   colors. | Default colors based on colormap "batlow"
+    # - bar_width: Set width of the bars. | Default 0.9
+    # - orientation: Orientation of the bars. Choose between "horizontal" or
+    #   "vertical". | Default "vertical"
+    # - colorbar: Add a colorbar | Default True
+    # - bar_labels: Write labels in the bars. Choose from "value_percent",
+    #   "value", "percent", None. | Default "value_percent"
+    # - bar_label_offset: Offset of bar label and top of bar. Give offsets in x-
+    #   and y-directions as string with the format <xoffset/yoffset>. |
+    #   Default f"0c/{max(bars) * 0.003}c"
+    # - unit: Add unit to values. | Default no unit
+    # - cb_label: Add a label to the colorbar. | Default no label
+    # - round_digits: Round values to specific number of digits. | Default 2
+    # - outline: Outline of the bars. Give a disered pen to adjust color,
+    #   thickness and style. | Default "1p,black,solid"
+    # - font: Size, style, color of the font used for the bar_labels. |
+    #   Default "10p"
 
+
+    # %%
+    # -------------------------------------------------------------------------
+    # Check and prepare input
+    # -------------------------------------------------------------------------
     # Check annot
     if len(bars) != len(annot) and len(annot) != 0:
         print(
@@ -112,7 +117,8 @@ def bar_chart(
     match orientation:
         case "vertical":
             region = [0, len(bars) + 1, 0, np.max(bars) + np.max(bars) * 0.1]
-            projection = f"X{len(bars) + 1}c/6c"
+            plot_width = len(bars) + 1
+            plot_hight = 6
             frame = ["Wbtr", "yaf"]
             dict_bars = {"x": xy, "y": bars}
             style = "b"
@@ -123,7 +129,8 @@ def bar_chart(
             y_offset = xy_offset
         case "horizontal":
             region = [0, np.max(bars) + np.max(bars) * 0.1, 0, len(bars) + 1]
-            projection = f"X6c/-{len(bars) + 1}c"
+            plot_width = 6
+            plot_hight = - (len(bars) + 1)
             frame = ["lStr", "xaf"]
             dict_bars = {"x": bars, "y": xy}
             style = "B"
@@ -137,12 +144,17 @@ def bar_chart(
     df_bars["color"] = xy
     df_bars["percent"] = percents
 
+    # Projection
+    projection = f"X{plot_width}c/{plot_hight}c"
+
     # Default of bar label offset
     if bar_label_offset == None:
         bar_label_offset = f"{x_offset}c/{y_offset}c"
 
 
-# -----------------------------------------------------------------------------
+    # -------------------------------------------------------------------------
+    # Create plot
+    # -------------------------------------------------------------------------
     fig = pygmt.Figure()
 
     fig.basemap(region=region, projection=projection, frame=0)
@@ -151,10 +163,17 @@ def bar_chart(
     )
 
     # Plot bars
-    fig.plot(data=df_bars, style=f"{style}{width}c", pen=outline, cmap=True)
+    fig.plot(data=df_bars, style=f"{style}{bar_width}c", pen=outline, cmap=True)
 
     if colorbar == True:
-        fig.colorbar(equalsize=0.2, S=f"+x{cb_label}", position="+e0c+ml")
+        fig.colorbar(
+            position=Position("BC", anchor="TC", offset=(0, 0.6)),
+            orientation="horizontal",
+            length=plot_width - plot_width * 0.15,
+            equalsize=0.2,
+            S=f"+x{cb_label}",
+            move_text="label",
+        )
 
     # Add labels on top of bars
     if bar_labels != None:
@@ -188,6 +207,7 @@ def bar_chart(
     fig.basemap(frame=frame)
 
     fig.show()
+
 
 
 # %%
