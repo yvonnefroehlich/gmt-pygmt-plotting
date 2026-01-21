@@ -114,7 +114,7 @@ def bar_chart(
     if unit != "":
         unit = f" {unit}"
 
-    # Create dataframe based on orientation of bars
+    # Create pandas Dataframe based on orientation of bars
     xy = np.arange(1, len(bars) + 1, 1)
     xy_offset = max(bars) * 0.0025
 

@@ -140,7 +140,7 @@ def pie_chart(
                 text_temp = annot[i_sector]
             text.append(text_temp)
 
-    # Create dataframe
+    # Create pandas Dataframe
     dict_sectors = {"x": [0] * len(sectors), "y": [0] * len(sectors)}
     df_sectors = pd.DataFrame(dict_sectors, columns=["x", "y"])
     df_sectors["z_color"] = np.arange(0, len(sectors), 1)
