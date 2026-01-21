@@ -152,7 +152,6 @@ def bar_chart(
     if bar_labels != None:
 
         for i_bar, percent in enumerate(percents):
-
             match bar_labels:
                 case "value_percent":
                     text_temp = f"{bars[i_bar]}{unit} | {round(percent, round_digits)} %"
