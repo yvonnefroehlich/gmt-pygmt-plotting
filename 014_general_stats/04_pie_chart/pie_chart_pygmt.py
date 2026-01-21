@@ -112,15 +112,30 @@ def pie_chart(
     if unit != "":
         unit = f" {unit}"
 
-    # Create dataframe
+    # Set up values for sectors
     angle_start = [0] * len(sectors)
     angle_end = [0] * len(sectors)
     angle_temp = 0
+    text = []
     for i_sector, percent in enumerate(percents):
         angle_start[i_sector] = angle_temp
         angle_temp = angle_temp + percent * 3.6  # Convert percent to degrees
         angle_end[i_sector] = angle_temp
 
+        # Create sector labels
+        if sector_labels != None:
+            match sector_labels:
+                case "value_percent":
+                    text_temp = f"{sectors[i_sector]}{unit} | {round(percent, round_digits)} %"
+                case "value":
+                    text_temp = f"{sectors[i_sector]}{unit}"
+                case "percent":
+                    text_temp = f"{round(percent, round_digits)} %"
+            if colorbar == False:
+                text_temp = annot[i_sector]
+            text.append(text_temp)
+
+    # Create dataframe
     dict_sectors = {"x": [0] * len(sectors), "y": [0] * len(sectors)}
     df_sectors = pd.DataFrame(dict_sectors, columns=["x", "y"])
     df_sectors["color"] = np.arange(0, len(sectors), 1)
@@ -128,6 +143,9 @@ def pie_chart(
     df_sectors["angle_start"] = angle_start
     df_sectors["angle_end"] = angle_end
     print(df_sectors)
+
+    middle_sectors = df_sectors["angle_start"] + \
+        (df_sectors["angle_end"] - df_sectors["angle_start"]) / 2
 
 
     # %%
@@ -162,34 +180,16 @@ def pie_chart(
         )
 
     # Add labels within the sectors
-    if sector_labels != None:
-
-        angle_start = 0
-        for i_sector, percent in enumerate(percents):
-            angle_end = angle_start + percent * 3.6
-
-            match sector_labels:
-                case "value_percent":
-                    text = f"{sectors[i_sector]}{unit} | {round(percent, round_digits)} %"
-                case "value":
-                    text = f"{sectors[i_sector]}{unit}"
-                case "percent":
-                    text = f"{round(percent, round_digits)} %"
-            if colorbar == False:
-                text = annot[i_sector]
-
-            fig.text(
-                text=text,
-                x=angle_start + percent * 3.6 / 2,
-                y=0.8,
-                fill="white@30",
-                pen="0.1p,gray30",
-                clearance="+tO",
-                font=font,
-                no_clip=True,
-            )
-
-            angle_start = angle_end
+    fig.text(
+        text=text,
+        x=middle_sectors,
+        y=[0.8] * len(df_sectors),
+        fill="white@30",
+        pen="0.1p,gray30",
+        clearance="+tO",
+        font=font,
+        no_clip=True,
+    )
 
     # Add frame on top
     if outline not in [None, False, 0, "0p"]:

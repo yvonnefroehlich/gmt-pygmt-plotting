@@ -147,6 +147,23 @@ def bar_chart(
     # Projection
     projection = f"X{plot_width}c/{plot_hight}c"
 
+    # Create bar labels
+    text = []
+    if bar_labels != None:
+
+        for i_bar, percent in enumerate(percents):
+
+            match bar_labels:
+                case "value_percent":
+                    text_temp = f"{bars[i_bar]}{unit} | {round(percent, round_digits)} %"
+                case "value":
+                    text_temp = f"{bars[i_bar]}{unit}"
+                case "percent":
+                    text_temp = f"{round(percent, round_digits)} %"
+            if colorbar == False:
+                text_temp = annot[i_bar]
+            text.append(text_temp)
+
     # Default of bar label offset
     if bar_label_offset == None:
         bar_label_offset = f"{x_offset}c/{y_offset}c"
@@ -157,8 +174,8 @@ def bar_chart(
     # Create plot
     # -------------------------------------------------------------------------
     fig = pygmt.Figure()
-
     fig.basemap(region=region, projection=projection, frame=0)
+
     pygmt.makecpt(
         cmap=cmap, series=[1, len(bars), 1], color_model="+c" + ",".join(annot)
     )
@@ -181,32 +198,18 @@ def bar_chart(
         )
 
     # Add labels on top of the bars
-    if bar_labels != None:
-
-        for i_bar, percent in enumerate(percents):
-
-            match bar_labels:
-                case "value_percent":
-                    text = f"{bars[i_bar]}{unit} | {round(percent, round_digits)} %"
-                case "value":
-                    text = f"{bars[i_bar]}{unit}"
-                case "percent":
-                    text = f"{round(percent, round_digits)} %"
-            if colorbar == False:
-                text = annot[i_bar]
-
-            fig.text(
-                text=text,
-                x=x_text[i_bar],
-                y=y_text[i_bar],
-                offset=bar_label_offset,
-                fill="white@30",
-                pen="0.1p,gray30",
-                clearance="+tO",
-                justify=justify_text,
-                font=font,
-                no_clip=True,
-            )
+    fig.text(
+        text=text,
+        x=x_text,
+        y=y_text,
+        offset=bar_label_offset,
+        fill="white@30",
+        pen="0.1p,gray30",
+        clearance="+tO",
+        justify=justify_text,
+        font=font,
+        no_clip=True,
+    )
 
     # Add frame on top
     fig.basemap(frame=frame)
