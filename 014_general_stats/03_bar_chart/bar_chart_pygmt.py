@@ -50,22 +50,22 @@ def bar_chart(
     #   Give always a list of strings. | Default "bar1", ..., "barN"
     # - colors: Fill of the bars. Give a colormap or a list of
     #   colors. | Default colors based on colormap "batlow"
-    # - bar_width: Set width of the bars. | Default 0.9
+    # - bar_width: Set width of the bars. | Default 0.8
     # - orientation: Orientation of the bars. Choose between "horizontal" or
     #   "vertical". | Default "vertical"
-    # - colorbar: Add a colorbar | Default True
+    # - colorbar: Add a colorbar | Default True, e.g. colorbar plotted
     # - bar_labels: Write labels in the bars. Choose from "value_percent",
     #   "value", "percent", None. | Default "value_percent"
-    # - bar_label_offset: Offset of bar label and top of bar. Give offsets in x-
-    #   and y-directions as string with the format <xoffset/yoffset>. |
-    #   Default f"0c/{max(bars) * 0.003}c"
+    # - bar_label_offset: Offset of bar label and top of bar. Give offsets in
+    #   x- and y-directions as string with the format <xoffset/yoffset>. |
+    #   Default f"0c/{max(bars) * 0.0025}c" or f"{max(bars) * 0.0025}c/0c"
     # - unit: Add unit to values. | Default no unit
     # - cb_label: Add a label to the colorbar. | Default no label
     # - round_digits: Round values to specific number of digits. | Default 2
-    # - outline: Outline of the bars. Give a disered pen to adjust color,
-    #   thickness and style. | Default "1p,black,solid"
+    # - outline: Outline of the bars. Give a pen to adjust color, thickness,
+    #   and style. | Default "1p,black,solid"
     # - font: Size, style, color of the font used for the bar_labels. |
-    #   Default "10p"
+    #   Default "5p"
     # -------------------------------------------------------------------------
     # Returns
     # -------------------------------------------------------------------------

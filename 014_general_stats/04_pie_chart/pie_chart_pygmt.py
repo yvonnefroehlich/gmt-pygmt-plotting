@@ -54,16 +54,16 @@ def pie_chart(
     #   colors. | Default colors based on colormap "batlow"
     # - radius_out: Set size of plot. Give outer radius | Default 10
     # - radius_in: Create ring sectors. Give inner radius | Default 0
-    # - colorbar: Add a colorbar | Default True
-    # - sector_labels: Write labels in the sectors. Choose from "value_percent",
-    #   "value", "percent", None. | Default "value_percent"
+    # - colorbar: Add a colorbar | Default True, e.g. colorbar plotted
+    # - sector_labels: Write labels in the sectors. Choose from
+    #   "value_percent", "value", "percent", None. | Default "value_percent"
     # - unit: Add unit to values. | Default no unit
     # - cb_label: Add a label to the colorbar. | Default no label
     # - round_digits: Round values to specific number of digits. | Default 2
-    # - outline: Outline of the sectors. Give a disered pen to adjust color,
-    #   thickness and style. | Default "1p,black,solid"
+    # - outline: Outline of the sectors. Give a pen to adjust color, thickness
+    #   and style. | Default "1p,black,solid"
     # - font: Size, style, color of the font used for the sector_labels. |
-    #   Default "10p"
+    #   Default "8p"
     # -------------------------------------------------------------------------
     # Returns
     # -------------------------------------------------------------------------
