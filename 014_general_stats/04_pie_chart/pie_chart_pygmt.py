@@ -64,6 +64,11 @@ def pie_chart(
     #   thickness and style. | Default "1p,black,solid"
     # - font: Size, style, color of the font used for the sector_labels. |
     #   Default "10p"
+    # -------------------------------------------------------------------------
+    # Returns
+    # -------------------------------------------------------------------------
+    # - df_sectors: pandas Dataframe with given and calculated data for the sectors
+
 
 
     # %%
@@ -138,11 +143,12 @@ def pie_chart(
     # Create dataframe
     dict_sectors = {"x": [0] * len(sectors), "y": [0] * len(sectors)}
     df_sectors = pd.DataFrame(dict_sectors, columns=["x", "y"])
-    df_sectors["color"] = np.arange(0, len(sectors), 1)
+    df_sectors["z_color"] = np.arange(0, len(sectors), 1)
     df_sectors["radius_out"] = [radius_out] * len(sectors)
     df_sectors["angle_start"] = angle_start
     df_sectors["angle_end"] = angle_end
-    print(df_sectors)
+    df_sectors["value"] = sectors
+    df_sectors["percent"] = percents
 
     middle_sectors = df_sectors["angle_start"] + \
         (df_sectors["angle_end"] - df_sectors["angle_start"]) / 2
@@ -198,6 +204,8 @@ def pie_chart(
 
     fig.show()
 
+    return df_sectors
+
 
 
 # %%
@@ -206,7 +214,7 @@ def pie_chart(
 # -----------------------------------------------------------------------------
 sectors = [50, 10, 8, 12, 15, 13, 42, 5]
 
-pie_chart(sectors=sectors)
+df_sectors = pie_chart(sectors=sectors)
 
 # -----------------------------------------------------------------------------
 annot = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh"]

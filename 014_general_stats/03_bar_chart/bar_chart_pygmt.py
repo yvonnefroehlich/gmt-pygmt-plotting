@@ -66,6 +66,10 @@ def bar_chart(
     #   thickness and style. | Default "1p,black,solid"
     # - font: Size, style, color of the font used for the bar_labels. |
     #   Default "10p"
+    # -------------------------------------------------------------------------
+    # Returns
+    # -------------------------------------------------------------------------
+    # - df_bars: pandas Dataframe with given and calculated data for the bars
 
 
     # %%
@@ -141,7 +145,8 @@ def bar_chart(
             y_offset = 0
 
     df_bars = pd.DataFrame(dict_bars, columns=["x", "y"])
-    df_bars["color"] = xy
+    df_bars["z_color"] = xy
+    df_bars["value"] = bars
     df_bars["percent"] = percents
 
     # Projection
@@ -215,6 +220,8 @@ def bar_chart(
 
     fig.show()
 
+    return df_bars
+
 
 
 # %%
@@ -223,7 +230,7 @@ def bar_chart(
 # -----------------------------------------------------------------------------
 bars = [50, 10, 8, 12, 15, 13, 42, 5]
 
-bar_chart(bars=bars)
+df_bars = bar_chart(bars=bars)
 
 # -----------------------------------------------------------------------------
 annot = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh"]
