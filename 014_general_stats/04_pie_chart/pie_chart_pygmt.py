@@ -23,6 +23,7 @@
 
 
 import numpy as np
+import pandas as pd
 import pygmt
 from pygmt.params import Position
 
@@ -111,6 +112,23 @@ def pie_chart(
     if unit != "":
         unit = f" {unit}"
 
+    # Create dataframe
+    angle_start = [0] * len(sectors)
+    angle_end = [0] * len(sectors)
+    angle_temp = 0
+    for i_sector, percent in enumerate(percents):
+        angle_start[i_sector] = angle_temp
+        angle_temp = angle_temp + percent * 3.6  # Convert percent to degrees
+        angle_end[i_sector] = angle_temp
+
+    dict_sectors = {"x": [0] * len(sectors), "y": [0] * len(sectors)}
+    df_sectors = pd.DataFrame(dict_sectors, columns=["x", "y"])
+    df_sectors["color"] = np.arange(0, len(sectors), 1)
+    df_sectors["radius_out"] = [radius_out] * len(sectors)
+    df_sectors["angle_start"] = angle_start
+    df_sectors["angle_end"] = angle_end
+    print(df_sectors)
+
 
     # %%
     # -------------------------------------------------------------------------
@@ -127,24 +145,11 @@ def pie_chart(
     )
 
     # Plot sectors
-    angel_start = 0
-    for i_sector, percent in enumerate(percents):
-        angel_end = angel_start + percent * 3.6  # Convert percent to degrees
-
-        args_sector = {
-            "x": 0,
-            "y": 0,
-            "style": f"w{radius_out}c/{angel_start}/{angel_end}+i{radius_in}c",
-            "fill": "+z",
-            "zvalue": i_sector,
-            "cmap": True,
-        }
-        if outline in [None, False, 0, "0p"]:
-            fig.plot(**args_sector)
-        else:
-            fig.plot(pen=outline, **args_sector)
-
-        angel_start = angel_end
+    args_sector = {"data": df_sectors, "style": f"w+i{radius_in}c", "cmap": True}
+    if outline in [None, False, 0, "0p"]:
+        fig.plot(**args_sector)
+    else:
+        fig.plot(pen=outline, **args_sector)
 
     if colorbar == True:
         fig.colorbar(
@@ -159,9 +164,9 @@ def pie_chart(
     # Add labels within the sectors
     if sector_labels != None:
 
-        angel_start = 0
+        angle_start = 0
         for i_sector, percent in enumerate(percents):
-            angel_end = angel_start + percent * 3.6
+            angle_end = angle_start + percent * 3.6
 
             match sector_labels:
                 case "value_percent":
@@ -175,7 +180,7 @@ def pie_chart(
 
             fig.text(
                 text=text,
-                x=angel_start + percent * 3.6 / 2,
+                x=angle_start + percent * 3.6 / 2,
                 y=0.8,
                 fill="white@30",
                 pen="0.1p,gray30",
@@ -184,7 +189,7 @@ def pie_chart(
                 no_clip=True,
             )
 
-            angel_start = angel_end
+            angle_start = angle_end
 
     # Add frame on top
     if outline not in [None, False, 0, "0p"]:
