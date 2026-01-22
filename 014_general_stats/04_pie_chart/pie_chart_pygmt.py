@@ -52,8 +52,9 @@ def pie_chart(
     #   Give always a list of strings. | Default "sector1", ..., "sectorN"
     # - colors: Fill of the sectors. Give a list with one colormap or with one
     #   or multiple colors. | Default colors based on colormap "batlow"
-    # - fill_type: How to setup the coloring. Choose between "discrete" or
-    #   "continuous". | Default "discrete"
+    # - fill_type: How the coloring is set up. Choose between "discrete"
+    #   (colors to separate the sectors) or "continuous" (colors based on the
+    #   values given via sectors). | Default "discrete"
     # - radius_out: Set size of plot. Give outer radius | Default 10
     # - radius_in: Create ring sectors. Give inner radius | Default 0
     # - colorbar: Add a colorbar | Default True, e.g. colorbar plotted

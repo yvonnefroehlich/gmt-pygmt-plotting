@@ -51,8 +51,9 @@ def bar_chart(
     #   Give always a list of strings. | Default "bar1", ..., "barN"
     # - colors: Fill of the sectors. Give a list with one colormap or with one
     #   or multiple colors. | Default colors based on colormap "batlow"
-    # - fill_type: How to setup the coloring. Choose between "discrete" or
-    #   "continuous". | Default "discrete"
+    # - fill_type: How the coloring is set up. Choose between "discrete"
+    #   (colors to separate the sectors) or "continuous" (colors based on the
+    #   values given via bars). | Default "discrete"
     # - bar_width: Set width of the bars. | Default 0.8
     # - orientation: Orientation of the bars. Choose between "horizontal" or
     #   "vertical". | Default "vertical"
@@ -162,7 +163,7 @@ def bar_chart(
             x_offset = xy_offset
             y_offset = 0
 
-	# Create pandas Dataframe
+    # Create pandas Dataframe
     df_bars = pd.DataFrame(dict_bars, columns=["x", "y"])
     match fill_type:
         case "discrete":
