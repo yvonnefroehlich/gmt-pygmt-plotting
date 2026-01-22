@@ -40,6 +40,7 @@ import datetime
 import numpy as np
 import pandas as pd
 import pygmt as gmt
+from pygmt.params import Position
 from dateutil.rrule import DAILY, rrule
 
 # %%
@@ -120,7 +121,14 @@ fig_ele.basemap(projection="M12c", region=region_ele, frame=["WSne", "a1f0.5"])
 
 gmt.makecpt(cmap="oleron", series=[-1000, 2000])
 fig_ele.grdimage(grid=grd_ele, cmap=True, shading=True)
-fig_ele.colorbar(frame=["xa500f100+lelevation", "y+lm"], position="+e0.3c+o0c/1.3c+ml")
+fig_ele.colorbar(
+    frame=["xa500f100+lElevation", "y+lm"],
+    position=Position("BC", cstype="outside", offset=("0c", "1.3c")),
+    bg_triangle=True,
+    fg_triangle=True,
+    triangle_height="0.3c",
+    move_text="label",
+)
 
 # Mark zoom area using in following maps
 for data in [
@@ -156,7 +164,7 @@ fig_surf.grdview(
     plane="-1000+ggrey",
     facade_pen="gray10",
 )
-fig_surf.colorbar(frame=["xa500f100+lelevation", "y+lm"], position="+e0.3c+o0c/0.4c+ml")
+fig_surf.colorbar(frame=["xa500f100+lElevation", "y+lm"], position="+e0.3c+o0c/0.4c+ml")
 
 fig_surf.show()
 fig_name = "santorini_surface_elevation"
