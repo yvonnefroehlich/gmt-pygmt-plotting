@@ -111,8 +111,8 @@ df_eq = df_eq_raw[df_eq_raw["date_time"] >= start_date_data]
 # Create plots for elevation
 # -----------------------------------------------------------------------------
 # Download elevation grid
-grd_ele = gmt.datasets.load_earth_relief(region=region_ele, resolution="15s")
-grd_surf = gmt.datasets.load_earth_relief(region=region_surf, resolution="03s")
+grd_ele = gmt.datasets.load_earth_relief(region=region_ele, resolution="30s") # 15s
+grd_surf = gmt.datasets.load_earth_relief(region=region_surf, resolution="30s") # 03s
 
 # -----------------------------------------------------------------------------
 # 2-D map
@@ -122,7 +122,7 @@ fig_ele.basemap(projection="M12c", region=region_ele, frame=["WSne", "a1f0.5"])
 gmt.makecpt(cmap="oleron", series=[-1000, 2000])
 fig_ele.grdimage(grid=grd_ele, cmap=True, shading=True)
 fig_ele.colorbar(
-    frame=["xa500f100+lElevation", "y+lm"],
+    frame=["xa500f100+lelevation", "y+lm"],
     position=Position("BC", cstype="outside", offset=("0c", "1.3c")),
     bg_triangle=True,
     fg_triangle=True,
@@ -144,7 +144,7 @@ fig_name = "santorini_map_elevation"
 print(fig_name)
 
 # -----------------------------------------------------------------------------
-# 3-D plot - takes some time
+# 3-D plot - takes some time for higher resolutions
 fig_surf = gmt.Figure()
 fig_surf.basemap(
     projection="M12c",
@@ -164,12 +164,21 @@ fig_surf.grdview(
     plane="-1000+ggrey",
     facade_pen="gray10",
 )
-fig_surf.colorbar(frame=["xa500f100+lElevation", "y+lm"], position="+e0.3c+o0c/0.4c+ml")
+fig_surf.colorbar(
+    frame=["xa500f100+lelevation", "y+lm"],
+    position=Position("BC", cstype="outside", anchor="TR", offset=("-2c", "0.4c")),
+    length="9.5c",
+    orientation="horizontal",
+    bg_triangle=True,
+    fg_triangle=True,
+    triangle_height="0.3c",
+    move_text="label",
+)
 
 fig_surf.show()
 fig_name = "santorini_surface_elevation"
 # for ext in ["png"]:  # "pdf", "eps"
-    # fig_surf.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+#     fig_surf.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
 
 
@@ -233,9 +242,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
             z_label = "negative depth / km"
 
 # -----------------------------------------------------------------------------
-        fig2d.basemap(
-            projection="M12c", region=region, frame=["af", f"{frame}+t{title}"]
-        )
+        fig2d.basemap(projection="M12c", region=region, frame=["af", f"{frame}+t{title}"])
         fig2d.coast(land=color_land, water=color_water, shorelines=f"1/0.5p,{color_sl}")
 
         # Mark Santorini
@@ -245,7 +252,11 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         with gmt.config(FONT="15p"):
             fig2d.colorbar(
                 frame=f"x{cb_x_afg}+l{cb_label}",
-                position="+o0c/1.5c+e0.3c+ml",
+                position=Position("BC", cstype="outside", offset=("0c", "1.5c")),
+                bg_triangle=True,
+                fg_triangle=True,
+                triangle_height="0.3c",
+                move_text="label",
                 cmap=cmap_fill,
             )
         fig2d.plot(
@@ -282,7 +293,10 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         )
         fig3d.colorbar(
             frame=f"x{cb_x_afg}+l{cb_label}",
-            position="+o0c/0.8c+e0.3c+ml",
+            bg_triangle=True,
+            fg_triangle=True,
+            triangle_height="0.3c",
+            move_text="label",
             cmap=cmap_fill,
         )
 
