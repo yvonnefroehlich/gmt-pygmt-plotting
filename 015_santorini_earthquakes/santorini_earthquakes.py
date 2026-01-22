@@ -82,9 +82,11 @@ args_santo = {"x": 25.43, "y": 36.42, "style": "x0.6c", "pen": f"5p,{color_hl}"}
 # -----------------------------------------------------------------------------
 # Prepare data
 # -----------------------------------------------------------------------------
-# Source: https://doi.org/10.5281/zenodo.15111649
-# Last access: 2025/09/24
-df_eq_raw = pd.read_csv(f"{path_in}/catalog_santorini.csv", sep=",")
+# Source:
+# v1: https://doi.org/10.5281/zenodo.15111649  (last accessed 2025/09/24)
+# v2: https://doi.org/10.5281/zenodo.17668659  (last accessed 2026/01/22)
+doi = "17668659"
+df_eq_raw = pd.read_csv(f"{path_in}/catalog_santorini_{doi}.csv", sep=",")
 
 # Create column with datetime object
 df_eq_raw["date_time"] = [0] * len(df_eq_raw)
