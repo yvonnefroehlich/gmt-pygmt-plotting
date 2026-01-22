@@ -31,7 +31,7 @@ def pie_chart(
     sectors,
     annot=[],
     colors=[],
-    fill_type="discret",
+    fill_type="discrete",
     radius_out=10,
     radius_in=0,
     colorbar=True,
@@ -53,8 +53,8 @@ def pie_chart(
     #   Give always a list of strings. | Default "sector1", ..., "sectorN"
     # - colors: Fill of the sectors. Give a list with one colormap or with one
     #   or multiple colors. | Default colors based on colormap "batlow"
-    # - fill_type: How to setup the coloring. Choose between "discret" or
-    #   "min_max". | Default "discret"
+    # - fill_type: How to setup the coloring. Choose between "discrete" or
+    #   "min_max". | Default "discrete"
     # - radius_out: Set size of plot. Give outer radius | Default 10
     # - radius_in: Create ring sectors. Give inner radius | Default 0
     # - colorbar: Add a colorbar | Default True, e.g. colorbar plotted
@@ -91,10 +91,10 @@ def pie_chart(
             annot.append(f"sector {i_sector + 1}")
 
     # Check colors
-    if (len(sectors) != len(colors)) and (len(colors) > 1) and fill_type=="discret":
+    if (len(sectors) != len(colors)) and (len(colors) > 1) and fill_type=="discrete":
         print(
             "The lengths of 'sectors' and 'colors' must be identical " + \
-            "for using fill_type=='discret'! Using default colormap 'batlow'."
+            "for using fill_type=='discrete'! Using default colormap 'batlow'."
         )
 
     if len(colors) == 1:
@@ -103,7 +103,7 @@ def pie_chart(
         cmap = ",".join(colors)
     else:
         cmap = "batlow"
-    if (len(sectors) != len(colors)) and (len(colors) > 1) and fill_type=="discret":
+    if (len(sectors) != len(colors)) and (len(colors) > 1) and fill_type=="discrete":
          cmap = "batlow"
 
     # Set inner radius of sectors
@@ -154,7 +154,7 @@ def pie_chart(
     dict_sectors = {"x": [0] * len(sectors), "y": [0] * len(sectors)}
     df_sectors = pd.DataFrame(dict_sectors, columns=["x", "y"])
     match fill_type:
-        case "discret":
+        case "discrete":
             df_sectors["z_color"] = np.arange(0, len(sectors), 1)
         case "min_max":
             df_sectors["z_color"] = sectors
@@ -177,7 +177,7 @@ def pie_chart(
     fig.basemap(region=[0, 360, 0, 1], projection=f"P{radius_out}c", frame="+n")
 
     match fill_type:
-        case "discret":
+        case "discrete":
             pygmt.makecpt(
                 cmap=cmap,
                 series=[0, len(sectors) - 1, 1],
@@ -202,7 +202,7 @@ def pie_chart(
             "move_text": "label",
         }
         match fill_type:
-            case "discret":
+            case "discrete":
                 fig.colorbar(equalsize=0.2, S=f"+x{cb_label}", **args_cb)
             case "min_max":
                 fig.colorbar(frame=f"xaf+u{unit}+l{cb_label}", **args_cb)

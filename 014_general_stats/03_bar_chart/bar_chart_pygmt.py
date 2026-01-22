@@ -27,7 +27,7 @@ def bar_chart(
     bars,
     annot=[],
     colors=[],
-    fill_type="discret",
+    fill_type="discrete",
     bar_width=0.8,
     orientation="vertical",
     colorbar=True,
@@ -52,8 +52,8 @@ def bar_chart(
     #   Give always a list of strings. | Default "bar1", ..., "barN"
     # - colors: Fill of the sectors. Give a list with one colormap or with one
     #   or multiple colors. | Default colors based on colormap "batlow"
-    # - fill_type: How to setup the coloring. Choose between "discret" or
-    #   "continuous". | Default "discret"
+    # - fill_type: How to setup the coloring. Choose between "discrete" or
+    #   "continuous". | Default "discrete"
     # - bar_width: Set width of the bars. | Default 0.8
     # - orientation: Orientation of the bars. Choose between "horizontal" or
     #   "vertical". | Default "vertical"
@@ -94,10 +94,10 @@ def bar_chart(
             annot.append(f"bar {i_bar + 1}")
 
     # Check colors
-    if (len(bars) != len(colors)) and (len(colors) > 1) and fill_type=="discret":
+    if (len(bars) != len(colors)) and (len(colors) > 1) and fill_type=="discrete":
         print(
             "The lengths of 'bars' and 'colors' must be identical " + \
-            "for using fill_type=='discret'! Using default colormap 'batlow'."
+            "for using fill_type=='discrete'! Using default colormap 'batlow'."
         )
 
     if len(colors) == 1:
@@ -106,7 +106,7 @@ def bar_chart(
         cmap = ",".join(colors)
     else:
         cmap = "batlow"
-    if (len(bars) != len(colors)) and (len(colors) > 1) and fill_type=="discret":
+    if (len(bars) != len(colors)) and (len(colors) > 1) and fill_type=="discrete":
          cmap = "batlow"
 
     # Calculate percent for bars
@@ -164,7 +164,7 @@ def bar_chart(
 
     df_bars = pd.DataFrame(dict_bars, columns=["x", "y"])
     match fill_type:
-        case "discret":
+        case "discrete":
             df_bars["z_color"] = xy
         case "min_max":
             df_bars["z_color"] = bars
@@ -203,7 +203,7 @@ def bar_chart(
     fig.basemap(region=region, projection=projection, frame=0)
 
     match fill_type:
-        case "discret":
+        case "discrete":
             pygmt.makecpt(
                 cmap=cmap,
                 series=[1, len(bars), 1],
@@ -228,7 +228,7 @@ def bar_chart(
             "move_text": "label",
         }
         match fill_type:
-            case "discret":
+            case "discrete":
                 fig.colorbar(equalsize=0.2, S=f"+x{cb_label}", **args_cb)
             case "min_max":
                 fig.colorbar(frame=f"xaf+u{unit}+l{cb_label}", **args_cb)
