@@ -127,10 +127,10 @@ def bar_chart(
     if cb_label == None:
         cb_label = " "
 
-    if unit != None:
-        unit = f" {unit}"  # Add white space before unit
-    else:
+    if unit == None:
         unit = " "
+    else:
+        unit = f" {unit}"  # Add white space before unit
 
     # Create pandas Dataframe based on orientation of bars
     xy = np.arange(1, len(bars) + 1, 1)
@@ -261,26 +261,23 @@ def bar_chart(
 # Examples
 # -----------------------------------------------------------------------------
 bars = [50, 10, 8, 12, 15, 13, 42, 5]
-
-df_bars = bar_chart(bars=bars)
-df_bars = bar_chart(bars=bars, fill_type="min_max")
-
-# -----------------------------------------------------------------------------
 annot = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh"]
-
-bar_chart(bars=bars, annot=annot)
-
-# -----------------------------------------------------------------------------
 colors = ["hawaii"]
 
-bar_chart(bars=bars, annot=annot, colors=colors)
-bar_chart(bars=bars, annot=annot, colors=colors, unit="kg")
+df_bars = bar_chart(bars=bars)
+df_bars = bar_chart(bars=bars, annot=annot, colors=colors)
+df_bars = bar_chart(
+    bars=bars,
+    annot=annot,
+    colors=colors,
+    fill_type="min_max",
+    bar_labels="annot",
+)
 
 # -----------------------------------------------------------------------------
 bars = np.array([33, 48, 26, 13, 13, 42, 5])
 colors = ["darkred", "lightred", "tomato", "brown", "darkbrown", "pink", "bisque"]
 
-bar_chart(bars=bars, annot=annot, colors=colors, unit="kg", bar_labels="value")
 bar_chart(
     bars=bars,
     annot=annot[0:-1],
@@ -292,31 +289,17 @@ bar_chart(
     round_digits=0,
     outline="1p,gray80",
 )
+
+# -----------------------------------------------------------------------------
+colors = ["gold", "brown"]
 bar_chart(
     bars=bars,
     annot=annot[0:-1],
     colors=colors,
-    colorbar=False,
-    outline=None,
-    orientation="horizontal",
-)
-bar_chart(
-    bars=bars,
-    annot=annot[0:-1],
-    colors=["gold", "brown"],
-    outline=None,
-    orientation="horizontal",
-    bar_labels="annot",
-)
-bar_chart(
-    bars=bars,
-    annot=annot[0:-1],
-    colors=["gold", "brown"],
     fill_type="min_max",
     outline=None,
     orientation="horizontal",
     bar_labels="annot",
     cb_label="Mass of object",
-    # axis_label="Absolute mass",
     unit="kg",
 )

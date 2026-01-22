@@ -118,14 +118,14 @@ def pie_chart(
     sectors_sum = sum(sectors)
     percents = sectors_array / sectors_sum * 100
 
-    # Add white space before unit
-    if unit != None:
-        unit = f" {unit}"
-    else:
-        unit = " "
-
+    # Axis and colorbar labels
     if cb_label == None:
         cb_label = " "
+
+    if unit == None:
+        unit = " "
+    else:
+        unit = f" {unit}"  # Add white space before unit
 
     # Set up values for sectors
     angle_start = [0] * len(sectors)
@@ -235,20 +235,18 @@ def pie_chart(
 # Examples
 # -----------------------------------------------------------------------------
 sectors = [50, 10, 8, 12, 15, 13, 42, 5]
-
-df_sectors = pie_chart(sectors=sectors)
-df_sectors = pie_chart(sectors=sectors, fill_type="min_max")
-
-# -----------------------------------------------------------------------------
 annot = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh"]
-
-pie_chart(sectors=sectors, annot=annot)
-
-# -----------------------------------------------------------------------------
 colors = ["hawaii"]
 
-pie_chart(sectors=sectors, annot=annot, colors=colors)
-pie_chart(sectors=sectors, annot=annot, colors=colors, radius_in=True, unit="kg")
+df_sectors = pie_chart(sectors=sectors)
+df_sectors = pie_chart(sectors=sectors, annot=annot, colors=colors)
+pie_chart(
+    sectors=sectors,
+    annot=annot,
+    colors=colors,
+    fill_type="min_max",
+    sector_labels="annot",
+)
 
 # -----------------------------------------------------------------------------
 sectors = np.array([33, 48, 26, 13, 13, 42, 5])
@@ -256,65 +254,24 @@ colors = ["darkred", "lightred", "tomato", "brown", "darkbrown", "pink", "bisque
 
 pie_chart(
     sectors=sectors,
-    annot=annot,
-    colors=colors,
-    radius_in=8,
-    unit="kg",
-    sector_labels="value",
-)
-pie_chart(
-    sectors=sectors,
     annot=annot[0:-1],
     colors=colors,
-    radius_in=8,
-    unit="kg",
-    sector_labels="percent",
-    cb_label="Letters",
-    round_digits=0,
+    radius_in=True,
     outline="1p,white",
+    unit="kg",
 )
+
+# -----------------------------------------------------------------------------
+colors = ["gold", "darkbrown"]
+
 pie_chart(
     sectors=sectors,
     annot=annot[0:-1],
     colors=colors,
-    radius_in=True,
-    colorbar=False,
-    outline=None,
-)
-pie_chart(
-    sectors=sectors,
-    annot=annot[0:-1],
-    radius_in=True,
-    outline=None,
-    cb_label="kg",
-    sector_labels="annot",
-)
-pie_chart(
-    sectors=sectors,
-    annot=annot[0:-1],
-    colors=["gold", "darkbrown"],
-    radius_in=True,
-    outline=None,
-    cb_label="kg",
-    sector_labels="annot",
-)
-pie_chart(
-    sectors=sectors,
-    annot=annot[0:-1],
     fill_type="min_max",
     radius_in=True,
-    outline=None,
-    cb_label="kg",
-    sector_labels="annot",
-)
-pie_chart(
-    sectors=sectors,
-    annot=annot[0:-1],
-    colors=["gold", "darkbrown"],
-    fill_type="min_max",
-    radius_in=True,
-    outline=None,
-    cb_label="mass of object",
+    outline="1p,gray",
+    cb_label="Mass of object",
     sector_labels="annot",
     unit="kg",
 )
