@@ -26,6 +26,7 @@ import pandas as pd
 import pygmt
 from pygmt.params import Position
 
+
 def pie_chart(
     sectors,
     annot=[],
@@ -72,8 +73,6 @@ def pie_chart(
     # -------------------------------------------------------------------------
     # - df_sectors: pandas Dataframe with given and calculated data for the sectors
 
-
-
     # %%
     # -------------------------------------------------------------------------
     # Check and prepare input
@@ -81,7 +80,7 @@ def pie_chart(
     # Check annot
     if len(sectors) != len(annot) and len(annot) != 0:
         print(
-            "The lengths of 'sectors' and 'cb_annot' have to be identical. " + \
+            "The lengths of 'sectors' and 'cb_annot' have to be identical. "
             "Using default colorbar annotations 'sector1' ... 'sectorN'."
         )
 
@@ -91,9 +90,9 @@ def pie_chart(
             annot.append(f"sector {i_sector + 1}")
 
     # Check colors
-    if (len(sectors) != len(colors)) and (len(colors) > 1) and fill_type=="discrete":
+    if (len(sectors) != len(colors)) and (len(colors) > 1) and fill_type == "discrete":
         print(
-            "The lengths of 'sectors' and 'colors' have to be identical " + \
+            "The lengths of 'sectors' and 'colors' have to be identical "
             "for using fill_type='discrete'! Using default colormap 'batlow'."
         )
 
@@ -103,8 +102,8 @@ def pie_chart(
         cmap = ",".join(colors)
     else:
         cmap = "batlow"
-    if (len(sectors) != len(colors)) and (len(colors) > 1) and fill_type=="discrete":
-         cmap = "batlow"
+    if (len(sectors) != len(colors)) and (len(colors) > 1) and fill_type == "discrete":
+        cmap = "batlow"
 
     # Set inner radius of sectors
     if radius_in == True:
@@ -141,7 +140,9 @@ def pie_chart(
         if sector_labels != None:
             match sector_labels:
                 case "value_percent":
-                    text_temp = f"{sectors[i_sector]}{unit} | {round(percent, round_digits)} %"
+                    text_temp = (
+                        f"{sectors[i_sector]}{unit} | {round(percent, round_digits)} %"
+                    )
                 case "value":
                     text_temp = f"{sectors[i_sector]}{unit}"
                 case "percent":
@@ -164,9 +165,10 @@ def pie_chart(
     df_sectors["value"] = sectors
     df_sectors["percent"] = percents
 
-    middle_sectors = df_sectors["angle_start"] + \
-        (df_sectors["angle_end"] - df_sectors["angle_start"]) / 2
-
+    middle_sectors = (
+        df_sectors["angle_start"]
+        + (df_sectors["angle_end"] - df_sectors["angle_start"]) / 2
+    )
 
     # %%
     # -------------------------------------------------------------------------
@@ -227,7 +229,6 @@ def pie_chart(
     fig.show()
 
     return df_sectors
-
 
 
 # %%

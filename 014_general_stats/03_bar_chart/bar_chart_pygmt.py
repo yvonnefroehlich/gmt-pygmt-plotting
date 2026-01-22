@@ -22,6 +22,7 @@ import pandas as pd
 import pygmt
 from pygmt.params import Position
 
+
 def bar_chart(
     bars,
     annot=[],
@@ -38,7 +39,6 @@ def bar_chart(
     round_digits=2,
     outline="1p,black,solid",
     font="5p",
-
 ):
     # %%
     # -------------------------------------------------------------------------
@@ -76,7 +76,6 @@ def bar_chart(
     # -------------------------------------------------------------------------
     # - df_bars: pandas Dataframe with given and calculated data for the bars
 
-
     # %%
     # -------------------------------------------------------------------------
     # Check and prepare input
@@ -84,7 +83,7 @@ def bar_chart(
     # Check annot
     if len(bars) != len(annot) and len(annot) != 0:
         print(
-            "The lengths of 'bars' and 'cb_annot' have to be identical. " + \
+            "The lengths of 'bars' and 'cb_annot' have to be identical. "
             "Using default colorbar annotations 'bar1' ... 'barN'."
         )
 
@@ -94,9 +93,9 @@ def bar_chart(
             annot.append(f"bar {i_bar + 1}")
 
     # Check colors
-    if (len(bars) != len(colors)) and (len(colors) > 1) and fill_type=="discrete":
+    if (len(bars) != len(colors)) and (len(colors) > 1) and fill_type == "discrete":
         print(
-            "The lengths of 'bars' and 'colors' have to be identical " + \
+            "The lengths of 'bars' and 'colors' have to be identical "
             "for using fill_type='discrete'! Using default colormap 'batlow'."
         )
 
@@ -106,8 +105,8 @@ def bar_chart(
         cmap = ",".join(colors)
     else:
         cmap = "batlow"
-    if (len(bars) != len(colors)) and (len(colors) > 1) and fill_type=="discrete":
-         cmap = "batlow"
+    if (len(bars) != len(colors)) and (len(colors) > 1) and fill_type == "discrete":
+        cmap = "batlow"
 
     # Calculate percent for bars
     if isinstance(bars, list):
@@ -151,7 +150,7 @@ def bar_chart(
         case "horizontal":
             region = [0, np.max(bars) + np.max(bars) * 0.1, 0, len(bars) + 1]
             plot_width = 6
-            plot_hight = - (len(bars) + 1)
+            plot_hight = -(len(bars) + 1)
             frame = ["lbNr", f"xaf+l{axis_label}"]
             if axis_label == None:
                 frame = ["lbNr", "xaf"]
@@ -179,11 +178,12 @@ def bar_chart(
     # Create bar labels
     text = []
     if bar_labels != None:
-
         for i_bar, percent in enumerate(percents):
             match bar_labels:
                 case "value_percent":
-                    text_temp = f"{bars[i_bar]}{unit} | {round(percent, round_digits)} %"
+                    text_temp = (
+                        f"{bars[i_bar]}{unit} | {round(percent, round_digits)} %"
+                    )
                 case "value":
                     text_temp = f"{bars[i_bar]}{unit}"
                 case "percent":
@@ -195,7 +195,6 @@ def bar_chart(
     # Default of bar label offset
     if bar_label_offset == None:
         bar_label_offset = f"{x_offset}c/{y_offset}c"
-
 
     # %%
     # -------------------------------------------------------------------------
@@ -255,7 +254,6 @@ def bar_chart(
     fig.show()
 
     return df_bars
-
 
 
 # %%
