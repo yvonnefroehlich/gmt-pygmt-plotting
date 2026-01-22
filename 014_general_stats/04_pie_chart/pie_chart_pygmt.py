@@ -262,7 +262,7 @@ pie_chart(
 )
 
 # -----------------------------------------------------------------------------
-colors = ["gold", "darkbrown"]
+colors = ["gold", "brown"]
 
 pie_chart(
     sectors=sectors,
