@@ -9,14 +9,15 @@
 # - https://ezgif.com/pdf-to-gif (last accessed 2025/09/25)
 #
 # Data taken from
-# - Karakostas V, Lomax A, Anagnostou V, Papadimitriou E, Acoccela V, Hicks S (2025).
-#   2025 Santorini-Amorgos NLL-SSST-coherence high-precision relocated earthquake
-#   catalog. Zenodo. https://doi.org/10.5281/zenodo.15111649 .
+# - Karakostas V, Lomax A, Anagnostou V, Papadimitriou E, Acoccela V, Hicks S
+#   (2025). 2025 Santorini-Amorgos NLL-SSST-coherence high-precision relocated
+#   earthquake catalog. Zenodo. https://doi.org/10.5281/zenodo.15111649 (v1).
+#   https://doi.org/10.5281/zenodo.17668659 (v2).
 #
 # More information
-# - Isken M P, Karstens J, Nomikou P, et al. (2025) Volcanic crisis reveals coupled
-#   magma system at Santorini and Kolumbo. Nature, 645:939-945.
-#   https://doi.org/10.1038/s41586-025-09525-7 .
+# - Isken M P, Karstens J, Nomikou P, et al. (2025) Volcanic crisis reveals
+#   coupled magma system at Santorini and Kolumbo. Nature, 645:939-945.
+#   https://doi.org/10.1038/s41586-025-09525-7.
 # - https://www.geomar.de/en/news/article/magmaverlagerung-loeste-zehntausende-erdbeben-aus
 #   (last accessed 2025/09/26)
 # -----------------------------------------------------------------------------
@@ -24,8 +25,8 @@
 # - Created: 2025/09/21
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
-# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# - PyGMT v0.18.0 -> https://www.pygmt.org/v0.18.0 | https://www.pygmt.org
+# - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich
