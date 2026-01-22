@@ -152,7 +152,7 @@ fig_surf.grdview(
     zsize=1.5,
     surftype="s",
     plane="-1000+ggrey",
-    facadepen="gray10",
+    facade_pen="gray10",
 )
 fig_surf.colorbar(frame=["xa500f100+lelevation", "y+lm"], position="+e0.3c+o0c/0.4c+ml")
 

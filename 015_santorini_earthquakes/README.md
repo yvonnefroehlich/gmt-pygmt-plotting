@@ -1,6 +1,6 @@
 # 015_santorini_earthquakes
 
-_Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
+_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 
 | **[santorini_earthquakes](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/add-santorin/015_santorini_earthquakes/santorini_earthquakes.py)** |
 | --- |
