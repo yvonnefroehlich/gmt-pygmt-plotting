@@ -17,9 +17,8 @@
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
-
-import pandas as pd
 import numpy as np
+import pandas as pd
 import pygmt
 from pygmt.params import Position
 
@@ -84,8 +83,8 @@ def bar_chart(
     # Check annot
     if len(bars) != len(annot) and len(annot) != 0:
         print(
-            "The lengths of 'bars' and 'cb_annot' must be identical. " + \
-            "Using default colorbar annot 'bar1' ... 'barN'."
+            "The lengths of 'bars' and 'cb_annot' have to be identical. " + \
+            "Using default colorbar annotations 'bar1' ... 'barN'."
         )
 
     if annot == [] or (len(bars) != len(annot)):
@@ -96,8 +95,8 @@ def bar_chart(
     # Check colors
     if (len(bars) != len(colors)) and (len(colors) > 1) and fill_type=="discrete":
         print(
-            "The lengths of 'bars' and 'colors' must be identical " + \
-            "for using fill_type=='discrete'! Using default colormap 'batlow'."
+            "The lengths of 'bars' and 'colors' have to be identical " + \
+            "for using fill_type='discrete'! Using default colormap 'batlow'."
         )
 
     if len(colors) == 1:
@@ -121,9 +120,6 @@ def bar_chart(
     if axis_label != None and unit != None:
         axis_label = f"{axis_label} / {unit}"
 
-    if axis_label == None:
-        axis_label = " "
-
     if cb_label == None:
         cb_label = " "
 
@@ -132,7 +128,7 @@ def bar_chart(
     else:
         unit = f" {unit}"  # Add white space before unit
 
-    # Create pandas Dataframe based on orientation of bars
+    # Set up vales for bars based on orientation
     xy = np.arange(1, len(bars) + 1, 1)
     xy_offset = max(bars) * 0.0025
 
@@ -142,6 +138,8 @@ def bar_chart(
             plot_width = len(bars) + 1
             plot_hight = 6
             frame = ["Wbtr", f"yaf+l{axis_label}"]
+            if axis_label == None:
+                frame = ["Wbtr", "yaf"]
             dict_bars = {"x": xy, "y": bars}
             style = "b"
             x_text = xy
@@ -154,6 +152,8 @@ def bar_chart(
             plot_width = 6
             plot_hight = - (len(bars) + 1)
             frame = ["lbNr", f"xaf+l{axis_label}"]
+            if axis_label == None:
+                frame = ["lbNr", "xaf"]
             dict_bars = {"x": bars, "y": xy}
             style = "B"
             x_text = bars
@@ -162,6 +162,7 @@ def bar_chart(
             x_offset = xy_offset
             y_offset = 0
 
+	# Create pandas Dataframe
     df_bars = pd.DataFrame(dict_bars, columns=["x", "y"])
     match fill_type:
         case "discrete":
@@ -200,7 +201,7 @@ def bar_chart(
     # Create plot
     # -------------------------------------------------------------------------
     fig = pygmt.Figure()
-    fig.basemap(region=region, projection=projection, frame=0)
+    fig.basemap(region=region, projection=projection, frame="+n")
 
     match fill_type:
         case "discrete":

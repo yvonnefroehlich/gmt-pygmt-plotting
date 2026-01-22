@@ -21,7 +21,6 @@
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
-
 import numpy as np
 import pandas as pd
 import pygmt
@@ -81,8 +80,8 @@ def pie_chart(
     # Check annot
     if len(sectors) != len(annot) and len(annot) != 0:
         print(
-            "The lengths of 'sectors' and 'cb_annot' must be identical. " + \
-            "Using default colorbar annot 'sector1' ... 'sectorN'."
+            "The lengths of 'sectors' and 'cb_annot' have to be identical. " + \
+            "Using default colorbar annotations 'sector1' ... 'sectorN'."
         )
 
     if annot == [] or (len(sectors) != len(annot)):
@@ -93,8 +92,8 @@ def pie_chart(
     # Check colors
     if (len(sectors) != len(colors)) and (len(colors) > 1) and fill_type=="discrete":
         print(
-            "The lengths of 'sectors' and 'colors' must be identical " + \
-            "for using fill_type=='discrete'! Using default colormap 'batlow'."
+            "The lengths of 'sectors' and 'colors' have to be identical " + \
+            "for using fill_type='discrete'! Using default colormap 'batlow'."
         )
 
     if len(colors) == 1:
