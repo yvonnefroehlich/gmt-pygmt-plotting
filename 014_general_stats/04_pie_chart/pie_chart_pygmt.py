@@ -31,12 +31,13 @@ def pie_chart(
     sectors,
     annot=[],
     colors=[],
+    fill_type="discret",
     radius_out=10,
     radius_in=0,
     colorbar=True,
     sector_labels="value_percent",
-    unit="",
-    cb_label="",
+    unit=None,
+    cb_label=None,
     round_digits=2,
     outline="1p,black,solid",
     font="8p",
@@ -48,16 +49,18 @@ def pie_chart(
     # Required
     # - sectors
     # Optional
-    # - annot: annotations assigned to the colors and used for the colorbar.
+    # - annot: Annotations assigned to the colors and used for the colorbar.
     #   Give always a list of strings. | Default "sector1", ..., "sectorN"
     # - colors: Fill of the sectors. Give a colormap or a list of
     #   colors. | Default colors based on colormap "batlow"
+    # - fill_type: How to setup the coloring. Choose between "discret" or
+    #   "min_max". | Default "discret"
     # - radius_out: Set size of plot. Give outer radius | Default 10
     # - radius_in: Create ring sectors. Give inner radius | Default 0
     # - colorbar: Add a colorbar | Default True, e.g. colorbar plotted
     # - sector_labels: Write labels in the sectors. Choose from
-    #   "value_percent", "value", "percent", None. | Default "value_percent"
-    # - unit: Add unit to values. | Default no unit
+    #   "value_percent", "value", "percent", "annot". | Default "value_percent"
+    # - unit: Add unit to values of labels and colorbar. | Default no unit
     # - cb_label: Add a label to the colorbar. | Default no label
     # - round_digits: Round values to specific number of digits. | Default 2
     # - outline: Outline of the sectors. Give a pen to adjust color, thickness
@@ -88,18 +91,20 @@ def pie_chart(
             annot.append(f"sector {i_sector + 1}")
 
     # Check colors
-    if (len(sectors) != len(colors)) and (len(colors) > 1):
+    if (len(sectors) != len(colors)) and (len(colors) > 1) and fill_type=="discret":
         print(
-            "The lengths of sectors and colors must be identical! " + \
-            "Using default colormap 'batlow'."
+            "The lengths of 'sectors' and 'colors' must be identical " + \
+            "for using fill_type=='discret'! Using default colormap 'batlow'."
         )
 
     if len(colors) == 1:
         cmap = colors
-    elif len(sectors) == len(colors):
+    elif len(colors) > 1:
         cmap = ",".join(colors)
     else:
         cmap = "batlow"
+    if (len(sectors) != len(colors)) and (len(colors) > 1) and fill_type=="discret":
+         cmap = "batlow"
 
     # Set inner radius of sectors
     if radius_in == True:
@@ -114,8 +119,13 @@ def pie_chart(
     percents = sectors_array / sectors_sum * 100
 
     # Add white space before unit
-    if unit != "":
+    if unit != None:
         unit = f" {unit}"
+    else:
+        unit = " "
+
+    if cb_label == None:
+        cb_label = " "
 
     # Set up values for sectors
     angle_start = [0] * len(sectors)
@@ -136,14 +146,18 @@ def pie_chart(
                     text_temp = f"{sectors[i_sector]}{unit}"
                 case "percent":
                     text_temp = f"{round(percent, round_digits)} %"
-            if colorbar == False:
-                text_temp = annot[i_sector]
+                case "annot":
+                    text_temp = annot[i_sector]
             text.append(text_temp)
 
     # Create pandas Dataframe
     dict_sectors = {"x": [0] * len(sectors), "y": [0] * len(sectors)}
     df_sectors = pd.DataFrame(dict_sectors, columns=["x", "y"])
-    df_sectors["z_color"] = np.arange(0, len(sectors), 1)
+    match fill_type:
+        case "discret":
+            df_sectors["z_color"] = np.arange(0, len(sectors), 1)
+        case "min_max":
+            df_sectors["z_color"] = sectors
     df_sectors["radius_out"] = [radius_out] * len(sectors)
     df_sectors["angle_start"] = angle_start
     df_sectors["angle_end"] = angle_end
@@ -162,11 +176,15 @@ def pie_chart(
     pygmt.config(FORMAT_GEO_MAP="+D")
     fig.basemap(region=[0, 360, 0, 1], projection=f"P{radius_out}c", frame="+n")
 
-    pygmt.makecpt(
-        cmap=cmap,
-        series=[0, len(sectors) - 1, 1],
-        color_model="+c" + ",".join(annot),
-    )
+    match fill_type:
+        case "discret":
+            pygmt.makecpt(
+                cmap=cmap,
+                series=[0, len(sectors) - 1, 1],
+                color_model="+c" + ",".join(annot),
+            )
+        case "min_max":
+            pygmt.makecpt(cmap=cmap, series=[min(sectors), max(sectors)])
 
     # Plot sectors
     args_sector = {"data": df_sectors, "style": f"w+i{radius_in}c", "cmap": True}
@@ -175,15 +193,19 @@ def pie_chart(
     else:
         fig.plot(pen=outline, **args_sector)
 
+    # Add colorbar
     if colorbar == True:
-        fig.colorbar(
-            position=Position("BC", anchor="TC", offset=(0, 0.5)),
-            orientation="horizontal",
-            length=radius_out - radius_out * 0.15,
-            equalsize=0.2,
-            S=f"+x{cb_label}",
-            move_text="label",
-        )
+        args_cb = {
+            "position": Position("BC", anchor="TC", offset=(0, 0.8)),
+            "orientation": "horizontal",
+            "length": radius_out - radius_out * 0.15,
+            "move_text": "label",
+        }
+        match fill_type:
+            case "discret":
+                fig.colorbar(equalsize=0.2, S=f"+x{cb_label}", **args_cb)
+            case "min_max":
+                fig.colorbar(frame=f"xaf+u{unit}+l{cb_label}", **args_cb)
 
     # Add labels within the sectors
     fig.text(
@@ -215,6 +237,7 @@ def pie_chart(
 sectors = [50, 10, 8, 12, 15, 13, 42, 5]
 
 df_sectors = pie_chart(sectors=sectors)
+df_sectors = pie_chart(sectors=sectors, fill_type="min_max")
 
 # -----------------------------------------------------------------------------
 annot = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh"]
@@ -257,4 +280,41 @@ pie_chart(
     radius_in=True,
     colorbar=False,
     outline=None,
+)
+pie_chart(
+    sectors=sectors,
+    annot=annot[0:-1],
+    radius_in=True,
+    outline=None,
+    cb_label="kg",
+    sector_labels="annot",
+)
+pie_chart(
+    sectors=sectors,
+    annot=annot[0:-1],
+    colors=["gold", "darkbrown"],
+    radius_in=True,
+    outline=None,
+    cb_label="kg",
+    sector_labels="annot",
+)
+pie_chart(
+    sectors=sectors,
+    annot=annot[0:-1],
+    fill_type="min_max",
+    radius_in=True,
+    outline=None,
+    cb_label="kg",
+    sector_labels="annot",
+)
+pie_chart(
+    sectors=sectors,
+    annot=annot[0:-1],
+    colors=["gold", "darkbrown"],
+    fill_type="min_max",
+    radius_in=True,
+    outline=None,
+    cb_label="mass of object",
+    sector_labels="annot",
+    unit="kg",
 )

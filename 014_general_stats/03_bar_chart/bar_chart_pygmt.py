@@ -27,13 +27,15 @@ def bar_chart(
     bars,
     annot=[],
     colors=[],
+    fill_type="discret",
     bar_width=0.8,
     orientation="vertical",
     colorbar=True,
     bar_labels="value_percent",
     bar_label_offset=None,
-    unit="",
-    cb_label="",
+    unit=None,
+    cb_label=None,
+    axis_label=None,
     round_digits=2,
     outline="1p,black,solid",
     font="5p",
@@ -50,17 +52,20 @@ def bar_chart(
     #   Give always a list of strings. | Default "bar1", ..., "barN"
     # - colors: Fill of the bars. Give a colormap or a list of
     #   colors. | Default colors based on colormap "batlow"
+    # - fill_type: How to setup the coloring. Choose between "discret" or
+    #   "min_max". | Default "discret"
     # - bar_width: Set width of the bars. | Default 0.8
     # - orientation: Orientation of the bars. Choose between "horizontal" or
     #   "vertical". | Default "vertical"
     # - colorbar: Add a colorbar | Default True, e.g. colorbar plotted
     # - bar_labels: Write labels in the bars. Choose from "value_percent",
-    #   "value", "percent", None. | Default "value_percent"
+    #   "value", "percent", "annot". | Default "value_percent"
     # - bar_label_offset: Offset of bar label and top of bar. Give offsets in
     #   x- and y-directions as string with the format <xoffset/yoffset>. |
     #   Default f"0c/{max(bars) * 0.0025}c" or f"{max(bars) * 0.0025}c/0c"
-    # - unit: Add unit to values. | Default no unit
+    # - unit: Add unit to values of labels, axis, colorbar. | Default no unit
     # - cb_label: Add a label to the colorbar. | Default no label
+    # - axis_label: Add label to the x or y axis. | Defualt no label
     # - round_digits: Round values to specific number of digits. | Default 2
     # - outline: Outline of the bars. Give a pen to adjust color, thickness,
     #   and style. | Default "1p,black,solid"
@@ -89,18 +94,20 @@ def bar_chart(
             annot.append(f"bar {i_bar + 1}")
 
     # Check colors
-    if (len(bars) != len(colors)) and (len(colors) > 1):
+    if (len(bars) != len(colors)) and (len(colors) > 1) and fill_type=="discret":
         print(
-            "The lengths of bars and colors must be identical! " + \
-            "Using default colormap 'batlow'."
+            "The lengths of 'bars' and 'colors' must be identical " + \
+            "for using fill_type=='discret'! Using default colormap 'batlow'."
         )
 
     if len(colors) == 1:
         cmap = colors
-    elif len(bars) == len(colors):
+    elif len(colors) > 1:
         cmap = ",".join(colors)
     else:
         cmap = "batlow"
+    if (len(bars) != len(colors)) and (len(colors) > 1) and fill_type=="discret":
+         cmap = "batlow"
 
     # Calculate percent for bars
     if isinstance(bars, list):
@@ -110,9 +117,20 @@ def bar_chart(
     bars_sum = sum(bars)
     percents = bars_array / bars_sum * 100
 
-    # Add white space before unit
-    if unit != "":
-        unit = f" {unit}"
+    # Axis and colorbar labels
+    if axis_label != None and unit != None:
+        axis_label = f"{axis_label} / {unit}"
+
+    if axis_label == None:
+        axis_label = " "
+
+    if cb_label == None:
+        cb_label = " "
+
+    if unit != None:
+        unit = f" {unit}"  # Add white space before unit
+    else:
+        unit = " "
 
     # Create pandas Dataframe based on orientation of bars
     xy = np.arange(1, len(bars) + 1, 1)
@@ -123,7 +141,7 @@ def bar_chart(
             region = [0, len(bars) + 1, 0, np.max(bars) + np.max(bars) * 0.1]
             plot_width = len(bars) + 1
             plot_hight = 6
-            frame = ["Wbtr", "yaf"]
+            frame = ["Wbtr", f"yaf+l{axis_label}"]
             dict_bars = {"x": xy, "y": bars}
             style = "b"
             x_text = xy
@@ -135,7 +153,7 @@ def bar_chart(
             region = [0, np.max(bars) + np.max(bars) * 0.1, 0, len(bars) + 1]
             plot_width = 6
             plot_hight = - (len(bars) + 1)
-            frame = ["lStr", "xaf"]
+            frame = ["lbNr", f"xaf+l{axis_label}"]
             dict_bars = {"x": bars, "y": xy}
             style = "B"
             x_text = bars
@@ -145,7 +163,11 @@ def bar_chart(
             y_offset = 0
 
     df_bars = pd.DataFrame(dict_bars, columns=["x", "y"])
-    df_bars["z_color"] = xy
+    match fill_type:
+        case "discret":
+            df_bars["z_color"] = xy
+        case "min_max":
+            df_bars["z_color"] = bars
     df_bars["value"] = bars
     df_bars["percent"] = percents
 
@@ -164,8 +186,8 @@ def bar_chart(
                     text_temp = f"{bars[i_bar]}{unit}"
                 case "percent":
                     text_temp = f"{round(percent, round_digits)} %"
-            if colorbar == False:
-                text_temp = annot[i_bar]
+                case "annot":
+                    text_temp = annot[i_bar]
             text.append(text_temp)
 
     # Default of bar label offset
@@ -180,9 +202,15 @@ def bar_chart(
     fig = pygmt.Figure()
     fig.basemap(region=region, projection=projection, frame=0)
 
-    pygmt.makecpt(
-        cmap=cmap, series=[1, len(bars), 1], color_model="+c" + ",".join(annot)
-    )
+    match fill_type:
+        case "discret":
+            pygmt.makecpt(
+                cmap=cmap,
+                series=[1, len(bars), 1],
+                color_model="+c" + ",".join(annot),
+            )
+        case "min_max":
+            pygmt.makecpt(cmap=cmap, series=[min(bars), max(bars)])
 
     # Plot bars
     args_bar = {"data": df_bars, "style": f"{style}{bar_width}c", "cmap": True}
@@ -191,15 +219,19 @@ def bar_chart(
     else:
         fig.plot(pen=outline, **args_bar)
 
+    # Add colorbar
     if colorbar == True:
-        fig.colorbar(
-            position=Position("BC", anchor="TC", offset=(0, 0.6)),
-            orientation="horizontal",
-            length=plot_width - plot_width * 0.15,
-            equalsize=0.2,
-            S=f"+x{cb_label}",
-            move_text="label",
-        )
+        args_cb = {
+            "position": Position("BC", anchor="TC", offset=(0, 0.6)),
+            "orientation": "horizontal",
+            "length": plot_width - plot_width * 0.15,
+            "move_text": "label",
+        }
+        match fill_type:
+            case "discret":
+                fig.colorbar(equalsize=0.2, S=f"+x{cb_label}", **args_cb)
+            case "min_max":
+                fig.colorbar(frame=f"xaf+u{unit}+l{cb_label}", **args_cb)
 
     # Add labels on top of the bars
     fig.text(
@@ -231,6 +263,7 @@ def bar_chart(
 bars = [50, 10, 8, 12, 15, 13, 42, 5]
 
 df_bars = bar_chart(bars=bars)
+df_bars = bar_chart(bars=bars, fill_type="min_max")
 
 # -----------------------------------------------------------------------------
 annot = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh"]
@@ -254,7 +287,8 @@ bar_chart(
     colors=colors,
     unit="kg",
     bar_labels="percent",
-    cb_label="Letters",
+    cb_label="Object",
+    axis_label="Mass of object",
     round_digits=0,
     outline="1p,gray80",
 )
@@ -265,4 +299,24 @@ bar_chart(
     colorbar=False,
     outline=None,
     orientation="horizontal",
+)
+bar_chart(
+    bars=bars,
+    annot=annot[0:-1],
+    colors=["gold", "brown"],
+    outline=None,
+    orientation="horizontal",
+    bar_labels="annot",
+)
+bar_chart(
+    bars=bars,
+    annot=annot[0:-1],
+    colors=["gold", "brown"],
+    fill_type="min_max",
+    outline=None,
+    orientation="horizontal",
+    bar_labels="annot",
+    cb_label="Mass of object",
+    # axis_label="Absolute mass",
+    unit="kg",
 )
