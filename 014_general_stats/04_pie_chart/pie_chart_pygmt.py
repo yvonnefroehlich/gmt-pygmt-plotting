@@ -51,8 +51,8 @@ def pie_chart(
     # Optional
     # - annot: Annotations assigned to the colors and used for the colorbar.
     #   Give always a list of strings. | Default "sector1", ..., "sectorN"
-    # - colors: Fill of the sectors. Give a colormap or a list of
-    #   colors. | Default colors based on colormap "batlow"
+    # - colors: Fill of the sectors. Give a list with one colormap or with one
+    #   or multiple colors. | Default colors based on colormap "batlow"
     # - fill_type: How to setup the coloring. Choose between "discret" or
     #   "min_max". | Default "discret"
     # - radius_out: Set size of plot. Give outer radius | Default 10
@@ -236,7 +236,7 @@ def pie_chart(
 # -----------------------------------------------------------------------------
 sectors = [50, 10, 8, 12, 15, 13, 42, 5]
 annot = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh"]
-colors = "hawaii"
+colors = ["hawaii"]
 
 df_sectors = pie_chart(sectors=sectors)
 df_sectors = pie_chart(sectors=sectors, annot=annot, colors=colors)
