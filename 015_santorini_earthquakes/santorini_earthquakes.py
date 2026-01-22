@@ -23,6 +23,7 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/09/21
+# - Updated: 2026/01/22 - Use PyGMT v0.18.0 with GMT 6.6.0
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org/v0.18.0 | https://www.pygmt.org
@@ -166,8 +167,8 @@ fig_surf.grdview(
 )
 fig_surf.colorbar(
     frame=["xa500f100+lelevation", "y+lm"],
-    position=Position("BC", cstype="outside", anchor="TR", offset=("-2c", "0.4c")),
-    length="9.5c",
+    position=Position("BC", cstype="outside", offset=("0c", "0.7c")),
+    length="10c",
     orientation="horizontal",
     bg_triangle=True,
     fg_triangle=True,
