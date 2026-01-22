@@ -53,7 +53,7 @@ def pie_chart(
     # - colors: Fill of the sectors. Give a list with one colormap or with one
     #   or multiple colors. | Default colors based on colormap "batlow"
     # - fill_type: How to setup the coloring. Choose between "discrete" or
-    #   "min_max". | Default "discrete"
+    #   "continuous". | Default "discrete"
     # - radius_out: Set size of plot. Give outer radius | Default 10
     # - radius_in: Create ring sectors. Give inner radius | Default 0
     # - colorbar: Add a colorbar | Default True, e.g. colorbar plotted
@@ -155,7 +155,7 @@ def pie_chart(
     match fill_type:
         case "discrete":
             df_sectors["z_color"] = np.arange(0, len(sectors), 1)
-        case "min_max":
+        case "continuous":
             df_sectors["z_color"] = sectors
     df_sectors["radius_out"] = [radius_out] * len(sectors)
     df_sectors["angle_start"] = angle_start
@@ -182,7 +182,7 @@ def pie_chart(
                 series=[0, len(sectors) - 1, 1],
                 color_model="+c" + ",".join(annot),
             )
-        case "min_max":
+        case "continuous":
             pygmt.makecpt(cmap=cmap, series=[min(sectors), max(sectors)])
 
     # Plot sectors
@@ -203,7 +203,7 @@ def pie_chart(
         match fill_type:
             case "discrete":
                 fig.colorbar(equalsize=0.2, S=f"+x{cb_label}", **args_cb)
-            case "min_max":
+            case "continuous":
                 fig.colorbar(frame=f"xaf+u{unit}+l{cb_label}", **args_cb)
 
     # Add labels within the sectors
@@ -243,7 +243,7 @@ pie_chart(
     sectors=sectors,
     annot=annot,
     colors=colors,
-    fill_type="min_max",
+    fill_type="continuous",
     sector_labels="annot",
 )
 
@@ -267,7 +267,7 @@ pie_chart(
     sectors=sectors,
     annot=annot[0:-1],
     colors=colors,
-    fill_type="min_max",
+    fill_type="continuous",
     radius_in=True,
     outline="1p,gray",
     cb_label="Mass of object",

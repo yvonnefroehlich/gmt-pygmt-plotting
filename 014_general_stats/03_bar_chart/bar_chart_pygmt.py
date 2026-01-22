@@ -64,7 +64,7 @@ def bar_chart(
     #   Default f"0c/{max(bars) * 0.0025}c" or f"{max(bars) * 0.0025}c/0c"
     # - unit: Add unit to values of labels, axis, colorbar. | Default no unit
     # - cb_label: Add a label to the colorbar. | Default no label
-    # - axis_label: Add label to the x or y axis. | Defualt no label
+    # - axis_label: Add label to the x or y axis. | Default no label
     # - round_digits: Round values to specific number of digits. | Default 2
     # - outline: Outline of the bars. Give a pen to adjust color, thickness,
     #   and style. | Default "1p,black,solid"
@@ -167,7 +167,7 @@ def bar_chart(
     match fill_type:
         case "discrete":
             df_bars["z_color"] = xy
-        case "min_max":
+        case "continuous":
             df_bars["z_color"] = bars
     df_bars["value"] = bars
     df_bars["percent"] = percents
@@ -210,7 +210,7 @@ def bar_chart(
                 series=[1, len(bars), 1],
                 color_model="+c" + ",".join(annot),
             )
-        case "min_max":
+        case "continuous":
             pygmt.makecpt(cmap=cmap, series=[min(bars), max(bars)])
 
     # Plot bars
@@ -231,7 +231,7 @@ def bar_chart(
         match fill_type:
             case "discrete":
                 fig.colorbar(equalsize=0.2, S=f"+x{cb_label}", **args_cb)
-            case "min_max":
+            case "continuous":
                 fig.colorbar(frame=f"xaf+u{unit}+l{cb_label}", **args_cb)
 
     # Add labels on top of the bars
@@ -271,7 +271,7 @@ df_bars = bar_chart(
     bars=bars,
     annot=annot,
     colors=colors,
-    fill_type="min_max",
+    fill_type="continuous",
     bar_labels="annot",
 )
 
@@ -297,7 +297,7 @@ bar_chart(
     bars=bars,
     annot=annot[0:-1],
     colors=colors,
-    fill_type="min_max",
+    fill_type="continuous",
     outline=None,
     orientation="horizontal",
     bar_labels="annot",
