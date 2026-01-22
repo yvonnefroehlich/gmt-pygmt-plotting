@@ -1,8 +1,10 @@
 # 014_general_stats
 
-_Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
+_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 
-| **[01_collatz](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/014_general_stats/01_collatz/collatz_problem.py)** | **[02_anscombe](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/014_general_stats/02_anscombe/anscombes_quartet.py)** |
-| --- | --- |
-| Collatz problem | Anscombe's quartet |
-| <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/014_general_stats/01_collatz/02_out_figs/collatz_problem.png" width="250"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/014_general_stats/02_anscombe/02_out_figs/anscombes_quartet.png" width="350"> |
+**Note**: _Numbers and trends are difficult to read visually from pie charts. If applicable use another plot type, e.g., a bar chart._
+
+| **[01_collatz](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/014_general_stats/01_collatz/collatz_problem.py)** | **[02_anscombe](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/014_general_stats/02_anscombe/anscombes_quartet.py)** | **[03_bar_chart](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/014_general_stats/03_bar_chart_pygmt.py)** & **[04_pie_chart](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/014_general_stats/04_pie_chart_pygmt.py)** |
+| :---: | :---: | :---: |
+| Collatz problem | Anscombe's quartet | Bar charts & Pie charts |
+| <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/014_general_stats/01_collatz/02_out_figs/collatz_problem.png" width="170"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/014_general_stats/02_anscombe/02_out_figs/anscombes_quartet.png" width="300"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/014_general_stats/03_bar_chart/02_out_figs/bar_chart_1.png" width="90"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/014_general_stats/03_bar_chart/02_out_figs/bar_chart_2.png" width="90"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/014_general_stats/03_bar_chart/02_out_figs/bar_chart_3.png" width="90"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/014_general_stats/03_bar_chart/02_out_figs/bar_chart_4.png" width="65"> <br> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/014_general_stats/04_pie_chart/02_out_figs/pie_chart_1.png" width="85"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/014_general_stats/04_pie_chart/02_out_figs/pie_chart_2.png" width="85"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/014_general_stats/04_pie_chart/02_out_figs/pie_chart_3.png" width="85"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/014_general_stats/04_pie_chart/02_out_figs/pie_chart_4.png" width="85"> |
