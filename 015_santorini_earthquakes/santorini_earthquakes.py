@@ -54,6 +54,8 @@ path_out = "02_out_figs"
 start_date_data = datetime.datetime(2025, 1, 1, 0, 0)
 start_date_plot = datetime.datetime(2025, 1, 15, 0, 0)
 end_date_plot = datetime.datetime(2025, 3, 15, 0, 0)
+# start_date_plot = datetime.datetime(2025, 2, 2, 0, 0)
+# end_date_plot = datetime.datetime(2025, 2, 7, 0, 0)
 
 add_one_day = datetime.timedelta(hours=23, minutes=59, seconds=59)
 N_eqs_days = [-1] * (int(str(end_date_plot - start_date_plot).split(" ")[0]) + 1)
@@ -85,7 +87,7 @@ args_santo = {"x": 25.43, "y": 36.42, "style": "x0.6c", "pen": f"5p,{color_hl}"}
 # Source:
 # v1: https://doi.org/10.5281/zenodo.15111649  (last accessed 2025/09/24)
 # v2: https://doi.org/10.5281/zenodo.17668659  (last accessed 2026/01/22)
-doi = "17668659"
+doi = "15111649"
 df_eq_raw = pd.read_csv(f"{path_in}/catalog_santorini_{doi}.csv", sep=",")
 
 # Create column with datetime object
@@ -327,7 +329,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
             fig_histo.histogram(
                 data=df_eq_day["magnitude"],
                 series=0.1,
-                barwidth="0.08",
+                bar_width="0.08",
                 fill=f"{color_hl}@40",
                 histtype=0,  # counts
             )
