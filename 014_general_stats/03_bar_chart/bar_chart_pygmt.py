@@ -50,10 +50,10 @@ def bar_chart(
     # Optional
     # - annot: annotations assigned to the colors and used for the colorbar.
     #   Give always a list of strings. | Default "bar1", ..., "barN"
-    # - colors: Fill of the bars. Give a colormap or a list of
-    #   colors. | Default colors based on colormap "batlow"
+    # - colors: Fill of the sectors. Give a list with one colormap or with one
+    #   or multiple colors. | Default colors based on colormap "batlow"
     # - fill_type: How to setup the coloring. Choose between "discret" or
-    #   "min_max". | Default "discret"
+    #   "continuous". | Default "discret"
     # - bar_width: Set width of the bars. | Default 0.8
     # - orientation: Orientation of the bars. Choose between "horizontal" or
     #   "vertical". | Default "vertical"

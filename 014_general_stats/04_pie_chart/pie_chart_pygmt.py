@@ -236,7 +236,7 @@ def pie_chart(
 # -----------------------------------------------------------------------------
 sectors = [50, 10, 8, 12, 15, 13, 42, 5]
 annot = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh"]
-colors = ["hawaii"]
+colors = "hawaii"
 
 df_sectors = pie_chart(sectors=sectors)
 df_sectors = pie_chart(sectors=sectors, annot=annot, colors=colors)
