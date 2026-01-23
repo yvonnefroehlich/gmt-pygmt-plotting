@@ -93,9 +93,9 @@ doi = "15111649"
 df_eq_raw = pd.read_csv(f"{path_in}/catalog_santorini_{doi}.csv", sep=",")
 
 # Create column with datetime object
-df_eq_raw["date_time"] = [0] * len(df_eq_raw)
+date_time = []
 for i_event in range(len(df_eq_raw)):
-    df_eq_raw["date_time"][i_event] = datetime.datetime(
+    datetime_temp = datetime.datetime(
         df_eq_raw["year"][i_event],
         df_eq_raw["month"][i_event],
         df_eq_raw["day"][i_event],
@@ -103,7 +103,9 @@ for i_event in range(len(df_eq_raw)):
         df_eq_raw["minute"][i_event],
         # int(np.floor(df_eq_raw["seconds"][i_event])),
     )
+    date_time.append(datetime_temp)
 
+df_eq_raw["date_time"] = date_time
 df_eq = df_eq_raw[df_eq_raw["date_time"] >= start_date_data]
 
 
