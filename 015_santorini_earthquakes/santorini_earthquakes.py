@@ -2,8 +2,8 @@
 # Santorini earthquakes January - March 2025
 # - 2-D maps for epicenters with different color-coding per day
 # - 3-D plots for hypocenters with different color-coding per day
-# - Histogram for earthquakes per day
 # - Histograms for magnitude distribution per day
+# - Histogram for earthquakes per day
 #
 # Make GIF, e.g.,
 # - https://ezgif.com/pdf-to-gif (last accessed 2025/09/25)
