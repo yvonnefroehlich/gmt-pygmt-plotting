@@ -56,8 +56,6 @@ path_out = "02_out_figs"
 start_date_data = datetime.datetime(2025, 1, 1, 0, 0)
 start_date_plot = datetime.datetime(2025, 1, 15, 0, 0)
 end_date_plot = datetime.datetime(2025, 3, 15, 0, 0)
-# start_date_plot = datetime.datetime(2025, 2, 2, 0, 0)
-# end_date_plot = datetime.datetime(2025, 2, 7, 0, 0)
 
 add_one_day = datetime.timedelta(hours=23, minutes=59, seconds=59)
 N_eqs_days = [-1] * (int(str(end_date_plot - start_date_plot).split(" ")[0]) + 1)
@@ -101,7 +99,6 @@ for i_event in range(len(df_eq_raw)):
         df_eq_raw["day"][i_event],
         df_eq_raw["hour"][i_event],
         df_eq_raw["minute"][i_event],
-        # int(np.floor(df_eq_raw["seconds"][i_event])),
     )
     date_time.append(datetime_temp)
 
@@ -232,7 +229,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         ["magnitude", "hypocentral depth / km", "date"],
         strict=False,
     ):
-        # Create colormap for epi- or hypocenters
+        # Create colormap for epicenters or hypocenters
         cmap_fill = f"{path_in}/{cmap}_fill.cpt"
         gmt.makecpt(cmap=cmap, series=series, reverse=reverse, output=cmap_fill)
         cb_x_afg = ""
@@ -251,7 +248,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
         # Mark Santorini
         fig2d.plot(**args_santo)
 
-        # Plot epicenters
+        # Plot colorbar before data points to not affect shift_origin
         with gmt.config(FONT="15p"):
             fig2d.colorbar(
                 frame=f"x{cb_x_afg}+l{cb_label}",
@@ -262,6 +259,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
                 move_text="label",
                 cmap=cmap_fill,
             )
+        # Plot epicenters
         fig2d.plot(
             x=df_eq_cum.longitude,
             y=df_eq_cum.latitude,
@@ -275,7 +273,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
 
 # -----------------------------------------------------------------------------
         # Plot hypocenters
-        # Use basemap dose not work.
+        # Using basemap dose not work
         fig3d.plot3d(
             projection="X15c",
             region=[lon_min, lon_max, lat_min, lat_max, -15, 0],
@@ -295,7 +293,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
             style="uc",
             cmap=cmap_fill,
         )
-        # Using position destroys the 3-D plot.
+        # Using position destroys the 3-D plot
         fig3d.colorbar(
             frame=f"x{cb_x_afg}+l{cb_label}",
             bg_triangle=True,
