@@ -273,6 +273,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
 
 # -----------------------------------------------------------------------------
         # Plot hypocenters
+        # Use basemap dose not work.
         fig3d.plot3d(
             projection="X15c",
             region=[lon_min, lon_max, lat_min, lat_max, -15, 0],
@@ -292,6 +293,7 @@ for i_day, day in enumerate(rrule(DAILY, dtstart=start_date_plot, until=end_date
             style="uc",
             cmap=cmap_fill,
         )
+        # Using position destroys the 3-D plot.
         fig3d.colorbar(
             frame=f"x{cb_x_afg}+l{cb_label}",
             bg_triangle=True,
