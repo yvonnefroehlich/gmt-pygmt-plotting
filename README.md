@@ -9,7 +9,7 @@ _Please note_: Scripts or notebooks are available up on acceptance of the relate
 
 ## Content
 
-_Please note_: Besides [PyGMT](https://www.pygmt.org) and [GMT](https://www.generic-mapping-tools.org), the tools [Jupyter](https://jupyter.org), [NumPy](https://numpy.org), [pandas](https://pandas.pydata.org), [ObsPy](https://docs.obspy.org), [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal), [GeoPandas](https://geopandas.org) and [geodatasets](https://geodatasets.readthedocs.io) are used. The required versions are given in the single folders as well as notebooks and scripts.
+_Please note_: Besides [PyGMT](https://www.pygmt.org) and [GMT](https://www.generic-mapping-tools.org), the tools [Jupyter](https://jupyter.org), [NumPy](https://numpy.org), [pandas](https://pandas.pydata.org), [ObsPy](https://docs.obspy.org), [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal), [GeoPandas](https://geopandas.org) and [geodatasets](https://geodatasets.readthedocs.io) are used. The required versions are given in the single folders as well as notebooks or scripts.
 
 | Folder | Overview |
 | --- | --- |
