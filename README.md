@@ -6,7 +6,7 @@ the Python wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic
 
 _Please note_: Scripts or notebooks are available up on acceptance of the related publication.
 
-<img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.png" width="800">
+<img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.gif" width="800">
 
 
 ## Content
