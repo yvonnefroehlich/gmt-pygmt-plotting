@@ -7,9 +7,8 @@ the Python wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic
 
 ## Content
 
-_Please note_:
-* The required versions are given in the single folders as well as notebooks and scripts.
-* Scripts or notebooks are available up on acceptance of the related publication.
+_Please note_: Scripts or notebooks are available up on acceptance of the related publication. The required versions
+are given in the single folders as well as notebooks and scripts.
 
 | Folder | Overview | Requirements |
 | --- | --- | --- |
