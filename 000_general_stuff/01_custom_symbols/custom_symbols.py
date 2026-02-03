@@ -15,8 +15,8 @@
 # - Updated: 2025/08/13 - Add more symbols (lense)
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
-# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# - PyGMT v0.18.0 -> https://www.pygmt.org | https://www.pygmt.org
+# - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich

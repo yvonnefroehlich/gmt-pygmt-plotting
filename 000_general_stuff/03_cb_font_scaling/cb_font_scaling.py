@@ -1,5 +1,5 @@
 # #############################################################################
-# Adjust the fontsize of a colorbar in GMT 6.5
+# Adjust the fontsize of a colorbar in GMT 6.5.0 or higher
 # - Revert the auto-scaling relatively to the colorbar width
 # - For background on this change see the upstream GMT pull request 6802 at
 #   https://github.com/GenericMappingTools/gmt/pull/6802
@@ -10,8 +10,8 @@
 # - Updated: 2025/10/01 - Adjust specific fontsize default parameters
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
-# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# - PyGMT v0.18.0 -> https://www.pygmt.org | https://www.pygmt.org
+# - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich
@@ -25,7 +25,7 @@ import numpy as np
 
 # -----------------------------------------------------------------------------
 def scale_cb_font(cb_width):
-    scale_factor = 1 / 15  # scale factor used in GMT >= 6.5
+    scale_factor = 1 / 15  # scale factor used in GMT >= 6.5.0
     font_scaling = np.sqrt(cb_width * scale_factor)
     return font_scaling
 # -----------------------------------------------------------------------------
