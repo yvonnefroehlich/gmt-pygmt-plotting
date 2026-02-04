@@ -10,11 +10,11 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: -
-# - Updated: 2025/08/13 - adjusted for GitHub
+# - Updated: 2025/08/13 - Adjusted for GitHub
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
-# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# - PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
+# - GMT 6.5.0 - 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich
@@ -132,7 +132,7 @@ with fig.subplot(
             fig.coast(
                 area_thresh="50000",
                 resolution="c",
-                shorelines="1/0.1p,{color_sl}",
+                shorelines=f"1/0.1p,{color_sl}",
                 land=color_land,
                 water=color_water,
             )

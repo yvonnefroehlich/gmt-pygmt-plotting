@@ -9,10 +9,11 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/03/09
+# - Updated: 2026/02/04 - Use parameter names of PyGMT v0.18.0
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
-# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich
@@ -77,8 +78,8 @@ mt_virginia = {
 
 args_meca = {
     "scale": "0.4c+m+f5p",
-    "compressionfill": color_source,
-    "extensionfill": "cornsilk",
+    "compression_fill": color_source,
+    "extension_fill": "cornsilk",
     "depth": 0,
 }
 
