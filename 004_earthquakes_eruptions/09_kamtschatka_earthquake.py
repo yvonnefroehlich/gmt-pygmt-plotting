@@ -5,11 +5,11 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/07/30
-# - Updated: 2025/08/03 - add profile for elevation
-# - Updated: 2025/08/04 - fix profile for elevation, add plate names and motion direction
+# - Updated: 2025/08/03 - Add profile for elevation
+# - Updated: 2025/08/04 - Fix profile for elevation, add plate names and motion direction
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org | https://www.pygmt.org
+# - PyGMT v0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
