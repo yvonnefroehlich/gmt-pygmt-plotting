@@ -31,11 +31,8 @@
 # - Updated: 2024/10/04 - Add option to plot ray paths
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.7.0 with GMT 6.4.0
-# - PyGMT v0.9.0 with GMT 6.4.0
-# - PyGMT v0.10.0 with GMT 6.4.0
-# - PyGMT v0.12.0 with GMT 6.5.0 -> https://www.pygmt.org/v0.12.0/
-# - PyGMT v0.13.0 with GMT 6.5.0 -> https://www.pygmt.org/v0.13.0/
+# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich

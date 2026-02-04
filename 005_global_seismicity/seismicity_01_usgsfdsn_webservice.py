@@ -6,11 +6,11 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/07/23
-# - Updated: 2025/09/07 - improve code style and comments
+# - Updated: 2025/09/07 - Improve code style and comments
 # -----------------------------------------------------------------------------
 # Versions
-#   PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
-#   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+#   PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
+#   GMT 6.5.0 - 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich
@@ -63,8 +63,8 @@ eq_catalog_name = "usgsfdsn_" + "".join(str(start_date).split("-")) + "to" + \
 data_eq_raw = pd.read_csv(url_usgs_request)
 
 # Write data to a CSV file
-data_eq_raw.to_csv(
-    path_or_buf=f"{path_in}/catalog_{eq_catalog_name}.csv", sep="\t", index=False
-)
+# data_eq_raw.to_csv(
+#     path_or_buf=f"{path_in}/catalog_{eq_catalog_name}.csv", sep="\t", index=False
+# )
 
 print(f"Saved file '{eq_catalog_name}.csv' to folder '{path_in}'!")
