@@ -14,7 +14,7 @@
 # - Updated: 2026/02/04 - Use parameter names of PyGMT v0.18.0
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org | https://www.pygmt.org
+# - PyGMT v0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact

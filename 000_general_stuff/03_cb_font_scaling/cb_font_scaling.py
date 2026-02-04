@@ -10,7 +10,7 @@
 # - Updated: 2025/10/01 - Adjust specific fontsize default parameters
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org | https://www.pygmt.org
+# - PyGMT v0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact

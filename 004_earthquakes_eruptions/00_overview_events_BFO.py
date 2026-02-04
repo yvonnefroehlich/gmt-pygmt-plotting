@@ -9,7 +9,7 @@
 # - Updated: 2025/07/31 - Polish code, highlight XKS epicentral distance range
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org | https://www.pygmt.org
+# - PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
 # - GMT 6.5.0 - 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
