@@ -8,10 +8,11 @@
 # - Updated: 2024/05/07 - Refractor: Introduce function taup_color
 # - Updated: 2024/04/23 - Improve coding style
 # - Updated: 2025/03/28 - Reorganize folder, rewrite code
+# - Updated: 2026/02/04 - Use parameter names of PyGMT v0.18.0
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
-# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# - PyGMT v0.18.0 -> https://www.pygmt.org | https://www.pygmt.org
+# - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich
@@ -358,7 +359,7 @@ fig.meca(
     latitude=lat_epi,
     plot_longitude=135,
     plot_latitude=41,
-    compressionfill=color_eq,
+    compression_fill=color_eq,  # PyGMT v0.18.0
     offset=pen_epi,
     outline=pen_epi,
 )
