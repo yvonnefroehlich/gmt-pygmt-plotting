@@ -13,10 +13,11 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/09/08
+# - Updated: 2026/02/04 - Use parameter names of PyGMT v0.18.0
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
-# - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+# - PyGMT v0.18.0 -> https://www.pygmt.org | https://www.pygmt.org
+# - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich
@@ -295,7 +296,7 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
                         fig.meca(
                             spec=df_eq_fault,
                             scale="12c",
-                            compressionfill=color_fault,
+                            compression_fill=color_fault,  # PyGMT v0.18.0
                             outline="0.3p,gray10",
                         )
             case "xks":
@@ -306,7 +307,7 @@ for depth_min, depth_max in zip([0, 10, 20, 30, 50, 100], [10, 20, 30, 50, 100, 
                         fig.meca(
                             spec=df_eq_dist,
                             scale="12c",
-                            compressionfill=color_dist,
+                            compression_fill=color_dist,  # PyGMT v0.18.0
                             outline="0.3p,gray10",
                         )
             case _:

@@ -219,7 +219,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 1992-06-22T04:00:41.000Z	-60.728	-21.969	11.8	6.5	mwb				1.1	us	usp00059fc	2022-04-28T18:44:27.437Z	east of the South Sandwich Islands	earthquake					reviewed	us	us
 1992-06-23T11:21:21.550Z	-36.104	-101.22	10.0	6.1	mw				1.2	us	usp00059he	2022-04-28T18:44:44.875Z	southeast of Easter Island	earthquake					reviewed	us	hrv
 1992-06-25T06:30:51.000Z	-28.314	-176.716	20.0	6.5	mw				1.2	us	usp00059mp	2022-04-28T18:45:10.722Z	Kermadec Islands region	earthquake					reviewed	us	hrv
-1992-06-28T11:57:34.130Z	34.2	-116.437	-0.097	7.3	mw	0.0	43.4		0.194	ci	ci3031111	2025-08-22T20:50:18.015Z	The 1992 Landers, California Earthquake	earthquake		0.31		0.0	reviewed	ci	ci
+1992-06-28T11:57:34.130Z	34.2	-116.437	-0.097	7.3	mw	0.0	43.4		0.194	ci	ci3031111	2026-01-20T05:48:31.747Z	The 1992 Landers, California Earthquake	earthquake		0.31		0.0	reviewed	ci	ci
 1992-06-28T15:05:30.730Z	34.203	-116.827	3.634	6.3	mw	0.0	95.4		0.226	ci	ci3031425	2024-09-24T23:25:06.965Z	The 1992 Big Bear, California Earthquake	earthquake		91.295		0.0	reviewed	ci	ci
 1992-07-10T09:31:27.590Z	44.695	149.482	19.9	6.5	mw				1.0	us	usp0005am7	2022-04-28T18:40:56.503Z	139 km ESE of Kuril’sk, Russia	earthquake					reviewed	us	hrv
 1992-07-11T10:44:19.760Z	-22.483	-178.413	377.2	7.2	mw				1.1	us	usp0005ap1	2022-04-28T18:40:57.917Z	south of the Fiji Islands	earthquake					reviewed	us	hrv
@@ -467,7 +467,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 1994-01-04T19:31:59.880Z	-4.301	135.145	11.0	6.0	mwb				1.1	us	usp000660z	2022-04-28T17:51:56.095Z	111 km SSW of Nabire, Indonesia	earthquake					reviewed	us	us
 1994-01-10T15:53:50.110Z	-13.339	-69.446	596.0	6.9	mwb				1.0	us	usp000669u	2022-04-28T17:52:22.467Z	74 km S of Tambopata, Peru	earthquake					reviewed	us	us
 1994-01-11T00:51:56.380Z	25.231	97.203	9.9	6.1	mw				1.1	us	usp00066ad	2022-04-28T17:52:24.160Z	25 km SW of Myitkyina, Myanmar	earthquake					reviewed	us	hrv
-1994-01-17T12:30:55.390Z	34.213	-118.537	18.202	6.7	mw	0.0	29.7		0.31	ci	ci3144585	2025-08-11T22:18:38.793Z	Northridge, California, earthquake	earthquake		0.403		0.0	reviewed	ci	ci
+1994-01-17T12:30:55.390Z	34.213	-118.537	18.202	6.7	mw	0.0	29.7		0.31	ci	ci3144585	2026-01-20T23:34:23.742Z	Northridge, California, earthquake	earthquake		0.403		0.0	reviewed	ci	ci
 1994-01-19T01:53:34.900Z	-3.176	135.97	23.2	6.8	mw				1.2	us	usp00066x3	2022-04-28T17:52:58.619Z	55 km ENE of Nabire, Indonesia	earthquake					reviewed	us	hrv
 1994-01-19T16:26:48.060Z	-17.584	-178.495	533.3	6.1	mw				1.1	us	usp00066zb	2022-04-28T17:53:03.937Z	238 km ENE of Levuka, Fiji	earthquake					reviewed	us	hrv
 1994-01-21T02:24:29.960Z	1.015	127.733	19.9	7.0	mwb				1.2	us	usp0006744	2022-04-28T17:53:14.262Z	36 km NNE of Sofifi, Indonesia	earthquake					reviewed	us	us
@@ -1149,7 +1149,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 1998-03-20T21:08:08.530Z	-50.008	163.107	10.0	6.7	mwc				1.32	us	usp0008hs8	2022-04-29T17:21:29.158Z	Auckland Islands, New Zealand region	earthquake					reviewed	us	hrv
 1998-03-21T16:33:11.000Z	79.888	1.856	10.0	6.2	mwc				1.01	us	usp0008htd	2022-04-29T17:21:32.542Z	Greenland Sea	earthquake					reviewed	us	hrv
 1998-03-22T01:08:57.480Z	-11.43	66.245	10.0	6.1	mwc				0.95	us	usp0008hu8	2022-04-29T17:21:38.645Z	Mid-Indian Ridge	earthquake					reviewed	us	hrv
-1998-03-25T03:12:25.070Z	-62.877	149.527	10.0	8.1	mwc				1.1	us	usp0008hzd	2022-04-29T17:21:43.239Z	Balleny Islands region	earthquake					reviewed	us	hrv
+1998-03-25T03:12:25.070Z	-62.877	149.527	10.0	8.1	mwc				1.1	us	usp0008hzd	2025-11-26T18:52:16.468Z	1998 Balleny Islands Earthquake	earthquake					reviewed	us	hrv
 1998-03-25T12:17:22.500Z	-63.612	147.937	10.0	6.4	mwc				0.89	us	usp0008j0d	2022-04-29T17:21:45.585Z	south of Australia	earthquake					reviewed	us	hrv
 1998-03-29T07:14:58.980Z	-0.239	-17.932	10.0	6.1	mwc				1.03	us	usp0008j6u	2022-04-29T17:22:12.702Z	north of Ascension Island	earthquake					reviewed	us	hrv
 1998-03-29T19:48:16.210Z	-17.552	-179.092	537.2	7.2	mwc				1.02	us	usp0008j7s	2022-04-29T17:22:24.932Z	178 km ENE of Levuka, Fiji	earthquake					reviewed	us	hrv
@@ -1339,7 +1339,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 1999-09-30T16:31:15.690Z	16.059	-96.931	60.6	7.5	mwc				0.93	us	usp0009f7v	2022-04-29T18:19:21.160Z	15 km W of San Baltazar Loxicha, Mexico	earthquake		2.5			reviewed	us	hrv
 1999-10-10T07:03:04.860Z	-1.99	134.279	33.0	6.1	mwc				1.15	us	usp0009fnh	2022-04-29T18:08:13.156Z	126 km S of Manokwari, Indonesia	earthquake					reviewed	us	hrv
 1999-10-13T01:33:40.130Z	54.657	-161.189	30.0	6.4	mwc				1.04	us	usp0009fs9	2022-04-29T18:08:17.944Z	85 km ESE of King Cove, Alaska	earthquake					reviewed	us	hrv
-1999-10-16T09:46:44.460Z	34.6033333	-116.265	13.73	7.1	mw	73.0	57.0		0.31	ci	ci9108652	2024-09-02T00:17:33.917Z	The 1999 Hector Mine, California Earthquake	earthquake	0.35	31.61		0.0	reviewed	ci	ci
+1999-10-16T09:46:44.460Z	34.6033333	-116.265	13.73	7.1	mw	73.0	57.0		0.31	ci	ci9108652	2025-12-20T19:35:45.889Z	The 1999 Hector Mine, California Earthquake	earthquake	0.35	31.61		0.0	reviewed	ci	ci
 1999-10-18T02:43:23.870Z	-56.121	-26.578	33.0	6.3	mwc				0.94	us	usp0009g4q	2022-04-29T18:08:25.051Z	South Sandwich Islands region	earthquake					reviewed	us	hrv
 1999-10-23T02:12:05.040Z	-4.808	153.414	83.3	6.3	mwc				1.12	us	usp0009gf4	2022-04-29T18:08:51.855Z	137 km ESE of Kokopo, Papua New Guinea	earthquake					reviewed	us	hrv
 1999-10-24T04:21:41.110Z	44.612	149.44	33.0	6.0	mwc				0.99	us	usp0009ggy	2022-04-29T18:09:02.854Z	141 km ESE of Kuril’sk, Russia	earthquake					reviewed	us	hrv
@@ -1509,7 +1509,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2000-11-07T07:50:09.670Z	-5.432	154.016	90.5	6.2	mwc	141.0			1.08	us	usp000a34m	2022-04-29T19:16:39.612Z	189 km WNW of Panguna, Papua New Guinea	earthquake					reviewed	us	hrv
 2000-11-08T06:59:58.860Z	7.042	-77.829	17.0	6.5	mwc	462.0			1.01	us	usp000a373	2022-04-29T19:18:07.155Z	10 km SW of Juradó, Colombia	earthquake					reviewed	us	hrv
 2000-11-13T15:57:21.610Z	42.489	144.765	33.0	6.0	mwc	450.0			0.8	us	usp000a3j6	2022-04-29T18:57:27.003Z	62 km SSE of Kushiro, Japan	earthquake					reviewed	us	hrv
-2000-11-16T04:54:56.740Z	-3.98	152.169	33.0	8.0	mwc	254.0			1.2	us	usp000a3qq	2022-04-29T19:26:13.204Z	24 km N of Rabaul, Papua New Guinea	earthquake					reviewed	us	hrv
+2000-11-16T04:54:56.740Z	-3.98	152.169	33.0	8.0	mwc	254.0			1.2	us	usp000a3qq	2025-11-26T16:48:49.647Z	2000 New Ireland Earthquake	earthquake					reviewed	us	hrv
 2000-11-16T05:21:22.410Z	-5.069	153.238	33.0	6.0	mb	117.0			1.04	us	usp000a3qx	2022-04-29T18:58:11.742Z	134 km SE of Kokopo, Papua New Guinea	earthquake				18.0	reviewed	us	us
 2000-11-16T07:42:16.930Z	-5.233	153.102	30.0	7.8	mwc	294.0			1.31	us	usp000a3sp	2022-04-29T19:16:32.829Z	135 km SE of Kokopo, Papua New Guinea	earthquake					reviewed	us	hrv
 2000-11-16T07:45:32.940Z	-4.827	153.226	33.0	6.5	mb	71.0			0.97	us	usp000a3sq	2022-05-09T19:14:58.065Z	118 km ESE of Kokopo, Papua New Guinea	earthquake				17.0	reviewed	us	us
@@ -1571,7 +1571,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2001-02-28T12:30:14.050Z	-21.986	170.207	10.0	6.7	mwc	243.0			1.11	us	usp000aake	2022-04-29T19:07:58.282Z	245 km E of Tadine, New Caledonia	earthquake					reviewed	us	hrv
 2001-02-28T13:05:31.640Z	-22.002	170.108	10.0	6.3	mwc	110.0			1.12	us	usp000aakj	2022-04-29T19:08:20.904Z	235 km ESE of Tadine, New Caledonia	earthquake					reviewed	us	hrv
 2001-02-28T18:50:13.020Z	13.283	-88.827	65.3	6.1	mwb	179.0			0.99	us	usp000aam7	2020-09-18T18:15:57.127Z	24 km S of Zacatecoluca, El Salvador	earthquake					reviewed	us	us
-2001-02-28T18:54:32.830Z	47.149	-122.7266667	51.798	6.8	md	67.0	31.0		0.2	uw	uw10530748	2025-03-06T14:22:03.957Z	7 km SSE of Longbranch, Washington	earthquake	0.517	0.92	0.03	0.0	reviewed	uw	uw
+2001-02-28T18:54:32.830Z	47.149	-122.7266667	51.798	6.8	md	67.0	31.0		0.2	uw	uw10530748	2025-09-24T21:37:01.750Z	7 km SSE of Longbranch, Washington	earthquake	0.517	0.92	0.03	0.0	reviewed	uw	uw
 2001-03-06T09:17:36.080Z	-54.588	157.271	10.0	6.4	mwb	134.0			0.99	us	usp000ab03	2022-04-29T19:14:51.177Z	Macquarie Island region	earthquake					reviewed	us	us
 2001-03-07T18:10:58.650Z	-6.81	-12.911	10.0	6.0	mwc	162.0			0.98	us	usp000ab2q	2022-04-29T19:10:07.045Z	206 km NE of Georgetown, Saint Helena	earthquake					reviewed	us	hrv
 2001-03-14T18:56:18.880Z	0.451	121.892	109.4	6.0	mwb	313.0			0.83	us	usp000abdc	2022-04-29T19:09:02.402Z	130 km W of Gorontalo, Indonesia	earthquake					reviewed	us	us
@@ -2110,7 +2110,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2004-12-14T23:20:13.360Z	18.958	-81.409	10.0	6.8	mwb	639.0	21.8		1.04	us	usp000daqt	2022-07-14T19:10:35.979Z	36 km S of George Town, Cayman Islands	earthquake					reviewed	us	us
 2004-12-18T06:46:19.870Z	48.837	156.309	11.0	6.2	mwb	470.0	36.4		1.01	us	usp000day2	2022-05-02T17:37:26.544Z	204 km S of Severo-Kuril’sk, Russia	earthquake					reviewed	us	us
 2004-12-22T21:03:39.390Z	-55.942	-124.997	10.0	6.1	mwc	49.0	48.8		1.08	us	usp000db7t	2022-05-02T17:38:22.794Z	southern East Pacific Rise	earthquake					reviewed	us	hrv
-2004-12-23T14:59:04.410Z	-49.312	161.345	10.0	8.1	mwc	331.0	59.3		1.12	us	usp000db93	2022-05-02T17:38:24.182Z	north of Macquarie Island	earthquake					reviewed	us	hrv
+2004-12-23T14:59:04.410Z	-49.312	161.345	10.0	8.1	mwc	331.0	59.3		1.12	us	usp000db93	2025-11-26T16:48:03.059Z	2004 Tasman Sea Earthquake	earthquake					reviewed	us	hrv
 2004-12-26T00:58:53.450Z	3.295	95.982	30.0	9.1	mw	601.0	22.0		1.17	official	official20041226005853450_30	2025-09-03T22:34:02.097Z	2004 Sumatra - Andaman Islands Earthquake	earthquake					reviewed	us	official
 2004-12-26T01:21:20.660Z	6.34	93.361	30.0	6.1	mb	96.0	54.3		0.9	us	usp000dbeg	2022-05-09T19:17:35.987Z	222 km WNW of Sabang, Indonesia	earthquake				49.0	reviewed	us	us
 2004-12-26T01:22:25.590Z	7.421	93.985	30.0	6.0	mb	80.0	75.7		0.95	us	usp000dbeh	2022-05-02T17:38:28.793Z	224 km NW of Sabang, Indonesia	earthquake				45.0	reviewed	us	us
@@ -2212,7 +2212,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2005-06-04T14:50:46.650Z	-6.319	146.846	26.0	6.1	mwb	411.0	21.9		0.98	us	usp000ds6y	2022-05-02T16:45:36.529Z	47 km NNW of Lae, Papua New Guinea	earthquake					reviewed	us	us
 2005-06-08T06:28:10.920Z	2.17	96.724	23.5	6.1	mwb	320.0	26.7		0.81	us	usp000dsgp	2022-07-14T15:54:19.006Z	51 km SE of Sinabang, Indonesia	earthquake					reviewed	us	us
 2005-06-12T19:26:24.800Z	-56.293	-27.075	94.1	6.0	mwb	241.0	28.9		0.99	us	usp000dstt	2024-01-17T20:50:34.956Z	South Sandwich Islands region	earthquake					reviewed	us	us
-2005-06-13T22:44:33.900Z	-19.987	-69.197	115.6	7.8	mwb	714.0	16.1		1.01	us	usp000dsw1	2024-11-17T02:31:53.407Z	102 km ENE of Iquique, Chile	earthquake					reviewed	us	us
+2005-06-13T22:44:33.900Z	-19.987	-69.197	115.6	7.8	mwb	714.0	16.1		1.01	us	usp000dsw1	2025-09-24T18:52:35.627Z	102 km ENE of Iquique, Chile	earthquake					reviewed	us	us
 2005-06-14T17:10:12.280Z	51.239	179.314	17.0	6.8	mwc	885.0	25.1		1.02	us	usp000dszm	2022-05-02T16:47:46.529Z	289 km WSW of Adak, Alaska	earthquake					reviewed	us	hrv
 2005-06-15T02:50:54.190Z	41.292	-125.953	16.0	7.2	mwc	420.0	31.4		1.2	us	usp000dt25	2024-10-03T21:25:10.202Z	153 km W of Big Lagoon, California	earthquake					reviewed	us	hrv
 2005-06-15T10:13:59.390Z	-4.595	153.191	74.6	6.2	mwb	400.0	22.4		0.92	us	usp000dt3u	2022-05-02T16:47:59.494Z	106 km ESE of Kokopo, Papua New Guinea	earthquake					reviewed	us	us
@@ -2326,7 +2326,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2006-04-30T19:17:14.980Z	-27.017	-71.022	12.0	6.7	mwb	277.0	25.6		1.19	us	usp000efv7	2022-08-09T03:11:48.811Z	78 km WNW of Copiapó, Chile	earthquake					reviewed	us	us
 2006-04-30T19:33:18.940Z	-15.523	-173.101	10.0	6.0	mwc	224.0	48.6		0.94	us	usp000efvc	2022-05-02T18:17:15.815Z	88 km ENE of Hihifo, Tonga	earthquake					reviewed	us	hrv
 2006-04-30T21:40:58.440Z	-27.211	-71.056	12.0	6.5	mwc	282.0	46.3		1.26	us	usp000efw2	2022-07-14T11:38:16.363Z	73 km WNW of Copiapó, Chile	earthquake					reviewed	us	hrv
-2006-05-03T15:26:40.290Z	-20.187	-174.123	55.0	8.0	mwc	626.0	20.7		1.18	us	usp000eg5g	2022-07-14T11:33:02.464Z	47 km SSE of Pangai, Tonga	earthquake					reviewed	us	hrv
+2006-05-03T15:26:40.290Z	-20.187	-174.123	55.0	8.0	mwc	626.0	20.7		1.18	us	usp000eg5g	2025-11-26T16:47:02.974Z	2006 Tonga Earthquake	earthquake					reviewed	us	hrv
 2006-05-04T11:25:26.050Z	-20.579	-174.036	11.0	6.0	mwb	256.0	34.4		0.98	us	usp000eg8u	2022-05-02T15:30:04.776Z	90 km SSE of Pangai, Tonga	earthquake					reviewed	us	us
 2006-05-06T18:26:50.540Z	-38.62	78.57	10.0	6.0	mwb	71.0	49.6		1.55	us	usp000egeb	2024-01-17T20:52:00.457Z	Mid-Indian Ridge	earthquake					reviewed	us	us
 2006-05-07T14:17:35.170Z	-36.805	78.545	10.0	6.1	mwb	90.0	41.4		1.15	us	usp000eggk	2022-05-02T18:18:29.977Z	Mid-Indian Ridge	earthquake		0.0			reviewed	us	us
@@ -2405,7 +2405,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2006-11-13T01:26:35.870Z	-26.052	-63.283	572.0	6.8	mwb	480.0	25.7		0.94	us	usp000ex8r	2022-07-14T09:05:31.408Z	48 km S of Taco Pozo, Argentina	earthquake					reviewed	us	us
 2006-11-13T16:12:28.980Z	-6.38	151.23	11.0	6.2	mwc	396.0	16.3		0.89	us	usp000exac	2022-05-02T15:38:20.547Z	151 km SE of Kimbe, Papua New Guinea	earthquake					reviewed	us	gcmt
 2006-11-14T14:21:01.320Z	-6.39	127.998	345.0	6.1	mwb	286.0	32.2		0.87	us	usp000exd5	2022-07-14T09:03:50.354Z	260 km NNE of Lospalos, Timor Leste	earthquake					reviewed	us	us
-2006-11-15T11:14:13.570Z	46.592	153.266	10.0	8.3	mwc	576.0	20.9		1.07	us	usp000exfn	2022-09-24T08:33:38.884Z	Kuril Islands	earthquake					reviewed	us	gcmt
+2006-11-15T11:14:13.570Z	46.592	153.266	10.0	8.3	mwc	576.0	20.9		1.07	us	usp000exfn	2025-11-26T18:48:49.365Z	2006 Kuril Islands Earthquake	earthquake					reviewed	us	gcmt
 2006-11-15T11:25:09.000Z	47.518	152.647	10.0	6.0	mb	222.0	185.9		1.38	us	usp000exfs	2022-05-02T15:38:27.575Z	Kuril Islands	earthquake				125.0	reviewed	us	us
 2006-11-15T11:28:38.460Z	46.086	154.1	10.0	6.0	mb	354.0	61.9		0.84	us	usp000exfu	2022-05-09T20:26:55.428Z	east of the Kuril Islands	earthquake				157.0	reviewed	us	us
 2006-11-15T11:29:22.790Z	46.371	154.475	10.0	6.2	mb	342.0	24.8		1.07	us	usp000exfv	2022-05-09T20:56:34.505Z	east of the Kuril Islands	earthquake				200.0	reviewed	us	us
@@ -2434,7 +2434,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2007-01-08T17:21:49.910Z	39.803	70.312	16.0	6.0	mwb	468.0	24.8		0.88	us	usp000f1zv	2022-07-14T08:18:13.446Z	23 km WSW of Vorukh, Tajikistan	earthquake					reviewed	us	us
 2007-01-08T20:52:20.640Z	-18.58	-177.847	406.8	6.3	mwb	266.0	44.3		1.1	us	usp000f202	2022-05-02T19:32:41.796Z	Fiji region	earthquake					reviewed	us	us
 2007-01-11T14:31:20.740Z	-3.655	127.283	13.0	6.0	mwc	283.0	41.4		1.02	us	usp000f26m	2022-05-02T19:33:24.514Z	100 km W of Ambon, Indonesia	earthquake					reviewed	us	gcmt
-2007-01-13T04:23:21.160Z	46.243	154.524	10.0	8.1	mwc	606.0	14.0		1.12	us	usp000f2ab	2022-07-14T08:15:53.956Z	east of the Kuril Islands	earthquake					reviewed	us	gcmt
+2007-01-13T04:23:21.160Z	46.243	154.524	10.0	8.1	mwc	606.0	14.0		1.12	us	usp000f2ab	2025-11-26T18:48:01.373Z	2007 Kuril Islands Earthquake	earthquake					reviewed	us	gcmt
 2007-01-13T17:37:06.310Z	46.913	156.276	10.0	6.0	mwc	370.0	32.5		0.81	us	usp000f2et	2022-05-02T19:33:30.515Z	east of the Kuril Islands	earthquake					reviewed	us	gcmt
 2007-01-17T04:28:26.660Z	-3.322	139.834	100.8	6.0	mwb	128.0	41.0		0.9	us	usp000f2uh	2022-05-02T19:34:08.209Z	119 km SW of Abepura, Indonesia	earthquake		8.2			reviewed	us	us
 2007-01-17T23:18:49.800Z	10.125	58.708	8.0	6.2	mwc	396.0	37.0		0.89	us	usp000f2wk	2022-05-02T19:34:07.057Z	Carlsberg Ridge	earthquake					reviewed	us	gcmt
@@ -2468,7 +2468,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2007-03-25T00:41:57.820Z	37.336	136.588	8.0	6.7	mwc	493.0	23.9		0.83	us	usp000f7b5	2022-08-03T20:34:40.654Z	46 km NW of Nanao, Japan	earthquake					reviewed	us	gcmt
 2007-03-25T01:08:19.050Z	-20.754	169.354	35.0	6.9	mwc	281.0	43.6		1.05	us	usp000f7b9	2022-05-02T20:04:25.460Z	134 km S of Isangel, Vanuatu	earthquake					reviewed	us	gcmt
 2007-03-31T12:49:03.710Z	-56.083	-123.27	10.0	6.2	mwb	164.0	22.4		1.21	us	usp000f7zp	2022-05-02T20:05:33.877Z	southern East Pacific Rise	earthquake					reviewed	us	us
-2007-04-01T20:39:58.710Z	-8.466	157.043	24.0	8.1	mwc	439.0	14.7		1.32	us	usp000f83m	2022-07-14T07:01:32.418Z	45 km SSE of Gizo, Solomon Islands	earthquake					reviewed	us	gcmt
+2007-04-01T20:39:58.710Z	-8.466	157.043	24.0	8.1	mwc	439.0	14.7		1.32	us	usp000f83m	2025-11-26T16:42:18.355Z	2007 Solomon Islands Earthquake	earthquake					reviewed	us	gcmt
 2007-04-01T20:46:19.350Z	-9.505	156.934	24.3	6.1	mb	82.0	44.5		0.78	us	usp000f83n	2022-05-02T20:07:23.353Z	155 km S of Gizo, Solomon Islands	earthquake		15.1		29.0	reviewed	us	us
 2007-04-01T20:47:31.310Z	-7.169	155.777	10.0	6.6	mb	251.0	16.0		1.23	us	usp000f83p	2022-05-02T20:07:29.234Z	99 km SSE of Panguna, Papua New Guinea	earthquake				44.0	reviewed	us	us
 2007-04-01T21:11:33.150Z	-7.306	155.741	10.0	6.9	mwc	305.0	15.3		1.11	us	usp000f83w	2022-05-02T20:07:31.041Z	113 km SSE of Panguna, Papua New Guinea	earthquake					reviewed	us	gcmt
@@ -2596,7 +2596,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2007-10-31T13:44:19.760Z	51.418	-178.38	28.0	6.0	mwc	552.0	30.3		0.86	us	usp000frpp	2022-05-02T20:49:02.887Z	131 km WSW of Adak, Alaska	earthquake					reviewed	us	gcmt
 2007-11-02T22:31:43.880Z	-55.466	-128.966	10.0	6.1	mwb	144.0	72.7		1.42	us	usp000frv7	2022-05-02T20:49:10.865Z	Pacific-Antarctic Ridge	earthquake					reviewed	us	us
 2007-11-10T01:13:29.350Z	-51.777	161.318	10.0	6.6	mwc	73.0	49.3		1.33	us	usp000fs9s	2022-05-02T20:49:28.580Z	north of Macquarie Island	earthquake					reviewed	us	gcmt
-2007-11-14T15:40:50.530Z	-22.247	-69.89	40.0	7.7	mwc	610.0	22.4		1.11	us	usp000fshy	2024-03-22T00:27:20.473Z	36 km ESE of Tocopilla, Chile	earthquake					reviewed	us	gcmt
+2007-11-14T15:40:50.530Z	-22.247	-69.89	40.0	7.7	mwc	610.0	22.4		1.11	us	usp000fshy	2025-10-05T15:46:02.089Z	36 km ESE of Tocopilla, Chile	earthquake					reviewed	us	gcmt
 2007-11-15T15:03:08.750Z	-22.867	-70.407	27.0	6.3	mwc	318.0	44.6		1.05	us	usp000fsme	2022-05-02T20:49:58.404Z	86 km N of Antofagasta, Chile	earthquake					reviewed	us	gcmt
 2007-11-15T15:05:58.350Z	-22.925	-70.237	26.0	6.8	mwc	285.0	40.1		1.13	us	usp000fsmf	2022-07-14T01:17:06.628Z	82 km NNE of Antofagasta, Chile	earthquake					reviewed	us	gcmt
 2007-11-16T03:13:00.120Z	-2.312	-77.838	122.9	6.8	mwc	649.0	27.0		0.88	us	usp000fsnz	2022-07-14T01:13:47.687Z	30 km E of Macas, Ecuador	earthquake					reviewed	us	gcmt
@@ -2641,7 +2641,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2008-01-22T17:14:57.950Z	1.011	97.442	20.0	6.2	mwb	157.0	38.0		1.07	us	usp000fx81	2022-07-13T22:47:43.425Z	146 km SSW of Singkil, Indonesia	earthquake					reviewed	us	us
 2008-01-30T07:32:42.800Z	-7.302	127.688	8.0	6.2	mwc	321.0	31.6		1.05	us	usp000fxrt	2022-05-02T20:58:50.644Z	154 km NNE of Lospalos, Timor Leste	earthquake					reviewed	us	us
 2008-02-01T12:10:06.400Z	-21.495	-179.352	604.2	6.0	mwb	379.0	17.9		1.1	us	usp000fxxh	2022-05-02T20:29:48.908Z	Fiji region	earthquake		5.2			reviewed	us	us
-2008-02-04T17:01:29.980Z	-20.166	-70.037	35.0	6.3	mwc	375.0	45.0		0.87	us	usp000fy5k	2025-07-28T19:49:15.770Z	12 km ENE of Iquique, Chile	earthquake					reviewed	us	us
+2008-02-04T17:01:29.980Z	-20.166	-70.037	35.0	6.3	mwc	375.0	45.0		0.87	us	usp000fy5k	2025-09-21T19:28:09.227Z	12 km ENE of Iquique, Chile	earthquake					reviewed	us	us
 2008-02-08T09:38:14.100Z	10.671	-41.899	9.0	6.9	mwc	600.0	24.9		0.85	us	usp000fyep	2022-05-02T20:30:04.178Z	northern Mid-Atlantic Ridge	earthquake					reviewed	us	us
 2008-02-09T18:34:01.600Z	-0.236	125.084	38.0	6.0	mwc	204.0	28.0		1.15	us	usp000fyhw	2022-05-02T20:30:09.493Z	171 km S of Tondano, Indonesia	earthquake					reviewed	us	gcmt
 2008-02-10T12:22:02.650Z	-60.797	-25.586	8.0	6.6	mwc	264.0	18.0		1.15	us	usp000fykt	2022-05-02T20:43:17.005Z	South Sandwich Islands region	earthquake					reviewed	us	us
@@ -2901,7 +2901,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2009-09-21T08:53:05.910Z	27.332	91.437	14.0	6.1	mwb	259.0	45.4		0.98	us	usp000h1r4	2022-07-15T17:56:47.037Z	11 km W of Trashigang, Bhutan	earthquake					reviewed	us	us
 2009-09-23T02:59:30.530Z	-52.963	159.911	10.0	6.0	mwc	111.0	59.5		0.92	us	usp000h1sx	2022-05-02T21:19:40.742Z	Macquarie Island region	earthquake					reviewed	us	us
 2009-09-24T07:16:20.260Z	18.829	-107.339	13.0	6.4	mwc	375.0	73.0		1.33	us	usp000h1tv	2022-07-15T18:06:34.557Z	236 km WSW of La Cruz de Loreto, Mexico	earthquake					reviewed	us	gcmt
-2009-09-29T17:48:10.990Z	-15.489	-172.095	18.0	8.1	mwc	520.0	20.8		1.01	us	usp000h1ys	2023-12-12T22:01:15.270Z	168 km SSW of Matavai, Samoa	earthquake					reviewed	us	gcmt
+2009-09-29T17:48:10.990Z	-15.489	-172.095	18.0	8.1	mwc	520.0	20.8		1.01	us	usp000h1ys	2025-11-26T16:41:26.460Z	2009 Samoa Earthquake	earthquake					reviewed	us	gcmt
 2009-09-29T17:56:05.790Z	-15.355	-173.159	10.0	6.0	mb	101.0	75.5		1.17	us	usp000h1yt	2022-05-09T19:12:42.286Z	95 km NE of Hihifo, Tonga	earthquake				65.0	reviewed	us	us
 2009-09-29T23:45:03.460Z	-15.832	-172.551	10.0	6.0	mb	311.0	23.0		0.94	us	usp000h21j	2022-05-02T22:17:24.199Z	134 km E of Hihifo, Tonga	earthquake				171.0	reviewed	us	us
 2009-09-30T10:16:09.250Z	-0.72	99.867	81.0	7.6	mwc	498.0	14.0		0.92	us	usp000h237	2023-12-01T15:23:24.547Z	30 km WSW of Pariaman, Indonesia	earthquake					reviewed	us	gcmt
@@ -2973,7 +2973,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2010-01-05T13:11:42.820Z	-9.05	157.892	35.0	6.0	mwc	117.0	18.3		1.21	us	usp000h5rx	2022-05-02T22:34:08.208Z	155 km SE of Gizo, Solomon Islands	earthquake					reviewed	us	us
 2010-01-09T05:51:30.470Z	-9.131	157.626	12.0	6.2	mwc	266.0	27.8		1.24	us	usp000h5vu	2022-05-02T21:36:09.219Z	142 km SE of Gizo, Solomon Islands	earthquake					reviewed	us	us
 2010-01-10T00:27:39.320Z	40.652	-124.6925	28.737	6.5	mw	51.0	220.0	0.3225	0.2	nc	nc71338066	2024-02-25T07:18:33.872Z	The 2010 Eureka, California Earthquake	earthquake	0.55	1.31		8.0	reviewed	nc	nc
-2010-01-12T21:53:10.060Z	18.443	-72.571	13.0	7.0	mwc	500.0	22.7		0.97	us	usp000h60h	2025-08-12T04:14:39.311Z	10 km SE of Léogâne, Haiti	earthquake					reviewed	us	us
+2010-01-12T21:53:10.060Z	18.443	-72.571	13.0	7.0	mwc	500.0	22.7		0.97	us	usp000h60h	2025-09-30T16:40:58.902Z	10 km SE of Léogâne, Haiti	earthquake					reviewed	us	us
 2010-01-12T22:00:41.490Z	18.387	-72.784	10.0	6.0	mwc	196.0	24.1		0.84	us	usp000h60j	2022-05-02T21:33:18.940Z	4 km SSW of Grangwav, Haiti	earthquake					reviewed	us	gcmt
 2010-01-17T12:00:01.080Z	-57.664	-65.879	5.0	6.3	mwc	243.0	29.0		0.89	us	usp000h68a	2022-07-16T00:27:27.811Z	Drake Passage	earthquake					reviewed	us	us
 2010-02-01T22:28:16.920Z	-6.112	154.463	32.0	6.2	mwc	261.0	13.4		1.02	us	usp000h6v7	2022-05-02T22:36:42.424Z	115 km WNW of Panguna, Papua New Guinea	earthquake					reviewed	us	us
@@ -2986,7 +2986,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2010-02-18T01:13:19.510Z	42.587	130.703	577.7	6.9	mwb	524.0	17.0		1.35	us	usp000h7dn	2022-05-02T21:37:24.323Z	15 km SSW of Kraskino, Russia	earthquake		3.9			reviewed	us	us
 2010-02-22T07:00:51.320Z	-23.626	-176.036	15.0	6.0	mwc	251.0	53.2		0.81	us	usp000h7j9	2022-05-02T22:37:41.740Z	277 km SSW of ‘Ohonua, Tonga	earthquake					reviewed	us	us
 2010-02-26T20:31:26.970Z	25.93	128.425	25.0	7.0	mwc	487.0	15.7		1.05	us	usp000h7qu	2022-07-16T03:26:49.601Z	70 km SE of Katsuren-haebaru, Japan	earthquake					reviewed	us	us
-2010-02-27T06:34:11.530Z	-36.122	-72.898	22.9	8.8	mww	454.0	17.8		1.09	official	official20100227063411530_30	2025-08-08T18:56:44.947Z	2010 Maule, Chile Earthquake	earthquake		9.2			reviewed	us	official
+2010-02-27T06:34:11.530Z	-36.122	-72.898	22.9	8.8	mww	454.0	17.8		1.09	official	official20100227063411530_30	2025-11-04T12:50:48.471Z	2010 Maule, Chile Earthquake	earthquake		9.2			reviewed	us	official
 2010-02-27T06:51:17.650Z	-31.663	-69.141	39.8	6.0	mb	118.0	52.7		0.69	us	usp000h7rj	2022-05-02T21:42:48.973Z	40 km WSW of Villa Basilio Nievas, Argentina	earthquake		7.4		58.0	reviewed	us	us
 2010-02-27T06:52:34.020Z	-34.867	-72.614	35.0	6.2	mb	150.0	44.6		0.98	us	usp000h7rk	2022-05-02T22:32:51.757Z	54 km NNW of Constitución, Chile	earthquake				88.0	reviewed	us	us
 2010-02-27T07:12:28.450Z	-33.878	-71.943	35.0	6.0	mb	291.0	30.0		1.02	us	usp000h7ru	2022-05-02T21:42:10.967Z	44 km SW of San Antonio, Chile	earthquake				159.0	reviewed	us	us
@@ -3023,7 +3023,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2010-03-28T21:38:28.000Z	-35.387	-73.385	29.9	6.0	mwb	259.0	53.0			us	usp000ha3d	2022-08-09T04:10:23.550Z	88 km W of Constitución, Chile	earthquake					reviewed	guc	us
 2010-03-30T16:54:46.730Z	13.667	92.831	34.0	6.6	mwc	413.0	16.7		0.86	us	usp000ha59	2022-07-16T09:18:20.862Z	217 km N of Bamboo Flat, India	earthquake		7.0			reviewed	us	us
 2010-04-02T22:58:07.560Z	-36.227	-72.878	24.0	6.0	mwc	353.0	34.2		0.81	us	usp000ha96	2022-08-09T04:09:18.579Z	30 km W of Quirihue, Chile	earthquake					reviewed	us	gcmt
-2010-04-04T22:40:42.360Z	32.2861667	-115.2953333	9.987	7.2	mw	10.0	239.0	0.5137	0.11	ci	ci14607652	2025-09-10T07:24:58.688Z	The 2010 Sierra El Mayor, B.C., Mexico Earthquake	earthquake	1.81	31.61		0.0	reviewed	ci	ci
+2010-04-04T22:40:42.360Z	32.2861667	-115.2953333	9.987	7.2	mw	10.0	239.0	0.5137	0.11	ci	ci14607652	2025-12-17T05:07:25.517Z	The 2010 Sierra El Mayor, B.C., Mexico Earthquake	earthquake	1.81	31.61		0.0	reviewed	ci	ci
 2010-04-05T10:05:44.630Z	-0.183	125.009	25.0	6.2	mww	287.0	37.8		0.98	us	usp000hahs	2022-05-02T21:50:25.960Z	164 km S of Tondano, Indonesia	earthquake					reviewed	us	us
 2010-04-06T22:15:01.580Z	2.383	97.048	31.0	7.8	mwc	352.0	19.2		1.19	us	usp000hat0	2022-05-02T22:39:44.108Z	75 km E of Sinabang, Indonesia	earthquake					reviewed	us	gcmt
 2010-04-07T14:33:01.930Z	-3.76	141.943	23.0	6.0	mwc	231.0	33.0		1.01	us	usp000havw	2022-05-02T19:50:12.837Z	82 km SSW of Aitape, Papua New Guinea	earthquake					reviewed	us	gcmt
@@ -3042,7 +3042,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2010-05-03T10:27:45.090Z	29.645	140.951	84.0	6.1	mwc	479.0	12.6		0.84	us	usp000hc8w	2024-01-17T21:01:09.500Z	Izu Islands, Japan region	earthquake					reviewed	us	us
 2010-05-03T23:09:44.790Z	-38.072	-73.454	19.0	6.3	mwc	262.0	54.7		1.07	us	usp000hc9m	2022-08-09T03:54:16.179Z	30 km S of Cañete, Chile	earthquake					reviewed	us	us
 2010-05-05T16:29:03.210Z	-4.054	101.096	27.0	6.5	mwc	347.0	36.9		0.98	us	usp000hcbx	2022-07-16T12:53:05.244Z	132 km WSW of Bengkulu, Indonesia	earthquake					reviewed	us	gcmt
-2010-05-06T02:42:47.940Z	-18.058	-70.547	37.0	6.2	mwc	455.0	11.8		0.73	us	usp000hccn	2022-07-16T12:56:13.699Z	21 km S of Las Yaras, Peru	earthquake					reviewed	us	us
+2010-05-06T02:42:47.940Z	-18.058	-70.547	37.0	6.2	mwc	455.0	11.8		0.73	us	usp000hccn	2025-10-22T01:56:50.046Z	21 km S of Las Yaras, Peru	earthquake					reviewed	us	us
 2010-05-09T05:59:41.620Z	3.748	96.018	38.0	7.2	mwc	611.0	20.6		0.92	us	usp000hchk	2022-07-16T13:10:18.697Z	45 km SSW of Meulaboh, Indonesia	earthquake					reviewed	us	us
 2010-05-19T04:15:43.230Z	-5.083	-77.541	132.0	6.0	mwb	502.0	16.5		0.75	us	usp000hcxh	2022-07-16T13:46:33.672Z	83 km NNE of Yambrasbamba, Peru	earthquake					reviewed	us	us
 2010-05-19T10:30:10.400Z	-54.8	-135.252	10.0	6.0	mwc	90.0	35.2		1.28	us	usp000hcxv	2022-05-02T22:35:59.356Z	Pacific-Antarctic Ridge	earthquake					reviewed	us	gcmt
@@ -3176,7 +3176,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2011-03-09T21:24:01.680Z	38.296	142.808	15.0	6.5	mwc	224.0	39.6		0.99	us	usp000hvkh	2022-04-08T21:40:04.993Z	128 km SE of ?funato, Japan	earthquake		10.5			reviewed	us	gcmt
 2011-03-09T21:24:49.760Z	-5.985	149.777	29.0	6.4	mww	165.0	14.9		1.33	us	usp000hvkj	2022-07-19T07:48:10.959Z	35 km NE of Kandrian, Papua New Guinea	earthquake					reviewed	us	us
 2011-03-10T17:08:36.860Z	-6.873	116.72	510.6	6.5	mww	492.0	14.8		1.05	us	usp000hvn3	2022-07-19T07:58:58.685Z	178 km NNE of Gili Air, Indonesia	earthquake		3.0			reviewed	us	us
-2011-03-11T05:46:24.120Z	38.297	142.373	29.0	9.1	mww	541.0	9.5		1.16	official	official20110311054624120_30	2025-04-25T14:17:05.158Z	2011 Great Tohoku Earthquake, Japan	earthquake					reviewed	us	official
+2011-03-11T05:46:24.120Z	38.297	142.373	29.0	9.1	mww	541.0	9.5		1.16	official	official20110311054624120_30	2026-01-06T00:36:26.349Z	2011 Great Tohoku Earthquake, Japan	earthquake					reviewed	us	official
 2011-03-11T05:54:31.940Z	37.712	141.184	32.3	6.3	mb	120.0	106.2		0.75	us	usp000hvnv	2022-04-08T22:18:45.453Z	30 km NNE of Namie, Japan	earthquake		13.5		66.0	reviewed	us	us
 2011-03-11T05:55:45.480Z	37.359	143.351	35.0	6.4	mb	108.0	71.7		1.42	us	usp000hvnw	2022-05-09T19:15:42.752Z	208 km E of Namie, Japan	earthquake				50.0	reviewed	us	us
 2011-03-11T05:58:07.490Z	37.623	142.155	50.7	6.3	mb	98.0	99.7		0.95	us	usp000hvnx	2022-05-09T19:15:41.424Z	103 km E of Namie, Japan	earthquake		6.8		44.0	reviewed	us	us
@@ -3263,7 +3263,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2011-06-05T11:51:12.010Z	-55.843	146.62	3.0	6.4	mww	395.0	23.9		1.19	us	usp000j2rm	2022-04-08T22:19:53.115Z	west of Macquarie Island	earthquake					reviewed	us	us
 2011-06-13T14:31:22.990Z	2.515	126.457	61.1	6.3	mww	439.0	12.8		1.06	us	usp000j348	2022-07-19T17:40:09.190Z	193 km WNW of Tobelo, Indonesia	earthquake		4.7			reviewed	us	us
 2011-06-16T00:03:35.790Z	-5.928	151.04	16.0	6.4	mww	448.0	15.6		1.31	us	usp000j37m	2022-07-19T17:51:52.427Z	108 km ESE of Kimbe, Papua New Guinea	earthquake					reviewed	us	us
-2011-06-20T16:36:01.160Z	-21.701	-68.228	128.0	6.4	mww	481.0	24.7		0.88	us	usp000j3fk	2025-01-03T16:24:02.773Z	110 km NE of Calama, Chile	earthquake					reviewed	us	us
+2011-06-20T16:36:01.160Z	-21.701	-68.228	128.0	6.4	mww	481.0	24.7		0.88	us	usp000j3fk	2025-10-09T16:58:02.900Z	110 km NE of Calama, Chile	earthquake					reviewed	us	us
 2011-06-21T02:04:15.940Z	-11.479	165.551	14.0	6.0	mww	383.0	17.0		0.92	us	usp000j3gd	2022-04-08T21:51:46.677Z	87 km SSW of Lata, Solomon Islands	earthquake					reviewed	us	us
 2011-06-22T21:50:52.350Z	39.955	142.205	33.0	6.7	mww	592.0	24.9		0.9	us	usp000j3k6	2022-07-19T18:27:45.644Z	41 km NNE of Miyako, Japan	earthquake					reviewed	us	us
 2011-06-24T03:09:39.470Z	52.05	-171.836	52.0	7.3	mww	791.0	15.3		1.05	us	usp000j3mq	2022-07-19T18:34:40.771Z	Fox Islands, Aleutian Islands, Alaska	earthquake					reviewed	us	us
@@ -3380,7 +3380,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2012-03-27T11:00:44.500Z	39.859	142.017	15.0	6.1	mwc	625.0	19.8		0.89	us	usp000jgv9	2024-06-17T18:13:28.442Z	24 km NNE of Miyako, Japan	earthquake					reviewed	us	us
 2012-04-02T17:36:42.060Z	16.395	-98.316	9.0	6.0	mww	557.0	46.9		0.89	us	usp000jh52	2022-05-03T15:35:28.610Z	7 km SSW of Santa María Cortijo, Mexico	earthquake					reviewed	us	us
 2012-04-06T16:15:58.010Z	-4.551	153.457	108.5	6.1	mww	312.0	11.6		0.98	us	usp000jhb2	2022-05-03T15:35:39.329Z	133 km E of Kokopo, Papua New Guinea	earthquake		5.4			reviewed	us	us
-2012-04-11T08:38:36.720Z	2.327	93.063	20.0	8.6	mw	499.0	16.6		1.33	official	official20120411083836720_20	2024-06-03T22:53:23.410Z	off the west coast of northern Sumatra	earthquake					reviewed	us	official
+2012-04-11T08:38:36.720Z	2.327	93.063	20.0	8.6	mw	499.0	16.6		1.33	official	official20120411083836720_20	2025-11-26T16:58:47.655Z	2012 Wharton Basin Earthquake	earthquake					reviewed	us	official
 2012-04-11T09:27:56.760Z	1.254	91.735	10.0	6.0	mb	205.0	60.8		1.05	us	usp000jhhg	2022-05-03T15:35:48.954Z	North Indian Ocean	earthquake				63.0	reviewed	us	us
 2012-04-11T10:43:10.850Z	0.802	92.463	25.1	8.2	mwc	341.0	14.9		0.9	us	usp000jhjb	2025-07-24T14:59:06.256Z	2012 Wharton Basin Aftershock	earthquake		7.3			reviewed	us	us
 2012-04-11T22:41:46.040Z	43.584	-127.638	8.0	6.0	mwc	656.0	43.9		1.1	us	usp000jhpg	2024-10-30T21:31:55.852Z	266 km W of Bandon, Oregon	earthquake					reviewed	us	gcmt
@@ -3470,6 +3470,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2012-11-19T09:44:34.120Z	-5.705	151.602	13.0	6.0	mww	430.0	12.4		0.88	us	usp000jvtm	2022-05-03T15:58:49.740Z	163 km E of Kimbe, Papua New Guinea	earthquake					reviewed	us	us
 2012-12-02T00:54:22.690Z	-16.975	167.645	32.0	6.1	mww	349.0	13.0		0.77	us	usp000jwax	2024-06-17T20:41:35.772Z	99 km SSE of Lakatoro, Vanuatu	earthquake					reviewed	us	us
 2012-12-07T08:18:23.130Z	37.89	143.949	31.0	7.3	mww	918.0	14.8		0.91	us	usp000jwjn	2024-06-16T05:58:33.494Z	234 km SE of ?funato, Japan	earthquake					reviewed	us	us
+2012-12-07T08:18:23.140Z	37.876	144.161	50.0	7.2	mw					iscgem	iscgem607215270	2025-12-22T17:06:40.415Z	246 km ESE of Onagawa Chō, Japan	earthquake		25.0	0.1		reviewed	iscgem	iscgem
 2012-12-07T08:31:14.800Z	37.914	143.764	32.0	6.2	mww	708.0	15.0		0.86	us	usp000jwjp	2022-05-03T16:00:47.754Z	220 km SE of ?funato, Japan	earthquake		6.0			reviewed	us	us
 2012-12-07T18:19:06.310Z	-38.428	176.067	163.0	6.3	mww	387.0	28.0		1.19	us	usp000jwmk	2024-06-17T20:44:44.709Z	27 km SE of Tokoroa, New Zealand	earthquake					reviewed	us	us
 2012-12-10T16:53:08.770Z	-6.533	129.825	155.0	7.1	mww	517.0	8.7		0.95	us	usp000jwt8	2022-05-03T16:58:48.046Z	Banda Sea	earthquake					reviewed	us	us
@@ -3492,7 +3493,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2013-02-02T14:17:35.130Z	42.77	143.092	107.0	6.9	mww	686.0	28.0		0.86	us	usc000f03a	2022-07-24T17:12:49.696Z	18 km SSW of Obihiro, Japan	earthquake					reviewed	us	us
 2013-02-02T18:58:06.480Z	-10.887	165.284	6.0	6.0	mwb	343.0	30.3		0.8	us	usc000f05y	2022-05-03T16:08:01.216Z	58 km WSW of Lata, Solomon Islands	earthquake					reviewed	us	us
 2013-02-06T00:07:22.100Z	-10.864	165.248	11.0	6.0	mww	341.0	29.6		0.58	us	usc000f1r5	2022-05-03T16:05:08.445Z	62 km WSW of Lata, Solomon Islands	earthquake					reviewed	us	us
-2013-02-06T01:12:25.830Z	-10.799	165.114	24.0	8.0	mww	460.0	20.9		1.29	us	usc000f1s0	2022-07-24T17:28:55.652Z	75 km W of Lata, Solomon Islands	earthquake					reviewed	us	us
+2013-02-06T01:12:25.830Z	-10.799	165.114	24.0	8.0	mww	460.0	20.9		1.29	us	usc000f1s0	2025-11-26T16:40:41.556Z	2013 Santa Cruz Islands Earthquake	earthquake					reviewed	us	us
 2013-02-06T01:23:19.760Z	-11.183	164.882	10.0	7.1	mww	550.0	18.4		1.19	us	usc000f1se	2022-05-03T16:05:12.368Z	112 km WSW of Lata, Solomon Islands	earthquake					reviewed	us	us
 2013-02-06T01:54:14.610Z	-10.499	165.588	8.8	7.0	mww	445.0	17.5		1.22	us	usc000f1ts	2022-05-03T17:17:35.201Z	33 km NW of Lata, Solomon Islands	earthquake		5.5			reviewed	us	us
 2013-02-06T06:35:19.250Z	-10.791	164.551	10.0	6.1	mwc	364.0	32.1		1.04	us	usc000f23y	2022-05-03T16:08:17.583Z	136 km W of Lata, Solomon Islands	earthquake					reviewed	us	gcmt
@@ -3541,7 +3542,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2013-05-21T05:43:21.000Z	52.281	160.072	30.0	6.1	mww	108.0	62.0		1.0	us	usb000h0hw	2022-05-03T16:22:34.228Z	128 km SE of Petropavlovsk-Kamchatsky, Russia	earthquake					reviewed	us	us
 2013-05-23T17:19:04.750Z	-23.009	-177.232	173.7	7.4	mww	626.0	16.0		0.85	us	usb000h3k3	2022-05-03T16:21:12.895Z	292 km SW of Vaini, Tonga	earthquake		3.2			reviewed	us	us
 2013-05-23T21:07:46.450Z	-20.578	-175.759	150.0	6.3	mww	265.0	24.0		1.2	us	usb000h40b	2022-05-03T16:21:14.302Z	85 km NW of Nuku‘alofa, Tonga	earthquake					reviewed	us	us
-2013-05-24T05:44:48.980Z	54.892	153.221	598.1	8.3	mww	385.0	10.0		1.02	us	usb000h4jh	2022-08-28T07:25:50.955Z	Sea of Okhotsk	earthquake		4.1			reviewed	us	us
+2013-05-24T05:44:48.980Z	54.892	153.221	598.1	8.3	mww	385.0	10.0		1.02	us	usb000h4jh	2025-11-26T18:46:54.263Z	2013 Sea of Okhotsk Earthquake	earthquake		4.1			reviewed	us	us
 2013-05-24T14:56:31.460Z	52.235	151.444	624.0	6.7	mwb	217.0	25.2		0.95	us	usb000h543	2022-05-03T16:20:12.009Z	Sea of Okhotsk	earthquake					reviewed	us	us
 2013-06-02T05:43:03.460Z	23.789	121.141	17.0	6.2	mww	434.0	39.0		0.66	us	usb000hbrt	2022-07-25T04:12:10.004Z	26 km SE of Puli, Taiwan	earthquake					reviewed	us	us
 2013-06-05T04:47:26.240Z	-11.401	166.299	39.0	6.1	mww	411.0	30.0		0.73	us	usb000hdx2	2022-05-03T16:21:45.925Z	92 km SE of Lata, Solomon Islands	earthquake					reviewed	us	us
@@ -3652,11 +3653,11 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2014-03-23T18:20:01.930Z	-19.6899	-70.8538	21.0	6.3	mww		82.0	0.695	0.85	us	usc000nm96	2022-08-06T22:35:37.042Z	93 km NW of Iquique, Chile	earthquake		1.8			reviewed	us	us
 2014-03-26T03:29:35.720Z	-26.1692	179.2877	495.0	6.3	mww		22.0	3.933	0.64	us	usc000nqnq	2022-05-03T18:09:11.151Z	south of the Fiji Islands	earthquake		1.8			reviewed	us	us
 2014-03-27T03:49:42.710Z	-12.0989	166.5894	98.0	6.0	mww		28.0	7.04	0.73	us	usc000nsgk	2022-05-03T16:46:12.824Z	174 km SSE of Lata, Solomon Islands	earthquake		1.8			reviewed	us	us
-2014-04-01T23:46:47.260Z	-19.6097	-70.7691	25.0	8.2	mww		23.0	0.609	0.66	us	usc000nzvd	2024-08-17T19:36:59.641Z	93 km NW of Iquique, Chile	earthquake		1.8			reviewed	us	us
+2014-04-01T23:46:47.260Z	-19.6097	-70.7691	25.0	8.2	mww		23.0	0.609	0.66	us	usc000nzvd	2025-09-24T00:55:56.205Z	93 km NW of Iquique, Chile	earthquake		1.8			reviewed	us	us
 2014-04-01T23:57:58.790Z	-19.8927	-70.9455	28.42	6.9	mww		119.0	0.828	0.93	us	usc000nzwm	2022-05-03T17:29:29.270Z	90 km WNW of Iquique, Chile	earthquake		4.2			reviewed	us	us
 2014-04-02T16:13:26.720Z	7.94	-82.34	25.0	6.0	mww		43.0	2.694	0.95	us	usc000p11f	2022-07-26T11:57:34.568Z	33 km SSW of Boca Chica, Panama	earthquake		1.7			reviewed	us	us
 2014-04-03T01:58:30.530Z	-20.3113	-70.5756	24.07	6.5	mww		82.0	0.828	0.62	us	usc000p26f	2022-05-03T16:46:35.649Z	45 km WSW of Iquique, Chile	earthquake		2.7			reviewed	us	us
-2014-04-03T02:43:13.110Z	-20.5709	-70.4931	22.4	7.7	mww		44.0	1.029	0.82	us	usc000p27i	2024-02-14T01:18:35.816Z	53 km SW of Iquique, Chile	earthquake		3.4			reviewed	us	us
+2014-04-03T02:43:13.110Z	-20.5709	-70.4931	22.4	7.7	mww		44.0	1.029	0.82	us	usc000p27i	2025-10-30T01:57:59.486Z	53 km SW of Iquique, Chile	earthquake		3.4			reviewed	us	us
 2014-04-03T05:26:15.700Z	-20.7969	-70.5865	25.0	6.4	mww		35.0	1.056	0.98	us	usc000p2cs	2022-05-03T16:46:40.731Z	79 km SW of Iquique, Chile	earthquake		1.7			reviewed	us	us
 2014-04-04T01:37:50.570Z	-20.6426	-70.654	13.71	6.3	mww		43.0	1.153	1.01	us	usc000p4a9	2022-05-03T16:47:06.595Z	70 km SW of Iquique, Chile	earthquake		2.6			reviewed	us	us
 2014-04-04T11:40:32.000Z	-10.5365	161.7027	57.0	6.0	mww		20.0	2.044	0.88	us	usc000p4ty	2022-07-26T12:10:10.152Z	25 km WSW of Kirakira, Solomon Islands	earthquake		1.9			reviewed	us	us
@@ -3736,7 +3737,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2014-08-18T02:32:05.350Z	32.703	47.695	10.2	6.2	mww				0.46	us	usb000s3np	2022-07-26T22:35:15.173Z	40 km E of Dehlor?n, Iran	earthquake		3.0			reviewed	teh	us
 2014-08-18T18:08:22.750Z	32.5827	47.7037	5.0	6.0	mww		29.0	6.858	0.63	us	usb000s3t7	2022-07-26T22:39:15.231Z	42 km ESE of Dehlor?n, Iran	earthquake		1.7			reviewed	us	us
 2014-08-23T22:32:23.320Z	-32.6953	-71.4416	32.0	6.4	mww		30.0	0.454	0.88	us	usb000s5rc	2022-08-07T01:17:37.386Z	23 km WNW of Hacienda La Calera, Chile	earthquake	4.9	1.7			reviewed	us	us
-2014-08-24T10:20:44.070Z	38.2151667	-122.3123333	11.12	6.02	mw	369.0	28.0	0.03604	0.18	nc	nc72282711	2024-10-18T00:15:54.204Z	The 2014 South Napa, California Earthquake	earthquake	0.11	0.15		0.0	reviewed	nc	nc
+2014-08-24T10:20:44.070Z	38.2151667	-122.3123333	11.12	6.02	mw	369.0	28.0	0.03604	0.18	nc	nc72282711	2025-12-22T10:29:50.802Z	The 2014 South Napa, California Earthquake	earthquake	0.11	0.15		0.0	reviewed	nc	nc
 2014-08-24T23:21:45.520Z	-14.598	-73.5714	101.0	6.8	mww		18.0	4.107	0.9	us	usb000s5x1	2022-07-26T23:28:03.335Z	38 km NW of Aniso, Peru	earthquake	4.7	1.8			reviewed	us	us
 2014-09-04T05:33:50.350Z	-21.3869	-173.3232	35.0	6.0	mww		21.0	3.93	0.86	us	usc000s9v5	2022-05-03T18:18:04.674Z	168 km E of ‘Ohonua, Tonga	earthquake	6.1	1.8			reviewed	us	us
 2014-09-06T06:53:11.760Z	-26.6478	-114.5	7.0	6.1	mww		33.0	4.637	0.57	us	usb000s9vv	2022-05-03T17:00:59.572Z	Easter Island region	earthquake	8.9	1.5			reviewed	us	us
@@ -3873,7 +3874,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2015-09-13T08:14:08.560Z	24.913	-109.6226	10.0	6.7	mww		123.0	1.256	0.65	us	us20003j4u	2022-08-07T08:15:45.108Z	95 km SW of Topolobampo, Mexico	earthquake	6.6	2.0			reviewed	us	us
 2015-09-16T07:40:58.690Z	1.8841	126.4288	41.55	6.3	mww		19.0	1.449	0.99	us	us20003jwc	2022-05-03T17:30:33.528Z	161 km NW of Ternate, Indonesia	earthquake	6.4	3.7			reviewed	us	us
 2015-09-16T14:03:22.110Z	-6.0114	151.4768	6.0	6.1	mww		13.0	1.933	0.92	us	us20003jyz	2022-05-03T19:04:43.441Z	156 km ESE of Kimbe, Papua New Guinea	earthquake	4.6	1.5			reviewed	us	us
-2015-09-16T22:54:32.860Z	-31.5729	-71.6744	22.44	8.3	mww		19.0	0.684	1.02	us	us20003k7a	2025-08-21T23:16:18.163Z	48 km W of Illapel, Chile	earthquake	4.7	3.2			reviewed	us	us
+2015-09-16T22:54:32.860Z	-31.5729	-71.6744	22.44	8.3	mww		19.0	0.684	1.02	us	us20003k7a	2025-10-17T16:49:51.111Z	48 km W of Illapel, Chile	earthquake	4.7	3.2			reviewed	us	us
 2015-09-16T22:59:15.000Z	-31.618	-71.745	26.7	6.4	mb				0.72	us	us20003k8b	2022-08-07T08:16:37.343Z	54 km W of Illapel, Chile	earthquake	6.0	3.6	0.081	60.0	reviewed	guc	us
 2015-09-16T23:03:56.560Z	-31.7502	-71.7425	19.1	6.1	mwr		93.0	1.077	0.95	us	us20003k7m	2022-08-07T08:17:31.027Z	55 km WSW of Illapel, Chile	earthquake	3.2	3.3			reviewed	us	guc
 2015-09-16T23:16:09.440Z	-31.6	-71.9189	35.0	6.1	mb		98.0	0.954	0.76	us	us20003k83	2022-08-01T05:46:01.452Z	71 km W of Illapel, Chile	earthquake	5.3	1.8	0.051	146.0	reviewed	us	us
@@ -3931,7 +3932,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2016-01-14T03:25:33.640Z	41.9723	142.781	46.0	6.7	mww		22.0	0.281	0.98	us	us10004ebx	2025-04-06T15:04:28.717Z	52 km SE of Shizunai-furukawach?, Japan	earthquake	6.2	1.9			reviewed	us	us
 2016-01-21T18:06:57.650Z	18.8239	-106.9337	10.0	6.6	mww		74.0	2.413	0.98	us	us10004g4l	2022-08-07T08:59:13.243Z	203 km SW of La Cruz de Loreto, Mexico	earthquake	6.7	1.7			reviewed	us	us
 2016-01-24T10:30:29.557Z	59.6204	-153.3392	125.6	7.1	mw				1.05	ak	ak01613v15nv	2024-06-16T05:38:15.319Z	47 km ESE of Pedro Bay, Alaska	earthquake		0.4			reviewed	ak	ak
-2016-01-25T04:22:02.730Z	35.6493	-3.6818	12.0	6.3	mww		20.0	2.201	0.92	us	us10004gy9	2022-08-07T09:02:39.959Z	49 km NNE of Al Hoceïma, Morocco	earthquake	5.9	1.7			reviewed	us	us
+2016-01-25T04:22:02.730Z	35.6493	-3.6818	12.0	6.3	mww		20.0	2.201	0.92	us	us10004gy9	2026-01-28T17:22:01.927Z	49 km NNE of Al Hoceïma, Morocco	earthquake	5.9	1.7			reviewed	us	us
 2016-01-26T03:10:20.750Z	-5.2952	153.2454	26.0	6.1	mww		25.0	1.537	0.74	us	us20004uks	2022-05-03T19:19:01.336Z	151 km SE of Kokopo, Papua New Guinea	earthquake	6.2	1.8			reviewed	us	us
 2016-01-30T03:25:12.220Z	53.9776	158.5463	177.0	7.2	mww		17.0	0.958	1.19	us	us20004vvx	2022-08-07T09:07:37.983Z	80 km S of Mil’kovo, Russia	earthquake	5.8	1.8			reviewed	us	us
 2016-01-31T17:38:59.950Z	-63.263	169.1485	10.0	6.1	mww		75.0	14.512	0.62	us	us20004w6c	2022-05-03T19:19:07.101Z	Balleny Islands region	earthquake	11.2	1.8			reviewed	us	us
@@ -3963,7 +3964,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2016-04-14T15:03:47.240Z	32.6973	130.7204	8.0	6.0	mww		32.0	0.446	0.86	us	us20005i1a	2022-05-03T19:34:24.135Z	5 km ENE of Uto, Japan	earthquake	3.9	1.7			reviewed	us	us
 2016-04-14T21:50:27.680Z	-14.5284	166.4334	16.0	6.4	mww		23.0	1.178	1.05	us	us20005i6p	2022-08-02T18:24:32.492Z	89 km NW of Port-Olry, Vanuatu	earthquake	6.4	1.6			reviewed	us	us
 2016-04-15T14:11:26.430Z	13.4008	-92.367	22.41	6.1	mww		63.0	1.293	1.39	us	us20005ih9	2022-05-03T17:44:16.910Z	110 km SSW of Champerico, Guatemala	earthquake	5.3	3.0			reviewed	us	us
-2016-04-15T16:25:06.220Z	32.7906	130.7543	10.0	7.0	mww		32.0	0.349	0.85	us	us20005iis	2023-12-18T16:25:45.505Z	6 km ESE of Kumamoto, Japan	earthquake	4.9	1.7			reviewed	us	us
+2016-04-15T16:25:06.220Z	32.7906	130.7543	10.0	7.0	mww		32.0	0.349	0.85	us	us20005iis	2025-12-23T23:52:26.947Z	6 km ESE of Kumamoto, Japan	earthquake	4.9	1.7			reviewed	us	us
 2016-04-16T23:58:36.980Z	0.3819	-79.9218	20.59	7.8	mww		15.0	1.44	0.94	us	us20005j32	2025-08-01T09:59:30.614Z	27 km SSE of Muisne, Ecuador	earthquake	5.7	3.2			reviewed	us	us
 2016-04-19T05:25:39.940Z	-55.7283	-27.2307	14.0	6.2	mww		32.0	5.521	0.8	us	us20005jqc	2022-05-03T18:51:37.509Z	South Sandwich Islands region	earthquake	9.3	1.7			reviewed	us	us
 2016-04-20T08:33:47.330Z	0.639	-80.2104	14.0	6.2	mww		48.0	1.804	0.83	us	us20005k37	2022-05-03T18:51:48.134Z	21 km W of Muisne, Ecuador	earthquake	5.1	1.3			reviewed	us	us
@@ -4116,7 +4117,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2017-06-28T18:20:55.450Z	-30.3103	-177.6618	19.0	6.0	mww		56.0	1.086	0.9	us	us20009q4v	2022-05-03T19:54:56.017Z	Kermadec Islands, New Zealand	earthquake	8.4	1.3	0.06	27.0	reviewed	us	us
 2017-06-29T07:03:11.040Z	-31.1253	179.9257	404.82	6.0	mww		52.0	2.638	0.83	us	us1000954z	2022-05-03T19:51:30.247Z	Kermadec Islands region	earthquake	9.3	3.6	0.052	35.0	reviewed	us	us
 2017-06-30T22:29:45.140Z	-0.2849	-80.4927	13.0	6.0	mww		27.0	1.953	0.84	us	us100095nr	2022-05-03T18:32:30.829Z	35 km NNW of Bahía de Caráquez, Ecuador	earthquake	5.5	1.7	0.048	42.0	reviewed	us	us
-2017-07-06T08:03:57.550Z	11.1269	124.6286	9.0	6.5	mww		30.0	4.139	0.65	us	us1000976a	2022-05-03T18:42:55.086Z	2 km S of Lim-oo, Philippines	earthquake	6.9	1.8	0.047	44.0	reviewed	us	us
+2017-07-06T08:03:57.550Z	11.1269	124.6286	9.0	6.5	mww		30.0	4.139	0.65	us	us1000976a	2026-02-01T06:56:40.503Z	2 km S of Lim-oo, Philippines	earthquake	6.9	1.8	0.047	44.0	reviewed	us	us
 2017-07-11T07:00:01.190Z	-49.4837	164.0157	10.0	6.6	mww		37.0	3.773	1.5	us	us100098qm	2022-05-03T18:34:59.152Z	Auckland Islands, New Zealand region	earthquake	7.2	1.7	0.057	30.0	reviewed	us	us
 2017-07-13T03:36:08.640Z	-4.7787	153.2109	34.0	6.4	mww		15.0	6.435	0.81	us	us20009vvi	2022-05-03T19:54:11.122Z	115 km ESE of Kokopo, Papua New Guinea	earthquake	7.6	1.5	0.073	18.0	reviewed	us	us
 2017-07-17T11:05:09.060Z	54.5802	168.6484	9.0	6.3	mww		42.0	3.736	0.77	us	us20009wwj	2022-05-03T18:59:58.874Z	Komandorskiye Ostrova, Russia region	earthquake	7.6	1.8	0.05	39.0	reviewed	us	us
@@ -4138,7 +4139,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2017-09-04T08:07:34.500Z	-57.7387	-25.6131	25.0	6.1	mww		21.0	7.009	0.86	us	us2000afh9	2022-05-03T19:51:35.129Z	South Sandwich Islands region	earthquake	8.2	1.7	0.066	22.0	reviewed	us	us
 2017-09-07T17:26:49.320Z	27.7829	139.8041	451.0	6.1	mww		20.0	2.223	1.15	us	us2000ahlq	2022-08-07T16:43:34.777Z	Bonin Islands, Japan region	earthquake	9.1	1.9	0.052	36.0	reviewed	us	us
 2017-09-08T04:49:19.180Z	15.0222	-93.8993	47.39	8.2	mww		22.0	0.944	1.22	us	us2000ahv0	2025-08-09T01:08:31.153Z	2017 Tehuantepec, Mexico Earthquake	earthquake	6.2	3.7	0.058	29.0	reviewed	us	us
-2017-09-19T18:14:38.090Z	18.5499	-98.4887	48.0	7.1	mww		23.0	0.984	1.14	us	us2000ar20	2025-09-11T21:02:07.518Z	1 km S of Matzaco, Mexico	earthquake	4.5	1.8	0.048	41.0	reviewed	us	us
+2017-09-19T18:14:38.090Z	18.5499	-98.4887	48.0	7.1	mww		23.0	0.984	1.14	us	us2000ar20	2025-12-19T01:50:03.762Z	1 km S of Matzaco, Mexico	earthquake	4.5	1.8	0.048	41.0	reviewed	us	us
 2017-09-20T01:43:25.980Z	-50.7087	162.6317	8.0	6.1	mww		56.0	4.407	0.88	us	us2000arel	2022-08-07T18:02:51.831Z	Auckland Islands, New Zealand region	earthquake	4.3	1.7	0.065	23.0	reviewed	us	us
 2017-09-20T16:37:16.360Z	37.9814	144.6601	11.0	6.1	mww		18.0	3.062	0.78	us	us2000arxv	2022-05-03T18:37:19.819Z	282 km ESE of Kamaishi, Japan	earthquake	6.9	1.5	0.047	44.0	reviewed	us	us
 2017-09-20T20:09:49.610Z	-18.7854	169.0946	197.0	6.4	mww		18.0	2.641	0.99	us	us2000as2f	2022-08-07T18:11:00.253Z	85 km NNW of Isangel, Vanuatu	earthquake	7.6	1.9	0.05	39.0	reviewed	us	us
@@ -4234,7 +4235,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2018-07-23T10:35:59.590Z	-0.2994	-19.252	10.0	6.0	mww		38.0	8.859	1.4	us	us2000gbr3	2022-05-03T19:24:32.499Z	central Mid-Atlantic Ridge	earthquake	8.3	1.8	0.052	35.0	reviewed	us	us
 2018-07-28T17:07:23.380Z	-7.1039	122.7263	578.16	6.0	mww		19.0	1.597	1.31	us	us2000gg76	2022-05-03T19:27:14.441Z	177 km NNE of Maumere, Indonesia	earthquake	7.7	2.7	0.039	63.0	reviewed	us	us
 2018-07-28T22:47:38.740Z	-8.2395	116.508	14.0	6.4	mww		14.0	2.342	1.15	us	us2000ggbs	2022-05-03T19:45:52.527Z	33 km NNW of Labuan Lombok, Indonesia	earthquake	3.6	1.6	0.054	33.0	reviewed	us	us
-2018-08-05T11:46:38.630Z	-8.2581	116.4375	34.0	6.9	mww		15.0	2.271	1.05	us	us1000g3ub	2023-09-15T10:03:31.359Z	36 km NW of Labuan Lombok, Indonesia	earthquake	6.2	1.7	0.034	83.0	reviewed	us	us
+2018-08-05T11:46:38.630Z	-8.2581	116.4375	34.0	6.9	mww		15.0	2.271	1.05	us	us1000g3ub	2025-09-29T16:00:15.152Z	36 km NW of Labuan Lombok, Indonesia	earthquake	6.2	1.7	0.034	83.0	reviewed	us	us
 2018-08-10T18:12:07.020Z	48.4593	154.939	27.0	6.0	mww		20.0	5.14	0.83	us	us1000g6hl	2022-05-03T19:26:47.170Z	261 km SSW of Severo-Kuril’sk, Russia	earthquake	7.9	1.7	0.068	21.0	reviewed	us	us
 2018-08-12T14:58:53.503Z	69.5762	-145.291	15.8	6.4	mw				1.31	ak	ak018aap2cqu	2023-08-16T13:36:41.277Z	89 km SW of Kaktovik, Alaska	earthquake		0.2			reviewed	ak	ak
 2018-08-12T21:15:00.999Z	69.5227	-144.3388	16.2	6.0	mw				0.86	ak	ak018aasz24z	2023-08-16T13:43:34.920Z	73 km SSW of Kaktovik, Alaska	earthquake		0.3			reviewed	ak	ak
@@ -4243,7 +4244,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2018-08-16T18:22:53.360Z	23.4226	143.3187	20.0	6.3	mww		17.0	3.798	0.64	us	us1000gaqv	2022-05-03T19:56:50.524Z	Volcano Islands, Japan region	earthquake	7.1	1.7	0.042	54.0	reviewed	us	us
 2018-08-17T15:35:01.890Z	-7.3718	119.8017	529.0	6.5	mww		23.0	2.719	0.98	us	us1000gbi4	2022-05-03T20:03:34.899Z	124 km N of Labuan Bajo, Indonesia	earthquake	8.8	1.9	0.045	48.0	reviewed	us	us
 2018-08-17T23:22:24.950Z	8.7791	-83.1527	15.0	6.1	mww		37.0	0.459	1.12	us	us1000gc0k	2022-05-03T19:56:51.654Z	19 km NNW of Golfito, Costa Rica	earthquake	6.0	1.7	0.052	36.0	reviewed	us	us
-2018-08-19T00:19:40.670Z	-18.1125	-178.153	600.0	8.2	mww		13.0	3.63	0.79	us	us1000gcii	2023-07-04T05:45:52.658Z	267 km E of Levuka, Fiji	earthquake	9.6	1.9	0.045	47.0	reviewed	us	us
+2018-08-19T00:19:40.670Z	-18.1125	-178.153	600.0	8.2	mww		13.0	3.63	0.79	us	us1000gcii	2025-11-26T16:39:52.070Z	2018 Fiji Earthquake	earthquake	9.6	1.9	0.045	47.0	reviewed	us	us
 2018-08-19T00:23:06.180Z	-18.4447	-177.6404	575.76	6.3	mb		50.0	4.155	0.75	us	us1000gcnc	2022-05-03T19:27:29.272Z	Fiji region	earthquake	3.2	6.9	0.082	58.0	reviewed	us	us
 2018-08-19T04:10:22.640Z	-8.3366	116.5993	16.0	6.3	mww		14.0	2.424	1.11	us	us1000gcvr	2022-05-03T19:27:27.925Z	19 km NNW of Labuan Lombok, Indonesia	earthquake	6.2	1.7	0.11	8.0	reviewed	us	us
 2018-08-19T04:28:58.700Z	-16.9783	-178.0332	415.6	6.4	mb		17.0	3.814	0.95	us	us1000gcwt	2022-05-03T19:43:27.517Z	284 km ESE of Labasa, Fiji	earthquake	7.8	4.6	0.022	790.0	reviewed	us	us
@@ -4299,7 +4300,7 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2018-11-18T20:25:46.590Z	-17.8735	-178.9273	540.0	6.8	mww		39.0	2.879	1.3	us	us1000htm5	2022-05-03T19:50:32.483Z	187 km E of Levuka, Fiji	earthquake	8.1	1.9	0.038	65.0	reviewed	us	us
 2018-11-25T03:40:50.810Z	13.1817	-81.0931	10.0	6.0	mww		25.0	0.326	0.94	us	us1000hwaj	2022-05-03T19:39:47.110Z	36 km SE of Mountain, Colombia	earthquake	6.4	1.8	0.045	47.0	reviewed	us	us
 2018-11-25T16:37:32.830Z	34.3609	45.7443	18.0	6.3	mww		22.0	0.754	0.86	us	us1000hwdw	2023-10-20T08:36:59.937Z	15 km SW of Sarpol-e Z?ah?b, Iran	earthquake	5.7	1.8	0.059	28.0	reviewed	us	us
-2018-11-30T17:29:29.330Z	61.3464	-149.9552	46.7	7.1	mw				1.04	ak	ak018fcnsk91	2024-12-17T17:51:52.088Z	1 km SE of Point MacKenzie, Alaska	earthquake		0.1			reviewed	ak	ak
+2018-11-30T17:29:29.330Z	61.3464	-149.9552	46.7	7.1	mw				1.04	ak	ak018fcnsk91	2025-12-08T00:32:38.359Z	1 km SE of Point MacKenzie, Alaska	earthquake		0.1			reviewed	ak	ak
 2018-12-01T13:27:21.080Z	-7.3841	128.7065	136.0	6.4	mww		20.0	2.637	0.93	us	us1000hzjp	2022-05-03T19:58:20.497Z	226 km NE of Lospalos, Timor Leste	earthquake	7.2	1.9	0.043	52.0	reviewed	us	us
 2018-12-05T04:14:36.490Z	-22.0161	169.3495	10.0	6.3	mb		19.0	2.696	0.73	us	us1000i2gr	2022-05-03T19:54:43.387Z	160 km ESE of Tadine, New Caledonia	earthquake	7.4	1.7	0.035	317.0	reviewed	us	us
 2018-12-05T04:18:08.420Z	-21.9496	169.4266	10.0	7.5	mww		18.0	2.405	0.74	us	us1000i2gt	2022-05-03T19:50:49.454Z	166 km ESE of Tadine, New Caledonia	earthquake	5.1	1.5	0.047	44.0	reviewed	us	us
@@ -4314,148 +4315,148 @@ time	latitude	longitude	depth	mag	magType	nst	gap	dmin	rms	net	id	updated	place	
 2018-12-24T12:41:19.250Z	55.3439	164.5099	10.0	6.1	mww		30.0	4.153	0.77	us	us2000ix3y	2022-05-03T19:42:28.902Z	161 km SE of Ust’-Kamchatsk Staryy, Russia	earthquake	7.0	1.8	0.042	54.0	reviewed	us	us
 2018-12-29T03:39:09.740Z	5.8983	126.9209	60.21	7.0	mww		21.0	1.769	1.45	us	us2000iyta	2025-07-15T17:58:58.027Z	96 km ESE of Pondaguitan, Philippines	earthquake	6.1	3.2	0.038	67.0	reviewed	us	us
 2018-12-31T02:35:37.670Z	54.4266	-161.5131	31.0	6.0	mww		44.0	0.92	1.14	us	us2000izcv	2023-08-18T13:57:18.062Z	87 km SE of King Cove, Alaska	earthquake	4.2	1.8	0.033	89.0	reviewed	us	us
-2019-01-05T19:25:38.520Z	-8.144	-71.587	570.41	6.8	mww		16.0	1.181	1.15	us	us2000j0ja	2019-03-08T17:50:16.040Z	90 km W of Tarauacá, Brazil	earthquake	7.1	2.7	0.049	40.0	reviewed	us	us
-2019-01-06T17:27:18.980Z	2.258	126.758	43.21	6.6	mww		33.0	1.596	0.87	us	us2000j0uj	2022-02-28T06:18:53.845Z	Molucca Sea	earthquake	6.7	3.6	0.038	68.0	reviewed	us	us
-2019-01-08T12:39:30.950Z	30.5872	131.0441	35.0	6.3	mww		26.0	2.534	0.83	us	us2000j1d4	2022-08-08T11:22:13.671Z	16 km SSE of Nishinoomote, Japan	earthquake	6.0	1.8	0.051	37.0	reviewed	us	us
-2019-01-15T18:06:34.300Z	-13.336	166.8752	35.0	6.6	mww		18.0	7.818	0.75	us	us2000j468	2021-09-02T11:11:45.607Z	94 km NW of Sola, Vanuatu	earthquake	8.2	1.9	0.038	66.0	reviewed	us	us
-2019-01-17T15:06:35.650Z	-3.2307	146.3889	10.0	6.2	mww		40.0	1.531	1.01	us	us2000j545	2019-04-05T21:40:59.040Z	164 km SW of Lorengau, Papua New Guinea	earthquake	6.2	1.7	0.047	43.0	reviewed	us	us
-2019-01-18T13:18:31.030Z	-19.2036	168.7446	38.67	6.0	mww		19.0	3.575	0.76	us	us2000j5qu	2019-04-05T21:41:00.040Z	67 km WNW of Isangel, Vanuatu	earthquake	7.7	3.4	0.048	42.0	reviewed	us	us
-2019-01-20T01:32:52.480Z	-30.0404	-71.3815	63.0	6.7	mww		22.0	0.173	1.47	us	us2000j6hy	2023-01-11T16:52:20.385Z	10 km SSW of Coquimbo, Chile	earthquake	5.8	1.8	0.036	73.0	reviewed	us	us
-2019-01-21T23:59:23.860Z	-10.3278	119.1521	26.0	6.0	mww		41.0	3.477	1.18	us	us2000j70q	2019-04-05T21:41:02.040Z	142 km WSW of Waingapu, Indonesia	earthquake	6.2	1.8	0.039	64.0	reviewed	us	us
-2019-01-22T05:10:03.480Z	-10.4148	119.0165	24.0	6.3	mww		32.0	3.635	1.33	us	us2000j73a	2019-04-12T17:13:49.040Z	160 km WSW of Waingapu, Indonesia	earthquake	5.4	1.8	0.046	46.0	reviewed	us	us
-2019-01-22T19:01:43.580Z	-43.1219	42.3568	13.0	6.7	mww		17.0	7.527	0.72	us	us2000j7dn	2019-04-12T17:14:02.040Z	Prince Edward Islands region	earthquake	4.9	1.7	0.04	61.0	reviewed	us	us
-2019-01-26T03:51:37.870Z	-7.0089	156.3207	355.0	6.2	mww		13.0	4.326	1.21	us	us2000j92w	2021-09-02T14:51:23.659Z	116 km SE of Kieta, Papua New Guinea	earthquake	8.3	1.9	0.048	41.0	reviewed	us	us
-2019-01-26T19:56:44.070Z	-21.0475	-178.9592	588.0	6.2	mww		17.0	4.329	0.86	us	us2000j98z	2019-04-12T17:15:29.040Z	Fiji region	earthquake	9.1	1.9	0.051	37.0	reviewed	us	us
-2019-02-01T16:14:12.329Z	14.6802	-92.4527	66.0	6.7	mww		43.0	0.289	1.36	us	us2000jbub	2021-09-23T02:41:13.397Z	5 km SW of Puerto Madero, Mexico	earthquake	5.7	1.8	0.065	23.0	reviewed	us	us
-2019-02-02T09:27:36.030Z	-2.8462	100.0743	20.0	6.0	mww		38.0	3.245	0.72	us	us2000jcbz	2020-07-10T17:24:14.302Z	170 km WSW of Sungai Penuh, Indonesia	earthquake	6.7	1.8	0.073	18.0	reviewed	us	us
-2019-02-12T12:34:16.500Z	19.02	145.7965	144.32	6.0	mww		21.0	3.758	0.84	us	us2000jgma	2022-08-08T12:14:36.484Z	Maug Islands region, Northern Mariana Islands	earthquake	4.8	4.2	0.046	46.0	reviewed	us	us
-2019-02-14T19:57:04.980Z	35.4267	-36.0378	10.0	6.2	mww		32.0	8.771	0.8	us	us2000ji4e	2019-05-01T22:00:44.040Z	northern Mid-Atlantic Ridge	earthquake	9.3	1.8	0.034	83.0	reviewed	us	us
-2019-02-17T14:35:55.840Z	-3.3412	152.1319	368.12	6.4	mww		23.0	0.845	1.39	us	us2000jj68	2022-04-08T06:04:02.379Z	95 km N of Rabaul, Papua New Guinea	earthquake	8.8	3.3	0.04	60.0	reviewed	us	us
-2019-02-22T10:17:23.770Z	-2.1862	-77.0505	145.0	7.5	mww		15.0	2.045	1.12	us	us2000jlfv	2020-07-07T22:52:36.277Z	115 km ESE of Palora, Ecuador	earthquake	6.2	1.8	0.026	144.0	reviewed	us	us
-2019-03-01T08:50:42.591Z	-14.7131	-70.1546	267.0	7.0	mww		42.0	2.501	1.13	us	us1000j96d	2022-04-13T12:11:57.121Z	22 km NNE of Azángaro, Peru	earthquake	7.6	1.9	0.033	87.0	reviewed	us	us
-2019-03-06T15:46:14.900Z	-32.0238	-177.8845	29.0	6.4	mww		29.0	7.868	0.92	us	us1000jb8d	2019-05-24T21:21:08.040Z	south of the Kermadec Islands	earthquake	10.1	1.8	0.039	64.0	reviewed	us	us
-2019-03-08T15:06:12.620Z	10.384	126.006	30.0	6.0	mww		102.0	3.32	0.92	us	us1000jccx	2019-05-24T21:21:17.040Z	40 km N of Santa Monica, Philippines	earthquake	8.5	1.7	0.043	51.0	reviewed	us	us
-2019-03-10T08:12:26.426Z	-17.8915	-178.6034	578.19	6.2	mww		19.0	3.188	1.03	us	us1000jd55	2019-05-24T21:21:26.040Z	221 km E of Levuka, Fiji	earthquake	9.4	3.2	0.06	27.0	reviewed	us	us
-2019-03-10T12:48:00.607Z	-10.1317	152.0647	9.0	6.0	mww		35.0	4.888	0.75	us	us1000jd7d	2019-05-24T21:21:26.040Z	162 km ENE of Samarai, Papua New Guinea	earthquake	7.1	1.8	0.039	64.0	reviewed	us	us
-2019-03-15T05:03:50.060Z	-17.8744	-65.9072	359.0	6.3	mww		23.0	2.648	0.95	us	us1000jg5z	2019-06-01T21:24:15.040Z	31 km SSE of Tarata, Bolivia	earthquake	6.8	1.9	0.03	108.0	reviewed	us	us
-2019-03-20T15:23:58.680Z	-15.5965	167.6551	119.0	6.3	mww		21.0	6.542	0.87	us	us1000jj9r	2022-08-08T13:03:23.036Z	53 km E of Luganville, Vanuatu	earthquake	5.9	1.8	0.036	76.0	reviewed	us	us
-2019-03-23T19:21:17.998Z	4.5595	-76.223	122.0	6.1	mww		20.0	1.916	1.09	us	us1000jkrq	2025-01-03T01:14:35.496Z	3 km WSW of Versalles, Colombia	earthquake	5.4	1.8	0.057	30.0	reviewed	us	us
-2019-03-24T04:37:35.918Z	1.6601	126.3955	45.0	6.1	mww		30.0	1.312	1.38	us	us1000jkwi	2022-08-08T13:08:12.095Z	146 km NW of Ternate, Indonesia	earthquake	5.8	1.9	0.043	53.0	reviewed	us	us
-2019-03-28T22:06:49.401Z	50.4951	159.943	9.0	6.2	mww		17.0	2.656	0.81	us	us2000k6u4	2019-06-08T20:51:21.040Z	266 km ESE of Ozernovskiy, Russia	earthquake	5.3	1.6	0.039	64.0	reviewed	us	us
-2019-03-30T11:20:42.559Z	-5.7003	151.1053	41.0	6.2	mww		25.0	1.832	0.87	us	us2000k7ks	2020-07-10T17:26:58.353Z	108 km E of Kimbe, Papua New Guinea	earthquake	7.4	1.9	0.052	35.0	reviewed	us	us
-2019-03-31T07:04:04.795Z	-1.9446	-80.8101	18.0	6.2	mww		36.0	1.635	0.83	us	us2000k7vu	2020-07-10T17:27:10.016Z	31 km N of Santa Elena, Ecuador	earthquake	6.8	1.8	0.034	81.0	reviewed	us	us
-2019-04-01T18:39:05.857Z	-18.2058	65.3656	10.0	6.0	mww		65.0	9.535	1.17	us	us2000k8ri	2021-09-02T14:55:48.134Z	262 km NE of Port Mathurin, Mauritius	earthquake	8.1	1.8	0.06	27.0	reviewed	us	us
-2019-04-02T21:35:30.049Z	52.1702	178.0709	7.98	6.4	mww		19.0	1.94	0.55	us	us2000k9d7	2021-09-07T05:57:42.475Z	Rat Islands, Aleutian Islands, Alaska	earthquake	6.4	2.5	0.031	101.0	reviewed	us	us
-2019-04-05T16:14:16.716Z	-55.9308	-27.8522	57.0	6.4	mww		31.0	5.225	0.86	us	us2000kav9	2019-06-18T15:50:26.040Z	South Sandwich Islands region	earthquake	8.5	1.8	0.047	44.0	reviewed	us	us
-2019-04-06T21:55:01.660Z	-6.8285	125.0416	539.0	6.3	mww		20.0	3.007	0.93	us	us2000kbi1	2019-06-19T23:26:40.987Z	197 km N of Likisá, Timor Leste	earthquake	8.8	1.9	0.034	84.0	reviewed	us	us
-2019-04-09T17:53:58.423Z	-58.6262	-25.304	38.0	6.5	mww		18.0	7.568	1.08	us	us600032fg	2019-06-20T19:03:09.040Z	South Sandwich Islands region	earthquake	8.2	1.8	0.049	40.0	reviewed	us	us
-2019-04-11T08:18:21.380Z	40.4096	143.2985	18.0	6.0	mww		50.0	1.607	0.66	us	us700034d3	2019-06-20T19:03:16.040Z	143 km NE of Miyako, Japan	earthquake	5.7	1.8	0.062	25.0	reviewed	us	us
-2019-04-12T11:40:49.363Z	-1.8146	122.5798	15.46	6.8	mww		28.0	0.791	1.16	us	us700034xq	2020-07-10T17:38:26.662Z	Sulawesi, Indonesia	earthquake	2.0	2.8	0.056	31.0	reviewed	us	us
-2019-04-12T12:23:04.870Z	-15.4067	-172.8171	15.36	6.0	mww		29.0	1.796	0.9	us	us700034ya	2019-06-20T19:03:24.040Z	121 km ENE of Hihifo, Tonga	earthquake	8.6	3.5	0.08	15.0	reviewed	us	us
-2019-04-12T14:51:31.603Z	-6.4883	148.7394	30.0	6.0	mww		17.0	3.293	0.97	us	us700034zz	2022-08-08T13:19:44.355Z	94 km WSW of Kandrian, Papua New Guinea	earthquake	6.5	1.6	0.073	18.0	reviewed	us	us
-2019-04-18T05:01:06.493Z	24.0374	121.6501	20.0	6.1	mww		23.0	0.144	1.15	us	us700038c1	2020-07-10T17:38:53.068Z	8 km NE of Hualien City, Taiwan	earthquake	7.0	1.8	0.051	37.0	reviewed	us	us
-2019-04-18T14:46:01.733Z	-51.127	139.321	10.0	6.3	mww		44.0	9.863	1.39	us	us700038m1	2019-06-26T20:54:51.040Z	western Indian-Antarctic Ridge	earthquake	10.1	1.8	0.049	40.0	reviewed	us	us
-2019-04-22T09:11:12.013Z	14.9538	120.5149	21.84	6.1	mww		20.0	0.94	1.01	us	us70003a63	2025-03-31T17:27:10.496Z	3 km WSW of San Francisco, Philippines	earthquake	6.3	3.7	0.035	77.0	reviewed	us	us
-2019-04-22T14:49:05.341Z	-56.2633	-27.3509	79.0	6.0	mww		30.0	5.587	0.74	us	us70003a91	2019-06-26T20:55:14.040Z	South Sandwich Islands region	earthquake	9.5	1.9	0.053	34.0	reviewed	us	us
-2019-04-23T05:37:53.147Z	11.7547	125.2013	56.0	6.4	mww		15.0	4.67	1.07	us	us70003aj3	2021-05-06T05:34:27.306Z	17 km ESE of Tutubigan, Philippines	earthquake	7.0	1.9	0.042	54.0	reviewed	us	us
-2019-04-23T14:20:17.830Z	-24.7059	-178.7639	385.58	6.0	mww		34.0	7.535	0.97	us	us70003an0	2019-07-13T18:42:35.040Z	south of the Fiji Islands	earthquake	7.4	3.7	0.049	40.0	reviewed	us	us
-2019-04-29T14:19:52.499Z	10.8649	57.2283	10.0	6.3	mww		47.0	12.379	1.1	us	us70003e0j	2019-07-13T18:42:52.040Z	Carlsberg Ridge	earthquake	8.3	1.8	0.059	28.0	reviewed	us	us
-2019-05-03T07:25:31.787Z	-6.9478	160.1125	27.0	6.2	mww		35.0	2.48	0.66	us	us70003g5a	2022-08-08T13:31:47.812Z	144 km NNE of Buala, Solomon Islands	earthquake	8.1	1.8	0.044	50.0	reviewed	us	us
-2019-05-06T21:19:37.983Z	-6.9746	146.4494	146.0	7.1	mww		16.0	2.514	1.02	us	us70003hqb	2020-07-10T17:40:18.038Z	32 km NW of Bulolo, Papua New Guinea	earthquake	6.6	1.6	0.032	93.0	reviewed	us	us
-2019-05-09T23:48:42.779Z	31.7772	131.8483	22.0	6.2	mww		17.0	1.575	0.67	us	us70003j46	2020-07-07T22:53:25.325Z	43 km ESE of Miyazaki, Japan	earthquake	5.0	1.8	0.055	32.0	reviewed	us	us
-2019-05-12T19:24:50.373Z	8.625	-82.8298	19.0	6.0	mww		53.0	0.218	1.09	us	us70003k3p	2021-06-28T15:44:23.702Z	1 km W of Breñón, Panama	earthquake	5.0	1.7	0.036	75.0	reviewed	us	us
-2019-05-14T12:58:25.939Z	-4.051	152.5967	10.0	7.6	mww		16.0	0.453	1.0	us	us70003kyy	2020-07-07T22:53:37.609Z	48 km NE of Kokopo, Papua New Guinea	earthquake	3.8	1.6	0.046	45.0	reviewed	us	us
-2019-05-19T01:23:29.151Z	-21.6619	169.7779	20.0	6.3	mww		18.0	2.359	1.18	us	us70003n4z	2019-08-07T22:03:50.040Z	196 km E of Tadine, New Caledonia	earthquake	7.9	1.8	0.042	54.0	reviewed	us	us
-2019-05-19T14:27:11.826Z	-21.7313	169.5758	16.0	6.0	mww		53.0	2.159	1.03	us	us70003n8z	2019-08-07T22:03:52.040Z	176 km E of Tadine, New Caledonia	earthquake	6.7	1.8	0.052	35.0	reviewed	us	us
-2019-05-19T14:56:50.691Z	-21.6074	169.4692	20.0	6.3	mww		75.0	2.125	1.07	us	us70003n96	2022-08-08T13:49:24.356Z	164 km E of Tadine, New Caledonia	earthquake	8.2	1.9	0.049	40.0	reviewed	us	us
-2019-05-23T08:45:17.746Z	51.3078	-178.2387	30.0	6.0	mww		53.0	0.436	1.05	us	us60003r2r	2019-08-13T14:30:31.040Z	127 km WSW of Adak, Alaska	earthquake	5.2	1.8	0.021	217.0	reviewed	us	us
-2019-05-26T07:41:15.073Z	-5.8119	-75.2697	122.57	8.0	mww		17.0	3.18	0.84	us	us60003sc0	2023-12-01T16:49:45.378Z	78 km NE of Navarro, Peru	earthquake	7.0	4.0	0.036	75.0	reviewed	us	us
-2019-05-30T09:03:32.337Z	13.1994	-89.3056	57.92	6.6	mww		22.0	1.193	0.83	us	us70003t2n	2025-02-21T03:31:21.498Z	32 km S of La Libertad, El Salvador	earthquake	1.7	5.5	0.073	18.0	reviewed	us	us
-2019-05-30T15:38:01.451Z	-21.7541	-176.3171	177.85	6.0	mww		25.0	6.557	0.82	us	us70003t7v	2019-08-24T21:17:37.040Z	132 km WSW of Haveluloto, Tonga	earthquake	9.5	3.5	0.046	46.0	reviewed	us	us
-2019-05-31T10:12:32.876Z	6.2795	126.479	98.72	6.1	mww		26.0	1.189	0.74	us	us70003tl7	2019-08-24T21:17:39.040Z	34 km ESE of Pondaguitan, Philippines	earthquake	6.2	4.6	0.048	41.0	reviewed	us	us
-2019-06-02T10:36:29.673Z	-21.2068	-173.9096	10.0	6.0	mww		66.0	4.3	0.69	us	us70003ud5	2019-08-24T21:17:48.040Z	108 km E of ‘Ohonua, Tonga	earthquake	8.9	1.8	0.048	41.0	reviewed	us	us
-2019-06-04T04:39:16.961Z	29.0665	139.289	422.0	6.4	mww		21.0	3.224	0.85	us	us70003v3j	2019-08-27T17:47:26.040Z	Izu Islands, Japan region	earthquake	8.4	1.9	0.036	75.0	reviewed	us	us
-2019-06-14T00:19:12.401Z	-30.0557	-72.0819	11.0	6.4	mww		30.0	0.727	0.87	us	us600040ja	2020-12-18T19:22:57.753Z	72 km W of Coquimbo, Chile	earthquake	4.1	1.6	0.035	80.0	reviewed	us	us
-2019-06-15T21:56:10.835Z	-21.1807	-174.169	13.0	6.1	mww		21.0	7.582	0.89	us	us60004177	2019-09-06T14:25:11.040Z	82 km ENE of ‘Ohonua, Tonga	earthquake	8.4	1.7	0.052	36.0	reviewed	us	us
-2019-06-15T22:55:04.130Z	-30.6441	-178.0995	46.0	7.3	mww		11.0	1.402	0.81	us	us6000417i	2019-09-06T14:25:11.040Z	Kermadec Islands, New Zealand	earthquake	9.1	1.8	0.029	113.0	reviewed	us	us
-2019-06-16T05:17:14.868Z	-31.0004	-178.0819	21.0	6.3	mww		35.0	1.754	0.91	us	us600041b3	2019-09-06T14:25:12.040Z	Kermadec Islands region	earthquake	9.9	1.8	0.047	43.0	reviewed	us	us
-2019-06-17T06:02:04.099Z	-30.8389	-177.481	12.0	6.1	mww		49.0	1.635	0.85	us	us600041lv	2019-09-06T14:25:16.040Z	Kermadec Islands, New Zealand	earthquake	9.7	1.7	0.036	74.0	reviewed	us	us
-2019-06-18T13:22:19.010Z	38.6391	139.4769	12.0	6.4	mww		33.0	1.288	0.87	us	us600042fx	2022-04-06T05:39:26.974Z	31 km WSW of Tsuruoka, Japan	earthquake	5.5	1.8	0.048	42.0	reviewed	us	us
-2019-06-19T07:01:45.433Z	-30.5243	-177.8482	30.0	6.4	mww		45.0	1.276	1.34	us	us600042vn	2019-09-11T15:19:12.040Z	Kermadec Islands, New Zealand	earthquake	7.6	1.8	0.055	32.0	reviewed	us	us
-2019-06-19T17:24:48.803Z	-2.2656	138.461	10.0	6.3	mww		58.0	2.255	0.88	us	us6000434e	2022-08-08T14:16:25.404Z	244 km W of Abepura, Indonesia	earthquake	6.7	1.8	0.061	26.0	reviewed	us	us
-2019-06-21T08:37:16.948Z	-30.8591	-177.4681	14.0	6.2	mww		29.0	1.657	0.74	us	us6000444m	2019-09-11T15:19:24.040Z	Kermadec Islands, New Zealand	earthquake	8.7	1.8	0.038	67.0	reviewed	us	us
-2019-06-24T01:05:29.464Z	-2.7756	138.5675	28.0	6.1	mww		19.0	2.15	1.1	us	us600044z4	2020-07-10T17:29:59.301Z	230 km W of Abepura, Indonesia	earthquake	6.8	1.8	0.048	41.0	reviewed	us	us
-2019-06-24T02:53:39.830Z	-6.4078	129.1692	212.0	7.3	mww		16.0	2.629	1.08	us	us600044zz	2025-07-14T06:00:33.688Z	Banda Sea	earthquake	5.1	1.8	0.045	48.0	reviewed	us	us
-2019-06-25T09:05:40.478Z	56.202	164.2327	10.0	6.4	mww		55.0	4.546	0.57	us	us600045mz	2020-07-10T17:31:24.456Z	108 km E of Ust’-Kamchatsk Staryy, Russia	earthquake	6.7	1.8	0.033	90.0	reviewed	us	us
-2019-06-26T02:18:07.841Z	56.1821	164.0881	10.0	6.3	mww		15.0	4.473	0.89	us	us7000451w	2020-07-10T17:42:35.738Z	100 km E of Ust’-Kamchatsk Staryy, Russia	earthquake	7.2	1.7	0.036	74.0	reviewed	us	us
-2019-06-26T05:23:51.514Z	8.4612	-82.754	32.58	6.2	mww		42.0	0.337	1.12	us	us7000455l	2021-06-15T06:00:08.303Z	4 km SE of Aserrío de Gariché, Panama	earthquake	6.1	4.0	0.031	100.0	reviewed	us	us
-2019-06-27T11:04:56.341Z	-30.3961	-179.182	10.0	6.3	mww		43.0	1.581	1.15	us	us700045vh	2019-09-14T16:08:13.040Z	Kermadec Islands region	earthquake	7.8	1.7	0.063	24.0	reviewed	us	us
-2019-06-28T15:51:31.302Z	19.8515	144.3477	410.0	6.4	mww		26.0	4.787	1.16	us	us700046la	2021-06-13T16:33:53.176Z	Maug Islands region, Northern Mariana Islands	earthquake	7.9	1.9	0.043	53.0	reviewed	us	us
-2019-07-01T17:13:28.400Z	-15.4403	167.531	91.0	6.0	mww		53.0	6.675	1.11	us	us70004840	2019-09-14T16:08:27.040Z	40 km ENE of Luganville, Vanuatu	earthquake	8.6	1.9	0.048	41.0	reviewed	us	us
-2019-07-04T04:30:44.424Z	51.2369	-130.5005	10.0	6.2	mww		70.0	1.143	1.01	us	us700049sf	2019-09-26T14:30:08.040Z	250 km WNW of Port McNeill, Canada	earthquake	6.6	1.8	0.026	143.0	reviewed	us	us
-2019-07-04T17:33:49.000Z	35.7053333	-117.5038333	10.5	6.4	mw	62.0	47.0	0.1233	0.16	ci	ci38443183	2025-05-20T01:31:52.957Z	Ridgecrest Earthquake Sequence	earthquake	0.15	0.36		6.0	reviewed	ci	ci
-2019-07-06T03:19:53.040Z	35.7695	-117.5993333	8.0	7.1	mw	77.0	43.0	0.04616	0.22	ci	ci38457511	2025-09-03T03:30:14.637Z	Ridgecrest Earthquake Sequence	earthquake	0.19	31.61	0.028	126.0	reviewed	ci	ci
-2019-07-07T15:08:40.525Z	0.5126	126.1892	35.0	6.9	mww		21.0	1.205	0.8	us	us70004dz3	2019-09-26T14:30:53.040Z	136 km WSW of Ternate, Indonesia	earthquake	6.2	1.9	0.043	51.0	reviewed	us	us
-2019-07-11T17:08:37.977Z	-4.6408	155.2241	495.17	6.0	mww		26.0	3.084	0.7	us	us70004icj	2019-09-28T20:01:12.040Z	179 km NNW of Arawa, Papua New Guinea	earthquake	2.7	3.6	0.045	48.0	reviewed	us	us
-2019-07-13T00:57:44.339Z	29.3533	128.1534	251.0	6.1	mww		11.0	2.51	1.19	us	us70004jea	2019-09-28T20:01:16.040Z	169 km NW of Naze, Japan	earthquake	6.3	1.8	0.033	86.0	reviewed	us	us
-2019-07-14T05:39:23.420Z	-18.2242	120.3584	10.0	6.6	mww		32.0	2.978	0.7	us	us70004jxe	2020-07-10T17:44:37.654Z	198 km W of Cable Beach, Australia	earthquake	6.5	1.5	0.029	116.0	reviewed	us	us
-2019-07-14T09:10:51.523Z	-0.5858	128.034	18.98	7.2	mww		38.0	1.504	0.88	us	us70004jyv	2020-07-30T13:31:26.346Z	155 km SSE of Sofifi, Indonesia	earthquake	7.3	3.4	0.049	40.0	reviewed	us	us
-2019-07-15T08:21:34.171Z	-5.9707	149.4881	42.0	6.3	mww		20.0	3.198	0.88	us	us70004kfs	2020-07-10T17:45:36.711Z	26 km NNW of Kandrian, Papua New Guinea	earthquake	8.2	1.9	0.038	67.0	reviewed	us	us
-2019-07-23T10:33:24.050Z	-61.2867	154.1145	10.0	6.0	mww		36.0	17.135	0.63	us	us70004r4f	2019-10-11T20:12:22.040Z	Balleny Islands region	earthquake	11.1	1.7	0.073	18.0	reviewed	us	us
-2019-07-26T23:37:58.444Z	20.8373	121.9744	9.0	6.0	mww		23.0	2.138	0.75	us	us60004w8x	2020-07-10T17:31:51.149Z	43 km N of Basco, Philippines	earthquake	6.4	1.7	0.055	32.0	reviewed	us	us
-2019-07-27T18:31:07.540Z	33.1492	137.3029	367.0	6.3	mww		14.0	1.691	0.79	us	us60004wjb	2019-10-11T20:12:42.040Z	138 km ESE of Shing?, Japan	earthquake	7.0	1.9	0.055	32.0	reviewed	us	us
-2019-07-31T15:02:33.853Z	-16.1985	167.9982	181.0	6.6	mww		30.0	6.024	0.99	us	us60004xz4	2019-10-19T21:42:01.040Z	63 km E of Lakatoro, Vanuatu	earthquake	7.6	1.8	0.038	65.0	reviewed	us	us
-2019-08-01T18:28:07.270Z	-34.2364	-72.3102	25.0	6.8	mww		35.0	0.817	0.91	us	us60004yps	2021-08-01T01:48:40.212Z	96 km SW of San Antonio, Chile	earthquake	5.1	1.8	0.045	48.0	reviewed	us	us
-2019-08-02T05:50:55.239Z	-49.7307	-113.8331	10.0	6.0	mww		82.0	22.79	0.92	us	us60004z9n	2019-10-19T21:42:04.040Z	southern East Pacific Rise	earthquake	8.5	1.8	0.058	29.0	reviewed	us	us
-2019-08-02T12:03:27.001Z	-7.2822	104.7907	49.0	6.9	mww		23.0	2.839	0.76	us	us60004zhq	2025-08-21T09:46:12.910Z	152 km SW of Labuan, Indonesia	earthquake	7.0	1.9	0.043	51.0	reviewed	us	us
-2019-08-04T10:23:03.726Z	37.7594	141.6031	38.0	6.3	mww		32.0	0.653	0.78	us	us600050if	2020-07-10T17:33:19.457Z	61 km ENE of Namie, Japan	earthquake	7.3	1.9	0.071	19.0	reviewed	us	us
-2019-08-20T13:03:52.633Z	-11.3683	166.2912	37.0	6.0	mww		42.0	4.15	0.99	us	us600057ee	2020-07-10T17:34:29.511Z	Santa Cruz Islands	earthquake	7.7	1.9	0.066	22.0	reviewed	us	us
-2019-08-21T14:28:25.652Z	-50.3302	139.324	10.0	6.0	mww		67.0	9.234	0.66	us	us600057xt	2019-11-08T22:13:37.040Z	western Indian-Antarctic Ridge	earthquake	7.9	1.7	0.071	19.0	reviewed	us	us
-2019-08-24T15:51:27.119Z	-14.309	167.1897	115.0	6.0	mww		26.0	1.131	1.19	us	us700057v4	2019-11-08T22:13:46.040Z	61 km SW of Sola, Vanuatu	earthquake	8.7	1.8	0.043	53.0	reviewed	us	us
-2019-08-27T23:55:19.187Z	-60.2152	-26.5801	16.0	6.6	mww		19.0	12.896	0.91	us	us700058yy	2019-11-15T17:18:59.040Z	South Sandwich Islands region	earthquake	9.1	1.7	0.045	48.0	reviewed	us	us
-2019-08-29T15:07:58.646Z	43.5425	-127.8817	10.0	6.3	mww		31.0	2.678	1.17	us	us700059qh	2021-08-14T16:56:05.720Z	285 km W of Bandon, Oregon	earthquake	6.9	1.8	0.04	60.0	reviewed	us	us
-2019-09-01T15:54:20.392Z	-20.3641	-178.5701	591.0	6.6	mww		19.0	4.121	1.02	us	us70005axg	2019-11-15T17:21:30.040Z	Fiji region	earthquake	9.9	1.9	0.038	65.0	reviewed	us	us
-2019-09-19T07:06:33.291Z	-6.0708	111.8422	610.0	6.1	mww		19.0	1.698	0.97	us	us60005kta	2019-12-10T17:26:57.040Z	81 km NNE of Lasem, Indonesia	earthquake	8.8	2.0	0.038	66.0	reviewed	us	us
-2019-09-24T03:23:40.000Z	19.077	-67.2701	10.0	6.0	mw	25.0	193.0	0.6299	0.88	pr	pr2019267000	2023-03-22T02:42:09.311Z	67 km NNW of San Antonio, Puerto Rico	earthquake	3.8	31.61	0.51	25.0	reviewed	pr	pr
-2019-09-24T21:19:47.423Z	-33.8212	56.2997	10.0	6.0	mww		16.0	11.982	0.69	us	us60005n52	2019-12-20T19:02:17.040Z	Southwest Indian Ridge	earthquake	8.8	1.7	0.049	40.0	reviewed	us	us
-2019-09-25T23:46:43.543Z	-3.4528	128.3699	12.26	6.5	mww		15.0	3.909	0.95	us	us70005lfd	2020-07-10T17:48:10.911Z	33 km NE of Ambon, Indonesia	earthquake	6.2	2.4	0.038	65.0	reviewed	us	us
-2019-09-26T16:36:18.155Z	-40.8145	-71.9993	129.0	6.1	mww		30.0	0.445	0.79	us	us70005lt4	2021-02-06T20:54:24.047Z	30 km W of Villa La Angostura, Argentina	earthquake	4.5	1.8	0.058	29.0	reviewed	us	us
-2019-09-27T12:05:02.549Z	-30.1733	-177.8625	34.0	6.1	mww		18.0	0.926	0.86	us	us70005mea	2019-12-20T19:03:15.040Z	Kermadec Islands, New Zealand	earthquake	7.1	1.8	0.046	45.0	reviewed	us	us
-2019-09-29T02:02:51.883Z	5.6756	126.5481	73.0	6.2	mww		16.0	1.686	1.33	us	us70005nbb	2025-08-03T13:03:29.087Z	86 km SSE of Pondaguitan, Philippines	earthquake	7.2	1.8	0.036	73.0	reviewed	us	us
-2019-09-29T15:57:53.236Z	-35.4758	-73.163	11.0	6.7	mww		98.0	1.269	0.65	us	us70005nie	2022-07-14T04:59:14.954Z	70 km WSW of Constitución, Chile	earthquake	3.0	1.8	0.04	61.0	reviewed	us	us
-2019-10-01T03:56:07.115Z	-55.9278	-122.5586	10.0	6.0	mww		50.0	27.632	0.8	us	us70005p73	2019-12-27T15:49:34.040Z	southern East Pacific Rise	earthquake	11.5	1.0	0.063	24.0	reviewed	us	us
-2019-10-16T11:37:06.342Z	6.7147	125.007	16.12	6.4	mww		33.0	0.668	0.85	us	us70005ulm	2025-07-02T16:42:58.024Z	7 km ENE of Columbio, Philippines	earthquake	6.4	4.2	0.043	53.0	reviewed	us	us
-2019-10-21T02:52:29.674Z	-19.0184	169.4883	231.0	6.4	mww		23.0	2.806	0.91	us	us70005wj6	2020-01-03T16:09:41.040Z	61 km NNE of Isangel, Vanuatu	earthquake	7.1	0.8	0.035	78.0	reviewed	us	us
-2019-10-23T16:08:14.497Z	-1.0987	-13.8367	10.0	6.3	mww		18.0	6.716	0.92	us	us70005xr7	2020-01-11T21:26:30.040Z	north of Ascension Island	earthquake	8.9	1.8	0.063	24.0	reviewed	us	us
-2019-10-29T01:04:43.879Z	6.7567	125.0082	15.0	6.6	mww		24.0	0.646	0.78	us	us6000645n	2025-08-03T13:08:21.076Z	10 km NE of Columbio, Philippines	earthquake	5.7	1.8	0.043	52.0	reviewed	us	us
-2019-10-31T01:11:19.146Z	6.9098	125.1782	10.0	6.5	mww		19.0	0.428	0.76	us	us700061e9	2025-08-03T13:00:34.653Z	2 km ENE of Bulatukan, Philippines	earthquake	7.0	1.7	0.043	51.0	reviewed	us	us
-2019-11-02T18:08:41.113Z	-55.735	-26.2399	8.0	6.1	mww		23.0	6.073	1.3	us	us700062cg	2020-01-18T20:00:55.040Z	South Sandwich Islands region	earthquake	8.7	1.6	0.05	38.0	reviewed	us	us
-2019-11-04T21:53:25.320Z	-31.8362	-71.3753	53.0	6.1	mww		23.0	0.707	1.14	us	us70006345	2020-12-18T19:22:01.015Z	29 km SW of Illapel, Chile	earthquake	4.7	1.8	0.057	30.0	reviewed	us	us
-2019-11-04T22:43:32.280Z	-18.5747	-175.272	10.0	6.6	mww		48.0	5.086	0.93	us	us7000635e	2022-01-10T10:27:32.839Z	136 km W of Neiafu, Tonga	earthquake	8.3	1.8	0.04	61.0	reviewed	us	us
-2019-11-05T20:52:01.485Z	-57.9236	-9.3217	10.0	6.3	mww		30.0	14.063	1.42	us	us700063mh	2020-02-01T23:21:37.040Z	east of the South Sandwich Islands	earthquake	10.0	1.7	0.048	41.0	reviewed	us	us
-2019-11-05T23:17:26.588Z	-13.7988	167.7494	19.0	6.0	mww		38.0	1.721	0.9	us	us700063rx	2020-07-10T17:52:20.510Z	23 km ENE of Sola, Vanuatu	earthquake	9.2	1.8	0.065	23.0	reviewed	us	us
-2019-11-06T00:39:09.303Z	-13.7208	167.8086	10.0	6.0	mww		36.0	1.813	1.07	us	us700063sp	2020-07-10T17:52:35.122Z	Vanuatu	earthquake	8.0	1.7	0.061	26.0	reviewed	us	us
-2019-11-08T10:44:44.338Z	-21.9449	-179.5113	577.0	6.5	mww		25.0	4.765	0.83	us	us6000693m	2020-02-01T23:21:56.040Z	Fiji region	earthquake	9.2	1.9	0.042	55.0	reviewed	us	us
-2019-11-11T23:03:28.119Z	-18.8625	-175.3675	10.0	6.2	mww		17.0	5.152	0.75	us	us60006adv	2020-02-01T23:22:24.040Z	147 km W of Neiafu, Tonga	earthquake	6.4	1.7	0.063	24.0	reviewed	us	us
-2019-11-14T16:17:40.578Z	1.6213	126.4156	33.0	7.1	mww		11.0	1.271	1.15	us	us60006bjl	2020-10-03T05:38:51.266Z	141 km NW of Ternate, Indonesia	earthquake	6.1	1.7	0.036	75.0	reviewed	us	us
-2019-11-14T21:12:54.753Z	1.5361	126.4161	23.0	6.0	mww		18.0	1.216	1.42	us	us60006bpw	2020-02-07T20:21:07.040Z	135 km NW of Ternate, Indonesia	earthquake	6.6	1.7	0.061	26.0	reviewed	us	us
-2019-11-20T04:27:05.252Z	13.8859	-93.2068	15.0	6.3	mww		56.0	1.365	0.79	us	us70006a6q	2021-07-12T23:26:26.672Z	125 km SW of Puerto Madero, Mexico	earthquake	4.4	1.5	0.032	96.0	reviewed	us	us
-2019-11-20T08:26:08.017Z	53.128	153.6799	496.0	6.3	mww		16.0	2.421	0.94	us	us70006a9e	2020-02-14T22:02:06.040Z	264 km NW of Ozernovskiy, Russia	earthquake	8.9	1.9	0.051	37.0	reviewed	us	us
-2019-11-20T23:50:43.955Z	19.4533	101.3558	10.0	6.2	mww		15.0	2.366	0.62	us	us70006ara	2020-07-10T17:53:43.441Z	43 km WNW of Sainyabuli, Laos	earthquake	6.4	1.7	0.049	40.0	reviewed	us	us
-2019-11-23T12:11:15.564Z	1.6436	132.8148	5.0	6.2	mww		25.0	4.567	0.94	us	us70006c6w	2020-02-14T22:02:14.040Z	241 km SE of Tobi Village, Palau	earthquake	6.5	1.7	0.042	54.0	reviewed	us	us
-2019-11-24T00:54:01.053Z	51.3808	-175.5115	20.0	6.3	mww		22.0	0.658	0.95	us	us70006cb6	2022-08-08T17:00:40.183Z	95 km SE of Adak, Alaska	earthquake	3.9	1.8	0.031	99.0	reviewed	us	us
-2019-11-26T02:54:12.872Z	41.5138	19.5256	22.0	6.4	mww		17.0	0.936	0.61	us	us70006d0m	2024-09-26T17:53:08.094Z	15 km WSW of Mamurras, Albania	earthquake	4.3	1.8	0.037	72.0	reviewed	us	us
-2019-11-27T07:23:42.383Z	35.7174	23.2284	69.0	6.0	mww		18.0	1.421	1.02	us	us70006dlt	2020-02-19T18:58:10.040Z	45 km WNW of Kíssamos, Greece	earthquake	6.5	1.9	0.051	37.0	reviewed	us	us
-2019-12-02T05:01:54.821Z	51.1867	-178.1001	28.0	6.0	mww		57.0	0.578	1.03	us	us70006f6d	2021-11-17T03:56:40.586Z	127 km SW of Adak, Alaska	earthquake	4.3	1.8	0.039	63.0	reviewed	us	us
-2019-12-03T08:46:35.780Z	-18.5042	-70.576	38.0	6.0	mww		82.0	0.258	1.38	us	us70006fh7	2020-07-10T17:55:35.215Z	29 km W of Arica, Chile	earthquake	5.5	1.9	0.071	19.0	reviewed	us	us
-2019-12-04T20:10:03.595Z	-19.0677	169.5748	266.0	6.0	mww		20.0	2.804	0.72	us	us60006m2j	2022-08-08T17:21:07.483Z	60 km NNE of Isangel, Vanuatu	earthquake	7.3	1.8	0.037	71.0	reviewed	us	us
-2019-12-06T13:04:46.540Z	-15.2594	-175.1035	10.0	6.0	mww		47.0	3.488	0.54	us	us60006n19	2022-08-08T17:24:29.836Z	159 km WNW of Hihifo, Tonga	earthquake	6.5	1.6	0.089	12.0	reviewed	us	us
-2019-12-14T04:57:34.937Z	-14.3628	167.7089	7.51	6.0	mww		25.0	1.183	1.38	us	us60006rem	2020-07-10T17:37:38.138Z	56 km SSE of Sola, Vanuatu	earthquake	7.4	3.4	0.058	29.0	reviewed	us	us
-2019-12-15T06:11:51.155Z	6.6969	125.1739	18.0	6.8	mww		39.0	0.546	1.05	us	us60006rp9	2025-07-15T18:05:00.764Z	7 km S of Magsaysay, Philippines	earthquake	8.0	1.7	0.051	37.0	reviewed	us	us
-2019-12-20T11:39:52.874Z	36.5374	70.4555	212.0	6.1	mww		18.0	1.382	0.87	us	us70006p18	2020-07-10T17:55:56.914Z	49 km SW of Jurm, Afghanistan	earthquake	6.4	1.9	0.058	29.0	reviewed	us	us
-2019-12-23T19:49:43.086Z	50.6071	-129.9372	10.0	6.0	mww		100.0	1.149	1.06	us	us70006q8n	2020-03-07T17:47:53.040Z	201 km W of Port McNeill, Canada	earthquake	4.4	1.8	0.03	106.0	reviewed	us	us
-2019-12-23T20:56:23.555Z	50.5169	-129.7573	10.0	6.0	mww		99.0	1.042	1.05	us	us70006q96	2020-03-07T17:47:53.040Z	189 km W of Port McNeill, Canada	earthquake	5.7	1.8	0.038	66.0	reviewed	us	us
-2019-12-24T16:43:33.420Z	-26.964	-63.3857	572.44	6.0	mww		31.0	5.13	0.93	us	us70006qk4	2021-02-27T19:53:04.130Z	16 km WNW of El Hoyo, Argentina	earthquake	9.1	3.0	0.04	61.0	reviewed	us	us
-2019-12-24T19:03:52.492Z	3.5359	-74.0176	11.0	6.0	mww		36.0	1.335	0.68	us	us70006qnn	2025-01-16T00:29:02.433Z	1 km NE of Lejanías, Colombia	earthquake	6.5	1.7	0.041	58.0	reviewed	us	us
-2019-12-25T03:36:01.626Z	50.6106	-129.963	6.58	6.3	mww		77.0	1.853	0.67	us	us70006qt7	2020-03-14T22:25:03.040Z	203 km W of Port McNeill, Canada	earthquake	7.2	1.3	0.032	95.0	reviewed	us	us
-2019-12-25T20:20:12.751Z	-25.2226	-115.8438	10.0	6.1	mww		38.0	6.072	1.15	us	us70006r1g	2020-03-14T22:24:43.040Z	southern East Pacific Rise	earthquake	10.8	1.8	0.059	28.0	reviewed	us	us
+2019-01-05T19:25:38.520Z	-8.144	-71.587	570.41	6.8	mww		16.0	1.181	1.15	us	us2000j0ja	2025-12-22T17:53:24.312Z	90 km W of Tarauacá, Brazil	earthquake	7.1	2.7	0.049	40.0	reviewed	us	us
+2019-01-06T17:27:18.980Z	2.258	126.758	43.21	6.6	mww		33.0	1.596	0.87	us	us2000j0uj	2025-12-22T17:53:28.672Z	Molucca Sea	earthquake	6.7	3.6	0.038	68.0	reviewed	us	us
+2019-01-08T12:39:30.950Z	30.5872	131.0441	35.0	6.3	mww		26.0	2.534	0.83	us	us2000j1d4	2025-12-22T18:01:25.751Z	16 km SSE of Nishinoomote, Japan	earthquake	6.0	1.8	0.051	37.0	reviewed	us	us
+2019-01-15T18:06:34.300Z	-13.336	166.8752	35.0	6.6	mww		18.0	7.818	0.75	us	us2000j468	2025-12-22T18:01:40.993Z	94 km NW of Sola, Vanuatu	earthquake	8.2	1.9	0.038	66.0	reviewed	us	us
+2019-01-17T15:06:35.650Z	-3.2307	146.3889	10.0	6.2	mww		40.0	1.531	1.01	us	us2000j545	2025-12-22T17:53:35.075Z	164 km SW of Lorengau, Papua New Guinea	earthquake	6.2	1.7	0.047	43.0	reviewed	us	us
+2019-01-18T13:18:31.030Z	-19.2036	168.7446	38.67	6.0	mww		19.0	3.575	0.76	us	us2000j5qu	2025-12-22T17:53:46.634Z	67 km WNW of Isangel, Vanuatu	earthquake	7.7	3.4	0.048	42.0	reviewed	us	us
+2019-01-20T01:32:52.480Z	-30.0404	-71.3815	63.0	6.7	mww		22.0	0.173	1.47	us	us2000j6hy	2025-12-22T18:02:58.269Z	10 km SSW of Coquimbo, Chile	earthquake	5.8	1.8	0.036	73.0	reviewed	us	us
+2019-01-21T23:59:23.860Z	-10.3278	119.1521	26.0	6.0	mww		41.0	3.477	1.18	us	us2000j70q	2025-12-22T18:02:00.343Z	142 km WSW of Waingapu, Indonesia	earthquake	6.2	1.8	0.039	64.0	reviewed	us	us
+2019-01-22T05:10:03.480Z	-10.4148	119.0165	24.0	6.3	mww		32.0	3.635	1.33	us	us2000j73a	2025-12-22T18:02:01.927Z	160 km WSW of Waingapu, Indonesia	earthquake	5.4	1.8	0.046	46.0	reviewed	us	us
+2019-01-22T19:01:43.580Z	-43.1219	42.3568	13.0	6.7	mww		17.0	7.527	0.72	us	us2000j7dn	2025-12-22T18:03:00.422Z	Prince Edward Islands region	earthquake	4.9	1.7	0.04	61.0	reviewed	us	us
+2019-01-26T03:51:37.870Z	-7.0089	156.3207	355.0	6.2	mww		13.0	4.326	1.21	us	us2000j92w	2025-12-22T18:09:40.166Z	116 km SE of Kieta, Papua New Guinea	earthquake	8.3	1.9	0.048	41.0	reviewed	us	us
+2019-01-26T19:56:44.070Z	-21.0475	-178.9592	588.0	6.2	mww		17.0	4.329	0.86	us	us2000j98z	2025-12-22T18:03:01.911Z	Fiji region	earthquake	9.1	1.9	0.051	37.0	reviewed	us	us
+2019-02-01T16:14:12.329Z	14.6802	-92.4527	66.0	6.7	mww		43.0	0.289	1.36	us	us2000jbub	2025-12-22T18:55:26.669Z	5 km SW of Puerto Madero, Mexico	earthquake	5.7	1.8	0.065	23.0	reviewed	us	us
+2019-02-02T09:27:36.030Z	-2.8462	100.0743	20.0	6.0	mww		38.0	3.245	0.72	us	us2000jcbz	2025-12-22T18:02:35.599Z	170 km WSW of Sungai Penuh, Indonesia	earthquake	6.7	1.8	0.073	18.0	reviewed	us	us
+2019-02-12T12:34:16.500Z	19.02	145.7965	144.32	6.0	mww		21.0	3.758	0.84	us	us2000jgma	2025-12-22T18:03:16.612Z	Maug Islands region, Northern Mariana Islands	earthquake	4.8	4.2	0.046	46.0	reviewed	us	us
+2019-02-14T19:57:04.980Z	35.4267	-36.0378	10.0	6.2	mww		32.0	8.771	0.8	us	us2000ji4e	2025-12-22T17:53:49.732Z	northern Mid-Atlantic Ridge	earthquake	9.3	1.8	0.034	83.0	reviewed	us	us
+2019-02-17T14:35:55.840Z	-3.3412	152.1319	368.12	6.4	mww		23.0	0.845	1.39	us	us2000jj68	2025-12-22T18:06:10.301Z	95 km N of Rabaul, Papua New Guinea	earthquake	8.8	3.3	0.04	60.0	reviewed	us	us
+2019-02-22T10:17:23.770Z	-2.1862	-77.0505	145.0	7.5	mww		15.0	2.045	1.12	us	us2000jlfv	2025-12-22T18:03:48.343Z	115 km ESE of Palora, Ecuador	earthquake	6.2	1.8	0.026	144.0	reviewed	us	us
+2019-03-01T08:50:42.591Z	-14.7131	-70.1546	267.0	7.0	mww		42.0	2.501	1.13	us	us1000j96d	2025-12-22T18:56:34.300Z	22 km NNE of Azángaro, Peru	earthquake	7.6	1.9	0.033	87.0	reviewed	us	us
+2019-03-06T15:46:14.900Z	-32.0238	-177.8845	29.0	6.4	mww		29.0	7.868	0.92	us	us1000jb8d	2025-12-22T18:07:37.409Z	south of the Kermadec Islands	earthquake	10.1	1.8	0.039	64.0	reviewed	us	us
+2019-03-08T15:06:12.620Z	10.384	126.006	30.0	6.0	mww		102.0	3.32	0.92	us	us1000jccx	2025-12-22T18:05:40.542Z	40 km N of Santa Monica, Philippines	earthquake	8.5	1.7	0.043	51.0	reviewed	us	us
+2019-03-10T08:12:26.426Z	-17.8915	-178.6034	578.19	6.2	mww		19.0	3.188	1.03	us	us1000jd55	2025-12-22T18:07:26.376Z	221 km E of Levuka, Fiji	earthquake	9.4	3.2	0.06	27.0	reviewed	us	us
+2019-03-10T12:48:00.607Z	-10.1317	152.0647	9.0	6.0	mww		35.0	4.888	0.75	us	us1000jd7d	2025-12-22T18:05:47.804Z	162 km ENE of Samarai, Papua New Guinea	earthquake	7.1	1.8	0.039	64.0	reviewed	us	us
+2019-03-15T05:03:50.060Z	-17.8744	-65.9072	359.0	6.3	mww		23.0	2.648	0.95	us	us1000jg5z	2025-12-22T18:56:35.558Z	31 km SSE of Tarata, Bolivia	earthquake	6.8	1.9	0.03	108.0	reviewed	us	us
+2019-03-20T15:23:58.680Z	-15.5965	167.6551	119.0	6.3	mww		21.0	6.542	0.87	us	us1000jj9r	2025-12-22T18:19:19.700Z	53 km E of Luganville, Vanuatu	earthquake	5.9	1.8	0.036	76.0	reviewed	us	us
+2019-03-23T19:21:17.998Z	4.5595	-76.223	122.0	6.1	mww		20.0	1.916	1.09	us	us1000jkrq	2025-12-22T18:56:25.569Z	3 km WSW of Versalles, Colombia	earthquake	5.4	1.8	0.057	30.0	reviewed	us	us
+2019-03-24T04:37:35.918Z	1.6601	126.3955	45.0	6.1	mww		30.0	1.312	1.38	us	us1000jkwi	2025-12-22T18:06:37.137Z	146 km NW of Ternate, Indonesia	earthquake	5.8	1.9	0.043	53.0	reviewed	us	us
+2019-03-28T22:06:49.401Z	50.4951	159.943	9.0	6.2	mww		17.0	2.656	0.81	us	us2000k6u4	2025-12-22T18:06:49.477Z	266 km ESE of Ozernovskiy, Russia	earthquake	5.3	1.6	0.039	64.0	reviewed	us	us
+2019-03-30T11:20:42.559Z	-5.7003	151.1053	41.0	6.2	mww		25.0	1.832	0.87	us	us2000k7ks	2025-12-22T17:54:06.327Z	108 km E of Kimbe, Papua New Guinea	earthquake	7.4	1.9	0.052	35.0	reviewed	us	us
+2019-03-31T07:04:04.795Z	-1.9446	-80.8101	18.0	6.2	mww		36.0	1.635	0.83	us	us2000k7vu	2025-12-22T18:56:28.127Z	31 km N of Santa Elena, Ecuador	earthquake	6.8	1.8	0.034	81.0	reviewed	us	us
+2019-04-01T18:39:05.857Z	-18.2058	65.3656	10.0	6.0	mww		65.0	9.535	1.17	us	us2000k8ri	2025-12-22T18:07:01.730Z	262 km NE of Port Mathurin, Mauritius	earthquake	8.1	1.8	0.06	27.0	reviewed	us	us
+2019-04-02T21:35:30.049Z	52.1702	178.0709	7.98	6.4	mww		19.0	1.94	0.55	us	us2000k9d7	2025-12-22T18:07:05.625Z	Rat Islands, Aleutian Islands, Alaska	earthquake	6.4	2.5	0.031	101.0	reviewed	us	us
+2019-04-05T16:14:16.716Z	-55.9308	-27.8522	57.0	6.4	mww		31.0	5.225	0.86	us	us2000kav9	2025-12-22T18:07:13.213Z	South Sandwich Islands region	earthquake	8.5	1.8	0.047	44.0	reviewed	us	us
+2019-04-06T21:55:01.660Z	-6.8285	125.0416	539.0	6.3	mww		20.0	3.007	0.93	us	us2000kbi1	2025-12-22T18:07:17.241Z	197 km N of Likisá, Timor Leste	earthquake	8.8	1.9	0.034	84.0	reviewed	us	us
+2019-04-09T17:53:58.423Z	-58.6262	-25.304	38.0	6.5	mww		18.0	7.568	1.08	us	us600032fg	2025-12-22T18:07:36.755Z	South Sandwich Islands region	earthquake	8.2	1.8	0.049	40.0	reviewed	us	us
+2019-04-11T08:18:21.380Z	40.4096	143.2985	18.0	6.0	mww		50.0	1.607	0.66	us	us700034d3	2025-12-22T18:14:39.122Z	143 km NE of Miyako, Japan	earthquake	5.7	1.8	0.062	25.0	reviewed	us	us
+2019-04-12T11:40:49.363Z	-1.8146	122.5798	15.46	6.8	mww		28.0	0.791	1.16	us	us700034xq	2025-12-22T18:07:42.352Z	Sulawesi, Indonesia	earthquake	2.0	2.8	0.056	31.0	reviewed	us	us
+2019-04-12T12:23:04.870Z	-15.4067	-172.8171	15.36	6.0	mww		29.0	1.796	0.9	us	us700034ya	2025-12-22T18:07:43.046Z	121 km ENE of Hihifo, Tonga	earthquake	8.6	3.5	0.08	15.0	reviewed	us	us
+2019-04-12T14:51:31.603Z	-6.4883	148.7394	30.0	6.0	mww		17.0	3.293	0.97	us	us700034zz	2025-12-22T17:54:23.078Z	94 km WSW of Kandrian, Papua New Guinea	earthquake	6.5	1.6	0.073	18.0	reviewed	us	us
+2019-04-18T05:01:06.493Z	24.0374	121.6501	20.0	6.1	mww		23.0	0.144	1.15	us	us700038c1	2025-12-22T18:08:01.463Z	8 km NE of Hualien City, Taiwan	earthquake	7.0	1.8	0.051	37.0	reviewed	us	us
+2019-04-18T14:46:01.733Z	-51.127	139.321	10.0	6.3	mww		44.0	9.863	1.39	us	us700038m1	2025-12-22T18:19:22.028Z	western Indian-Antarctic Ridge	earthquake	10.1	1.8	0.049	40.0	reviewed	us	us
+2019-04-22T09:11:12.013Z	14.9538	120.5149	21.84	6.1	mww		20.0	0.94	1.01	us	us70003a63	2025-12-22T17:54:14.919Z	3 km WSW of San Francisco, Philippines	earthquake	6.3	3.7	0.035	77.0	reviewed	us	us
+2019-04-22T14:49:05.341Z	-56.2633	-27.3509	79.0	6.0	mww		30.0	5.587	0.74	us	us70003a91	2025-12-22T18:08:20.962Z	South Sandwich Islands region	earthquake	9.5	1.9	0.053	34.0	reviewed	us	us
+2019-04-23T05:37:53.147Z	11.7547	125.2013	56.0	6.4	mww		15.0	4.67	1.07	us	us70003aj3	2025-12-22T18:08:30.512Z	17 km ESE of Tutubigan, Philippines	earthquake	7.0	1.9	0.042	54.0	reviewed	us	us
+2019-04-23T14:20:17.830Z	-24.7059	-178.7639	385.58	6.0	mww		34.0	7.535	0.97	us	us70003an0	2025-12-22T18:09:19.629Z	south of the Fiji Islands	earthquake	7.4	3.7	0.049	40.0	reviewed	us	us
+2019-04-29T14:19:52.499Z	10.8649	57.2283	10.0	6.3	mww		47.0	12.379	1.1	us	us70003e0j	2025-12-22T18:08:54.263Z	Carlsberg Ridge	earthquake	8.3	1.8	0.059	28.0	reviewed	us	us
+2019-05-03T07:25:31.787Z	-6.9478	160.1125	27.0	6.2	mww		35.0	2.48	0.66	us	us70003g5a	2025-12-22T18:10:50.059Z	144 km NNE of Buala, Solomon Islands	earthquake	8.1	1.8	0.044	50.0	reviewed	us	us
+2019-05-06T21:19:37.983Z	-6.9746	146.4494	146.0	7.1	mww		16.0	2.514	1.02	us	us70003hqb	2025-12-22T17:54:41.705Z	32 km NW of Bulolo, Papua New Guinea	earthquake	6.6	1.6	0.032	93.0	reviewed	us	us
+2019-05-09T23:48:42.779Z	31.7772	131.8483	22.0	6.2	mww		17.0	1.575	0.67	us	us70003j46	2025-12-22T18:01:02.170Z	43 km ESE of Miyazaki, Japan	earthquake	5.0	1.8	0.055	32.0	reviewed	us	us
+2019-05-12T19:24:50.373Z	8.625	-82.8298	19.0	6.0	mww		53.0	0.218	1.09	us	us70003k3p	2025-12-22T19:01:45.474Z	1 km W of Breñón, Panama	earthquake	5.0	1.7	0.036	75.0	reviewed	us	us
+2019-05-14T12:58:25.939Z	-4.051	152.5967	10.0	7.6	mww		16.0	0.453	1.0	us	us70003kyy	2025-12-22T18:09:33.553Z	48 km NE of Kokopo, Papua New Guinea	earthquake	3.8	1.6	0.046	45.0	reviewed	us	us
+2019-05-19T01:23:29.151Z	-21.6619	169.7779	20.0	6.3	mww		18.0	2.359	1.18	us	us70003n4z	2025-12-22T18:09:43.278Z	196 km E of Tadine, New Caledonia	earthquake	7.9	1.8	0.042	54.0	reviewed	us	us
+2019-05-19T14:27:11.826Z	-21.7313	169.5758	16.0	6.0	mww		53.0	2.159	1.03	us	us70003n8z	2025-12-22T18:20:32.889Z	176 km E of Tadine, New Caledonia	earthquake	6.7	1.8	0.052	35.0	reviewed	us	us
+2019-05-19T14:56:50.691Z	-21.6074	169.4692	20.0	6.3	mww		75.0	2.125	1.07	us	us70003n96	2025-12-22T18:09:44.851Z	164 km E of Tadine, New Caledonia	earthquake	8.2	1.9	0.049	40.0	reviewed	us	us
+2019-05-23T08:45:17.746Z	51.3078	-178.2387	30.0	6.0	mww		53.0	0.436	1.05	us	us60003r2r	2025-12-22T18:09:52.463Z	127 km WSW of Adak, Alaska	earthquake	5.2	1.8	0.021	217.0	reviewed	us	us
+2019-05-26T07:41:15.073Z	-5.8119	-75.2697	122.57	8.0	mww		17.0	3.18	0.84	us	us60003sc0	2025-12-22T18:09:59.494Z	78 km NE of Navarro, Peru	earthquake	7.0	4.0	0.036	75.0	reviewed	us	us
+2019-05-30T09:03:32.337Z	13.1994	-89.3056	57.92	6.6	mww		22.0	1.193	0.83	us	us70003t2n	2025-12-22T18:54:47.868Z	32 km S of La Libertad, El Salvador	earthquake	1.7	5.5	0.073	18.0	reviewed	us	us
+2019-05-30T15:38:01.451Z	-21.7541	-176.3171	177.85	6.0	mww		25.0	6.557	0.82	us	us70003t7v	2025-12-22T17:54:40.594Z	132 km WSW of Haveluloto, Tonga	earthquake	9.5	3.5	0.046	46.0	reviewed	us	us
+2019-05-31T10:12:32.876Z	6.2795	126.479	98.72	6.1	mww		26.0	1.189	0.74	us	us70003tl7	2025-12-22T18:10:03.995Z	34 km ESE of Pondaguitan, Philippines	earthquake	6.2	4.6	0.048	41.0	reviewed	us	us
+2019-06-02T10:36:29.673Z	-21.2068	-173.9096	10.0	6.0	mww		66.0	4.3	0.69	us	us70003ud5	2025-12-22T18:14:02.883Z	108 km E of ‘Ohonua, Tonga	earthquake	8.9	1.8	0.048	41.0	reviewed	us	us
+2019-06-04T04:39:16.961Z	29.0665	139.289	422.0	6.4	mww		21.0	3.224	0.85	us	us70003v3j	2025-12-22T19:02:59.324Z	Izu Islands, Japan region	earthquake	8.4	1.9	0.036	75.0	reviewed	us	us
+2019-06-14T00:19:12.401Z	-30.0557	-72.0819	11.0	6.4	mww		30.0	0.727	0.87	us	us600040ja	2025-12-22T18:10:59.748Z	72 km W of Coquimbo, Chile	earthquake	4.1	1.6	0.035	80.0	reviewed	us	us
+2019-06-15T21:56:10.835Z	-21.1807	-174.169	13.0	6.1	mww		21.0	7.582	0.89	us	us60004177	2025-12-22T18:11:11.113Z	82 km ENE of ‘Ohonua, Tonga	earthquake	8.4	1.7	0.052	36.0	reviewed	us	us
+2019-06-15T22:55:04.130Z	-30.6441	-178.0995	46.0	7.3	mww		11.0	1.402	0.81	us	us6000417i	2025-12-22T18:20:34.003Z	Kermadec Islands, New Zealand	earthquake	9.1	1.8	0.029	113.0	reviewed	us	us
+2019-06-16T05:17:14.868Z	-31.0004	-178.0819	21.0	6.3	mww		35.0	1.754	0.91	us	us600041b3	2025-12-22T18:14:05.904Z	Kermadec Islands region	earthquake	9.9	1.8	0.047	43.0	reviewed	us	us
+2019-06-17T06:02:04.099Z	-30.8389	-177.481	12.0	6.1	mww		49.0	1.635	0.85	us	us600041lv	2025-12-22T18:43:07.447Z	Kermadec Islands, New Zealand	earthquake	9.7	1.7	0.036	74.0	reviewed	us	us
+2019-06-18T13:22:19.010Z	38.6391	139.4769	12.0	6.4	mww		33.0	1.288	0.87	us	us600042fx	2025-12-22T17:54:46.523Z	31 km WSW of Tsuruoka, Japan	earthquake	5.5	1.8	0.048	42.0	reviewed	us	us
+2019-06-19T07:01:45.433Z	-30.5243	-177.8482	30.0	6.4	mww		45.0	1.276	1.34	us	us600042vn	2025-12-22T18:12:30.504Z	Kermadec Islands, New Zealand	earthquake	7.6	1.8	0.055	32.0	reviewed	us	us
+2019-06-19T17:24:48.803Z	-2.2656	138.461	10.0	6.3	mww		58.0	2.255	0.88	us	us6000434e	2025-12-22T18:11:38.517Z	244 km W of Abepura, Indonesia	earthquake	6.7	1.8	0.061	26.0	reviewed	us	us
+2019-06-21T08:37:16.948Z	-30.8591	-177.4681	14.0	6.2	mww		29.0	1.657	0.74	us	us6000444m	2025-12-22T18:19:28.948Z	Kermadec Islands, New Zealand	earthquake	8.7	1.8	0.038	67.0	reviewed	us	us
+2019-06-24T01:05:29.464Z	-2.7756	138.5675	28.0	6.1	mww		19.0	2.15	1.1	us	us600044z4	2025-12-22T18:00:27.896Z	230 km W of Abepura, Indonesia	earthquake	6.8	1.8	0.048	41.0	reviewed	us	us
+2019-06-24T02:53:39.830Z	-6.4078	129.1692	212.0	7.3	mww		16.0	2.629	1.08	us	us600044zz	2025-12-22T18:12:00.331Z	Banda Sea	earthquake	5.1	1.8	0.045	48.0	reviewed	us	us
+2019-06-25T09:05:40.478Z	56.202	164.2327	10.0	6.4	mww		55.0	4.546	0.57	us	us600045mz	2025-12-22T18:12:09.960Z	108 km E of Ust’-Kamchatsk Staryy, Russia	earthquake	6.7	1.8	0.033	90.0	reviewed	us	us
+2019-06-26T02:18:07.841Z	56.1821	164.0881	10.0	6.3	mww		15.0	4.473	0.89	us	us7000451w	2025-12-22T18:12:12.380Z	100 km E of Ust’-Kamchatsk Staryy, Russia	earthquake	7.2	1.7	0.036	74.0	reviewed	us	us
+2019-06-26T05:23:51.514Z	8.4612	-82.754	32.58	6.2	mww		42.0	0.337	1.12	us	us7000455l	2025-12-22T18:12:13.550Z	4 km SE of Aserrío de Gariché, Panama	earthquake	6.1	4.0	0.031	100.0	reviewed	us	us
+2019-06-27T11:04:56.341Z	-30.3961	-179.182	10.0	6.3	mww		43.0	1.581	1.15	us	us700045vh	2025-12-22T18:14:13.450Z	Kermadec Islands region	earthquake	7.8	1.7	0.063	24.0	reviewed	us	us
+2019-06-28T15:51:31.302Z	19.8515	144.3477	410.0	6.4	mww		26.0	4.787	1.16	us	us700046la	2025-12-22T18:12:20.710Z	Maug Islands region, Northern Mariana Islands	earthquake	7.9	1.9	0.043	53.0	reviewed	us	us
+2019-07-01T17:13:28.400Z	-15.4403	167.531	91.0	6.0	mww		53.0	6.675	1.11	us	us70004840	2025-12-22T18:12:34.118Z	40 km ENE of Luganville, Vanuatu	earthquake	8.6	1.9	0.048	41.0	reviewed	us	us
+2019-07-04T04:30:44.424Z	51.2369	-130.5005	10.0	6.2	mww		70.0	1.143	1.01	us	us700049sf	2025-12-22T18:12:39.891Z	250 km WNW of Port McNeill, Canada	earthquake	6.6	1.8	0.026	143.0	reviewed	us	us
+2019-07-04T17:33:49.000Z	35.7053333	-117.5038333	10.5	6.4	mw	62.0	47.0	0.1233	0.16	ci	ci38443183	2025-12-22T18:14:43.508Z	Ridgecrest Earthquake Sequence	earthquake	0.15	0.36		6.0	reviewed	ci	ci
+2019-07-06T03:19:53.040Z	35.7695	-117.5993333	8.0	7.1	mw	77.0	43.0	0.04616	0.22	ci	ci38457511	2026-01-20T08:56:16.346Z	Ridgecrest Earthquake Sequence	earthquake	0.19	31.61	0.028	126.0	reviewed	ci	ci
+2019-07-07T15:08:40.525Z	0.5126	126.1892	35.0	6.9	mww		21.0	1.205	0.8	us	us70004dz3	2025-12-22T17:54:55.770Z	136 km WSW of Ternate, Indonesia	earthquake	6.2	1.9	0.043	51.0	reviewed	us	us
+2019-07-11T17:08:37.977Z	-4.6408	155.2241	495.17	6.0	mww		26.0	3.084	0.7	us	us70004icj	2025-12-22T18:19:30.186Z	179 km NNW of Arawa, Papua New Guinea	earthquake	2.7	3.6	0.045	48.0	reviewed	us	us
+2019-07-13T00:57:44.339Z	29.3533	128.1534	251.0	6.1	mww		11.0	2.51	1.19	us	us70004jea	2025-12-22T18:13:21.668Z	169 km NW of Naze, Japan	earthquake	6.3	1.8	0.033	86.0	reviewed	us	us
+2019-07-14T05:39:23.420Z	-18.2242	120.3584	10.0	6.6	mww		32.0	2.978	0.7	us	us70004jxe	2025-12-22T18:13:30.360Z	198 km W of Cable Beach, Australia	earthquake	6.5	1.5	0.029	116.0	reviewed	us	us
+2019-07-14T09:10:51.523Z	-0.5858	128.034	18.98	7.2	mww		38.0	1.504	0.88	us	us70004jyv	2025-12-22T17:54:59.386Z	155 km SSE of Sofifi, Indonesia	earthquake	7.3	3.4	0.049	40.0	reviewed	us	us
+2019-07-15T08:21:34.171Z	-5.9707	149.4881	42.0	6.3	mww		20.0	3.198	0.88	us	us70004kfs	2025-12-22T18:13:39.841Z	26 km NNW of Kandrian, Papua New Guinea	earthquake	8.2	1.9	0.038	67.0	reviewed	us	us
+2019-07-23T10:33:24.050Z	-61.2867	154.1145	10.0	6.0	mww		36.0	17.135	0.63	us	us70004r4f	2025-12-22T18:13:48.922Z	Balleny Islands region	earthquake	11.1	1.7	0.073	18.0	reviewed	us	us
+2019-07-26T23:37:58.444Z	20.8373	121.9744	9.0	6.0	mww		23.0	2.138	0.75	us	us60004w8x	2025-12-22T17:55:05.164Z	43 km N of Basco, Philippines	earthquake	6.4	1.7	0.055	32.0	reviewed	us	us
+2019-07-27T18:31:07.540Z	33.1492	137.3029	367.0	6.3	mww		14.0	1.691	0.79	us	us60004wjb	2025-12-22T18:13:57.663Z	138 km ESE of Shing?, Japan	earthquake	7.0	1.9	0.055	32.0	reviewed	us	us
+2019-07-31T15:02:33.853Z	-16.1985	167.9982	181.0	6.6	mww		30.0	6.024	0.99	us	us60004xz4	2025-12-22T18:14:18.767Z	63 km E of Lakatoro, Vanuatu	earthquake	7.6	1.8	0.038	65.0	reviewed	us	us
+2019-08-01T18:28:07.270Z	-34.2364	-72.3102	25.0	6.8	mww		35.0	0.817	0.91	us	us60004yps	2025-12-22T18:17:54.982Z	96 km SW of San Antonio, Chile	earthquake	5.1	1.8	0.045	48.0	reviewed	us	us
+2019-08-02T05:50:55.239Z	-49.7307	-113.8331	10.0	6.0	mww		82.0	22.79	0.92	us	us60004z9n	2025-12-22T18:14:21.011Z	southern East Pacific Rise	earthquake	8.5	1.8	0.058	29.0	reviewed	us	us
+2019-08-02T12:03:27.001Z	-7.2822	104.7907	49.0	6.9	mww		23.0	2.839	0.76	us	us60004zhq	2025-12-22T18:14:22.438Z	152 km SW of Labuan, Indonesia	earthquake	7.0	1.9	0.043	51.0	reviewed	us	us
+2019-08-04T10:23:03.726Z	37.7594	141.6031	38.0	6.3	mww		32.0	0.653	0.78	us	us600050if	2025-12-22T18:14:29.174Z	61 km ENE of Namie, Japan	earthquake	7.3	1.9	0.071	19.0	reviewed	us	us
+2019-08-20T13:03:52.633Z	-11.3683	166.2912	37.0	6.0	mww		42.0	4.15	0.99	us	us600057ee	2025-12-22T18:17:59.531Z	Santa Cruz Islands	earthquake	7.7	1.9	0.066	22.0	reviewed	us	us
+2019-08-21T14:28:25.652Z	-50.3302	139.324	10.0	6.0	mww		67.0	9.234	0.66	us	us600057xt	2025-12-22T18:18:01.033Z	western Indian-Antarctic Ridge	earthquake	7.9	1.7	0.071	19.0	reviewed	us	us
+2019-08-24T15:51:27.119Z	-14.309	167.1897	115.0	6.0	mww		26.0	1.131	1.19	us	us700057v4	2025-12-22T18:15:19.576Z	61 km SW of Sola, Vanuatu	earthquake	8.7	1.8	0.043	53.0	reviewed	us	us
+2019-08-27T23:55:19.187Z	-60.2152	-26.5801	16.0	6.6	mww		19.0	12.896	0.91	us	us700058yy	2025-12-22T18:18:04.128Z	South Sandwich Islands region	earthquake	9.1	1.7	0.045	48.0	reviewed	us	us
+2019-08-29T15:07:58.646Z	43.5425	-127.8817	10.0	6.3	mww		31.0	2.678	1.17	us	us700059qh	2025-12-22T18:15:26.849Z	285 km W of Bandon, Oregon	earthquake	6.9	1.8	0.04	60.0	reviewed	us	us
+2019-09-01T15:54:20.392Z	-20.3641	-178.5701	591.0	6.6	mww		19.0	4.121	1.02	us	us70005axg	2025-12-22T18:42:47.423Z	Fiji region	earthquake	9.9	1.9	0.038	65.0	reviewed	us	us
+2019-09-19T07:06:33.291Z	-6.0708	111.8422	610.0	6.1	mww		19.0	1.698	0.97	us	us60005kta	2025-12-22T18:17:02.566Z	81 km NNE of Lasem, Indonesia	earthquake	8.8	2.0	0.038	66.0	reviewed	us	us
+2019-09-24T03:23:40.000Z	19.077	-67.2701	10.0	6.0	mw	25.0	193.0	0.6299	0.88	pr	pr2019267000	2025-12-22T18:17:22.342Z	67 km NNW of San Antonio, Puerto Rico	earthquake	3.8	31.61	0.51	25.0	reviewed	pr	pr
+2019-09-24T21:19:47.423Z	-33.8212	56.2997	10.0	6.0	mww		16.0	11.982	0.69	us	us60005n52	2025-12-22T18:17:25.242Z	Southwest Indian Ridge	earthquake	8.8	1.7	0.049	40.0	reviewed	us	us
+2019-09-25T23:46:43.543Z	-3.4528	128.3699	12.26	6.5	mww		15.0	3.909	0.95	us	us70005lfd	2025-12-22T18:17:31.358Z	33 km NE of Ambon, Indonesia	earthquake	6.2	2.4	0.038	65.0	reviewed	us	us
+2019-09-26T16:36:18.155Z	-40.8145	-71.9993	129.0	6.1	mww		30.0	0.445	0.79	us	us70005lt4	2025-12-22T18:17:32.814Z	30 km W of Villa La Angostura, Argentina	earthquake	4.5	1.8	0.058	29.0	reviewed	us	us
+2019-09-27T12:05:02.549Z	-30.1733	-177.8625	34.0	6.1	mww		18.0	0.926	0.86	us	us70005mea	2025-12-22T18:01:22.010Z	Kermadec Islands, New Zealand	earthquake	7.1	1.8	0.046	45.0	reviewed	us	us
+2019-09-29T02:02:51.883Z	5.6756	126.5481	73.0	6.2	mww		16.0	1.686	1.33	us	us70005nbb	2025-12-22T18:17:41.511Z	86 km SSE of Pondaguitan, Philippines	earthquake	7.2	1.8	0.036	73.0	reviewed	us	us
+2019-09-29T15:57:53.236Z	-35.4758	-73.163	11.0	6.7	mww		98.0	1.269	0.65	us	us70005nie	2025-12-22T17:55:42.110Z	70 km WSW of Constitución, Chile	earthquake	3.0	1.8	0.04	61.0	reviewed	us	us
+2019-10-01T03:56:07.115Z	-55.9278	-122.5586	10.0	6.0	mww		50.0	27.632	0.8	us	us70005p73	2025-12-22T18:17:45.969Z	southern East Pacific Rise	earthquake	11.5	1.0	0.063	24.0	reviewed	us	us
+2019-10-16T11:37:06.342Z	6.7147	125.007	16.12	6.4	mww		33.0	0.668	0.85	us	us70005ulm	2025-12-22T18:18:31.808Z	7 km ENE of Columbio, Philippines	earthquake	6.4	4.2	0.043	53.0	reviewed	us	us
+2019-10-21T02:52:29.674Z	-19.0184	169.4883	231.0	6.4	mww		23.0	2.806	0.91	us	us70005wj6	2025-12-22T18:19:50.016Z	61 km NNE of Isangel, Vanuatu	earthquake	7.1	0.8	0.035	78.0	reviewed	us	us
+2019-10-23T16:08:14.497Z	-1.0987	-13.8367	10.0	6.3	mww		18.0	6.716	0.92	us	us70005xr7	2025-12-22T18:20:00.685Z	north of Ascension Island	earthquake	8.9	1.8	0.063	24.0	reviewed	us	us
+2019-10-29T01:04:43.879Z	6.7567	125.0082	15.0	6.6	mww		24.0	0.646	0.78	us	us6000645n	2025-12-22T18:20:20.911Z	10 km NE of Columbio, Philippines	earthquake	5.7	1.8	0.043	52.0	reviewed	us	us
+2019-10-31T01:11:19.146Z	6.9098	125.1782	10.0	6.5	mww		19.0	0.428	0.76	us	us700061e9	2025-12-22T18:20:27.919Z	2 km ENE of Bulatukan, Philippines	earthquake	7.0	1.7	0.043	51.0	reviewed	us	us
+2019-11-02T18:08:41.113Z	-55.735	-26.2399	8.0	6.1	mww		23.0	6.073	1.3	us	us700062cg	2025-12-22T18:20:41.379Z	South Sandwich Islands region	earthquake	8.7	1.6	0.05	38.0	reviewed	us	us
+2019-11-04T21:53:25.320Z	-31.8362	-71.3753	53.0	6.1	mww		23.0	0.707	1.14	us	us70006345	2025-12-22T18:22:48.903Z	29 km SW of Illapel, Chile	earthquake	4.7	1.8	0.057	30.0	reviewed	us	us
+2019-11-04T22:43:32.280Z	-18.5747	-175.272	10.0	6.6	mww		48.0	5.086	0.93	us	us7000635e	2025-12-22T18:20:48.660Z	136 km W of Neiafu, Tonga	earthquake	8.3	1.8	0.04	61.0	reviewed	us	us
+2019-11-05T20:52:01.485Z	-57.9236	-9.3217	10.0	6.3	mww		30.0	14.063	1.42	us	us700063mh	2025-12-22T18:20:51.192Z	east of the South Sandwich Islands	earthquake	10.0	1.7	0.048	41.0	reviewed	us	us
+2019-11-05T23:17:26.588Z	-13.7988	167.7494	19.0	6.0	mww		38.0	1.721	0.9	us	us700063rx	2025-12-22T18:27:48.078Z	23 km ENE of Sola, Vanuatu	earthquake	9.2	1.8	0.065	23.0	reviewed	us	us
+2019-11-06T00:39:09.303Z	-13.7208	167.8086	10.0	6.0	mww		36.0	1.813	1.07	us	us700063sp	2025-12-22T18:20:53.623Z	Vanuatu	earthquake	8.0	1.7	0.061	26.0	reviewed	us	us
+2019-11-08T10:44:44.338Z	-21.9449	-179.5113	577.0	6.5	mww		25.0	4.765	0.83	us	us6000693m	2025-12-22T18:24:18.465Z	Fiji region	earthquake	9.2	1.9	0.042	55.0	reviewed	us	us
+2019-11-11T23:03:28.119Z	-18.8625	-175.3675	10.0	6.2	mww		17.0	5.152	0.75	us	us60006adv	2025-12-22T18:24:19.670Z	147 km W of Neiafu, Tonga	earthquake	6.4	1.7	0.063	24.0	reviewed	us	us
+2019-11-14T16:17:40.578Z	1.6213	126.4156	33.0	7.1	mww		11.0	1.271	1.15	us	us60006bjl	2025-12-22T17:56:10.937Z	141 km NW of Ternate, Indonesia	earthquake	6.1	1.7	0.036	75.0	reviewed	us	us
+2019-11-14T21:12:54.753Z	1.5361	126.4161	23.0	6.0	mww		18.0	1.216	1.42	us	us60006bpw	2025-12-22T18:21:36.328Z	135 km NW of Ternate, Indonesia	earthquake	6.6	1.7	0.061	26.0	reviewed	us	us
+2019-11-20T04:27:05.252Z	13.8859	-93.2068	15.0	6.3	mww		56.0	1.365	0.79	us	us70006a6q	2025-12-22T18:49:14.676Z	125 km SW of Puerto Madero, Mexico	earthquake	4.4	1.5	0.032	96.0	reviewed	us	us
+2019-11-20T08:26:08.017Z	53.128	153.6799	496.0	6.3	mww		16.0	2.421	0.94	us	us70006a9e	2025-12-22T18:22:02.133Z	264 km NW of Ozernovskiy, Russia	earthquake	8.9	1.9	0.051	37.0	reviewed	us	us
+2019-11-20T23:50:43.955Z	19.4533	101.3558	10.0	6.2	mww		15.0	2.366	0.62	us	us70006ara	2025-12-22T17:56:15.661Z	43 km WNW of Sainyabuli, Laos	earthquake	6.4	1.7	0.049	40.0	reviewed	us	us
+2019-11-23T12:11:15.564Z	1.6436	132.8148	5.0	6.2	mww		25.0	4.567	0.94	us	us70006c6w	2025-12-22T18:22:12.799Z	241 km SE of Tobi Village, Palau	earthquake	6.5	1.7	0.042	54.0	reviewed	us	us
+2019-11-24T00:54:01.053Z	51.3808	-175.5115	20.0	6.3	mww		22.0	0.658	0.95	us	us70006cb6	2025-12-22T18:22:15.332Z	95 km SE of Adak, Alaska	earthquake	3.9	1.8	0.031	99.0	reviewed	us	us
+2019-11-26T02:54:12.872Z	41.5138	19.5256	22.0	6.4	mww		17.0	0.936	0.61	us	us70006d0m	2025-12-22T18:22:23.559Z	15 km WSW of Mamurras, Albania	earthquake	4.3	1.8	0.037	72.0	reviewed	us	us
+2019-11-27T07:23:42.383Z	35.7174	23.2284	69.0	6.0	mww		18.0	1.421	1.02	us	us70006dlt	2025-12-22T18:22:29.670Z	45 km WNW of Kíssamos, Greece	earthquake	6.5	1.9	0.051	37.0	reviewed	us	us
+2019-12-02T05:01:54.821Z	51.1867	-178.1001	28.0	6.0	mww		57.0	0.578	1.03	us	us70006f6d	2025-12-22T18:22:44.180Z	127 km SW of Adak, Alaska	earthquake	4.3	1.8	0.039	63.0	reviewed	us	us
+2019-12-03T08:46:35.780Z	-18.5042	-70.576	38.0	6.0	mww		82.0	0.258	1.38	us	us70006fh7	2025-12-22T18:30:28.120Z	29 km W of Arica, Chile	earthquake	5.5	1.9	0.071	19.0	reviewed	us	us
+2019-12-04T20:10:03.595Z	-19.0677	169.5748	266.0	6.0	mww		20.0	2.804	0.72	us	us60006m2j	2025-12-22T18:26:54.228Z	60 km NNE of Isangel, Vanuatu	earthquake	7.3	1.8	0.037	71.0	reviewed	us	us
+2019-12-06T13:04:46.540Z	-15.2594	-175.1035	10.0	6.0	mww		47.0	3.488	0.54	us	us60006n19	2025-12-22T18:22:55.890Z	159 km WNW of Hihifo, Tonga	earthquake	6.5	1.6	0.089	12.0	reviewed	us	us
+2019-12-14T04:57:34.937Z	-14.3628	167.7089	7.51	6.0	mww		25.0	1.183	1.38	us	us60006rem	2025-12-22T18:26:55.707Z	56 km SSE of Sola, Vanuatu	earthquake	7.4	3.4	0.058	29.0	reviewed	us	us
+2019-12-15T06:11:51.155Z	6.6969	125.1739	18.0	6.8	mww		39.0	0.546	1.05	us	us60006rp9	2025-12-22T18:23:32.859Z	7 km S of Magsaysay, Philippines	earthquake	8.0	1.7	0.051	37.0	reviewed	us	us
+2019-12-20T11:39:52.874Z	36.5374	70.4555	212.0	6.1	mww		18.0	1.382	0.87	us	us70006p18	2025-12-22T18:24:07.830Z	49 km SW of Jurm, Afghanistan	earthquake	6.4	1.9	0.058	29.0	reviewed	us	us
+2019-12-23T19:49:43.086Z	50.6071	-129.9372	10.0	6.0	mww		100.0	1.149	1.06	us	us70006q8n	2025-12-22T18:24:31.470Z	201 km W of Port McNeill, Canada	earthquake	4.4	1.8	0.03	106.0	reviewed	us	us
+2019-12-23T20:56:23.555Z	50.5169	-129.7573	10.0	6.0	mww		99.0	1.042	1.05	us	us70006q96	2025-12-22T18:24:32.597Z	189 km W of Port McNeill, Canada	earthquake	5.7	1.8	0.038	66.0	reviewed	us	us
+2019-12-24T16:43:33.420Z	-26.964	-63.3857	572.44	6.0	mww		31.0	5.13	0.93	us	us70006qk4	2025-12-22T18:45:28.046Z	16 km WNW of El Hoyo, Argentina	earthquake	9.1	3.0	0.04	61.0	reviewed	us	us
+2019-12-24T19:03:52.492Z	3.5359	-74.0176	11.0	6.0	mww		36.0	1.335	0.68	us	us70006qnn	2025-12-22T18:24:35.093Z	1 km NE of Lejanías, Colombia	earthquake	6.5	1.7	0.041	58.0	reviewed	us	us
+2019-12-25T03:36:01.626Z	50.6106	-129.963	6.58	6.3	mww		77.0	1.853	0.67	us	us70006qt7	2025-12-22T18:24:37.420Z	203 km W of Port McNeill, Canada	earthquake	7.2	1.3	0.032	95.0	reviewed	us	us
+2019-12-25T20:20:12.751Z	-25.2226	-115.8438	10.0	6.1	mww		38.0	6.072	1.15	us	us70006r1g	2025-12-22T18:24:50.862Z	southern East Pacific Rise	earthquake	10.8	1.8	0.059	28.0	reviewed	us	us
