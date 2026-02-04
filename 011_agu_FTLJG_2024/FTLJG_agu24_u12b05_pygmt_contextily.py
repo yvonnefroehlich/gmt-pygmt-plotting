@@ -21,12 +21,11 @@
 # - Author: Yvonne Fröhlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# #############################################################################
-
-
-# See also:
+# -----------------------------------------------------------------------------
+# See also
 # - PyGMT gallery example
 #   https://www.pygmt.org/v0.13.0/gallery/maps/tilemaps.html
+# #############################################################################
 
 
 # %%
