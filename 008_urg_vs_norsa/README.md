@@ -1,6 +1,6 @@
 # 008_urg_vs_norsa
 
-_Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
+_Recommended versions_: PyGMT v0.16.0 - v0.18.0, GMT 6.5.0 - 6.6.0
 
 | **[01_urg](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_10/FGR2024_GJI_Fig10.py)** | **[02_norsa](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/008_urg_vs_norsa/02_norsa/map_scandinavia_stereo.py)** |
 | :---: | :---: |

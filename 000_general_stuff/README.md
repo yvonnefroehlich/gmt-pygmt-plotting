@@ -1,6 +1,6 @@
 # 000_general_stuff
 
-_Recommended versions_: PyGMT v0.11.0-v0.16.0, GMT 6.4.0-6.5.0
+_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 
 | **[01_custom_symbols](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff/01_custom_symbols/custom_symbols.py)** | **[02_colorwheel](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff/02_colorwheel/colorwheel_pygmt.py)** | **[03_cb_font_scaling](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff/03_cb_font_scaling/cb_font_scaling.py)** | **[05_greek_letters](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff/05_greek_letters/greek_letters.py)** |
 | :---: | :---: | :---: | :---: |

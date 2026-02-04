@@ -21,15 +21,14 @@
 # - Author: Yvonne Fröhlich
 # - ORCID: https://orcid.org/0000-0002-8566-0619
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
-# #############################################################################
-
-
-# See also:
+# -----------------------------------------------------------------------------
+# See also
 # - GMT / PyGMT pre-workshop
 #   https://www.generic-mapping-tools.org/agu24workshop/tut03_spe_xarray.html
 #   https://zenodo.org/records/15809717
 # - PyGMT gallery example
 #   https://www.pygmt.org/v0.13.0/gallery/images/grdgradient.html
+# #############################################################################
 
 
 # %%

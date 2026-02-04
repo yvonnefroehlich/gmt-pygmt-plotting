@@ -7,7 +7,7 @@ Python scripts to reproduce **Fig. 1** and **Fig. C.3** of
 > Dissertation, *Karlsruhe Institute of Technology*, *Geophysical Institute*.
 > https://doi.org/10.5445/IR/1000183786.
 
-_Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
+_Recommended versions_: PyGMT v0.16.0 - v0.18.0, GMT 6.5.0 - 6.6.0
 
 | **[01_epi_bfo](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/007_dissertation_F_2025/01_epi_bfo/map_epi_bfo_xks.py)** | **[02_3d_bfo](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/007_dissertation_F_2025/02_3d_bfo/map_3d_bfo_ray_xks.py)** |
 | :---: | :---: |
