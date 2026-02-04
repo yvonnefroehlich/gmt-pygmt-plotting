@@ -12,7 +12,7 @@ Python scripts to reproduce some figures of
 > Disputation, *Karlsruhe Institute of Technology*, *Geophysical Institute*.
 > https://doi.org/10.5281/zenodo.15982581.
 
-_Recommended versions_: PyGMT v0.16.0, GMT 6.5.0
+_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 
 | **[01_usgsfdsn_webservice](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/005_global_seismicity/seismicity_01_usgsfdsn_webservice.py)** | **[02_usgsfdsn_epicenter](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/005_global_seismicity/seismicity_02_usgsfdsn_epicenter.py)** | **[03_usgsfdsn_histogram](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/005_global_seismicity/seismicity_03_usgsfdsn_histogram.py)** |
 | :---: | :---: | :---: |

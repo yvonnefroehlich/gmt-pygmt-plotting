@@ -12,7 +12,7 @@ Python scripts to reproduce figures of seismological travel paths and travel tim
 > Dissertation, *Karlsruhe Institute of Technology*, *Geophysical Institute*.
 > https://doi.org/10.5445/IR/1000183786.
 
-_Recommended versions_: PyGMT v0.11.0-v0.16.0, GMT 6.4.0-6.5.0
+_Recommended versions_: PyGMT v0.16.0 - v0.18.0, GMT 6.5.0 - 6.6.0
 
 | Code | Description |
 | --- | --- |
