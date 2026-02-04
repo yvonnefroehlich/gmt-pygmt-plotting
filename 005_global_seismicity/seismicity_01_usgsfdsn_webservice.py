@@ -63,8 +63,8 @@ eq_catalog_name = "usgsfdsn_" + "".join(str(start_date).split("-")) + "to" + \
 data_eq_raw = pd.read_csv(url_usgs_request)
 
 # Write data to a CSV file
-data_eq_raw.to_csv(
-    path_or_buf=f"{path_in}/catalog_{eq_catalog_name}.csv", sep="\t", index=False
-)
+# data_eq_raw.to_csv(
+#     path_or_buf=f"{path_in}/catalog_{eq_catalog_name}.csv", sep="\t", index=False
+# )
 
 print(f"Saved file '{eq_catalog_name}.csv' to folder '{path_in}'!")
