@@ -6,11 +6,11 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/07/23
-# - Updated: 2025/09/07 - improve code style and comments
+# - Updated: 2025/09/07 - Improve code style and comments
 # -----------------------------------------------------------------------------
 # Versions
-#   PyGMT v0.16.0 -> https://www.pygmt.org/v0.16.0/ | https://www.pygmt.org/
-#   GMT 6.5.0 -> https://www.generic-mapping-tools.org/
+#   PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org | https://www.pygmt.org
+#   GMT 6.5.0 - 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich
