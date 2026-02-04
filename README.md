@@ -58,6 +58,10 @@ If you make use of this material, please acknowledge the relating publications i
   https://doi.org/10.6084/m9.figshare.28049495.
 
 **Posters**
+- [**_Fröhlich Y (2026)_**](<add URL Zenodo-DOI>).
+  Resolving upper mantle anisotropy in 3-D: A case study in the Upper Rhine Graben area, Central Europe.
+  *Annual Meeting of the German Geophysical Society*, Münster, Germany.
+  <add URL Zenodo-DOI>.
 - [**_Fröhlich Y, Dorn F, Dillah M I F, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14801004).
   Investigation of seismic anisotropy in the D'' layer using *X*KS pairs.
   *2th DeepDyn annual meeting*, Rügen.
