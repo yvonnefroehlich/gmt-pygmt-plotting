@@ -23,27 +23,25 @@ axis_minor = 2.2
 axis_major = 3.7
 x_shift = 0.35
 y_shift = 0.5
-
-# Plot dimensions
-xy_lim = 4
-region = [-xy_lim, xy_lim, -xy_lim, xy_lim]
-projection = f"X{xy_lim * 2}c/{xy_lim * 2}c"
-
-x_c = 0.6
-y_c = 1.6
-rot_center = f"{x_c}/{y_c}"
+x_rot = 0.6
+y_rot = 1.6
+rot_center = f"{x_rot}/{y_rot}"
 style = f"e90/{axis_major}/{axis_minor}"
 
 args_ell = {"x": 0, "y": 0, "style": style}
-
 args_overlay = {
-    "x": 0 + x_shift,
-    "y": 0 + y_shift,
+    "x": x_shift,
+    "y": y_shift,
     "style": style,
     "fill": "white", #"@50",
     "perspective": True,
     # "pen": True
 }
+
+# Plot dimensions
+xy_lim = 4
+region = [-xy_lim, xy_lim, -xy_lim, xy_lim]
+projection = f"X{xy_lim * 2}c/{xy_lim * 2}c"
 
 # Colors taken from https://colorswall.com/palette/7932
 # last accessed on 2026/02/07
@@ -67,7 +65,7 @@ fig.plot(**args_overlay)
 
 # fig.vlines(x=0, pen="1p,orange,2_4")
 # fig.hlines(y=0, pen="1p,orange,2_4")
-# fig.plot(x=x_c, y=y_c, style="x0.2c", pen="1p,orange")
+# fig.plot(x=x_rot, y=y_rot, style="x0.2c", pen="1p,orange")
 
 fig.show()
 fig.savefig(fname=f"{path_out}/02_logo_paralympics.png")
