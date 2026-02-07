@@ -38,14 +38,7 @@ y_rot = axis_minor * (1.6 / 2.2) * 2
 rot_center = f"{x_rot}/{y_rot}"
 
 args_ell = {"x": 0, "y": 0, "style": style}
-args_overlay = {
-    "x": x_shift,
-    "y": y_shift,
-    "style": style,
-    "fill": "white", #"@50",
-    "perspective": True,
-    # "pen": True
-}
+args_overlay = {"x": x_shift, "y": y_shift, "style": style, "perspective": True}
 
 # Plot dimensions
 xy_lim = axis_minor * 3.5
@@ -61,20 +54,36 @@ green = "0/133/66"
 
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
+fig.basemap(region=region, projection=projection, frame="a1g1")
+
+fig.plot(pen=f"1p,{red}", perspective=f"-60+w{rot_center}", **args_ell)
+fig.plot(fill="white@50", pen=f"1p,{red},4_2", **args_overlay)
+
+fig.plot(pen=f"1p,{blue}", perspective=f"0+w{rot_center}", **args_ell)
+fig.plot(fill="white@50", pen=f"1p,{blue},4_2", **args_overlay)
+
+fig.plot(pen=f"1p,{green}", perspective=f"60+w{rot_center}", **args_ell)
+fig.plot(fill="white@50", pen=f"1p,{green},4_2", **args_overlay)
+
+fig.vlines(x=0, pen="1p,orange,4_2")
+fig.hlines(y=0, pen="1p,orange,4_2")
+fig.plot(x=x_rot, y=y_rot, style="x0.4c", pen="1p,orange")
+
+fig.show()
+
+
+# -----------------------------------------------------------------------------
+fig = pygmt.Figure()
 fig.basemap(region=region, projection=projection, frame="+n")
 
 fig.plot(fill=red, perspective=f"-60+w{rot_center}", **args_ell)
-fig.plot(**args_overlay)
+fig.plot(fill="white", **args_overlay)
 
 fig.plot(fill=blue, perspective=f"0+w{rot_center}", **args_ell)
-fig.plot(**args_overlay)
+fig.plot(fill="white", **args_overlay)
 
 fig.plot(fill=green, perspective=f"60+w{rot_center}", **args_ell)
-fig.plot(**args_overlay)
-
-# fig.vlines(x=0, pen="1p,orange,2_4")
-# fig.hlines(y=0, pen="1p,orange,2_4")
-# fig.plot(x=x_rot, y=y_rot, style="x0.2c", pen="1p,orange")
+fig.plot(fill="white", **args_overlay)
 
 fig.show()
 fig.savefig(fname=f"{path_out}/02_logo_paralympics.png")

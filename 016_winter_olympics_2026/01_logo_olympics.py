@@ -60,18 +60,18 @@ fig = pygmt.Figure()
 fig.basemap(region=region, projection=projection, frame="a1g0.5")
 
 # Squares for construction
-fig.plot(x=-dgnl_sqr, y=0, style=f"d{dgnl_sqr}c", pen=pen_sqr)
-fig.plot(x=0, y=0, style=f"d{dgnl_sqr}c", pen=pen_sqr)
-fig.plot(x=dgnl_sqr, y=0, style=f"d{dgnl_sqr}c", pen=pen_sqr)
-fig.plot(x=-dgnl_sqr_h, y=-dgnl_sqr_h + y_shift, style=f"d{dgnl_sqr}c", pen=pen_sqr)
-fig.plot(x=dgnl_sqr_h, y=-dgnl_sqr_h + y_shift, style=f"d{dgnl_sqr}c", pen=pen_sqr)
+fig.plot(x=-dgnl_sqr, y=0, style=f"d{dgnl_sqr}c", pen=f"1p,{blue},4_2")
+fig.plot(x=0, y=0, style=f"d{dgnl_sqr}c", pen=f"1p,{black},4_2")
+fig.plot(x=dgnl_sqr, y=0, style=f"d{dgnl_sqr}c", pen=f"1p,{red},4_2")
+fig.plot(x=-dgnl_sqr_h, y=-dgnl_sqr_h + y_shift, style=f"d{dgnl_sqr}c", pen=f"1p,{yellow},4_2")
+fig.plot(x=dgnl_sqr_h, y=-dgnl_sqr_h + y_shift, style=f"d{dgnl_sqr}c", pen=f"1p,{green},4_2")
 
 # Rings
-fig.plot(x=-dgnl_sqr, y=0, style=style, pen=f"1p,{blue}")
-fig.plot(x=0, y=0, style=style, pen=f"1p,{black}")
-fig.plot(x=dgnl_sqr, y=0, style=style, pen=f"1p,{red}")
-fig.plot(x=-dgnl_sqr_h, y=-dgnl_sqr_h + y_shift, style=style, pen=f"1p,{yellow}")
-fig.plot(x=dgnl_sqr_h, y=-dgnl_sqr_h + y_shift, style=style, pen=f"1p,{green}")
+fig.plot(x=-dgnl_sqr, y=0, style=style, pen=f"0.5p,{blue}")
+fig.plot(x=0, y=0, style=style, pen=f"0.5p,{black}")
+fig.plot(x=dgnl_sqr, y=0, style=style, pen=f"0.5p,{red}")
+fig.plot(x=-dgnl_sqr_h, y=-dgnl_sqr_h + y_shift, style=style, pen=f"0.5p,{yellow}")
+fig.plot(x=dgnl_sqr_h, y=-dgnl_sqr_h + y_shift, style=style, pen=f"0.5p,{green}")
 
 fig.show()
 
