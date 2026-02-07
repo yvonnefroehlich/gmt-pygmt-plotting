@@ -1,5 +1,5 @@
 # #############################################################################
-# Olympic rings
+# Logo Olympics
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2026/02/06
@@ -43,8 +43,8 @@ ylim = dgnl_sqr
 region = [-xlim, xlim, -ylim, ylim]
 projection = f"X{xlim * 2}c/{2 * ylim}c"
 
-# Colors taken from: https://www.flagcolorcodes.com/olympic-rings-flag
-# last accessed: 2026/02/06
+# Colors taken from https://www.flagcolorcodes.com/olympic-rings-flag
+# last accessed on 2026/02/06
 blue = "0/129/200"
 black = "black"
 red = "238/51/78"
@@ -94,4 +94,4 @@ fig.plot(x=0, y=0, style=f"w{d_out}/240/270+i{d_in}", fill=black)
 fig.plot(x=dgnl_sqr, y=0, style=f"w{d_out}/240/270+i{d_in}", fill=red)
 
 fig.show()
-fig.savefig(fname=f"{path_out}/01_logo_olympic_rings.png")
+fig.savefig(fname=f"{path_out}/01_logo_olympics.png")
