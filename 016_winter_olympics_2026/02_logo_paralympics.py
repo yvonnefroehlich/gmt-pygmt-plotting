@@ -18,16 +18,19 @@ import pygmt
 
 path_out = "02_out_figs"
 
-# source: https://www.paralympic.org/logo
-size = 5
-axis_minor = 2
-axis_major = 2 * 2
-x_shift = 0.13
-y_shift = 0.34
-xy_lim = 5
+# source: https://www.paralympic.org/sites/default/files/2022-08/2022_08%20Paralympic%20Symbol%20Guidelines.pdf
+axis_minor = 2.2
+axis_major = 3.7
+x_shift = 0.35
+y_shift = 0.5
 
-x_c = 0.5
-y_c = 2.2
+# Plot dimensions
+xy_lim = 4
+region = [-xy_lim, xy_lim, -xy_lim, xy_lim]
+projection = f"X{xy_lim * 2}c/{xy_lim * 2}c"
+
+x_c = 0.6
+y_c = 1.6
 rot_center = f"{x_c}/{y_c}"
 style = f"e90/{axis_major}/{axis_minor}"
 
@@ -37,7 +40,7 @@ args_overlay = {
     "x": 0 + x_shift,
     "y": 0 + y_shift,
     "style": style,
-    "fill": "white",
+    "fill": "white", #"@50",
     "perspective": True,
     # "pen": True
 }
@@ -51,12 +54,7 @@ green = "0/133/66"
 
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
-fig.basemap(
-    region=[-xy_lim, xy_lim, -xy_lim, xy_lim],
-    projection=f"X{xy_lim * 2}c/{xy_lim * 2}c",
-    # frame="a1g1",
-    frame="+n",
-)
+fig.basemap(region=region, projection=projection, frame="+n")
 
 fig.plot(fill=red, perspective=f"-60+w{rot_center}", **args_ell)
 fig.plot(**args_overlay)
