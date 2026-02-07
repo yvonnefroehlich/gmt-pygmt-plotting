@@ -18,15 +18,24 @@ import pygmt
 
 path_out = "02_out_figs"
 
-# source: https://www.paralympic.org/sites/default/files/2022-08/2022_08%20Paralympic%20Symbol%20Guidelines.pdf
+# Geometry taken from https://www.paralympic.org/sites/default/files/2022-08/2022_08%20Paralympic%20Symbol%20Guidelines.pdf
+# last accessed on 2026/02/07
+# Manually measured
 axis_minor = 2.2
 axis_major = 3.7
 x_shift = 0.35
 y_shift = 0.5
 x_rot = 0.6
 y_rot = 1.6
+
+axis_minor = 1.5
+axis_major = axis_minor * (3.7 / 2.2)
+style = f"e90/{axis_major * 2}/{axis_minor * 2}"
+x_shift = axis_minor * (0.35 / 2.2) * 2
+y_shift = axis_major * (0.5 / 3.7) * 2
+x_rot = axis_minor * (0.6 / 2.2) * 2
+y_rot = axis_minor * (1.6 / 2.2) * 2
 rot_center = f"{x_rot}/{y_rot}"
-style = f"e90/{axis_major}/{axis_minor}"
 
 args_ell = {"x": 0, "y": 0, "style": style}
 args_overlay = {
@@ -39,7 +48,7 @@ args_overlay = {
 }
 
 # Plot dimensions
-xy_lim = 4
+xy_lim = axis_minor * 3.5
 region = [-xy_lim, xy_lim, -xy_lim, xy_lim]
 projection = f"X{xy_lim * 2}c/{xy_lim * 2}c"
 
