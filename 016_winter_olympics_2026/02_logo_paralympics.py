@@ -71,7 +71,7 @@ fig.hlines(y=0, pen="1p,orange,4_2")
 fig.plot(x=x_rot, y=y_rot, style="x0.4c", pen="1p,orange")
 
 fig.show()
-fig.savefig(fname=f"{path_out}/02_logo_paralympics_constraction.png")
+fig.savefig(fname=f"{path_out}/02_logo_paralympics_construction.png")
 
 
 # %%
