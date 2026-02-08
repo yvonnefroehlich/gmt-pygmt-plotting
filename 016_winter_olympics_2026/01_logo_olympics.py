@@ -20,7 +20,7 @@ import numpy as np
 path_out = "02_out_figs"
 
 # Diagonal length of the square
-dgnl_sqr = 3  # <<< change for desired size of the logo
+dgnl_sqr = 4  # <<< change for desired size of the logo
 dgnl_sqr_h = dgnl_sqr / 2
 # Size length of the square
 size_sqr = np.sin(45 * 2 * np.pi / 360) * dgnl_sqr
