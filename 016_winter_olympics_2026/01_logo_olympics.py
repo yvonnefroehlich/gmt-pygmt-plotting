@@ -20,7 +20,7 @@ import numpy as np
 path_out = "02_out_figs"
 
 # Diagonal length of the square
-dgnl_sqr = 4
+dgnl_sqr = 4  # <<< change for desired size of the logo
 dgnl_sqr_h = dgnl_sqr / 2
 # Size length of the square
 size_sqr = np.sin(45 * 2 * np.pi / 360) * dgnl_sqr
@@ -55,6 +55,7 @@ green = "0/166/81"
 pen_sqr = "1p,darkbrown,4_2"
 
 
+# %%
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
 fig.basemap(region=region, projection=projection, frame="a1g0.5")
@@ -74,8 +75,10 @@ fig.plot(x=-dgnl_sqr_h, y=-dgnl_sqr_h + y_shift, style=style, pen=f"0.5p,{yellow
 fig.plot(x=dgnl_sqr_h, y=-dgnl_sqr_h + y_shift, style=style, pen=f"0.5p,{green}")
 
 fig.show()
+fig.savefig(fname=f"{path_out}/01_logo_olympics_construction.png")
 
 
+# %%
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
 fig.basemap(region=region, projection=projection, frame="+n")

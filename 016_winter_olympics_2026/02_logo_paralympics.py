@@ -20,15 +20,15 @@ path_out = "02_out_figs"
 
 # Geometry taken from https://www.paralympic.org/sites/default/files/2022-08/2022_08%20Paralympic%20Symbol%20Guidelines.pdf
 # last accessed on 2026/02/07
-# Manually measured
-axis_minor = 2.2
-axis_major = 3.7
-x_shift = 0.35
-y_shift = 0.5
-x_rot = 0.6
-y_rot = 1.6
+# Manually measured and used to calculate the ratios
+# axis_minor = 2.2
+# axis_major = 3.7
+# x_shift = 0.35
+# y_shift = 0.5
+# x_rot = 0.6
+# y_rot = 1.6
 
-axis_minor = 1.5
+axis_minor = 1.5  # <<< change for desired size of the logo
 axis_major = axis_minor * (3.7 / 2.2)
 style = f"e90/{axis_major * 2}/{axis_minor * 2}"
 x_shift = axis_minor * (0.35 / 2.2) * 2
@@ -52,6 +52,7 @@ blue = "0/83/159"
 green = "0/133/66"
 
 
+# %%
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
 fig.basemap(region=region, projection=projection, frame="a1g1")
@@ -70,8 +71,10 @@ fig.hlines(y=0, pen="1p,orange,4_2")
 fig.plot(x=x_rot, y=y_rot, style="x0.4c", pen="1p,orange")
 
 fig.show()
+fig.savefig(fname=f"{path_out}/02_logo_paralympics_constraction.png")
 
 
+# %%
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
 fig.basemap(region=region, projection=projection, frame="+n")
