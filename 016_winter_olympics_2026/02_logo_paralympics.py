@@ -28,7 +28,7 @@ path_out = "02_out_figs"
 # x_rot = 0.6
 # y_rot = 1.6
 
-axis_minor = 1.5  # <<< change for desired size of the logo
+axis_minor = 1  # <<< change for desired size of the logo
 axis_major = axis_minor * (3.7 / 2.2)
 style = f"e90/{axis_major * 2}/{axis_minor * 2}"
 x_shift = axis_minor * (0.35 / 2.2) * 2
@@ -41,9 +41,10 @@ args_ell = {"x": 0, "y": 0, "style": style}
 args_overlay = {"x": x_shift, "y": y_shift, "style": style, "perspective": True}
 
 # Plot dimensions
-xy_lim = axis_minor * 3.5
-region = [-xy_lim, xy_lim, -xy_lim, xy_lim]
-projection = f"X{xy_lim * 2}c/{xy_lim * 2}c"
+xlim = axis_minor * 3.5
+ylim = axis_minor * 2.5
+region = [-xlim, xlim, -ylim, ylim]
+projection = f"X{xlim * 2}c/{ylim * 2}c"
 
 # Colors taken from https://colorswall.com/palette/7932
 # last accessed on 2026/02/07

@@ -41,7 +41,7 @@ style = f"w{d_out}/0/360+i{d_in}"
 xlim = (dgnl_sqr * 3 / 2) + 0.5
 ylim = dgnl_sqr
 region = [-xlim, xlim, -ylim, ylim]
-projection = f"X{xlim * 2}c/{2 * ylim}c"
+projection = f"X{xlim * 2}c/{ylim * 2}c"
 
 # Colors taken from https://www.flagcolorcodes.com/olympic-rings-flag
 # last accessed on 2026/02/06
