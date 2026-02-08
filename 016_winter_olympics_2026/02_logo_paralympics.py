@@ -56,8 +56,10 @@ green = "0/133/66"
 # %%
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
+pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray60")
 fig.basemap(region=region, projection=projection, frame="a1g1")
 
+# Ellipses
 fig.plot(pen=f"1p,{red}", perspective=f"-60+w{rot_center}", **args_ell)
 fig.plot(fill="white@50", pen=f"1p,{red},4_2", **args_overlay)
 
@@ -67,6 +69,7 @@ fig.plot(fill="white@50", pen=f"1p,{blue},4_2", **args_overlay)
 fig.plot(pen=f"1p,{green}", perspective=f"60+w{rot_center}", **args_ell)
 fig.plot(fill="white@50", pen=f"1p,{green},4_2", **args_overlay)
 
+# Lines for center
 fig.vlines(x=0, pen="1p,orange,4_2")
 fig.hlines(y=0, pen="1p,orange,4_2")
 fig.plot(x=x_rot, y=y_rot, style="x0.4c", pen="1p,orange")
@@ -80,6 +83,7 @@ fig.savefig(fname=f"{path_out}/02_logo_paralympics_construction.png")
 fig = pygmt.Figure()
 fig.basemap(region=region, projection=projection, frame="+n")
 
+# Ellipses
 fig.plot(fill=red, perspective=f"-60+w{rot_center}", **args_ell)
 fig.plot(fill="white", **args_overlay)
 

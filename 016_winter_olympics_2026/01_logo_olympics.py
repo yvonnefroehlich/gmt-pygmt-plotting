@@ -20,7 +20,7 @@ import numpy as np
 path_out = "02_out_figs"
 
 # Diagonal length of the square
-dgnl_sqr = 4  # <<< change for desired size of the logo
+dgnl_sqr = 3  # <<< change for desired size of the logo
 dgnl_sqr_h = dgnl_sqr / 2
 # Size length of the square
 size_sqr = np.sin(45 * 2 * np.pi / 360) * dgnl_sqr
@@ -38,7 +38,7 @@ d_in = r_in * 2
 style = f"w{d_out}/0/360+i{d_in}"
 
 # Dimensions of plot
-xlim = (dgnl_sqr * 3 / 2) + 0.5
+xlim = dgnl_sqr * 3 / 2 + 0.5
 ylim = dgnl_sqr
 region = [-xlim, xlim, -ylim, ylim]
 projection = f"X{xlim * 2}c/{ylim * 2}c"
@@ -51,14 +51,16 @@ red = "238/51/78"
 yellow = "252/177/49"
 green = "0/166/81"
 
-# Pen for the square
-pen_sqr = "1p,darkbrown,4_2"
-
 
 # %%
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
+pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray60")
 fig.basemap(region=region, projection=projection, frame="a1g0.5")
+
+# Lines for center
+fig.hlines(y=0, pen="1p,orange,4_2")
+fig.vlines(x=0, pen="1p,orange,4_2")
 
 # Squares for construction
 fig.plot(x=-dgnl_sqr, y=0, style=f"d{dgnl_sqr}c", pen=f"1p,{blue},4_2")
