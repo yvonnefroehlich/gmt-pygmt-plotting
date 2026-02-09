@@ -1,5 +1,5 @@
 # #############################################################################
-# UEFA WOMEN'S EURO 2025 - group phase goals
+# UEFA WOMEN'S EURO 2025 - group phase points
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/07/07
@@ -20,10 +20,10 @@ import pygmt
 
 
 path_out = "02_out_figs"
-fig_name = "euro25_04_goals"
+fig_name = "03_points"
 dpi_png = 720
 
-region = [0, 4, -16, 16]
+region = [0, 4, 0, 10]
 projection = "X5c/9c"
 
 color_gra = "254/202/139"
@@ -40,34 +40,19 @@ countries = [countries_gra, countries_grb, countries_grc, countries_grd]
 
 x = np.array([0.5, 0.5])
 
-goals_pos = np.array([
-   [[1, 2, 0, 1],  # match day 1
-    [5, 0, 0, 1],
-    [2, 0, 0, 1],
-    [2, 1, 0, 3]],
-   [[3, 4, 0, 2],  # match day 2
-    [11, 1, 2, 2],
-    [4, 0, 1, 4],
-    [6, 5, 1, 3]],
-   [[4, 8, 3, 3],  # match day 3
-    [14, 2, 4, 3],
-    [5, 3, 3, 8],
-    [11, 11, 2, 5]],
-])
-
-goals_neg = np.array([
-   [[2, 1, 1, 0],  # match day 1
-    [0, 5, 1, 0],
-    [0, 2, 1, 0],
-    [1, 2, 3, 0]],
-   [[2, 2, 3, 2],  # match day 2
-    [2, 6, 7, 1],
-    [1, 5, 3, 0],
-    [3, 2, 7, 4]],
-   [[3, 4, 7, 3],  # match day 3
-    [3, 8, 8, 4],
-    [5, 7, 6, 1],
-    [5, 3, 13, 9]],
+points = np.array([
+   [[0, 3, 0, 3],  # match day 1
+    [3, 0, 0, 3],
+    [3, 0, 0, 3],
+    [3, 0, 0, 3]],
+   [[3, 6, 0, 3],  # match day 2
+    [6, 1, 0, 4],
+    [6, 0, 0, 6],
+    [6, 3, 0, 3]],
+   [[4, 9, 0, 4],  # match day 3
+    [9, 1, 3, 4],
+    [6, 3, 0, 9],
+    [9, 6, 0, 3]],
 ])
 
 
@@ -81,45 +66,36 @@ for i_day in range(3):
         frame_title = "tbrW"
         if i_day == 0: frame_title = f"tbrW+tgroup {group}"
         frame_left = "yf1g1"
-        if group == "A": frame_left = "ya2f1g1+lgoals+e"
+        if group == "A": frame_left = "ya1f1g1+lpoints+e"
 
         fig.basemap(region=region, projection=projection, frame=[frame_title, frame_left])
 
         for i_country in range(4):
-            # vertical bars for goals
-            for goals in [goals_pos, -goals_neg]:
-                fig.plot(
-                    x=x + i_country,
-                    y=[0, goals[i_day][i_group][i_country]],
-                    pen=f"20p,{colors[i_group]}",
-                )
-            fig.hlines(y=0, pen="1p,black")
+            # vertical bars for points
+            fig.plot(
+                x=x + i_country,
+                y=[0, points[i_day][i_group][i_country]],
+                pen=f"20p,{colors[i_group]}",
+            )
 
-            # labels for goals
+            # label for points
             fig.text(
-                text=goals_pos[i_day][i_group][i_country],
+                text=points[i_day][i_group][i_country],
                 x=x[0] + i_country,
-                y=goals_pos[i_day][i_group][i_country] + 0.35,
+                y=points[i_day][i_group][i_country] + 0.15,
                 justify="CB",
                 font="12p,1,black",
             )
-            fig.text(
-                text=-goals_neg[i_day][i_group][i_country],
-                x=x[0] + i_country,
-                y=-goals_neg[i_day][i_group][i_country] - 0.35,
-                justify="CT",
-                font="12p,1,black",
-            )
 
-            # labels for countries
+            # label for countries
             if i_day == 0:
                 fig.text(
                     text=countries[i_group][i_country],
                     x=x[0] + i_country,
-                    y=-15,
+                    y=6,
                     justify="LM",
                     font="14p",
-                    angle=90,  # rotates also justify
+                    angle=90,
                 )
 
         frame_right = "yf1"
@@ -127,7 +103,6 @@ for i_day in range(3):
         fig.basemap(region=region, projection=projection, frame=["wsnE", frame_right])
 
         fig.shift_origin(xshift="+w0.5c")
-
     fig.shift_origin(xshift="-22c", yshift="-h-0.25c")
 
 fig.show()
