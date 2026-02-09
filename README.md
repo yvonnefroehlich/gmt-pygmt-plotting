@@ -44,12 +44,12 @@ If you make use of this material, please acknowledge the relating publications i
 <p>
 
 **Presentations**
-- [**_Fröhlich Y, Ritter J R R (2024)_**](https://dx.doi.org/10.5281/zenodo.14510993).
+- [**_Fröhlich Y, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14510993).
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
   *Annual Meeting of the American Geophysical Union*, Washington D.C..
   Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral, DI21A-02.
   [Abstract ID 1578275](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275).
-  https://dx.doi.org/10.5281/zenodo.14510993.
+  https://doi.org/10.5281/zenodo.14510993.
 - [**_Fröhlich Y, Tian D, Leong W J, Jones M, Grund M (2024)_**](https://doi.org/10.6084/m9.figshare.28049495).
   PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
   *Annual Meeting of the American Geophysical Union*, Washington D.C..
@@ -58,6 +58,10 @@ If you make use of this material, please acknowledge the relating publications i
   https://doi.org/10.6084/m9.figshare.28049495.
 
 **Posters**
+- [**_Fröhlich Y (2026)_**](https://doi.org/10.5281/zenodo.18524084).
+  Resolving upper mantle anisotropy in 3-D: A case study in the Upper Rhine Graben area, Central Europe.
+  *Annual Meeting of the German Geophysical Society*, Münster, Germany.
+  https://doi.org/10.5281/zenodo.18524084.
 - [**_Fröhlich Y, Dorn F, Dillah M I F, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14801004).
   Investigation of seismic anisotropy in the D'' layer using *X*KS pairs.
   *2th DeepDyn annual meeting*, Rügen.
