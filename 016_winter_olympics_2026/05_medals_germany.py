@@ -105,7 +105,7 @@ for medal, color, xshift in zip(
                         pen=f"1p,{pen}",
                     )
 
-fig.text(text=f"femal: {n_F}", justify="TR", position="TL", offset="1.5c/-1.7c")
+fig.text(text=f"female: {n_F}", justify="TR", position="TL", offset="1.5c/-1.7c")
 fig.text(text=f"male: {n_M}", justify="TR", position="TL", offset="1.5c/-2.0c")
 fig.text(text=f"mixed: {n_X}", justify="TR", position="TL", offset="1.5c/-2.3c")
 
