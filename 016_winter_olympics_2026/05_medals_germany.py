@@ -37,6 +37,7 @@ for medal, color, xshift in zip(
     ["tan", "gray", "gold"],
     [0.25, 0.5, 0.75]
 ):
+
     fig.plot(
         x=df_medals["day"] + xshift,
         y=df_medals[medal],
@@ -66,6 +67,9 @@ for medal, color, xshift in zip(
 ):
 
     df_medals_temp = df_medals[df_medals["medal"] == medal]
+
+    text = f"{medal}: {len(df_medals_temp)}"
+    fig.text(text=text, position="TR", offset=f"-0.5c/{xshift * 1.3 - 1.4}c")
 
     for gender, pen in zip(["F", "M", "X"], ["tomato", "steelblue", "purple"]):
 
