@@ -60,6 +60,10 @@ fig.basemap(
     frame=["xa1g1+lday in Febuary", "ya1g1+lcount of medals"],
 )
 
+n_F = 0
+n_M = 0
+n_X = 0
+
 for medal, color, xshift in zip(
     ["bronze", "silver", "gold"],
     ["tan", "gray", "gold"],
@@ -69,11 +73,20 @@ for medal, color, xshift in zip(
     df_medals_temp = df_medals[df_medals["medal"] == medal]
 
     text = f"{medal}: {len(df_medals_temp)}"
-    fig.text(text=text, position="TR", offset=f"-0.5c/{xshift * 1.3 - 1.4}c")
+    fig.text(text=text, position="TL", justify="TR", offset=f"1.5c/{xshift * 1.3 - 1.4}c")
 
     for gender, pen in zip(["F", "M", "X"], ["tomato", "steelblue", "purple"]):
 
         df_medals_temp_temp = df_medals_temp[df_medals_temp["gender"] == gender]
+
+        match gender:
+            case "F":
+                n_F = n_F + len(df_medals_temp_temp)
+            case "M":
+                n_M = n_M + len(df_medals_temp_temp)
+            case "X":
+                n_X = n_X + len(df_medals_temp_temp)
+
 
         if len(df_medals_temp_temp) > 0:
 
@@ -91,6 +104,10 @@ for medal, color, xshift in zip(
                         # fill="white",
                         pen=f"1p,{pen}",
                     )
+
+fig.text(text=f"femal: {n_F}", justify="TR", position="TL", offset="1.5c/-1.7c")
+fig.text(text=f"male: {n_M}", justify="TR", position="TL", offset="1.5c/-2.0c")
+fig.text(text=f"mixed: {n_X}", justify="TR", position="TL", offset="1.5c/-2.3c")
 
 fig.show()
 fig.savefig(fname=f"{path_out}/05_medals_germany_02.png")
