@@ -35,7 +35,7 @@ fig.basemap(
 for medal, color, xshift in zip(
     ["bronze", "silver", "gold"],
     ["tan", "gray", "gold"],
-    [0.25, 0.5, 0.75]
+    [0.75, 0.5, 0.25]
 ):
 
     fig.plot(
@@ -67,13 +67,13 @@ n_X = 0
 for medal, color, xshift in zip(
     ["bronze", "silver", "gold"],
     ["tan", "gray", "gold"],
-    [0.25, 0.5, 0.75]
+    [0.75, 0.5, 0.25]
 ):
 
     df_medals_temp = df_medals[df_medals["medal"] == medal]
 
     text = f"{medal}: {len(df_medals_temp)}"
-    fig.text(text=text, position="TL", justify="TR", offset=f"1.5c/{xshift * 1.3 - 1.4}c")
+    fig.text(text=text, position="TL", justify="TR", offset=f"1.5c/{-xshift * 1.4}c")
 
     for gender, pen in zip(["F", "M", "X"], ["tomato", "steelblue", "purple"]):
 
@@ -106,8 +106,8 @@ for medal, color, xshift in zip(
                     )
 
 fig.text(text=f"female: {n_F}", justify="TR", position="TL", offset="1.5c/-1.7c")
-fig.text(text=f"male: {n_M}", justify="TR", position="TL", offset="1.5c/-2.0c")
-fig.text(text=f"mixed: {n_X}", justify="TR", position="TL", offset="1.5c/-2.3c")
+fig.text(text=f"male: {n_M}", justify="TR", position="TL", offset="1.5c/-2.05c")
+fig.text(text=f"mixed: {n_X}", justify="TR", position="TL", offset="1.5c/-2.4c")
 
 fig.show()
 fig.savefig(fname=f"{path_out}/05_medals_germany_02.png")
