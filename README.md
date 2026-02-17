@@ -43,7 +43,7 @@ If you make use of this material, please acknowledge the relating publications i
   Geophysical Visualizations.
   *Zenodo*. https://doi.org/10.5281/zenodo.15836683.
 - [**_Fröhlich Y (2025d)_**](https://doi.org/10.5281/zenodo.15641349).
-  Geophysical Annimations.
+  Geophysical Animations.
   *Zenodo*. https://doi.org/10.5281/zenodo.15641349.
 
 <details><summary>Please click for details on <b>Presentations</b> and <b>Posters.</b> </summary>
@@ -64,7 +64,7 @@ If you make use of this material, please acknowledge the relating publications i
   https://doi.org/10.6084/m9.figshare.28049495.
 
 **Posters**
-- [**_Fröhlich Y (2026)_**](https://doi.org/10.5281/zenodo.18524084).
+- [**_Fröhlich Y (2026a)_**](https://doi.org/10.5281/zenodo.18524084).
   Resolving upper mantle anisotropy in 3-D: A case study in the Upper Rhine Graben area, Central Europe.
   *Annual Meeting of the German Geophysical Society*, Münster, Germany.
   https://doi.org/10.5281/zenodo.18524084.
