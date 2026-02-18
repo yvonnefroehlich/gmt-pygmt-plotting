@@ -19,3 +19,4 @@ day;medal;gender
 17;gold;M
 17;silver;M
 17;bronze;M
+18;bronze;F
