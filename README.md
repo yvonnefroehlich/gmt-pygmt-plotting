@@ -13,7 +13,7 @@ _Please note_: Besides [PyGMT](https://www.pygmt.org) and [GMT](https://www.gene
 
 | Folder | Overview |
 | --- | --- |
-| •&nbsp;**[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff#000_general_stuff)** <br> •&nbsp;**[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022#001_paper_RFSG_2022)** <br> •&nbsp;**[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024#002_paper_FGR_2024)** <br> •&nbsp;**[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup#003_taup)** <br> •&nbsp;**[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions#004_earthquakes_eruptions)** <br> •&nbsp;**[005_global_seismicity](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/005_global_seismicity#005_global_seismicity)** <br> •&nbsp;**[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases#006_tomographies_databases)** <br> •&nbsp;**[007_dissertation_F_2025](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_dissertation_F_2025#007_dissertation_F_2025)** <br> •&nbsp;**[008_urg_vs_norsa](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/008_urg_vs_norsa#008_urg_vs_norsa)** <br> •&nbsp;**[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn#009_deepdyn)** <br> •&nbsp;**[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem#010_axisem)** <br> •&nbsp;**[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024#011_agu_FTLJG_2024)** <br> •&nbsp;**[012_uefa_euro25](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/012_uefa_euro25#012_uefa_euro25)** <br> •&nbsp;**[013_general_maps](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/013_general_maps#013_general_maps)** <br> •&nbsp;**[014_general_stats](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/014_general_stats#014_general_stats)** <br> •&nbsp;**[015_santorini_earthquakes](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/015_santorini_earthquakes#015_santorini_earthquakes)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.gif" width="550"> |
+| •&nbsp;**[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff#000_general_stuff)** <br> •&nbsp;**[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022#001_paper_RFSG_2022)** <br> •&nbsp;**[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024#002_paper_FGR_2024)** <br> •&nbsp;**[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup#003_taup)** <br> •&nbsp;**[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions#004_earthquakes_eruptions)** <br> •&nbsp;**[005_global_seismicity](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/005_global_seismicity#005_global_seismicity)** <br> •&nbsp;**[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases#006_tomographies_databases)** <br> •&nbsp;**[007_dissertation_F_2025](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_dissertation_F_2025#007_dissertation_F_2025)** <br> •&nbsp;**[008_urg_vs_norsa](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/008_urg_vs_norsa#008_urg_vs_norsa)** <br> •&nbsp;**[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn#009_deepdyn)** <br> •&nbsp;**[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem#010_axisem)** <br> •&nbsp;**[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024#011_agu_FTLJG_2024)** <br> •&nbsp;**[012_uefa_euro_2025](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/012_uefa_euro_2025#012_uefa_euro_2025)** <br> •&nbsp;**[013_general_maps](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/013_general_maps#013_general_maps)** <br> •&nbsp;**[014_general_stats](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/014_general_stats#014_general_stats)** <br> •&nbsp;**[015_santorini_earthquakes_2025](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/015_santorini_earthquakes_2025#015_santorini_earthquakes_2025)** <br> •&nbsp;**[016_winter_olympics_2026](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/016_winter_olympics_2026#016_winter_olympics_2026)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/_images/github_maps_readme_main.gif" width="550"> |
 
 
 ## Citation
@@ -44,12 +44,12 @@ If you make use of this material, please acknowledge the relating publications i
 <p>
 
 **Presentations**
-- [**_Fröhlich Y, Ritter J R R (2024)_**](https://dx.doi.org/10.5281/zenodo.14510993).
+- [**_Fröhlich Y, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14510993).
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
   *Annual Meeting of the American Geophysical Union*, Washington D.C..
   Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral, DI21A-02.
   [Abstract ID 1578275](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275).
-  https://dx.doi.org/10.5281/zenodo.14510993.
+  https://doi.org/10.5281/zenodo.14510993.
 - [**_Fröhlich Y, Tian D, Leong W J, Jones M, Grund M (2024)_**](https://doi.org/10.6084/m9.figshare.28049495).
   PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
   *Annual Meeting of the American Geophysical Union*, Washington D.C..
@@ -58,6 +58,10 @@ If you make use of this material, please acknowledge the relating publications i
   https://doi.org/10.6084/m9.figshare.28049495.
 
 **Posters**
+- [**_Fröhlich Y (2026)_**](https://doi.org/10.5281/zenodo.18524084).
+  Resolving upper mantle anisotropy in 3-D: A case study in the Upper Rhine Graben area, Central Europe.
+  *Annual Meeting of the German Geophysical Society*, Münster, Germany.
+  https://doi.org/10.5281/zenodo.18524084.
 - [**_Fröhlich Y, Dorn F, Dillah M I F, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14801004).
   Investigation of seismic anisotropy in the D'' layer using *X*KS pairs.
   *2th DeepDyn annual meeting*, Rügen.
