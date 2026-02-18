@@ -16,3 +16,6 @@ day;medal;gender
 15;bronze;X
 16;silver;F
 16;bronze;X
+17;gold;M
+17;silver;M
+17;bronze;M
