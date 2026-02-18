@@ -27,7 +27,7 @@ df_medals = pd.read_csv(f"{path_in}/medals_germany.txt", sep=";")
 fig = pygmt.Figure()
 with pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray60", FONT="11p"):
     fig.basemap(
-        region=[5.8, 22.2, 0.8, 3.2],
+        region=[5.8, 23.2, 0.8, 3.2],
         projection="X15c/3c",
         frame=["xa1g1+lday in Febuary", "ya1g1+lmedals Germany"],
     )
@@ -55,7 +55,7 @@ df_medals = pd.read_csv(f"{path_in}/medals_germany_02.txt", sep=";")
 fig = pygmt.Figure()
 with pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray60", FONT="11p"):
     fig.basemap(
-        region=[5.8, 22.2, 0.8, 3.2],
+        region=[5.8, 23.2, 0.8, 3.2],
         projection="X15c/3c",
         frame=["xa1g1+lday in Febuary", "ya1g1+lmedals Germany"],
     )
