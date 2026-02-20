@@ -51,6 +51,7 @@ fig.savefig(fname=f"{path_out}/05_medals_germany.png")
 
 # %%
 df_medals = pd.read_csv(f"{path_in}/medals_germany_02.txt", sep=";")
+N_tot = len(df_medals)
 
 fig = pygmt.Figure()
 with pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray60", FONT="11p"):
@@ -105,6 +106,7 @@ for medal, color, xshift in zip(
                         pen=f"1p,{pen}",
                     )
 
+fig.text(text=f"total: {N_tot}", justify="TR", position="TL", offset="1.5c/-1.38c")
 fig.text(text=f"female: {n_F}", justify="TR", position="TL", offset="1.5c/-1.7c")
 fig.text(text=f"male: {n_M}", justify="TR", position="TL", offset="1.5c/-2.05c")
 fig.text(text=f"mixed: {n_X}", justify="TR", position="TL", offset="1.5c/-2.4c")
