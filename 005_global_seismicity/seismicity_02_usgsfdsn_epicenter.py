@@ -139,29 +139,36 @@ df_eq = df_eq.sort_values(by=["mag"], ascending=False)
 # >>> If you change the scaling you also have to update the legend file <<<
 df_eq["mag_scaled"] = np.exp(df_eq["mag"] / 1.7) * 0.0035
 
-# Add separate year column
-years = []
-for i_eq in df_eq.index:
-    year_temp = int(df_eq["time"][i_eq][0:4])
-    years.append(year_temp)
-df_eq["year"] = years
 
-# -----------------------------------------------------------------------------
 epi_columns = ["longitude", "latitude", "depth", "mag_scaled"]
-
 df_eq_used = df_eq[epi_columns]
 
+
+# %%
+# -----------------------------------------------------------------------------
 # Loops for animations
+# -----------------------------------------------------------------------------
 # Uncomment and inset the rest of the code
 
-# Over TIME
-# year_step
+# -----------------------------------------------------------------------------
+# Over time
+
+# Add separate year column
+# years = []
+# for i_eq in df_eq.index:
+#     year_temp = int(df_eq["time"][i_eq][0:4])
+#     years.append(year_temp)
+# df_eq["year"] = years
+
+# year_step = 1
 # for year in range(1991, 2019 + year_step, year_step):
 
-    # df_eq_years = df_eq[df_eq["year"] < year + 1]
+    # df_eq_years = df_eq[df_eq["year"] < year + year_step]
     # df_eq_used = df_eq_years[epi_columns]
 
+# -----------------------------------------------------------------------------
 # Over Longitude
+
 # lon_step = 10
 # for lon0 in range(0, 360 + lon_step, lon_step):
 
