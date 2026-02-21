@@ -139,7 +139,7 @@ df_eq = df_eq.sort_values(by=["mag"], ascending=False)
 # >>> If you change the scaling you also have to update the legend file <<<
 df_eq["mag_scaled"] = np.exp(df_eq["mag"] / 1.7) * 0.0035
 
-
+# Filter dataset to keep columns needed for color- and size-coding
 epi_columns = ["longitude", "latitude", "depth", "mag_scaled"]
 df_eq_used = df_eq[epi_columns]
 
@@ -163,16 +163,16 @@ df_eq_used = df_eq[epi_columns]
 # year_step = 1
 # for year in range(1991, 2019 + year_step, year_step):
 
-    # df_eq_years = df_eq[df_eq["year"] < year + year_step]
-    # df_eq_used = df_eq_years[epi_columns]
+#     df_eq_years = df_eq[df_eq["year"] < year + year_step]
+#     df_eq_used = df_eq_years[epi_columns]
 
 # -----------------------------------------------------------------------------
-# Over Longitude
+# Over Longitude (only meaningful for orthographic projection)
 
 # lon_step = 10
 # for lon0 in range(0, 360 + lon_step, lon_step):
 
-    # proj_used = f"G{lon0}/{lat0}/{fig_size}c"
+#     proj_used = f"G{lon0}/{lat0}/{fig_size}c"
 
 
 # %%
