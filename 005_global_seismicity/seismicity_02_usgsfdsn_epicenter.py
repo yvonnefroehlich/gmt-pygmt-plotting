@@ -9,6 +9,7 @@
 # - Created: 2025/01/26
 # - Updated: 2025/07/23
 # - Updated: 2025/09/07 - Improve code style and comments
+# - Updated: 2026/02/20 - Improve Robinson projection, include elevation grid
 # -----------------------------------------------------------------------------
 # Versions
 #   PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
@@ -31,11 +32,14 @@ import pygmt
 # -----------------------------------------------------------------------------
 # >>> Choose for your needs <<<
 
-# Set projection of map
-status_projection = "ortho"  ## "robg" | "robd" | "epi" | "ortho"
+# Set projection of map (Robinson, epicentral, orthographic)
+status_projection = "epi"  ## "robg" | "robd" | "epi" | "ortho"
 
 # Use color- and size-coding for hypocentral depth or moment magnitude, respectively
-status_color = "CMAP"  ## "MONO" | "CMAP"
+status_color = "MONO"  ## "MONO" | "CMAP"
+
+# Color land and water or add elevation grid
+status_bg = "plain"  ## "plain" | "elevation"
 
 # Mark specific epicentral distance rage for XKS phases
 status_phase = "YES"  ## "YES" | "NO"
@@ -136,156 +140,170 @@ df_eq = df_eq.sort_values(by=["mag"], ascending=False)
 # Scale hypocentral depth for size-coding
 # >>> If you change the scaling you also have to update the legend file <<<
 df_eq["mag_scaled"] = np.exp(df_eq["mag"] / 1.7) * 0.0035
+
+# Add separate year column
 years = []
 for i_eq in df_eq.index:
     year_temp = int(df_eq["time"][i_eq][0:4])
     years.append(year_temp)
 df_eq["year"] = years
 
+# -----------------------------------------------------------------------------
+epi_columns = ["longitude", "latitude", "depth", "mag_scaled"]
 
-# for year in range(1991, 2019 + 1, 1):
+df_eq_used = df_eq[epi_columns]
+
+# Loops for animations
+# Uncomment and inset the rest of the code
+
+# Over TIME
+# year_step
+# for year in range(1991, 2019 + year_step, year_step):
 
     # df_eq_years = df_eq[df_eq["year"] < year + 1]
-    # df_eq_year = df_eq[df_eq["year"] == year]
-    # df_eq_cum = df_eq[df_eq["year"] < year]
+    # df_eq_used = df_eq_years[epi_columns]
 
-lon_step = 10
-for lon0 in range(0, 360 + lon_step, lon_step):
+# Over Longitude
+# lon_step = 10
+# for lon0 in range(0, 360 + lon_step, lon_step):
 
-    proj_used = f"G{lon0}/{lat0}/{fig_size}c"
+    # proj_used = f"G{lon0}/{lat0}/{fig_size}c"
 
-    # %%
-    # -----------------------------------------------------------------------------
-    # Create geographic map
-    # -----------------------------------------------------------------------------
-    fig = pygmt.Figure()
-    fig.basemap(projection=proj_used, region=region, frame=0)
 
-    # Plot shorelines, color land and water masses
-    fig.coast(shorelines=f"1/0.01p,{color_sl}", land=color_land, water=color_water)
-    fig.grdimage("@earth_relief", cmap="oleron")
+# %%
+# -----------------------------------------------------------------------------
+# Create geographic map
+# -----------------------------------------------------------------------------
+fig = pygmt.Figure()
+fig.basemap(projection=proj_used, region=region, frame=0)
 
-    # Plot plate boundaries
-    fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.8p,{color_pb}")
+# Plot shorelines, color land and water masses OR elevation grid
+match status_bg:
+    case "plain":
+        fig.coast(shorelines=f"1/0.01p,{color_sl}", land=color_land, water=color_water)
+    case "elevation":
+        fig.grdimage("@earth_relief", cmap="oleron")
 
-    # -----------------------------------------------------------------------------
-    # Color epicentral distance range for XKS phases
-    if status_projection == "epi" and status_phase == "YES":
-        fig.plot(
-            style=f"w{dist_min * size2dist}/0/360+i{dist_max * size2dist}",
-            fill=f"{color_hl}@90",
-            **center_coord,
-        )
+# Plot plate boundaries
+fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.8p,{color_pb}")
 
-    # -----------------------------------------------------------------------------
-    if status_projection == "epi":
-        # Plot recording stations
-        fig.plot(style="i0.4c", fill=color_sta, pen="0.8p,black", **center_coord)
-        fig.text(
-            text=center_text,
-            offset="0c/0.4c",
-            fill="white@30",
-            pen=f"0.8p,{color_hl}",
-            clearance=clearance_standard,
-            font=f"8p,1,{color_hl}",
-            **center_coord,
-        )
-        if status_phase == "YES":
-            # Mark epicentral distance range for XKS phases
-            for epi_lim in [dist_min, dist_max]:
-                fig.plot(style=f"E-{epi_lim * 2}+d", pen=f"1p,{color_hl},-", **center_coord)
+# -----------------------------------------------------------------------------
+# Color epicentral distance range for XKS phases
+if status_projection == "epi" and status_phase == "YES":
+    fig.plot(
+        style=f"w{dist_min * size2dist}/0/360+i{dist_max * size2dist}",
+        fill=f"{color_hl}@90",
+        **center_coord,
+    )
 
-            # Label epicentral distance range for XKS phases
-            for epi_lim in [dist_min, dist_max]:
-                fig.text(
-                    text=f"{epi_lim}@.",
-                    offset=f"0c/-{epi_lim * size2dist / 2}c",
-                    fill="white@30",
-                    pen=f"0.3p,{color_hl}",
-                    clearance=clearance_standard,
-                    no_clip=True,
-                    **center_coord,
-                )
+# -----------------------------------------------------------------------------
+if status_projection == "epi":
+    # Plot recording stations
+    fig.plot(style="i0.4c", fill=color_sta, pen="0.8p,black", **center_coord)
+    fig.text(
+        text=center_text,
+        offset="0c/0.4c",
+        fill="white@30",
+        pen=f"0.8p,{color_hl}",
+        clearance=clearance_standard,
+        font=f"8p,1,{color_hl}",
+        **center_coord,
+    )
+    if status_phase == "YES":
+        # Mark epicentral distance range for XKS phases
+        for epi_lim in [dist_min, dist_max]:
+            fig.plot(style=f"E-{epi_lim * 2}+d", pen=f"1p,{color_hl},-", **center_coord)
 
-    # -----------------------------------------------------------------------------
-    # Make colormap for hypocentral depth
-    pygmt.makecpt(cmap="lajolla", series=[0, 500, 1])
+        # Label epicentral distance range for XKS phases
+        for epi_lim in [dist_min, dist_max]:
+            fig.text(
+                text=f"{epi_lim}@.",
+                offset=f"0c/-{epi_lim * size2dist / 2}c",
+                fill="white@30",
+                pen=f"0.3p,{color_hl}",
+                clearance=clearance_standard,
+                no_clip=True,
+                **center_coord,
+            )
 
-    # Plot epicenters
-    epi_columns = ["longitude", "latitude", "depth", "mag_scaled"]
-    df_eq_used = df_eq[epi_columns]
-    # df_eq_years_used = df_eq_years[epi_columns]
-    # df_eq_year_used = df_eq_year[epi_columns]
-    # df_eq_cum_used = df_eq_cum[epi_columns]
+# -----------------------------------------------------------------------------
+# Make colormap for hypocentral depth
+pygmt.makecpt(cmap="lajolla", series=[0, 500, 1])
 
-    match status_color:
-        case "MONO":
-            fig.plot(data=df_eq_used, style="a0.15c", fill="darkred")
-        case "CMAP":
-            fig.plot(data=df_eq_used, style="cc", cmap=True, pen="0.3p,gray30")
+# Plot epicenters
+match status_color:
+    case "MONO":
+        fig.plot(data=df_eq_used, style="a0.15c", fill="darkred")
+    case "CMAP":
+        fig.plot(data=df_eq_used, style="cc", cmap=True, pen="0.3p,gray30")
 
-            # Add colorbar for hypocentral depth color-coding
-            with pygmt.config(FONT="14p"):
-                fig.colorbar(
-                    frame=["xa100+lhypocentral depth", "y+lkm"],
-                    position="JBC+o-2.5c/1.1c+w5c/0.3c+h+ml+ef0.2c",
-                    box=box_standard,
-                )
-
-            # Add legend for magnitude size-coding
-            fig.legend(
-                spec=f"{path_in}/{file_legend}",
-                position="JBC+o3c/1.2c+w4c",
+        # Add colorbar for hypocentral depth color-coding
+        with pygmt.config(FONT="14p"):
+            fig.colorbar(
+                frame=["xa100+lhypocentral depth", "y+lkm"],
+                position="JBC+o-2.5c/1.1c+w5c/0.3c+h+ml+ef0.2c",
                 box=box_standard,
             )
 
-            # Add label for time period
-            fig.text(
-                text=f"{start_date} to {end_date}",
-                font="black",
-                position="BR",
-                offset="-0.6c/-1c",
-                pen="0.8p,gray50",
-                clearance=clearance_standard,
-                no_clip=True,
-            )
+        # Add legend for magnitude size-coding
+        fig.legend(
+            spec=f"{path_in}/{file_legend}",
+            position="JBC+o3c/1.2c+w4c",
+            box=box_standard,
+        )
 
-    # -----------------------------------------------------------------------------
-    # Plot map frame on top
-    with pygmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray70"):
-        fig.basemap(frame=frame_used)
+        # Add label for time period
+        fig.text(
+            text=f"{start_date} to {end_date}",
+            font="black",
+            position="BR",
+            offset="-0.6c/-1c",
+            pen="0.8p,gray50",
+            clearance=clearance_standard,
+            no_clip=True,
+        )
 
-    # -----------------------------------------------------------------------------
-    # match status_color:
-    #     case "MONO":
-    #         offet = "0.3c"
-    #         if status_projection in ["robg", "robd"]:
-    #             offset = "-0.6c/-0.3c"
-    #         fig.text(
-    #             text=f"1991 - {year}",
-    #             font=f"10p,1,{color_hl}",
-    #             position="LB",
-    #             offset=offset,
-    #             no_clip=True,
-    #         )
-    #     case "CMAP":
-    #         fig.text(
-    #             text=f"1991 - {year}",
-    #             font=f"10p,1,{color_hl}",
-    #             position="BR",
-    #             offset="-1.6c/-0.95c",
-    #             pen="0.8p,gray50",
-    #             clearance=clearance_standard,
-    #             no_clip=True,
-    #         )
+# -----------------------------------------------------------------------------
+# Plot map frame on top
+with pygmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray70"):
+    fig.basemap(frame=frame_used)
 
-    # -----------------------------------------------------------------------------
-    # Show and save figure
-    fig.show()
-    fig_name = f"map_{eq_catalog_name}_{status_projection}_color{status_color}_" + \
-                f"rangemarked{status_phase}_lon{lon0}deg_elevation"  # 1991to{year}
-    # fig_name = f"map_{eq_catalog_name}_{status_projection}_color{status_color}_" + \
-    #             f"rangemarked{status_phase}_NOeqs"
-    for ext in ["png"]:  # "pdf", "eps"
-        fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
-    print(fig_name)
+# -----------------------------------------------------------------------------
+# Time labels for animations
+# match status_color:
+#     case "MONO":
+#         offet = "0.3c"
+#         if status_projection in ["robg", "robd"]:
+#             offset = "-0.6c/-0.3c"
+#         fig.text(
+#             text=f"1991 - {year}",
+#             font=f"10p,1,{color_hl}",
+#             position="LB",
+#             offset=offset,
+#             no_clip=True,
+#         )
+#     case "CMAP":
+#         fig.text(
+#             text=f"1991 - {year}",
+#             font=f"10p,1,{color_hl}",
+#             position="BR",
+#             offset="-1.6c/-0.95c",
+#             pen="0.8p,gray50",
+#             clearance=clearance_standard,
+#             no_clip=True,
+#         )
+
+# -----------------------------------------------------------------------------
+# Show and save figure
+fig.show()
+fig_name = f"map_{eq_catalog_name}_{status_projection}_color{status_color}_" + \
+            f"rangemarked{status_phase}"
+# Names for single images of animations
+# fig_name = f"map_{eq_catalog_name}_{status_projection}_color{status_color}_" + \
+#             f"rangemarked{status_phase}_1991to{year}"
+# fig_name = f"map_{eq_catalog_name}_{status_projection}_color{status_color}_" + \
+#             f"rangemarked{status_phase}_lon{lon0}deg_elevation"
+
+# for ext in ["png"]:  # "pdf", "eps"
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
+print(fig_name)
