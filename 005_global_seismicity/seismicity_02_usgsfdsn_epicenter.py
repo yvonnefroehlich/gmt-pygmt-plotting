@@ -274,7 +274,7 @@ with pygmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray70"):
     fig.basemap(frame=frame_used)
 
 # -----------------------------------------------------------------------------
-# Time labels for animations
+# Time label for animation over time
 # match status_color:
 #     case "MONO":
 #         offet = "0.3c"
