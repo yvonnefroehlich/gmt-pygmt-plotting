@@ -113,4 +113,3 @@ fig.text(text=f"mixed: {n_X}", justify="TR", position="TL", offset="1.5c/-2.4c")
 
 fig.show()
 fig.savefig(fname=f"{path_out}/05_medals_germany_02.png")
-

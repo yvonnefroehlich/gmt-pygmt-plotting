@@ -21,3 +21,5 @@ day;medal;gender
 17;bronze;M
 18;bronze;F
 20;gold;F
+21;gold;F
+21;silver;F
