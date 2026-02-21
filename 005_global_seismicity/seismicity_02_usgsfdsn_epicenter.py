@@ -92,10 +92,8 @@ size2dist = fig_size / epi_dist
 
 lon_center = mean_lon  # degrees East
 lat_center = mean_lat  # degrees North
-lon_center = 8.330
-lat_center = 48.331
 center_coord = {"x": lon_center, "y": lat_center}
-center_text = "BFO"
+center_text = "URG"
 
 # Orthographic
 lon0 = 60  # degrees East
