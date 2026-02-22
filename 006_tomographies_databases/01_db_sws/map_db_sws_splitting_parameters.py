@@ -297,9 +297,11 @@ for ref_id in ref_ids_unique:
 # -----------------------------------------------------------------------------
 # Create maps with orthographic projection for GIFs
 # -----------------------------------------------------------------------------
+lon_step = 10
+
 for cmap in ["phase"]:  # "romaO"
 
-    for lon0 in range(0, 360, 10):
+    for lon0 in range(0, 360 + lon_step, lon_step):
 
         fig = gmt.Figure()
         gmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray70")
