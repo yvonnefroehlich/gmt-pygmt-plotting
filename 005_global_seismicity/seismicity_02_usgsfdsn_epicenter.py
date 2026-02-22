@@ -99,7 +99,7 @@ center_text = "URG"
 lon0 = 60  # degrees East
 lat0 = 10  # degrees North
 
-region = "d"
+region = "g"
 match status_projection:
     case "robg" | "robd":
         proj_used = f"N{fig_size}c"
