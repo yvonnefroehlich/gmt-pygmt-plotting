@@ -9,6 +9,7 @@
 # - Created: 2025/01/26
 # - Updated: 2025/07/23
 # - Updated: 2025/09/07 - Improve code style and comments
+# - Updated: 2026/02/21 - Include elevation grid, improve Robinson projection
 # -----------------------------------------------------------------------------
 # Versions
 #   PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
@@ -31,11 +32,14 @@ import pygmt
 # -----------------------------------------------------------------------------
 # >>> Choose for your needs <<<
 
-# Set projection of map
-status_projection = "epi"  ## "rob" | "epi" | "ortho"
+# Set projection of map (Robinson, epicentral, orthographic)
+status_projection = "epi"  ## "robg" | "robd" | "epi" | "ortho"
 
 # Use color- and size-coding for hypocentral depth or moment magnitude, respectively
 status_color = "CMAP"  ## "MONO" | "CMAP"
+
+# Color land and water or add elevation grid
+status_bg = "plain"  ## "plain" | "elevation"
 
 # Mark specific epicentral distance rage for XKS phases
 status_phase = "YES"  ## "YES" | "NO"
@@ -75,8 +79,8 @@ file_legend = "legend_gmt_magitude.txt"
 
 # Recording stations -> Upper Rhine Graben area as center
 sta_name = ["WLS", "ECH", "STU", "BFO", "TMO07", "TMO44"]
-sta_lat = np.array([48.413, 48.216, 48.771, 48.331, 49.020, 48.989])
 sta_lon = np.array([7.354, 7.159, 9.194, 8.330, 8.367, 8.492])
+sta_lat = np.array([48.413, 48.216, 48.771, 48.331, 49.020, 48.989])
 mean_lon = np.mean(sta_lon)
 mean_lat = np.mean(sta_lat)
 
@@ -95,16 +99,19 @@ center_text = "URG"
 lon0 = 60  # degrees East
 lat0 = 10  # degrees North
 
+region = "g"
 match status_projection:
-    case "rob":
+    case "robg" | "robd":
         proj_used = f"N{fig_size}c"
         frame_used = ["WSne", "xa60f30g", "ya30fg"]
+        if status_projection == "robd":
+            region = "d"
     case "epi":
         proj_used = f"E{lon_center}/{lat_center}/{epi_dist}/{fig_size}c"
         frame_used = "af"
     case "ortho":
         proj_used = f"G{lon0}/{lat0}/{fig_size}c"
-        frame_used = "afg"
+        frame_used = "afg10"
 
 
 # %%
@@ -132,16 +139,55 @@ df_eq = df_eq.sort_values(by=["mag"], ascending=False)
 # >>> If you change the scaling you also have to update the legend file <<<
 df_eq["mag_scaled"] = np.exp(df_eq["mag"] / 1.7) * 0.0035
 
+# Filter dataset to keep columns needed for color- and size-coding
+epi_columns = ["longitude", "latitude", "depth", "mag_scaled"]
+df_eq_used = df_eq[epi_columns]
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Loops for animations
+# -----------------------------------------------------------------------------
+# Uncomment and inset the rest of the code
+
+# -----------------------------------------------------------------------------
+# Over time
+
+# Add separate year column
+# years = []
+# for i_eq in df_eq.index:
+#     year_temp = int(df_eq["time"][i_eq][0:4])
+#     years.append(year_temp)
+# df_eq["year"] = years
+
+# year_step = 1
+# for year in range(1991, 2019 + year_step, year_step):
+
+#     df_eq_years = df_eq[df_eq["year"] < year + year_step]
+#     df_eq_used = df_eq_years[epi_columns]
+
+# -----------------------------------------------------------------------------
+# Over Longitude (only meaningful for orthographic projection)
+
+# lon_step = 10
+# for lon0 in range(0, 360 + lon_step, lon_step):
+
+#     proj_used = f"G{lon0}/{lat0}/{fig_size}c"
+
 
 # %%
 # -----------------------------------------------------------------------------
 # Create geographic map
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
-fig.basemap(projection=proj_used, region="d", frame=0)
+fig.basemap(projection=proj_used, region=region, frame=0)
 
-# Plot shorelines, color land and water masses
-fig.coast(shorelines=f"1/0.01p,{color_sl}", land=color_land, water=color_water)
+# Plot shorelines, color land and water masses OR elevation grid
+match status_bg:
+    case "plain":
+        fig.coast(shorelines=f"1/0.01p,{color_sl}", land=color_land, water=color_water)
+    case "elevation":
+        fig.grdimage("@earth_relief", cmap="oleron")
 
 # Plot plate boundaries
 fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.8p,{color_pb}")
@@ -156,13 +202,40 @@ if status_projection == "epi" and status_phase == "YES":
     )
 
 # -----------------------------------------------------------------------------
+if status_projection == "epi":
+    # Plot recording stations
+    fig.plot(style="i0.4c", fill=color_sta, pen="0.8p,black", **center_coord)
+    fig.text(
+        text=center_text,
+        offset="0c/0.4c",
+        fill="white@30",
+        pen=f"0.8p,{color_hl}",
+        clearance=clearance_standard,
+        font=f"8p,1,{color_hl}",
+        **center_coord,
+    )
+    if status_phase == "YES":
+        # Mark epicentral distance range for XKS phases
+        for epi_lim in [dist_min, dist_max]:
+            fig.plot(style=f"E-{epi_lim * 2}+d", pen=f"1p,{color_hl},-", **center_coord)
+
+        # Label epicentral distance range for XKS phases
+        for epi_lim in [dist_min, dist_max]:
+            fig.text(
+                text=f"{epi_lim}@.",
+                offset=f"0c/-{epi_lim * size2dist / 2}c",
+                fill="white@30",
+                pen=f"0.3p,{color_hl}",
+                clearance=clearance_standard,
+                no_clip=True,
+                **center_coord,
+            )
+
+# -----------------------------------------------------------------------------
 # Make colormap for hypocentral depth
 pygmt.makecpt(cmap="lajolla", series=[0, 500, 1])
 
 # Plot epicenters
-epi_columns = ["longitude", "latitude", "depth", "mag_scaled"]
-df_eq_used = df_eq[epi_columns]
-
 match status_color:
     case "MONO":
         fig.plot(data=df_eq_used, style="a0.15c", fill="darkred")
@@ -201,40 +274,41 @@ with pygmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray70"):
     fig.basemap(frame=frame_used)
 
 # -----------------------------------------------------------------------------
-if status_projection == "epi":
-    # Plot recording stations
-    fig.plot(style="i0.4c", fill=color_sta, pen="0.8p,black", **center_coord)
-    fig.text(
-        text=center_text,
-        offset="0c/0.4c",
-        fill="white@30",
-        pen=f"0.8p,{color_hl}",
-        clearance=clearance_standard,
-        font=f"8p,1,{color_hl}",
-        **center_coord,
-    )
-    if status_phase == "YES":
-        # Mark epicentral distance range for XKS phases
-        for epi_lim in [dist_min, dist_max]:
-            fig.plot(style=f"E-{epi_lim * 2}+d", pen=f"1p,{color_hl},-", **center_coord)
-
-        # Label epicentral distance range for XKS phases
-        for epi_lim in [dist_min, dist_max]:
-            fig.text(
-                text=f"{epi_lim}@.",
-                offset=f"0c/-{epi_lim * size2dist / 2}c",
-                fill="white@30",
-                pen=f"0.3p,{color_hl}",
-                clearance=clearance_standard,
-                no_clip=True,
-                **center_coord,
-            )
+# Time label for animation over time
+# match status_color:
+#     case "MONO":
+#         offet = "0.3c"
+#         if status_projection in ["robg", "robd"]:
+#             offset = "-0.6c/-0.3c"
+#         fig.text(
+#             text=f"1991 - {year}",
+#             font=f"10p,1,{color_hl}",
+#             position="LB",
+#             offset=offset,
+#             no_clip=True,
+#         )
+#     case "CMAP":
+#         fig.text(
+#             text=f"1991 - {year}",
+#             font=f"10p,1,{color_hl}",
+#             position="BR",
+#             offset="-1.6c/-0.95c",
+#             pen="0.8p,gray50",
+#             clearance=clearance_standard,
+#             no_clip=True,
+#         )
 
 # -----------------------------------------------------------------------------
 # Show and save figure
 fig.show()
 fig_name = f"map_{eq_catalog_name}_{status_projection}_color{status_color}_" + \
             f"rangemarked{status_phase}"
+# Names for single images of animations
+# fig_name = f"map_{eq_catalog_name}_{status_projection}_color{status_color}_" + \
+#             f"rangemarked{status_phase}_1991to{year}"
+# fig_name = f"map_{eq_catalog_name}_{status_projection}_color{status_color}_" + \
+#             f"rangemarked{status_phase}_lon{lon0}deg_elevation"
+
 # for ext in ["png"]:  # "pdf", "eps"
 #     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 print(fig_name)
