@@ -125,9 +125,7 @@ for spacing in range(5, 21, 5):  # size of blocks in degrees
 # -----------------------------------------------------------------------------
     # Show and save figure
     fig.show()
-
-    fig_name = f"{path_out}/db_sws_spatial_distribution_splits_spacing{spacing}deg"
-    for ext in ["png"]:  # , "pdf", "eps"]:
-        fig.savefig(fname=f"{fig_name}.{ext}")
-
+    fig_name = f"{path_out}/db_sws_map_spatial_distribution_splits_spacing{spacing}deg"
+    # for ext in ["png"]:  # , "pdf", "eps"]:
+    #     fig.savefig(fname=f"{fig_name}.{ext}")
     print(fig_name)

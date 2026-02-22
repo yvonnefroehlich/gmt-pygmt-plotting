@@ -22,7 +22,7 @@
 # - Updated: 2025/02/15
 # - Updated: 2025/12/27 - Update SWS database
 # - Updated: 2025/12/27 - Add orthographic map, studies cumulative map
-# - Updated: 2025/12/28 - Add year map, carthesian histogram year
+# - Updated: 2025/12/28 - Add map for year, carthesian histogram for year, loops for gifs
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -152,11 +152,9 @@ with gmt.config(FONT="7p"):
 
 # Show and save figure
 fig.show()
-
-fig_name = f"{path_out}/db_sws_splitting_parameters"
-for ext in ["png"]:  # , "pdf", "eps"]:
-    fig.savefig(fname=f"{fig_name}.{ext}")
-
+fig_name = "db_sws_map_splitting_parameters"
+# for ext in ["png"]:  # , "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
 
 
@@ -185,9 +183,9 @@ with gmt.config(FONT="7p"):
     fig.basemap(frame=["WSnE", "xa90f30", "ya30f15"])
 
 fig.show()
-fig_name = f"{path_out}/db_sws_sp_year"
-for ext in ["png"]:  # , "pdf", "eps"]:
-    fig.savefig(fname=f"{fig_name}.{ext}")
+fig_name = "db_sws_map_year"
+# for ext in ["png"]:  # , "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
 
 
@@ -206,7 +204,7 @@ fig.histogram(
         0,
         len(df_swsm_raw) + 7000,
     ],
-    frame=["xa5f1+lyear", "yaf+lcounts"],
+    frame=["xa5f1+lyear", "yaf+lcount of studies"],
     series=1,
     fill="gray90",
     pen="0.5p,gray70",
@@ -216,6 +214,10 @@ fig.histogram(
 )
 
 fig.show()
+fig_name = "db_sws_histo_year"
+# for ext in ["png"]:  # , "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+print(fig_name)
 
 
 
@@ -284,9 +286,9 @@ for ref_id in ref_ids_unique:
             fig.basemap(frame=["WSnE", "xa90f30", "ya30f15"])
 
         fig.show()
-        fig_name = f"{path_out}/ref_id/db_sws_sp_refid{ref_id}_{tag_ay}"
-        for ext in ["png"]:  # , "pdf", "eps"]:
-            fig.savefig(fname=f"{fig_name}.{ext}")
+        fig_name = f"db_sws_map_refid{ref_id}_{tag_ay}"
+        # for ext in ["png"]:  # , "pdf", "eps"]:
+        #     fig.savefig(fname=f"{path_out}/gif_studies/{fig_name}.{ext}")
         print(fig_name)
 
 
@@ -295,7 +297,7 @@ for ref_id in ref_ids_unique:
 # -----------------------------------------------------------------------------
 # Create maps with orthographic projection for GIFs
 # -----------------------------------------------------------------------------
-for cmap in ["romaO", "phase"]:
+for cmap in ["phase"]:  # "romaO"
 
     for lon0 in range(0, 360, 10):
 
@@ -319,7 +321,7 @@ for cmap in ["romaO", "phase"]:
         fig.basemap(frame="g10")
 
         fig.show()
-        fig_name = f"{path_out}/gif/circle_{cmap}/db_sws_sp_lon{lon0}deg_circle_{cmap}"
+        fig_name = f"db_sws_map_ortho_lon{lon0}deg_circle_{cmap}"
         # for ext in ["png"]:  # , "pdf", "eps"]:
-        #     fig.savefig(fname=f"{fig_name}.{ext}")
+        #     fig.savefig(fname=f"{path_out}/gif_longitude/{fig_name}.{ext}")
         print(fig_name)
