@@ -123,4 +123,6 @@ for event in ["olympics", "paralympics"]:
     fig.shift_origin(yshift="-h-1.5c")
 
 fig.show()
-fig.savefig(fname=f"{path_out}/05_medals.png")
+fig_name = "05_medals"
+# fig.savefig(fname=f"{path_out}/{fig_name}.png")
+print(fig_name)
