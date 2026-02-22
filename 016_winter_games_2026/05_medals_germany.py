@@ -1,8 +1,9 @@
 # #############################################################################
-# Winter Olympics 2026 - medals germany
+# Winter games 2026 - medals for Germany at Olympics and Paralympics
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2026/02/11
+# - Updated: 2026/02/22 - Complete Olympics medals for Germany
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
