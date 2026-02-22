@@ -36,7 +36,7 @@ import pygmt
 status_projection = "epi"  ## "robg" | "robd" | "epi" | "ortho"
 
 # Use color- and size-coding for hypocentral depth or moment magnitude, respectively
-status_color = "MONO"  ## "MONO" | "CMAP"
+status_color = "CMAP"  ## "MONO" | "CMAP"
 
 # Color land and water or add elevation grid
 status_bg = "plain"  ## "plain" | "elevation"
