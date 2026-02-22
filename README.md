@@ -35,27 +35,27 @@ If you make use of this material, please acknowledge the relating publications i
   Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
   Dissertation, *Karlsruhe Institute of Technology, Geophysical Institute*.
   https://doi.org/10.5445/IR/1000183786.
-- [**_Fröhlich Y (2025b)_**](https://doi.org/10.5281/zenodo.15982581).
+- [**_Fröhlich Y (2025b)_**](https://doi.org/10.5281/zenodo.15982580).
   Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
   Disputation, *Karlsruhe Institute of Technology, Geophysical Institute*.
-  https://doi.org/10.5281/zenodo.15982581.
+  https://doi.org/10.5281/zenodo.15982580.
 - [**_Fröhlich Y (2025c)_**](https://doi.org/10.5281/zenodo.15836682).
-  Geophysical Visualizations.
-  *Zenodo*. https://doi.org/10.5281/zenodo.15836682.
+  Geophysical Visualizations. *Zenodo*.
+  https://doi.org/10.5281/zenodo.15836682.
 - [**_Fröhlich Y (2025d)_**](https://doi.org/10.5281/zenodo.15641348).
-  Geophysical Animations.
-  *Zenodo*. https://doi.org/10.5281/zenodo.15641348.
+  Geophysical Animations. *Zenodo*.
+  https://doi.org/10.5281/zenodo.15641348.
 
 <details><summary>Please click for details on <b>Presentations</b> and <b>Posters.</b> </summary>
 <p>
 
 **Presentations**
-- [**_Fröhlich Y, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14510993).
+- [**_Fröhlich Y, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14510992).
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
   *Annual Meeting of the American Geophysical Union*, Washington D.C..
   Division Session Exploring Innovations and New Directions in Seismic Anisotropy and Attenuation: Observations, Models, and Experiments I Oral, DI21A-02.
   [Abstract ID 1578275](https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1578275).
-  https://doi.org/10.5281/zenodo.14510993.
+  https://doi.org/10.5281/zenodo.14510992.
 - [**_Fröhlich Y, Tian D, Leong W J, Jones M, Grund M (2024)_**](https://doi.org/10.6084/m9.figshare.28049495).
   PyGMT – Accessing and Integrating GMT with Python and the Scientific Python Ecosystem.
   *Annual Meeting of the American Geophysical Union*, Washington D.C..
@@ -64,22 +64,22 @@ If you make use of this material, please acknowledge the relating publications i
   https://doi.org/10.6084/m9.figshare.28049495.
 
 **Posters**
-- [**_Fröhlich Y (2026a)_**](https://doi.org/10.5281/zenodo.18524084).
+- [**_Fröhlich Y (2026a)_**](https://doi.org/10.5281/zenodo.18524083).
   Resolving upper mantle anisotropy in 3-D: A case study in the Upper Rhine Graben area, Central Europe.
   *Annual Meeting of the German Geophysical Society*, Münster, Germany.
-  https://doi.org/10.5281/zenodo.18524084.
-- [**_Fröhlich Y, Dorn F, Dillah M I F, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14801004).
+  https://doi.org/10.5281/zenodo.18524083.
+- [**_Fröhlich Y, Dorn F, Dillah M I F, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14801003).
   Investigation of seismic anisotropy in the D'' layer using *X*KS pairs.
   *2th DeepDyn annual meeting*, Rügen.
-  https://doi.org/10.5281/zenodo.14801004.
-- [**_Fröhlich Y, Dillah M I F, Dorn F, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.12658821).
+  https://doi.org/10.5281/zenodo.14801003.
+- [**_Fröhlich Y, Dillah M I F, Dorn F, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.12658820).
   Investigation of seismic anisotropy in the D'' layer and at the CMB regarding intense magnetic flux regions.
   *18th Symposium of Study of the Earth's Deep Interior*, Great Barrington.
-  https://doi.org/10.5281/zenodo.12658821.
-- [**_Fröhlich Y, Thiyagarajan H, Tölle L S, Ritter J R R, Thomas C (2024)_**](https://doi.org/10.5281/zenodo.10927349).
+  https://doi.org/10.5281/zenodo.12658820.
+- [**_Fröhlich Y, Thiyagarajan H, Tölle L S, Ritter J R R, Thomas C (2024)_**](https://doi.org/10.5281/zenodo.10927348).
   Understanding the influence of seismic mantle structures at the core-mantle boundary on intense magnetic flux regions.
   *84th Annual Meeting of the German Geophysical Society*, Jena.
-  https://doi.org/10.5281/zenodo.10927349.
+  https://doi.org/10.5281/zenodo.10927348.
 
 </p>
 </details>
