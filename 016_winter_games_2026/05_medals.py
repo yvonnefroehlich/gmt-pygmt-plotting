@@ -1,5 +1,5 @@
 # #############################################################################
-# Winter games 2026 - medal plots for Olympics and Paralympics
+# Winter games 2026 - medals plot for Olympics and Paralympics
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2026/02/11
