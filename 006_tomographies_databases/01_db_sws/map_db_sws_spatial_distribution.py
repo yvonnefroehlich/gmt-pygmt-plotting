@@ -22,8 +22,8 @@
 # - Updated: 2025/12/27 - Update SWS database
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.17.0 -> https://www.pygmt.org/
-# - GMT 6.4.0 - 6.5.0 -> https://www.generic-mapping-tools.org/
+# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - GMT 6.4.0 - 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich
@@ -44,10 +44,12 @@ import pygmt as gmt
 path_in = "01_in_data"
 path_out = "02_out_figs"
 
+file_pb = "plate_boundaries_Bird_2003.txt"
+
 # Colors
 color_pb = "216.750/82.875/24.990"  # plate boundaries
-color_land = "gray90"
-color_sl = "gray30"  # shorelines
+color_land = "gray95"
+color_sl = "gray50"  # shorelines
 color_split = "white"
 
 # Region and projection
@@ -73,7 +75,7 @@ df_swsm_null = df_swsm_raw[df_swsm_raw.obs == "Null"]
 for spacing in range(5, 21, 5):  # size of blocks in degrees
     # Calculate counts of splits within each block
     df_swsm_split_bin = gmt.blockmean(
-        data=df_swsm_split[["Longitude", "Latitude", "phi_SL"]],
+        data=df_swsm_split[["lon", "lat", "phi_sl"]],
         region=region,
         spacing=spacing,
         summary="n",  # Counts within each block
@@ -88,9 +90,8 @@ for spacing in range(5, 21, 5):  # size of blocks in degrees
 # Make geographic map
 # -----------------------------------------------------------------------------
     fig = gmt.Figure()
-    gmt.config(FONT_LABEL="10p", MAP_GRID_PEN_PRIMARY="0.01p,gray50")
 
-    fig.basemap(region=region, projection=projection, frame=["WSnE", "xa90f30", "ya30f15"])
+    fig.basemap(region=region, projection=projection, frame=0)
     fig.coast(land=color_land)
 
 # -----------------------------------------------------------------------------
@@ -103,28 +104,28 @@ for spacing in range(5, 21, 5):  # size of blocks in degrees
 
     # Add colorbar
     cb_xlabel = f"Count of splits within each block ({spacing}@. x {spacing}@.)"
-    fig.colorbar(frame=f"x+l{cb_xlabel}", position="+ef0.3c")
+    with gmt.config(FONT_LABEL="10p"):
+        fig.colorbar(frame=f"x+l{cb_xlabel}", position="+ef0.3c")
 
 # -----------------------------------------------------------------------------
     # Plot data points for splits
-    fig.plot(data=df_swsm_split[["Longitude", "Latitude"]], style="p0.1p", fill=color_split)
+    fig.plot(data=df_swsm_split[["lon", "lat"]], style="p0.1p", fill=color_split)
 
 # -----------------------------------------------------------------------------
     # Add shorelines
     fig.coast(shorelines=f"1/0.15p,{color_sl}")
 
     # Plot plate boundaries
-    fig.plot(data=f"{path_in}/plate_boundaries_Bird_2003.txt", pen=f"0.3p,{color_pb}")
+    fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.2p,{color_pb}")
 
     # Plot frame on top
-    fig.basemap(frame=0)
+    with gmt.config(FONT="7p"):
+        fig.basemap(frame=["WSnE", "xa90f30", "ya30f15"])
 
 # -----------------------------------------------------------------------------
     # Show and save figure
     fig.show()
-
-    fig_name = f"{path_out}/db_sws_spatial_distribution_splits_spacing{spacing}deg"
+    fig_name = f"{path_out}/db_sws_map_spatial_distribution_splits_spacing{spacing}deg"
     # for ext in ["png"]:  # , "pdf", "eps"]:
     #     fig.savefig(fname=f"{fig_name}.{ext}")
-
     print(fig_name)

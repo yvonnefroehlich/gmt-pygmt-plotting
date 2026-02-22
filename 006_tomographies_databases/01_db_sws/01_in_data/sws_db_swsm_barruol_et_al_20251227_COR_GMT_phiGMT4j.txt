@@ -1,4 +1,4 @@
-refID,Station,Longitude,Latitude,phi_SL,phi_GMT,dt,thickness,obs
+ref_id,station,lon,lat,phi_sl,phi_gmt,dt,thick,obs
 0,ARU,58.6,56.4,68.0,22.0,0.9,1.0,Split
 0,COL,-147.79,64.89,-82.0,172.0,1.55,1.0,Split
 0,GRA1,11.22,49.69,77.0,13.0,1.05,1.0,Split
