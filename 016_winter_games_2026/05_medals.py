@@ -1,9 +1,9 @@
 # #############################################################################
-# Winter games 2026 - medals for Germany at Olympics and Paralympics
+# Winter games 2026 - medal plots for Olympics and Paralympics
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2026/02/11
-# - Updated: 2026/02/22 - Complete Olympics medals for Germany
+# - Updated: 2026/02/22 - Complete medals plot for Olympics for Germany
 # - Updated: 2026/02/22 - Update medals plot for Paralympics
 # -----------------------------------------------------------------------------
 # Versions
