@@ -4,7 +4,7 @@
 # History
 # - Created: 2026/02/11
 # - Updated: 2026/02/22 - Complete Olympics medals for Germany
-# - Updated: 2026/03/  - Complete Paralympics medals for Ukraine
+# - Updated: 2026/02/22 - Update medals plot for Paralympics
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
