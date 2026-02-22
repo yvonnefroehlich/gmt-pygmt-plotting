@@ -9,7 +9,7 @@
 # - Created: 2025/01/26
 # - Updated: 2025/07/23
 # - Updated: 2025/09/07 - Improve code style and comments
-# - Updated: 2026/02/20 - Improve Robinson projection, include elevation grid
+# - Updated: 2026/02/21 - Include elevation grid, improve Robinson projection
 # -----------------------------------------------------------------------------
 # Versions
 #   PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
