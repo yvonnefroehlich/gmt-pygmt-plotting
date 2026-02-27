@@ -30,7 +30,7 @@
 # #############################################################################
 
 import geodatasets
-import geopandas as gpd
+import geopandas
 import pygmt
 from pygmt.params import Box
 
@@ -39,7 +39,7 @@ from pygmt.params import Box
 # -----------------------------------------------------------------------------
 # Load and prepare data
 # -----------------------------------------------------------------------------
-chicago = gpd.read_file(geodatasets.get_path("geoda airbnb"))
+chicago = geopandas.read_file(geodatasets.get_path("geoda airbnb"))
 
 provider = "https://naciscdn.org/naturalearth"
 files = {
@@ -51,8 +51,8 @@ files = {
 bbox = (-87.94, -87.52, 41.64, 42.02)  # Define bounding box
 data = {}
 for key, fname in files.items():
-    gdf = gpd.read_file(f"{provider}/10m/cultural/{fname}")
-    data[key] = gdf.cx[bbox[0]:bbox[1], bbox[2]:bbox[3]]
+    gdf = geopandas.read_file(f"{provider}/10m/cultural/{fname}")
+    data[key] = geopandas.cx[bbox[0]:bbox[1], bbox[2]:bbox[3]]
 railroads = data["railroads"]
 airports = data["airports"]
 cities = data["cities"]

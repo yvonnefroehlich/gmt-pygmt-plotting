@@ -38,10 +38,10 @@
 # -----------------------------------------------------------------------------
 
 import pygmt
-import geopandas as gpd  # Optional dependency
+import geopandas  # Optional dependency
 
 # Download a dataset about Chicago into a geopandas.GeoDataFrame
-gdf_airbnb = gpd.read_file("https://geodacenter.github.io/data-and-lab/data/airbnb.zip")
+gdf_airbnb = geopanads.read_file("https://geodacenter.github.io/data-and-lab/data/airbnb.zip")
 
 fig = pygmt.Figure()
 fig.basemap(region=[-88, -87.5, 41.62, 42.05], projection="M10c", frame="rltb")
