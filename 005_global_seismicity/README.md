@@ -14,6 +14,8 @@ Python scripts to reproduce some figures of
 
 _Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 
+_Animations_: https://doi.org/10.5281/zenodo.15641348
+
 | **[01_usgsfdsn_webservice](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/005_global_seismicity/seismicity_01_usgsfdsn_webservice.py)** | **[02_usgsfdsn_epicenter](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/005_global_seismicity/seismicity_02_usgsfdsn_epicenter.py)** | **[03_usgsfdsn_histogram](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/005_global_seismicity/seismicity_03_usgsfdsn_histogram.py)** |
 | :---: | :---: | :---: |
 | USGS FDSN catalog - webservice | USGS FDSN catalog - epicenters | USGS FDSN catalog - histograms |

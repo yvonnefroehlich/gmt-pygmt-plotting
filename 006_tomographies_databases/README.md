@@ -2,6 +2,8 @@
 
 _Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 
+_Animations_: https://doi.org/10.5281/zenodo.15641348
+
 | | | |
 | --- | --- | --- |
 | **[01_db_sws](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases/01_db_sws)**                                                             | Shear wave splitting database by [Wüstefeld et al. (2009)](https://doi.org/10.1016/j.pepi.2009.05.006) | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/006_tomographies_databases/01_db_sws/02_out_figs/db_sws_map_splitting_parameters.png" width="150"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/006_tomographies_databases/01_db_sws/02_out_figs/db_sws_map_spatial_distribution_splits_spacing5deg.png" width="150"> |
