@@ -14,6 +14,8 @@ Python scripts to reproduce figures of seismological travel paths and travel tim
 
 _Recommended versions_: PyGMT v0.16.0 - v0.18.0, GMT 6.5.0 - 6.6.0
 
+_Animations_: https://doi.org/10.5281/zenodo.15641348
+
 | Code | Description |
 | --- | --- |
 | **[taup_path_curve.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup/taup_path_curve.py)** | Main function: Calculating and plotting of travel paths and travel time curves    |
