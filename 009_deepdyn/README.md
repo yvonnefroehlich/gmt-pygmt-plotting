@@ -2,6 +2,8 @@
 
 _Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 
+_Animations_: https://doi.org/10.5281/zenodo.15641348
+
 | **[01_epidistance_lmm](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/009_deepdyn/01_epidistance_lmm/map_epidist_LMM_XKS_ScS.py)** | **[02_gufm1](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/009_deepdyn/02_gufm1)** | **[03_scanarray](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/009_deepdyn/03_scanarray)** |
 | :---: | :---: | :---: |
 | Source-receiver constellation | Earth's magnetic field model gufm1 <br> by [Jackson et al. (2000)](https://www.jstor.org/stable/2666741) | **_Note_ Partly affected by [a SplitLab bug](https://doi.org/10.4401/ag-8781)!** <br> _Reproduced based on_ [Grund (2019) Fig. 8.1](https://doi.org/10.5445/IR/1000091425), <br> [Grund & Ritter (2019) Fig. DR14](https://doi.org/10.1130/G45514.1) |
