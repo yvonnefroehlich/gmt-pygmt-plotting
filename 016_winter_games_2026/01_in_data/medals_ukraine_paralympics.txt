@@ -1,1 +1,7 @@
 day;medal;gender
+7;gold;M
+7;gold;M
+7;silver;M
+7;bronze;M
+7;gold;F
+7;bronze;F
