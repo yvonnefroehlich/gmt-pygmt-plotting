@@ -53,8 +53,8 @@ for event in ["olympics", "paralympics"]:
         uk_blue = "0/91/187"
         uk_yellow = "255/213/0"
         uk_x = [3.8, 16.2, 16.2, 3.8, 3.8]
-        fig.plot(x=uk_x, y=[0.5, 0.5, 1, 1, 0.5], fill=f"{uk_blue}@50")
-        fig.plot(x=uk_x, y=[0, 0, 0.5, 0.5, 0], fill=f"{uk_yellow}@50")
+        fig.plot(x=uk_x, y=[0.5, 0.5, 1, 1, 0.5], fill=f"{uk_blue}@70")
+        fig.plot(x=uk_x, y=[0, 0, 0.5, 0.5, 0], fill=f"{uk_yellow}@70")
         fig.text(
             x=10,
             y=0.85,
@@ -73,28 +73,18 @@ for event in ["olympics", "paralympics"]:
 
         if len(df_medals_day) > 0:
 
-            for medal, color, xshift in zip(
+            for medal, color, y_color in zip(
                 ["bronze", "silver", "gold"],
                 ["tan", "gray", "gold"],
-                [0.75, 0.5, 0.25]
+                [0.1, 0.3, 0.5]
             ):
                 df_medals_color = df_medals_day[df_medals_day["medal"] == medal]
                 N_color = len(df_medals_color)
 
                 if N_color > 0:
-
-                    y_step = 0.15
-
-                    fig.plot(
-                        x=[day + xshift] * N_color,
-                        y=np.arange(0, np.round(N_color * y_step, 2), y_step) + 0.1,
-                        style="c0.3c",
-                        fill=color,
-                    )
-
                     for ic in range(N_color):
-                        gender_temp = df_medals_color["gender"].tolist()[ic]
 
+                        gender_temp = df_medals_color["gender"].tolist()[ic]
                         if gender_temp == "F":
                             pen = "tomato"
                         elif gender_temp == "M":
@@ -103,9 +93,10 @@ for event in ["olympics", "paralympics"]:
                             pen = "purple"
 
                         fig.plot(
-                            x=day + xshift,
-                            y=y_step * ic + 0.1,
+                            x=0.17 * ic + day,
+                            y=y_color,
                             style="c0.3c",
+                            fill=color,
                             pen=f"1p,{pen}",
                         )
 
