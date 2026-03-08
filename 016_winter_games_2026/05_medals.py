@@ -65,7 +65,7 @@ for subplot in ["olympics", "paralympics", "paralympics_uk"]:
         fig.plot(x=uk_x, y=[0.5, 0.5, 1, 1, 0.5], fill=f"{color_uk_blue}@70")
         fig.plot(x=uk_x, y=[0, 0, 0.5, 0.5, 0], fill=f"{color_uk_yellow}@70")
         fig.text(
-            x=10,
+            x=10.5,
             y=0.85,
             text="Harmony does not mean ignoring the war!",
             font="12p,1",
