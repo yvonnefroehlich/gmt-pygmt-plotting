@@ -19,10 +19,18 @@
 
 import pygmt
 import pandas as pd
-import numpy as np
 
 path_in = "01_in_data"
 path_out = "02_out_figs"
+
+color_uk_blue = "0/91/187"
+color_uk_yellow = "255/213/0"
+color_g = "gold"
+color_s = "gray"
+color_b = "tan"
+color_f = "tomato"
+color_m = "steelblue"
+color_x = "purple"
 
 
 # %%
@@ -50,11 +58,9 @@ for event in ["olympics", "paralympics"]:
         )
 
     if event == "paralympics":
-        uk_blue = "0/91/187"
-        uk_yellow = "255/213/0"
         uk_x = [3.8, 16.2, 16.2, 3.8, 3.8]
-        fig.plot(x=uk_x, y=[0.5, 0.5, 1, 1, 0.5], fill=f"{uk_blue}@70")
-        fig.plot(x=uk_x, y=[0, 0, 0.5, 0.5, 0], fill=f"{uk_yellow}@70")
+        fig.plot(x=uk_x, y=[0.5, 0.5, 1, 1, 0.5], fill=f"{color_uk_blue}@70")
+        fig.plot(x=uk_x, y=[0, 0, 0.5, 0.5, 0], fill=f"{color_uk_yellow}@70")
         fig.text(
             x=10,
             y=0.85,
@@ -72,10 +78,9 @@ for event in ["olympics", "paralympics"]:
         df_medals_day = df_medals[df_medals["day"] == day]
 
         if len(df_medals_day) > 0:
-
             for medal, color, y_color in zip(
                 ["bronze", "silver", "gold"],
-                ["tan", "gray", "gold"],
+                [color_b, color_s, color_g],
                 [0.1, 0.3, 0.5]
             ):
                 df_medals_color = df_medals_day[df_medals_day["medal"] == medal]
@@ -113,7 +118,7 @@ for event in ["olympics", "paralympics"]:
         [f"gold: {N_g}", f"silver: {N_s}", f"bronze: {N_b}",
          f"total: {N_tot}", f"female: {N_F}", f"male: {N_M}",
          f"mixed: {N_X}"],
-        ["gold", "gray", "tan", "black", "tomato", "steelblue", "purple"],
+        [color_g, color_s, color_b, "black", color_f, color_m, color_x],
     ):
         fig.text(
             text=amount,
