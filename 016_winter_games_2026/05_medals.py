@@ -23,14 +23,14 @@ import pandas as pd
 path_in = "01_in_data"
 path_out = "02_out_figs"
 
-color_uk_blue = "0/91/187"
-color_uk_yellow = "255/213/0"
 color_g = "gold"
 color_s = "gray"
 color_b = "tan"
 color_f = "tomato"
 color_m = "steelblue"
 color_x = "purple"
+color_uk_blue = "0/91/187"
+color_uk_yellow = "255/213/0"
 
 
 # %%
@@ -106,12 +106,12 @@ for event in ["olympics", "paralympics"]:
                         )
 
     N_tot = len(df_medals)
-    N_F = len(df_medals[df_medals["gender"] == "F"])
-    N_M = len(df_medals[df_medals["gender"] == "M"])
-    N_X = len(df_medals[df_medals["gender"] == "X"])
     N_g = len(df_medals[df_medals["medal"] == "gold"])
     N_s = len(df_medals[df_medals["medal"] == "silver"])
     N_b = len(df_medals[df_medals["medal"] == "bronze"])
+    N_F = len(df_medals[df_medals["gender"] == "F"])
+    N_M = len(df_medals[df_medals["gender"] == "M"])
+    N_X = len(df_medals[df_medals["gender"] == "X"])
 
     y_text = 0.4
     for amount, color in zip(
