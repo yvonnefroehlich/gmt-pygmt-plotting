@@ -5,3 +5,4 @@ day;medal;gender
 7;bronze;M
 8;silver;F
 8;bronze;F
+8;bronze;F
