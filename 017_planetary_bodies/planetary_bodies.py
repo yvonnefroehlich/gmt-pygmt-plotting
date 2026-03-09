@@ -85,7 +85,6 @@ if status_plot == "single":
             # fig.savefig(fname=f"{name_basis}/{name_basis}_lon{lon0}deg.png")
 
 
-
 # %%
 # -----------------------------------------------------------------------------
 # Combined plots
