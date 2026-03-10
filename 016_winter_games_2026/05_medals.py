@@ -50,12 +50,13 @@ for event, country in zip(
             region = [3.8, 16.2, 0.001, 1]
 
     df_medals = pd.read_csv(f"{path_in}/medals_{country}_{event}.txt", sep=";")
+    xlabel = f"{event.capitalize()}: medals {country.capitalize()} | day in {month}"
 
     with pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray60", FONT="11p"):
         fig.basemap(
             region=region,
             projection="X15c/3c",
-            frame=["lStr", f"xa1g1+l{event}: medals {country} | day in {month}"],
+            frame=["lStr", f"xa1g1+l{xlabel}"],
         )
 
     if country == "ukraine":
@@ -70,7 +71,7 @@ for event, country in zip(
             justify="MC",
         )
         fig.plot(
-            x=[3.95, 5.2, 5.2, 3.85, 3.85],
+            x=[3.9, 5.2, 5.2, 3.9, 3.9],
             y=[0.1, 0.1, 0.9, 0.9, 0.1],
             fill="white@20",
         )
