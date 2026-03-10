@@ -29,27 +29,25 @@ color_b = "tan"
 color_f = "tomato"
 color_m = "steelblue"
 color_x = "purple"
-color_uk_blue = "0/91/187"
-color_uk_yellow = "255/213/0"
+color_ua_blue = "0/91/187"
+color_ua_yellow = "255/213/0"
 
 
 # %%
 fig = pygmt.Figure()
 
-for subplot in ["olympics", "paralympics", "paralympics_uk"]:
+for event, country in zip(
+    ["olympics", "paralympics", "paralympics"],
+    ["germany", "germany", "ukraine"]
+):
 
-    country = "germany"
-    event = subplot
     match event:
         case "olympics":
             month = "Febuary"
             region = [5.8, 23.2, 0.001, 1]
-        case "paralympics" | "paralympics_uk":
+        case "paralympics":
             month = "March"
             region = [3.8, 16.2, 0.001, 1]
-            if event == "paralympics_uk":
-                country = "ukraine"
-                event = "paralympics"
 
     df_medals = pd.read_csv(f"{path_in}/medals_{country}_{event}.txt", sep=";")
 
@@ -57,13 +55,13 @@ for subplot in ["olympics", "paralympics", "paralympics_uk"]:
         fig.basemap(
             region=region,
             projection="X15c/3c",
-            frame=["lStr", f"xa1g1+l{event}: medals {country} | day in {month}"]
+            frame=["lStr", f"xa1g1+l{event}: medals {country} | day in {month}"],
         )
 
-    if subplot == "paralympics_uk":
-        uk_x = [3.8, 16.2, 16.2, 3.8, 3.8]
-        fig.plot(x=uk_x, y=[0.5, 0.5, 1, 1, 0.5], fill=f"{color_uk_blue}@70")
-        fig.plot(x=uk_x, y=[0, 0, 0.5, 0.5, 0], fill=f"{color_uk_yellow}@70")
+    if country == "ukraine":
+        ua_x = [3.8, 16.2, 16.2, 3.8, 3.8]
+        fig.plot(x=ua_x, y=[0.5, 0.5, 1, 1, 0.5], fill=f"{color_ua_blue}@70")
+        fig.plot(x=ua_x, y=[0, 0, 0.5, 0.5, 0], fill=f"{color_ua_yellow}@70")
         fig.text(
             x=10.5,
             y=0.85,
