@@ -98,12 +98,18 @@ for event, country in zip(
                         elif gender_temp == "X":
                             pen = "purple"
 
+                        style = "solid"
+                        if event == "paralympics":
+                            comment_temp = df_medals_color["comment"].tolist()[ic]
+                            if comment_temp == "rbf":
+                               style = "2_2"
+
                         fig.plot(
                             x=0.17 * ic + day,
                             y=y_color,
                             style="c0.3c",
                             fill=color,
-                            pen=f"1p,{pen}",
+                            pen=f"1p,{pen},{style}",
                         )
 
     N_tot = len(df_medals)
