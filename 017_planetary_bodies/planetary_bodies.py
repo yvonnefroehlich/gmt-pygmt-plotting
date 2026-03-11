@@ -6,6 +6,7 @@
 # History
 # - Created: 2024/01/20
 # - Updated: 2026/03/09 - Prepare for GitHub
+# - Updated: 2026/03/10 - Improve colormap selection (default, batlow, oleron)
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -21,10 +22,12 @@
 import os
 import pygmt
 
-status_plot = "single"  # "single" | "combine"
-status_cmap = "default"  # "default" | "scm"
+status_plot = "single"  # "single" | "combined"
+status_cmap = "default"  # "default" | "batlow" | "oleron"
 
-color_hl = "255/90/0"  # orange
+color_hl = "255/90/0"  # highlight -> orange
+
+bodies = ["mercury", "venus", "earth", "moon", "mars", "pluto"]
 
 
 # %%
@@ -36,18 +39,15 @@ if status_plot == "single":
     lon_step = 5
     grd_res = "10m"
 
-    for body in ["mercury", "venus", "earth", "moon", "mars", "pluto"]:
+    for body in bodies:
         print(body)
         grid = f"@{body}_relief_{grd_res}"
 
+        cmap = status_cmap
         if status_cmap == "default":
             cmap = f"@{body}_relief.cpt"
             if body == "earth":
                 cmap = "geo"
-        if status_cmap == "scm":
-            cmap = "batlow"
-            if body == "earth":
-                cmap = "oleron"
 
         for lon0 in range(0, 360 + lon_step, lon_step):
 
@@ -77,19 +77,21 @@ if status_plot == "single":
             )
 
             fig.show()
-            name_basis = f"{body}_relief_{grd_res}_{status_cmap}"
+            name_basis = f"{body}_relief_{grd_res}_shading_{status_cmap}_lon"
+            folder_name = f"{name_basis}{lon_step}deg"
+            fig_name = f"{name_basis}{lon0}deg"
             try:
-                os.mkdir(name_basis)
+                os.mkdir(folder_name)
             except:
                 pass
-            # fig.savefig(fname=f"{name_basis}/{name_basis}_lon{lon0}deg.png")
+            # fig.savefig(fname=f"{folder_name}/{fig_name}.png")
 
 
 # %%
 # -----------------------------------------------------------------------------
 # Combined plots
 # -----------------------------------------------------------------------------
-if status_plot == "combine":
+if status_plot == "combined":
 
     lon_step = 10
     grd_res = "20m"
@@ -99,17 +101,14 @@ if status_plot == "combine":
         fig = pygmt.Figure()
         pygmt.config(MAP_GRID_PEN_PRIMARY="0.15p,gray70")
 
-        for body in ["mercury", "venus", "earth", "moon", "mars", "pluto"]:
+        for body in bodies:
             grid = f"@{body}_relief_{grd_res}"
 
+            cmap = status_cmap
             if status_cmap == "default":
                 cmap = f"@{body}_relief.cpt"
                 if body == "earth":
                     cmap = "geo"
-            if status_cmap == "scm":
-                cmap = "batlow"
-                if body == "earth":
-                    cmap = "oleron"
 
             fig.basemap(region="g", projection=f"G{lon0}/15/10c", frame="+n")
             fig.grdimage(grid=grid, shading=True, cmap=cmap)
@@ -131,9 +130,11 @@ if status_plot == "combine":
             fig.shift_origin(xshift="w+2.5c")
 
         fig.show()
-        name_basis = f"planetary_bodies_relief_{grd_res}_{status_cmap}"
+        name_basis = f"combined_relief_{grd_res}_shading_{status_cmap}_lon"
+        folder_name = f"{name_basis}{lon_step}deg"
+        fig_name = f"{name_basis}{lon0}deg"
         try:
-            os.mkdir(name_basis)
+            os.mkdir(folder_name)
         except:
             pass
-        # fig.savefig(fname=f"{name_basis}/{name_basis}_lon{lon0}deg.png", dpi=200)
+        # fig.savefig(fname=f"{folder_name}/{fig_name}.png", dpi=200)
