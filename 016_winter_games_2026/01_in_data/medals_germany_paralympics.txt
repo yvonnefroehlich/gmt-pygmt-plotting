@@ -10,3 +10,4 @@ day;medal;gender;comment
 10;silver;F;
 10;silver;F;rbf
 11;bronze;F;
+12;gold;F;
