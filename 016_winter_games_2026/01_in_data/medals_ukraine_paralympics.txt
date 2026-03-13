@@ -9,3 +9,9 @@ day;medal;gender;comment
 8;silver;M;
 8;bronze;F;
 8;bronze;M;
+13;silver;M;
+13;bronze;M;
+13;silver;M;
+13;silver;F;
+13;bronze;F;
+13;silver;M;
