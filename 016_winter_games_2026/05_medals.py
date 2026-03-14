@@ -47,7 +47,7 @@ for event, country in zip(
             region = [5.8, 23.2, 0.001, 1]
         case "paralympics":
             month = "March"
-            region = [3.8, 16.2, 0.001, 1]
+            region = [5.8, 15.2, 0.001, 1]
 
     df_medals = pd.read_csv(f"{path_in}/medals_{country}_{event}.txt", sep=";")
     xlabel = f"{event.capitalize()}: medals {country.capitalize()} | day in {month}"
@@ -71,7 +71,7 @@ for event, country in zip(
             justify="MC",
         )
         fig.plot(
-            x=[3.9, 5.2, 5.2, 3.9, 3.9],
+            x=[5.9, 6.8, 6.8, 5.9, 5.9],
             y=[0.1, 0.1, 0.9, 0.9, 0.1],
             fill="white@20",
         )
