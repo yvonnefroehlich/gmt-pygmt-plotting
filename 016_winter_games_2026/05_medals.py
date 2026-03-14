@@ -30,7 +30,7 @@ for event in ["olympics", "paralympics"]:
 
     match event:
         case "olympics":
-            month = "Febuary"
+            month = "February"
             region = [5.8, 23.2, 0.8, 3.2]
             country = "germany"
         case "paralympics":

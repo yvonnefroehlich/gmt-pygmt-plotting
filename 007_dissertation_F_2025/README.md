@@ -2,7 +2,7 @@
 
 Python scripts to reproduce **Fig. 1** and **Fig. C.3** of
 
-> [**_Fröhlich Y. (2025a)_**](https://doi.org/10.5445/IR/1000183786).
+> [**_Fröhlich Y (2025a)_**](https://doi.org/10.5445/IR/1000183786).
 > Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
 > Dissertation, *Karlsruhe Institute of Technology*, *Geophysical Institute*.
 > https://doi.org/10.5445/IR/1000183786.
