@@ -19,7 +19,7 @@ import pygmt
 path_in = "01_in_data"
 path_out = "02_out_figs"
 
-# Cordinates of Cortina d'Ampezzo, Italia
+# Coordinates of Cortina d'Ampezzo, Italia
 lon_c = 12.1357  # deg East
 lat_c = 46.5405  # deg North
 

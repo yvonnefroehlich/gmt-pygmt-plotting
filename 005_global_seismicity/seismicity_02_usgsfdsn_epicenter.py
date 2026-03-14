@@ -277,7 +277,7 @@ with pygmt.config(MAP_GRID_PEN_PRIMARY="0.1p,gray70"):
 # Time label for animation over time
 # match status_color:
 #     case "MONO":
-#         offet = "0.3c"
+#         offset = "0.3c"
 #         if status_projection in ["robg", "robd"]:
 #             offset = "-0.6c/-0.3c"
 #         fig.text(

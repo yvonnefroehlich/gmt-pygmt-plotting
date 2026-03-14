@@ -43,7 +43,7 @@ for event, country in zip(
 
     match event:
         case "olympics":
-            month = "Febuary"
+            month = "February"
             region = [5.8, 23.2, 0.001, 1]
         case "paralympics":
             month = "March"
