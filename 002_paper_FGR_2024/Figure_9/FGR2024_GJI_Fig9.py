@@ -11,7 +11,7 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: -
-# - Updated: 2025/08/13 - Adjusted for GitHub
+# - Updated: 2025/08/13 - Adjust for GitHub
 # - Updated: 2025/08/18 - Add piercing point sketch
 # - Updated: 2025/08/25 - Add colorwheel for backazimuth colormap
 # -----------------------------------------------------------------------------
