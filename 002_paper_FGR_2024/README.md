@@ -9,6 +9,8 @@ Python scripts to reproduce some figures of
 
 _Recommended versions_: PyGMT v0.16.0 - v0.18.0, GMT 6.5.0 - 6.6.0
 
+_Animations_: https://doi.org/10.5281/zenodo.15641348
+
 | **[Figure_1](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_1/FGR2024_GJI_Fig1.py)** | **[Figure_9](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_9/FGR2024_GJI_Fig9.py)** | **[Figure_10](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_10/FGR2024_GJI_Fig10.py)** | **[Figure_S1](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_S1/FGR2024_GJI_FigS1.py)** | **[Figure_S9](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/use-tables-readmes/003_taup#003_taup)** | **[Figure_S22](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_S22/FGR2024_GJI_FigS22.py)** |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | Topographic map <br> with seismological recording stations | Topographic map <br> with piercing points in the upper mantle | Topographic map <br> with stereoplots | Epicenter distribution | Travel path and travel time curves of *X*KS phases | Piercing points in the lowermost mantle |
