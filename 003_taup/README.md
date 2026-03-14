@@ -2,12 +2,12 @@
 
 Python scripts to reproduce figures of seismological travel paths and travel time curves shown in
 
-> [**_Fröhlich Y., Grund M. & Ritter J. R. R. (2024)_**](https://doi.org/10.1093/gji/ggae245).
+> [**_Fröhlich Y, Grund M, Ritter J R R (2024)_**](https://doi.org/10.1093/gji/ggae245).
 > Lateral and vertical variations of seismic anisotropy in the lithosphere-asthenosphere system underneath Central Europe from long-term splitting measurements.
-> *Geophysical Journal International*. 239(1), 112-135.
+> *Geophysical Journal International*. 239(1):112-135.
 > https://doi.org/10.1093/gji/ggae245.
 
-> [**_Fröhlich Y. (2025a)_**](https://doi.org/10.5445/IR/1000183786).
+> [**_Fröhlich Y (2025a)_**](https://doi.org/10.5445/IR/1000183786).
 > Shear wave splitting analysis of long-term data: Anisotropy studies in the Upper Rhine Graben area, Central Europe.
 > Dissertation, *Karlsruhe Institute of Technology*, *Geophysical Institute*.
 > https://doi.org/10.5445/IR/1000183786.

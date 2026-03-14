@@ -22,7 +22,7 @@
 # - Updated: 2025/02/15
 # - Updated: 2025/12/27 - Update SWS database
 # - Updated: 2025/12/27 - Add orthographic map, studies cumulative map
-# - Updated: 2025/12/28 - Add map for year, carthesian histogram for year, loops for gifs
+# - Updated: 2025/12/28 - Add map for year, cartesian histogram for year, loops for gifs
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -192,7 +192,7 @@ print(fig_name)
 
 # %%
 # -----------------------------------------------------------------------------
-# Carthesian Histogram - year
+# Cartesian Histogram - year
 # -----------------------------------------------------------------------------
 fig = gmt.Figure()
 
