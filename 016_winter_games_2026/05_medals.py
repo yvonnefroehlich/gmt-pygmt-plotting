@@ -5,7 +5,7 @@
 # - Created: 2026/02/11
 # - Updated: 2026/02/22 - Complete medals plot for Olympics for Germany
 # - Updated: 2026/02/22 - Update medals plot for Paralympics
-# - Updated: 2026/03/07 - Complete medals plot for Paralympics for Germany, Ukraine
+# - Updated: 2026/03/15 - Complete medals plot for Paralympics for Germany, Ukraine
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -141,5 +141,5 @@ for event, country in zip(
 
 fig.show()
 fig_name = "05_medals"
-fig.savefig(fname=f"{path_out}/{fig_name}.png")
+# fig.savefig(fname=f"{path_out}/{fig_name}.png")
 print(fig_name)
