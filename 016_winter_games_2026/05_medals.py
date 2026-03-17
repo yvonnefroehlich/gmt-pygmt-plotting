@@ -5,6 +5,7 @@
 # - Created: 2026/02/11
 # - Updated: 2026/02/22 - Complete medals plot for Olympics for Germany
 # - Updated: 2026/02/22 - Update medals plot for Paralympics
+# - Updated: 2026/03/15 - Complete medals plot for Paralympics for Germany, Ukraine
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -22,103 +23,113 @@ import pandas as pd
 path_in = "01_in_data"
 path_out = "02_out_figs"
 
+color_g = "gold"
+color_s = "gray"
+color_b = "tan"
+color_f = "tomato"
+color_m = "steelblue"
+color_x = "purple"
+color_ua_blue = "0/91/187"
+color_ua_yellow = "255/213/0"
+
 
 # %%
 fig = pygmt.Figure()
 
-for event in ["olympics", "paralympics"]:
+for event, country in zip(
+    ["olympics", "paralympics", "paralympics"],
+    ["germany", "germany", "ukraine"]
+):
 
     match event:
         case "olympics":
             month = "February"
-            region = [5.8, 23.2, 0.8, 3.2]
-            country = "germany"
+            region = [5.8, 23.2, 0.001, 1]
         case "paralympics":
             month = "March"
-            region = [3.8, 16.2, 0.8, 3.2]
-            country = "ukraine"
+            region = [5.8, 15.2, 0.001, 1]
 
     df_medals = pd.read_csv(f"{path_in}/medals_{country}_{event}.txt", sep=";")
-    N_tot = len(df_medals)
+    xlabel = f"{event.capitalize()}: medals {country.capitalize()} | day in {month}"
 
     with pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray60", FONT="11p"):
         fig.basemap(
             region=region,
             projection="X15c/3c",
-            frame=[f"xa1g1+lday in {month}", f"ya1g1+lmedals {country}"],
+            frame=["lStr", f"xa1g1+l{xlabel}"],
         )
 
-    uk_blue = "0/91/187"
-    uk_yellow = "255/213/0"
-    uk_x = [3.8, 16.2, 16.2, 3.8, 3.8]
-    if event == "paralympics":
-        fig.plot(x=uk_x, y=[2, 2, 3.2, 3.2, 2], fill=f"{uk_blue}@50")
-        fig.plot(x=uk_x, y=[0.8, 0.8, 2, 2, 0.8], fill=f"{uk_yellow}@50")
+    if country == "ukraine":
+        ua_x = [3.8, 16.2, 16.2, 3.8, 3.8]
+        fig.plot(x=ua_x, y=[0.5, 0.5, 1, 1, 0.5], fill=f"{color_ua_blue}@70")
+        fig.plot(x=ua_x, y=[0, 0, 0.5, 0.5, 0], fill=f"{color_ua_yellow}@70")
         fig.text(
-            x=10,
-            y=2.6,
+            x=10.5,
+            y=0.85,
             text="Harmony does not mean ignoring the war!",
             font="12p,1",
             justify="MC",
         )
-
-    fig.plot(x=[3.85, 5.2, 5.2, 3.85, 3.85], y=[1, 1, 3, 3, 1], fill="white@20")
-
-    n_F = 0
-    n_M = 0
-    n_X = 0
-
-    for medal, color, xshift in zip(
-        ["bronze", "silver", "gold"],
-        ["tan", "gray", "gold"],
-        [0.75, 0.5, 0.25]
-    ):
-
-        df_medals_temp = df_medals[df_medals["medal"] == medal]
-
-        text = f"{medal}: {len(df_medals_temp)}"
-        fig.text(
-            text=text,
-            position="TL",
-            justify="TR",
-            offset=f"1.5c/{-xshift * 1.4}c",
-            font=f"8p,1,{color}",
+        fig.plot(
+            x=[5.9, 6.8, 6.8, 5.9, 5.9],
+            y=[0.1, 0.1, 0.9, 0.9, 0.1],
+            fill="white@20",
         )
 
-        for gender, pen in zip(["F", "M", "X"], ["tomato", "steelblue", "purple"]):
+    for day in range(6, 22 + 1):
+        df_medals_day = df_medals[df_medals["day"] == day]
 
-            df_medals_temp_temp = df_medals_temp[df_medals_temp["gender"] == gender]
+        if len(df_medals_day) > 0:
+            for medal, color, y_color in zip(
+                ["bronze", "silver", "gold"],
+                [color_b, color_s, color_g],
+                [0.1, 0.3, 0.5]
+            ):
+                df_medals_color = df_medals_day[df_medals_day["medal"] == medal]
+                N_color = len(df_medals_color)
 
-            match gender:
-                case "F":
-                    n_F = n_F + len(df_medals_temp_temp)
-                case "M":
-                    n_M = n_M + len(df_medals_temp_temp)
-                case "X":
-                    n_X = n_X + len(df_medals_temp_temp)
+                if N_color > 0:
+                    for ic in range(N_color):
 
-
-            if len(df_medals_temp_temp) > 0:
-
-                for day in range(6, 22 + 1):
-
-                    df_medals_day = df_medals_temp_temp[df_medals_temp_temp["day"] == day]
-
-                    if len(df_medals_day) > 0:
+                        gender_temp = df_medals_color["gender"].tolist()[ic]
+                        if gender_temp == "F":
+                            pen = "tomato"
+                        elif gender_temp == "M":
+                            pen = "steelblue"
+                        elif gender_temp == "X":
+                            pen = "purple"
 
                         fig.plot(
-                            x=day + xshift,
-                            y=len(df_medals_day),
+                            x=0.17 * ic + day,
+                            y=y_color,
                             style="c0.3c",
                             fill=color,
-                            pen=f"1p,{pen}",
+                            pen=f"1p,{pen},solid",
                         )
 
-    args_text = {"justify": "TR", "position": "TL"}
-    fig.text(text=f"total: {N_tot}", offset="1.5c/-1.38c", font="8p,1,black", **args_text)
-    fig.text(text=f"female: {n_F}", offset="1.5c/-1.7c", font="8p,1,tomato", **args_text)
-    fig.text(text=f"male: {n_M}", offset="1.5c/-2.05c", font="8p,1,steelblue", **args_text)
-    fig.text(text=f"mixed: {n_X}", offset="1.5c/-2.4c", font="8p,1,purple", **args_text)
+    N_tot = len(df_medals)
+    N_g = len(df_medals[df_medals["medal"] == "gold"])
+    N_s = len(df_medals[df_medals["medal"] == "silver"])
+    N_b = len(df_medals[df_medals["medal"] == "bronze"])
+    N_F = len(df_medals[df_medals["gender"] == "F"])
+    N_M = len(df_medals[df_medals["gender"] == "M"])
+    N_X = len(df_medals[df_medals["gender"] == "X"])
+
+    y_text = 0.4
+    for amount, color in zip(
+        [f"gold: {N_g}", f"silver: {N_s}", f"bronze: {N_b}",
+         f"total: {N_tot}", f"female: {N_F}", f"male: {N_M}",
+         f"mixed: {N_X}"],
+        [color_g, color_s, color_b, "black", color_f, color_m, color_x],
+    ):
+        fig.text(
+            text=amount,
+            offset=f"1.5c/{-y_text}c",
+            font=f"8p,1,{color}",
+            justify="TR",
+            position="TL",
+        )
+        y_text = y_text + 0.33
 
     fig.shift_origin(yshift="-h-1.5c")
 
