@@ -1,7 +1,8 @@
 # #############################################################################
 # Ritter et al. (2022), Seismol: Figure S4
-# Piercing points in the lowermost mantle at 2700 km for shear wave splitting
-# measurements at the Black Forest Observatory (BFO)
+# Piercing points in the lowermost mantle at 2700 km depth for shear wave
+# splitting measurements at the Black Forest Observatory (BFO) -
+# SKS-SKKS pairs
 # -----------------------------------------------------------------------------
 # Ritter J R R, Fröhlich Y, Sanz-Alonso Y, Grund M (2022).
 # Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany –
@@ -317,7 +318,7 @@ fig.show()
 # %%
 # -----------------------------------------------------------------------------
 # Uncomment to save the figure in PNG, PDF, or EPS format
-for ext in ["png"]: #, "pdf", "eps"]:
-  fig.savefig(fname=f"{fname_fig_out}.{ext}", dpi=dpi_png)
+# for ext in ["png"]: #, "pdf", "eps"]:
+#   fig.savefig(fname=f"{fname_fig_out}.{ext}", dpi=dpi_png)
 
 print(fname_fig_out)
