@@ -10,7 +10,7 @@ Jupyter notebooks and Python scripts to reproduce **Fig 1** and **Fig. S4** of
 _Recommended versions_: PyGMT v0.16.0 - v0.18.0, GMT 6.5.0 - 6.6.0
 
 
-| **[Figure_1](https://github.com/michaelgrund/GMT-plotting/blob/main/010_paper_RFSG2022/RFSG_2022_Fig_1.py)** | **[Figure_S4_left](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_left_swsm.py)** | **[Figure_S4_right](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_right_pairs.py)** |
+| **[Figure_1](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/001_paper_RFSG_2022/Figure_1/RFSG_Fig1.py)** | **[Figure_S4_left](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_left_swsm.py)** | **[Figure_S4_right](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_right_pairs.py)** |
 | :---: | :---: | :---: |
 | Piercing points in the upper mantle | Piercing points in the lowermost mantle | SKS-SKKS pairs in the lowermost mantle |
 | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/001_paper_RFSG_2022/Figure_1/02_out_figs/RFSG_Fig1.png" width="250"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_left_swsm.png" width="250"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/raw/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_right_pairs.png" width="250"> |
