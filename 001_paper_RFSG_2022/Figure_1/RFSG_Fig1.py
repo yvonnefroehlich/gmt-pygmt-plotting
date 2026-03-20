@@ -1,8 +1,8 @@
 # #############################################################################
 # Ritter et al. (2022), Seismol: Figure 1
 # Topographic map of the Upper Rhine Graben area with piercing points in the
-# at 410 km depth for shear wave splitting measurements at the Black Forest
-# Observatory (BFO)
+# upper mantle at 410 km depth for shear wave splitting measurements at the
+# Black Forest Observatory (BFO)
 # -----------------------------------------------------------------------------
 # Ritter J R R, Fröhlich Y, Sanz-Alonso Y, Grund M (2022).
 # Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany –
@@ -14,7 +14,7 @@
 # History
 # - Original Jupyter notebook by Michael Grund
 #   https://github.com/michaelgrund/GMT-plotting/blob/main/010_paper_RFSG2022/RFSG_2022_Fig_01.ipynb
-# - Converted to Python script: 2026/02/19
+# - Converted to Python script: 2026/03/19
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -281,5 +281,9 @@ fig.show()
 
 
 # %%
+fig_name = "RFSG_Fig1"
+# Uncomment to save the figure in PNG, PDF, or EPS format
 # for ext in ["png"]:  # "pdf", "eps"]:
-    # fig.savefig(fname=f"{path_out}/RFSG_Fig1.{ext}")
+    # fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+
+print(fig_name)
