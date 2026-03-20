@@ -281,5 +281,5 @@ fig.show()
 
 
 # %%
-for ext in ["png"]:  # "pdf", "eps"]:
+# for ext in ["png"]:  # "pdf", "eps"]:
     # fig.savefig(fname=f"{path_out}/RFSG_Fig1.{ext}")
