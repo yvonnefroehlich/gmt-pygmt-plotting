@@ -93,57 +93,28 @@ fig.text(text="BFO", font="10p", offset="0c/-0.5c", **bfo_coords)
 # -----------------------------------------------------------------------------
 # Plot important town locations as squares
 lons = [
-    8.4034195,
-    7.8494005,
-    8.4673098,
-    11.077298,
-    7.5878261,
-    11.5753822,
-    8.694724,
-    6.1834097,
-    8.5410422,
-    9.1750718,
+    8.40342, 7.84940, 8.46731, 11.0773, 7.58783,
+    11.5754, 8.69472, 6.18341, 8.54104, 9.17507,
 ]
 lats = [
-    49.0068705,
-    47.9960901,
-    49.4892913,
-    49.453872,
-    47.5581077,
-    48.1371079,
-    49.4093582,
-    48.6937223,
-    47.3744489,
-    47.659216,
+    49.00687, 47.99609, 49.48929, 49.45387, 47.55811,
+    48.13711, 49.40936, 48.69372, 47.37445, 47.65922,
 ]
 for lon, lat in zip(lons, lats):
     fig.plot(x=lon, y=lat, style="s0.25c", fill="white", pen="0.6p")
 
 # Add names of towns
-lons = [8.32, 8.2, 8.19, 11.1296, 7.6, 11.576006, 8.62, 6.184417, 8.539183, 9.173238]
+lons = [
+    8.32, 8.2, 8.19, 11.1296, 7.6,
+    11.57601, 8.62, 6.18442, 8.53918, 9.17324,
+]
 lats = [
-    49.11,
-    47.99,
-    49.57,
-    49.3741,
-    47.4667,
-    48.037079,
-    49.33,
-    48.592054,
-    47.268650,
-    47.7579496,
+    49.11, 47.99, 49.57, 49.3741, 47.4667,
+    48.0371, 49.33, 48.5921, 47.2687, 47.7580,
 ]
 cities = [
-    "Karlsruhe",
-    "Freiburg",
-    "Mannheim",
-    "Nuremberg",
-    "Basel",
-    "Munich",
-    "Heidelberg",
-    "Nancy",
-    "Zurich",
-    "Konstanz",
+    "Karlsruhe", "Freiburg", "Mannheim", "Nuremberg", "Basel",
+    "Munich", "Heidelberg", "Nancy", "Zurich", "Konstanz",
 ]
 for lon, lat, city in zip(lons, lats, cities):
     fig.text(x=lon, y=lat, text=city, font="8p")
@@ -311,4 +282,4 @@ fig.show()
 
 # %%
 for ext in ["png"]:  # "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/RFSG_Fig1.{ext}")
+    # fig.savefig(fname=f"{path_out}/RFSG_Fig1.{ext}")
