@@ -128,6 +128,7 @@ fig.show()
 
 
 # %%
+# -----------------------------------------------------------------------------
 # Plot the (projected) ray paths.
 # The semi-transparency generates some kind of a ray density.
 file_raypath_same = "data_FigS4_left_swsm/BFO_rays_swsm_"
@@ -242,6 +243,7 @@ fig.show()
 
 
 # %%
+# -----------------------------------------------------------------------------
 # Add a colorbar
 # a annotations, here every 30 degrees
 # f frame or ticks, here every 15 degrees
@@ -266,6 +268,7 @@ fig.show()
 
 
 # %%
+# -----------------------------------------------------------------------------
 # Add legend for symbols of piercing points
 # J reference point, here Right Top outside of map bounding box
 # +j anchor point, here Left Top
@@ -279,6 +282,7 @@ fig.show()
 
 
 # %%
+# -----------------------------------------------------------------------------
 fig_name = "RFSG_FigS4_left_swsm"  # name of output figure
 # Uncomment to save the figure in PNG, PDF, or EPS format
 # for ext in ["png"]: #, "pdf", "eps"]:
