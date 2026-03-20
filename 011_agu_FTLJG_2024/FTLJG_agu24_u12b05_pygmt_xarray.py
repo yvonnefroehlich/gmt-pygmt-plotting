@@ -33,7 +33,7 @@
 
 # %%
 # -----------------------------------------------------------------------------
-# Example for Xarray: gridded data -> xarray.DataArray
+# Example for xarray: gridded data -> xarray.DataArray
 # -----------------------------------------------------------------------------
 
 import pygmt

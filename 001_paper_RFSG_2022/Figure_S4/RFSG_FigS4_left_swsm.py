@@ -1,0 +1,291 @@
+# #############################################################################
+# Ritter et al. (2022), Seismol: Figure S4 left
+# Piercing points in the lowermost mantle at 2700 km depth for shear wave
+# splitting measurements at the Black Forest Observatory (BFO) -
+# fast polarization direction
+# -----------------------------------------------------------------------------
+# Ritter J R R, Fröhlich Y, Sanz-Alonso Y, Grund M (2022).
+# Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany –
+# implications for the determination of anisotropic structures.
+# Journal of Seismology, 26:1137-1156.
+# https://doi.org/10.1007/s10950-022-10112-w,
+# correction https://doi.org/10.1007/s10950-023-10136-w.
+# -----------------------------------------------------------------------------
+# History
+# - Original Jupyter notebook
+#   https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/001_paper_RFSG_2022/Figure_S4/RFSG_FigS4_left_swsm.ipynb
+# - Converted to Python script: 2026/03/20
+# -----------------------------------------------------------------------------
+# Versions
+# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - GMT 6.6.0 -> https://www.generic-mapping-tools.org
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
+# #############################################################################
+
+
+import pygmt as gmt
+
+# %%
+# -----------------------------------------------------------------------------
+# General stuff
+# -----------------------------------------------------------------------------
+myfontsize = "9p"
+dpi_png = 360  # resolution in dpi of output figure for PNG format
+
+# -----------------------------------------------------------------------------
+# Coordinates of recording station Black Forest Observatory BFO
+lon_BFO = 8.330  # degrees East
+lat_BFO = 48.331  # degrees North
+
+# -----------------------------------------------------------------------------
+# Plate boundaries after Bird 2003
+file_pb = "plate_boundaries_Bird_2003.txt"
+
+# -----------------------------------------------------------------------------
+# Colors
+color_land = "gray90"  # gray hue -> light gray
+color_pb = "216.750/82.875/24.990"  # plate boundaries -> dark orange
+color_station_symbol = "255/215/0"  # = "gold"
+color_station_label = "162/20/47"  # -> dark red
+color_null = "white"
+
+# -----------------------------------------------------------------------------
+# Piercing points
+marker_size_pp = "0.18c"  # centimeters
+outline_width_pp = "0.8p"  # points
+alpha_pp = "@30"  # transparency in percentage (0 equals opaque)
+
+# -----------------------------------------------------------------------------
+# Ray paths
+alpha_ray = "@97"
+color_ray_K_N = "black"
+color_ray_K_NN = "black"
+color_ray_KK_N = "black"
+color_ray_KK_NN = "black"
+incols_ray = [1, 0]  # order of input columns, zero-based indexing
+
+# -----------------------------------------------------------------------------
+# Box around map scale, legends, colorbars
+# +g fill color
+# +p outline thickness and color
+# +r rounded edges
+box_standard = "+gwhite@30+p0.8p,black+r"
+
+# -----------------------------------------------------------------------------
+# Define projection center
+lon0_lamb = 7  # degrees East
+lat0_lamb = 48  # degrees North
+
+# Define standard parallels (only these two are distortion-free)
+lat1_lamb = 45  # degrees North
+lat2_lamb = 55
+
+# Define width of map
+width_lamb = "15c"  # 15 centimeters
+
+# Lambert Conic Conformal Projection
+projection = f"L{lon0_lamb}/{lat0_lamb}/{lat1_lamb}/{lat2_lamb}/{width_lamb}"
+
+# Region
+lonmin_lamb = -35  # degrees East
+lonmax_lamb = abs(lonmin_lamb) + 2 * lon0_lamb  # symmetric around lon0
+latmin_lamb = 25  # degrees North
+latmax_lamb = 70
+region = [lonmin_lamb, lonmax_lamb, latmin_lamb, latmax_lamb]
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Create geographic map
+# -----------------------------------------------------------------------------
+# Create an instance or object of the pygmt.Figure class.
+# In the following steps various plotting elements are added in a stacking fashion.
+fig = gmt.Figure()
+gmt.config(MAP_GRID_PEN="0.01p,gray50")
+
+# Generate a basic map
+# a annotations, here every 10 degrees
+# g grid lines, here every 10 degrees
+# f frame or ticks, here every 5 degrees
+# WSne annotations at South and West boundaries
+fig.basemap(projection=projection, region=region, frame=0)
+fig.coast(
+    land=color_land,
+    resolution="h",  # high
+    area_thresh="30000",
+    shorelines="black",
+)
+fig.basemap(frame=["a10g10f5", "WSne"])
+
+# Plot the plate boundaries by Bird 2003
+fig.plot(data=file_pb, pen=f"0.8p,{color_pb}")
+
+fig.show()
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Plot the (projected) ray paths.
+# The semi-transparency generates some kind of a ray density.
+file_raypath_same = "data_FigS4_left_swsm/BFO_rays_swsm_"
+file_raypath_K_N = f"{file_raypath_same}K_N_goodfair.txt"
+file_raypath_K_NN = f"{file_raypath_same}K_NN_goodfair.txt"
+file_raypath_KK_N = f"{file_raypath_same}KK_N_goodfair.txt"
+file_raypath_KK_NN = f"{file_raypath_same}KK_NN_goodfair.txt"
+
+# null, SKS
+fig.plot(
+    data=file_raypath_K_N,
+    pen=f"1p,{color_ray_K_N}{alpha_ray}",
+    incols=incols_ray,  # order of input columns, zero-based indexing
+)
+# null, SKKS
+fig.plot(
+    data=file_raypath_KK_N,
+    pen=f"1p,{color_ray_KK_N}{alpha_ray}",
+    incols=incols_ray,
+)
+# spit, SKS
+fig.plot(
+    data=file_raypath_K_NN,
+    pen=f"1p,{color_ray_K_NN}{alpha_ray}",
+    incols=incols_ray,
+)
+# split, SKKS
+fig.plot(
+    data=file_raypath_KK_NN,
+    pen=f"1p,{color_ray_KK_NN}{alpha_ray}",
+    incols=incols_ray,
+)
+
+fig.show()
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Plot the piercing points in 2700 km depth.
+# Externally and previously calculated after the iasp91 Earth model.
+data_pp_same = "data_FigS4_left_swsm/BFO_pp2700km_"
+data_K_N_pp = f"{data_pp_same}K_sp_N_goodfair.txt"
+data_K_NN_pp = f"{data_pp_same}K_sp_NN_goodfair.txt"
+data_KK_N_pp = f"{data_pp_same}KK_sp_N_goodfair.txt"
+data_KK_NN_pp = f"{data_pp_same}KK_sp_NN_goodfair.txt"
+
+gmt.makecpt(cmap="phase", series=[-90, 90], cyclic=True)
+
+# null, SKS
+fig.plot(
+    data=data_K_N_pp,
+    style=f"C{marker_size_pp}",  # circle
+    fill=color_null,  # before PyGMT v0.8.0 "color"
+    pen=f"{outline_width_pp},black",  # outline thickness and color
+)
+# null, SKKS
+fig.plot(
+    data=data_KK_N_pp,
+    style=f"S{marker_size_pp}",  # square
+    fill=color_null,  # before PyGMT v0.8.0 "color"
+    pen=f"{outline_width_pp},black",
+)
+# split, SKS
+fig.plot(
+    data=data_K_NN_pp,
+    style=f"C{marker_size_pp}",
+    cmap=True,  # color map
+    pen=f"{outline_width_pp},black",
+)
+# split, SKKS
+fig.plot(
+    data=data_KK_NN_pp,
+    style=f"S{marker_size_pp}",
+    cmap=True,
+    pen=f"{outline_width_pp},black",
+)
+
+fig.show()
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Recording station BFO
+# Add symbol
+fig.plot(
+    x=lon_BFO,
+    y=lat_BFO,
+    style="i0.3c",  # inverse triangle
+    fill=color_station_symbol,  # before PyGMT v0.8.0 "color"
+    pen="1p,black",
+)
+# Add station code
+fig.text(
+    x=lon_BFO,
+    y=49.020,
+    text="BFO",
+    font=f"{myfontsize},Helvetica-Bold,{color_station_label}",
+    offset="0c/0.3c",  # x/y
+    fill="white@30",
+    clearance="+tO",  # rounded edges of box
+)
+
+# Add depth of piercing points
+fig.text(
+    position="TC",  # Top Center
+    text="@@2700 km",  # @@ outputs @ sign in GMT
+    font=f"{myfontsize},Helvetica-Bold,{color_station_label}",
+    fill="white@30",
+)
+
+fig.show()
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Add a colorbar
+# a annotations, here every 30 degrees
+# f frame or ticks, here every 15 degrees
+# +l label
+#   @~f@~  greek letter phi
+#   @-a@-  subscript
+#   @.     degree sign
+cb_phi_frame = "a30f15+l@~f@~@-a@- / N@.E"
+
+# J reference point, here Right Top outside of map bounding box
+# +j anchor point, here Right Top
+# +w width/height, here in centimeters
+# +o offset x/y, here in centimeters
+# +h horizontal
+# +ml label on top of the colorbar
+cb_phi_pos = "JRT+jRT+w3.5c/0.25c+o0.3c/0c+h+ml"
+
+with gmt.config(FONT="18p"):
+    fig.colorbar(cmap=True, position=cb_phi_pos, frame=cb_phi_frame)
+
+fig.show()
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Add legend for symbols of piercing points
+# J reference point, here Right Top outside of map bounding box
+# +j anchor point, here Left Top
+# +w width, here in centimeters
+# +o offset x/y, here in centimeters
+leg_pos = "JRT+jLT+w2.1c+o-2.3c/1.2c"
+leg_file = "legend_gmt_swsm.txt"
+fig.legend(spec=leg_file, position=leg_pos, box=box_standard)
+
+fig.show()
+
+
+# %%
+# -----------------------------------------------------------------------------
+fig_name = "RFSG_FigS4_left_swsm"  # name of output figure
+# Uncomment to save the figure in PNG, PDF, or EPS format
+# for ext in ["png"]: #, "pdf", "eps"]:
+#   fig.savefig(fname=f"{fig_name}.{ext}", dpi=dpi_png)
+
+print(fig_name)
