@@ -112,8 +112,6 @@ gmt.config(MAP_GRID_PEN="0.01p,gray50")
 # g grid lines, here every 10 degrees
 # f frame or ticks, here every 5 degrees
 # WSne annotations at South and West boundaries
-frame = ["a10g10f5", "WSne"]
-
 fig.basemap(projection=projection, region=region, frame=0)
 fig.coast(
     land=color_land,
@@ -121,7 +119,7 @@ fig.coast(
     area_thresh="30000",
     shorelines="black",
 )
-fig.basemap(frame=frame)
+fig.basemap(frame=["a10g10f5", "WSne"])
 
 # Plot the plate boundaries by Bird 2003
 fig.plot(data=file_pb, pen=f"0.8p,{color_pb}")
