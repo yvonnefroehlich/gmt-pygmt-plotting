@@ -1,5 +1,5 @@
 # #############################################################################
-# Ritter et al. (2022), Seismol: Figure S4
+# Ritter et al. (2022), Seismol: Figure S4 left
 # Piercing points in the lowermost mantle at 2700 km depth for shear wave
 # splitting measurements at the Black Forest Observatory (BFO) -
 # fast polarization direction
