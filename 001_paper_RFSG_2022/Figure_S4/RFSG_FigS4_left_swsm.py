@@ -35,8 +35,6 @@ import pygmt as gmt
 # -----------------------------------------------------------------------------
 myfontsize = "9p"
 dpi_png = 360  # resolution in dpi of output figure for PNG format
-dpi_jn = 100  # resolution in dpi for display in this Jupyter notebook
-fname_fig_out = "RFSG_FigS4_left_swsm"  # name of output figure
 
 # -----------------------------------------------------------------------------
 # Coordinates of recording station Black Forest Observatory BFO
@@ -283,8 +281,9 @@ fig.show()
 
 
 # %%
+fig_name = "RFSG_FigS4_left_swsm"  # name of output figure
 # Uncomment to save the figure in PNG, PDF, or EPS format
 # for ext in ["png"]: #, "pdf", "eps"]:
-#   fig.savefig(fname=f"{fname_fig_out}.{ext}", dpi=dpi_png)
+#   fig.savefig(fname=f"{fig_name}.{ext}", dpi=dpi_png)
 
-print(fname_fig_out)
+print(fig_name)

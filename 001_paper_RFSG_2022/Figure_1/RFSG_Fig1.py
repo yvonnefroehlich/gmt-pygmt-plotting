@@ -281,5 +281,9 @@ fig.show()
 
 
 # %%
+fig_name = "RFSG_Fig1"
+# Uncomment to save the figure in PNG, PDF, or EPS format
 # for ext in ["png"]:  # "pdf", "eps"]:
-    # fig.savefig(fname=f"{path_out}/RFSG_Fig1.{ext}")
+    # fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+
+print(fig_name)
