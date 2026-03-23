@@ -1,8 +1,6 @@
 # #############################################################################
 # Ritter et al. (2022), Seismol: Figure S4 left
-# Piercing points in the lowermost mantle at 2700 km depth for shear wave
-# splitting measurements at the Black Forest Observatory (BFO) -
-# fast polarization direction
+# Piercing points in the lowermost mantle related to SWSMs at BFO
 # -----------------------------------------------------------------------------
 # Ritter J R R, Fröhlich Y, Sanz-Alonso Y, Grund M (2022).
 # Short-scale laterally varying SK(K)S shear wave splitting at BFO, Germany –
