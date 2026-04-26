@@ -189,7 +189,7 @@ for month in [
 
 
     fig.show()
-    fig_name = f"SST_{year_min}to{year_max}_strips_{month}"
+    fig_name = f"SST_{year_min}to{year_max}_stripes_{month}"
     # for ext in ["png"]:  #, "pdf", "eps"]:
     #     fig.savefig(fname=f"{path_out}/{fig_name}.png")
     print(fig_name)
