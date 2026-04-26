@@ -17,8 +17,6 @@
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
-import os
-
 import pandas as pd
 import pygmt
 
@@ -41,7 +39,6 @@ box_standard = "+ggray95+p0.1p,gray30+r2p"
 clearance_standard = "0.1c+tO"
 
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-file_name_basic = "SST"
 
 
 # %%
@@ -88,7 +85,10 @@ with pygmt.config(FONT="6p"):
     fig.legend(position="jBC+jBC+o0c/0.2c+w9c", box=box_standard)
 
 fig.show()
-fig.savefig(fname=f"{path_out}/{file_name_basic}_{year_min}to{year_max}_curves.png")
+fig_name = f"SST_{year_min}to{year_max}_curves"
+# for ext in ["png"]:  #, "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.png")
+print(fig_name)
 
 
 # %%
@@ -142,7 +142,10 @@ for month in months:
         fig.shift_origin(xshift=f"+w+{shift}c", yshift=f"+{4 * (hight + shift)}c")
 
 fig.show()
-fig.savefig(fname=f"{path_out}/{file_name_basic}_{year_min}to{year_max}_stripes.png")
+fig_name = f"SST_{year_min}to{year_max}_stripes"
+# for ext in ["png"]:  #, "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.png")
+print(fig_name)
 
 
 # %%
@@ -154,8 +157,6 @@ for month in [
     # "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     # "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
 ]:
-
-    fig_name = f"{file_name_basic}_{year_min}to"
 
     fig = pygmt.Figure()
     fig.basemap(
@@ -186,12 +187,9 @@ for month in [
         )
         fig.basemap(frame=["lStr", "xa10f5", "x+el"])
 
-        # try:
-        #     os.mkdir(f"{path_out}/{month}")
-        # except:
-        #     pass
-        # fig.savefig(fname=f"{path_out}/{month}/{fig_name}{year}_NOframe.png")
-        # fig.show()
 
     fig.show()
-    fig.savefig(fname=f"{path_out}/{fig_name}{year_max}_strips_{month}.png")
+    fig_name = f"SST_{year_min}to{year_max}_strips_{month}"
+    # for ext in ["png"]:  #, "pdf", "eps"]:
+    #     fig.savefig(fname=f"{path_out}/{fig_name}.png")
+    print(fig_name)
