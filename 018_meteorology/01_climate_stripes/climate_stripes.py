@@ -8,7 +8,7 @@
 # - Created: 2026/04/24
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org/v0.18.0 | https://www.pygmt.org
+# - PyGMT v0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
@@ -23,20 +23,27 @@ import pygmt
 
 # %%
 # -----------------------------------------------------------------------------
-# General
+# General stuff
 # -----------------------------------------------------------------------------
 path_in = "01_in_data"
 path_out = "02_out_figs"
 
-df_sst = pd.read_csv(f"{path_in}/GLB_Ts_plus_dSST.csv", sep=",", header=1)
-year_min = df_sst["Year"].min() + 1
-year_max = df_sst["Year"].max() - 1
-dSST_lim = 1.5  # sea surface temperature anomaly
-line_lim = 1.5  # y axis
-
 color_hl = "255/90/0"  # -> orange
 box_standard = "+ggray95+p0.1p,gray30+r2p"
 clearance_standard = "0.1c+tO"
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Load data
+# -----------------------------------------------------------------------------
+df_sst = pd.read_csv(f"{path_in}/GLB_Ts_plus_dSST.csv", sep=",", header=1)
+
+year_min = df_sst["Year"].min() + 1
+year_max = df_sst["Year"].max() - 1
+
+dSST_lim = 1.5  # sea surface temperature anomaly
+line_lim = 1.5  # y axis
 
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
