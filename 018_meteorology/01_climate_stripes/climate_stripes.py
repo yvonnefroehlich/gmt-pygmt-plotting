@@ -102,13 +102,13 @@ print(fig_name)
 # -----------------------------------------------------------------------------
 # Stripes for all months - subplot
 # -----------------------------------------------------------------------------
-hight = 5
+height = 5
 shift = 0.5
 
 fig = pygmt.Figure()
 fig.basemap(
     region=[year_min, year_max, -line_lim, line_lim],
-    projection=f"X20c/{hight}c",
+    projection=f"X20c/{height}c",
     frame=0,
 )
 
@@ -146,7 +146,7 @@ for month in months:
 
     fig.shift_origin(yshift=f"-h-{shift}c")
     if month in ["Apr", "Aug", "Dec"]:
-        fig.shift_origin(xshift=f"+w+{shift}c", yshift=f"+{4 * (hight + shift)}c")
+        fig.shift_origin(xshift=f"+w+{shift}c", yshift=f"+{4 * (height + shift)}c")
 
 fig.show()
 fig_name = f"SST_{year_min}to{year_max}_stripes"
