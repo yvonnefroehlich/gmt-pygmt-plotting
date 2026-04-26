@@ -41,7 +41,7 @@ box_standard = "+ggray95+p0.1p,gray30+r2p"
 clearance_standard = "0.1c+tO"
 
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-file_name_basic = "climate_stripes"
+file_name_basic = "SST"
 
 
 # %%
@@ -93,7 +93,7 @@ fig.savefig(fname=f"{path_out}/{file_name_basic}_{year_min}to{year_max}_curves.p
 
 # %%
 # -----------------------------------------------------------------------------
-# Subplot for all month
+# Stripes for all months - subplot
 # -----------------------------------------------------------------------------
 hight = 5
 shift = 0.5
@@ -142,12 +142,12 @@ for month in months:
         fig.shift_origin(xshift=f"+w+{shift}c", yshift=f"+{4 * (hight + shift)}c")
 
 fig.show()
-fig.savefig(fname=f"{path_out}/{file_name_basic}_{year_min}to{year_max}_months.png")
+fig.savefig(fname=f"{path_out}/{file_name_basic}_{year_min}to{year_max}_stripes.png")
 
 
 # %%
 # -----------------------------------------------------------------------------
-# Single plots for months
+# Stripes for months - single plots
 # -----------------------------------------------------------------------------
 for month in [
     "J-D",
@@ -194,4 +194,4 @@ for month in [
         # fig.show()
 
     fig.show()
-    fig.savefig(fname=f"{path_out}/{fig_name}{year_max}_{month}.png")
+    fig.savefig(fname=f"{path_out}/{fig_name}{year_max}_strips_{month}.png")
