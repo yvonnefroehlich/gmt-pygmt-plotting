@@ -5,7 +5,7 @@
 # - Temperature anomalies: Deviations from the corresponding 1951-1980 means
 # -----------------------------------------------------------------------------
 # History
-# - Created: 24.04.2026
+# - Created: 2026/04/24
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org/v0.18.0 | https://www.pygmt.org
@@ -37,11 +37,58 @@ dSST_lim = 1.5  # sea surface temperature anomaly
 line_lim = 1.5  # y axis
 
 color_hl = "255/90/0"  # -> orange
-box_standard = "+gwhite@30+p0.8p,black+r2p"
+box_standard = "+ggray95+p0.1p,gray30+r2p"
 clearance_standard = "0.1c+tO"
 
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 file_name_basic = "climate_stripes"
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Curves for all month
+# -----------------------------------------------------------------------------
+fig = pygmt.Figure()
+with pygmt.config(FONT="10p"):
+    fig.basemap(
+        region=[year_min, year_max, -line_lim, line_lim],
+        projection="X15c/5c",
+        frame=["WSen", "xa20f5+lyear", "y+l@~D@~SST / K"],
+    )
+
+fig.plot(
+    data=df_sst[["Year", "J-D"]],
+    fill="lightred",
+    fill_between="c+glightblue+y0",
+)
+
+pygmt.makecpt(cmap="acton", series=[0, 11, 1])
+for i_month, month in enumerate(months):
+
+    label = f"{month}+S0.5c"
+    if month == "Jan":
+        label = f"{month}+N6"
+
+    fig.plot(
+        data=df_sst[["Year", month]],
+        cmap=True,
+        zvalue=i_month,
+        pen="0.3p,+z",
+        label=label,
+    )
+    fig.plot(
+        x=df_sst["Year"],
+        y=df_sst[month],
+        cmap=True,
+        style="c0.05c",
+        fill=[i_month] * len(df_sst),
+    )
+
+with pygmt.config(FONT="6p"):
+    fig.legend(position="jBC+jBC+o0c/0.2c+w9c", box=box_standard)
+
+fig.show()
+fig.savefig(fname=f"{path_out}/{file_name_basic}_{year_min}to{year_max}_curves.png")
 
 
 # %%
