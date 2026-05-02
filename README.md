@@ -1,15 +1,13 @@
 # PyGMT Plotting
 
-Collection of Python scripts or Jupyter notebooks (supported by JupyterLab) to reproduce some of the geographic and
-geophysical maps shown in the publications I am involved in. To prepare these maps, [_PyGMT_](https://www.pygmt.org)
-the [Python](https://www.python.org) wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org) is used.
+Collection of Python scripts to reproduce some of the maps and plots shown in the scientific works and conference contributions and peer-reviewed papers I am involved in. The focus is on geophysics, seismology, and seismic anisotropy studies using shear wave splitting. To prepare these maps and plots, [_PyGMT_](https://www.pygmt.org) the [Python](https://www.python.org) wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org) is used.
 
-_Please note_: Scripts or notebooks are available up on acceptance of the related publication.
+_Please note_: Scripts are available up on acceptance of the related publication.
 
 
 ## Content
 
-_Please note_: Besides [PyGMT](https://www.pygmt.org) and [GMT](https://www.generic-mapping-tools.org), the tools [Jupyter](https://jupyter.org), [NumPy](https://numpy.org), [pandas](https://pandas.pydata.org), [ObsPy](https://docs.obspy.org), [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal), [GeoPandas](https://geopandas.org) and [geodatasets](https://geodatasets.readthedocs.io) are used. The required versions are given in the single folders as well as notebooks or scripts.
+_Please note_: Besides [PyGMT](https://www.pygmt.org) and [GMT](https://www.generic-mapping-tools.org), the tools [Jupyter](https://jupyter.org), [NumPy](https://numpy.org), [pandas](https://pandas.pydata.org), [ObsPy](https://docs.obspy.org), [pymagglobal](https://sec23.git-pages.gfz-potsdam.de/korte/pymagglobal), [GeoPandas](https://geopandas.org) and [geodatasets](https://geodatasets.readthedocs.io) are used. The required versions are given in the single folders and scripts.
 
 | Folder | Overview |
 | --- | --- |
@@ -18,7 +16,7 @@ _Please note_: Besides [PyGMT](https://www.pygmt.org) and [GMT](https://www.gene
 
 ## Citation
 
-If you make use of this material, please acknowledge the relating publications in which framework these scripts and notebooks were written:
+If you make use of this material, please acknowledge the relating publications in which framework these scripts were written:
 
 **Peer-reviewed journal articles**
 - [**_Fröhlich Y, Grund M, Ritter J R R (2024)_**](https://doi.org/10.1093/gji/ggae245).
@@ -94,7 +92,7 @@ or [submit a pull request](https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 
 ## References
 
-_Please note_: Specific references are given in the single notebooks and scripts.
+_Please note_: Specific references are given in the single scripts.
 
 - [**_Crameri F (2023)_**](https://doi.org/10.5281/zenodo.1243862).
   Scientific colour maps.
