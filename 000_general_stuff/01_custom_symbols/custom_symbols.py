@@ -10,9 +10,10 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/05/16
-# - Updated: 2025/08/02 - Add more symbols (earthquake, marker, trees)
-# - Updated: 2025/08/03 - Add more symbols (flowers)
-# - Updated: 2025/08/13 - Add more symbols (lense)
+# - Updated: 2025/08/02 - Add symbols for earthquake, marker, trees
+# - Updated: 2025/08/03 - Add symbols for flowers
+# - Updated: 2025/08/13 - Add symbol for lense
+# - Updated: 2026/05/10 - Add symbol for olivine crystal, improve symbol for lense
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -42,17 +43,18 @@ fig.plot(x=0, y=-1.5, style="kpinetree_yf.def/1c", fill="darkgreen")
 fig.plot(x=2, y=-1.5, style="kpoplar_yf.def/1c", fill="seagreen")
 fig.plot(x=4, y=-1.5, style="ktree_circle_yf.def/1c", fill="lightgreen")
 
+fig.plot(x=-3, y=-3, style="klense_yf.def/1c", pen="2p,gray30")
+fig.plot(x=-1, y=-3, style="kolivine_crystal_yf.def/1c", fill="99/107/47")
 fig.plot(x=1, y=-3.5, style="kflower_square_yf.def/1c", fill="purple")
 fig.plot(x=3, y=-3.5, style="kflower_circle_yf.def/1c", fill="darkred")
-fig.plot(x=-3, y=-2.5, style="klense_yf.def/1.5c", pen="3p,gray30")
 
 # Mark plotting points
 fig.plot(
-    x=[-3, -1, 1, 3, -4, -2, 0, 2, 4, -3, 1, 3],
-    y=[1, 1, 1, 1, -1, -1.5, -1.5, -1.5, -1.5, -2.5, -3.5, -3.5],
+    x=[-3, -1, 1, 3, -4, -2, 0, 2, 4, -3, -1, 1, 3],
+    y=[1, 1, 1, 1, -1, -1.5, -1.5, -1.5, -1.5, -3, -3, -3.5, -3.5],
     style="x0.2c",
     fill="255/90/0",
 )
 
 fig.show()
-# fig.savefig(fname="custom_symbols.png")
+fig.savefig(fname="custom_symbols.png")
