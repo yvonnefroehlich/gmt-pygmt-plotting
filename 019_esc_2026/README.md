@@ -1,0 +1,7 @@
+# 019_esc_2029
+
+_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
+
+| **[01_esc_final_scoreboard](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/tree/main/019_esc_2019/esc_final_scoreboard.py)** |
+| :---: |
+| <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/019_esc_2026/02_out_figs/esc_final_2026_scoreboard_jury.png" width="500"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/019_esc_2026/02_out_figs/esc_final_2026_scoreboard_public.png" width="500"> <br> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/019_esc_2026/02_out_figs/esc_final_2026_scoreboard_total.png" width="500">|
