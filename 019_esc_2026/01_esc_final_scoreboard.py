@@ -69,7 +69,7 @@ x = np.arange(0, len(land_give), 1)
 
 # %%
 # -----------------------------------------------------------------------------
-# Make plot for score boards
+# Make plot for scoreboards
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
 fig.basemap(region=[-0.6, len(land_give) - 1 + 0.6, -0.6, 24.6], projection="X15c/-10c", frame="wsne")
