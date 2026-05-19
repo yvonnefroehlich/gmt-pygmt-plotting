@@ -98,7 +98,7 @@ for i_land_temp, land_temp in enumerate(land_recieve):
 
 # -----------------------------------------------------------------------------
     # NaN cannot be converted to int type directly
-    # Int64 does not work as proposed by the does ???
+    # Int64 does not work as proposed by the docs ???
     if add_numbers == True:
         array_sb_temp_int = array_sb_temp.astype(int)
         list_sb_temp_int = array_sb_temp_int.tolist()
