@@ -1,0 +1,26 @@
+place	land	titel	artist	points	public	jury	start place
+1	Bulgaria	Bangaranga	Dara	516	312	204	12
+2	Israel	Michelle	Noam Bettan	343	220	123	3
+3	Romania	Choke Me	Alexandra Căpitănescu	296	232	64	24
+4	Australia	Eclipse	Delta Goodrem	287	122	165	8
+5	Italy	Per sempre sì	Sal Da Vinci	281	147	134	22
+6	Finland	Liekinheitin	Linda Lampenius & Pete Parkkonen	279	138	141	17
+7	Denmark	Før vi går hjem	Søren Torpegaard Lund	243	78	165	1
+8	Moldova	Viva, Moldova	Satoshi	226	183	43	16
+9	Ukraine	Ridnym	Leléka	221	167	54	7
+10	Greece	Ferto	Akylas	220	147	73	6
+11	France	Regarde!	Monroe	158	14	144	15
+12	Poland	Pray	Alicja	150	17	133	18
+13	Albania	Nân	Alis	145	85	60	5
+14	Norway	Ya ya ya	Jonas Lovv	134	19	115	23
+15	Croatia	Andromeda	Lelek	124	71	53	13
+16	Czechia	Crossroads	Daniel Žižka	113	9	104	11
+17	Serbia	Kraj mene	Lavina	90	52	38	9
+18	Malta	Bella	Aidan	89	8	81	10
+19	Cyprus	Jalla	Antigoni	75	34	41	21
+20	Sweden	My System	Felicia	51	16	35	20
+21	Belgium	Dancing on the Ice	Essyla	36	0	36	4
+22	Lithuania	Sólo quiero más	Lion Ceccah	22	12	10	19
+23	Germany	Fire	Sarah Engels	12	0	12	2
+24	Austria	Tanzschein	Cosmó	6	5	1	25
+25	United Kingdom	Eins, Zwei, Drei	Look Mum No Computer	1	0	1	14
