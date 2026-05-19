@@ -29,8 +29,8 @@ import numpy as np
 # Choose for your needs
 # -----------------------------------------------------------------------------
 year = 2026
-group = "total"  ## "jury" | "public" | "total"
-add_numbers = True  ## False | True
+group = "public"  ## "jury" | "public" | "total"
+add_numbers = False  ## False | True
 
 
 # %%
