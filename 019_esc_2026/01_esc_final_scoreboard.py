@@ -84,7 +84,7 @@ country_place = []
 country_sum = []
 for i_country_temp, country_temp in enumerate(country_recieve):
     df_sb_temp = df_sb[df_sb["country"] == country_temp]
-    df_sb_temp[country_temp] = np.nan  # A country can not vote for itself
+    df_sb_temp.loc[:,country_temp] = np.nan  # A country can not vote for itself
 
     array_sb_temp = df_sb_temp[country_give].to_numpy().squeeze()
     y = [i_country_temp] * len(array_sb_temp)
