@@ -179,5 +179,5 @@ if add_numbers == True:
 # -----------------------------------------------------------------------------
 fig.show()
 fig_name = f"esc_final_{year}_scoreboard_{group}"
-for ext in ["png"]: #, "pdf"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+# for ext in ["png"]: #, "pdf"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")

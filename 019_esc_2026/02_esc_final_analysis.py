@@ -138,8 +138,8 @@ fig.text(
 # Add legend
 fig.legend(position="jRM+o1c/0c+w2.7c", box=box_standard)
 
-for ext in ["png"]:  # , "pdf", "eps"]
-    fig.savefig(fname=f"{fig_name}_points.{ext}")
+# for ext in ["png"]:  # , "pdf", "eps"]
+#     fig.savefig(fname=f"{fig_name}_points.{ext}")
 fig.show()
 
 
@@ -199,8 +199,8 @@ for points_sep in ["public", "jury"]:
         fill="white@30"
     )
 
-    for ext in ["png"]:  # , "pdf", "eps"]
-        fig.savefig(fname=f"{fig_name}_{points_sep}.{ext}")
+    # for ext in ["png"]:  # , "pdf", "eps"]
+    #     fig.savefig(fname=f"{fig_name}_{points_sep}.{ext}")
     fig.show()
 
 
@@ -257,6 +257,6 @@ fig.text(
     fill="white@30"
 )
 
-for ext in ["png"]:  # , "pdf", "eps"]
-    fig.savefig(fname=f"{fig_name}_diff.{ext}")
+# for ext in ["png"]:  # , "pdf", "eps"]
+#     fig.savefig(fname=f"{fig_name}_diff.{ext}")
 fig.show()
