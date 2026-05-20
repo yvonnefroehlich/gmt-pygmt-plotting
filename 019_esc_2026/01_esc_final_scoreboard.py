@@ -57,7 +57,7 @@ if group == "total":
 # -----------------------------------------------------------------------------
 df_sb = pd.read_csv(f"{path_in}/esc_{year}_scoreboard_{group}.txt", delimiter="\t")
 
-country_recieve = df_sb["country"].values.tolist()
+country_recieve = df_sb["country"].to_numpy().tolist()
 country_recieve.sort()
 
 country_give = df_sb.columns.tolist()[3 : len(df_sb.columns.tolist()) - 1]
@@ -86,7 +86,7 @@ for i_country_temp, country_temp in enumerate(country_recieve):
     df_sb_temp = df_sb[df_sb["country"] == country_temp]
     df_sb_temp[country_temp] = np.nan  # A country can not vote for itself
 
-    array_sb_temp = df_sb_temp[country_give].values.squeeze()
+    array_sb_temp = df_sb_temp[country_give].to_numpy().squeeze()
     y = [i_country_temp] * len(array_sb_temp)
 
     # Plot squares with color-coding for points
@@ -119,9 +119,9 @@ for i_country_temp, country_temp in enumerate(country_recieve):
 
 # -----------------------------------------------------------------------------
     # Build list for y axis
-    place_temp = df_sb_temp["place"].values.squeeze()
+    place_temp = df_sb_temp["place"].to_numpy().squeeze()
     country_place.append(place_temp)
-    sum_temp = df_sb_temp["sum"].values.squeeze()
+    sum_temp = df_sb_temp["sum"].to_numpy().squeeze()
     country_sum.append(sum_temp)
 
 # -----------------------------------------------------------------------------
