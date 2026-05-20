@@ -23,7 +23,6 @@ import numpy as np
 import pandas as pd
 import pygmt
 
-
 # %%
 # -----------------------------------------------------------------------------
 # Choose for your needs
@@ -72,10 +71,10 @@ df_esc_diff_pos = df_esc[df_esc["diff_public_jury"] > 0]
 # -----------------------------------------------------------------------------
 # Add column for places based on public and jury points separately
 df_esc = df_esc.sort_values(by=["jury"], ignore_index=True, ascending=False)
-df_esc["place_jury"] = np.arange(1, len(df_esc)+1, 1)
+df_esc["place_jury"] = np.arange(1, len(df_esc) + 1, 1)
 
 df_esc = df_esc.sort_values(by=["public"], ignore_index=True, ascending=False)
-df_esc["place_public"] = np.arange(1, len(df_esc)+1, 1)
+df_esc["place_public"] = np.arange(1, len(df_esc) + 1, 1)
 
 
 # %%
@@ -131,7 +130,7 @@ fig.text(
     justify="LM",
     angle=90,
     font="9p",
-    fill="white@30"
+    fill="white@30",
 )
 
 # Add legend
@@ -147,7 +146,6 @@ fig.show()
 # Places based on public and jury points separately
 # -----------------------------------------------------------------------------
 for points_sep in ["public", "jury"]:
-
     match points_sep:
         case "jury":
             color_sep = color_jury
@@ -185,7 +183,7 @@ for points_sep in ["public", "jury"]:
         justify="MC",
         offset="0c/0.35c",
         font="9p",
-        fill="white@50"
+        fill="white@50",
     )
     # Add text for countries
     fig.text(
@@ -195,7 +193,7 @@ for points_sep in ["public", "jury"]:
         justify="LM",
         angle=90,
         font="9p",
-        fill="white@30"
+        fill="white@30",
     )
 
     # for ext in ["png"]:  # , "pdf", "eps"]
@@ -215,7 +213,7 @@ fig.basemap(
     projection=projection,
     frame=[
         "xa1g1+lplace based on total points",
-        "ya100f20+ldifference between public and jury points"
+        "ya100f20+ldifference between public and jury points",
     ],
 )
 
@@ -242,7 +240,7 @@ for df_diff, color, y_offset in zip(
         justify="MC",
         offset=f"0c/{y_offset}c",
         font="9p",
-        fill="white@50"
+        fill="white@50",
     )
 
 # Add text for countries
@@ -253,7 +251,7 @@ fig.text(
     justify="LM",
     angle=90,
     font="9p",
-    fill="white@30"
+    fill="white@30",
 )
 
 # for ext in ["png"]:  # , "pdf", "eps"]

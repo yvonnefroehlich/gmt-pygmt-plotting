@@ -20,9 +20,9 @@
 # #############################################################################
 
 
-import pygmt
-import pandas as pd
 import numpy as np
+import pandas as pd
+import pygmt
 
 # %%
 # -----------------------------------------------------------------------------
@@ -60,7 +60,7 @@ df_sb = pd.read_csv(f"{path_in}/esc_{year}_scoreboard_{group}.txt", delimiter="\
 country_recieve = df_sb["country"].values.tolist()
 country_recieve.sort()
 
-country_give = df_sb.columns.tolist()[3:len(df_sb.columns.tolist())-1]
+country_give = df_sb.columns.tolist()[3 : len(df_sb.columns.tolist()) - 1]
 country_give.sort()
 country_give.append("Rest of world")
 
@@ -72,15 +72,18 @@ x = np.arange(0, len(country_give), 1)
 # Make plot for scoreboards
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
-fig.basemap(region=[-0.6, len(country_give) - 1 + 0.6, -0.6, 24.6], projection="X15c/-10c", frame="wsne")
+fig.basemap(
+    region=[-0.6, len(country_give) - 1 + 0.6, -0.6, 24.6],
+    projection="X15c/-10c",
+    frame="wsne",
+)
 
 pygmt.makecpt(cmap="oslo", series=[0, max_points + 1, 1], reverse=True)
 
 country_place = []
 country_sum = []
 for i_country_temp, country_temp in enumerate(country_recieve):
-
-    df_sb_temp = df_sb[df_sb["country"]==country_temp]
+    df_sb_temp = df_sb[df_sb["country"] == country_temp]
     df_sb_temp[country_temp] = np.nan  # A country can not vote for itself
 
     array_sb_temp = df_sb_temp[country_give].values.squeeze()
@@ -99,12 +102,12 @@ for i_country_temp, country_temp in enumerate(country_recieve):
 # -----------------------------------------------------------------------------
     # NaN cannot be converted to int type directly
     # Int64 does not work as proposed by the docs ???
-    if add_numbers == True:
+    if add_numbers:
         array_sb_temp_int = array_sb_temp.astype(int)
         list_sb_temp_int = array_sb_temp_int.tolist()
         for i_value, value in enumerate(list_sb_temp_int):
             if value == -9223372036854775808:
-                list_sb_temp_int[i_value] = 'X'
+                list_sb_temp_int[i_value] = "X"
 
         # Add number of points as text in the middle of the squares
         fig.text(
@@ -166,7 +169,7 @@ with pygmt.config(MAP_FRAME_PEN="0.1p,gray50"):
         frame="y+lpoints", equalsize=cb_gap, position="+nno permission to vote"
     )
 
-if add_numbers == True:
+if add_numbers:
     fig.text(
         text="X",
         position="BL",
