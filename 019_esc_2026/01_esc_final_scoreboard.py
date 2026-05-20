@@ -84,6 +84,10 @@ country_place = []
 country_sum = []
 for i_country_temp, country_temp in enumerate(country_recieve):
     df_sb_temp = df_sb[df_sb["country"] == country_temp]
+    # TODO: FutureWarning by pandas: Setting an item of incompatible dtype is
+    # deprecated and will raise in a future error of pandas. Value 'nan' has
+    # dtype incompatible with int64, please explicitly cast to a compatible
+    # dtype first.
     df_sb_temp.loc[:,country_temp] = np.nan  # A country can not vote for itself
 
     array_sb_temp = df_sb_temp[country_give].to_numpy().squeeze()
@@ -100,8 +104,12 @@ for i_country_temp, country_temp in enumerate(country_recieve):
     )
 
 # -----------------------------------------------------------------------------
-    # NaN cannot be converted to int type directly
+    # Converting NaN to int leads to -9223372036854775808
     # Int64 does not work as proposed by the docs ???
+    # TODO: FutureWarning by pandas: Setting an item of incompatible dtype is
+    # deprecated and will raise in a future error of pandas. Value 'nan' has
+    # dtype incompatible with int64, please explicitly cast to a compatible
+    # dtype first.
     if add_numbers:
         array_sb_temp_int = array_sb_temp.astype(int)
         list_sb_temp_int = array_sb_temp_int.tolist()
