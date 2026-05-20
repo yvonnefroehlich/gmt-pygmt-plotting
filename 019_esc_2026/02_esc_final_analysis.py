@@ -1,6 +1,6 @@
 # #############################################################################
 # Final of the Eurovision Song Contest 2026 in Austria
-# - Analyis comparing jury and public points
+# - Analysis comparing jury and public points
 # Data
 # - modified from https://eurovisionworld.com/eurovision/2026
 # - last accessed: 2026/05/18
@@ -71,7 +71,7 @@ df_esc_diff_neg = df_esc[df_esc["diff_public_jury"] < 0]
 df_esc_diff_pos = df_esc[df_esc["diff_public_jury"] > 0]
 
 # -----------------------------------------------------------------------------
-# Add column for places based on public and jury points separatly
+# Add column for places based on public and jury points separately
 df_esc = df_esc.sort_values(by=["jury"], ignore_index=True, ascending=False)
 df_esc["place_jury"] = np.arange(1, len(df_esc)+1, 1)
 
@@ -145,7 +145,7 @@ fig.show()
 
 # %%
 # -----------------------------------------------------------------------------
-# Places based on public and jury points separatly
+# Places based on public and jury points separately
 # -----------------------------------------------------------------------------
 for points_sep in ["public", "jury"]:
 
