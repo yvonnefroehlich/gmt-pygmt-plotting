@@ -43,11 +43,11 @@ path_out = "02_out_figs"
 color_hl = "255/90/0"  # -> orange | URG paper
 
 max_points = 12
-cb_L = 0.25
+cb_gap = 0.25
 x_nan_offset = 0.9
 if group == "total":
     max_points = 24
-    cb_L = 0.1
+    cb_gap = 0.1
     x_nan_offset = 0.96
 
 
@@ -163,7 +163,7 @@ for text_label, y_offset, font_size in zip(
 # Add colorbar
 with pygmt.config(MAP_FRAME_PEN="0.1p,gray50"):
     fig.colorbar(
-        frame="y+lpoints", equalsize=cb_L, position="+nno permission to vote"
+        frame="y+lpoints", equalsize=cb_gap, position="+nno permission to vote"
     )
 
 if add_numbers == True:
