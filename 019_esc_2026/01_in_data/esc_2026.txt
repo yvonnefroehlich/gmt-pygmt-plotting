@@ -1,4 +1,4 @@
-place	land	titel	artist	points	public	jury	start place
+place	country	titel	artist	total	public	jury	start place
 1	Bulgaria	Bangaranga	Dara	516	312	204	12
 2	Israel	Michelle	Noam Bettan	343	220	123	3
 3	Romania	Choke Me	Alexandra Căpitănescu	296	232	64	24

@@ -39,14 +39,22 @@ path_in = "01_in_data"
 path_out = "02_out_figs"
 fig_name = f"{path_out}/esc_final_{year}"
 
-max_points = 550
 projection = "X17c/12c"
-offset_y_land = 550 - 150  # manually adjusted
+
+max_points = 550
+offset_y_country = max_points - 150  # manually adjusted
 
 color_hl = "255/90/0"  # -> orange | URG paper
 color_total = "orange"
-color_public = "darkblue"
 color_jury = "cyan3"
+color_public = "darkblue"
+
+symbol_total = "c0.2c"
+symbol_jury = "i0.25c"
+symbol_public = "t0.25c"
+symbol_diff = "s0.25c"
+
+box_standard = "+gwhite+p0.1p,gray30+r2p"
 
 
 # %%
@@ -56,14 +64,14 @@ color_jury = "cyan3"
 df_esc = pd.read_csv(f"{path_in}/esc_{year}.txt", delimiter="\t")
 
 # -----------------------------------------------------------------------------
-# Add difference between public and jury points
-diff_aud_jury = df_esc["public"] - df_esc["jury"]
-df_esc["diff_public_jury"] = diff_aud_jury
+# Add column for difference between public and jury points
+diff_public_jury = df_esc["public"] - df_esc["jury"]
+df_esc["diff_public_jury"] = diff_public_jury
 df_esc_diff_neg = df_esc[df_esc["diff_public_jury"] < 0]
 df_esc_diff_pos = df_esc[df_esc["diff_public_jury"] > 0]
 
 # -----------------------------------------------------------------------------
-# Add places based on public and jury points separatly
+# Add column for places based on public and jury points separatly
 df_esc = df_esc.sort_values(by=["jury"], ignore_index=True, ascending=False)
 df_esc["place_jury"] = np.arange(1, len(df_esc)+1, 1)
 
@@ -87,58 +95,47 @@ fig.basemap(
     ],
 )
 
-# Plot total points
-fig.plot(
-    data=df_esc[["place", "points"]],
-    style="c0.2c",
-    pen="0.5p,gray30",
-    fill=color_total,
-    label=f"total+HESC final {year}+f10p",
-    no_clip=True,
-)
-# Add label for total points
+# Plot total, jury and public points
+for group, style, color in zip(
+    ["total", "jury", "public"],
+    [symbol_total, symbol_jury, symbol_public],
+    [color_total, color_jury, color_public],
+):
+    label = group
+    if group == "total":
+        label = f"{group}+HESC final {year}+f10p"
+
+    fig.plot(
+        data=df_esc[["place", group]],
+        style=style,
+        pen="0.5p,gray30",
+        fill=color,
+        label=label,
+        no_clip=True,
+    )
+
+# Add text for total points
 fig.text(
-    text=df_esc["points"],
+    text=df_esc["total"],
     x=df_esc["place"],
-    y=df_esc["points"],
-    font="9p",
+    y=df_esc["total"],
     justify="MC",
     offset="0c/0.3c",
+    font="9p",
     fill="white@50",
 )
-
-# Plot jury points
-fig.plot(
-    data=df_esc[["place", "jury"]],
-    style="i0.25c",
-    pen="0.5p,gray30",
-    fill=color_jury,
-    label="jury",
-    no_clip=True,
-)
-# Plot public points
-fig.plot(
-    data=df_esc[["place", "public"]],
-    style="t0.25c",
-    pen="0.5p,gray30",
-    fill=color_public,
-    label="public",
-    no_clip=True,
-)
-
-# Add label for lands
+# Add text for countries
 fig.text(
-    text=df_esc["land"],
+    text=df_esc["country"],
     x=df_esc["place"],
-    y=np.ones(len(df_esc)) * offset_y_land,
+    y=np.ones(len(df_esc)) * offset_y_country,
+    justify="LM",
     angle=90,
     font="9p",
-    justify="LM",
     fill="white@30"
 )
 
 # Add legend
-box_standard = "+gwhite+p0.1p,gray30+r2p"
 fig.legend(position="jRM+o1c/0c+w2.7c", box=box_standard)
 
 for ext in ["png"]:  # , "pdf", "eps"]
@@ -155,10 +152,10 @@ for points_sep in ["public", "jury"]:
     match points_sep:
         case "jury":
             color_sep = color_jury
-            symbol = "i"
+            symbol_sep = symbol_jury
         case "public":
             color_sep = color_public
-            symbol = "t"
+            symbol_sep = symbol_public
 
     fig = pygmt.Figure()
     pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
@@ -171,33 +168,34 @@ for points_sep in ["public", "jury"]:
             f"ya100f20+l{points_sep} points",
         ],
     )
-    # Plot points
+    # Plot public / jury points
     fig.plot(
         data=df_esc[[f"place_{points_sep}", points_sep]],
-        style=f"{symbol}0.25c",
+        style=symbol_sep,
         pen="0.5p,gray30",
         fill=color_sep,
         label=points_sep,
         no_clip=True,
     )
-    # Add label for points
+
+    # Add text for public / jury points
     fig.text(
         text=df_esc[points_sep],
         x=df_esc[f"place_{points_sep}"],
         y=df_esc[points_sep],
-        font="9p",
         justify="MC",
         offset="0c/0.35c",
+        font="9p",
         fill="white@50"
     )
-    # Add label for land
+    # Add text for countries
     fig.text(
-        text=df_esc["land"],
+        text=df_esc["country"],
         x=df_esc[f"place_{points_sep}"],
-        y=np.ones(len(df_esc)) * offset_y_land,
+        y=np.ones(len(df_esc)) * offset_y_country,
+        justify="LM",
         angle=90,
         font="9p",
-        justify="LM",
         fill="white@30"
     )
 
@@ -225,50 +223,37 @@ fig.basemap(
 # Plot zero line
 fig.plot(x=[0, 27], y=[0, 0], pen="1p,gray30")
 
-# Plot differences
-fig.plot(
-    x=df_esc_diff_neg["place"],
-    y=df_esc_diff_neg["diff_public_jury"],
-    style="s0.25c",
-    pen="0.5p,gray30",
-    fill=color_jury,
-)
-fig.plot(
-    x=df_esc_diff_pos["place"],
-    y=df_esc_diff_pos["diff_public_jury"],
-    style="s0.3c",
-    pen="0.5p,gray30",
-    fill=color_public,
-)
+# Difference
+for df_diff, color, y_offset in zip(
+    [df_esc_diff_neg, df_esc_diff_pos], [color_jury, color_public], [-0.35, 0.35]
+):
+    # Plot differences
+    fig.plot(
+        x=df_diff["place"],
+        y=df_diff["diff_public_jury"],
+        style=symbol_diff,
+        pen="0.5p,gray30",
+        fill=color,
+    )
+    # Add text for differences
+    fig.text(
+        text=df_diff["diff_public_jury"],
+        x=df_diff["place"],
+        y=df_diff["diff_public_jury"],
+        justify="MC",
+        offset=f"0c/{y_offset}c",
+        font="9p",
+        fill="white@50"
+    )
 
-# Add label for difference
+# Add text for countries
 fig.text(
-    text=df_esc_diff_neg["diff_public_jury"],
-    x=df_esc_diff_neg["place"],
-    y=df_esc_diff_neg["diff_public_jury"],
-    font="10p",
-    justify="MC",
-    offset="0c/-0.35c",
-    fill="white@50"
-)
-fig.text(
-    text=df_esc_diff_pos["diff_public_jury"],
-    x=df_esc_diff_pos["place"],
-    y=df_esc_diff_pos["diff_public_jury"],
-    font="9p",
-    justify="MC",
-    offset="0c/0.35c",
-    fill="white@50"
-)
-
-# Add label for lands
-fig.text(
-    text=df_esc["land"],
+    text=df_esc["country"],
     x=df_esc["place"],
     y=np.ones(len(df_esc)) * (-max_points / 2 + 10),
+    justify="LM",
     angle=90,
     font="9p",
-    justify="LM",
     fill="white@30"
 )
 

@@ -1,4 +1,4 @@
-place	land	sum	Albania	Armenia	Australia	Austria	Azerbaijan	Belgium	Bulgaria	Croatia	Cyprus	Czechia	Denmark	Estonia	Finland	France	Georgia	Germany	Greece	Israel	Italy	Latvia	Lithuania	Luxembourg	Malta	Moldova	Montenegro	Norway	Poland	Portugal	Romania	San Marino	Serbia	Sweden	Switzerland	Ukraine	UK	Rest of world
+place	country	sum	Albania	Armenia	Australia	Austria	Azerbaijan	Belgium	Bulgaria	Croatia	Cyprus	Czechia	Denmark	Estonia	Finland	France	Georgia	Germany	Greece	Israel	Italy	Latvia	Lithuania	Luxembourg	Malta	Moldova	Montenegro	Norway	Poland	Portugal	Romania	San Marino	Serbia	Sweden	Switzerland	Ukraine	UK	Rest of world
 1	Bulgaria	516	9	22	24	12	15	16	0	11	20	14	24	14	7	14	9	17	16	20	8	11	24	20	20	13	12	11	17	6	12	18	17	13	12	4	22	12
 2	Israel	343	18	14	0	15	16	9	12	5	8	7	9	1	12	16	16	15	5	0	8	4	8	1	11	18	4	6	14	12	12	7	8	7	14	15	10	6
 3	Romania	296	5	5	6	3	9	10	10	5	7	15	5	4	10	8	7	1	8	7	15	8	10	22	5	15	3	13	15	8	0	13	7	4	5	13	8	7

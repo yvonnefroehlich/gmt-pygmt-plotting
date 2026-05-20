@@ -57,14 +57,14 @@ if group == "total":
 # -----------------------------------------------------------------------------
 df_sb = pd.read_csv(f"{path_in}/esc_{year}_scoreboard_{group}.txt", delimiter="\t")
 
-land_recieve = df_sb["land"].values.tolist()
-land_recieve.sort()
+country_recieve = df_sb["country"].values.tolist()
+country_recieve.sort()
 
-land_give = df_sb.columns.tolist()[3:len(df_sb.columns.tolist())-1]
-land_give.sort()
-land_give.append("Rest of world")
+country_give = df_sb.columns.tolist()[3:len(df_sb.columns.tolist())-1]
+country_give.sort()
+country_give.append("Rest of world")
 
-x = np.arange(0, len(land_give), 1)
+x = np.arange(0, len(country_give), 1)
 
 
 # %%
@@ -72,19 +72,19 @@ x = np.arange(0, len(land_give), 1)
 # Make plot for scoreboards
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
-fig.basemap(region=[-0.6, len(land_give) - 1 + 0.6, -0.6, 24.6], projection="X15c/-10c", frame="wsne")
+fig.basemap(region=[-0.6, len(country_give) - 1 + 0.6, -0.6, 24.6], projection="X15c/-10c", frame="wsne")
 
 pygmt.makecpt(cmap="oslo", series=[0, max_points + 1, 1], reverse=True)
 
-land_place = []
-land_sum = []
-for i_land_temp, land_temp in enumerate(land_recieve):
+country_place = []
+country_sum = []
+for i_country_temp, country_temp in enumerate(country_recieve):
 
-    df_sb_temp = df_sb[df_sb["land"]==land_temp]
-    df_sb_temp[land_temp] = np.nan  # A country can not vote for itself
+    df_sb_temp = df_sb[df_sb["country"]==country_temp]
+    df_sb_temp[country_temp] = np.nan  # A country can not vote for itself
 
-    array_sb_temp = df_sb_temp[land_give].values.squeeze()
-    y = [i_land_temp] * len(array_sb_temp)
+    array_sb_temp = df_sb_temp[country_give].values.squeeze()
+    y = [i_country_temp] * len(array_sb_temp)
 
     # Plot squares with color-coding for points
     fig.plot(
@@ -117,16 +117,16 @@ for i_land_temp, land_temp in enumerate(land_recieve):
 # -----------------------------------------------------------------------------
     # Build list for y axis
     place_temp = df_sb_temp["place"].values.squeeze()
-    land_place.append(place_temp)
+    country_place.append(place_temp)
     sum_temp = df_sb_temp["sum"].values.squeeze()
-    land_sum.append(sum_temp)
+    country_sum.append(sum_temp)
 
 # -----------------------------------------------------------------------------
 # Text for x axis
 fig.text(
-    text=land_give,
+    text=country_give,
     x=x,
-    y=[-1] * len(land_give),
+    y=[-1] * len(country_give),
     angle=90,
     justify="LM",
     font="8p,black",
@@ -135,11 +135,11 @@ fig.text(
 
 # Text for y axis
 for text_recieve, x_text in zip(
-    [land_sum, land_place, land_recieve], [-1, -3, -4.5]
+    [country_sum, country_place, country_recieve], [-1, -3, -4.5]
 ):
     fig.text(
         text=text_recieve,
-        x=[x_text] * len(land_recieve),
+        x=[x_text] * len(country_recieve),
         y=df_sb.index.tolist(),
         justify="RM",
         font="8p,black",
