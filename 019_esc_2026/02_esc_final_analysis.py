@@ -44,7 +44,6 @@ projection = "X17c/12c"
 max_points = 550
 offset_y_country = max_points - 150  # manually adjusted
 
-color_hl = "255/90/0"  # -> orange | URG paper
 color_total = "orange"
 color_jury = "cyan3"
 color_public = "darkblue"
