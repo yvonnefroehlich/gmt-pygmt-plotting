@@ -95,16 +95,16 @@ fig.basemap(
 
 # Plot total, jury and public points
 for group, style, color in zip(
-    ["total_points", "jury_points", "public_points"],
+    ["total", "jury", "public"],
     [symbol_total, symbol_jury, symbol_public],
     [color_total, color_jury, color_public],
 ):
-    label = group
-    if group == "total_points":
-        label = f"{group}+HESC final {year}+f10p"
+    label = f"{group} points"
+    if group == "total":
+        label = f"{label}+HESC final {year}+f10p"
 
     fig.plot(
-        data=df_esc[["total_place", group]],
+        data=df_esc[["total_place", f"{group}_points"]],
         style=style,
         pen="0.5p,gray30",
         fill=color,
@@ -287,18 +287,18 @@ for country_temp in countries:
     fig.plot(x=[start_place_temp, start_place_temp], y=y, pen="1p,gray50")
 
 for group, style, color in zip(
-    ["total_place", "jury_place", "public_place"],
+    ["total", "jury", "public"],
     [symbol_total, symbol_jury, symbol_public],
     [color_total, color_jury, color_public],
 ):
 
-    label = group
-    if group == "total_place":
-        label = f"{group}+HESC final {year}+f10p"
+    label = f"{group} place"
+    if group == "total":
+        label = f"{label}+HESC final {year}+f10p"
 
     # Plot jury / public / total places
     fig.plot(
-        data=df_esc[["start_place", group]],
+        data=df_esc[["start_place", f"{group}_place"]],
         style=style,
         pen="0.5p,gray30",
         fill=color,
