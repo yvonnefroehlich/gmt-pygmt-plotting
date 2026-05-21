@@ -1,6 +1,6 @@
 # #############################################################################
 # Final of the Eurovision Song Contest 2026 in Austria
-# - Analysis comparing jury and public points
+# - Analysis comparing total, jury, public points and places
 # Data
 # - modified from https://eurovisionworld.com/eurovision/2026
 # - last accessed: 2026/05/18
@@ -70,17 +70,18 @@ df_esc_diff_neg = df_esc[df_esc["diff_public_jury"] < 0]
 df_esc_diff_pos = df_esc[df_esc["diff_public_jury"] > 0]
 
 # -----------------------------------------------------------------------------
-# Add column for places based on public and jury points separately
+# Add column for places based on public or jury points
+df_esc = df_esc.sort_values(by=["public_points"], ignore_index=True, ascending=False)
+df_esc["public_place"] = np.arange(1, len(df_esc) + 1, 1)
+
 df_esc = df_esc.sort_values(by=["jury_points"], ignore_index=True, ascending=False)
 df_esc["jury_place"] = np.arange(1, len(df_esc) + 1, 1)
 
-df_esc = df_esc.sort_values(by=["public_points"], ignore_index=True, ascending=False)
-df_esc["public_place"] = np.arange(1, len(df_esc) + 1, 1)
 
 
 # %%
 # -----------------------------------------------------------------------------
-# Total, jury, public points together
+# Total, jury and public points
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
 pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
@@ -145,7 +146,7 @@ fig.show()
 
 # %%
 # -----------------------------------------------------------------------------
-# Places based on public and jury points separately
+# Places based on public or jury points
 # -----------------------------------------------------------------------------
 for group, style, color in zip(
     ["jury", "public"],
@@ -201,7 +202,7 @@ for group, style, color in zip(
 
 # %%
 # -----------------------------------------------------------------------------
-# Difference between jury and public points
+# Difference between public and jury points
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
 pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
@@ -278,13 +279,13 @@ for country_temp in countries:
     df_esc_temp = df_esc[df_esc["country"] == country_temp]
 
     start_place_temp = df_esc_temp["start_place"].to_numpy().squeeze().tolist()
-    place_public_temp = df_esc_temp["public_place"].to_numpy().squeeze().tolist()
-    place_jury_temp = df_esc_temp["jury_place"].to_numpy().squeeze().tolist()
+    public_place_temp = df_esc_temp["public_place"].to_numpy().squeeze().tolist()
+    jury_place_temp = df_esc_temp["jury_place"].to_numpy().squeeze().tolist()
 
-    if place_public_temp >= place_jury_temp:
-        y = [place_public_temp, place_jury_temp]
-    elif place_public_temp < place_jury_temp:
-        y = [place_jury_temp, place_public_temp]
+    if public_place_temp >= jury_place_temp:
+        y = [public_place_temp, jury_place_temp]
+    elif public_place_temp < jury_place_temp:
+        y = [jury_place_temp, public_place_temp]
 
     fig.plot(x=[start_place_temp, start_place_temp], y=y, pen="1p,gray50")
 
