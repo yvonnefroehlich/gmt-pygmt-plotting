@@ -168,7 +168,6 @@ for group, style, color in zip(
         style=style,
         pen="0.5p,gray30",
         fill=color,
-        label=group,
         no_clip=True,
     )
 
