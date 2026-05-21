@@ -79,7 +79,7 @@ df_esc["public_place"] = np.arange(1, len(df_esc) + 1, 1)
 
 # %%
 # -----------------------------------------------------------------------------
-# Points total, jury, public
+# Total, jury, public points together
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
 pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
@@ -136,8 +136,8 @@ fig.text(
 # Add legend
 fig.legend(position="jRM+o1c/0c+w2.7c", box=box_standard)
 
-for ext in ["png"]:  # , "pdf", "eps"]
-    fig.savefig(fname=f"{fig_name}_points.{ext}")
+# for ext in ["png"]:  # , "pdf", "eps"]
+#     fig.savefig(fname=f"{fig_name}_points.{ext}")
 fig.show()
 
 
