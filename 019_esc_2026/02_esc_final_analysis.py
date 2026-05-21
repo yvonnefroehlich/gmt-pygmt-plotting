@@ -99,6 +99,7 @@ for group, style, color in zip(
     ["total", "jury", "public"],
     [symbol_total, symbol_jury, symbol_public],
     [color_total, color_jury, color_public],
+    strict=True,
 ):
     label = f"{group} points"
     if group == "total":
@@ -150,8 +151,8 @@ for group, style, color in zip(
     ["jury", "public"],
     [symbol_jury, symbol_public],
     [color_jury, color_public],
+    strict=True,
 ):
-
     fig = pygmt.Figure()
     pygmt.config(MAP_GRID_PEN_PRIMARY="0.01p,gray50")
 
@@ -222,6 +223,7 @@ for df_diff, color, y_offset in zip(
     [df_esc_diff_neg, df_esc_diff_pos],
     [color_jury, color_public],
     [-0.35, 0.35],
+    strict=True,
 ):
     # Plot differences
     fig.plot(
@@ -275,12 +277,12 @@ countries = df_esc["country"].tolist()
 for country_temp in countries:
     df_esc_temp = df_esc[df_esc["country"] == country_temp]
 
-    start_place_temp = df_esc_temp["start_place"].values.squeeze().tolist()
-    place_public_temp = df_esc_temp["public_place"].values.squeeze().tolist()
-    place_jury_temp = df_esc_temp["jury_place"].values.squeeze().tolist()
+    start_place_temp = df_esc_temp["start_place"].to_numpy().squeeze().tolist()
+    place_public_temp = df_esc_temp["public_place"].to_numpy().squeeze().tolist()
+    place_jury_temp = df_esc_temp["jury_place"].to_numpy().squeeze().tolist()
 
     if place_public_temp >= place_jury_temp:
-        y = [place_public_temp, place_jury_temp ]
+        y = [place_public_temp, place_jury_temp]
     elif place_public_temp < place_jury_temp:
         y = [place_jury_temp, place_public_temp]
 
@@ -290,8 +292,8 @@ for group, style, color in zip(
     ["total", "jury", "public"],
     [symbol_total, symbol_jury, symbol_public],
     [color_total, color_jury, color_public],
+    strict=True,
 ):
-
     label = f"{group} place"
     if group == "total":
         label = f"{label}+HESC final {year}+f10p"
