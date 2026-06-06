@@ -123,8 +123,9 @@ _Please note_: Specific references are given in the single scripts.
 The presented research and YF received support from various sources:
 
 - [Graduate Funding from the German States](https://www.khys.kit.edu/english/graduate_funding.php) (scholarship)
-- [NSF grant EAR-1948602](https://www.nsf.gov/awardsearch/show-award/?AWD_ID=1948602) (travel support for AGU24)
+- [NSF EAR-1948602](https://www.nsf.gov/awardsearch/show-award/?AWD_ID=1948602) (travel support to
+  [AGU24 annual meeting](https://www.agu.org/annual-meeting-2024))
 - [DFG project 521545943](https://gepris.dfg.de/gepris/projekt/521545943?language=en) within the
   [DFG Priority Program DeepDyn SPP 2404 – 500707704](https://www.geo.lmu.de/deepdyn/en/) (research assistant)
-- [NSF CSEDI EAR-2153910](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2153910) (travel support for workshop
-  [Integrating Seismic Anisotropy, Geodynamics, and Rock Deformation](https://sites.wustl.edu/anisotropy))
+- [NSF EAR-2153910](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2153910) (travel support to
+  [workshop Integrating Seismic Anisotropy, Geodynamics, and Rock Deformation](https://sites.wustl.edu/anisotropy))
