@@ -48,6 +48,10 @@ If you make use of this material, please acknowledge the relating publications i
 <p>
 
 **Presentations**
+- [**_Fröhlich Y (2026d)_**](https://doi.org/10.5281/zenodo.20441410).
+  Resolving upper mantle anisotropy in 3-D from long-term data: A case study in the Upper Rhine Graben area, Central Europe.
+  *Workshop Integrating Seismic Anisotropy, Geodynamics, and Rock Deformation*, St. Louis.
+  https://doi.org/10.5281/zenodo.20441410.
 - [**_Fröhlich Y, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14510992).
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
   *Annual Meeting of the American Geophysical Union*, Washington D.C..
