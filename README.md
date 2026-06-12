@@ -44,10 +44,11 @@ If you make use of this material, please acknowledge the relating publications i
   Geophysical Animations. *Zenodo*.
   https://doi.org/10.5281/zenodo.15641348.
 
-<details><summary>Please click for details on <b>Presentations</b> and <b>Posters.</b> </summary>
-<p>
-
 **Presentations**
+- [**_Fröhlich Y (2026d)_**](https://doi.org/10.5281/zenodo.20441410).
+  Resolving upper mantle anisotropy in 3-D from long-term data: A case study in the Upper Rhine Graben area, Central Europe.
+  *Workshop Integrating Seismic Anisotropy, Geodynamics, and Rock Deformation*, St. Louis.
+  https://doi.org/10.5281/zenodo.20441410.
 - [**_Fröhlich Y, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14510992).
   Vertical and Small-scale Lateral Varying Seismic Anisotropy in the Upper Mantle Underneath the Upper Rhine Graben, Central Europe.
   *Annual Meeting of the American Geophysical Union*, Washington D.C..
@@ -66,6 +67,10 @@ If you make use of this material, please acknowledge the relating publications i
   Resolving upper mantle anisotropy in 3-D: A case study in the Upper Rhine Graben area, Central Europe.
   *86th Annual Meeting of the German Geophysical Society*, Münster.
   https://doi.org/10.5281/zenodo.18524083.
+
+<details><summary>Please click for details on the <b>DeepDyn posters.</b> </summary>
+<p>
+
 - [**_Fröhlich Y, Dorn F, Dillah M I F, Ritter J R R (2024)_**](https://doi.org/10.5281/zenodo.14801003).
   Investigation of seismic anisotropy in the D'' layer using *X*KS pairs.
   *2th DeepDyn annual meeting*, Rügen.
