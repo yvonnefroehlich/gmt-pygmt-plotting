@@ -1,4 +1,4 @@
-total_place	country	titel	artist	total_points	public_points	jury_points	start_place
+total_place	country	title	artist	total_points	public_points	jury_points	start_place
 1	Bulgaria	Bangaranga	Dara	516	312	204	12
 2	Israel	Michelle	Noam Bettan	343	220	123	3
 3	Romania	Choke Me	Alexandra Căpitănescu	296	232	64	24
