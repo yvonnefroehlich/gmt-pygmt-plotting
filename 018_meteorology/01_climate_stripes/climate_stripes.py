@@ -7,6 +7,7 @@
 # History
 # - Created: 2026/04/24
 # - Updated: 2026/06/21 - Remove alias for "-M" of "plot"
+# - Updated: 2026/06/21 - Add bar plot and improve existing code and comments
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
