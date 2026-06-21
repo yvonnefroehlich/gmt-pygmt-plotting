@@ -43,7 +43,7 @@ df_sst = pd.read_csv(f"{path_in}/GLB_Ts_plus_dSST.csv", sep=",", header=1)
 year_min = df_sst["Year"].min() + 1
 year_max = df_sst["Year"].max() - 1
 
-dSST_lim = 1.5  # sea surface temperature anomaly
+dSST_lim = 1.5  # colormap for sea surface temperature anomaly
 line_lim = 1.5  # y axis
 
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -54,20 +54,21 @@ months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", 
 # Curves for all month
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
-with pygmt.config(FONT="10p"):
+with pygmt.config(FONT="12p", MAP_GRID_PEN="0.1p,gray"):
     fig.basemap(
         region=[year_min, year_max, -line_lim, line_lim],
-        projection="X15c/5c",
-        frame=["WSen", "xa20f5+lyear", "y+l@~D@~SST / K"],
+        projection="X20c/5c",
+        frame=["WSen", "xa20f5", "ya1f0.1g0.5+l@~D@~SST / K"],
     )
 
-fig.plot(
-    data=df_sst[["Year", "J-D"]],
-    fill="lightred",
-    M="c+glightblue+y0",  # high-level method fill_between up on PyGMT v0.19.0
-)
+# High-level method pygmt.Figure.fill_between for PyGMT v0.19.0 or higher
+fig.plot(data=df_sst[["Year", "J-D"]], fill="lightred@40", M="c+glightblue@40+y0")
 
-pygmt.makecpt(cmap="acton", series=[0, 11, 1])
+# Marke referece year
+fig.vlines(x=1961, pen="1p,pink")
+
+pygmt.makecpt(cmap="acton", series=[0, 14, 1])  # avoid light colors
+
 for i_month, month in enumerate(months):
 
     label = f"{month}+S0.5c"
@@ -78,8 +79,7 @@ for i_month, month in enumerate(months):
         data=df_sst[["Year", month]],
         cmap=True,
         zvalue=i_month,
-        pen="0.3p,+z",
-        label=label,
+        pen="0.1p,+z",
     )
     fig.plot(
         x=df_sst["Year"],
@@ -89,14 +89,125 @@ for i_month, month in enumerate(months):
         fill=[i_month] * len(df_sst),
     )
 
-with pygmt.config(FONT="6p"):
+    # Dummy lines for legend
+    fig.plot(
+        x=[0, 1],
+        y=[0, 0],
+        cmap=True,
+        zvalue=i_month,
+        pen="2p,+z",
+        label=label,
+    )
+
+with pygmt.config(FONT="8p"):
     fig.legend(position="jBC+jBC+o0c/0.2c+w9c", box=box_standard)
 
 fig.show()
 fig_name = f"SST_{year_min}to{year_max}_curves"
-# for ext in ["png"]:  #, "pdf", "eps"]:
-#     fig.savefig(fname=f"{path_out}/{fig_name}.png")
+for ext in ["png"]:  #, "pdf", "eps"]:
+    fig.savefig(fname=f"{path_out}/{fig_name}.png")
 print(fig_name)
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Bars for months - single plots
+# -----------------------------------------------------------------------------
+for month in [
+    "J-D",
+    # "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    # "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+]:
+
+    fig = pygmt.Figure()
+    with pygmt.config(FONT="12p", MAP_GRID_PEN="0.1p,gray"):
+        fig.basemap(
+            region=[year_min, year_max, -line_lim, line_lim],
+            projection="X20c/5c",
+            frame=["WSen", "xa20f5", "ya1f0.1g0.5+l@~D@~SST / K"],
+        )
+
+    # Marke referece year
+    fig.vlines(x=1961, pen="1p,pink")
+
+    fig.text(
+        position="TL",
+        offset=(0.15, -0.15),
+        text=month,
+        font=f"15p,1,{color_hl}",
+        no_clip=True,
+    )
+
+    pygmt.makecpt(cmap="vik", series=[-dSST_lim, dSST_lim])
+
+    for i_year, year in enumerate(range(year_min, year_max + 1)):
+        diff_sst = float(df_sst[month][i_year])
+        if diff_sst > 0:
+            y = [0, diff_sst]
+        elif diff_sst < 0:
+            y = [diff_sst, 0]
+        elif diff_sst == 0:
+            y = [0, 0]
+        fig.plot(
+            x=[year, year],
+            y=y,
+            pen="4p,+z",
+            zvalue=diff_sst,
+            cmap=True,
+        )
+
+    fig.show()
+    fig_name = f"SST_{year_min}to{year_max}_bars_{month}"
+    for ext in ["png"]:  #, "pdf", "eps"]:
+        fig.savefig(fname=f"{path_out}/{fig_name}.png")
+    print(fig_name)
+
+
+# %%
+# -----------------------------------------------------------------------------
+# Stripes for months - single plots
+# -----------------------------------------------------------------------------
+for month in [
+    "J-D",
+    # "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    # "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+]:
+
+    fig = pygmt.Figure()
+    fig.basemap(
+        region=[year_min, year_max, -line_lim, line_lim],
+        projection="X20c/5c",
+        frame=0,
+    )
+
+    pygmt.makecpt(cmap="vik", series=[-dSST_lim, dSST_lim])
+    fig.colorbar(frame=[True, "y+l@~D@~SST / K"])
+
+    fig.text(
+        position="BL",
+        offset=(0.1, -1.3),
+        text=month,
+        font=f"15p,1,{color_hl}",
+        no_clip=True,
+    )
+
+    for i_year, year in enumerate(range(year_min, year_max + 1)):
+        diff_sst = df_sst[month][i_year]
+        fig.plot(
+            x=[year, year],
+            y=[-line_lim, line_lim],
+            pen="4p,+z",
+            zvalue=diff_sst,
+            cmap=True,
+        )
+        fig.basemap(frame=["lStr", "xa10f5", "x+el"])
+
+
+    fig.show()
+    fig_name = f"SST_{year_min}to{year_max}_stripes_{month}"
+    for ext in ["png"]:  #, "pdf", "eps"]:
+        fig.savefig(fname=f"{path_out}/{fig_name}.png")
+    print(fig_name)
 
 
 # %%
@@ -151,53 +262,6 @@ for month in months:
 
 fig.show()
 fig_name = f"SST_{year_min}to{year_max}_stripes"
-# for ext in ["png"]:  #, "pdf", "eps"]:
-#     fig.savefig(fname=f"{path_out}/{fig_name}.png")
+for ext in ["png"]:  #, "pdf", "eps"]:
+    fig.savefig(fname=f"{path_out}/{fig_name}.png")
 print(fig_name)
-
-
-# %%
-# -----------------------------------------------------------------------------
-# Stripes for months - single plots
-# -----------------------------------------------------------------------------
-for month in [
-    "J-D",
-    # "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    # "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
-]:
-
-    fig = pygmt.Figure()
-    fig.basemap(
-        region=[year_min, year_max, -line_lim, line_lim],
-        projection="X20c/5c",
-        frame=0,
-    )
-
-    pygmt.makecpt(cmap="vik", series=[-dSST_lim, dSST_lim])
-    fig.colorbar(frame=[True, "y+l@~D@~SST / K"])
-
-    fig.text(
-        position="BL",
-        offset="0.1c/-1.3c",
-        text=month,
-        font=f"15p,1,{color_hl}",
-        no_clip=True,
-    )
-
-    for i_year, year in enumerate(range(year_min, year_max + 1)):
-        diff_sst = df_sst[month][i_year]
-        fig.plot(
-            x=[year, year],
-            y=[-line_lim, line_lim],
-            pen="4p,+z",
-            zvalue=diff_sst,
-            cmap=True,
-        )
-        fig.basemap(frame=["lStr", "xa10f5", "x+el"])
-
-
-    fig.show()
-    fig_name = f"SST_{year_min}to{year_max}_stripes_{month}"
-    # for ext in ["png"]:  #, "pdf", "eps"]:
-    #     fig.savefig(fname=f"{path_out}/{fig_name}.png")
-    print(fig_name)
