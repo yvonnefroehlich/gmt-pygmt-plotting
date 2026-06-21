@@ -1,1 +1,0 @@
-Please see [002_paper_FGR_2024/Figure_10](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/002_paper_FGR_2024/Figure_10/FGR2024_GJI_Fig10.py).
