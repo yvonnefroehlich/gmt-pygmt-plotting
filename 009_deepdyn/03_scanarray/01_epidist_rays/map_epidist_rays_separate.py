@@ -58,11 +58,11 @@ map_size = "1.8i"  # radius
 match status_area:
    case "all":
         pro_area = 160
-        rad_taget = "8.1p"
+        rad_target = "8.1p"
         key_choose = ["SA_2", "RUS"]
    case "zoom":
         pro_area = 80
-        rad_taget = "17p"
+        rad_target = "17p"
         key_choose = ["SA", "AA_perm", "AA_temp", "USA_sub", "GL"]
 
 # -----------------------------------------------------------------------------
@@ -70,7 +70,7 @@ match status_area:
 color_pb = "216.750/82.875/24.990"  # plate boundaries
 color_land = "lightgray"  # land masses
 color_water = "white"  # waster masses
-color_taget = "gold@30"  # target area
+color_target = "gold@30"  # target area
 color_epi = "white"  # epicenter
 color_outl = "gray50"  # outline of large circles
 
@@ -238,12 +238,12 @@ if status_area == "all":
         # line segment length _ gap length : offset from origin; all in points
     )
 
-# Target area
+# target area
 fig.plot(
     x=lon_cent,
     y=lat_cent,
-    style=f"c{rad_taget}",
-    fill=color_taget,
+    style=f"c{rad_target}",
+    fill=color_target,
     pen=f"0.25p,{color_outl}",
 )
 
