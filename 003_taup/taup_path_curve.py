@@ -450,8 +450,8 @@ def taup_path(
         x_receiver = receiver_dist
         # Have the lower edge of the inverse triangle at the top of the surface
         y_receiver = r_earth + 200  # Seems to work in many cases quite well
-        angle_reciever = 180 - receiver_dist + center_point
-        perspective_receiver = f"{angle_reciever}+w{x_receiver}/{y_receiver}"
+        angle_receiver = 180 - receiver_dist + center_point
+        perspective_receiver = f"{angle_receiver}+w{x_receiver}/{y_receiver}"
         fig_path.plot(
             x=x_receiver,
             y=y_receiver,
