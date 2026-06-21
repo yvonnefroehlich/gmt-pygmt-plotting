@@ -250,7 +250,7 @@ for month in months:
     fig.text(
         text=month,
         position="TL",
-        offset="0.2c/-0.2c",
+        offset=(0.2, -0.2),
         fill="white@30",
         font=f"15p,1,{color_hl}",
         clearance=clearance_standard,
