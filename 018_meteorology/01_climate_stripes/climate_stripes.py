@@ -65,7 +65,7 @@ with pygmt.config(FONT="12p", MAP_GRID_PEN="0.1p,gray"):
 # High-level method pygmt.Figure.fill_between for PyGMT v0.19.0 or higher
 fig.plot(data=df_sst[["Year", "J-D"]], fill="lightred@40", M="c+glightblue@40+y0")
 
-# Marke referece year
+# Marke reference year
 fig.vlines(x=1961, pen="1p,pink")
 
 pygmt.makecpt(cmap="acton", series=[0, 14, 1])  # avoid light colors
@@ -128,7 +128,7 @@ for month in [
             frame=["WSen", "xa20f5", "ya1f0.1g0.5+l@~D@~SST / K"],
         )
 
-    # Marke referece year
+    # Marke reference year
     fig.vlines(x=1961, pen="1p,pink")
 
     fig.text(
