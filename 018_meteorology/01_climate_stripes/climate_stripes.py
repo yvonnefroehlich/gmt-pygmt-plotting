@@ -52,7 +52,7 @@ months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", 
 
 # %%
 # -----------------------------------------------------------------------------
-# Curves for all month
+# Curves for months - one plot
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
 with pygmt.config(FONT="12p", MAP_GRID_PEN="0.1p,gray"):
@@ -112,10 +112,10 @@ print(fig_name)
 
 # %%
 # -----------------------------------------------------------------------------
-# Bars for months - single plots
+# Bars for months - single plot for each month
 # -----------------------------------------------------------------------------
 for month in [
-    "J-D",
+    "J-D",  # Jan-Dec
     # "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     # "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
 ]:
@@ -166,10 +166,10 @@ for month in [
 
 # %%
 # -----------------------------------------------------------------------------
-# Stripes for months - single plots
+# Stripes for months - single plot for eacht month
 # -----------------------------------------------------------------------------
 for month in [
-    "J-D",
+    "J-D",  # Jan-Dec
     # "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     # "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
 ]:
@@ -213,7 +213,7 @@ for month in [
 
 # %%
 # -----------------------------------------------------------------------------
-# Stripes for all months - subplot
+# Stripes for months - subplot with all months
 # -----------------------------------------------------------------------------
 height = 5
 shift = 0.5
