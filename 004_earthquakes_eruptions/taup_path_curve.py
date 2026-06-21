@@ -391,9 +391,9 @@ def taup_path(
                         pen="0.05p,gray10",
                         label=f"{phase}{info_str}{col_str}+S0.15c",
                     )
-                hight_legend = 0.4 * len(phases)
+                height_legend = 0.4 * len(phases)
                 fig_curve.legend(
-                    position=f"JRT+jTL+o0.2/0c+w2c/{hight_legend}c",
+                    position=f"JRT+jTL+o0.2/0c+w2c/{height_legend}c",
                     box=box_standard,
                 )
 
@@ -437,8 +437,8 @@ def taup_path(
         x_receiver = receiver_dist
         # Have the lower edge of the inverse triangle at the top of the surface
         y_receiver = r_earth + 200  # Seems to work in many cases quite well
-        angle_reciever = 180 - receiver_dist + center_point
-        perspective_receiver = f"{angle_reciever}+w{x_receiver}/{y_receiver}"
+        angle_receiver = 180 - receiver_dist + center_point
+        perspective_receiver = f"{angle_receiver}+w{x_receiver}/{y_receiver}"
         fig_path.plot(
             x=x_receiver,
             y=y_receiver,
