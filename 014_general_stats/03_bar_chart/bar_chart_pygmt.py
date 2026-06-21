@@ -136,7 +136,7 @@ def bar_chart(
         case "vertical":
             region = [0, len(bars) + 1, 0, np.max(bars) + np.max(bars) * 0.1]
             plot_width = len(bars) + 1
-            plot_hight = 6
+            plot_height = 6
             frame = ["Wbtr", f"yaf+l{axis_label}"]
             if axis_label == None:
                 frame = ["Wbtr", "yaf"]
@@ -150,7 +150,7 @@ def bar_chart(
         case "horizontal":
             region = [0, np.max(bars) + np.max(bars) * 0.1, 0, len(bars) + 1]
             plot_width = 6
-            plot_hight = -(len(bars) + 1)
+            plot_height = -(len(bars) + 1)
             frame = ["lbNr", f"xaf+l{axis_label}"]
             if axis_label == None:
                 frame = ["lbNr", "xaf"]
@@ -173,7 +173,7 @@ def bar_chart(
     df_bars["percent"] = percents
 
     # Projection
-    projection = f"X{plot_width}c/{plot_hight}c"
+    projection = f"X{plot_width}c/{plot_height}c"
 
     # Create bar labels
     text = []

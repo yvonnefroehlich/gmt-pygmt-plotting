@@ -103,7 +103,7 @@ def sws_lmm_deepdyn(
     size_tag_add = deg2inch * size_tag_add_deg
 
     # -------------------------------------------------------------------------
-    # Cricles related to epicenters
+    # Circles related to epicenters
     match sws_type:
         case "XKS":
             size_epi_min_deg = 90  # 80

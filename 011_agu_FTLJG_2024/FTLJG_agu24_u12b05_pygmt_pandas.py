@@ -49,7 +49,7 @@ fig.coast(land="gray95", shorelines="gray50")
 pygmt.makecpt(cmap="navia", series=[0, 500], reverse=True)
 fig.colorbar(frame=["xa100f50+lhypocentral depth", "y+lkm"], position="+ef0.2c")
 
-# Plot the epicenters as color- and size-coded circels based on depth or magnitude
+# Plot the epicenters as color- and size-coded circles based on depth or magnitude
 fig.plot(
     x=df_eqs.longitude,
     y=df_eqs.latitude,
