@@ -105,8 +105,8 @@ with pygmt.config(FONT="8p"):
 
 fig.show()
 fig_name = f"SST_{year_min}to{year_max}_curves"
-for ext in ["png"]:  #, "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.png")
+# for ext in ["png"]:  #, "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.png")
 print(fig_name)
 
 
@@ -159,8 +159,8 @@ for month in [
 
     fig.show()
     fig_name = f"SST_{year_min}to{year_max}_bars_{month}"
-    for ext in ["png"]:  #, "pdf", "eps"]:
-        fig.savefig(fname=f"{path_out}/{fig_name}.png")
+    # for ext in ["png"]:  #, "pdf", "eps"]:
+    #     fig.savefig(fname=f"{path_out}/{fig_name}.png")
     print(fig_name)
 
 
@@ -206,8 +206,8 @@ for month in [
 
     fig.show()
     fig_name = f"SST_{year_min}to{year_max}_stripes_{month}"
-    for ext in ["png"]:  #, "pdf", "eps"]:
-        fig.savefig(fname=f"{path_out}/{fig_name}.png")
+    # for ext in ["png"]:  #, "pdf", "eps"]:
+    #     fig.savefig(fname=f"{path_out}/{fig_name}.png")
     print(fig_name)
 
 
@@ -263,6 +263,6 @@ for month in months:
 
 fig.show()
 fig_name = f"SST_{year_min}to{year_max}_stripes"
-for ext in ["png"]:  #, "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.png")
+# for ext in ["png"]:  #, "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.png")
 print(fig_name)
