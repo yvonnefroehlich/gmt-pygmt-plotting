@@ -44,14 +44,14 @@ for analysis in analysis_all:
     if analysis == "cluster":
         grid_in = f"{path_in}/cluster_analysis_Lekic2012.grd"
         cmap_grid = f"{path_in}/cmap_cluster.cpt"
-        cb_trancate = [0, 6]
+        cb_truncate = [0, 6]
         cb_label = "low velocities - cluster analysis (Lekic et al. 2012)"
 
     # Votemap analysis; Shepard et al. 2017
     elif analysis == "votemap":
         grid_in = f"{path_in}/votemap_analysis_Shepard2017.grd"
         cmap_grid = f"{path_in}/cmap_votemap.cpt"
-        cb_trancate = False
+        cb_truncate = False
         cb_label = "high velocities - votemap analysis (Shephard et al. 2017)"
 
 
@@ -81,7 +81,7 @@ for analysis in analysis_all:
         frame="y+lmodels",
         position="jBC+jBC+o0c/-1c+h+mu",
         equalsize=0.15,
-        truncate=cb_trancate,
+        truncate=cb_truncate,
     )
 
 # -----------------------------------------------------------------------------
