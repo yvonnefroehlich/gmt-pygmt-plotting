@@ -6,6 +6,7 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2026/04/24
+# - Updated: 2026/06/21 - Remove alias for "-M" of "plot"
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -63,7 +64,7 @@ with pygmt.config(FONT="10p"):
 fig.plot(
     data=df_sst[["Year", "J-D"]],
     fill="lightred",
-    fill_between="c+glightblue+y0",
+    M="c+glightblue+y0",  # high-level method fill_between up on PyGMT v0.19.0
 )
 
 pygmt.makecpt(cmap="acton", series=[0, 11, 1])
