@@ -57,8 +57,8 @@ if group == "total":
 # -----------------------------------------------------------------------------
 df_sb = pd.read_csv(f"{path_in}/esc_{year}_scoreboard_{group}.txt", delimiter="\t")
 
-country_recieve = df_sb["country"].to_numpy().tolist()
-country_recieve.sort()
+country_receive = df_sb["country"].to_numpy().tolist()
+country_receive.sort()
 
 country_give = df_sb.columns.tolist()[3 : len(df_sb.columns.tolist()) - 1]
 country_give.sort()
@@ -82,7 +82,7 @@ pygmt.makecpt(cmap="oslo", series=[0, max_points + 1, 1], reverse=True)
 
 country_place = []
 country_sum = []
-for i_country_temp, country_temp in enumerate(country_recieve):
+for i_country_temp, country_temp in enumerate(country_receive):
     df_sb_temp = df_sb[df_sb["country"] == country_temp]
     # TODO: FutureWarning by pandas: Setting an item of incompatible dtype is
     # deprecated and will raise in a future error of pandas. Value 'nan' has
@@ -145,12 +145,12 @@ fig.text(
 )
 
 # Text for y axis
-for text_recieve, x_text in zip(
-    [country_sum, country_place, country_recieve], [-1, -3, -4.5]
+for text_receive, x_text in zip(
+    [country_sum, country_place, country_receive], [-1, -3, -4.5]
 ):
     fig.text(
-        text=text_recieve,
-        x=[x_text] * len(country_recieve),
+        text=text_receive,
+        x=[x_text] * len(country_receive),
         y=df_sb.index.tolist(),
         justify="RM",
         font="8p,black",

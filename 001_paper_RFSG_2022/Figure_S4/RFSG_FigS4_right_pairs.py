@@ -133,29 +133,29 @@ fig.show()
 # %%
 # -----------------------------------------------------------------------------
 # Plot connection lines between related SKS and SKKS phases (SKS-SKKS pairs).
-path_conect = "data_FigS4_right_pairs/"
+path_connect = "data_FigS4_right_pairs/"
 
 # DISCREPANT
 # SKKS split and SKS null
 fig.plot(
-    data=f"{path_conect}BFO_disc_pp2700km_KKNN2KN_all.txt",
+    data=f"{path_connect}BFO_disc_pp2700km_KKNN2KN_all.txt",
     pen=f"{line_width_pp_disc},{color_line}",
 )
 # SKKS null and SKKS split
 fig.plot(
-    data=f"{path_conect}BFO_disc_pp2700km_KKN2KNN_all.txt",
+    data=f"{path_connect}BFO_disc_pp2700km_KKN2KNN_all.txt",
     pen=f"{line_width_pp_disc},{color_line}",
 )
 
 # SAME
 # SKKS null and SKS null
 fig.plot(
-    data=f"{path_conect}BFO_same_pp2700km_KKN2KN_all.txt",
+    data=f"{path_connect}BFO_same_pp2700km_KKN2KN_all.txt",
     pen=f"{line_width_pp_nodisc},{color_line}",
 )
 # SKKS split and SKS split
 fig.plot(
-    data=f"{path_conect}BFO_same_pp2700km_KKNN2KNN_all.txt",
+    data=f"{path_connect}BFO_same_pp2700km_KKNN2KNN_all.txt",
     pen=f"{line_width_pp_nodisc},{color_line}",
 )
 
