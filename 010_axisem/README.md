@@ -20,3 +20,7 @@ _Recommended versions_: PyGMT v0.16.0 - v0.18.0, GMT 6.5.0 - 6.6.0
 | :---: | :---: | :---: |
 | PREM Earth's model | Fig. 9.3 <br> _Reproduced based on_ [Leng et al. (2016) Figs 1 and 16](https://doi.org/10.1093/gji/ggw363) | Complexity map |
 | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/010_axisem/04_earth_model_prem/02_out_fig/prem_1s_velocity_density_0to6371km.png" width="120"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/010_axisem/05_plots_axisem3d_LND2016/02_out_figs/axisem3d_LND2016_fig1.png" width="150"> <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/010_axisem/05_plots_axisem3d_LND2016/02_out_figs/axisem3d_LND2016_fig16.png" width="200"> | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/010_axisem/06_nr_field/02_out_figs/TEST_simulation_input_SECTION.png" width="100"> |
+
+| **[07_seismograms](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/blob/main/010_axisem/07_seismograms/seismograms.py)** |
+| :---: |
+|  |
