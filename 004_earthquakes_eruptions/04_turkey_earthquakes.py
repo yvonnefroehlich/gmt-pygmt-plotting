@@ -6,6 +6,7 @@
 # - Updated: 2024/04/23 - Improve coding style
 # - Updated: 2025/03/28 - Reorganize folder, rewrite code
 # - Updated: 2026/02/04 - Use parameter names of PyGMT v0.18.0
+# - Updated: 2026/06/30 - Adjust file names (epicenters in Turkey, four events)
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -24,7 +25,7 @@ import pygmt as gmt
 # General stuff
 # -----------------------------------------------------------------------------
 # >>> Adjust for your needs <<<
-fig_name = "04_turkey_syria_earthquake"  # Name of output figure
+fig_name = "04_turkey_earthquakes"  # Name of output figure
 dpi_png = 360  # Resolution of output PNG
 grid_res = "01m"  # Resolution of elevation grid
 grid_reg = "g"  # Registration of elevation grid
@@ -68,6 +69,7 @@ color_water = "steelblue"
 color_land = "gray70"
 color_sl = "gray30"  # shorelines
 color_pb = "216.750/82.875/24.990"  # plate boundaries # -> darkorange
+color_nb = "black"  # national borders
 color_highlight = "255/90/0"  # -> orange
 pen_epi = "0.5p,black"
 
@@ -97,6 +99,9 @@ fig.basemap(region=region, projection="M15c", frame=["wSnE", "a1f0.5"])
 fig.grdimage(grid=f"@earth_relief_{grid_res}_{grid_reg}", region=region, cmap="oleron")
 
 # -----------------------------------------------------------------------------
+# Plot national borders
+fig.coast(borders=f"1/1p,{color_nb}")
+
 # Plot plate boundaries after Bird 2003
 fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pb}")
 
@@ -113,7 +118,7 @@ fig.plot(
 )
 # Beachball
 fig.meca(
-    spec=f"{path_in}/meca_turkeysyria.txt",
+    spec=f"{path_in}/meca_turkey.txt",
     convention="aki",
     scale="1c",
     outline=pen_epi,
@@ -134,7 +139,7 @@ fig.text(
 # Info text
 # Adjust position in txt file
 fig.text(
-    textfiles=f"{path_in}/info_turkeysyria.txt",
+    textfiles=f"{path_in}/info_turkey.txt",
     M=True,  # paragraph mode # read from file
     font="8p,black",
     fill="white@30",

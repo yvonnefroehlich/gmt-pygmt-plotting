@@ -1,4 +1,4 @@
-# Infos on Turkey Syria earthquake
+# Infos on Turkey Syria earthquakes
 #
 # For usage in GMT / PyGMT
 # paragraph mode
