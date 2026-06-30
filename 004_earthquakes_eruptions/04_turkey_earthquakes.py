@@ -99,7 +99,7 @@ fig.basemap(region=region, projection="M15c", frame=["wSnE", "a1f0.5"])
 fig.grdimage(grid=f"@earth_relief_{grid_res}_{grid_reg}", region=region, cmap="oleron")
 
 # -----------------------------------------------------------------------------
-# Add national borders
+# Plot national borders
 fig.coast(borders=f"1/1p,{color_nb}")
 
 # Plot plate boundaries after Bird 2003
