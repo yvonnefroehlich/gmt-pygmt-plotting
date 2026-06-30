@@ -6,7 +6,7 @@
 # - Updated: 2024/04/23 - Improve coding style
 # - Updated: 2025/03/28 - Reorganize folder, rewrite code
 # - Updated: 2026/02/04 - Use parameter names of PyGMT v0.18.0
-# - Updated: 2026/06/30 - Adjust name (epicenter in Turkey, four events)
+# - Updated: 2026/06/30 - Adjust name (epicenters in Turkey, four events)
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
