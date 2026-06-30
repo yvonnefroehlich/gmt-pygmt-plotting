@@ -118,7 +118,7 @@ fig.plot(
 )
 # Beachball
 fig.meca(
-    spec=f"{path_in}/meca_turkeysyria.txt",
+    spec=f"{path_in}/meca_turkey.txt",
     convention="aki",
     scale="1c",
     outline=pen_epi,
@@ -139,7 +139,7 @@ fig.text(
 # Info text
 # Adjust position in txt file
 fig.text(
-    textfiles=f"{path_in}/info_turkeysyria.txt",
+    textfiles=f"{path_in}/info_turkey.txt",
     M=True,  # paragraph mode # read from file
     font="8p,black",
     fill="white@30",
