@@ -37,10 +37,10 @@ file_pb = "plate_boundaries_Bird_2003.txt"
 
 # -----------------------------------------------------------------------------
 # Define region and projections
-lon_min = -75  # degrees East
-lon_max = -60
-lat_min = 5  # degrees North
-lat_max = 15
+lon_min = -93  # degrees East
+lon_max = -55
+lat_min = -2  # degrees North
+lat_max = 23
 region = [lon_min, lon_max, lat_min, lat_max]
 center_str = f"{(lon_min + lon_max) / 2}/{(lat_min + lat_max) / 2}"
 
@@ -62,12 +62,12 @@ color_highlight = "255/90/0"  # -> orange
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
-basemap_scale = f"JLB+jLB+w500+c{center_str}+f+lkm+at+o0.7c"
+basemap_scale = f"JMB+jLB+w500+c{center_str}+f+lkm+at+o0c/0.45c"
 
-pos_study_inset = "jTL+w4.5c+o-1c"
-
-pos_cb_grid = "JRB+jRB+w5c/0.25c+h+ml+o0.7c+e"
+pos_cb_grid = "JRB+jRB+w3c/0.2c+h+ml+o0.6c/0.5c+e"
 frame_cb_grid = "+lelevation / m"
+
+pos_study_inset = "jTL+w3c+o-0.8c"
 
 box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
 
@@ -76,8 +76,6 @@ box_standard = "+gwhite@30+p0.5p,gray30+r0.1c"
 # -----------------------------------------------------------------------------
 # Make geographic map
 # -----------------------------------------------------------------------------
-
-# Create new Figure() instance
 fig = gmt.Figure()
 fig.basemap(region=region, projection=projection_main, frame=["wSnE", "af"])
 
@@ -136,11 +134,13 @@ fig.text(
 
 # -----------------------------------------------------------------------------
 # Add colorbar for elevation
-fig.colorbar(position=pos_cb_grid, frame=frame_cb_grid, box=box_standard)
+with gmt.config(FONT="12p"):
+    fig.colorbar(position=pos_cb_grid, frame=frame_cb_grid, box=box_standard)
 
 # -----------------------------------------------------------------------------
 # Add length scale
-fig.basemap(map_scale=basemap_scale, box=box_standard)
+with gmt.config(FONT="5p"):
+    fig.basemap(map_scale=basemap_scale, box=box_standard)
 
 # -----------------------------------------------------------------------------
 # Inset map of study region
@@ -181,4 +181,3 @@ for ext in ["png"]:  # , "pdf", "eps"]:
     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png)
 
 print(fig_name)
-
