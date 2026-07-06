@@ -1,5 +1,7 @@
 # #############################################################################
-# Venezuela earthquake on 2026/06/24 at 22:04:33, 22:05:11 (UTC)
+# Venezuela earthquakes on 2026/06/24 at 22:04:34, 22:05:11 (UTC)
+# - https://earthquake.usgs.gov/earthquakes/eventpage/atth5pbk/executive
+# - https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7zp/executive
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2026/07/05
@@ -50,8 +52,9 @@ projection_ortho = f"G{center_str}/?"
 
 # -----------------------------------------------------------------------------
 # Coordinates of epicenter
-lon_eq = np.mean([-68.5, -68.56])  # degrees East
-lat_eq = np.mean([10.44, 10.41])  # degrees North
+
+lon_eq = np.mean([-68.557, -68.504])  # degrees East
+lat_eq = np.mean([10.409, 10.509])  # degrees North
 
 # -----------------------------------------------------------------------------
 # Colors
