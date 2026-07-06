@@ -1,0 +1,6 @@
+# Beachballs of Venezuela earthquakes
+#
+# For usage in GMT / PyGMT
+# lon_eq lat_eq hdepth strike dip rake magnitude lon_plot lat_plot label
+-68.557 10.409 11.5 270 74 -169 7.17 -72 16 22:04:34
+-68.504 10.509 23.5 355 86  -16 7.48 -65 16 22:05:11
