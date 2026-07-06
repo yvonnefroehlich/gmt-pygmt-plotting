@@ -103,15 +103,13 @@ fig.plot(
     pen=color_hl,
 )
 # Beachball
-pen_epi = "0.5p,black"
-
 fig.meca(
     spec=f"{path_in}/meca_venezuela.txt",
     convention="aki",
     scale=f"1c+f8p,Helvetica-Bold,{color_hl}",
     compression_fill=color_hl,  # PyGMT v0.18.0
-    offset=pen_epi,
-    outline=pen_epi,
+    offset="0.5p,black",
+    outline="0.5p,black",
     label_box="white@30",
 )
 # Label
@@ -125,18 +123,6 @@ fig.text(
     pen=f"0.8p,{color_hl}",
     clearance="0.1c/0.1c+tO",
 )
-"""
-# Info text
-# Adjust position in txt file
-fig.text(
-    textfiles=f"{path_in}/info_venezuela.txt",
-    M=True,  # paragraph mode # read from file
-    font="8p,black",
-    fill="white@30",
-    clearance="0.1c/0.1c+tO",
-    pen="0.5p,gray30",
-)
-"""
 
 # -----------------------------------------------------------------------------
 # Add colorbar for elevation
