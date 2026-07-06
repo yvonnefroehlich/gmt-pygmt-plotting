@@ -51,8 +51,7 @@ projection_main = "M12c"  # Mercator
 projection_ortho = f"G{center_str}/?"
 
 # -----------------------------------------------------------------------------
-# Coordinates of epicenter
-
+# Coordinates of epicenters
 lon_eq = np.mean([-68.557, -68.504])  # degrees East
 lat_eq = np.mean([10.409, 10.509])  # degrees North
 
@@ -85,7 +84,9 @@ fig.basemap(region=region, projection=projection_main, frame=["wSnE", "af"])
 
 # -----------------------------------------------------------------------------
 # Download and plot elevation grid
-fig.grdimage(grid=f"@earth_relief_{grid_res}_{grid_reg}", region=region, cmap="oleron")
+fig.grdimage(
+    grid=f"@earth_relief_{grid_res}_{grid_reg}", region=region, cmap="oleron"
+)
 
 # -----------------------------------------------------------------------------
 # Plot plate boundaries after Bird 2003
