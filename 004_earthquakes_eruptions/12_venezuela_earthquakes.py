@@ -92,7 +92,7 @@ fig.grdimage(grid=f"@earth_relief_{grid_res}_{grid_reg}", region=region, cmap="o
 fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pb}")
 
 # -----------------------------------------------------------------------------
-# Plot earthquake
+# Plot earthquakes
 
 # Epicenter
 fig.plot(
