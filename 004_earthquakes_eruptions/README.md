@@ -18,4 +18,4 @@ _Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 | **[11_santorini_earthquakes.txt](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/11_santorini_earthquakes.md)**    | Santorini     | 2025/01/27 - 2025/03/03 | swarm        |
 | **[12_venezuela_earthquakes.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/12_venezuela_earthquakes.py)**     | Venezuela     | 2026/01/24              | doublet: 22:04:34, 22:05:11 |
 
-![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/_images/github_maps_readme_004events.png)
+![](_images/github_maps_readme_004events.png)

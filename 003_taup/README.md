@@ -23,4 +23,4 @@ _Animations_: https://doi.org/10.5281/zenodo.15641348
 | **[taup_style.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/003_taup/taup_style.py)**           | Function to set up a dictionary to assign line styles to the seismological phases |
 | **[taup_symbol.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/003_taup/taup_symbol.py)**         | Function to set up a dictionary to assign symbols to the seismological phases     |
 
-![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/_images/github_maps_readme_003taup.png)
+![](_images/github_maps_readme_003taup.png)
