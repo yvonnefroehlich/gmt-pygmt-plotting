@@ -10,4 +10,4 @@ _Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 | **[04_earth_section](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/000_general_stuff/04_earth_section/earth_section.py)** |
 | :---: |
 | Sketches of Earth section (currently not to scale) |
-| <img src="000_general_stuff/04_earth_section/earth_section_open_vertical_green.png" width="80"> <img src="000_general_stuff/04_earth_section/earth_section_half_horizontal_brown.png" width="80"> <img src="000_general_stuff/04_earth_section/earth_section_northeast_quadrant_kit.png" width="80"> |
+| <img src="04_earth_section/earth_section_open_vertical_green.png" width="80"> <img src="04_earth_section/earth_section_half_horizontal_brown.png" width="80"> <img src="04_earth_section/earth_section_northeast_quadrant_kit.png" width="80"> |
