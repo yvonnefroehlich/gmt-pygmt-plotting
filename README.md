@@ -107,9 +107,13 @@ _Please note_: Specific references are given in the single scripts.
   True colors of oceanography: Guidelines for effective and accurate colormap selection.
   *Oceanography*, 29(3):9-13.
   https://dx.doi.org/10.5670/oceanog.2016.66.
-- [**_Tian D, Leong W J, Fröhlich Y, Grund M, Schlitzer W, Jones M, Toney L, Yao J, Tong J-H, Mage Y, Materna K, Belem A, Newton T, Anant A, Ziebarth M, Quinn J, He X, Uieda L, Wessel P (2024)_**](https://doi.org/10.5281/zenodo.18080259).
-  PyGMT: A Python interface for the Generic Mapping Tools, version v0.18.0.
-  *Zenodo*. https://doi.org/10.5281/zenodo.18080259 (v0.18.0), https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
+- [**_Tian D, Fröhlich Y, Leong W J, Grund M, Schlitzer W, Jones M, Uieda L, Luis J M F (2026)_**](https://doi.org/10.1029/2026GC013105).
+  PyGMT: Bridging Python and the Generic Mapping Tools for Geospatial Visualization and Analysis.
+  *Geochemistry, Geophysics, Geosystems*, 27(7), e2026GC013105.
+  https://doi.org/10.1029/2026GC013105.
+- [**_Tian D, Leong W J, Fröhlich Y, Grund M, Schlitzer W, Jones M, Toney L, Yao J, Tong J-H, Mage Y, Materna K, Belem A, Newton T, Anant A, Ziebarth M, Quinn J, He X, Uieda L, Wessel P (2024)_**](https://doi.org/10.5281/zenodo.19398871).
+  PyGMT: A Python interface for the Generic Mapping Tools, version v0.19.0.
+  *Zenodo*. https://doi.org/10.5281/zenodo.19398871 (v0.19.0), https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
 - [**_Wessel P, Smith W H F, Scharroo R, Luis J F, Wobbe F (2013)_**](https://doi.org/10.1002/2013EO450001).
   Generic mapping tools: improved version released.
   *Eos, Transactions American Geophysical Union*, 94(45):409-410.
@@ -130,7 +134,7 @@ The presented research and YF received support from various sources:
 - [Graduate Funding from the German States](https://www.khys.kit.edu/english/graduate_funding.php) (scholarship)
 - [NSF EAR-1948602](https://www.nsf.gov/awardsearch/show-award/?AWD_ID=1948602) (travel support to
   [AGU24](https://www.agu.org/annual-meeting-2024))
-- [DFG project 521545943](https://gepris.dfg.de/gepris/projekt/521545943?language=en) (research assistant within the
+- [DFG project 521545943](https://gepris.dfg.de/gepris/projekt/521545943?language=en) (research assistant within
   [DFG Priority Program DeepDyn SPP 2404 – 500707704](https://www.geo.lmu.de/deepdyn/en/))
-- [NSF EAR-2153910](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2153910) (travel support to the
+- [NSF EAR-2153910](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2153910) (travel support to
   [workshop Integrating Seismic Anisotropy, Geodynamics, and Rock Deformation](https://sites.wustl.edu/anisotropy))
