@@ -107,7 +107,7 @@ _Please note_: Specific references are given in the single scripts.
   True colors of oceanography: Guidelines for effective and accurate colormap selection.
   *Oceanography*, 29(3):9-13.
   https://dx.doi.org/10.5670/oceanog.2016.66.
-- [**_Tian D, Fröhlich Y, Leong W J, Grund, M, Schlitzer W, Jones M, Uieda L, Luis J M F (2026)_**](https://doi.org/10.1029/2026GC013105).
+- [**_Tian D, Fröhlich Y, Leong W J, Grund M, Schlitzer W, Jones M, Uieda L, Luis J M F (2026)_**](https://doi.org/10.1029/2026GC013105).
   PyGMT: Bridging Python and the Generic Mapping Tools for Geospatial Visualization and Analysis.
   *Geochemistry, Geophysics, Geosystems*, 27(7), e2026GC013105.
   https://doi.org/10.1029/2026GC013105.
