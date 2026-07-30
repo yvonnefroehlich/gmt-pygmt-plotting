@@ -2,7 +2,7 @@
 # Adjust the fontsize of a colorbar in GMT 6.5.0 or higher:
 # Automatic scaling relatively to the colorbar length
 # - For GMT 6.5.0-6.6.0: Use the scaling factor to revert it manually
-# - For GMT >=6.7.0: Use -M or the alias no_font_scaling to turn it off
+# - For GMT >=6.7.0: Use -H or the alias no_font_scaling to turn it off
 # - For background on this change see the upstream GMT pull request 6802 at
 #   https://github.com/GenericMappingTools/gmt/pull/6802
 # -----------------------------------------------------------------------------
