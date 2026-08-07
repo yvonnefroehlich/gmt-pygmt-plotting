@@ -4,7 +4,7 @@ _Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 
 _Animations_: https://doi.org/10.5281/zenodo.15641348
 
-| | | |
+| | | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --- | --- | --- |
 | **[01_db_sws](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/006_tomographies_databases/01_db_sws)**                                                             | **_Note_ Partly affected by [a SplitLab bug](https://doi.org/10.4401/ag-8781)!** <br> Shear wave splitting database by [Wüstefeld et al. (2009)](https://doi.org/10.1016/j.pepi.2009.05.006) | <img src="01_db_sws/02_out_figs/db_sws_map_splitting_parameters.png" width="150"> <img src="01_db_sws/02_out_figs/db_sws_map_spatial_distribution_splits_spacing5deg.png" width="150"> |
 | **[02_db_deepaniso](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/006_tomographies_databases/02_db_deepaniso/map_db_deepaniso.py)**                             | Deep mantle anisotropy database by [Wolf et al. (2023)](https://doi.org/10.1029/2023GC011070) <br> _See also_ [Deep_Mantle_Anisotropy_Database](https://github.com/wolfjonathan/Deep_Mantle_Anisotropy_Database) by [Jonathan Wolf](https://github.com/wolfjonathan) | <img src="02_db_deepaniso/02_out_figs/deepaniso_SKS-SKKS_projectionEPI_colorCMAP_legendLEFT_labelsYES_titleNO.png" width="150"> <img src="02_db_deepaniso/02_out_figs/deepaniso_SKS-SKKS_projectionROB_colorMONO_legendNO_labelsNO_titleYES.png" width="150"> |
