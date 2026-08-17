@@ -271,11 +271,12 @@ with gmt.config(MAP_SCALE_HEIGHT="9p"):
 # -----------------------------------------------------------------------------
 # Inset map of Central Europe
 # -----------------------------------------------------------------------------
+"""
+# Orthographic projection
 with fig.inset(position="jTL+w5.2c+o-1.5c/-1.2c"):
     # >>> use ? <<<
     # otherwise something goes wrong with the box around the study area
 
-    # Orthographic projection
     # - glon0/lat0[/horizon]/scale  OR
     #   Glon0/lat0[/horizon]/width
     # - lon0 and lat0 projection center
@@ -299,21 +300,52 @@ with fig.inset(position="jTL+w5.2c+o-1.5c/-1.2c"):
         pen="0.5p,black",
         fill=color_hl,
     )
+    WDC = [-77.0364, 38.8951] # AGU 2024, Washingtion D.C.
+    STL = [-90, 38]  # Anisotropy Workshop 2026 in St. Louis
+    town = WDC
+    URG = [8.0, 48.5]
+    data = np.array([town + URG])
+    # '=' means geographic vectors. With the modifier '+s', the input
+    # data should contain coordinates of start and end points
+    style = f"=0.5c+s+ea+g{color_hl}+h0+p0.3p,black"
+    fig.plot(data=data, style=style, pen=f"2.5p,{color_hl}")
+    fig.plot(
+        x=town[0], y=town[1], style="c0.25c", pen="0.5p,black", fill=color_hl
+    )
 
-    # WDC = [-77.0364, 38.8951]
-    # URG = [8.0, 48.5]
-    # data = np.array([WDC + URG])
-    # # '=' means geographic vectors. With the modifier '+s', the input
-    # # data should contain coordinates of start and end points
-    # style = f"=0.7c+s+ea+g{color_hl}+h0.5+p0.3p,black"
-    # fig.plot(data=data, style=style, pen=f"3p,{color_hl}")
-    # fig.plot(
-    #     x=-77.0364,
-    #     y=38.8951,
-    #     style="c0.25c",
-    #     pen="0.5p,black",
-    #     fill=color_hl,
-    # )
+# """
+# Mercator projection
+with fig.inset(position="jTL+w4.7c+o-0.2c/0.1c"):
+    # >>> use ? <<<
+    # otherwise something goes wrong with the box around the study area
+
+    fig.basemap(region=[2.8, 16, 46, 55.5], projection="M?", frame=0)
+    fig.coast(
+        land=color_land,
+        water=color_water,
+        area_thresh="20/0/1",
+        resolution="h",
+        shorelines="1/0.15p,gray10",
+        borders="1/0.35p,black",
+    )
+    fig.basemap(frame=0)
+
+    # label for countries
+    fig.text(
+        x=np.array([10.50,  4.50]),
+        y=np.array([51.70, 48.00]),
+        text=["DE", "FR"],
+        font="8p,black",
+        fill="white@30",
+        clearance=clearance_standard,
+    )
+    # rectangle around study area
+    fig.plot(
+        x=[lon_min, lon_min, lon_max, lon_max, lon_min],
+        y=[lat_min, lat_max, lat_max, lat_min, lat_min],
+        pen=f"1p,{color_hl}",
+    )
+# """
 
 
 # %%
