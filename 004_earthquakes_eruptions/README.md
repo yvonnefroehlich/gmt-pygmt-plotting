@@ -2,7 +2,7 @@
 
 _Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 
-| Code | Location | Date | Depth / km | Time (UTC) |
+| Code | Location | Depth / km | Date | Time (UTC) |
 | --- | --- | --- | --- | --- |
 | **[00_overview_events_BFO.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/00_overview_events_BFO.py)**         | Global        | 0 | 2021 - present     | - |
 | **[01_la_palma_eruption.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/01_la_palma_eruption.py)**             | La Palma      | 0 | 2021/09/19 - 12/13 | - |
