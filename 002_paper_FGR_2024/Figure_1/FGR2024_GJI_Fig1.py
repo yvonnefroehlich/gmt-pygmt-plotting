@@ -271,7 +271,7 @@ with gmt.config(MAP_SCALE_HEIGHT="9p"):
 # -----------------------------------------------------------------------------
 # Inset map of Central Europe
 # -----------------------------------------------------------------------------
-"""
+# """
 # Orthographic projection
 with fig.inset(position="jTL+w5.2c+o-1.5c/-1.2c"):
     # >>> use ? <<<
@@ -300,20 +300,20 @@ with fig.inset(position="jTL+w5.2c+o-1.5c/-1.2c"):
         pen="0.5p,black",
         fill=color_hl,
     )
-    WDC = [-77.0364, 38.8951] # AGU 2024, Washingtion D.C.
-    STL = [-90, 38]  # Anisotropy Workshop 2026 in St. Louis
-    town = WDC
-    URG = [8.0, 48.5]
-    data = np.array([town + URG])
-    # '=' means geographic vectors. With the modifier '+s', the input
-    # data should contain coordinates of start and end points
-    style = f"=0.5c+s+ea+g{color_hl}+h0+p0.3p,black"
-    fig.plot(data=data, style=style, pen=f"2.5p,{color_hl}")
-    fig.plot(
-        x=town[0], y=town[1], style="c0.25c", pen="0.5p,black", fill=color_hl
-    )
+    # WDC = [-77.0364, 38.8951] # AGU 2024, Washingtion D.C.
+    # STL = [-90, 38]  # Anisotropy Workshop 2026 in St. Louis
+    # town = WDC
+    # URG = [8.0, 48.5]
+    # data = np.array([town + URG])
+    # # '=' means geographic vectors. With the modifier '+s', the input
+    # # data should contain coordinates of start and end points
+    # style = f"=0.5c+s+ea+g{color_hl}+h0+p0.3p,black"
+    # fig.plot(data=data, style=style, pen=f"2.5p,{color_hl}")
+    # fig.plot(
+    #     x=town[0], y=town[1], style="c0.25c", pen="0.5p,black", fill=color_hl
+    # )
 
-# """
+"""
 # Mercator projection
 with fig.inset(position="jTL+w4.7c+o-0.2c/0.1c"):
     # >>> use ? <<<
@@ -345,7 +345,7 @@ with fig.inset(position="jTL+w4.7c+o-0.2c/0.1c"):
         y=[lat_min, lat_max, lat_max, lat_min, lat_min],
         pen=f"1p,{color_hl}",
     )
-# """
+"""
 
 
 # %%
