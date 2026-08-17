@@ -4,9 +4,9 @@ _Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 
 | Code | Location | Depth / km | Date | Time (UTC) |
 | --- | --- | --- | --- | --- |
-| **[00_overview_events_BFO.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/00_overview_events_BFO.py)**         | Global        | 0 | 2021 - present     | - |
-| **[01_la_palma_eruption.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/01_la_palma_eruption.py)**             | La Palma      | 0 | 2021/09/19 - 12/13 | - |
-| **[02_tonga_eruption.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/02_tonga_eruption.py)**                   | Tonga         | 0 | 2022/01/14 - 15    | - |
+| **[00_overview_events_BFO.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/00_overview_events_BFO.py)**         | Global        | - | 2021 - present     | - |
+| **[01_la_palma_eruption.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/01_la_palma_eruption.py)**             | La Palma      | - | 2021/09/19 - 12/13 | - |
+| **[02_tonga_eruption.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/02_tonga_eruption.py)**                   | Tonga         | - | 2022/01/14 - 15    | - |
 | **[03_esmeraldas_earthquake.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/03_esmeraldas_earthquake.py)**     | Esmeraldas    | 0 | 2022/03/27         | 04:28        |
 | **[04_turkey_earthquakes.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/04_turkey_earthquakes.py)**           | Turkey        | 0 | 2023/02/06         | 01:17, 10:24 |
 | **[05_morocco_earthquake.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/05_morocco_earthquake.py)**           | Morocco       | 0 | 2023/09/08         | 22:11        |

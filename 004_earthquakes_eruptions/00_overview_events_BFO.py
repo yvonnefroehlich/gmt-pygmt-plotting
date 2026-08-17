@@ -109,8 +109,12 @@ df_events = pd.DataFrame(
             52.512, 34.519, 36.42, 10.46, 32.682, 4.844, 8.310,
         ],
         "depth": [
-            "-", "-", "0 km", "0 km", "0 km", "0 km", "0 km", "0 km",
-            "0 km", "0 km", "0 km", "0 km", "0 km", "0 km", "0 km",
+            "-", "-", "19 km", "10-18 km", "26 km", "10 km", "34.8 km", "10 km",
+            "21.5 km", "8 km", "< 20 km", " km", " km", " km", " km",
+        ],
+        "magnitude": [
+            "-", "-", "Mw 5.8", "Mw 6-7.8", "Mw 6.9", "Mw 7.5", "Mw 7.4", "Mw 7.7",
+            "Mw 8.8", "Mw 6.0", "Mw < 5.5", "Mw ", "Mw ", "Mw ", "Mw ",
         ],
         "event_id": [
             "01", "02", "03", "04", "05", "06", "07", "08",
@@ -251,9 +255,9 @@ if add_list == True:
         yoffset = -0.5 * (i_event + 1)
 
         for text, xoffset, font in zip(
-            ["event_id", "location", "depth", "date"],
-            [0.5, 1.4, 3.7, 5],
-            ["8p,1", "8p", "8p", "8p"],
+            ["event_id", "location", "magnitude", "depth", "date"],
+            [0.5, 1.4, 3.7, 6, 8],
+            ["8p,1", "8p", "8p", "8p", "8p"],
         ):
 
             fig.text(
