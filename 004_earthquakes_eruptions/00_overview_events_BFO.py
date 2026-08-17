@@ -7,6 +7,7 @@
 # - Updated: 2025/03/28 - Reorganize folder, rewrite code
 # - Updated: 2025/03/29 - Introduce dictionary for events
 # - Updated: 2025/07/31 - Polish code, highlight XKS epicentral distance range
+# - Updated: 2026/08/17 - Add list of earthquakes to overview plot
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
@@ -26,8 +27,11 @@ import pygmt as gmt
 # General stuff
 # -----------------------------------------------------------------------------
 # >>> Adjust for your needs <<<
-fig_name = "00_overview_events_BFO"  # Name of output figure
+add_list = True # True | False
 dpi_png = 360  # Resolution of output PNG
+fig_name = "00_overview_events_BFO"  # Name of output figure
+if add_list == True:
+    fig_name = f"{fig_name}_list"
 
 # Paths
 path_in = "01_in_data"
@@ -58,13 +62,16 @@ df_events = pd.DataFrame(
             "earthquake",
             "earthquake",  # swarm
             "earthquake",  # doublet
+            "earthquake",
+            "earthquake",
+            "earthquake",
         ],
         "location": [
             "La Palma",
             "Tonga",
             "Esmeraldas",
-            "Turkey, Syria",
-            "Marocco",
+            "Turkey",
+            "Morocco",
             "Japan",
             "Taiwan",
             "Myanmar",
@@ -72,31 +79,38 @@ df_events = pd.DataFrame(
             "Afghanistan",
             "Santorini",
             "Venezuela",
+            "Japan",
+            "Columbia",
+            "Indonesia",
         ],
         "date": [
-            "2021/09/19-2021/12/13",
-            "2022/01/14-15",
+            "2021/09/19 - 12/13",
+            "2022/01/14 - 15",
             "2022/03/27",
             "2023/02/06",
             "2023/09/08",
             "2024/01/01",
             "2024/04/02",
             "2025/03/28",
-            "2025/07/30",
+            "2025/07/29 - 30",
             "2025/08/31",
-            "2025/01/27-2025/03/03",
+            "2025/01/27 - 03/03",
             "2026/06/24",
+            "2026/07/28",
+            "2026/08/10",
+            "2026/08/14",
         ],
         "lon": [
             -17.84, -175.393, -79.611, 37.042, -8.391, 136.91, 121.562, 95.92,
-            160.324, 70.734, 25.43, -68.53,
+            160.324, 70.734, 25.43, -68.53, 130.722, -76.242, 121.352,
         ],
         "lat": [
             28.57, -20.545, -0.904, 37.166, 31.064, 37.23, 23.819, 22.01,
-            52.512, 34.519, 36.42, 10.46,
+            52.512, 34.519, 36.42, 10.46, 32.682, 4.844, 8.310,
         ],
         "event_id": [
-            "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",
+            "01", "02", "03", "04", "05", "06", "07", "08",
+            "09", "10", "11", "12", "13", "14", "15",
         ],
     }
 )
@@ -120,7 +134,7 @@ clearance_standard = "0.1c+tO"
 map_size = 10  # centimeters
 
 # Epicentral distance plot
-epi_min = 90  # degrees
+epi_min = 80  # degrees
 epi_max = 150
 epi_plot = 160
 center_lon = lon_sta
@@ -223,11 +237,33 @@ fig.text(
 )
 
 # -----------------------------------------------------------------------------
+# Add list of earthquakes to explain numbers
+if add_list == True:
+
+    args_list = {"position": "RT", "justify": "ML", "no_clip": True}
+
+    for i_event in range(0, len(df_events)):
+
+        yoffset = -0.5 * (i_event + 1)
+
+        for text, xoffset, font in zip(
+            ["event_id", "location", "date"],
+            [0.5, 1.4, 3.7],
+            ["8p,1", "8p", "8p"],
+        ):
+            fig.text(
+                text=df_events[text][i_event],
+                offset=(xoffset, yoffset),
+                font=font,
+                **args_list,
+            )
+
+# -----------------------------------------------------------------------------
 # Show and save
 fig.show()  # method="external")
-# for ext in ["png"]:  # , "pdf", "eps"]:
-#     transparent = False
-#     if ext == "png":
-#         transparent = True
-#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
+for ext in ["png"]:  # , "pdf", "eps"]:
+    transparent = False
+    if ext == "png" and add_list == False:
+        transparent = True
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
 print(fig_name)
