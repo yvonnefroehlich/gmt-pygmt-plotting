@@ -134,7 +134,7 @@ clearance_standard = "0.1c+tO"
 map_size = 10  # centimeters
 
 # Epicentral distance plot
-epi_min = 80  # degrees
+epi_min = 90  # degrees
 epi_max = 150
 epi_plot = 160
 center_lon = lon_sta
