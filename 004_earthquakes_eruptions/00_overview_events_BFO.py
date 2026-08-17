@@ -108,6 +108,10 @@ df_events = pd.DataFrame(
             28.57, -20.545, -0.904, 37.166, 31.064, 37.23, 23.819, 22.01,
             52.512, 34.519, 36.42, 10.46, 32.682, 4.844, 8.310,
         ],
+        "depth": [
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0,
+        ],
         "event_id": [
             "01", "02", "03", "04", "05", "06", "07", "08",
             "09", "10", "11", "12", "13", "14", "15",
@@ -246,13 +250,17 @@ if add_list == True:
 
         yoffset = -0.5 * (i_event + 1)
 
-        for text, xoffset, font in zip(
-            ["event_id", "location", "date"],
-            [0.5, 1.4, 3.7],
-            ["8p,1", "8p", "8p"],
+        for df_col, xoffset, font in zip(
+            ["event_id", "location", "depth", "date"],
+            [0.5, 1.4, 3.7, 5],
+            ["8p,1", "8p", "8p", "8p"],
         ):
+            text = df_events[df_col][i_event]
+            if df_col == "depth":
+                text = str(df_events[df_col][i_event]) + " km"
+
             fig.text(
-                text=df_events[text][i_event],
+                text=text,
                 offset=(xoffset, yoffset),
                 font=font,
                 **args_list,
@@ -261,9 +269,9 @@ if add_list == True:
 # -----------------------------------------------------------------------------
 # Show and save
 fig.show()  # method="external")
-# for ext in ["png"]:  # , "pdf", "eps"]:
-#     transparent = False
-#     if ext == "png" and add_list == False:
-#         transparent = True
-#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
+for ext in ["png"]:  # , "pdf", "eps"]:
+    transparent = False
+    if ext == "png" and add_list == False:
+        transparent = True
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}", dpi=dpi_png, transparent=transparent)
 print(fig_name)
