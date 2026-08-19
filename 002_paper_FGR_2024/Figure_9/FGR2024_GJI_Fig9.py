@@ -14,6 +14,7 @@
 # - Updated: 2025/08/13 - Adjust for GitHub
 # - Updated: 2025/08/18 - Add piercing point sketch
 # - Updated: 2025/08/25 - Add colorwheel for backazimuth colormap
+# - Updated: 2026/08/18 - Add Mercator projection for Central Europe inset
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
