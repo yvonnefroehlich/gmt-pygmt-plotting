@@ -121,7 +121,8 @@ for i_epi in range(epi_step, proj_dist_max, epi_step):
     fig.plot(x=source_lon, y=source_lat, style=f"E-{i_epi * 2}+d", pen="0.3p,gray50,-")
     fig.text(
         x=source_lon,
-        y=-i_epi + source_lat,
+        y=source_lat,
+        offset=(0, -(fig_width/2 / proj_dist_max) * i_epi),
         text=f"{i_epi}@.",
         font="7p",
         clearance="0.05c/0.05c+tO",
