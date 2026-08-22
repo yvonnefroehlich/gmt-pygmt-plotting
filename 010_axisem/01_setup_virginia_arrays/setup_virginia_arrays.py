@@ -10,6 +10,7 @@
 # History
 # - Created: 2025/03/09
 # - Updated: 2026/02/04 - Use parameter names of PyGMT v0.18.0
+# - Updated: 2026/08/22 - Use offset to place epicentral distance labels
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
