@@ -10,6 +10,7 @@
 # History
 # - Created: 2025/03/09
 # - Updated: 2026/02/04 - Use parameter names of PyGMT v0.18.0
+# - Updated: 2026/08/22 - Use offset to place epicentral distance labels
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -117,12 +118,13 @@ with gmt.config(FONT="7p"):
 
 # -----------------------------------------------------------------------------
 # Plot concentric circles for epicentral distance
-for i_epi in range(epi_step, proj_dist_max, epi_step):
-    fig.plot(x=source_lon, y=source_lat, style=f"E-{i_epi * 2}+d", pen="0.3p,gray50,-")
+for epi in range(epi_step, proj_dist_max, epi_step):
+    fig.plot(x=source_lon, y=source_lat, style=f"E-{epi * 2}+d", pen="0.3p,gray50,-")
     fig.text(
         x=source_lon,
-        y=-i_epi + source_lat,
-        text=f"{i_epi}@.",
+        y=source_lat,
+        offset=(0, -(fig_width/2 / proj_dist_max) * epi),
+        text=f"{epi}@.",
         font="7p",
         clearance="0.05c/0.05c+tO",
         fill="white@30",
