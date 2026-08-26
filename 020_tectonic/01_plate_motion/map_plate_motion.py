@@ -46,9 +46,6 @@ path_out = "02_out_figs"
 color_pb = "216.750/82.875/24.990"  # plate boundaries
 color_sl = "gray40"  # shorelines
 
-# Region and projection
-args_basemap = {"region": "g", "projection": "N10c", "frame": 0}
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -67,16 +64,6 @@ df_motion["speed_mmyr"] = speed
 # Plate boundaries
 file_pb = "plate_boundaries_Bird_2003.txt"
 
-# -----------------------------------------------------------------------------
-# Colormaps
-cmap_speed = "batlow"
-cmap_speed_out = f"{path_in}/{cmap_speed}_speed.cpt"
-pygmt.makecpt(cmap=cmap_speed, series=[0, 80], output=cmap_speed_out)
-
-cmap_velocity = "vik"
-cmap_velocity_out = f"{path_in}/{cmap_velocity}_velocity.cpt"
-pygmt.makecpt(cmap=cmap_velocity, series=[-80, 80], output=cmap_velocity_out)
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -89,20 +76,20 @@ for motion, cb_label in zip(
     ["plate East velocity", "plate North velocity", "plate speed"]
 ):
 
-    cmap = cmap_velocity_out
+    pygmt.makecpt(cmap="vik", series=[-80, 80])
     if motion=="speed_mmyr":
-        cmap = cmap_speed_out
+        pygmt.makecpt(cmap="acton", series=[0, 80], reverse=True)
 
-    fig.basemap(**args_basemap)
+    fig.basemap(region="g", projection="N10c", frame=0)
 
     fig.plot(
         x=df_motion["longitude_degE"],
         y=df_motion["latitude_degN"],
         fill=df_motion[motion],
         style="c0.07c",
-        cmap=cmap,
+        cmap=True,
     )
-    fig.colorbar(cmap=cmap, frame=[f"xa20f5+l{cb_label}", "y+lmm/yr"])
+    fig.colorbar(frame=[f"xa20f5+l{cb_label}", "y+lmm/yr"])
 
     fig.coast(shorelines=f"1/0.01p,{color_sl}")
     fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.3p,{color_pb}")
@@ -111,7 +98,7 @@ for motion, cb_label in zip(
 
     fig.shift_origin(xshift="w+1c")
     if motion=="Nvel_mmyr":
-        fig.shift_origin(xshift="-1.5w-1.5c", yshift="-h-3c")
+        fig.shift_origin(xshift="-1.5w-1.5c", yshift="-h-2.5c")
 
 # -----------------------------------------------------------------------------
 fig.show()
