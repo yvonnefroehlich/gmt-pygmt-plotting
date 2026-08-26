@@ -1,6 +1,6 @@
 # #############################################################################
-# Create input files for usage with NGF Plate Motion Calculator
-# -> used in script map_plate_motion.py
+# Set up input files for usage with NGF Plate Motion Calculator
+# -> for creating maps see map_plate_motion.py
 # -----------------------------------------------------------------------------
 # Data calculated with
 # - https://www.unavco.org/software/geodetic-utilities/plate-motion-calculator/plate-motion-calculator.html
