@@ -53,7 +53,7 @@ color_sl = "gray40"  # shorelines
 # Data
 # -----------------------------------------------------------------------------
 # Plate velocity and direction
-model = "ITRF2020"  # GSRMv2.1 | ITRF2020 | for other models create your own files
+model = "GSRMv2.1"  # GSRMv2.1 | ITRF2020 | for other models create your own files
 file_pm = f"ngf_plate_motion_calculator_OUTPUT_Dlon2deg_Dlat2deg_ele0m_{model}.txt"
 df_motion = pd.read_csv(f"{path_in}/{file_pm}", sep=" ")
 
@@ -117,6 +117,6 @@ for motion, cb_label, wsne in zip(
 # -----------------------------------------------------------------------------
 fig.show()
 fig_name = f"map_plate_motion_{model}"
-# for ext in ["png"]:  # , "pdf", "eps"]:
-#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+for ext in ["png"]:  # , "pdf", "eps"]:
+    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
