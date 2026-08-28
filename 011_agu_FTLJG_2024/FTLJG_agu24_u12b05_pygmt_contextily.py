@@ -12,6 +12,9 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/11/30
+# - Updated: 2026/08/12 - Fix blocking of openstreetmap tiles
+#            https://github.com/GenericMappingTools/pygmt/issues/4815
+#            https://github.com/GenericMappingTools/pygmt/pull/4816
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.13.0 -> https://www.pygmt.org/v0.13.0/ | https://www.pygmt.org/
@@ -41,7 +44,8 @@ fig.tilemap(
     region=[-77.2, -76.7, 38.7, 39],
     projection="M10c",
     zoom=10,
-    source="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    # source="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    source="https://tile.openstreetmap.de/{z}/{x}/{y}.png",
     frame=True,
 )
 fig.show()

@@ -1,5 +1,5 @@
 # #############################################################################
-# Kamtschatka earthquake on 2025/07/29-30
+# Kamtschatka earthquake on 2025/07/29
 # See also: https://earthquake.usgs.gov/earthquakes/eventpage/pt25210002/executive
 #           last accessed: 2025/07/31
 # -----------------------------------------------------------------------------
