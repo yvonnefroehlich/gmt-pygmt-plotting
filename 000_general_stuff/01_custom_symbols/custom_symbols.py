@@ -14,6 +14,7 @@
 # - Updated: 2025/08/03 - Add symbols for flowers
 # - Updated: 2025/08/13 - Add symbol for lens
 # - Updated: 2026/05/10 - Add symbol for olivine crystal, improve symbol for lens
+# - Updated: 2026/08/29 - Re-organize example plot, improve some symbols
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -28,33 +29,41 @@
 
 import pygmt as gmt
 
+size = 8
+color_hl = "255/90/0"  # -> orange
+x_mark = [-3, 0, 3, 6, -6, -3, 0, 3, 6, -6, -3, 0, 3, 6, -6, -3, 0, 3, 6]
+y_mark = [6, 6, 6, 6, 2, 2, 2, 2, 2, -2, -2, -2, -2, -2, -6, -6, -6, -6, -6]
+
 
 fig = gmt.Figure()
-fig.basemap(region=[-5, 5, -4, 5.5], projection="X10c/6c", frame=[0, "+gbisque"])
+fig.basemap(region=[-size, size] * 2, projection=f"X{size}c/{size}c", frame=[0,"+gbisque"])
 
-fig.plot(x=-3, y=1, style="kwindturbine_yf.def/1c", fill="darkgray", pen="black")
-fig.plot(x=-1, y=1, style="kwindturbine_yf.def/0.5c", fill="darkgray", pen="black")
-fig.plot(x=1, y=1, style="kwindturbine_yf.def/0.5c", fill="black", pen="black")
-fig.plot(x=3, y=1, style="kwindturbine_yf.def/1c", fill="lightgray", pen="gray30")
+# Mark 1 by 1 boxes
+fig.plot(x=x_mark, y=y_mark, style="s1.47c", pen="0.5p,steelblue,4_2")
+fig.plot(x=x_mark, y=y_mark, style="+1c", pen="0.2p,steelblue,2_2")
 
-fig.plot(x=-4, y=-1, style="kearthquake_yf.def/1c", fill="darkred")
-fig.plot(x=-2, y=-1.5, style="kmarker_yf.def/1c", fill="steelblue")
-fig.plot(x=0, y=-1.5, style="kpinetree_yf.def/1c", fill="darkgreen")
-fig.plot(x=2, y=-1.5, style="kpoplar_yf.def/1c", fill="seagreen")
-fig.plot(x=4, y=-1.5, style="ktree_circle_yf.def/1c", fill="lightgreen")
+# Plot symbols from top to bottom and left to right
+fig.plot(x=0, y=6, style="kradioactivity_circle_yf.def/1c")
+fig.plot(x=3, y=6, style="kradioactivity_triangle_yf.def/1c")
+fig.plot(x=6, y=6, style="kcnd_yf.def/1c")
 
-fig.plot(x=-3, y=-3, style="klens_yf.def/1c", pen="2p,gray30")
-fig.plot(x=-1, y=-3, style="kolivine_crystal_yf.def/1c", fill="99/107/47")
-fig.plot(x=1, y=-3.5, style="kflower_square_yf.def/1c", fill="purple")
-fig.plot(x=3, y=-3.5, style="kflower_circle_yf.def/1c", fill="darkred")
+fig.plot(x=-6, y=2, style="kwindturbine_yf.def/1c", fill=color_hl, pen=True)
+fig.plot(x=-0, y=2, style="kmarker_yf.def/1c", fill=color_hl)
+fig.plot(x=3, y=2, style="klens_yf.def/1c", pen=f"2p,{color_hl}")
+
+fig.plot(x=-6, y=-2, style="kvolcano/1c", fill=color_hl)  # not self-created
+fig.plot(x=-3, y=-2, style="kvolcano_sleeping.def/1c", fill=color_hl)  # not self-created
+fig.plot(x=-0, y=-2, style="kearthquake_yf.def/1c", fill=color_hl)
+fig.plot(x=6, y=-2, style="kolivine_crystal_yf.def/1c")
+
+fig.plot(x=-6, y=-6, style="kflower_square_yf.def/1c", fill=color_hl)
+fig.plot(x=-3, y=-6, style="kflower_circle_yf.def/1c", fill=color_hl)
+fig.plot(x=0, y=-6, style="kpinetree_yf.def/1c", fill=color_hl)
+fig.plot(x=3, y=-6, style="kpoplar_yf.def/1c", fill=color_hl)
+fig.plot(x=6, y=-6, style="ktree_circle_yf.def/1c", fill=color_hl)
 
 # Mark plotting points
-fig.plot(
-    x=[-3, -1, 1, 3, -4, -2, 0, 2, 4, -3, -1, 1, 3],
-    y=[1, 1, 1, 1, -1, -1.5, -1.5, -1.5, -1.5, -3, -3, -3.5, -3.5],
-    style="x0.2c",
-    fill="255/90/0",
-)
+fig.plot(x=x_mark, y=y_mark, style="x0.2c", fill="steelblue")
 
 fig.show()
-# fig.savefig(fname="custom_symbols.png")
+fig.savefig(fname="custom_symbols.png")
