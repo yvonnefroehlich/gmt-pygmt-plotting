@@ -15,6 +15,7 @@
 # - Updated: 2025/08/13 - Add symbol for lens
 # - Updated: 2026/05/10 - Add symbol for olivine crystal, improve symbol for lens
 # - Updated: 2026/08/29 - Re-organize example plot, improve some symbols
+# - Updated: 2026/08/29 - Add landslide symbol
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -54,6 +55,7 @@ fig.plot(x=3, y=2, style="klens_yf.def/1c", pen=f"2p,{color_hl}")
 fig.plot(x=-6, y=-2, style="kvolcano/1c", fill=color_hl)  # not self-created
 fig.plot(x=-3, y=-2, style="kvolcano_sleeping.def/1c", fill=color_hl)  # not self-created
 fig.plot(x=-0, y=-2, style="kearthquake_yf.def/1c", fill=color_hl)
+fig.plot(x=3, y=-2, style="klandslide_yf.def/1c", fill=color_hl)
 fig.plot(x=6, y=-2, style="kolivine_crystal_yf.def/1c")
 
 fig.plot(x=-6, y=-6, style="kflower_square_yf.def/1c", fill=color_hl)
