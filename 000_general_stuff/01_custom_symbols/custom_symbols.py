@@ -30,7 +30,7 @@
 import pygmt as gmt
 
 size = 8
-color_hl = "255/90/0"  # -> orange
+color_hl = "255/90/0"  # highlight -> orange
 x_mark = [-3, 0, 3, 6, -6, -3, 0, 3, 6, -6, -3, 0, 3, 6, -6, -3, 0, 3, 6]
 y_mark = [6, 6, 6, 6, 2, 2, 2, 2, 2, -2, -2, -2, -2, -2, -6, -6, -6, -6, -6]
 
