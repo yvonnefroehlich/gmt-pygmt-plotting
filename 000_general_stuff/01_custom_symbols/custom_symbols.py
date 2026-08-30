@@ -70,4 +70,4 @@ fig.plot(x=6, y=-6, style="ktree_circle_yf.def/1c", fill=color_marker)
 fig.plot(x=x_mark, y=y_mark, style="x0.2c", fill=color_box)
 
 fig.show()
-fig.savefig(fname="custom_symbols.png")
+# fig.savefig(fname="custom_symbols.png")
