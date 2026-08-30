@@ -42,6 +42,7 @@ fig.basemap(region=[-size, size] * 2, projection=f"X{size}c/{size}c", frame=[0,"
 # Mark 1 by 1 boxes
 fig.plot(x=x_mark, y=y_mark, style="s1.47c", pen="0.5p,steelblue,4_2")
 fig.plot(x=x_mark, y=y_mark, style="+1c", pen="0.2p,steelblue,2_2")
+fig.hlines(y=[-4, 0, 4], pen="0.1p,black,2_2")
 
 # Plot symbols from top to bottom and left to right
 fig.plot(x=0, y=6, style="kradioactivity_circle_yf.def/1c")
