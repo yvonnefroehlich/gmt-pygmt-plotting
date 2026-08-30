@@ -16,6 +16,7 @@
 # - Updated: 2026/05/10 - Add symbol for olivine crystal, improve symbol for lens
 # - Updated: 2026/08/29 - Re-organize example plot, improve some symbols
 # - Updated: 2026/08/29 - Add landslide symbol
+# - Updated: 2026/08/30 - Adjust symbol size to fit into a 1 x 1 box
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
@@ -31,41 +32,43 @@
 import pygmt as gmt
 
 size = 8
-color_hl = "255/90/0"  # highlight -> orange
-x_mark = [-3, 0, 3, 6, -6, -3, 0, 3, 6, -6, -3, 0, 3, 6, -6, -3, 0, 3, 6]
-y_mark = [6, 6, 6, 6, 2, 2, 2, 2, 2, -2, -2, -2, -2, -2, -6, -6, -6, -6, -6]
+color_symbol = "255/90/0"  # orange
+color_box = "steelblue"
+x_symbols = [-3, 0, 3, 6, -6, -3, 0, 3, 6, -6, -3, 0, 3, 6, -6, -3, 0, 3, 6]
+y_symbols = [6, 6, 6, 6, 2, 2, 2, 2, 2, -2, -2, -2, -2, -2, -6, -6, -6, -6, -6]
 
 
 fig = gmt.Figure()
 fig.basemap(region=[-size, size] * 2, projection=f"X{size}c/{size}c", frame=[0,"+gbisque"])
 
 # Mark 1 by 1 boxes
-fig.plot(x=x_mark, y=y_mark, style="s1.47c", pen="0.5p,steelblue,4_2")
-fig.plot(x=x_mark, y=y_mark, style="+1c", pen="0.2p,steelblue,2_2")
+fig.plot(x=x_symbols, y=y_symbols, style="s1.47c", pen=f"0.5p,{color_box},4_2")
+fig.plot(x=x_symbols, y=y_symbols, style="+1c", pen=f"0.2p,{color_box},2_2")
+fig.hlines(y=[-4, 0, 4], pen="0.1p,black,2_2")
 
 # Plot symbols from top to bottom and left to right
 fig.plot(x=0, y=6, style="kradioactivity_circle_yf.def/1c")
 fig.plot(x=3, y=6, style="kradioactivity_triangle_yf.def/1c")
 fig.plot(x=6, y=6, style="kcnd_yf.def/1c")
 
-fig.plot(x=-6, y=2, style="kwindturbine_yf.def/1c", fill=color_hl, pen=True)
-fig.plot(x=-0, y=2, style="kmarker_yf.def/1c", fill=color_hl)
-fig.plot(x=3, y=2, style="klens_yf.def/1c", pen=f"2p,{color_hl}")
+fig.plot(x=-6, y=2, style="kwindturbine_yf.def/1c", fill=color_symbol)
+fig.plot(x=-0, y=2, style="kmarker_yf.def/1c", fill=color_symbol)
+fig.plot(x=3, y=2, style="klens_yf.def/1c", pen=f"2p,{color_symbol}")
 
-fig.plot(x=-6, y=-2, style="kvolcano/1c", fill=color_hl)  # not self-created
-fig.plot(x=-3, y=-2, style="kvolcano_sleeping.def/1c", fill=color_hl)  # not self-created
-fig.plot(x=-0, y=-2, style="kearthquake_yf.def/1c", fill=color_hl)
-fig.plot(x=3, y=-2, style="klandslide_yf.def/1c", fill=color_hl)
+fig.plot(x=-6, y=-2, style="kvolcano/1c", fill=color_symbol)  # not self-created
+fig.plot(x=-3, y=-2, style="kvolcano_sleeping.def/1c", fill=color_symbol)  # not self-created
+fig.plot(x=-0, y=-2, style="kearthquake_yf.def/1c", fill=color_symbol)
+fig.plot(x=3, y=-2, style="klandslide_yf.def/1c", fill=color_symbol)
 fig.plot(x=6, y=-2, style="kolivine_crystal_yf.def/1c")
 
-fig.plot(x=-6, y=-6, style="kflower_square_yf.def/1c", fill=color_hl)
-fig.plot(x=-3, y=-6, style="kflower_circle_yf.def/1c", fill=color_hl)
-fig.plot(x=0, y=-6, style="kpinetree_yf.def/1c", fill=color_hl)
-fig.plot(x=3, y=-6, style="kpoplar_yf.def/1c", fill=color_hl)
-fig.plot(x=6, y=-6, style="ktree_circle_yf.def/1c", fill=color_hl)
+fig.plot(x=-6, y=-6, style="kflower_square_yf.def/1c", fill=color_symbol)
+fig.plot(x=-3, y=-6, style="kflower_circle_yf.def/1c", fill=color_symbol)
+fig.plot(x=0, y=-6, style="kpinetree_yf.def/1c", fill=color_symbol)
+fig.plot(x=3, y=-6, style="kpoplar_yf.def/1c", fill=color_symbol)
+fig.plot(x=6, y=-6, style="ktree_circle_yf.def/1c", fill=color_symbol)
 
 # Mark plotting points
-fig.plot(x=x_mark, y=y_mark, style="x0.2c", fill="steelblue")
+fig.plot(x=x_symbols, y=y_symbols, style="x0.2c", fill=color_box)
 
 fig.show()
 # fig.savefig(fname="custom_symbols.png")
