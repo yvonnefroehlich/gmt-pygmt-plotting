@@ -11,7 +11,7 @@ related to AxiSEM3D ([Paper Leng et al. 2016 in GJI](https://doi.org/10.1093/gji
 
 _Recommended versions_: PyGMT v0.16.0 - v0.18.0, GMT 6.5.0 - 6.6.0
 
-| **[01_setup_virginia_arrays](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/blob/main/010_axisem/01_setup_virginia_arrays/setup_virginia_arrays.py)** | **[02_setup_northpole_source](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/blob/main/010_axisem/02_setup_northpole_source/setup_northpole_source.py)** | **[03_setup_center_station](https://github.com/yvonnefroehlich/GMT_PyGMT_plotting/blob/main/010_axisem/03_setup_center_station/setup_center_station.py)** |
+| **[01_setup_virginia_arrays](../010_axisem/01_setup_virginia_arrays/setup_virginia_arrays.py)** | **[02_setup_northpole_source](../010_axisem/02_setup_northpole_source/setup_northpole_source.py)** | **[03_setup_center_station](../010_axisem/03_setup_center_station/setup_center_station.py)** |
 | :---: | :---: | :---: |
 | Fig. C.9 | Figs C.10, C.11 | Fig. 9.4 |
 | <img src="01_setup_virginia_arrays/02_out_figs/setup_virginia_arrays_dist80deg.png" width="150"> | <img src="02_setup_northpole_source/02_out_figs/setup_northpole_source_global_step10deg_distbatlow_ortho_cb.png" width="150"> <img src="02_setup_northpole_source/02_out_figs/setup_northpole_source_global_step10deg_bazromaO_epi_cb.png" width="150"> | <img src="03_setup_center_station/02_out_figs/setup_center_station_XKS.png" width="150"> |
