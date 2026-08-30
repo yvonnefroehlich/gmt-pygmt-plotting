@@ -4,19 +4,19 @@ _Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
 
 | Code | Location | Magnitude | Depth / km | Date | Time (UTC) |
 | --- | --- | --- | --- | --- | --- |
-| **[00_overview_events_BFO.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/00_overview_events_BFO.py)**       | Global      | -          | -     | 2021/01/01 - now   | -            |
-| **[01_la_palma_eruption.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/01_la_palma_eruption.py)**           | La Palma    | -          | -     | 2021/09/19 - 12/13 | -            |
-| **[02_tonga_eruption.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/02_tonga_eruption.py)**                 | Tonga       | -          | -     | 2022/01/15         | -            |
-| **[03_esmeraldas_earthquake.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/03_esmeraldas_earthquake.py)**   | Esmeraldas  | Mw 5.8     | 19.0  | 2022/03/27         | 04:28:12     |
-| **[04_turkey_earthquakes.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/04_turkey_earthquakes.py)**         | Turkey      | Mw 6.0-7.8 | 10-18 | 2023/02/06         | 01:17:35     |
-| **[05_morocco_earthquake.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/05_morocco_earthquake.py)**         | Morocco     | Mw 6.9     | 26.0  | 2023/09/08         | 22:11:02     |
-| **[06_japan_earthquake_BFO.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/06_japan_earthquake_BFO.py)**     | Japan       | Mw 7.5     | 10.0  | 2024/01/01         | 07:10:09     |
-| **[07_taiwan_earthquake_BFO.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/07_taiwan_earthquake_BFO.py)**   | Taiwan      | Mw 7.4     | 34.8  | 2024/04/02         | 23:58:11     |
-| **[08_myanmar_earthquake.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/08_myanmar_earthquake.py)**         | Myanmar     | Mw 7.7     | 10.0  | 2025/03/28         | 06:20:54     |
-| **[09_kamtschatka_earthquake.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/09_kamtschatka_earthquake.py)** | Kamtschatka | Mw 8.8     | 21.5  | 2025/07/29         | 23:24:52     |
-| **[10_afghanistan_earthquake.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/10_afghanistan_earthquake.py)** | Afghanistan | Mw 6.0     | 8.0   | 2025/08/31         | 19:17:34     |
-| **[11_santorini_earthquakes.txt](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/11_santorini_earthquakes.md)**  | Santorini   | Mw < 5.5   | < 20  | 2025/01/27 - 03/03 | swarm        |
-| **[12_venezuela_earthquakes.py](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/004_earthquakes_eruptions/12_venezuela_earthquakes.py)**   | Venezuela   | Mw 7.2     | 10.0  | 2026/01/24         | doublet: 22:04:34, 22:05:11 |
+| **[00_overview_events_BFO.py](../004_earthquakes_eruptions/00_overview_events_BFO.py)**       | Global      | -          | -     | 2021/01/01 - now   | -            |
+| **[01_la_palma_eruption.py](../004_earthquakes_eruptions/01_la_palma_eruption.py)**           | La Palma    | -          | -     | 2021/09/19 - 12/13 | -            |
+| **[02_tonga_eruption.py](../004_earthquakes_eruptions/02_tonga_eruption.py)**                 | Tonga       | -          | -     | 2022/01/15         | -            |
+| **[03_esmeraldas_earthquake.py](../004_earthquakes_eruptions/03_esmeraldas_earthquake.py)**   | Esmeraldas  | Mw 5.8     | 19.0  | 2022/03/27         | 04:28:12     |
+| **[04_turkey_earthquakes.py](../004_earthquakes_eruptions/04_turkey_earthquakes.py)**         | Turkey      | Mw 6.0-7.8 | 10-18 | 2023/02/06         | 01:17:35     |
+| **[05_morocco_earthquake.py](../004_earthquakes_eruptions/05_morocco_earthquake.py)**         | Morocco     | Mw 6.9     | 26.0  | 2023/09/08         | 22:11:02     |
+| **[06_japan_earthquake_BFO.py](../004_earthquakes_eruptions/06_japan_earthquake_BFO.py)**     | Japan       | Mw 7.5     | 10.0  | 2024/01/01         | 07:10:09     |
+| **[07_taiwan_earthquake_BFO.py](../004_earthquakes_eruptions/07_taiwan_earthquake_BFO.py)**   | Taiwan      | Mw 7.4     | 34.8  | 2024/04/02         | 23:58:11     |
+| **[08_myanmar_earthquake.py](../004_earthquakes_eruptions/08_myanmar_earthquake.py)**         | Myanmar     | Mw 7.7     | 10.0  | 2025/03/28         | 06:20:54     |
+| **[09_kamtschatka_earthquake.py](../004_earthquakes_eruptions/09_kamtschatka_earthquake.py)** | Kamtschatka | Mw 8.8     | 21.5  | 2025/07/29         | 23:24:52     |
+| **[10_afghanistan_earthquake.py](../004_earthquakes_eruptions/10_afghanistan_earthquake.py)** | Afghanistan | Mw 6.0     | 8.0   | 2025/08/31         | 19:17:34     |
+| **[11_santorini_earthquakes.txt](../004_earthquakes_eruptions/11_santorini_earthquakes.md)**  | Santorini   | Mw < 5.5   | < 20  | 2025/01/27 - 03/03 | swarm        |
+| **[12_venezuela_earthquakes.py](../004_earthquakes_eruptions/12_venezuela_earthquakes.py)**   | Venezuela   | Mw 7.2     | 10.0  | 2026/01/24         | doublet: 22:04:34, 22:05:11 |
 
-![](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/_images/github_maps_readme_004events.png)
+![](../_images/github_maps_readme_004events.png)
 
