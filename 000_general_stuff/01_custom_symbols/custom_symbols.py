@@ -48,7 +48,7 @@ fig.plot(x=0, y=6, style="kradioactivity_circle_yf.def/1c")
 fig.plot(x=3, y=6, style="kradioactivity_triangle_yf.def/1c")
 fig.plot(x=6, y=6, style="kcnd_yf.def/1c")
 
-fig.plot(x=-6, y=2, style="kwindturbine_yf.def/1c", fill=color_hl, pen=True)
+fig.plot(x=-6, y=2, style="kwindturbine_yf.def/1c", fill=color_hl)
 fig.plot(x=-0, y=2, style="kmarker_yf.def/1c", fill=color_hl)
 fig.plot(x=3, y=2, style="klens_yf.def/1c", pen=f"2p,{color_hl}")
 
