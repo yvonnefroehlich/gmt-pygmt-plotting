@@ -31,7 +31,7 @@
 import pygmt as gmt
 
 size = 8
-color_hl = "255/90/0"  # highlight -> orange
+color_hl = "tan" # "255/90/0"  # highlight -> orange
 x_mark = [-3, 0, 3, 6, -6, -3, 0, 3, 6, -6, -3, 0, 3, 6, -6, -3, 0, 3, 6]
 y_mark = [6, 6, 6, 6, 2, 2, 2, 2, 2, -2, -2, -2, -2, -2, -6, -6, -6, -6, -6]
 
@@ -68,4 +68,4 @@ fig.plot(x=6, y=-6, style="ktree_circle_yf.def/1c", fill=color_hl)
 fig.plot(x=x_mark, y=y_mark, style="x0.2c", fill="steelblue")
 
 fig.show()
-# fig.savefig(fname="custom_symbols.png")
+fig.savefig(fname="custom_symbols.png")
