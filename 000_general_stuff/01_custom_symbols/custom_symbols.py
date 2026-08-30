@@ -16,7 +16,7 @@
 # - Updated: 2026/05/10 - Add symbol for olivine crystal, improve symbol for lens
 # - Updated: 2026/08/29 - Re-organize example plot, improve some symbols
 # - Updated: 2026/08/29 - Add landslide symbol
-# - Updated: 2026/08/30 - Adjust size of symbols to fit into a 1 x 1 box
+# - Updated: 2026/08/30 - Adjust symbol size to fit into a 1 x 1 box
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.18.0 -> https://www.pygmt.org
