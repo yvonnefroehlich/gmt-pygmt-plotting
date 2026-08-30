@@ -31,7 +31,7 @@
 import pygmt as gmt
 
 size = 8
-color_marker = "255/90/0"  # highlight -> orange
+color_symbol = "255/90/0"  # orange
 color_box = "steelblue"
 x_mark = [-3, 0, 3, 6, -6, -3, 0, 3, 6, -6, -3, 0, 3, 6, -6, -3, 0, 3, 6]
 y_mark = [6, 6, 6, 6, 2, 2, 2, 2, 2, -2, -2, -2, -2, -2, -6, -6, -6, -6, -6]
@@ -50,21 +50,21 @@ fig.plot(x=0, y=6, style="kradioactivity_circle_yf.def/1c")
 fig.plot(x=3, y=6, style="kradioactivity_triangle_yf.def/1c")
 fig.plot(x=6, y=6, style="kcnd_yf.def/1c")
 
-fig.plot(x=-6, y=2, style="kwindturbine_yf.def/1c", fill=color_marker)
-fig.plot(x=-0, y=2, style="kmarker_yf.def/1c", fill=color_marker)
-fig.plot(x=3, y=2, style="klens_yf.def/1c", pen=f"2p,{color_marker}")
+fig.plot(x=-6, y=2, style="kwindturbine_yf.def/1c", fill=color_symbol)
+fig.plot(x=-0, y=2, style="kmarker_yf.def/1c", fill=color_symbol)
+fig.plot(x=3, y=2, style="klens_yf.def/1c", pen=f"2p,{color_symbol}")
 
-fig.plot(x=-6, y=-2, style="kvolcano/1c", fill=color_marker)  # not self-created
-fig.plot(x=-3, y=-2, style="kvolcano_sleeping.def/1c", fill=color_marker)  # not self-created
-fig.plot(x=-0, y=-2, style="kearthquake_yf.def/1c", fill=color_marker)
-fig.plot(x=3, y=-2, style="klandslide_yf.def/1c", fill=color_marker)
+fig.plot(x=-6, y=-2, style="kvolcano/1c", fill=color_symbol)  # not self-created
+fig.plot(x=-3, y=-2, style="kvolcano_sleeping.def/1c", fill=color_symbol)  # not self-created
+fig.plot(x=-0, y=-2, style="kearthquake_yf.def/1c", fill=color_symbol)
+fig.plot(x=3, y=-2, style="klandslide_yf.def/1c", fill=color_symbol)
 fig.plot(x=6, y=-2, style="kolivine_crystal_yf.def/1c")
 
-fig.plot(x=-6, y=-6, style="kflower_square_yf.def/1c", fill=color_marker)
-fig.plot(x=-3, y=-6, style="kflower_circle_yf.def/1c", fill=color_marker)
-fig.plot(x=0, y=-6, style="kpinetree_yf.def/1c", fill=color_marker)
-fig.plot(x=3, y=-6, style="kpoplar_yf.def/1c", fill=color_marker)
-fig.plot(x=6, y=-6, style="ktree_circle_yf.def/1c", fill=color_marker)
+fig.plot(x=-6, y=-6, style="kflower_square_yf.def/1c", fill=color_symbol)
+fig.plot(x=-3, y=-6, style="kflower_circle_yf.def/1c", fill=color_symbol)
+fig.plot(x=0, y=-6, style="kpinetree_yf.def/1c", fill=color_symbol)
+fig.plot(x=3, y=-6, style="kpoplar_yf.def/1c", fill=color_symbol)
+fig.plot(x=6, y=-6, style="ktree_circle_yf.def/1c", fill=color_symbol)
 
 # Mark plotting points
 fig.plot(x=x_mark, y=y_mark, style="x0.2c", fill=color_box)
