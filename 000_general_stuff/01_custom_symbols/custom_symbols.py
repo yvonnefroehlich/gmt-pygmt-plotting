@@ -52,10 +52,8 @@ fig.plot(x=3, y=6, style="kradioactivity_triangle_yf.def/1c")
 fig.plot(x=6, y=6, style="kcnd_yf.def/1c")
 
 fig.plot(x=-6, y=2, style="kwindturbine_yf.def/1c", fill=color_symbol)
-fig.plot(x=-3, y=2, style="kmarker_yf.def/1c", fill=color_symbol)
-fig.plot(x=0, y=2, style="klens_yf.def/1c", pen=f"2p,{color_symbol}")
-fig.plot(x=3, y=2, style="khurricane/1c", fill=color_symbol)  # not self-created
-fig.plot(x=6, y=2, style="kflash/1c", fill=color_symbol)  # not self-created
+fig.plot(x=-0, y=2, style="kmarker_yf.def/1c", fill=color_symbol)
+fig.plot(x=3, y=2, style="klens_yf.def/1c", pen=f"2p,{color_symbol}")
 
 fig.plot(x=-6, y=-2, style="kvolcano/1c", fill=color_symbol)  # not self-created
 fig.plot(x=-3, y=-2, style="kvolcano_sleeping.def/1c", fill=color_symbol)  # not self-created
