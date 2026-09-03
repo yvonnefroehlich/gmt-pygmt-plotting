@@ -13,6 +13,7 @@
 # History
 # - Created: 2024/11/30
 # - Updated: 2025/12/02 - Correct RGB code for Python's blue
+# - Updated: 2026/09/03 - Add note regarding the access to GitHub stars data
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT v0.13.0 -> https://www.pygmt.org/v0.13.0/ | https://www.pygmt.org/
@@ -33,6 +34,11 @@
 import pygmt
 import numpy as np  # Required dependency
 import datetime
+
+# Please note that GitHub has restricted the access to stars data
+# to a repository's own admins and collaborators up on 2026/06/30:
+# https://github.blog/changelog/2026-06-30-upcoming-access-restrictions-to-public-api-endpoints-and-ui-views
+# https://www.star-history.com/blog/github-stargazer-api-restriction
 
 # Data retrieved from https://star-history.com/#GenericMappingTools/gmt&Date
 # last access 2024-12-01
