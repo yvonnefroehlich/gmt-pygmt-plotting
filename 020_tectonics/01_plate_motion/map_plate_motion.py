@@ -21,7 +21,7 @@
 # - Updated: 2026/08/25 - Adjusted for GitHub
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.19.0 -> https://www.pygmt.org
+# - PyGMT 0.19.0 -> https://www.pygmt.org
 # - GMT 6.7.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
