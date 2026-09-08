@@ -10,7 +10,7 @@
 # - Updated: 2026/06/21 - Add bar plot, improve existing code and comments
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
@@ -62,7 +62,7 @@ with pygmt.config(FONT="12p", MAP_GRID_PEN="0.1p,gray"):
         frame=["WSen", "xa20f5", "ya1f0.1g0.5+l@~D@~SST / K"],
     )
 
-# High-level method pygmt.Figure.fill_between for PyGMT v0.19.0 or higher
+# High-level method pygmt.Figure.fill_between for PyGMT 0.19.0 or higher
 fig.plot(data=df_sst[["Year", "J-D"]], fill="lightred@40", M="c+glightblue@40+y0")
 
 # Marke reference year
