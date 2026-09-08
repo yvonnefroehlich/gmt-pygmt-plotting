@@ -15,7 +15,7 @@
 # - Converted to Python script: 2026/03/20
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
@@ -179,14 +179,14 @@ gmt.makecpt(cmap="phase", series=[-90, 90], cyclic=True)
 fig.plot(
     data=data_K_N_pp,
     style=f"C{marker_size_pp}",  # circle
-    fill=color_null,  # before PyGMT v0.8.0 "color"
+    fill=color_null,  # before PyGMT 0.8.0 "color"
     pen=f"{outline_width_pp},black",  # outline thickness and color
 )
 # null, SKKS
 fig.plot(
     data=data_KK_N_pp,
     style=f"S{marker_size_pp}",  # square
-    fill=color_null,  # before PyGMT v0.8.0 "color"
+    fill=color_null,  # before PyGMT 0.8.0 "color"
     pen=f"{outline_width_pp},black",
 )
 # split, SKS
@@ -215,7 +215,7 @@ fig.plot(
     x=lon_BFO,
     y=lat_BFO,
     style="i0.3c",  # inverse triangle
-    fill=color_station_symbol,  # before PyGMT v0.8.0 "color"
+    fill=color_station_symbol,  # before PyGMT 0.8.0 "color"
     pen="1p,black",
 )
 # Add station code
