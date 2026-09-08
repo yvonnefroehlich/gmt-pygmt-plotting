@@ -7,7 +7,7 @@ Python scripts to reproduce some figures of
 > *Geophysical Journal International*. 239(1):112-135.
 > https://doi.org/10.1093/gji/ggae245.
 
-_Recommended versions_: PyGMT v0.16.0 - v0.18.0, GMT 6.5.0 - 6.6.0
+_Recommended versions_: PyGMT 0.16.0 - 0.18.0, GMT 6.5.0 - 6.6.0
 
 _Animations_: https://doi.org/10.5281/zenodo.15641348
 

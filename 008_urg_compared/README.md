@@ -1,6 +1,6 @@
 # 008_urg_compared
 
-_Recommended versions_: PyGMT v0.16.0 - v0.18.0, GMT 6.5.0 - 6.6.0
+_Recommended versions_: PyGMT 0.16.0 - 0.18.0, GMT 6.5.0 - 6.6.0
 
 |  |  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --- | --- | --- |

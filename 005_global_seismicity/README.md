@@ -12,7 +12,7 @@ Python scripts to reproduce some figures of
 > Disputation, *Karlsruhe Institute of Technology*, *Geophysical Institute*.
 > https://doi.org/10.5281/zenodo.15982581.
 
-_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
+_Recommended versions_: PyGMT 0.18.0, GMT 6.6.0
 
 _Animations_: https://doi.org/10.5281/zenodo.15641348
 
