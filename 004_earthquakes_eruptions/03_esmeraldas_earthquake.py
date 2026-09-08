@@ -5,10 +5,10 @@
 # - Created: 2024/04/07
 # - Updated: 2024/04/23 - Improve coding style
 # - Updated: 2025/03/28 - Reorganize folder, rewrite code
-# - Updated: 2026/02/04 - Use parameter names of PyGMT v0.18.0
+# - Updated: 2026/02/04 - Use parameter names of PyGMT 0.18.0
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
@@ -123,7 +123,7 @@ fig.meca(
     convention="aki",
     scale="1c",
     outline="0.5p,black",
-    compression_fill=color_highlight,  # PyGMT v0.18.0
+    compression_fill=color_highlight,  # PyGMT 0.18.0
 )
 # Label
 fig.text(
