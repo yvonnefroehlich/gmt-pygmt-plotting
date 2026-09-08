@@ -13,7 +13,7 @@
 # - Updated: 2025/09/16 - Adjust file names for consistency
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.16.0 - 0.18.0 -> https://www.pygmt.org
 # - GMT 6.5.0 - 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
