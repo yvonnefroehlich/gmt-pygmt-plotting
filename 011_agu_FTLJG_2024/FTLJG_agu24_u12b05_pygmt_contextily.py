@@ -17,7 +17,7 @@
 #            https://github.com/GenericMappingTools/pygmt/pull/4816
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.13.0 -> https://www.pygmt.org/v0.13.0/ | https://www.pygmt.org/
+# - PyGMT 0.13.0 -> https://www.pygmt.org/0.13.0/ | https://www.pygmt.org/
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
@@ -27,7 +27,7 @@
 # -----------------------------------------------------------------------------
 # See also
 # - PyGMT gallery example
-#   https://www.pygmt.org/v0.13.0/gallery/maps/tilemaps.html
+#   https://www.pygmt.org/0.13.0/gallery/maps/tilemaps.html
 # #############################################################################
 
 
