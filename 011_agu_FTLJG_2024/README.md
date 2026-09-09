@@ -10,7 +10,7 @@ Python scripts related to:
 >
 > Yvonne Fröhlich | Dongdong Tian | Wei Ji Leong | Max Jones | Michael Grund
 
-_Recommended versions_: PyGMT v0.13.0, GMT 6.5.0
+_Recommended versions_: PyGMT 0.13.0, GMT 6.5.0
 
 | **[pygmt_pandas](../011_agu_FTLJG_2024/FTLJG_agu24_u12b05_pygmt_pandas.py)** | **[pygmt_geopandas](../011_agu_FTLJG_2024/FTLJG_agu24_u12b05_pygmt_geopandas.py)** | **[pygmt_xarray](../011_agu_FTLJG_2024/FTLJG_agu24_u12b05_pygmt_xarray.py)** | **[pygmt_contextily](../011_agu_FTLJG_2024/FTLJG_agu24_u12b05_pygmt_contextily.py)** |
 | :---: | :---: | :---: | :---: |

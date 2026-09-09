@@ -1,6 +1,6 @@
 # 019_esc_2026
 
-_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
+_Recommended versions_: PyGMT 0.18.0, GMT 6.6.0
 
 | **[01_esc_final_scoreboard](../019_esc_2026/01_esc_final_scoreboard.py)** | **[02_esc_final_analysis](../019_esc_2026/02_esc_final_analysis.py)** | |
 | :---: | :---: | :---: |

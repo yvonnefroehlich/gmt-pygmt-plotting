@@ -22,7 +22,7 @@
 # - Updated: 2025/12/27 - Update SWS database
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.18.0 -> https://www.pygmt.org
 # - GMT 6.4.0 - 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact

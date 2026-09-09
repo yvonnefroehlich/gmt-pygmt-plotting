@@ -7,7 +7,7 @@
 # - Created: 2026/07/05
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
@@ -108,7 +108,7 @@ fig.meca(
     spec=f"{path_in}/meca_venezuela.txt",
     convention="aki",
     scale=f"1c+f8p,Helvetica-Bold,{color_hl}",
-    compression_fill=color_hl,  # PyGMT v0.18.0
+    compression_fill=color_hl,  # PyGMT 0.18.0
     offset="0.5p,black",
     outline="0.5p,black",
     label_box="white@30",

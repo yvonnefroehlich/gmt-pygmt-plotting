@@ -8,7 +8,7 @@
 # - Updated: 2026/03/15 - Complete medals plot for Paralympics for Germany, Ukraine
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact

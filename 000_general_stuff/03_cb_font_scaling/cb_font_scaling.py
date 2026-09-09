@@ -13,7 +13,7 @@
 # - Updated: 2026/07/30 - Include -M or no_font_scaling for GMT 6.7.0 or higher
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact

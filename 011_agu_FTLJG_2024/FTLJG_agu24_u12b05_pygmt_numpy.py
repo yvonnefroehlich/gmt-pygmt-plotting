@@ -16,7 +16,7 @@
 # - Updated: 2026/09/03 - Add note regarding the access to GitHub stars data
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.13.0 -> https://www.pygmt.org/v0.13.0/ | https://www.pygmt.org/
+# - PyGMT 0.13.0 -> https://www.pygmt.org/v0.13.0/ | https://www.pygmt.org/
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact

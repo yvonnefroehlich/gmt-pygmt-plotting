@@ -10,7 +10,7 @@
 # - Updated: 2026/05/21 - Add analysis for start place, improve code
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
