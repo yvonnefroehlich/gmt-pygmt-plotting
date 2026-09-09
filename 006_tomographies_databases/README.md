@@ -1,6 +1,6 @@
 # 006_tomographies_databases
 
-_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
+_Recommended versions_: PyGMT 0.18.0, GMT 6.6.0
 
 _Animations_: https://doi.org/10.5281/zenodo.15641348
 

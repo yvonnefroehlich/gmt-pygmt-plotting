@@ -1,6 +1,6 @@
 # 012_uefa_euro_2025
 
-_Recommended versions_: PyGMT v0.16.0 - v0.18.0, GMT 6.5.0 - 6.6.0
+_Recommended versions_: PyGMT 0.16.0 - 0.18.0, GMT 6.5.0 - 6.6.0
 
 | **[01_logo](../012_uefa_euro_2025/01_logo.py)** | **[02_countries](../012_uefa_euro_2025/02_countries.py)** | **[03_points](../012_uefa_euro_2025/03_points.py)** | **[04_goals](../012_uefa_euro_2025/04_goals.py)** |
 | :---: | :---: | :---: | :---: |

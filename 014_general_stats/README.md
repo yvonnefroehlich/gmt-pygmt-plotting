@@ -1,6 +1,6 @@
 # 014_general_stats
 
-_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
+_Recommended versions_: PyGMT 0.18.0, GMT 6.6.0
 
 **Note**: _Numbers and trends are difficult to read visually from pie charts. If applicable use another plot type, e.g., a bar chart._
 

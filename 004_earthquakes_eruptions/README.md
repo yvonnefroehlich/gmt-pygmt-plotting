@@ -1,6 +1,6 @@
 # 004_earthquakes_eruptions
 
-_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
+_Recommended versions_: PyGMT 0.18.0, GMT 6.6.0
 
 | Code | Location | Magnitude | Depth / km | Date | Time (UTC) |
 | --- | --- | --- | --- | --- | --- |

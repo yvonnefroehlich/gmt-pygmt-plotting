@@ -1,6 +1,6 @@
 # 016_winter_games_2026
 
-_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
+_Recommended versions_: PyGMT 0.18.0, GMT 6.6.0
 
 | **[01_logo_olympics](../016_winter_games_2026/01_logo_olympics.py)** | **[02_logo_paralympics](../016_winter_games_2026/02_logo_paralympics.py)** | **[03_map_continents_colors](../016_winter_games_2026/03_map_continents_colors.py)** | **[04_map_italy](../016_winter_games_2026/04_map_italy.py)** | **[05_medals](../016_winter_games_2026/05_medals.py)** |
 | :---: | :---: | :---: | :---: | :---: |

@@ -1,6 +1,6 @@
 # 000_general_stuff
 
-_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
+_Recommended versions_: PyGMT 0.18.0, GMT 6.6.0
 
 | **[01_custom_symbols](../000_general_stuff/01_custom_symbols/custom_symbols.py)** | **[02_colorwheel](../000_general_stuff/02_colorwheel/colorwheel_pygmt.py)** | **[03_cb_font_scaling](../000_general_stuff/03_cb_font_scaling/cb_font_scaling.py)** | **[05_greek_letters](../000_general_stuff/05_greek_letters/greek_letters.py)** |
 | :---: | :---: | :---: | :---: |
