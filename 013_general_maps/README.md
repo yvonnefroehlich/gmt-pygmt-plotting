@@ -1,6 +1,6 @@
 # 013_general_maps
 
-_Recommended versions_: PyGMT v0.16.0 - v0.18.0, GMT 6.5.0 - 6.6.0
+_Recommended versions_: PyGMT 0.16.0 - 0.18.0, GMT 6.5.0 - 6.6.0
 
 | **[01_figure_dimensions](../013_general_maps/01_figure_dimensions/map_eqs_depthsection.py)** | **[02_dcw_choropleth](../013_general_maps/02_dcw_choropleth/dcw_choropleth.py)** | **[03_gp_choropleth](../013_general_maps/03_gp_choropleth/gp_choropleth.py)** |
 | :---: | :---: | :---: |

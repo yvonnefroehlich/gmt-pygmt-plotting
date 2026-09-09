@@ -9,7 +9,7 @@
 # - Updated: 2025/08/04 - Fix profile for elevation, add plate names and motion direction
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
@@ -142,7 +142,7 @@ fig.meca(
     spec=f"{path_in}/meca_kamtschatka.txt",
     convention="aki",
     scale="1c",
-    compression_fill=color_hl,  # PyGMT v0.18.0
+    compression_fill=color_hl,  # PyGMT 0.18.0
     offset=pen_epi,
     outline=pen_epi,
 )
@@ -184,7 +184,7 @@ fig.text(
 # Plate motion direction
 fig.plot(
     data=[[150.5, 35, 137, 0.6], [157.5, 40.5, 137, 0.6]],
-    style="v0.3c+e+h0.1+a45",
+    style="0.3c+e+h0.1+a45",
     pen=f"3p,{color_hl}",
     fill=color_hl,
 )

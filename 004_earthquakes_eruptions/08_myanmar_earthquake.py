@@ -6,10 +6,10 @@
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2025/03/28
-# - Updated: 2026/02/04 - Use parameter names of PyGMT v0.18.0
+# - Updated: 2026/02/04 - Use parameter names of PyGMT 0.18.0
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
@@ -116,7 +116,7 @@ fig.meca(
     spec=f"{path_in}/meca_myanmar.txt",
     convention="aki",
     scale="1c",
-    compression_fill=color_highlight,  # PyGMT v0.18.0
+    compression_fill=color_highlight,  # PyGMT 0.18.0
     offset=pen_epi,
     outline=pen_epi,
 )

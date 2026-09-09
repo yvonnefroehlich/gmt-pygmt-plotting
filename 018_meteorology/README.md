@@ -1,6 +1,6 @@
 # 018_meteorology
 
-_Recommended versions_: PyGMT v0.18.0, GMT 6.6.0
+_Recommended versions_: PyGMT 0.18.0, GMT 6.6.0
 
 | **[01_climate_stripes](../018_meteorology/01_climate_stripes/climate_stripes.py)** |
 | :---: |
