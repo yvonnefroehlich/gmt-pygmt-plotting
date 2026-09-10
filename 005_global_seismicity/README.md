@@ -15,7 +15,7 @@ Python scripts to reproduce some figures of
 _Recommended versions_: PyGMT 0.18.0, GMT 6.6.0
 
 >[!NOTE]
-> For GMT 6.7.0, a colormap set up via ``pygmt.makecpt`` and applied as ``cmap=True`` is ignored. <br>
+> For GMT 6.7.0, a colormap set up via ``pygmt.makecpt`` and applied to ``pygmt.Figure.meca`` as ``cmap=True`` is ignored. <br>
 > For details, please see the upstream GMT [issue 9176](https://github.com/GenericMappingTools/gmt/issues/9176) (bug report)
 > and [PR 9177](https://github.com/GenericMappingTools/gmt/pull/9177) (bug fix).
 
