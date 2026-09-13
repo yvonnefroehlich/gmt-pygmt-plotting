@@ -14,6 +14,11 @@ Python scripts to reproduce some figures of
 
 _Recommended versions_: PyGMT 0.18.0, GMT 6.6.0
 
+>[!NOTE]
+> For GMT 6.7.0, a colormap to color-code beachballs set up via ``pygmt.makecpt`` and applied to ``pygmt.Figure.meca`` as ``cmap=True`` is ignored.
+> For details, please see the upstream GMT [issue 9176](https://github.com/GenericMappingTools/gmt/issues/9176) (bug report)
+> and [PR 9177](https://github.com/GenericMappingTools/gmt/pull/9177) (bug fix).
+
 _Animations_: https://doi.org/10.5281/zenodo.15641348
 
 | **[01_usgsfdsn_webservice](../005_global_seismicity/seismicity_01_usgsfdsn_webservice.py)** | **[02_usgsfdsn_epicenter](../005_global_seismicity/seismicity_02_usgsfdsn_epicenter.py)** | **[03_usgsfdsn_histogram](../005_global_seismicity/seismicity_03_usgsfdsn_histogram.py)** |
