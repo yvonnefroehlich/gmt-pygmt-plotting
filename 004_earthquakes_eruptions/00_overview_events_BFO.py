@@ -299,7 +299,7 @@ if add_list == True:
 
 # -----------------------------------------------------------------------------
 # Show and save
-fig.show()  # method="external")
+# fig.show()  # method="external")
 # for ext in ["png"]:  # , "pdf", "eps"]:
 #     transparent = False
 #     if ext == "png" and add_list == False:
