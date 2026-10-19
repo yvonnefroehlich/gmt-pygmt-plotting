@@ -64,9 +64,6 @@ speed = np.sqrt(
 )
 df_motion["speed_mmyr"] = speed
 
-# Plate boundaries
-file_pb = "plate_boundaries_Bird_2003.txt"
-
 
 # %%
 # -----------------------------------------------------------------------------
@@ -96,7 +93,6 @@ for motion, cb_label, wsne in zip(
     fig.colorbar(frame=[f"xa20f5+l{cb_label}", "y+lmm/yr"])
 
     fig.coast(shorelines=f"1/0.01p,{color_sl}")
-    fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.3p,{color_pb}")
 
     if motion == "Evel_mmyr":
         fig.text(
