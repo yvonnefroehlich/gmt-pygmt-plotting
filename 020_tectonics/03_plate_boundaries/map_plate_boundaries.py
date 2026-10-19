@@ -93,7 +93,7 @@ for region, frame, data_pb, text_pb, color_pb in zip(
 ):
     fig.basemap(**args_bm, region=region)
     fig.coast(land=color_land, shorelines=f"0.1p,{color_sl}")
-    fig.plot(data=data_pb, pen=f"0.8p,{color_pb}")
+    fig.plot(data=data_pb, pen=f"0.5p,{color_pb}")
     if region=="d":
         fig.text(**args_text, text=text_pb)
     fig.basemap(frame=[frame, "af"])
