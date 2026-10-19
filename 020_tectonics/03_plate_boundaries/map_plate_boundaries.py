@@ -43,7 +43,7 @@ color_hl= "255/90/0"  # highlight -> orange
 pb_bird = f"{path_in}/pb_bird_2003/plate_boundaries_Bird_2003.txt"
 pb_hasterok = f"{path_in}/pb_hasterok_2022/boundaries.gmt"
 
-
+# Some variable definitions
 args_bm = {"projection": "N12c", "frame": 0}
 args_text = {
     "position": "TR",
@@ -84,34 +84,25 @@ print(fig_name)
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
 
-fig.basemap(**args_bm, region="d")
-fig.coast(land=color_land, shorelines=f"0.1p,{color_sl}")
-fig.plot(data=pb_bird, pen="0.8p,darkbrown")
-fig.text(**args_text, text="Bird 2003")
-fig.basemap(frame=["Wsne", "af"])
+for region, frame, data_pb, text_pb, color_pb in zip(
+    ["d", "g", "d", "g"],
+    ["Wsne", "wsne", "WSne", "wSne"],
+    [pb_bird, pb_bird, pb_hasterok, pb_hasterok],
+    ["Bird 2003", "", "Hasterok et al. 2022", ""],
+    ["darkbrown", "darkbrown", "magenta", "magenta"]
+):
+    fig.basemap(**args_bm, region=region)
+    fig.coast(land=color_land, shorelines=f"0.1p,{color_sl}")
+    fig.plot(data=data_pb, pen=f"0.8p,{color_pb}")
+    if region=="d":
+        fig.text(**args_text, text=text_pb)
+    fig.basemap(frame=[frame, "af"])
 
-fig.shift_origin(xshift="w+0.5")
-
-fig.basemap(**args_bm, region="g")
-fig.coast(land=color_land, shorelines=f"0.1p,{color_sl}")
-fig.plot(data=pb_bird, pen="0.8p,darkbrown")
-fig.basemap(frame=["wsne", "af"])
-
-fig.shift_origin(xshift="-w-0.5", yshift="-h-0.5")
-
-fig.basemap(**args_bm, region="d")
-fig.coast(land=color_land, shorelines=f"0.1p,{color_sl}")
-fig.plot(data=pb_hasterok, pen="0.4p,magenta")
-fig.text(**args_text, text="Hasterok et al. 2022")
-fig.basemap(frame=["WSne", "af"])
-
-fig.shift_origin(xshift="w+0.5")
-
-fig.basemap(**args_bm, region="g")
-fig.coast(land=color_land, shorelines=f"0.1p,{color_sl}")
-fig.plot(data=pb_hasterok, pen="0.4p,magenta")
-fig.basemap(frame=["wSne", "af"])
-
+    if region=="d":
+        fig.shift_origin(xshift="w+0.5")
+    else:
+        fig.shift_origin(xshift="-w-0.5", yshift="-h-0.5")
+        
 fig.show()
 fig_name = "map_plate_boundaries_subplot"
 for ext in ["png"]:  # , "pdf", "eps"]:
