@@ -32,7 +32,7 @@ import geopandas as gpd
 path_in = "01_in_data"
 path_out = "02_out_figs"
 
-folder = "paleocoastlines_v7_shapefiles"
+folder = "paleo_coastlines_kocsis_scotese_2023"
 
 color_hl= "255/90/0"  # highlight -> orange
 
