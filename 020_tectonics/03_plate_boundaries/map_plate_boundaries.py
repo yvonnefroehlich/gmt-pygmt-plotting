@@ -1,5 +1,5 @@
 # #############################################################################
-# Maps of plate boundaries - comparison of different studies
+# Maps of plate boundaries - Comparison of two studies
 # -----------------------------------------------------------------------------
 # Data
 # - Bird, P (2003). An updated digital model of plate boundaries. Geochemistry,
