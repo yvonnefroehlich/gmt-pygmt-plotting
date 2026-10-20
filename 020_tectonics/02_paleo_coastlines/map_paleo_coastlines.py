@@ -33,7 +33,6 @@ path_in = "01_in_data"
 path_out = "02_out_figs"
 
 folder = "paleocoastlines_v7_shapefiles"
-file_pb = "plate_boundaries_Bird_2003.txt"
 
 color_hl= "255/90/0"  # highlight -> orange
 

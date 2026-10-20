@@ -113,6 +113,6 @@ for motion, cb_label, wsne in zip(
 # -----------------------------------------------------------------------------
 fig.show()
 fig_name = f"map_plate_motion_{model}"
-for ext in ["png"]:  # , "pdf", "eps"]:
-    fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
+# for ext in ["png"]:  # , "pdf", "eps"]:
+#     fig.savefig(fname=f"{path_out}/{fig_name}.{ext}")
 print(fig_name)
