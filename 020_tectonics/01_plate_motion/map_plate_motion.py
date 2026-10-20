@@ -34,7 +34,6 @@ import numpy as np
 import pandas as pd
 import pygmt
 
-
 # %%
 # -----------------------------------------------------------------------------
 # General stuff
@@ -61,8 +60,8 @@ df_motion = pd.read_csv(f"{path_in}/{file_pm}", sep=" ")
 
 # Plate speed
 speed = np.sqrt(
-    df_motion["Evel_mmyr"] * df_motion["Evel_mmyr"] +
-    df_motion["Nvel_mmyr"] * df_motion["Nvel_mmyr"]
+    df_motion["Evel_mmyr"] * df_motion["Evel_mmyr"]
+    + df_motion["Nvel_mmyr"] * df_motion["Nvel_mmyr"]
 )
 df_motion["speed_mmyr"] = speed
 
@@ -76,11 +75,10 @@ fig = pygmt.Figure()
 for motion, cb_label, wsne in zip(
     ["Evel_mmyr", "Nvel_mmyr", "speed_mmyr"],
     ["plate East velocity", "plate North velocity", "plate speed"],
-    ["WSne", "wSnE", "WSnE"]
+    ["WSne", "wSnE", "WSnE"],
 ):
-
     pygmt.makecpt(cmap="vik", series=[-80, 80])
-    if motion=="speed_mmyr":
+    if motion == "speed_mmyr":
         pygmt.makecpt(cmap="acton", series=[0, 80], reverse=True)
 
     fig.basemap(region="g", projection="N10c", frame=0)
@@ -109,7 +107,7 @@ for motion, cb_label, wsne in zip(
     fig.basemap(frame=[wsne, "af"])
 
     fig.shift_origin(xshift="w+1c")
-    if motion=="Nvel_mmyr":
+    if motion == "Nvel_mmyr":
         fig.shift_origin(xshift="-1.5w-1.5c", yshift="-h-2.5c")
 
 # -----------------------------------------------------------------------------

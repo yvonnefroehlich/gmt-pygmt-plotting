@@ -25,9 +25,8 @@
 # - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
 # #############################################################################
 
-import pygmt
 import geopandas as gpd
-
+import pygmt
 
 # %%
 # -----------------------------------------------------------------------------
@@ -40,7 +39,7 @@ path_out = "02_out_figs"
 # For the other ages, download the data from zenodo (see header)
 folder = "paleo_coastlines_kocsis_scotese_2023"
 
-color_hl= "255/90/0"  # highlight -> orange
+color_hl = "255/90/0"  # highlight -> orange
 
 map_size = 12
 
@@ -59,7 +58,6 @@ year_step = -20
 # Create maps of paleo coastlines over time
 # -----------------------------------------------------------------------------
 for proj in ["epi", "robd", "robg"]:
-
     match proj:
         case "epi":
             projection = f"E{center_lon}/{center_lat}/{epi_plot}/{map_size}c"
@@ -72,7 +70,6 @@ for proj in ["epi", "robd", "robg"]:
             region = "g"
 
     for i_year, year in enumerate(range(year_start, year_end + year_step, year_step)):
-
         try:
             gdf_paleo_cm = gpd.read_file(f"{path_in}/{folder}/CM/{year}Ma_CM_v7.shp")
             gdf_paleo_cs = gpd.read_file(f"{path_in}/{folder}/CS/{year}Ma_CS_v7.shp")

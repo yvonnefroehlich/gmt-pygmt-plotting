@@ -31,7 +31,7 @@
 # #############################################################################
 
 
-import os
+import pathlib
 
 min_lon = -180
 max_lon = 180
@@ -44,15 +44,13 @@ elevation = 0
 
 data_out = f"01_in_data/ngf_plate_motion_calculator_INPUT_Dlon{step_lon}deg_Dlat{step_lat}deg_ele{elevation}m.txt"
 try:
-    os.remove(data_out)
+    pathlib.Path(data_out).unlink()
 except:
     pass
 
-with open(data_out, "a") as f_new:
-
+with pathlib.Path(data_out).open("a") as f_new:
     for lon in range(min_lon, max_lon + step_lon, step_lon):
         for lat in range(min_lat, max_lat + step_lat, step_lat):
-
             line_temp = [str(lon), str(lat), str(elevation)]
             line_temp_join = " ".join(line_temp)
 
