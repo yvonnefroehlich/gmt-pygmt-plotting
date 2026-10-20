@@ -27,7 +27,7 @@ import pygmt as gmt
 # General stuff
 # -----------------------------------------------------------------------------
 # >>> Adjust for your needs <<<
-add_list = True # True | False
+add_list = True  # True | False
 dpi_png = 360  # Resolution of output PNG
 fig_name = "00_overview_events_BFO"  # Name of output figure
 if add_list == True:
@@ -67,6 +67,7 @@ df_events = pd.DataFrame(
             "earthquake",
             "earthquake",
             "landslide",
+            "earthquake",
         ],
         "location": [
             "La Palma",
@@ -86,6 +87,7 @@ df_events = pd.DataFrame(
             "Indonesia",
             "Peru",
             "Nepal",
+            "Panama",
         ],
         "date": [
             "2021/09/19 - 12/13",
@@ -105,36 +107,37 @@ df_events = pd.DataFrame(
             "2026/08/14",
             "2026/08/20",
             "2026/08/28",
+            "2026/10/09",
         ],
         "lon": [
             -17.84, -175.393, -79.611, 37.042, -8.391,
             136.91, 121.562, 95.92, 160.324, 70.734,
             25.43, -68.53, 130.722, -76.242, 121.352,
-            -73.524, 85.515,
+            -73.524, 85.515, -80.769,
         ],
         "lat": [
             28.57, -20.545, -0.904, 37.166, 31.064,
             37.23, 23.819, 22.01, 52.512, 34.519,
             36.42, 10.46, 32.682, 4.844, 8.310,
-            -14.641, 28.271,
+            -14.641, 28.271, 7.587,
         ],
         "depth": [
             "", " ", "19.0 km", "10-18 km", "26.0 km",
             "10.0 km", "34.8 km", "10.0 km", "21.5 km", "8.0 km",
             "< 20 km", "10.0 km", "10.0 km", "110.3 km", "10.0 km",
-            "99.0 km", " ",
+            "99.0 km", " ", "12.6 km",
         ],
         "magnitude": [
             "volcano", "volcano", "Mw 5.8", "Mw 6.0-7.8", "Mw 6.9",
             "Mw 7.5", "Mw 7.4", "Mw 7.7", "Mw 8.8", "Mw 6.0",
             "Mw < 5.5", "Mw 7.2", "Mw 6.8", "Mw 7.4", "Mw 7.7",
-            "Mw 6.7", "landslide"
+            "Mw 6.7", "landslide", "Mw 7.7",
         ],
         "event_id": [
             "01", "02", "03", "04", "05",
             "06", "07", "08", "09", "10",
             "11", "12", "13", "14", "15",
-            "16", "17",
+            "16", "17", "18",
         ],
     }
 )
