@@ -1,14 +1,17 @@
 # #############################################################################
 # Plate boundaries comparison of different studies
-# - Bird 2003
-# - Hasterok et al. 2022
+# -----------------------------------------------------------------------------
+# Data
+# - Bird, P (2003). An updated digital model of plate boundaries. Geochemistry,
+#   Geophysics, Geosystems, 4(3). https://doi.org/10.1029/2001GC000252
+#
+# - Hasterok D, Halpin J A, Collins A S, Hand M, Kreemer C, Gard M G, Glorie S
+#   (2022). New Maps of Global Geological Provinces and Tectonic Plates. 
+#   Earth-Science Reviews, 231, 104069.
+#   https://doi.org/10.1016/j.earscirev.2022.104069
 #   https://zenodo.org/records/6586972
 #   https://github.com/dhasterok/global_tectonics
-#   https://doi.org/10.31223/X5TD1C
-#   https://phys.org/news/2022-06-global-geological-provinces-tectonic-plates.html
-#   https://www.researchgate.net/publication/360133385_New_maps_of_global_geologic_provinces_and_tectonic_plates
-# - Spohn et al. 2026
-#   https://doi.org/10.1007/s11214-026-01265-y
+#   Last access: 2026/10/19
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2026/10/19

@@ -5,8 +5,12 @@
 # -----------------------------------------------------------------------------
 # Data
 # - PaleoMAP PaleoCoastlines data: https://doi.org/10.5281/zenodo.3903163
-# - Version v7.3 https://doi.org/10.5281/zenodo.7994000
-# - Last access 2026/08/08
+#   Version: v7.3 https://doi.org/10.5281/zenodo.7994000
+#   Last access: 2026/10/20
+#
+# - Kocsis A T, Scotese C R (2021). Mapping paleocoastlines and continental
+#   flooding during the Phanerozoic. Earth-Science Reviews, 213, 103463.
+#   https://doi.org/10.1016/j.earscirev.2020.103463
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2026/08/07

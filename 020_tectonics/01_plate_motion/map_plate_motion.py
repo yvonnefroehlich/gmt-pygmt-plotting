@@ -4,14 +4,14 @@
 # -----------------------------------------------------------------------------
 # Data calculated with
 # - https://www.unavco.org/software/geodetic-utilities/plate-motion-calculator/plate-motion-calculator.html
-# - last access: 2024/06/08
-# - model GSRM v2.1 (2014) -> Kreemer, Blewitt, Klein (2014)
+#   Model: GSRM v2.1
+#   Last access: 2024/06/08
 #
 # - DeMets C, Gordon R G, Argus D F (2010). Geologically current plate motions.
 #   Geophysical Journal International, 181(1), 1-80.
 #   https://doi.org/10.1111/j.1365-246X.2009.04491.x
 #   See also Erratum (2011). Geophysical Journal International, 187(1), 538-538.
-#   https://doi.org/10.1111/j.1365-246X.2011.05186.x.
+#   https://doi.org/10.1111/j.1365-246X.2011.05186.x
 # - Kreemer C, Blewitt G, Klein E C (2014). A geodetic plate motion and Global
 #   Strain Rate Model. Geochemistry, Geophysics, Geosystems, 15, 3849-3889.
 #   https://doi.org/10.1002/2014GC005407
