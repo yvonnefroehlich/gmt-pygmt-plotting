@@ -1,6 +1,6 @@
 # #############################################################################
 # Maps of plate motion
-# -> for creating the intput file see create_ngf_plate_motion_calculator_INPUT.py
+# -> for creating the input file see create_ngf_plate_motion_calculator_INPUT.py
 # -----------------------------------------------------------------------------
 # Data calculated with
 # - https://www.unavco.org/software/geodetic-utilities/plate-motion-calculator/plate-motion-calculator.html

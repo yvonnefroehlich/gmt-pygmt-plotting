@@ -1,5 +1,5 @@
 # #############################################################################
-# Plate boundaries comparision of different studies
+# Plate boundaries comparison of different studies
 # - Bird 2003
 # - Hasterok et al. 2022
 #   https://zenodo.org/records/6586972
@@ -40,8 +40,8 @@ color_sl = "gray"
 color_hl= "255/90/0"  # highlight -> orange
 
 # Data files
-pb_bird = f"{path_in}/pb_bird_2003/plate_boundaries_Bird_2003.txt"
-pb_hasterok = f"{path_in}/pb_hasterok_2022/boundaries.gmt"
+pb_bird = f"{path_in}/plate_boundaries_Bird_2003.txt"
+pb_hasterok = f"{path_in}/boundaries_Hasterok_2022.gmt"
 
 # Some variable definitions
 args_bm = {"projection": "N12c", "frame": 0}
