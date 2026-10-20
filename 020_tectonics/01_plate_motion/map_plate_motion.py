@@ -53,7 +53,9 @@ color_sl = "gray40"  # shorelines
 # Data
 # -----------------------------------------------------------------------------
 # Plate velocity and direction
-model = "GSRMv2.1"  # GSRMv2.1 | ITRF2020 | for other models create your own files
+# Data provided for model GSRMv2.1
+# For other models, create your own files (see header)
+model = "GSRMv2.1"
 file_pm = f"ngf_plate_motion_calculator_OUTPUT_Dlon2deg_Dlat2deg_ele0m_{model}.txt"
 df_motion = pd.read_csv(f"{path_in}/{file_pm}", sep=" ")
 

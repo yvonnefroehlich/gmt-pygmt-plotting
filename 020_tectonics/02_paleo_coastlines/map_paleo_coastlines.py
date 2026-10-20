@@ -32,11 +32,14 @@ import geopandas as gpd
 path_in = "01_in_data"
 path_out = "02_out_figs"
 
+# Data provided for 180 Ma and 80 Ma
+# For the other ages, download the data from zenodo (see header)
 folder = "paleo_coastlines_kocsis_scotese_2023"
 
 color_hl= "255/90/0"  # highlight -> orange
 
 map_size = 12
+
 # BFO
 center_lon = 8.33
 center_lat = 48.33
@@ -66,8 +69,6 @@ for proj in ["epi", "robd", "robg"]:
 
     for i_year, year in enumerate(range(year_start, year_end + year_step, year_step)):
 
-        # Data provided for 300 Ma, 180 Ma, 80 Ma, 60 Ma
-        # For the other ages, download the data from zenodo (see header)
         try:
             gdf_paleo_cm = gpd.read_file(f"{path_in}/{folder}/CM/{year}Ma_CM_v7.shp")
             gdf_paleo_cs = gpd.read_file(f"{path_in}/{folder}/CS/{year}Ma_CS_v7.shp")
