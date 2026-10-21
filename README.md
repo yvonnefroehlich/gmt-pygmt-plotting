@@ -11,7 +11,7 @@ _Please note_: Besides [PyGMT](https://www.pygmt.org) and [GMT](https://www.gene
 
 | Folder | Overview |
 | --- | --- |
-| •&nbsp;**[000_general_stuff](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/000_general_stuff#000_general_stuff)** <br> •&nbsp;**[001_paper_RFSG_2022](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/001_paper_RFSG_2022#001_paper_RFSG_2022)** <br> •&nbsp;**[002_paper_FGR_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/002_paper_FGR_2024#002_paper_FGR_2024)** <br> •&nbsp;**[003_taup](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/003_taup#003_taup)** <br> •&nbsp;**[004_earthquakes_eruptions](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/004_earthquakes_eruptions#004_earthquakes_eruptions)** <br> •&nbsp;**[005_global_seismicity](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/005_global_seismicity#005_global_seismicity)** <br> •&nbsp;**[006_tomographies_databases](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/006_tomographies_databases#006_tomographies_databases)** <br> •&nbsp;**[007_dissertation_F_2025](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/007_dissertation_F_2025#007_dissertation_F_2025)** <br> •&nbsp;**[008_urg_compared](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/008_urg_compared#008_urg_compared)** <br> •&nbsp;**[009_deepdyn](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/009_deepdyn#009_deepdyn)** <br> •&nbsp;**[010_axisem](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/010_axisem#010_axisem)** <br> •&nbsp;**[011_agu_FTLJG_2024](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/011_agu_FTLJG_2024#011_agu_FTLJG_2024)** <br> •&nbsp;**[012_uefa_euro_2025](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/012_uefa_euro_2025#012_uefa_euro_2025)** <br> •&nbsp;**[013_general_maps](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/013_general_maps#013_general_maps)** <br> •&nbsp;**[014_general_stats](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/014_general_stats#014_general_stats)** <br> •&nbsp;**[015_santorini_earthquakes_2025](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/015_santorini_earthquakes_2025#015_santorini_earthquakes_2025)** <br> •&nbsp;**[016_winter_olympics_2026](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/016_winter_games_2026#016_winter_games_2026)** <br> •&nbsp;**[017_planetary_bodies](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/017_planetary_bodies#017_planetary_bodies)** <br> •&nbsp;**[018_meteorology](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/018_meteorology#018_meteorology)** <br> •&nbsp;**[019_esc_2026](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/tree/main/019_esc_2026#019_esc_2026)** | <img src="https://github.com/yvonnefroehlich/gmt-pygmt-plotting/blob/main/_images/github_maps_readme_main.gif" width="550"> |
+| •&nbsp;**[000_general_stuff](000_general_stuff#000_general_stuff)** <br> •&nbsp;**[001_paper_RFSG_2022](001_paper_RFSG_2022#001_paper_RFSG_2022)** <br> •&nbsp;**[002_paper_FGR_2024](002_paper_FGR_2024#002_paper_FGR_2024)** <br> •&nbsp;**[003_taup](003_taup#003_taup)** <br> •&nbsp;**[004_earthquakes_eruptions](004_earthquakes_eruptions#004_earthquakes_eruptions)** <br> •&nbsp;**[005_global_seismicity](005_global_seismicity#005_global_seismicity)** <br> •&nbsp;**[006_tomographies_databases](006_tomographies_databases#006_tomographies_databases)** <br> •&nbsp;**[007_dissertation_F_2025](007_dissertation_F_2025#007_dissertation_F_2025)** <br> •&nbsp;**[008_urg_compared](008_urg_compared#008_urg_compared)** <br> •&nbsp;**[009_deepdyn](009_deepdyn#009_deepdyn)** <br> •&nbsp;**[010_axisem](010_axisem#010_axisem)** <br> •&nbsp;**[011_agu_FTLJG_2024](011_agu_FTLJG_2024#011_agu_FTLJG_2024)** <br> •&nbsp;**[012_uefa_euro_2025](012_uefa_euro_2025#012_uefa_euro_2025)** <br> •&nbsp;**[013_general_maps](013_general_maps#013_general_maps)** <br> •&nbsp;**[014_general_stats](014_general_stats#014_general_stats)** <br> •&nbsp;**[015_santorini_earthquakes_2025](015_santorini_earthquakes_2025#015_santorini_earthquakes_2025)** <br> •&nbsp;**[016_winter_olympics_2026](016_winter_games_2026#016_winter_games_2026)** <br> •&nbsp;**[017_planetary_bodies](017_planetary_bodies#017_planetary_bodies)** <br> •&nbsp;**[018_meteorology](018_meteorology#018_meteorology)** <br> •&nbsp;**[019_esc_2026](019_esc_2026#019_esc_2026)** <br> •&nbsp;**[020_tectonics](020_tectonics#020_tectonics)** | <img src="_images/github_maps_readme_main.gif" width="550"> |
 
 
 ## Citation
@@ -88,7 +88,7 @@ If you make use of this material, please acknowledge the relating publications i
 </details>
 
 
-## Contributing
+## Contributin
 
 For bug reports, suggestions, or recommendations feel free to [open an issue](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/issues)
 or [submit a pull request](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/pulls) directly here on
@@ -107,9 +107,13 @@ _Please note_: Specific references are given in the single scripts.
   True colors of oceanography: Guidelines for effective and accurate colormap selection.
   *Oceanography*, 29(3):9-13.
   https://dx.doi.org/10.5670/oceanog.2016.66.
-- [**_Tian D, Leong W J, Fröhlich Y, Grund M, Schlitzer W, Jones M, Toney L, Yao J, Tong J-H, Mage Y, Materna K, Belem A, Newton T, Anant A, Ziebarth M, Quinn J, He X, Uieda L, Wessel P (2024)_**](https://doi.org/10.5281/zenodo.18080259).
-  PyGMT: A Python interface for the Generic Mapping Tools, version v0.18.0.
-  *Zenodo*. https://doi.org/10.5281/zenodo.18080259 (v0.18.0), https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
+- [**_Tian D, Fröhlich Y, Leong W J, Grund M, Schlitzer W, Jones M, Uieda L, Luis J M F (2026)_**](https://doi.org/10.1029/2026GC013105).
+  PyGMT: Bridging Python and the Generic Mapping Tools for Geospatial Visualization and Analysis.
+  *Geochemistry, Geophysics, Geosystems*, 27(7), e2026GC013105.
+  https://doi.org/10.1029/2026GC013105.
+- [**_Tian D, Leong W J, Fröhlich Y, Grund M, Schlitzer W, Jones M, Toney L, Yao J, Tong J-H, Mage Y, Materna K, Belem A, Newton T, Anant A, Ziebarth M, Quinn J, He X, Uieda L, Wessel P (2024)_**](https://doi.org/10.5281/zenodo.19398871).
+  PyGMT: A Python interface for the Generic Mapping Tools, version 0.19.0.
+  *Zenodo*. https://doi.org/10.5281/zenodo.19398871 (0.19.0), https://doi.org/10.5281/zenodo.3781524 (all versions / latest version).
 - [**_Wessel P, Smith W H F, Scharroo R, Luis J F, Wobbe F (2013)_**](https://doi.org/10.1002/2013EO450001).
   Generic mapping tools: improved version released.
   *Eos, Transactions American Geophysical Union*, 94(45):409-410.
@@ -130,7 +134,7 @@ The presented research and YF received support from various sources:
 - [Graduate Funding from the German States](https://www.khys.kit.edu/english/graduate_funding.php) (scholarship)
 - [NSF EAR-1948602](https://www.nsf.gov/awardsearch/show-award/?AWD_ID=1948602) (travel support to
   [AGU24](https://www.agu.org/annual-meeting-2024))
-- [DFG project 521545943](https://gepris.dfg.de/gepris/projekt/521545943?language=en) (research assistant within the
+- [DFG project 521545943](https://gepris.dfg.de/gepris/projekt/521545943?language=en) (research assistant within
   [DFG Priority Program DeepDyn SPP 2404 – 500707704](https://www.geo.lmu.de/deepdyn/en/))
-- [NSF EAR-2153910](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2153910) (travel support to the
+- [NSF EAR-2153910](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2153910) (travel support to
   [workshop Integrating Seismic Anisotropy, Geodynamics, and Rock Deformation](https://sites.wustl.edu/anisotropy))

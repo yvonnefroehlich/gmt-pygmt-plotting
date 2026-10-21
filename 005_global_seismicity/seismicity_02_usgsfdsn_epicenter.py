@@ -12,7 +12,7 @@
 # - Updated: 2026/02/21 - Include elevation grid, improve Robinson projection
 # -----------------------------------------------------------------------------
 # Versions
-#   PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
+#   PyGMT 0.16.0 - 0.18.0 -> https://www.pygmt.org
 #   GMT 6.5.0 - 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact

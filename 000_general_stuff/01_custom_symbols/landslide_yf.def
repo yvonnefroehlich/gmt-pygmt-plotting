@@ -1,0 +1,16 @@
+# #############################################################################
+# Landslide symbol for usage in GMT or PyGMT
+# -----------------------------------------------------------------------------
+# Contact
+# - Author: Yvonne Fröhlich
+# - ORCID: https://orcid.org/0000-0002-8566-0619
+# - GitHub: https://github.com/yvonnefroehlich/gmt-pygmt-plotting
+# #############################################################################
+
+# Center at 0 0
+ 0.00    0.00   1.05    t
+ 0.00    0.00   0.95    t   -W0.10p,black    -Gwhite
+-0.11   -0.06   0.73    t   -W0.01p,black
+ 0.01    0.20   0.05    c   -W0.05p,black
+ 0.10    0.06   0.08    c   -W0.05p,black
+ 0.21   -0.10   0.11    c   -W0.05p,black
