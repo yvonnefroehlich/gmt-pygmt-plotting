@@ -13,14 +13,14 @@
 # - DeepDyn project by Yvonne Fröhlich, KIT, 2023/08 - 2025/03
 # -----------------------------------------------------------------------------
 # History
-# - Created: 2022/04/04 - PyGMT v0.6.0 with GMT 6.3.0
-# - Updated: 2023/08/08 - PyGMT v0.9.0 / dev with GMT 6.4.0
-# - Updated: 2023/09/18 - PyGMT v0.10.0 / dev with GMT 6.4.0
-# - Updated: 2024/05/15 - PyGMT v0.12.0 / dev with GMT 6.5.0
-# - Updated: 2025/07/25 - PyGMT v0.16.0 / dev with GMT 6.5.0
+# - Created: 2022/04/04 - PyGMT 0.6.0 with GMT 6.3.0
+# - Updated: 2023/08/08 - PyGMT 0.9.0 / dev with GMT 6.4.0
+# - Updated: 2023/09/18 - PyGMT 0.10.0 / dev with GMT 6.4.0
+# - Updated: 2024/05/15 - PyGMT 0.12.0 / dev with GMT 6.5.0
+# - Updated: 2025/07/25 - PyGMT 0.16.0 / dev with GMT 6.5.0
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.16.0 - 0.18.0 -> https://www.pygmt.org
 # - GMT 6.5.0 - 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact

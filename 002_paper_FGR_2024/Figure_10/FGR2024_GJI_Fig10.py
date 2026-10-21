@@ -13,7 +13,7 @@
 # - Updated: 2025/08/18 - Adjust for GitHub
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.16.0 - 0.18.0 -> https://www.pygmt.org
 # - GMT 6.5.0 - 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
@@ -297,7 +297,7 @@ for station in stations:
 # Highlight subregions by labels and vectors
 # -----------------------------------------------------------------------------
 args_vector = {
-    "style": "v0.4c+ba+ea+a30+h0",  # direction cc from horizontal, length in centimeters
+    "style": "0.4c+ba+ea+a30+h0",  # direction cc from horizontal, length in centimeters
     "pen": f"2p,{color_hl}",
     "fill": color_hl,
 }

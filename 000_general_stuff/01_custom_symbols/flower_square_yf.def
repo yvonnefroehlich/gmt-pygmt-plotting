@@ -11,4 +11,4 @@
 0.00	0.25	0.07	0.50	r	-Wseagreen    -Gseagreen
 0.00	0.55	0.40	s
 0.00	0.55	0.40	d
-0.00	0.55	0.10	c	-W0.2p,white	-Ggray20
+0.00	0.55	0.10	c    -Gwhite

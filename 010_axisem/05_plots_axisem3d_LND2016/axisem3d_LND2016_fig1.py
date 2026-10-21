@@ -9,7 +9,7 @@
 # - Created: 2025/05/07
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.16.0 - v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.16.0 - 0.18.0 -> https://www.pygmt.org
 # - GMT 6.4.0 - 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
@@ -52,7 +52,7 @@ fig.plot(x=0, y=0, style=f"e0/{width}/2.5", fill=f"{color_equ}@70", pen=f"1p,{co
 fig.plot(x=0, y=65, style="a0.5c", fill="red", pen="0.3p,gray10")
 
 fig.plot(data=[[0, 0, 1.05, 57.5, 90]], style="m0.2c+b+a40+h0+gblack", pen="1p,black")
-fig.plot(x=0, y=0, style="v0.2c+e+a40+h0+gblack", pen="1p,black", direction=[57.5, 2.8])
+fig.plot(x=0, y=0, style="0.2c+e+a40+h0+gblack", pen="1p,black", direction=[57.5, 2.8])
 
 fig.plot(x=[0, 65], y=[0, -7], pen="0.8p,black,1_1")
 fig.plot(x=[0, 28], y=[40, 36], pen="0.8p,black,1_1", straight_line=True)

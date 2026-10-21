@@ -17,7 +17,7 @@
 # - Converted to Python script: 2026/03/19
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
@@ -190,7 +190,7 @@ fig.plot(
     x=6.9,
     y=47.3,
     direction=[[35], [2.6]],
-    style="V0.25c+e+n0.03c+a40",
+    style="0.25c+e+n0.03c+a40",
     fill="magenta4",
     pen="2p,magenta4",
 )

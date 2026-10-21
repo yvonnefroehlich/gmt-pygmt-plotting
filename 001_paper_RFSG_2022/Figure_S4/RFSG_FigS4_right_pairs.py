@@ -15,7 +15,7 @@
 # - Converted to Python script: 2026/03/20
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.18.0 -> https://www.pygmt.org
+# - PyGMT 0.18.0 -> https://www.pygmt.org
 # - GMT 6.6.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
@@ -183,7 +183,7 @@ data_disc_KK_NN_pp = f"{data_disc_pp_same}KK_sp_NN_all.txt"
 fig.plot(
     data=data_same_K_N_pp,
     style=f"C{marker_size_pp_nodisc}",  # circle
-    fill=color_pp_N,  # before PyGMT v0.8.0 "color"
+    fill=color_pp_N,  # before PyGMT 0.8.0 "color"
     pen=f"{outline_width_pp},{color_pp_K}",  # outline thickness and color
     incols=incols_pp,  # order of input columns, zero-based indexing
 )
@@ -191,7 +191,7 @@ fig.plot(
 fig.plot(
     data=data_same_KK_N_pp,
     style=f"S{marker_size_pp_nodisc}",  # square
-    fill=color_pp_N,  # before PyGMT v0.8.0 "color"
+    fill=color_pp_N,  # before PyGMT 0.8.0 "color"
     pen=f"{outline_width_pp},{color_pp_KK}",
     incols=incols_pp,
 )
@@ -201,7 +201,7 @@ fig.plot(
 fig.plot(
     data=data_same_K_NN_pp,
     style=f"C{marker_size_pp_nodisc}",
-    fill=color_pp_K,  # before PyGMT v0.8.0 "color"
+    fill=color_pp_K,  # before PyGMT 0.8.0 "color"
     pen=f"{outline_width_pp},black",
     incols=incols_pp,
 )
@@ -209,7 +209,7 @@ fig.plot(
 fig.plot(
     data=data_same_KK_NN_pp,
     style=f"S{marker_size_pp_nodisc}",
-    fill=color_pp_KK,  # before PyGMT v0.8.0 "color"
+    fill=color_pp_KK,  # before PyGMT 0.8.0 "color"
     pen=f"{outline_width_pp},black",
     incols=incols_pp,
 )
@@ -219,7 +219,7 @@ fig.plot(
 fig.plot(
     data=data_disc_K_N_pp,
     style=f"C{marker_size_pp_disc}",
-    fill=color_pp_N,  # before PyGMT v0.8.0 "color"
+    fill=color_pp_N,  # before PyGMT 0.8.0 "color"
     pen=f"{outline_width_pp},{color_SKS_disc}",
     incols=incols_pp,
 )
@@ -227,7 +227,7 @@ fig.plot(
 fig.plot(
     data=data_disc_KK_N_pp,
     style=f"S{marker_size_pp_disc}",
-    fill=color_pp_N,  # before PyGMT v0.8.0 "color"
+    fill=color_pp_N,  # before PyGMT 0.8.0 "color"
     pen=f"{outline_width_pp},{color_SKKS_disc}",
     incols=incols_pp,
 )
@@ -237,7 +237,7 @@ fig.plot(
 fig.plot(
     data=data_disc_K_NN_pp,
     style="J",  # orientated rectangle
-    fill="black",  # before PyGMT v0.8.0 "color"
+    fill="black",  # before PyGMT 0.8.0 "color"
     pen="0.05p,white",
     incols="7,8,9,10+s250,13+s150",
 )
@@ -245,7 +245,7 @@ fig.plot(
 fig.plot(
     data=data_disc_KK_NN_pp,
     style="J",
-    fill="black",  # before PyGMT v0.8.0 "color"
+    fill="black",  # before PyGMT 0.8.0 "color"
     pen="0.05p,white",
     incols="7,8,9,10+s250,13+s150",
 )
@@ -253,7 +253,7 @@ fig.plot(
 fig.plot(
     data=data_disc_K_NN_pp,
     style=f"C{marker_size_pp_disc}",  # circle
-    fill=color_SKS_disc,  # before PyGMT v0.8.0 "color"
+    fill=color_SKS_disc,  # before PyGMT 0.8.0 "color"
     pen=f"{outline_width_pp},black",
     incols=incols_pp,
 )
@@ -261,7 +261,7 @@ fig.plot(
 fig.plot(
     data=data_disc_KK_NN_pp,
     style=f"S{marker_size_pp_disc}",
-    fill=color_SKKS_disc,  # before PyGMT v0.8.0 "color"
+    fill=color_SKKS_disc,  # before PyGMT 0.8.0 "color"
     pen=f"{outline_width_pp},black",
     incols=incols_pp,
 )
@@ -277,7 +277,7 @@ fig.plot(
     x=lon_BFO,
     y=lat_BFO,
     style="i0.3c",  # inverse triangle
-    fill=color_station_symbol,  # before PyGMT v0.8.0 "color"
+    fill=color_station_symbol,  # before PyGMT 0.8.0 "color"
     pen="1p,black",
 )
 # Add station code

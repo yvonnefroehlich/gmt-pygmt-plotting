@@ -9,7 +9,7 @@
 # - Created: 2025/06/05
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT v0.14.2 -> https://www.pygmt.org/v0.14.2/ | https://www.pygmt.org/
+# - PyGMT 0.14.2 -> https://www.pygmt.org/0.14.2/ | https://www.pygmt.org/
 # - GMT 6.5.0 -> https://www.generic-mapping-tools.org/
 # -----------------------------------------------------------------------------
 # Contact
