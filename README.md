@@ -92,7 +92,7 @@ If you make use of this material, please acknowledge the relating publications i
 </details>
 
 
-## Contributin
+## Contributing
 
 For bug reports, suggestions, or recommendations feel free to [open an issue](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/issues)
 or [submit a pull request](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/pulls) directly here on
