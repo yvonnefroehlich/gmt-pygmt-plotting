@@ -1,6 +1,10 @@
 # PyGMT Plotting
 
-Collection of Python scripts to reproduce some of the maps and plots shown in the scientific works and conference contributions and peer-reviewed papers I am involved in. The focus is on geophysics, seismology, and seismic anisotropy studies using shear wave splitting. To prepare these maps and plots, [_PyGMT_](https://www.pygmt.org) the [Python](https://www.python.org) wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org) is used.
+Collection of Python scripts to reproduce some of the maps and plots shown in the scientific works and conference
+contributions and peer-reviewed papers I am involved in. The focus is on geophysics, seismology, and seismic anisotropy
+studies using shear wave splitting. To prepare these maps and plots, [_PyGMT_](https://www.pygmt.org) the
+[Python](https://www.python.org) wrapper for the [_Generic Mapping Tools_ (_GMT_)](https://www.generic-mapping-tools.org)
+is used. _No AI tools or agents are used to develope these contents._
 
 _Please note_: Scripts are available up on acceptance of the related publication.
 
@@ -88,11 +92,11 @@ If you make use of this material, please acknowledge the relating publications i
 </details>
 
 
-## Contributin
+## Contributing
 
 For bug reports, suggestions, or recommendations feel free to [open an issue](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/issues)
 or [submit a pull request](https://github.com/yvonnefroehlich/gmt-pygmt-plotting/pulls) directly here on
-[GitHub](https://github.com/yvonnefroehlich/gmt-pygmt-plotting).
+[GitHub](https://github.com/yvonnefroehlich/gmt-pygmt-plotting). _Fully AI-generated contents are **not** welcome!_
 
 
 ## References
