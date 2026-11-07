@@ -68,7 +68,7 @@ lat2_lamb = lat_min_lamb + (lat_max_lamb - lat_min_lamb) / 3 * 2
 
 width_lamb = "15c"
 proj_lamb = f"L{lon0_lamb}/{lat0_lamb}/{lat1_lamb}/{lat2_lamb}/{width_lamb}"
-region_lamb = f"{lon_min_lamb}/{lon_max_lamb}/{lat_min_lamb}/{lat_max_lamb}"
+region_lamb = [lon_min_lamb, lon_max_lamb, lat_min_lamb, lat_max_lamb]
 
 # -----------------------------------------------------------------------------
 # Create colormaps and colorbars
