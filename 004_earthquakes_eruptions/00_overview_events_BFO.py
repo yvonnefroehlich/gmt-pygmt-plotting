@@ -189,7 +189,7 @@ fig.coast(land=color_land, shorelines=f"1/0.1p,{color_sl}", borders=f"1/0.1p,{co
 fig.plot(data=f"{path_in}/{data_pb}", pen=f"0.3p,{color_pd}")
 
 # -----------------------------------------------------------------------------
-# Epicentral distance range range for XKS phases
+# Epicentral distance range for XKS phases
 fig.plot(
     style=f"w{epi_min * size2dist}/0/360+i{epi_max * size2dist}",
     fill=f"{color_sta}@90",
