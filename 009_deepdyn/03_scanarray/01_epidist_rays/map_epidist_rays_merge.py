@@ -68,7 +68,7 @@ leg_net_pos = "JCB+jCB+w2.75c"  # position
 fig = gmt.Figure()
 with gmt.config(MAP_FRAME_PEN="white"):
     fig.basemap(
-        region=f"0/{x_total}/0/{dia_single}",
+        region=[0, x_total, 0, dia_single],
         projection=f"X{x_total}c/{dia_single}c",
         frame=0,
     )
