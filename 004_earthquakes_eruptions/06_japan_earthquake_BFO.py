@@ -50,7 +50,7 @@ color_eq = "255/90/0"  # earthquake
 color_land = "gray90"
 color_water = "steelblue"
 color_sl = "darkgray"  # shorelines
-color_pd = "216.750/82.875/24.990"  # plate boundaries # -> orange
+color_pb = "216.750/82.875/24.990"  # plate boundaries # -> orange
 color_land_ortho = "gray70"
 color_sl_ortho = "gray30"
 
@@ -340,7 +340,7 @@ with fig.inset(position="jTL+o0.1c+w3c"):
 fig.coast(shorelines=f"1/0.01p,{color_sl}")
 
 # Plot plate boundaries
-fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pd}")
+fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pb}")
 
 # Plot epicenter
 fig.plot(
@@ -447,7 +447,7 @@ fig.basemap(region="g", projection=proj_epi, frame=True)
 fig.coast(land=color_land, shorelines=f"1/0.01p,{color_sl}")
 
 # Plot plate boundaries
-fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.3p,{color_pd}")
+fig.plot(data=f"{path_in}/{file_pb}", pen=f"0.3p,{color_pb}")
 
 # Epicentral distance range used in this study
 for epi_limit in [epi_min, epi_max]:
