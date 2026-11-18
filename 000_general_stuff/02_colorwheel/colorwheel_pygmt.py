@@ -1,7 +1,12 @@
 # #############################################################################
 # Colorwheel for cyclic colormaps created with PyGMT
-# - Scientific colourmaps by Fabio Crameri: batlowO, romaO, bamO, brocO, corkO, vikO
+# - Scientific colour maps by Fabio Crameri: batlowO, romaO, bamO, brocO, corkO, vikO
+#   https://www.fabiocrameri.ch/colourmaps/
+#   https://zenodo.org/records/24343380 (9.0.0)
+#   https://doi.org/10.5281/zenodo.1243862 (all)
 # - cmocean colormaps by Kristen M. Thyng: phase
+#   http://dx.doi.org/10.5670/oceanog.2016.66
+#   https://github.com/matplotlib/cmocean
 # >>> Be careful and check how measuring the angle is defined in your dataset <<<
 # Use the perspective parameter to take this into consideration
 # See also the example at the end of this script
@@ -9,7 +14,7 @@
 # History
 # - Created: 2024/05/15
 # - Updated: 2025/01/14
-# - Updated: 2026/11/18 - SCM 9 add batlowO
+# - Updated: 2026/11/18 - SCM 9.0 add batlowO
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT 0.20.0 -> https://www.pygmt.org
