@@ -146,7 +146,7 @@ df_events = pd.DataFrame(
 # Colors
 color_sta = "255/215/0"
 color_hl = "255/90/0"  # -> orange
-color_pd = "216.750/82.875/24.990"  # plate boundaries  # -> dark orange
+color_pb = "216.750/82.875/24.990"  # plate boundaries  # -> dark orange
 color_sl = "darkgray"  # shorelines
 color_nb = "gray50"  # national borders
 color_land = "gray90"
@@ -186,7 +186,7 @@ fig.basemap(region="d", projection=proj_used, frame=True)
 fig.coast(land=color_land, shorelines=f"1/0.1p,{color_sl}", borders=f"1/0.1p,{color_nb}")
 
 # Plot plate boundaries
-fig.plot(data=f"{path_in}/{data_pb}", pen=f"0.3p,{color_pd}")
+fig.plot(data=f"{path_in}/{data_pb}", pen=f"0.3p,{color_pb}")
 
 # -----------------------------------------------------------------------------
 # Epicentral distance range for XKS phases
