@@ -1,7 +1,13 @@
 # #############################################################################
 # Colorwheel for cyclic colormaps created with PyGMT
-# - Scientific colourmaps by Fabio Crameri: romaO, bamO, brocO, corkO, vikO
+# - Scientific colour maps by Fabio Crameri: batlowO, romaO, bamO, brocO, corkO, vikO
+#   https://www.fabiocrameri.ch/colourmaps/
+#   https://zenodo.org/records/24343380 (9.0.0)
+#   https://doi.org/10.5281/zenodo.1243862 (all)
 # - cmocean colormaps by Kristen M. Thyng: phase
+#   http://dx.doi.org/10.5670/oceanog.2016.66
+#   https://github.com/matplotlib/cmocean
+# 
 # >>> Be careful and check how measuring the angle is defined in your dataset <<<
 # Use the perspective parameter to take this into consideration
 # See also the example at the end of this script
@@ -9,10 +15,11 @@
 # History
 # - Created: 2024/05/15
 # - Updated: 2025/01/14
+# - Updated: 2026/11/18 - Add batlowO of SCM 9.0.0
 # -----------------------------------------------------------------------------
 # Versions
-# - PyGMT 0.18.0 -> https://www.pygmt.org
-# - GMT 6.6.0 -> https://www.generic-mapping-tools.org
+# - PyGMT 0.20.0 -> https://www.pygmt.org
+# - GMT 6.7.0 -> https://www.generic-mapping-tools.org
 # -----------------------------------------------------------------------------
 # Contact
 # - Author: Yvonne Fröhlich
@@ -101,29 +108,36 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
 # Examples
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
-fig.basemap(region=[-5, 5, -2, 2], projection="X10c/4c", frame=0)
+fig.basemap(region=[-5, 5, -1, 1], projection="X12.5c/4c", frame=0)
 
-fig.shift_origin(xshift="0.6c", yshift="2c")
-for cmap in ["romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
+fig.shift_origin(xshift="0.4c", yshift="2.1c")
+for cmap in ["batlowO.cpt", "romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
+    # anti-clockwise from horizontal
     colorwheel(
         cmap=cmap,
-        perspective=[90, -90],  # anti-clockwise from horizontal
+        perspective=[90, -90],
         rho_min=0.2,
         rho_max=0.6,
         fig_instance=fig,
     )
     fig.shift_origin(yshift="-1.4c")
+    # clockwise from vertical (-> backazimuth)
     colorwheel(
         cmap=cmap,
-        perspective=[180, 90],  # clockwise from vertical (-> backazimuth)
+        perspective=[180, 90],
         rho_min=0.2,
         rho_max=0.6,
         fig_instance=fig,
     )
-    fig.text(x=1, y=2.4, text=cmap, no_clip=True)
+    # horizontal
     pygmt.makecpt(cmap=cmap, series=[0, 360], cyclic=True)
     fig.colorbar(cmap=True, position="jBC+o0c/-0.5c+w1.1c/0.25c+h", frame=0)
-    fig.shift_origin(xshift="1.5c", yshift="1.4c")
+    
+    cmap_text = cmap
+    if cmap == "batlowO.cpt": cmap_text = "batlowO"
+    fig.text(x=1, y=2.35, text=cmap_text, no_clip=True)
+    
+    fig.shift_origin(xshift="1.75c", yshift="1.4c")
 
 fig.show()
 # fig.savefig(fname="colorwheel_all_cmaps.png", dpi=720)
