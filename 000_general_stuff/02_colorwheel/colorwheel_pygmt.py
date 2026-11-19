@@ -108,10 +108,11 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
 # Examples
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
-fig.basemap(region=[-5, 5, -2, 2], projection="X13c/4c", frame=0)
+fig.basemap(region=[-5, 5, -1, 1], projection="X12.5c/4c", frame=0)
 
-fig.shift_origin(xshift="0.6c", yshift="2c")
+fig.shift_origin(xshift="0.4c", yshift="2.1c")
 for cmap in ["batlowO.cpt", "romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
+    
     colorwheel(
         cmap=cmap,
         perspective=[90, -90],  # anti-clockwise from horizontal
@@ -127,11 +128,13 @@ for cmap in ["batlowO.cpt", "romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
         rho_max=0.6,
         fig_instance=fig,
     )
-    cmap_text = cmap
-    if cmap == "batlowO.cpt": cmap_text = "batlowO"
-    fig.text(x=1, y=2.4, text=cmap_text, no_clip=True)
     pygmt.makecpt(cmap=cmap, series=[0, 360], cyclic=True)
     fig.colorbar(cmap=True, position="jBC+o0c/-0.5c+w1.1c/0.25c+h", frame=0)
+    
+    cmap_text = cmap
+    if cmap == "batlowO.cpt": cmap_text = "batlowO"
+    fig.text(x=1, y=2.35, text=cmap_text, no_clip=True)
+    
     fig.shift_origin(xshift="1.75c", yshift="1.4c")
 
 fig.show()
