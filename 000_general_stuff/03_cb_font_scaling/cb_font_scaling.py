@@ -3,7 +3,7 @@
 # Automatic scaling relatively to the colorbar length
 # - For GMT 6.5.0-6.6.0: Use the scaling factor to revert it manually
 # - For GMT >=6.7.0: Use -H to turn it off
-#   For PyGMT >= 0.20.0: Use alias no_font_scaling
+#   For PyGMT >= 0.20.0: Use alias no_font_scaling instead
 # - For background on this change see the upstream GMT pull request 6802 at
 #   https://github.com/GenericMappingTools/gmt/pull/6802
 # -----------------------------------------------------------------------------
