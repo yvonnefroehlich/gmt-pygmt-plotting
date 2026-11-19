@@ -140,4 +140,4 @@ for cmap in ["batlowO.cpt", "romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
     fig.shift_origin(xshift="1.75c", yshift="1.4c")
 
 fig.show()
-fig.savefig(fname="colorwheel_all_cmaps.png", dpi=720)
+# fig.savefig(fname="colorwheel_all_cmaps.png", dpi=360)
