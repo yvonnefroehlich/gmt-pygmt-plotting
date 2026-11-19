@@ -15,7 +15,7 @@
 # History
 # - Created: 2024/05/15
 # - Updated: 2025/01/14
-# - Updated: 2026/11/18 - SCM 9.0 add batlowO
+# - Updated: 2026/11/18 - Add batlowO of SCM 9.0.0
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT 0.20.0 -> https://www.pygmt.org
