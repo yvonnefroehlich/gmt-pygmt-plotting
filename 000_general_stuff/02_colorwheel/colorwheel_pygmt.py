@@ -112,22 +112,24 @@ fig.basemap(region=[-5, 5, -1, 1], projection="X12.5c/4c", frame=0)
 
 fig.shift_origin(xshift="0.4c", yshift="2.1c")
 for cmap in ["batlowO.cpt", "romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
-    
+    # anti-clockwise from horizontal
     colorwheel(
         cmap=cmap,
-        perspective=[90, -90],  # anti-clockwise from horizontal
+        perspective=[90, -90],
         rho_min=0.2,
         rho_max=0.6,
         fig_instance=fig,
     )
     fig.shift_origin(yshift="-1.4c")
+    # clockwise from vertical (-> backazimuth)
     colorwheel(
         cmap=cmap,
-        perspective=[180, 90],  # clockwise from vertical (-> backazimuth)
+        perspective=[180, 90],
         rho_min=0.2,
         rho_max=0.6,
         fig_instance=fig,
     )
+    # horizontal
     pygmt.makecpt(cmap=cmap, series=[0, 360], cyclic=True)
     fig.colorbar(cmap=True, position="jBC+o0c/-0.5c+w1.1c/0.25c+h", frame=0)
     
