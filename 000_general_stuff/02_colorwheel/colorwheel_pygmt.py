@@ -7,6 +7,7 @@
 # - cmocean colormaps by Kristen M. Thyng: phase
 #   http://dx.doi.org/10.5670/oceanog.2016.66
 #   https://github.com/matplotlib/cmocean
+# 
 # >>> Be careful and check how measuring the angle is defined in your dataset <<<
 # Use the perspective parameter to take this into consideration
 # See also the example at the end of this script
@@ -107,7 +108,7 @@ def colorwheel(cmap, perspective, rho_min=1, rho_max=2.5, fig_instance=None):
 # Examples
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
-fig.basemap(region=[-5, 5, -2, 2], projection="X12c/4c", frame=0)
+fig.basemap(region=[-5, 5, -2, 2], projection="X13c/4c", frame=0)
 
 fig.shift_origin(xshift="0.6c", yshift="2c")
 for cmap in ["batlowO.cpt", "romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
@@ -126,10 +127,12 @@ for cmap in ["batlowO.cpt", "romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
         rho_max=0.6,
         fig_instance=fig,
     )
-    fig.text(x=1, y=2.4, text=cmap, no_clip=True)
+    cmap_text = cmap
+    if cmap == "batlowO.cpt": cmap_text = "batlowO"
+    fig.text(x=1, y=2.4, text=cmap_text, no_clip=True)
     pygmt.makecpt(cmap=cmap, series=[0, 360], cyclic=True)
     fig.colorbar(cmap=True, position="jBC+o0c/-0.5c+w1.1c/0.25c+h", frame=0)
-    fig.shift_origin(xshift="1.6c", yshift="1.4c")
+    fig.shift_origin(xshift="1.75c", yshift="1.4c")
 
 fig.show()
 fig.savefig(fname="colorwheel_all_cmaps.png", dpi=720)
