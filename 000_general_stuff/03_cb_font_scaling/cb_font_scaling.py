@@ -28,9 +28,9 @@ import pygmt
 import numpy as np
 
 # -----------------------------------------------------------------------------
-def scale_cb_font(cb_width):
+def scale_cb_font(cb_length):
     scale_factor = 1 / 15  # scale factor used in GMT >= 6.5.0
-    font_scaling = np.sqrt(cb_width * scale_factor)
+    font_scaling = np.sqrt(cb_length * scale_factor)
     return font_scaling
 # -----------------------------------------------------------------------------
 
@@ -48,8 +48,8 @@ args_bmap = {
     "frame": 1,
 }
 
-cb1_width = 4
-cb2_width = 2
+cb1_length = 4
+cb2_length = 2
 cb1_label = "cb1 is long"
 cb2_label = "cb2 is short"
 
@@ -60,8 +60,8 @@ fig = pygmt.Figure()
 pygmt.config(FONT=font_size)
 fig.basemap(**args_bmap)
 
-fig.colorbar(cmap="navia", position=f"jTC+w{cb1_width}c+h", frame=f"x+l{cb1_label}")
-fig.colorbar(cmap="navia", position=f"jBC+w{cb2_width}c+h", frame=f"x+l{cb2_label}")
+fig.colorbar(cmap="navia", position=f"jTC+w{cb1_length}c+h", frame=f"x+l{cb1_label}")
+fig.colorbar(cmap="navia", position=f"jBC+w{cb2_length}c+h", frame=f"x+l{cb2_label}")
 
 # Right
 fig.shift_origin(xshift="6c")
@@ -69,12 +69,12 @@ fig.shift_origin(xshift="6c")
 with pygmt.config(FONT=font_size):
     fig.basemap(**args_bmap)
 
-font_scaling1 = scale_cb_font(cb1_width)
+font_scaling1 = scale_cb_font(cb1_length)
 with pygmt.config(FONT=f"{font_size / font_scaling1}"):
-    fig.colorbar(cmap="navia", position=f"jTC+w{cb1_width}c+h", frame=f"x+l{cb1_label}")
-font_scaling2 = scale_cb_font(cb2_width)
+    fig.colorbar(cmap="navia", position=f"jTC+w{cb1_length}c+h", frame=f"x+l{cb1_label}")
+font_scaling2 = scale_cb_font(cb2_length)
 with pygmt.config(FONT=f"{font_size / font_scaling2}"):
-    fig.colorbar(cmap="navia", position=f"jBC+w{cb2_width}c+h", frame=f"x+l{cb2_label}")
+    fig.colorbar(cmap="navia", position=f"jBC+w{cb2_length}c+h", frame=f"x+l{cb2_label}")
 
 fig.show()
 # fig.savefig(fname="cb_font_scaling_01.png")
@@ -93,13 +93,13 @@ args_bmap = {
     "frame": 1,
 }
 
-cb_width = 4
+cb_length = 4
 args_cb = {
     "cmap": "batlow",
-    "position": f"jMC+w{cb_width}c",
+    "position": f"jMC+w{cb_length}c",
     "frame": ["x+lquantity", "y+lunit"],
 }
-font_scaling = scale_cb_font(cb_width)
+font_scaling = scale_cb_font(cb_length)
 
 # -----------------------------------------------------------------------------
 fig = pygmt.Figure()
