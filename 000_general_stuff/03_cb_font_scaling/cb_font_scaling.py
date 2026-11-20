@@ -12,6 +12,7 @@
 # - Updated: 2025/08/26 - Include annotations
 # - Updated: 2025/10/01 - Adjust specific fontsize default parameters
 # - Updated: 2026/07/30 - Include -M or no_font_scaling for GMT 6.7.0 or higher
+#                         Be more accurate with the terms "length" and "width"
 # -----------------------------------------------------------------------------
 # Versions
 # - PyGMT 0.18.0 -> https://www.pygmt.org
