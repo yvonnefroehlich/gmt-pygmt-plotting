@@ -55,6 +55,7 @@ cb1_label = "cb1 is long"
 cb2_label = "cb2 is short"
 
 # -----------------------------------------------------------------------------
+# >>> GMT < 6.7.0 <<<
 fig = pygmt.Figure()
 
 # Left
@@ -66,7 +67,6 @@ fig.colorbar(cmap="navia", position=f"jBC+w{cb2_length}c+h", frame=f"x+l{cb2_lab
 
 # Right
 fig.shift_origin(xshift="6c")
-
 with pygmt.config(FONT=font_size):
     fig.basemap(**args_bmap)
 
@@ -78,7 +78,26 @@ with pygmt.config(FONT=f"{font_size / font_scaling2}"):
     fig.colorbar(cmap="navia", position=f"jBC+w{cb2_length}c+h", frame=f"x+l{cb2_label}")
 
 fig.show()
-# fig.savefig(fname="cb_font_scaling_01.png")
+fig.savefig(fname="cb_font_scaling_1a.png")
+
+# -----------------------------------------------------------------------------
+# >>> GMT >= 6.7.0 and PyGMT >= 0.20.0 <<<
+fig = pygmt.Figure()
+pygmt.config(FONT=font_size)
+
+# Left
+fig.basemap(**args_bmap)
+fig.colorbar(cmap="navia", position=f"jTC+w{cb1_length}c+h", frame=f"x+l{cb1_label}")
+fig.colorbar(cmap="navia", position=f"jBC+w{cb2_length}c+h", frame=f"x+l{cb2_label}")
+
+# Right
+fig.shift_origin(xshift="6c")
+fig.basemap(**args_bmap)
+fig.colorbar(cmap="navia", position=f"jTC+w{cb1_length}c+h", frame=f"x+l{cb1_label}", no_font_scaling=True)
+fig.colorbar(cmap="navia", position=f"jBC+w{cb2_length}c+h", frame=f"x+l{cb2_label}", no_font_scaling=True)
+
+fig.show()
+fig.savefig(fname="cb_font_scaling_1b.png")
 
 
 # %%
@@ -137,4 +156,4 @@ with pygmt.config(
     fig.colorbar(**args_cb)
 
 fig.show()
-# fig.savefig(fname="cb_font_scaling_02.png")
+fig.savefig(fname="cb_font_scaling_2.png")
