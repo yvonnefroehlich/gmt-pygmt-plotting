@@ -5,7 +5,7 @@ _Recommended versions_: PyGMT 0.18.0 - 0.20.0, GMT 6.6.0
 | **[01_custom_symbols](../000_general_stuff/01_custom_symbols/custom_symbols.py)** | **[02_colorwheel](../000_general_stuff/02_colorwheel/colorwheel_pygmt.py)** | **[03_cb_font_scaling](../000_general_stuff/03_cb_font_scaling/cb_font_scaling.py)** | **[05_greek_letters](../000_general_stuff/05_greek_letters/greek_letters.py)** |
 | :---: | :---: | :---: | :---: |
 | Custom symbols in GMT | Cyclic colormaps as colorwheel | Revert automatic fontsize scaling <br> for colorbars for GMT >= 6.5.0 | Greek letters in GMT |
-| <img src="01_custom_symbols/custom_symbols.png" width="160"> | <img src="02_colorwheel/colorwheel_all_cmaps.png" width="200"> | <img src="03_cb_font_scaling/cb_font_scaling_1a.png" width="140"> <img src="03_cb_font_scaling/cb_font_scaling_02.png" width="140"> | <img src="05_greek_letters/greek_letters.png" width="200"> |
+| <img src="01_custom_symbols/custom_symbols.png" width="160"> | <img src="02_colorwheel/colorwheel_all_cmaps.png" width="200"> | <img src="03_cb_font_scaling/cb_font_scaling_1a.png" width="140"> <img src="03_cb_font_scaling/cb_font_scaling_2.png" width="140"> | <img src="05_greek_letters/greek_letters.png" width="200"> |
 
 | **[04_earth_section](../000_general_stuff/04_earth_section/earth_section.py)** |
 | :---: |
