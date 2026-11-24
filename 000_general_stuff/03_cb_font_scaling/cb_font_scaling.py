@@ -82,7 +82,7 @@ with pygmt.config(FONT=f"{font_size / font_scaling2}"):
     fig.colorbar(cmap="navia", position=f"jBC+w{cb2_length}c+h", frame=f"x+l{cb2_label}")
 
 fig.show()
-fig.savefig(fname="cb_font_scaling_1a.png")
+# fig.savefig(fname="cb_font_scaling_1a.png")
 
 # -----------------------------------------------------------------------------
 # >>> GMT >= 6.7.0 and PyGMT >= 0.20.0 <<<
@@ -101,7 +101,7 @@ fig.colorbar(cmap="navia", position=f"jTC+w{cb1_length}c+h", frame=f"x+l{cb1_lab
 fig.colorbar(cmap="navia", position=f"jBC+w{cb2_length}c+h", frame=f"x+l{cb2_label}", no_font_scaling=True)
 
 fig.show()
-fig.savefig(fname="cb_font_scaling_1b.png")
+# fig.savefig(fname="cb_font_scaling_1b.png")
 
 
 # %%
