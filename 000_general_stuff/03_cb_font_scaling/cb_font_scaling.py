@@ -4,8 +4,12 @@
 # - For GMT 6.5.0-6.6.0: Use the scaling factor to revert it manually
 # - For GMT >=6.7.0: Use -H to turn it off
 #   For PyGMT >= 0.20.0: Use alias no_font_scaling instead
-# - For background on this change see the upstream GMT pull request 6802 at
+#   Please note besides the auto-scaling of the font also updates regarding the
+#   the frame thickness and the tick lengths of the colorbar were made. These
+#   are also revert via -H or no_font_scaling
+# - For background on this change see
 #   https://github.com/GenericMappingTools/gmt/pull/6802
+#   https://github.com/GenericMappingTools/gmt/issues/9317#issuecomment-7115238925
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/11/26
