@@ -1,16 +1,19 @@
 # #############################################################################
 # Colorwheel for cyclic colormaps created with PyGMT
 # - Scientific colour maps by Fabio Crameri: batlowO, romaO, bamO, brocO, corkO, vikO
+# >>> Between SCM 8.0.1 and SCM 9.0.0 the direction of bamO abd brocO has changed <<<
 #   https://www.fabiocrameri.ch/colourmaps/
-#   https://zenodo.org/records/24343380 (9.0.0)
+#   https://doi.org/10.5281/zenodo.8409685 (8.0.1)
+#   https://doi.org/10.5281/zenodo.24343380 (9.0.0)
 #   https://doi.org/10.5281/zenodo.1243862 (all)
 # - cmocean colormaps by Kristen M. Thyng: phase
 #   http://dx.doi.org/10.5670/oceanog.2016.66
 #   https://github.com/matplotlib/cmocean
 # 
-# >>> Be careful and check how measuring the angle is defined in your dataset <<<
+# >>> Check how measuring the angle is defined in your dataset <<<
 # Use the perspective parameter to take this into consideration
 # See also the example at the end of this script
+#
 # -----------------------------------------------------------------------------
 # History
 # - Created: 2024/05/15
@@ -111,7 +114,7 @@ fig = pygmt.Figure()
 fig.basemap(region=[-5, 5, -1, 1], projection="X12.5c/4c", frame=0)
 
 fig.shift_origin(xshift="0.4c", yshift="2.1c")
-for cmap in ["batlowO.cpt", "romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
+for cmap in ["batlowO_SCM9.cpt", "romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
     # anti-clockwise from horizontal
     colorwheel(
         cmap=cmap,
@@ -134,7 +137,7 @@ for cmap in ["batlowO.cpt", "romaO", "bamO", "brocO", "corkO", "vikO", "phase"]:
     fig.colorbar(cmap=True, position="jBC+o0c/-0.5c+w1.1c/0.25c+h", frame=0)
     
     cmap_text = cmap
-    if cmap == "batlowO.cpt": cmap_text = "batlowO"
+    if cmap == "batlowO_SCM9.cpt": cmap_text = "batlowO"
     fig.text(x=1, y=2.35, text=cmap_text, no_clip=True)
     
     fig.shift_origin(xshift="1.75c", yshift="1.4c")
