@@ -69,7 +69,7 @@ color_land_ortho = "gray70"
 color_sl_ortho = "gray30"
 color_sta = "gold"  # station
 color_pb = "216.750/82.875/24.990"  # plate boundaries # -> darkorange
-color_highlight = "255/90/0"  # -> orange
+color_hl = "255/90/0"  # -> orange
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
@@ -114,7 +114,7 @@ fig.plot(
     x=lon_eq,
     y=lat_eq,
     style="a1c",
-    fill=color_highlight,
+    fill=color_hl,
     pen="0.5p,gray30",
 )
 # Beachball
@@ -123,7 +123,7 @@ fig.meca(
     convention="aki",
     scale="1c",
     outline="0.5p,black",
-    compression_fill=color_highlight,  # PyGMT 0.18.0
+    compression_fill=color_hl,  # PyGMT 0.18.0
 )
 # Label
 fig.text(
@@ -133,7 +133,7 @@ fig.text(
     font="12p,Helvetica-Bold,black",
     offset="-0.7c/-1.2c",
     fill="white@30",
-    pen=f"0.8p,{color_highlight}",
+    pen=f"0.8p,{color_hl}",
     clearance="0.1c/0.1c+tO",
 )
 # Info text
@@ -180,7 +180,7 @@ with fig.inset(position=pos_ortho_inset):
     fig.plot(
         data=[[lon_min, lat_min, lon_max, lat_max]],
         style="r+s",
-        pen=f"2p,{color_highlight}",
+        pen=f"2p,{color_hl}",
     )
 
 # -----------------------------------------------------------------------------
@@ -245,8 +245,8 @@ with fig.inset(position=pos_epi_inset):
         x=lon_eq,
         y=lat_eq,
         style=f"k{path_in}/earthquake.def/1.3c",
-        fill=color_highlight,
-        pen=color_highlight,
+        fill=color_hl,
+        pen=color_hl,
     )
 
     # -----------------------------------------------------------------------------

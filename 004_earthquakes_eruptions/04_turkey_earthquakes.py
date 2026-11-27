@@ -70,7 +70,7 @@ color_land = "gray70"
 color_sl = "gray30"  # shorelines
 color_pb = "216.750/82.875/24.990"  # plate boundaries # -> darkorange
 color_nb = "black"  # national borders
-color_highlight = "255/90/0"  # -> orange
+color_hl = "255/90/0"  # -> orange
 pen_epi = "0.5p,black"
 
 # -----------------------------------------------------------------------------
@@ -113,8 +113,8 @@ fig.plot(
     x=lon_eq,
     y=lat_eq,
     style=f"k{path_in}/earthquake.def/1.3c",
-    fill=color_highlight,
-    pen=color_highlight,
+    fill=color_hl,
+    pen=color_hl,
 )
 # Beachball
 fig.meca(
@@ -122,7 +122,7 @@ fig.meca(
     convention="aki",
     scale="1c",
     outline=pen_epi,
-    compression_fill=color_highlight,  # PyGMT 0.18.0
+    compression_fill=color_hl,  # PyGMT 0.18.0
     offset=pen_epi,
 )
 # Label
@@ -181,7 +181,7 @@ with fig.inset(position=pos_study_inset):
         data=[[lon_min, lat_min, lon_max, lat_max]],
         style="r+s",
         pen="0.5p,gray30",
-        fill=color_highlight,
+        fill=color_hl,
     )
 
 # -----------------------------------------------------------------------------

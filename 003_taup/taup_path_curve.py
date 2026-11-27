@@ -144,7 +144,7 @@ def taup_path(
 
     # -------------------------------------------------------------------------
     # Plotting
-    color_highlight = "255/90/0"
+    color_hl = "255/90/0"  # highlight
     box_standard = "+gwhite+p0.1p,gray30+r2p"
 
     # Seismological phases
@@ -433,7 +433,7 @@ def taup_path(
             x=0,
             y=r_earth - source_depth,
             style="a0.35c",
-            fill=color_highlight,
+            fill=color_hl,
             pen="0.4p,black",
             no_clip=True,
         )
@@ -480,7 +480,7 @@ def taup_path(
                 position=info_pos,
                 offset=info_offset,
                 justify="BL",
-                font=f"{font_size},{color_highlight}",
+                font=f"{font_size},{color_hl}",
                 fill="white",
                 no_clip=True,
             )
@@ -492,7 +492,7 @@ def taup_path(
                 position="BC",
                 offset=info_offset,
                 justify="TC",
-                font=f"{font_size},{color_highlight}",
+                font=f"{font_size},{color_hl}",
                 fill="white",
                 no_clip=True,
             )
@@ -502,7 +502,7 @@ def taup_path(
             position="BC",
             offset="0c/-0.1c",
             justify="TC",
-            font=f"{font_size},{color_highlight}",
+            font=f"{font_size},{color_hl}",
             fill="white",
             no_clip=True,
         )

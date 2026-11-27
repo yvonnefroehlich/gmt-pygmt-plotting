@@ -143,10 +143,10 @@ def sws_lmm_deepdyn(
 
     # -------------------------------------------------------------------------
     # Colors - can be changed for personal preferences
-    color_highlight = "255/90/0"
-    color_patb = "216.750/82.875/24.990"
+    color_hl = "255/90/0"  # highlight
+    color_pb = "216.750/82.875/24.990"
     color_land = "gray95"
-    color_shorelines = "gray70"
+    color_sl = "gray70"
     color_water = "white"
 
     color_AA = "goldenrod1"  # AlpArray
@@ -167,7 +167,7 @@ def sws_lmm_deepdyn(
 
     # -------------------------------------------------------------------------
     # Data
-    data_patb = "plate_boundaries_Bird_2003.txt"  # plate boundaries
+    data_pb = "plate_boundaries_Bird_2003.txt"  # plate boundaries
     data_epi = "eq_CMT_lon_lat_LMM.txt"  # epicenters
 
     # Coordinates of stations
@@ -229,12 +229,12 @@ def sws_lmm_deepdyn(
         resolution="c",
         land=color_land,
         water=color_water,
-        shorelines=f"1/0.1p,{color_shorelines}",
+        shorelines=f"1/0.1p,{color_sl}",
     )
 
     # -------------------------------------------------------------------------
     # Plot plate boundaries after Bird 2003
-    fig.plot(data=f"{path_in}/{data_patb}", pen=f"0.25p,{color_patb}")
+    fig.plot(data=f"{path_in}/{data_pb}", pen=f"0.25p,{color_pb}")
 
     # -------------------------------------------------------------------------
     # Plot epicenters
@@ -441,8 +441,8 @@ def sws_lmm_deepdyn(
         position=position_phase,
         offset=offset_phase,
         text=sws_type,
-        font=f"{font},{color_highlight}",
-        pen=f"0.1p,{color_highlight}",
+        font=f"{font},{color_hl}",
+        pen=f"0.1p,{color_hl}",
         clearance="0.05c/0.05c+tO",
     )
 

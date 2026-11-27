@@ -36,7 +36,7 @@ path_out = "02_out_figs"
 
 # Colors
 color_land = "gray90"
-color_shorelines = "gray30"
+color_sl = "gray30"  # shorelines
 
 z_lim = 850000
 z_step = 100000
@@ -68,7 +68,7 @@ with gmt.config(FONT="12p"):
 fig.basemap(frame="g30")
 
 # Add shorelines
-fig.coast(shorelines=f"1/0.1p,{color_shorelines}")
+fig.coast(shorelines=f"1/0.1p,{color_sl}")
 
 # -----------------------------------------------------------------------------
 fig.show()
