@@ -131,7 +131,7 @@ def taup_path(
 
     # -------------------------------------------------------------------------
     # Plotting
-    color_hl = "255/90/0"  # highlight
+    color_hl = "255/90/0"  # highlight -> orange
     box_standard = "+gwhite+p0.1p,gray30+r2p"
 
     # Colors for seismological phases

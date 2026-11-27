@@ -143,10 +143,10 @@ def sws_lmm_deepdyn(
 
     # -------------------------------------------------------------------------
     # Colors - can be changed for personal preferences
-    color_hl = "255/90/0"  # highlight
+    color_hl = "255/90/0"  # highlight -> orange
     color_pb = "216.750/82.875/24.990"
     color_land = "gray95"
-    color_sl = "gray70"
+    color_sl = "gray70"  # shorelines
     color_water = "white"
 
     color_AA = "goldenrod1"  # AlpArray

@@ -68,8 +68,8 @@ color_sl = "darkgray"  # shorelines
 color_land_ortho = "gray70"
 color_sl_ortho = "gray30"
 color_sta = "gold"  # station
-color_pb = "216.750/82.875/24.990"  # plate boundaries # -> darkorange
-color_hl = "255/90/0"  # -> orange
+color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
+color_hl = "255/90/0"  # highlight -> orange
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets

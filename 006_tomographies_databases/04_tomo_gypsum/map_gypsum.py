@@ -27,7 +27,7 @@ path_out = "02_out_figs/"
 
 grid_tomo = f"{path_in}tomo_gypsum_1d_grid_dvs_22_2650to2900km.grd"
 
-color_hl = "255/90/0"  # highlight
+color_hl = "255/90/0"  # highlight -> orange
 color_sl = "gray10"  # shorelines (used data built-in in PyGMT / GMT)
 
 cmap_in = "roma"

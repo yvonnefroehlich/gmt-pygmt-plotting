@@ -45,12 +45,12 @@ path_in = "01_in_data"
 path_out = "02_out_figs"
 
 # Colors
-color_sta = "255/215/0"  # station # -> GMT gold
+color_sta = "255/215/0"  # station -> GMT gold
 color_eq = "255/90/0"  # earthquake
 color_land = "gray90"
 color_water = "steelblue"
 color_sl = "darkgray"  # shorelines
-color_pb = "216.750/82.875/24.990"  # plate boundaries # -> orange
+color_pb = "216.750/82.875/24.990"  # plate boundaries -> orange
 color_land_ortho = "gray70"
 color_sl_ortho = "gray30"
 

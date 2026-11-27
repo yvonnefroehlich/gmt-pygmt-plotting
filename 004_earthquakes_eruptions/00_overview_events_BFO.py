@@ -145,8 +145,8 @@ df_events = pd.DataFrame(
 # -----------------------------------------------------------------------------
 # Colors
 color_sta = "255/215/0"
-color_hl = "255/90/0"  # -> orange
-color_pb = "216.750/82.875/24.990"  # plate boundaries  # -> dark orange
+color_hl = "255/90/0"  # highlight -> orange
+color_pb = "216.750/82.875/24.990"  # plate boundaries -> dark orange
 color_sl = "darkgray"  # shorelines
 color_nb = "gray50"  # national borders
 color_land = "gray90"

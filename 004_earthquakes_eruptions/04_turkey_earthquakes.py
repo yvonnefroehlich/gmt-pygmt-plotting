@@ -68,9 +68,9 @@ project_ortho = f"G{center_str}/?"
 color_water = "steelblue"
 color_land = "gray70"
 color_sl = "gray30"  # shorelines
-color_pb = "216.750/82.875/24.990"  # plate boundaries # -> darkorange
+color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
 color_nb = "black"  # national borders
-color_hl = "255/90/0"  # -> orange
+color_hl = "255/90/0"  # highlight -> orange
 pen_epi = "0.5p,black"
 
 # -----------------------------------------------------------------------------

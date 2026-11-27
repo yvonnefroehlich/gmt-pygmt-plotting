@@ -49,9 +49,9 @@ color_ani = "gray50"
 color_source = "red"
 color_station = "gold"
 color_land = "gray90"
-color_sl = "gray70"
-color_pb = "216.750/82.875/24.990"
-color_hl = "255/90/0"  # highlight
+color_sl = "gray70"  # shorelines
+color_pb = "216.750/82.875/24.990"  # plate boundaries
+color_hl = "255/90/0"  # highlight -> orange
 alpha_hl = 98  # in percentage
 
 
