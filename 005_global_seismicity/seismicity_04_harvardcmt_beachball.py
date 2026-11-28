@@ -75,10 +75,10 @@ path_out = "02_out_figs"
 # -----------------------------------------------------------------------------
 # Colors
 color_hl = "255/90/0"  # highlight -> orange
-color_sta = "gold"  # recording station
+color_sta = "255/215/0"  # recording stations -> GMT gold
 color_land = "gray95"
 color_water = "white"
-color_pb = "216.750/82.875/24.990"  # plate boundaries after Bird 2003
+color_pb = "216.750/82.875/24.990"  # plate boundaries
 color_sl = "gray60"  # shorelines
 
 color_meca = "gray85"

@@ -47,7 +47,7 @@ clearance_text = "0.05c/0.05c+tO"
 
 color_ani = "gray50"
 color_source = "red"
-color_station = "gold"
+color_sta = "255/215/0"  # recording stations -> GMT gold
 color_land = "gray90"
 color_sl = "gray70"  # shorelines
 color_pb = "216.750/82.875/24.990"  # plate boundaries
@@ -76,12 +76,12 @@ fig.plot(
 
 # -----------------------------------------------------------------------------
 # Station at North pole
-fig.plot(style="i0.45c", fill=color_station, pen="0.2p,black", **center_args)
+fig.plot(style="i0.45c", fill=color_sta, pen="0.2p,black", **center_args)
 fig.text(
     text="North pole",
     offset="0/0.4c",
     fill="white@30",
-    pen=f"0.2p,{color_station}",
+    pen=f"0.2p,{color_sta}",
     font="7p",
     clearance=clearance_text,
     **center_args,

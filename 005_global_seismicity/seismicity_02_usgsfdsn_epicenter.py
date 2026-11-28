@@ -61,10 +61,10 @@ dpi_png = 360
 # -----------------------------------------------------------------------------
 # Plotting
 color_hl = "255/90/0"  # highlight -> orange
-color_sta = "gold"
+color_sta = "255/215/0"  # recording stations -> GMT gold
 color_land = "gray90"
 color_water = "white"
-color_pb = "216.750/82.875/24.990"  # plate boundaries after Bird 2003
+color_pb = "216.750/82.875/24.990"  # plate boundaries
 color_sl = "gray60"  # shorelines
 
 box_standard = "+gwhite@30+p0.8p,gray50+r2p"

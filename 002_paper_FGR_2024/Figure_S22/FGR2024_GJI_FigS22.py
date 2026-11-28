@@ -113,7 +113,7 @@ cb_baz_pos = cb_sp_pos
 # Colors
 color_land = "gray95"
 color_sl = "gray50"  # shorelines
-color_sta = "255/215/0"  # recording station -> GMT "gold"
+color_sta = "255/215/0"  # recording stations -> GMT gold
 color_hl = "255/90/0"  # highlight -> orange | URG paper
 
 # phases
@@ -257,27 +257,27 @@ for station in stations:
 
     match status_pp:
         case "phase":
-            color_station = color_sta
+            color_sta = color_sta
             color_pp_K = color_SKS
             color_pp_KK = color_SKKS
             color_pp_P = color_PKS
             color_pp_N = color_null
         case "phi":
-            color_station = color_sta
+            color_sta = color_sta
             color_pp = cmap_phi
             color_pp_N = color_null
             incols_pp = [0, 1, 2]
         case "dt":
-            color_station = color_sta
+            color_sta = color_sta
             color_pp = cmap_dt
             color_pp_N = color_null
             incols_pp = [0, 1, 4]
         case "si":
-            color_station = color_sta
+            color_sta = color_sta
             color_pp = cmap_si
             incols_pp = [0, 1, 5]
         case "baz":
-            color_station = color_sta
+            color_sta = color_sta
             color_pp = cmap_baz
             incols_pp = [0, 1, 6]
 

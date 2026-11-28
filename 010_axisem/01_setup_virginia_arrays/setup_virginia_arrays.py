@@ -50,9 +50,9 @@ source_lat = 37.91
 proj_used = f"E{source_lon}/{source_lat}/{proj_dist_max}/{fig_width}c"
 
 color_land = "gray90"
-color_sl = "gray50"
+color_sl = "gray50"  # shorelines
 color_source = "red"
-color_station = "gold"
+color_sta = "255/215/0"  # recording stations -> GMT gold
 
 color_AA = "goldenrod1"  # AlpArray
 color_SA = "tomato"  # ScanArray

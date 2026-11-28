@@ -72,12 +72,12 @@ file_pb = "plate_boundaries_Bird_2003.txt"
 
 # -----------------------------------------------------------------------------
 # Colors
-color_hl = "255/90/0"  # -> orange | URG paper
-color_station = "gold"
+color_hl = "255/90/0"  # highlight -> orange
+color_sta = "255/215/0" # recording stations -> GMT gold
 color_land = "gray80"
-color_sl = "gray40"  # shorelines by GMT
-color_pb = "216.750/82.875/24.990"  # plate boundaries by Bird 2023
-color_nb = "gray10"  # national boundaries by GMT
+color_sl = "gray40"  # shorelines
+color_pb = "216.750/82.875/24.990"  # plate boundaries
+color_nb = "gray10"  # national borders
 
 color_SKS = "205/0/0"  # -> red
 color_SKKS = "238/118/0"  # -> orange
@@ -297,7 +297,7 @@ for plane in planes:
             #     y=lat_BFO,
             #     style="i0.35c",
             #     pen="0.1p,black",
-            #     fill=color_station,
+            #     fill=color_sta,
             #     perspective=True,
             # )
             fig.text(
@@ -352,7 +352,7 @@ for plane in planes:
                 z=0,
                 style="i0.3c",  # 0.17c
                 pen="0.3p,black",
-                fill=color_station,
+                fill=color_sta,
                 no_clip=True,
                 perspective=[180, 90],
             )

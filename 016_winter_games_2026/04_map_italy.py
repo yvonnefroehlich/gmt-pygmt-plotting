@@ -23,7 +23,7 @@ path_out = "02_out_figs"
 lon_c = 12.1357  # deg East
 lat_c = 46.5405  # deg North
 
-color_hl = "255/90/0"  # -> orange
+color_hl = "255/90/0"  # highlight -> orange
 
 region = [7, 15, 45.5, 48]
 

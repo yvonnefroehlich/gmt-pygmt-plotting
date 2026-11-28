@@ -121,10 +121,10 @@ color_water = "white"
 if status_grid == "elevation": color_water = "white@100"
 color_land = "gray95"
 if status_grid != "land": color_land = "white@100"
-color_sta = "gold"  # recording stations
+color_sta = "255/215/0"  # recording stations -> GMT gold
 color_sl = "gray70"  # shorelines
-color_nb = "gray60"  # national boundaries
-color_hl = "255/90/0"  # highlight -> orange | URG paper
+color_nb = "gray60"  # national borders
+color_hl = "255/90/0"  # highlight -> orange
 
 style_station = f"i{size_station_symbol}c"
 pen_station = "0.1p,gray10"

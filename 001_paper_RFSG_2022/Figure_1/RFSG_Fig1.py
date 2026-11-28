@@ -47,11 +47,11 @@ bfo_coords = {"x": bfo_lon, "y": bfo_lat}
 # Colors
 color_land = "217.6/217.6/217.6"
 color_water = "white"
-color_station = "24/116/205"  # -> blue
+color_sta = "24/116/205"  # recording stations -> blue
 color_sks = "205/0/0"  # -> red
 color_skks = "238/118/0"  # -> orange
 color_pks = "yellow"
-color_pb = "216.750/82.875/24.990"  # -> darkorange
+color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
 color_epi = "gray40@20"
 
 box_standard = "+r2p+gwhite@30+p0.5p"
@@ -86,7 +86,7 @@ fig.show()
 # %%
 # -----------------------------------------------------------------------------
 # Mark BFO location
-fig.plot(style="t19p", fill=color_station, pen="0.9p", **bfo_coords)
+fig.plot(style="t19p", fill=color_sta, pen="0.9p", **bfo_coords)
 # Add station name
 fig.text(text="BFO", font="10p", offset="0c/-0.5c", **bfo_coords)
 
@@ -226,7 +226,7 @@ with fig.inset(position="jTL+w2.8c/3.9c+o0.1c", box="+gwhite+p2p"):
     fig.plot(data=rectangle, style="r+s", pen="2p,gray20", straight_line=True)
 
     # Mark BFO location
-    fig.plot(style="t6p", fill=color_station, pen="0.5p", **bfo_coords)
+    fig.plot(style="t6p", fill=color_sta, pen="0.5p", **bfo_coords)
 
     # Label Germany
     fig.text(x=10.5, y=52, text="Germany", font="8p")
@@ -251,7 +251,7 @@ with fig.inset(position="jBR+jBR+o-1.2c+w7.12c"):
         fig.plot(style=f"E-{distlim * 2}d", pen="0.7p,--", **bfo_coords)
 
     # Mark BFO location
-    fig.plot(style="t0.25c", fill=color_station, pen="0.5p", **bfo_coords)
+    fig.plot(style="t0.25c", fill=color_sta, pen="0.5p", **bfo_coords)
 
     # Plot epicenters
     for data in [

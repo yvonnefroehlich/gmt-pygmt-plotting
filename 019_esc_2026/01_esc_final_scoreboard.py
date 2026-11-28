@@ -40,7 +40,7 @@ add_numbers = False  ## False | True
 path_in = "01_in_data"
 path_out = "02_out_figs"
 
-color_hl = "255/90/0"  # -> orange | URG paper
+color_hl = "255/90/0"  # highlight -> orange
 
 max_points = 12
 cb_gap = 0.25

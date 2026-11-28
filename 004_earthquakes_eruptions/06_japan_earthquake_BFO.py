@@ -45,7 +45,7 @@ path_in = "01_in_data"
 path_out = "02_out_figs"
 
 # Colors
-color_sta = "255/215/0"  # station -> GMT gold
+color_sta = "255/215/0"  # recording station -> GMT gold
 color_eq = "255/90/0"  # earthquake
 color_land = "gray90"
 color_water = "steelblue"

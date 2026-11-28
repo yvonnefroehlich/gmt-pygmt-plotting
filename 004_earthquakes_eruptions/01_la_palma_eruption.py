@@ -54,7 +54,7 @@ projection_ortho = f"G{center_str}/?"
 # Colors
 color_water = "steelblue"
 color_land = "gray70"
-color_sl = "gray30"
+color_sl = "gray30"  # shorelines
 color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
 color_hl = "255/90/0"  # highlight -> orange
 

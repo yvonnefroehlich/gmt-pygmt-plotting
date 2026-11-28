@@ -67,7 +67,7 @@ color_land = "gray90"
 color_sl = "darkgray"  # shorelines
 color_land_ortho = "gray70"
 color_sl_ortho = "gray30"
-color_sta = "gold"  # station
+color_sta = "255/215/0"  # recording stations -> GMT gold
 color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
 color_hl = "255/90/0"  # highlight -> orange
 

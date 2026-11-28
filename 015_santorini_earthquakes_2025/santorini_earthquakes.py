@@ -62,8 +62,8 @@ N_eqs_days = [-1] * (int(str(end_date_plot - start_date_plot).split(" ")[0]) + 1
 x_days = np.arange(1, len(N_eqs_days) + 1, 1)
 
 # Colors
-color_sl = "gray10"
-color_hl = "255/90/0"  # -> orange
+color_sl = "gray10"  # shorelines
+color_hl = "255/90/0"  # highlight -> orange
 color_water = "gray"
 color_land = "tan"
 

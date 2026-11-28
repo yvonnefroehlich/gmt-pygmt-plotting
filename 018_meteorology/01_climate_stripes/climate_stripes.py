@@ -30,7 +30,7 @@ import pygmt
 path_in = "01_in_data"
 path_out = "02_out_figs"
 
-color_hl = "255/90/0"  # -> orange
+color_hl = "255/90/0"  # highlight -> orange
 box_standard = "+ggray95+p0.1p,gray30+r2p"
 clearance_standard = "0.1c+tO"
 

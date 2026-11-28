@@ -59,10 +59,10 @@ sta_all = ["BFO", "WLS", "STU", "ECH", "TMO44", "TMO07"]
 # Colors
 color_land = "gray90"
 color_water = "white"
-color_sl = "gray70"
-color_sta = "gold"
-color_hl = "255/90/0"  # -> orange | URG paper
-color_pb = "216.750/82.875/24.990"  # -> darkorange
+color_sl = "gray70"  # shorelines
+color_sta = "255/215/0"  # recording stations -> GMT gold
+color_hl = "255/90/0"  # highlight -> orange | URG paper
+color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
 
 # -----------------------------------------------------------------------------
 cmap_hypo_in = "lajolla"

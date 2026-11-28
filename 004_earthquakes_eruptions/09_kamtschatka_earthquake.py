@@ -70,9 +70,9 @@ lat_eq = 52.512  # degrees North
 # Colors
 color_water = "steelblue"
 color_land = "gray70"
-color_sl = "gray30"
+color_sl = "gray30"  # shorelines
 color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
-color_nb = "gray70"  # national boundaries
+color_nb = "gray70"  # national borders
 color_hl = "255/90/0"  # highlight -> orange
 color_profile = "darkblue"
 
@@ -106,7 +106,7 @@ fig.grdimage(grid=grid, region=region, cmap=True)
 # Plot plate boundaries after Bird 2003
 fig.plot(data=f"{path_in}/{file_pb}", pen=f"1p,{color_pb}")
 
-# Plot national boundaries
+# Plot national borders
 fig.coast(borders=f"1/0.1p,{color_nb}")
 
 # Add frame
