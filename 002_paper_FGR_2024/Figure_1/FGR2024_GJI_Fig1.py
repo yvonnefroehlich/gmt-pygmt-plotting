@@ -83,11 +83,11 @@ color_land = "gray80"
 color_water = "steelblue"
 color_pb = "216.750/82.875/24.990"  # plate boundaries
 color_URG = "darkbrown"  # "sienna"
-color_sta = "gold"  # -> GMT "gold"
-color_hl = "255/90/0"  # -> orange | URG paper
+color_sta = "255/215/0"  # recording stations -> GMT gold
+color_hl = "255/90/0"  # highlight -> orange | URG paper
 color_rivers = "dodgerblue2"
-color_borders = "black"
-color_sl = "darkgray"
+color_nb = "black"  # national borders
+color_sl = "darkgray"  # shorelines
 
 # -----------------------------------------------------------------------------
 # Region and Projection
@@ -163,7 +163,7 @@ fig.grdimage(grid="@earth_relief_01m", region=region_main, cmap=cmap_ele)
 
 fig.coast(
     resolution="f",  # (f)ull, (h)igh, (i)ntermediate, (l)ow, (c)rude
-    borders=f"1/1p,{color_borders}",
+    borders=f"1/1p,{color_nb}",
     rivers=f"r/1p,{color_rivers}",
     water=color_water,
 )

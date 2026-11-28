@@ -33,7 +33,7 @@ width = 12
 
 size = "0.225c"
 pen = "0.3p,gray10"
-color_highlight = "255/90/0"  # -> orange | URG paper
+color_hl = "255/90/0"  # highlight -> orange
 box_standard = "+ggray95@30+p0.1p,gray50+r1p"
 args_leg = {"x":0 , "y":0, "pen":pen}
 
@@ -83,10 +83,10 @@ with pygmt.config(
     )
 
 # Plot decay lines and text
-fig.plot(x=[2, 16], y=[98, 0.5], pen=f"0.5p,{color_highlight},4_2")
-fig.plot(x=[5, 40], y=[28000, 10], pen=f"0.5p,{color_highlight},4_2")
-fig.text(x=4.3, y=5.5, text="~@~w@~@+3@+", font=f"14p,Helvetica-Bold,{color_highlight}")
-fig.text(x=8.2, y=1600, text="~@~w@~@+4@+", font=f"14p,Helvetica-Bold,{color_highlight}")
+fig.plot(x=[2, 16], y=[98, 0.5], pen=f"0.5p,{color_hl},4_2")
+fig.plot(x=[5, 40], y=[28000, 10], pen=f"0.5p,{color_hl},4_2")
+fig.text(x=4.3, y=5.5, text="~@~w@~@+3@+", font=f"14p,Helvetica-Bold,{color_hl}")
+fig.text(x=8.2, y=1600, text="~@~w@~@+4@+", font=f"14p,Helvetica-Bold,{color_hl}")
 
 # Plot data points as lines
 fig.plot(x=t_axisem, y=p_axisem, pen=f"0.6p,{color_axisem},")

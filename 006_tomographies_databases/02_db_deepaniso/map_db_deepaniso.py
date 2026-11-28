@@ -56,10 +56,10 @@ path_out = "02_out_figs"
 file_pb = "plate_boundaries_Bird_2003.txt"
 
 # Colors
-color_pb = "216.750/82.875/24.990"  # plate boundaries after Bird 2003
-color_sl = "gray50"  # shorelines (used data built-in in PyGMT / GMT)
-color_sta = "gold"
-color_hl = "255/90/0"  # highlight
+color_pb = "216.750/82.875/24.990"  # plate boundaries
+color_sl = "gray50"  # shorelines
+color_sta = "255/215/0"  # recording stations -> GMT gold
+color_hl = "255/90/0"  # highlight -> orange
 color_land = "gray95"
 color_llpv = "brown"
 pattern_llpv = "p8+b+f"

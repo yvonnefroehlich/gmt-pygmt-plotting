@@ -42,7 +42,7 @@ path_in = "01_in_data"
 path_out = "02_out_figs"
 
 # Colors
-color_hl = "255/90/0"  # -> orange
+color_hl = "255/90/0"  # highlight -> orange
 color_pb = "216.750/82.875/24.990"  # plate boundaries
 color_sl = "gray40"  # shorelines
 

@@ -142,12 +142,12 @@ cb_baz_pos = cb_pp_pos
 # Colors
 color_land = "gray80"
 color_water = "steelblue"
-color_pb = "216.750/82.875/24.990"  # plate boundaries
+color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
 color_URG = "darkbrown"  # "sienna"
-color_sta = "gold"  # -> GMT "gold"
-color_hl = "255/90/0"  # -> orange | URG paper
-color_borders = "black"
-color_sl = "darkgray"
+color_sta = "255/215/0"  # recording stations -> GMT gold
+color_hl = "255/90/0"  # highlight -> orange | URG paper
+color_nb = "black"  # national borders
+color_sl = "darkgray"  # shorelines
 
 # -----------------------------------------------------------------------------
 # Legends
@@ -189,7 +189,7 @@ fig.basemap(region=region_main, projection=proj_main, frame=0)
 # Elevation
 fig.grdimage(grid="@earth_relief_01m", region=region_main, cmap=cmap_ele)
 
-fig.coast(resolution="f", borders=f"1/1p,{color_borders}")
+fig.coast(resolution="f", borders=f"1/1p,{color_nb}")
 
 # -----------------------------------------------------------------------------
 # Faults

@@ -72,7 +72,7 @@ dpi_png = 360
 file_pb = "plate_boundaries_Bird_2003.txt"
 
 # Plotting
-color_sta = "gold"  # station
+color_sta = "255/215/0"  # recording stations -> GMT gold
 color_land = "gray90"
 color_water = "white"
 color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange

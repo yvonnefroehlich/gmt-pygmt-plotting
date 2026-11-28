@@ -52,9 +52,9 @@ path_in = "01_in_data"
 path_out = "02_out_figs"
 dpi_png = 720  # resolution of saved PNG file
 
-cmap_lat = "batlow"  # -> latitude or epicentral distance (dist)
-cmap_lon = "romaO"  # -> longitude or backazimuth (baz)
-color_station = "gold"  # -> recording station (sta)
+cmap_lat = "batlow"  # latitude or epicentral distance (dist)
+cmap_lon = "romaO"  # longitude or backazimuth (baz)
+color_sta = "255/215/0"  # recording stations -> GMT gold
 color_source = "red"
 color_land = "gray90"
 color_water = "white"
@@ -188,7 +188,7 @@ if status_cb == True and cmap_quantity != "sta":
 # -----------------------------------------------------------------------------
 # Plot recording stations with color-coding
 if status_proj in ["rob", "ortho"]:
-    fill = color_station
+    fill = color_sta
     cmap = None
     if cmap_quantity in ["dist", "baz"]:
         fill = sta_color * sta_factor
@@ -205,7 +205,7 @@ if status_proj in ["rob", "ortho"]:
 
 elif status_proj in ["epi"]:
     for i_sta in np.array(data_sta_plot.index):
-        fill = color_station
+        fill = color_sta
         zvalue = None
         cmap = None
         if cmap_quantity in ["dist", "baz"]:

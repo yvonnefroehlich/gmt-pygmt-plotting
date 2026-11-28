@@ -47,12 +47,12 @@ clearance_text = "0.05c/0.05c+tO"
 
 color_ani = "gray50"
 color_source = "red"
-color_station = "gold"
+color_sta = "255/215/0"  # recording stations -> GMT gold
 color_land = "gray90"
-color_sl = "gray70"
-color_pb = "216.750/82.875/24.990"
-color_highlight = "255/90/0"
-alpha_highlight = 98  # in percentage
+color_sl = "gray70"  # shorelines
+color_pb = "216.750/82.875/24.990"  # plate boundaries
+color_hl = "255/90/0"  # highlight -> orange
+alpha_hl = 98  # in percentage
 
 
 # %%
@@ -76,12 +76,12 @@ fig.plot(
 
 # -----------------------------------------------------------------------------
 # Station at North pole
-fig.plot(style="i0.45c", fill=color_station, pen="0.2p,black", **center_args)
+fig.plot(style="i0.45c", fill=color_sta, pen="0.2p,black", **center_args)
 fig.text(
     text="North pole",
     offset="0/0.4c",
     fill="white@30",
-    pen=f"0.2p,{color_station}",
+    pen=f"0.2p,{color_sta}",
     font="7p",
     clearance=clearance_text,
     **center_args,
@@ -92,16 +92,16 @@ fig.text(
 
 fig.plot(
     style=f"w{90 * dist2fig}c/-90/270+i{150 * dist2fig}c",
-    fill=f"{color_highlight}@{alpha_highlight}",
+    fill=f"{color_hl}@{alpha_hl}",
     **center_args,
 )
 for dist in [90, 150]:
     fig.plot(
         style=f"E-{dist * 2}+d",
-        pen=f"0.5p,{color_highlight},dashed",
+        pen=f"0.5p,{color_hl},dashed",
         **center_args,
     )
-fig.plot(style=f"E-{120 * 2}+d", pen=f"1p,{color_highlight}", **center_args)
+fig.plot(style=f"E-{120 * 2}+d", pen=f"1p,{color_hl}", **center_args)
 
 # -----------------------------------------------------------------------------
 # Sources in steps of 30° E longitude
@@ -141,8 +141,8 @@ for i_st in range(1, len(x_all) + 1):  # [start, end[
         y=-43,
         text=f"{x_all[i_st - 1]}@.",
         angle=angle,
-        fill=f"{color_highlight}@80",
-        pen=f"0.2p,{color_highlight}",
+        fill=f"{color_hl}@80",
+        pen=f"0.2p,{color_hl}",
         font="8p",
         clearance=clearance_text,
     )
@@ -168,16 +168,16 @@ fig.plot(
     # [[ ]] important
     data=[[0, 90, 5.3, -65, -25]],
     style="m0.5c+ea+h0c",
-    pen=f"1p,{color_highlight}",
-    fill=color_highlight,
+    pen=f"1p,{color_hl}",
+    fill=color_hl,
     no_clip=True,
 )
 fig.text(
     x=45,
     y=-88,
     text="BAZ",
-    fill=f"{color_highlight}@80",
-    pen=f"0.2p,{color_highlight}",
+    fill=f"{color_hl}@80",
+    pen=f"0.2p,{color_hl}",
     font="8p",
     angle=45,
     clearance=clearance_text,

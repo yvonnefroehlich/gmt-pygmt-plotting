@@ -27,7 +27,7 @@ path_out = "02_out_figs/"
 
 grid_tomo = f"{path_in}tomo_gypsum_1d_grid_dvs_22_2650to2900km.grd"
 
-color_highlight = "255/90/0"
+color_hl = "255/90/0"  # highlight -> orange
 color_sl = "gray10"  # shorelines (used data built-in in PyGMT / GMT)
 
 cmap_in = "roma"
@@ -58,7 +58,7 @@ fig.colorbar(frame=["xa1f0.1", "y+ldvs / %"], position="+e0.3c")
 fig.coast(shorelines=f"1/0.1p,{color_sl}")
 
 # -----------------------------------------------------------------------------
-args_label = {"font": f"{font_label}p,{color_highlight}", "no_clip": True}
+args_label = {"font": f"{font_label}p,{color_hl}", "no_clip": True}
 # Add label for depth
 fig.text(position="TL", text=f"@@{2650} - {2900} km", **args_label)
 # Add label for tomography name

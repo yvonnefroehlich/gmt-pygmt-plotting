@@ -54,9 +54,9 @@ projection_ortho = f"G{center_str}/?"
 # Colors
 color_water = "steelblue"
 color_land = "gray70"
-color_sl = "gray30"
-color_pb = "216.750/82.875/24.990"  # plate boundaries # -> darkorange
-color_highlight = "255/90/0"  # -> orange
+color_sl = "gray30"  # shorelines
+color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
+color_hl = "255/90/0"  # highlight -> orange
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets
@@ -100,7 +100,7 @@ fig.show()
 
 # Volcano
 fig.plot(
-    x=lon_volc, y=lat_volc, style="kvolcano/1c", fill=color_highlight, pen="0.5p,gray30"
+    x=lon_volc, y=lat_volc, style="kvolcano/1c", fill=color_hl, pen="0.5p,gray30"
 )
 # Label
 fig.text(
@@ -110,7 +110,7 @@ fig.text(
     font="8p,Helvetica-Bold,black",
     offset="0c/-1c",
     fill="white@30",
-    pen=f"0.8p,{color_highlight}",
+    pen=f"0.8p,{color_hl}",
     clearance="0.1c/0.1c+tO",
 )
 # Info text
@@ -170,7 +170,7 @@ with fig.inset(position=pos_study_inset):
         data=[[lon_min, lat_min, lon_max, lat_max]],
         style="r+s",
         pen="0.5p,gray30",
-        fill=color_highlight,
+        fill=color_hl,
     )
 
 fig.show()

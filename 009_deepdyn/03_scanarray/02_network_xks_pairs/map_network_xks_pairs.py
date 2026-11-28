@@ -45,14 +45,14 @@ path_out = "02_out_figs"
 color_land = "gray95"
 color_sl = "gray70"  # shorelines
 color_nb = "gray60"  # national borders
-color_hl = "255/90/0"  # highlight ->  orange | URG paper
+color_hl = "255/90/0"  # highlight ->  orange
 
 color_disc = "lightmagenta"
 color_same = "0/197/205"
 
-style_station = "i0.17c"
-pen_station = "0.1p,black"
-color_station = "tan"
+color_sta = "tan"  # recording station
+style_sta = "i0.17c"
+pen_sta = "0.1p,black"
 
 box_standard = "+gwhite@30+p0.1p,gray30+r2p"
 
@@ -163,9 +163,9 @@ fig.coast(land=color_land, shorelines=f"1/0.1p,{color_sl}", borders=f"1/0.1p,{co
 # Plot recording stations
 fig.plot(
     data=f"{path_in}/sta_coordinates_whitespace.txt",
-    style=style_station,
-    pen=pen_station,
-    fill=color_station,
+    style=style_sta,
+    pen=pen_sta,
+    fill=color_sta,
     incols=[1,2],
     label="none+HSKS-SKKS pairs"
 )
@@ -174,16 +174,16 @@ fig.plot(
 # NO discrepant pairs
 fig.plot(
     data=df_pairs_same[["stalon","stalat"]],
-    style=style_station,
-    pen=pen_station,
+    style=style_sta,
+    pen=pen_sta,
     fill=color_same,
     label="only same",
 )
 # At least ONE discrepant pair
 fig.plot(
     data=df_pairs_disc[["stalon","stalat"]],
-    style=style_station,
-    pen=pen_station,
+    style=style_sta,
+    pen=pen_sta,
     fill=color_disc,
     label="discrepant",
 )

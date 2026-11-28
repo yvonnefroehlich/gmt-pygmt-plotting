@@ -96,10 +96,10 @@ cb_phi_pos = "JRB+jRB+o0.5c/0.6c+w4.3c/0.2c+h+ml"
 # -----------------------------------------------------------------------------
 # Colors
 color_URG = "darkbrown"
-color_sta = "gold"  # -> GMT "gold"
-color_hl = "255/90/0"  # -> orange | URG paper
+color_sta = "255/215/0"  # recording station -> GMT gold
+color_hl = "255/90/0"  # highlight -> orange | URG paper
 color_rivers = "dodgerblue2"
-color_borders = "black"
+color_nb = "black"  # national borders
 
 # -----------------------------------------------------------------------------
 # Legends
@@ -143,7 +143,7 @@ fig.basemap(region=region_main, projection=proj_main, frame=0)
 fig.grdimage(grid="@earth_relief_15s", region=region_main, cmap=cmap_ele)
 
 fig.coast(
-    resolution="f", borders=f"1/1p,{color_borders}", rivers=f"r/1p,{color_rivers}"
+    resolution="f", borders=f"1/1p,{color_nb}", rivers=f"r/1p,{color_rivers}"
 )
 
 # -----------------------------------------------------------------------------

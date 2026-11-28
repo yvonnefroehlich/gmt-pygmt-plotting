@@ -42,7 +42,7 @@ if depth_min == 0 and depth_max == 6371:
 region = [0, 14, depth_min, depth_max]  # xmin, xmax, ymin, ymax
 projection = "X9c/-15c"  # Use minus sign to revert the direction of the axis, here y
 
-color_highlight = "255/90/0"  # -> orange
+color_hl = "255/90/0"  # highlight -> orange
 color_vel = "brown"
 color_density = "steelblue"
 
@@ -107,7 +107,7 @@ with pygmt.config(
     )
 
 # Mark important depths
-pen_disc = f"1p,{color_highlight},2_2"
+pen_disc = f"1p,{color_hl},2_2"
 for y in [30, 120, 410, 660, 2700, 2890, 5150]:
     fig.plot(x=[0, 14], y=[y, y], pen=pen_disc)
 

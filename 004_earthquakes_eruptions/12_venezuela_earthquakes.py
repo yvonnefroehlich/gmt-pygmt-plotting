@@ -60,8 +60,8 @@ lat_eq = np.mean([10.409, 10.509])  # degrees North
 color_water = "steelblue"
 color_land = "gray70"
 color_sl = "gray30"  # shorelines
-color_pb = "216.750/82.875/24.990"  # plate boundaries # -> darkorange
-color_hl = "255/90/0"  # highlight # -> orange
+color_pb = "216.750/82.875/24.990"  # plate boundaries -> darkorange
+color_hl = "255/90/0"  # highlight -> orange
 
 # -----------------------------------------------------------------------------
 # Stuff for scale, legends, colorbars, and insets

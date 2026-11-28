@@ -45,9 +45,9 @@ file_pb = "plate_boundaries_Bird_2003.txt"
 
 # -----------------------------------------------------------------------------
 # Colors
-color_land = "gray90"  # gray hue -> light gray
+color_land = "gray90"
 color_pb = "216.750/82.875/24.990"  # plate boundaries -> dark orange
-color_station_symbol = "255/215/0"  # = "gold"
+color_station_symbol = "255/215/0"  # -> GMT gold
 color_station_label = "162/20/47"  # -> dark red
 color_null = "white"
 
